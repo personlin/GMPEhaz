@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+Package: GMPEhaz
+Type: Package
+Title: GMPE funciton using Norman Abrahamson's HAZ fortran code
+Version: 0.1.4
+Author: Person Lin
+Maintainer: Person Lin <personlin@gmail.com>
+Description: This package provide a set of R warp function to call GMPE function from
+  Norman Abrahamson's HAZ fortran code.
+License: GPL-3
+LazyData: TRUE
+=======
+Package: GMPEhaz
+Type: Package
+Title: GMPE funciton using Norman Abrahamson's HAZ fortran code
+Version: 0.1.4
+Author: Person Lin
+Maintainer: Person Lin <personlin@gmail.com>
+Description: This package provide a set of R warp function to call GMPE function from
+  Norman Abrahamson's HAZ fortran code.
+License: GPL-3
+LazyData: TRUE
+>>>>>>> origin/master

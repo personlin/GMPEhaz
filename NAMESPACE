@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+exportPattern("^[[:alpha:]]+")
+
+useDynLib(GMPEhaz)
+=======
+exportPattern("^[[:alpha:]]+")
+
+useDynLib(GMPEhaz)
+>>>>>>> origin/master
