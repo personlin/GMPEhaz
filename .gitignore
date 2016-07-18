@@ -34,11 +34,6 @@
 # RStudio files
 .Rbuildignore
 .Rhistory
-<<<<<<< HEAD
 .Rproj.user
 *.Rproj
-=======
-.Rproj.user
->>>>>>> origin/master
-
-.Rhistory
+.Rapp.history
