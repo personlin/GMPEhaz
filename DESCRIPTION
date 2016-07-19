@@ -11,6 +11,9 @@ Description: This package provide a set of R warp function to call GMPE function
 License: GPL-3 | file LICENSE
 LazyData: TRUE
 RoxygenNote: 5.0.1
-Suggests: testthat
+Suggests: testthat,
+    knitr,
+    rmarkdown
 URL: http://github.com/personlin/GMPEhaz
 BugReports: http://github.com/personlin/GMPEhaz/issues
+VignetteBuilder: knitr
