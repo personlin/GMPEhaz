@@ -40566,3 +40566,1908 @@ C.....magnitude-dependent sigma.....
 
       return
       END
+
+c -------------------------------------------------------------------           
+C **** Zhao et al. 2016 (BSSA, Vol 106, No.4) *************
+c -------------------------------------------------------------------           
+
+      subroutine Zhaoetal2016_int ( m, dist, ftype, lnY, sigma, sclass, specT,              
+     1                   attenName, period1, iflag, sourcetype, depth, phiT, tauT )                                   
+
+c     This  subroutine calculates the spectral acceleration from the 
+c     Zhao et al. (2016) attenuation model which is defined for subduction
+c     interface events. Four separate site classes are also modeled.
+                                                                         
+      parameter (MAXPER=37)                                                     
+      real ftype, dist, m, lnY, sigma, specT, sourcetype, sclass, cm, cmax, r
+      real period(MAXPER), Amax1(MAXPER), SRC1(MAXPER), Amax2(MAXPER)
+      real SRC2(MAXPER), Amax3(MAXPER), SRC3(MAXPER), Amax4(MAXPER), SRC4(MAXPER)
+      real AmSCI(MAXPER), fsr1(MAXPER), fsr2(MAXPER), fsr3(MAXPER), fsr4(MAXPER)
+      real c1(MAXPER), c2(MAXPER), gamma(MAXPER)
+      real CintS(MAXPER), CintD(MAXPER), dint(MAXPER), bint(MAXPER), gint(MAXPER)
+      real gintLS(MAXPER), gintLD(MAXPER), eintS(MAXPER), gammaS(MAXPER)
+      real S2(MAXPER), S3(MAXPER), S4(MAXPER), S5(MAXPER), S6(MAXPER), S7(MAXPER)
+      real phiS1(MAXPER), tauS1(MAXPER), sigma1(MAXPER), phiS2(MAXPER), tauS2(MAXPER)
+      real sigma2(MAXPER), phiS3(MAXPER), tauS3(MAXPER), sigma3(MAXPER), phiS4(MAXPER)
+      real tauS4(MAXPER), sigma4(MAXPER), phi(MAXPER), tau(MAXPER)
+      character*80 attenName                                                    
+      integer nper, count1, count2, iflag, xinto
+      real Amax1T, SRC1T, Amax2T, SRC2T, Amax3T, SRC3T, Amax4T, SRC4T
+      real AmSCIT, fsr1T, fsr2T, fsr3T, fsr4T
+      real c1T, c2T
+      real CintST, CintDT, dintT, bintT, gintT, gintLST, gintLDT, eintST
+      real gammaT, gammaST, S2T, S3T, S4T, S5T, S6T, S7T
+      real phiS1T, tauS1T, sigma1T, phiS2T, tauS2T
+      real sigma2T, phiS3T, tauS3T, sigma3T, phiS4T
+      real tauS4T, sigma4T, phiT, tauT
+      real mech, rockterm, ANmax, Amax, Sr, Src, fsr, Sreff, Sreffc, Snc, Sf, Smr
+      real fm, gmterm, gmLterm, eterm, logAn, Imf
+                                                                                
+      data period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09,                                      
+     1              0.1, 0.12, 0.14, 0.15, 0.16, 0.18, 0.2, 0.25, 0.3, 0.35, 
+     1              0.4, 0.45, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.25, 1.5, 2, 2.5,                                       
+     1              3, 3.5, 4, 4.5, 5 /                     
+
+      data Amax1 / 1.916, 1.919, 1.922, 1.925, 1.921, 1.959, 2.013, 2.049, 2.046,                                      
+     1             2.066, 2.1, 2.143, 2.122, 2.092, 2.053, 1.923, 1.793, 1.793,                                       
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793,                                       
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793/ 
+      data  SRC1 /8.42900,8.09039,6.99211,6.34965,
+     &   4.88339,5.04257,6.27132,7.66694,9.03436,11.25066,14.81739,
+     &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
+     &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
+     &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
+     &  14.81739,14.81739,14.81739,14.81739,14.81739/ 
+      data Amax2 / 2.033, 2.027, 2.003, 1.989, 2.012, 2.017, 2.064, 2.103, 2.195,                                       
+     1             2.219, 2.263, 2.329, 2.188, 2.214, 2.245, 2.324, 2.405, 2.554,                                       
+     1             2.586, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
+     1             2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
+     1             2.718/ 
+      data  SRC2 /1.91368,1.88256,1.77861,1.71781,
+     &  2.05234,2.38713,2.83399,3.29447,3.99091,4.46576,5.04561,5.89960,
+     &  5.05353,5.20490,5.38694,5.87165,6.57391,8.50000,10.67030,
+     & 10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,
+     & 10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,
+     & 10.67030,10.67030,10.67030,10.67030/
+      data Amax3 / 1.905, 1.908, 1.894, 1.886, 1.833, 1.854, 1.893, 1.924, 1.974,                                       
+     1             2.032, 2.052, 2.066, 2.107, 2.14, 2.156, 2.132, 2.05, 1.925,                                       
+     1             2.006, 2.179, 2.288, 2.402, 2.522, 2.648, 2.78, 2.919, 3.065,                                       
+     1             3.217, 3.378, 3.547, 3.724, 3.909, 4.104, 4.309, 4.524, 4.75,                                       
+     1             4.987/ 
+      data  SRC3 /1.11714,1.11444,1.12437,1.13017,
+     &  1.15080,1.23971,1.34819,1.45181,1.58315,1.73292,1.84134,2.03029,
+     %  2.28133,2.44413,2.58017,2.74161,2.82587,2.71893,2.41759,2.30375,
+     &  2.23625,2.21678,2.24338,2.80535,6.65839,30.0,30.0,30.0,30.0,
+     &  30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0/
+      data Amax4 / 1.498, 1.498, 1.474, 1.46, 1.374, 1.363, 1.384, 1.425, 1.481,                                       
+     1             1.525, 1.549, 1.603, 1.67, 1.706, 1.734, 1.773, 1.816, 1.843,                                       
+     1             1.871, 1.878, 1.911, 1.899, 1.927, 1.987, 2.025, 2.043, 2.022,                                       
+     1             1.97, 1.843, 1.729, 1.583, 1.504, 1.439, 1.391, 1.362, 1.34, 1.729/ 
+      data  SRC4 /0.83644,0.83644,0.83000,0.82624,
+     &  0.76758,0.78632,0.83775,0.92616,1.02228,1.11802,1.16578,1.28551,
+     &  1.39808,1.44327,1.47177,1.54694,1.64401,1.79013,1.82345,1.79037,
+     &  1.76844,1.67539,1.62539,1.52453,1.39724,1.32029,1.26637,1.22680,
+     &  1.22065,1.31805,2.12485,14.38181,14.38181,14.38181,14.38181,
+     &  14.38181,14.38181/
+      data fsr1  /1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,
+     &        1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+     &        0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data fsr2  /1.0,1.0,1.0,1.0,0.843,0.663,0.841,
+     &     1.029,1.235,1.144,1.092,0.945,0.624,0.577,0.545,0.527,0.546,
+     &     0.596,0.623,0.701,0.708,0.737,0.748,0.728,0.634,0.0,0.0,0.0,
+     &     0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data fsr3   /1.165,0.944,1.012,1.1,0.959,0.889,
+     &     0.946,1.006,1.065,1.093,1.077,1.036,0.895,0.860,0.822,0.743,
+     &     0.663,0.487,0.447,0.473,0.487,0.511,0.536,0.540,0.477,0.0,
+     &     0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data fsr4   /1.0,1.0,1.0,1.0,0.557,0.543,0.574,
+     &     0.648,0.721,0.809,1.015,0.972,0.967,0.963,0.953,0.967,1.005,
+     &     1.045,1.035,1.008,1.007,0.981,0.990,1.016,1.022,1.023,0.997,
+     &     0.948,0.802,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data c1     /-5.30119,-5.28844,-5.27568,-5.26822,
+     &       -5.26293,-5.25882,-5.25547,-5.25263,-5.25017,-5.24801,
+     &       -5.24607,-5.24271,-5.23988,-5.23861,-5.23742,-5.23525,
+     &       -5.23331,-5.22921,-5.22585,-5.22302,-5.22056,-5.21839,
+     &       -5.21645,-5.21310,-5.21026,-5.20781,-5.20564,-5.20370,
+     &       -5.19959,-5.19624,-5.19095,-5.18684,-5.18349,-5.18065,
+     &       -5.17819,-5.17602,-5.17409/
+      data c2     /1.151,1.151,1.151,1.151,1.151,1.151,1.151,
+     &        1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,
+     &        1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,
+     &        1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,
+     &        1.151,1.151,1.151/
+      data cintD  /1.09973,1.09848,1.09227,1.10690,1.11578,
+     &        1.10234,1.08611,1.07291,1.06383,1.05863,1.05673,1.06051,
+     &        1.07135,1.07856,1.08664,1.10470,1.12443,1.17689,1.22970,
+     &        1.28058,1.32873,1.37394,1.41630,1.49310,1.56069,1.62055,
+     &        1.67390,1.72171,1.82188,1.90081,2.01482,2.08892,2.13574,
+     &        2.16254,2.17393,2.17301,2.16199/
+      data cintS  /1.31479,1.31739,1.31919,1.34096,1.38051,
+     &        1.43246,1.46238,1.47120,1.46432,1.44695,1.42323,1.36833,
+     &        1.31558,1.29277,1.27319,1.24828,1.23715,1.22387,1.22846,
+     &        1.24219,1.26077,1.28190,1.30432,1.35019,1.39523,1.43824,
+     &        1.47881,1.51685,1.60148,1.67280,1.78372,1.86241,1.91711,
+     &        1.95322,1.97450,1.98361,1.98255/
+      data dint   /0.553,0.553,0.553,0.553,0.553,0.553,0.553,
+     &        0.553,0.553,0.553,0.553,0.553,0.553,0.553,0.553,0.553,
+     &        0.553,0.553,0.553,0.553,0.553,0.553,0.553,0.553,0.560,
+     &        0.580,0.602,0.622,0.667,0.705,0.768,0.820,0.863,0.902,
+     &        0.935,0.966,0.994/
+      data gammaS /-3.89528,-3.89528,-3.89528,-3.89528,
+     &         -3.89528,-3.89528,-3.89528,-3.89528,-3.89461,-3.90179,
+     &         -3.90765,-3.91644,-3.92273,-3.92526,-3.92753,-3.93130,
+     &         -3.93446,-3.94068,-3.94547,-3.94943,-3.95273,-3.95558,
+     &         -3.95795,-3.96181,-3.96483,-3.96729,-3.96962,-3.97202,
+     &         -3.97949,-3.99048,-4.02652,-4.08299,-4.15939,-4.25418,
+     &         -4.36584,-4.49267,-4.63313/
+      data bint  /0.01999,0.01999,0.01999,0.02066,0.02308,
+     &       0.02709,0.02972,0.03207,0.03196,0.02972,0.02789,0.02470,
+     &       0.02117,0.01951,0.01793,0.01505,0.01255,0.00769,0.00438,
+     &       0.00215,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+     &       0.0,0.0,0.0,0.0,0.0/
+      data gint   /-2.05587,-2.06565,-2.10231,-2.19232,
+     &  -2.24640,-2.29341,-2.31172,-2.31101,-2.28778,-2.24680,-2.20410,
+     &  -2.12011,-2.04337,-2.01088,-1.98301,-1.94607,-1.92702,-1.89876,
+     &  -1.89141,-1.89299,-1.89531,-1.90578,-1.91467,-1.92743,-1.93452,
+     &  -1.93739,-1.93725,-1.93505,-1.92471,-1.91189,-1.88859,-1.87252,
+     &  -1.86345,-1.85969,-1.85953,-1.86151,-1.86451/
+      data gintLD /0.54541,0.54975,0.56172,0.57887,
+     &        0.49333,0.49100,0.50848,0.52750,0.54595,0.56307,0.57615,
+     &        0.59258,0.60983,0.61961,0.63085,0.66196,0.69978,0.78447,
+     &        0.85939,0.92338,0.98011,1.02220,1.05874,1.11803,1.16302,
+     &        1.19735,1.22362,1.24367,1.27245,1.28541,1.28830,1.27727,
+     &        1.26049,1.24107,1.22026,1.19859,1.17629/
+      data gintLS /1.13364,1.13365,1.13365,1.13364,0.98811,
+     &        0.90444,0.88766,0.90491,0.94206,0.98652,1.03553,1.13529,
+     &        1.23424,1.28134,1.32659,1.41134,1.48854,1.65209,1.78127,
+     &        1.88438,1.96763,2.03554,2.09142,2.17640,2.23600,2.27831,
+     &        2.30847,2.32985,2.35853,2.36653,2.35536,2.33106,2.30409,
+     &        2.27794,2.25371,2.23161,2.21149/
+      data eintS  /-0.00628,-0.00625,-0.00616,-0.00572,
+     &  -0.00532,-0.00503,-0.00528,-0.00569,-0.00619,-0.00673,-0.00718,
+     &  -0.00793,-0.00853,-0.00879,-0.00902,-0.00927,-0.00942,-0.00959,
+     %  -0.00952,-0.00933,-0.00911,-0.00888,-0.00866,-0.00824,-0.00787,
+     &  -0.00755,-0.00726,-0.00700,-0.00644,-0.00597,-0.00518,-0.00451,
+     &  -0.00393,-0.00344,-0.00302,-0.00267,-0.00240/
+      data gamma  /-4.49858,-4.45894,-4.25807,-3.91800,
+     &  -3.11423,-2.76035,-2.64088,-2.65622,-2.75266,-2.89920,-3.07698,
+     &  -3.48283,-3.91612,-4.13481,-4.35243,-4.78030,-5.19439,-6.15803,
+     &  -7.02003,-7.79153,-8.49551,-9.11351,-9.68515,-10.68946,
+     & -11.54596,-12.28722,-12.93630,-13.51000,-14.69034,-15.60298,
+     & -16.90010,-17.73658,-18.27135,-18.59264,-18.75474,-18.79351,
+     & -18.73393/
+      data AmSCI  / 1.358, 1.247, 1.149, 1.097, 1.065, 1.037, 1.038, 1.05, 1.103,  
+     1              1.191, 1.278, 1.401, 1.525, 1.578, 1.626, 1.706, 1.768, 1.868,  
+     1              1.917, 1.939, 1.944, 1.944, 1.943, 1.927, 1.912, 1.893, 1.874,  
+     1              1.853, 1.799, 1.74, 1.619, 1.508, 1.416, 1.347, 1.303, 1.285, 1.267 / 
+      data S2    /0.31288,0.30850,0.29297,0.22869,0.16316,
+     &  0.12129,0.12345,0.13970,0.16385,0.20501,0.24449,0.32284,0.40120,
+     &  0.43622,0.46736,0.51201,0.53926,0.58602,0.60465,0.60640,0.60277,
+     &  0.58043,0.55692,0.50969,0.46501,0.42440,0.38841,0.35703,0.29673,
+     &  0.25785,0.22262,0.21840,0.21595,0.21595,0.21595,0.21595,0.21595/
+      data S3     /-0.00431,-0.01115,-0.02166,-0.11291,
+     & -0.18870,-0.22831,-0.21920,-0.19009,-0.15499,-0.11250,-0.07508,
+     &  0.01500,0.09699,0.14588,0.18793,0.25154,0.30298,0.42692,0.51620,
+     &  0.56951,0.62366,0.65814,0.68671,0.71220,0.71239,0.69938,0.67996,
+     &  0.65828,0.61928,0.58288,0.52620,0.48720,0.45698,0.42809,0.39524,
+     &  0.35488,0.30468/
+      data S4     /0.22838,0.22305,0.20892,0.13314,0.06959,
+     &  0.02845,0.00070,-0.00949,-0.00485,0.03047,0.06080,0.14231,
+     &  0.22696,0.25758,0.30748,0.35974,0.40313,0.50765,0.57779,0.63821,
+     &  0.70323,0.75082,0.79378,0.84953,0.87979,0.89539,0.90256,0.90528,
+     &  0.91793,0.92130,0.91709,0.90551,0.88668,0.85880,0.82025,0.76990,
+     &  0.70705/
+      data S5     /0.31288,0.30850,0.29297,0.22869,0.16316,
+     &  0.12129,0.12345,0.13970,0.16385,0.20501,0.24449,0.32284,0.40120,
+     &  0.43622,0.46736,0.51201,0.53926,0.58602,0.60465,0.60640,0.60277,
+     &  0.58043,0.55692,0.50969,0.46501,0.42440,0.38841,0.35703,0.29673,
+     &  0.25785,0.22262,0.21840,0.21595,0.21595,0.21595,0.21595,0.21595/
+      data S6     /-0.00431,-0.01115,-0.02166,-0.08291,
+     & -0.18870,-0.22831,-0.21920,-0.19009,-0.15499,-0.11250,-0.07508,
+     &  0.01500,0.09699,0.13588,0.17293,0.24154,0.30298,0.42692,0.51620,
+     &  0.57951,0.63366,0.65814,0.68671,0.71220,0.71239,0.69938,0.67996,
+     &  0.65828,0.61928,0.58288,0.52620,0.48720,0.45698,0.42809,0.39524,
+     &  0.35488,0.30468/
+      data S7     /0.22838,0.22305,0.20892,0.16314,0.05959,
+     &  0.00845,0.00070,0.00551,0.01415,0.04047,0.07080,0.14031,0.20196,
+     &  0.23258,0.26248,0.31974,0.37313,0.48765,0.57779,0.64821,0.71323,
+     &  0.75082,0.79378,0.84953,0.87979,0.89539,0.90256,0.90528,0.91793,
+     &  0.92130,0.91709,0.90551,0.88668,0.85880,0.82025,0.76990,0.70705/
+      data phiS1    / 0.388, 0.388, 0.386, 0.383, 0.386, 0.386, 0.386, 0.389, 0.397,  
+     1              0.402, 0.406, 0.411, 0.413, 0.414, 0.416, 0.423, 0.426, 0.424,  
+     1              0.422, 0.413, 0.413, 0.419, 0.409, 0.395, 0.395, 0.392, 0.395,  
+     1              0.402, 0.408, 0.409, 0.415, 0.406, 0.397, 0.388, 0.39, 0.384,  
+     1              0.394 / 
+      data tauS1    / 0.419, 0.42, 0.425, 0.444, 0.474, 0.486, 0.5, 0.531, 0.553,  
+     1              0.559, 0.562, 0.564, 0.556, 0.552, 0.548, 0.534, 0.528, 0.493,  
+     1              0.471, 0.474, 0.449, 0.423, 0.415, 0.419, 0.429, 0.427, 0.433,  
+     1              0.453, 0.457, 0.464, 0.464, 0.441, 0.412, 0.394, 0.376, 0.363,  
+     1              0.346 / 
+      data sigma1   / 0.571, 0.571, 0.574, 0.586, 0.611, 0.62, 0.632, 0.658, 0.681,  
+     1              0.688, 0.693, 0.697, 0.692, 0.69, 0.688, 0.681, 0.679, 0.65,  
+     1              0.632, 0.629, 0.61, 0.595, 0.583, 0.576, 0.583, 0.58, 0.586,  
+     1              0.606, 0.613, 0.619, 0.623, 0.599, 0.572, 0.553, 0.541, 0.528,  
+     1              0.525 / 
+      data phiS2    / 0.421, 0.421, 0.42, 0.42, 0.42, 0.419, 0.419, 0.42, 0.424,  
+     1              0.425, 0.424, 0.424, 0.439, 0.44, 0.446, 0.454, 0.469, 0.468,  
+     1              0.473, 0.481, 0.47, 0.464, 0.457, 0.45, 0.442, 0.444, 0.434,  
+     1              0.428, 0.425, 0.441, 0.437, 0.438, 0.44, 0.435, 0.442, 0.441,  
+     1              0.461 / 
+      data tauS2    / 0.424, 0.424, 0.425, 0.422, 0.434, 0.44, 0.449, 0.466, 0.489,  
+     1              0.521, 0.54, 0.537, 0.56, 0.574, 0.573, 0.557, 0.532, 0.551,  
+     1              0.509, 0.485, 0.496, 0.495, 0.473, 0.45, 0.454, 0.448, 0.446,  
+     1              0.445, 0.457, 0.448, 0.458, 0.443, 0.441, 0.424, 0.409, 0.393,  
+     1              0.408 / 
+      data sigma2   / 0.597, 0.598, 0.598, 0.595, 0.604, 0.608, 0.614, 0.628, 0.647,  
+     1              0.672, 0.687, 0.684, 0.712, 0.724, 0.726, 0.719, 0.71, 0.723,  
+     1              0.695, 0.683, 0.683, 0.679, 0.658, 0.636, 0.634, 0.631, 0.622,  
+     1              0.617, 0.624, 0.628, 0.633, 0.623, 0.623, 0.608, 0.603, 0.591,  
+     1              0.615 / 
+      data phiS3    / 0.393, 0.393, 0.394, 0.397, 0.394, 0.399, 0.398, 0.412, 0.406,  
+     1              0.406, 0.403, 0.415, 0.407, 0.41, 0.404, 0.411, 0.414, 0.41,  
+     1              0.398, 0.4, 0.393, 0.389, 0.383, 0.385, 0.385, 0.393, 0.392,  
+     1              0.394, 0.402, 0.421, 0.412, 0.419, 0.399, 0.403, 0.398, 0.384,  
+     1              0.375 / 
+      data tauS3    / 0.376, 0.377, 0.376, 0.386, 0.393, 0.384, 0.379, 0.377, 0.374,  
+     1              0.381, 0.409, 0.48, 0.44, 0.427, 0.429, 0.436, 0.437, 0.398,  
+     1              0.421, 0.457, 0.463, 0.447, 0.435, 0.434, 0.448, 0.44, 0.445,  
+     1              0.422, 0.428, 0.434, 0.47, 0.446, 0.4, 0.353, 0.365, 0.349,  
+     1              0.293 / 
+      data sigma3   / 0.544, 0.545, 0.544, 0.553, 0.557, 0.554, 0.55, 0.558, 0.552,  
+     1              0.557, 0.574, 0.635, 0.599, 0.592, 0.589, 0.6, 0.602, 0.572,  
+     1              0.579, 0.607, 0.607, 0.593, 0.579, 0.58, 0.591, 0.59, 0.593,  
+     1              0.578, 0.587, 0.604, 0.625, 0.612, 0.565, 0.536, 0.54, 0.519,  
+     1              0.476 / 
+      data phiS4    / 0.458, 0.416, 0.415, 0.415, 0.421, 0.419, 0.42, 0.42, 0.419,  
+     1              0.419, 0.423, 0.426, 0.438, 0.43, 0.437, 0.455, 0.456, 0.452,  
+     1              0.439, 0.432, 0.423, 0.419, 0.42, 0.403, 0.412, 0.417, 0.407,  
+     1              0.406, 0.419, 0.415, 0.409, 0.421, 0.414, 0.407, 0.396, 0.38,  
+     1              0.371 / 
+      data tauS4    / 0.346, 0.348, 0.352, 0.355, 0.362, 0.375, 0.388, 0.41, 0.416,  
+     1              0.435, 0.469, 0.517, 0.507, 0.504, 0.496, 0.488, 0.481, 0.448,  
+     1              0.442, 0.442, 0.435, 0.418, 0.432, 0.442, 0.454, 0.468, 0.485,  
+     1              0.498, 0.507, 0.505, 0.524, 0.529, 0.524, 0.535, 0.542, 0.53,  
+     1              0.514 / 
+      data sigma4   / 0.574, 0.543, 0.544, 0.546, 0.555, 0.562, 0.571, 0.587, 0.591,  
+     1              0.604, 0.632, 0.67, 0.67, 0.663, 0.661, 0.667, 0.663, 0.637,  
+     1              0.623, 0.618, 0.607, 0.592, 0.603, 0.598, 0.613, 0.627, 0.633,  
+     1              0.642, 0.657, 0.653, 0.665, 0.676, 0.668, 0.672, 0.671, 0.652,  
+     1              0.633 / 
+      data phi /0.553,0.554,0.553,0.555,0.565,0.570,0.583,
+     &    0.602,0.614,0.625,0.637,0.646,0.654,0.659,0.663,0.672,0.678,
+     &    0.659,0.640,0.634,0.627,0.620,0.612,0.613,0.625,0.628,0.628,
+     &    0.633,0.636,0.644,0.635,0.619,0.599,0.581,0.568,0.551,0.563/
+      data tau /0.669,0.670,0.673,0.682,0.709,0.734,
+     &    0.760,0.784,0.793,0.797,0.796,0.789,0.773,0.773,0.774,0.776,
+     &    0.778,0.753,0.729,0.729,0.720,0.719,0.712,0.720,0.739,0.743,
+     &    0.743,0.750,0.753,0.754,0.741,0.734,0.712,0.692,0.682,0.667,
+     &    0.675/
+ 	 
+c Set attenuation name                                                            
+c     Sourcetype = 0 Crustal
+c     Sourcetype = 1 Subduction - Interface
+c     Sourcetype = 2 Subduction - Slab
+c     Sourcetype = 3 Upper mantle
+c     Sclass = 0 Hard Rock
+c     Sclass = 1 SC I
+c     Sclass = 2 SC II
+c     Sclass = 3 SC III
+c     Sclass = 4 SC IV
+
+                                                                 
+C Find the requested spectral period and corresponding coefficients
+      nper = 37
+
+C First check for the PGA case (i.e., specT=0.0) 
+      if (specT .eq. 0.0) then
+       period1 = period(1)
+       Amax1T =  Amax1(1) 
+       SRC1T =   SRC1(1)  
+       Amax2T =  Amax2(1) 
+       SRC2T =   SRC2(1)  
+       Amax3T =  Amax3(1) 
+       SRC3T =   SRC3(1)  
+       Amax4T =  Amax4(1) 
+       SRC4T =   SRC4(1)  
+       AmSCIT =  AmSCI(1) 
+       fsr1T = fsr1(1)
+       fsr2T = fsr2(1)
+       fsr3T = fsr3(1)
+       fsr4T = fsr4(1)
+       c1T =     c1(1)    
+       c2T =     c2(1)    
+       CintST =    CintS(1)   
+       CintDT =    CintD(1)   
+       dintT =    dint(1)   
+       bintT =    bint(1)   
+       gintT =    gint(1)   
+       gintLST =   gintLS(1)  
+       gintLDT =   gintLD(1)  
+       eintST =    eintS(1)   
+       gammaT =  gamma(1) 
+       gammaST =  gammaS(1) 
+       S2T =     S2(1)    
+       S3T =     S3(1)    
+       S4T =     S4(1)    
+       S5T =     S5(1)    
+       S6T =     S6(1)    
+       S7T =     S7(1)    
+       phiS1T =  phiS1(1) 
+       tauS1T =  tauS1(1) 
+       sigma1T = sigma1(1)
+       phiS2T =  phiS2(1) 
+       tauS2T =  tauS2(1) 
+       sigma2T = sigma2(1)
+       phiS3T =  phiS3(1) 
+       tauS3T =  tauS3(1) 
+       sigma3T = sigma3(1)
+       phiS4T =  phiS4(1) 
+       tauS4T =  tauS4(1) 
+       sigma4T = sigma4(1)            
+       phiT =  phi(1) 
+       tauT =  tau(1) 
+       goto 1011
+      elseif (specT .ne. 0.0) then
+
+C Now loop over the spectral period range of the attenuation relationship.
+         do i=2,nper-1
+            if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
+               count1 = i
+               count2 = i+1
+               goto 1010 
+            endif
+         enddo
+      endif
+        
+      write (*,*) 
+      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
+      write (*,*) 'is not defined for a spectral period of: '
+      write (*,'(a10,f10.5)') ' Period = ',specT
+      write (*,*) 'This spectral period is outside the defined'
+      write (*,*) 'period range in the code or beyond the range'
+      write (*,*) 'of spectral periods for interpolation.'
+      write (*,*) 'Please check the input file.'
+      write (*,*) 
+      stop 99
+
+C Interpolate the coefficients for the requested spectral period.
+ 1010    call interp (period(count1),period(count2),Amax1(count1),Amax1(count2),
+     +                specT,Amax1T,iflag)
+         call interp (period(count1),period(count2),SRC1(count1),SRC1(count2),
+     +                specT,SRC1T,iflag)
+         call interp (period(count1),period(count2),Amax2(count1),Amax2(count2),
+     +                specT,Amax2T,iflag)
+         call interp (period(count1),period(count2),SRC2(count1),SRC2(count2),
+     +                specT,SRC2T,iflag)
+         call interp (period(count1),period(count2),Amax3(count1),Amax3(count2),
+     +                specT,Amax3T,iflag)
+         call interp (period(count1),period(count2),SRC3(count1),SRC3(count2),
+     +                specT,SRC3T,iflag)
+         call interp (period(count1),period(count2),Amax4(count1),Amax4(count2),
+     +                specT,Amax4T,iflag)
+         call interp (period(count1),period(count2),SRC4(count1),SRC4(count2),
+     +                specT,SRC4T,iflag)
+         call interp (period(count1),period(count2),AmSCI(count1),AmSCI(count2),
+     +                specT,AmSCIT,iflag)
+         call interp (period(count1),period(count2),fsr1(count1),fsr1(count2),
+     +                specT,fsr1T,iflag)
+         call interp (period(count1),period(count2),fsr2(count1),fsr2(count2),
+     +                specT,fsr2T,iflag)
+         call interp (period(count1),period(count2),fsr3(count1),fsr3(count2),
+     +                specT,fsr3T,iflag)
+         call interp (period(count1),period(count2),fsr4(count1),fsr4(count2),
+     +                specT,fsr4T,iflag)
+         call interp (period(count1),period(count2),c1(count1),c1(count2),
+     +                specT,c1T,iflag)
+         call interp (period(count1),period(count2),c2(count1),c2(count2),
+     +                specT,c2T,iflag)
+         call interp (period(count1),period(count2),CintS(count1),CintS(count2), 
+     +                specT,CintST,iflag)
+         call interp (period(count1),period(count2),CintD(count1),CintD(count2), 
+     +                specT,CintDT,iflag)
+         call interp (period(count1),period(count2),dint(count1),dint(count2), 
+     +                specT,dintT,iflag)
+         call interp (period(count1),period(count2),bint(count1),bint(count2), 
+     +                specT,bintT,iflag)
+         call interp (period(count1),period(count2),gint(count1),gint(count2), 
+     +                specT,gintT,iflag)
+         call interp (period(count1),period(count2),gintLS(count1),gintLS(count2), 
+     +                specT,gintLST,iflag)
+         call interp (period(count1),period(count2),gintLD(count1),gintLD(count2), 
+     +                specT,gintLDT,iflag)
+         call interp (period(count1),period(count2),eintS(count1),eintS(count2), 
+     +                specT,eintST,iflag)
+         call interp (period(count1),period(count2),gammaS(count1),gammaS(count2), 
+     +                specT,gammaST,iflag)
+         call interp (period(count1),period(count2),gamma(count1),gamma(count2),
+     +                specT,gammaT,iflag)
+         call interp (period(count1),period(count2),S2(count1),S2(count2),
+     +                specT,S2T,iflag)
+         call interp (period(count1),period(count2),S3(count1),S3(count2),
+     +                specT,S3T,iflag)
+         call interp (period(count1),period(count2),S4(count1),S4(count2),
+     +                specT,S4T,iflag)
+         call interp (period(count1),period(count2),S5(count1),S5(count2), 
+     +                specT,S5T,iflag)
+         call interp (period(count1),period(count2),S6(count1),S6(count2), 
+     +                specT,S6T,iflag)
+         call interp (period(count1),period(count2),S7(count1),S7(count2), 
+     +                specT,S7T,iflag)
+         call interp (period(count1),period(count2),phiS1(count1),phiS1(count2),
+     +                specT,phiS1T,iflag)
+         call interp (period(count1),period(count2),tauS1(count1),tauS1(count2),
+     +                specT,tauS1T,iflag)
+         call interp (period(count1),period(count2),sigma1(count1),sigma1(count2),
+     +                specT,sigma1T,iflag)
+         call interp (period(count1),period(count2),phiS2(count1),phiS2(count2),
+     +                specT,phiS2T,iflag)
+         call interp (period(count1),period(count2),tauS2(count1),tauS2(count2),
+     +                specT,tauS2T,iflag)
+         call interp (period(count1),period(count2),sigma2(count1),sigma2(count2),
+     +                specT,sigma2T,iflag)
+         call interp (period(count1),period(count2),phiS3(count1),phiS3(count2),
+     +                specT,phiS3T,iflag)
+         call interp (period(count1),period(count2),tauS3(count1),tauS3(count2),
+     +                specT,tauS3T,iflag)
+         call interp (period(count1),period(count2),sigma3(count1),sigma3(count2),
+     +                specT,sigma3T,iflag)
+         call interp (period(count1),period(count2),phiS4(count1),phiS4(count2),
+     +                specT,phiS4T,iflag)
+         call interp (period(count1),period(count2),tauS4(count1),tauS4(count2),
+     +                specT,tauS4T,iflag)
+         call interp (period(count1),period(count2),sigma4(count1),sigma4(count2),
+     +                specT,sigma4T,iflag)                                                  
+         call interp (period(count1),period(count2),tau(count1),tau(count2),
+     +                specT,tauT,iflag)
+         call interp (period(count1),period(count2),phi(count1),phi(count2),
+     +                specT,phiT,iflag)
+
+ 1011 period1 = specT
+
+
+C     Set mechanism term and source and near fault term.                
+      if (depth .le. 25 ) then
+
+         if (m .le. 7.1) then
+         	 fm = bintT*depth + gammaST + CintST*m
+         else
+         	 fm = bintT*depth + gammaST + CintST*7.1 + dintT*(m-7.1)
+         endif
+         
+      else
+         if (m .le. 7.1) then
+         	 fm = bintT*depth + CintDT*m
+         else
+         	 fm = bintT*depth + CintDT*7.1 + dintT*(m-7.1)
+         endif
+          
+      endif
+	  
+C    Set distance for geometric spreading term r
+	  
+      xinto=10
+      Cmax = 7.1
+      if (m .le. Cmax) then
+       Cm = m
+      else
+       Cm = Cmax
+      endif
+      
+      r = xinto + dist + exp(c1T + c2T*Cm)  
+	  
+C    Set geometric attenuation rate term 
+	    gmterm = gintT*alog(r)
+
+C    Set large distance geometric attenuation rate term 
+      if (depth .le. 25 ) then
+
+	      gmLterm = gintLST*alog(dist+200)
+
+      else
+      	
+	      gmLterm = gintLDT*alog(dist+200)
+          
+      endif
+	  
+C    Set anelastic attenuation rate term
+C    Ignore volcanic path term
+      if (depth .le. 25  ) then
+	      eterm = eintST*dist
+	  
+      else
+	      eterm = 0
+	  
+      endif	  
+	  
+C    Set Site class term 
+	  
+      if (depth .le. 25 ) then
+
+         if (sclass .eq. 1) then
+            Amax = Amax1T
+            Src = Src1T
+			      fsr = fsr1T
+            Imf = 0.91		 
+            ANmax = AmSCIT 
+         elseif (sclass .eq. 2) then           
+            Amax = Amax2T	  
+            Src = Src2T		 
+			      fsr = fsr2T
+            Imf = 1.023		 
+            ANmax = AmSCIT * exp(S2T)
+         elseif (sclass .eq. 3) then           
+            Amax = Amax3T	  
+            Src = Src3T		 
+			      fsr = fsr3T
+            Imf = 1.034	 
+            ANmax = AmSCIT * exp(S3T)
+         elseif (sclass .eq. 4) then           
+            Amax = Amax4T	  
+            Src = Src4T		 
+			      fsr = fsr4T
+            Imf = 0.737	 
+            ANmax = AmSCIT * exp(S4T)
+         endif
+      else
+         if (sclass .eq. 1) then
+            Amax = Amax1T
+            Src = Src1T
+			      fsr = fsr1T
+            Imf = 0.91		 
+            ANmax = AmSCIT 
+         elseif (sclass .eq. 2) then           
+            Amax = Amax2T	  
+            Src = Src2T		 
+			      fsr = fsr2T
+            Imf = 1.023		 
+            ANmax = AmSCIT * exp(S5T)
+         elseif (sclass .eq. 3) then           
+            Amax = Amax3T	  
+            Src = Src3T		 
+			      fsr = fsr3T
+            Imf = 1.034	 
+            ANmax = AmSCIT * exp(S6T)
+         elseif (sclass .eq. 4) then           
+            Amax = Amax4T	  
+            Src = Src4T		 
+			      fsr = fsr4T
+            Imf = 0.737	 
+            ANmax = AmSCIT * exp(S7T)
+         endif
+	  
+      endif	  
+	  
+      rockterm = fm + gmterm + gmLterm + eterm + gammaT - alog(AmSCIT)
+      Sr = exp(rockterm) 
+       
+	    Sreff = Sr *Imf
+	    Sreffc = Src *Imf
+      Sf = ANmax/Amax
+
+        if (ANmax .lt. 1.25) then
+          ca=alog(Amax)/(alog(0.6)-alog(Sreffc**2 + 0.6))
+          cb=-ca*alog(Sreffc**2+0.6)
+          Snc=exp((ca*(2-1.0)*alog(0.6)*alog(10.0*0.6)-
+     &        alog(10.0)*(cb+alog(Sf)))/(ca*(2*alog(10.0*0.6)-
+     &        alog(0.6))))
+        else
+  	      Snc = (exp((alog(ANmax)*alog(Sreffc**2+0.6)-alog(Sf)* alog(0.6))/(alog(Amax)))-0.6)**(0.5)
+        endif
+	    	     
+	    Smr = Sreff * (Snc/Sreffc) * fsr
+
+        if (Smr .ne. 0.0) then
+  
+	        logAn = alog(ANmax)-alog(Amax)*((alog(Smr**2+0.6)-alog(0.6))/(alog(Sreffc**2+0.6)-alog(0.6)))
+        else
+          logAn = alog(ANmax)  
+        end if
+
+
+      if (sclass .eq. 0) then
+         lnY =  rockterm 
+       else   
+	       lnY =  rockterm + logAn                                        
+      endif                                       
+
+      write(*,*) "--------------------------------- "
+      write(*,*) "dist = ", dist     
+      write(*,*) "sclass = ", sclass
+
+      write(*,*) "Sr = ", Sr
+      write(*,*) "Src = ", Src
+
+      write(*,*) "fm = ", fm
+      write(*,*) "gmterm = ", gmterm
+      write(*,*) "gmLterm = ", gmLterm
+      write(*,*) "eterm = ", eterm
+      write(*,*) "gammaT = ", gammaT
+      write(*,*) "logAn = ", logAn
+      write(*,*) "Y(g) = ", exp(lnY)
+
+C     Convert ground motion to units of gals.
+      lnY = lnY + 6.89
+
+       write(*,*) "Y(gal) = ", exp(lnY)
+                                                                               
+c     Set standard error                                                       
+c      if (sclass .eq. 1) then
+c         phi = phiS1T
+c         sigma = sigma1T
+c         tau = tauS1T
+c      elseif (sclass .eq. 2) then
+c         phi = phiS2T
+c         sigma = sigma2T
+c         tau = tauS2T
+c      elseif (sclass .eq. 3) then
+c          phi = phiS3T
+c         sigma = sigma3T
+c         tau = tauS3T
+c      elseif (sclass .eq. 4) then
+c         phi = phiS4T
+c         sigma = sigma4T
+c         tau = tauS4T
+c      endif
+       sigma = SQRT(phiT**2 + tauT**2)
+
+      return                                                                    
+      end       
+          
+c -------------------------------------------------------------------           
+C **** Zhao et al. 2016 (BSSA, Vol 106, No.4) *************
+c -------------------------------------------------------------------           
+
+      subroutine Zhaoetal2016_slab ( m, dist, ftype, lnY, sigma, sclass, specT,              
+     1                   attenName, period1, iflag, sourcetype, depth, phiT, tauT )                                   
+
+c     This  subroutine calculates the spectral acceleration from the 
+c     Zhao et al. (2016) attenuation model which is defined for subduction
+c     intraslab events. Four separate site classes are also modeled.
+                                                                         
+      parameter (MAXPER=37)                                                     
+      real ftype, dist, m, lnY, sigma, specT, sourcetype, sclass, cm, cmax, r
+      real period(MAXPER), Amax1(MAXPER), SRC1(MAXPER), Amax2(MAXPER)
+      real SRC2(MAXPER), Amax3(MAXPER), SRC3(MAXPER), Amax4(MAXPER), SRC4(MAXPER)
+      real AmSCI(MAXPER), fsr1(MAXPER), fsr2(MAXPER), fsr3(MAXPER), fsr4(MAXPER)
+      real gamma(MAXPER), c1(MAXPER), cSL1(MAXPER), cSL2(MAXPER), dSL(MAXPER)
+      real bSL(MAXPER), gSL(MAXPER), gSLL(MAXPER), eSL(MAXPER), eSLH(MAXPER)       
+      real S2(MAXPER), S3(MAXPER), S4(MAXPER)
+      real phiS1(MAXPER), tauS1(MAXPER), sigma1(MAXPER), phiS2(MAXPER), tauS2(MAXPER)
+      real sigma2(MAXPER), phiS3(MAXPER), tauS3(MAXPER), sigma3(MAXPER), phiS4(MAXPER)
+      real tauS4(MAXPER), sigma4(MAXPER), phi(MAXPER), tau(MAXPER)
+      character*80 attenName                                                    
+      integer nper, count1, count2, iflag, xinto
+      real Amax1T, SRC1T, Amax2T, SRC2T, Amax3T, SRC3T, Amax4T, SRC4T
+      real AmSCIT, fsr1T, fsr2T, fsr3T, fsr4T
+      real c1T, cSL1T, cSL2T, dSLT, bSLT, gSLT, gSLLT, eSLT, eSLHT
+      real gammaT, S2T, S3T, S4T
+      real phiS1T, tauS1T, sigma1T, phiS2T, tauS2T
+      real sigma2T, phiS3T, tauS3T, sigma3T, phiS4T
+      real tauS4T, sigma4T, phiT, tauT
+      real mech, rockterm, ANmax, Amax, Sr, Src, fsr, Sreff, Sreffc, Snc, Sf, Smr
+      real fm, gmterm, gmLterm, eterm, logAn, Imf, c2, qterm, qSLH
+                                                                                
+      data period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09,                                      
+     1              0.1, 0.12, 0.14, 0.15, 0.16, 0.18, 0.2, 0.25, 0.3, 0.35, 
+     1              0.4, 0.45, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.25, 1.5, 2, 2.5,                                       
+     1              3, 3.5, 4, 4.5, 5 /                     
+
+      data Amax1 / 1.916, 1.919, 1.922, 1.925, 1.921, 1.959, 2.013, 2.049, 2.046,                                      
+     1             2.066, 2.1, 2.143, 2.122, 2.092, 2.053, 1.923, 1.793, 1.793,                                       
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793,                                       
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793/ 
+      data  SRC1 /8.42900,8.09039,6.99211,6.34965,
+     &   4.88339,5.04257,6.27132,7.66694,9.03436,11.25066,14.81739,
+     &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
+     &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
+     &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
+     &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
+     &  14.81739,14.81739/
+      data Amax2 / 2.033, 2.027, 2.003, 1.989, 2.012, 2.017, 2.064, 2.103, 2.195,                                       
+     1             2.219, 2.263, 2.329, 2.188, 2.214, 2.245, 2.324, 2.405, 2.554,                                       
+     1             2.586, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
+     1             2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
+     1             2.718/ 
+      data  SRC2 /1.91368,1.88256,1.77861,1.71781,
+     &   2.05234,2.38713,2.83399,3.29447,3.99091,4.46576,5.04561,
+     &   5.89960,5.05353,5.20490,5.38694,5.87165,6.57391,8.50000,
+     &  10.6703,10.6703,10.6703,10.6703,10.6703,10.6703,10.6703,
+     &  10.6703,10.6703,10.6703,10.6703,10.6703,10.6703,10.6703,
+     &  10.6703,10.6703,10.6703,10.6703,10.6703/
+      data Amax3 / 1.905, 1.908, 1.894, 1.886, 1.833, 1.854, 1.893, 1.924, 1.974,                                       
+     1             2.032, 2.052, 2.066, 2.107, 2.14, 2.156, 2.132, 2.05, 1.925,                                       
+     1             2.006, 2.179, 2.288, 2.402, 2.522, 2.648, 2.78, 2.919, 3.065,                                       
+     1             3.217, 3.378, 3.547, 3.724, 3.909, 4.104, 4.309, 4.524, 4.75,                                       
+     1             4.987/ 
+      data  SRC3 /1.11714,1.11444,1.12437,1.13017,
+     &   1.15080,1.23971,1.34819,1.45181,1.58315,1.73292,1.84134,
+     &   2.03029,2.28133,2.44413,2.58017,2.74161,2.82587,2.71893,
+     &   2.41759,2.30375,2.23625,2.21678,2.24338,2.80535,6.65839,
+     &  30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0/
+      data Amax4 / 1.498, 1.498, 1.474, 1.46, 1.374, 1.363, 1.384, 1.425, 1.481,                                       
+     1             1.525, 1.549, 1.603, 1.67, 1.706, 1.734, 1.773, 1.816, 1.843,                                       
+     1             1.871, 1.878, 1.911, 1.899, 1.927, 1.987, 2.025, 2.043, 2.022,                                       
+     1             1.97, 1.843, 1.729, 1.583, 1.504, 1.439, 1.391, 1.362, 1.34, 1.729/ 
+      data  SRC4 /0.83644,0.83644,0.83000,0.82624,
+     &   0.76758,0.78632,0.83775,0.92616,1.02228,1.11802,1.16578,
+     &   1.28551,1.39808,1.44327,1.47177,1.54694,1.64401,1.79013,
+     &   1.82345,1.79037,1.76844,1.67539,1.62539,1.52453,1.39724,
+     &   1.32029,1.26637,1.22680,1.22065,1.31805,2.12485,14.38181,
+     &   14.38181,14.38181,14.38181,14.38181,14.38181/
+      data AmSCI / 1.381, 1.228, 1.087, 1.042, 1.035, 1.047, 1.071, 1.103, 1.141,
+     1             1.184, 1.231, 1.334, 1.448, 1.51, 1.573, 1.707, 1.833, 1.954, 
+     1             2.034, 2.052, 2.025, 1.999, 1.975, 1.931, 1.891, 1.855, 1.822, 
+     1             1.791, 1.724, 1.667, 1.574, 1.5, 1.439, 1.387, 1.341, 1.301, 1.265 / 
+      data fsr1  /1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,
+     &   1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+     &   0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data fsr2  /1.0,1.0,1.0,1.0,1.006,0.851,0.803,
+     &   0.918,1.062,1.106,1.071,0.9515,0.672,0.631,0.6,0.571,0.565,
+     &   0.601,0.579,0.679,0.655,0.615,0.55,0.0,0.0,0.0,0.0,0.0,0.0,
+     &   0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data fsr3  /1.0,1.0,1.0,1.0,1.0,1.0,1.044,0.975,
+     &   0.964,0.98,0.97,1.022,0.889,0.861,0.831,0.748,0.65,0.479,0.449,
+     &   0.482,0.499,0.515,0.53,0.53,0.499,0.369,0.3,0.2,0.0,0.0,0.0,
+     &   0.0,0.0,0.0,0.0,0.0,0.0/
+      data fsr4  /1.0,1.0,1.05,0.58,0.482,0.472,0.506,
+     &   0.587,0.683,0.782,0.823,1.029,0.991,0.983,0.973,0.979,1.006,
+     &   1.027,1.021,1.003,1.01,0.985,0.99,1.006,1.0,1.0,0.96,0.904,
+     &   0.738,0.535,0.358,0.0,0.0,0.0,0.0,0.0,0.0/
+      data c1    /-5.30119,-5.28844,-5.27568,-5.26822,
+     &   -5.26293,-5.25882,-5.25547,-5.25263,-5.25017,-5.24801,-5.24607,
+     &   -5.24271,-5.23988,-5.23861,-5.23742,-5.23525,-5.23331,-5.22921,
+     &   -5.22585,-5.22302,-5.22056,-5.21839,-5.21645,-5.21310,-5.21026,
+     &   -5.20781,-5.20564,-5.20370,-5.19959,-5.19624,-5.19095,-5.18684,
+     &   -5.18349,-5.18065,-5.17819,-5.17602,-5.17409/
+      data cSL1  /1.44758,1.45400,1.46625,1.49246,1.50129,
+     &    1.51051,1.51380,1.51111,1.50406,1.49423,1.48300,1.45559,
+     &    1.44277,1.43314,1.43253,1.43710,1.44781,1.48260,1.51881,
+     &    1.55291,1.58443,1.61360,1.64075,1.69020,1.73450,1.77474,
+     &    1.81162,1.84561,1.92015,1.98274,2.08214,2.15841,2.22046,
+     &    2.27406,2.32307,2.37009,2.37009/
+      data cSL2  /0.37625,0.38099,0.39101,0.41976,0.45746,
+     &    0.48601,0.50311,0.50704,0.50004,0.48071,0.45759,0.41355,
+     &    0.37828,0.36308,0.34919,0.32464,0.30358,0.26174,0.23036,
+     &    0.20580,0.18597,0.16960,0.15585,0.13405,0.11757,0.10476,
+     &    0.09458,0.08636,0.07173,0.06258,0.05327,0.05036,0.04536,
+     &    0.04536,0.04536,0.04536,0.04536/
+      data dSL   /0.42646,0.42075,0.40055,0.36433,0.32072,
+     &    0.30000,0.31147,0.32673,0.34289,0.35921,0.37000,0.40606,
+     &    0.43450,0.45000,0.46055,0.48439,0.509,0.555,0.593,0.625,
+     &    0.652,0.675,0.695,0.729,0.756,0.778,0.796,0.812,0.841,
+     &    0.861,0.884,0.9,0.9,0.9,0.9,0.9,0.9/
+      data bSL   /0.01826,0.01826,0.01826,0.01826,0.01826,
+     &    0.01826,0.01826,0.01826,0.01826,0.01826,0.01826,0.01826,
+     &    0.01826,0.01826,0.01826,0.01826,0.01826,0.01826,0.01826,
+     &    0.01826,0.01826,0.01826,0.01826,0.01826,0.01826,0.01826,
+     &    0.01826,0.01826,0.01808,0.01786,0.01718,0.01628,0.01549,
+     &    0.01489,0.01458,0.01459,0.01459/
+      data gSL   /-1.98471,-1.96360,-1.91839,-1.89271,
+     &  -1.87260,-1.85351,-1.83395,-1.81345,-1.79189,-1.76931,-1.74581,
+     &  -1.73746,-1.74463,-1.74972,-1.76259,-1.78989,-1.82110,-1.90412,
+     &  -1.98439,-2.05756,-2.12282,-2.18047,-2.23118,-2.31475,-2.37885,
+     &  -2.42769,-2.46450,-2.49170,-2.52758,-2.53359,-2.49565,-2.42623,
+     &  -2.34726,-2.27002,-2.19947,-2.12528,-2.02646/
+      data gSLL  /1.12071,1.03278,0.94715,0.93420,0.97168,
+     &    1.01492,1.06854,1.13401,1.20364,1.25808,1.30112,1.39137,
+     &    1.47084,1.50784,1.54326,1.60985,1.67146,1.80738,1.92242,
+     &    2.02102,2.10642,2.18097,2.24651,2.35602,2.44331,2.51391,
+     &    2.57166,2.61931,2.70638,2.76244,2.82205,2.84475,2.84988,
+     &    2.84667,2.83992,2.82802,2.82521/
+      data eSL   /-0.00340,-0.00331,-0.00345,-0.00391,
+     &  -0.00454,-0.00510,-0.00552,-0.00588,-0.00615,-0.00635,-0.00652,
+     &  -0.00660,-0.00652,-0.00647,-0.00636,-0.00614,-0.00590,-0.00526,
+     &  -0.00468,-0.00415,-0.00369,-0.00327,-0.00290,-0.00227,-0.00178,
+     &  -0.00139,-0.00109,-0.00086,-0.00052,-0.00043,-0.00070,-0.00127,
+     &  -0.00198,-0.00271,-0.00341,-0.00421,-0.00500/
+      data eSLH  /-0.00050,-0.00050,-0.00050,-0.00050,
+     &  -0.00050,-0.00050,-0.00050,-0.00049,-0.00048,-0.00048,-0.00048,
+     &  -0.00049,-0.00051,-0.00052,-0.00053,-0.00056,-0.00059,-0.00067,
+     &  -0.00075,-0.00083,-0.00091,-0.00099,-0.00107,-0.00124,-0.00139,
+     &  -0.00154,-0.00166,-0.00178,-0.00199,-0.00213,-0.00225,-0.00219,
+     &  -0.00207,-0.00193,-0.00180,-0.00170,-0.00158/
+      data gamma /-9.87956,-9.51269,-9.26626,-9.33150,
+     &  -9.50798,-9.72858,-9.96628,-10.22583,-10.55111,-10.80721,
+     & -11.02190,-11.36530,-11.73039,-11.88013,-12.05637,-12.42044,
+     & -12.78542,-13.63537,-14.38086,-15.03511,-15.61599,-16.13830,
+     & -16.61324,-17.45298,-18.18095,-18.82499,-19.40313,-19.92766,
+     & -21.05818,-21.99633,-23.48839,-24.64741,-25.59713,-26.40997,
+     & -27.13181,-27.79299,-28.31346/
+      data S2    /0.23200,0.22886,0.21825,0.18737,
+     &   0.12332,0.07207,0.02701,-0.00621,0.01565,0.05089,0.09560,
+     &   0.20037,0.30372,0.34284,0.37400,0.42700,0.46297,0.50856,
+     &   0.50776,0.49710,0.48065,0.46159,0.44224,0.40537,0.37342,
+     &   0.34623,0.32364,0.30479,0.27026,0.24831,0.22529,0.21540,
+     &   0.21154,0.20976,0.20875,0.20774,0.20672/
+      data S3   /0.14371,0.13978,0.12600,0.06164,
+     &  -0.01705,-0.06331,-0.10103,-0.14684,-0.14479,-0.12666,-0.09319,
+     &  -0.00878,0.08926,0.13602,0.17751,0.25309,0.32005,0.45304,
+     &   0.54875,0.61713,0.66634,0.70111,0.72558,0.75294,0.76245,
+     &   0.76119,0.75384,0.74279,0.70833,0.67256,0.61067,0.56403,
+     &   0.52612,0.49766,0.47685,0.46223,0.45267/
+      data S4    /0.14704,0.13284,0.14431,0.06600,
+     &  -0.01714,-0.07312,-0.11955,-0.16006,-0.12434,-0.07293,-0.01458,
+     &   0.08252,0.17151,0.20932,0.24117,0.29896,0.34591,0.44231,
+     &   0.51782,0.57596,0.62239,0.65976,0.69066,0.73796,0.77226,
+     &   0.79736,0.81616,0.83009,0.85036,0.85732,0.84991,0.82757,
+     &   0.79911,0.76782,0.73594,0.70407,0.67220/
+      data phiS1 /  0.398,0.397,0.395,0.389,0.387,0.387,
+     &   0.397,0.403,0.413,0.422,0.429,0.440,0.441,0.450,0.452,0.454,
+     &   0.462,0.474,0.472,0.468,0.457,0.450,0.445,0.448,0.440,0.441,
+     &   0.435,0.427,0.413,0.416,0.409,0.398,0.390,0.386,0.377,0.360,
+     &   0.361/
+      data tauS1  /0.511,0.517,0.518,0.537,0.572,0.586,
+     &   0.613,0.633,0.643,0.631,0.626,0.614,0.613,0.602,0.599,0.599,
+     &   0.590,0.555,0.532,0.505,0.479,0.461,0.451,0.436,0.430,0.427,
+     &   0.431,0.440,0.440,0.449,0.441,0.425,0.396,0.386,0.373,0.364,
+     &   0.359/
+      data sigma1  / 0.648, 0.651, 0.652, 0.663, 0.691, 0.702, 0.73, 0.75, 0.765, 
+     1             0.759, 0.759, 0.755, 0.755, 0.752, 0.75, 0.752, 0.749, 0.73, 
+     1             0.711, 0.688, 0.663, 0.644, 0.633, 0.625, 0.615, 0.614, 0.612, 
+     1             0.613, 0.603, 0.612, 0.601, 0.582, 0.556, 0.545, 0.53, 0.512, 0.509 / 
+      data phiS2   /0.417,0.417,0.417,0.418,0.420,0.422,
+     &   0.416,0.412,0.412,0.412,0.418,0.429,0.435,0.440,0.444,0.447,
+     &   0.450,0.470,0.475,0.478,0.484,0.477,0.470,0.460,0.460,0.460,
+     &   0.456,0.448,0.442,0.448,0.437,0.429,0.423,0.410,0.410,0.412,
+     &   0.447/
+      data tauS2   /0.449,0.450,0.449,0.449,0.456,0.479,
+     &   0.507,0.532,0.555,0.568,0.566,0.570,0.597,0.599,0.597,0.601,
+     &   0.596,0.601,0.557,0.518,0.488,0.479,0.471,0.467,0.464,0.456,
+     &   0.466,0.466,0.476,0.473,0.462,0.427,0.407,0.401,0.386,0.373,
+     &   0.322/
+      data sigma2  / 0.613, 0.614, 0.613, 0.614, 0.62, 0.639, 0.656, 0.673, 0.692, 
+     1             0.702, 0.704, 0.713, 0.739, 0.743, 0.744, 0.749, 0.747, 0.763, 
+     1             0.732, 0.705, 0.687, 0.676, 0.665, 0.655, 0.653, 0.647, 0.652, 
+     1             0.647, 0.649, 0.651, 0.636, 0.606, 0.587, 0.574, 0.564, 0.556, 0.551 / 
+      data phiS3   /0.409,0.409,0.408,0.409,0.413,0.409,
+     &   0.401,0.394,0.389,0.391,0.394,0.428,0.433,0.420,0.424,0.446,
+     &   0.441,0.459,0.437,0.444,0.453,0.477,0.472,0.459,0.461,0.457,
+     &   0.449,0.442,0.428,0.418,0.406,0.387,0.369,0.376,0.362,0.368,
+     &   0.381/
+      data tauS3   /0.431,0.431,0.431,0.430,0.428,0.429,
+     &   0.449,0.456,0.455,0.475,0.507,0.548,0.507,0.490,0.494,0.500,
+     &   0.491,0.450,0.499,0.532,0.546,0.529,0.495,0.470,0.473,0.457,
+     &   0.439,0.442,0.432,0.461,0.472,0.484,0.447,0.434,0.406,0.383,
+     &   0.316/
+      data sigma3  / 0.594, 0.594, 0.594, 0.593, 0.595, 0.592, 0.602, 0.603, 0.599, 
+     1             0.615, 0.642, 0.695, 0.667, 0.645, 0.651, 0.67, 0.66, 0.643, 
+     1             0.663, 0.692, 0.709, 0.713, 0.684, 0.657, 0.66, 0.646, 0.628, 
+     1             0.625, 0.608, 0.622, 0.623, 0.62, 0.58, 0.574, 0.544, 0.531, 0.495 / 
+      data phiS4   /0.415,0.415,0.416,0.417,0.420,0.422,
+     &   0.423,0.420,0.423,0.427,0.426,0.445,0.442,0.440,0.437,0.436,
+     &   0.432,0.432,0.432,0.432,0.416,0.408,0.409,0.407,0.403,0.407,
+     &   0.408,0.408,0.412,0.418,0.413,0.414,0.412,0.402,0.394,0.385,
+     &   0.380/
+      data tauS4  /0.422,0.418,0.425,0.422,0.431,0.439,
+     &   0.445,0.473,0.491,0.518,0.559,0.576,0.561,0.555,0.552,0.553,
+     &   0.562,0.507,0.489,0.463,0.466,0.461,0.467,0.434,0.430,0.454,
+     &   0.456,0.462,0.444,0.443,0.439,0.427,0.431,0.413,0.391,0.366,
+     &   0.324/
+      data sigma4  / 0.592, 0.589, 0.594, 0.593, 0.602, 0.609, 0.614, 0.633, 0.648, 
+     1             0.671, 0.703, 0.728, 0.714, 0.708, 0.704, 0.705, 0.709, 0.666, 
+     1             0.653, 0.633, 0.624, 0.616, 0.62, 0.594, 0.589, 0.61, 0.612, 
+     1             0.616, 0.606, 0.609, 0.603, 0.595, 0.596, 0.576, 0.555, 0.532, 0.499 / 
+	 
+      Data phi /0.587,0.587,0.587,0.588,0.600,0.607,0.623,
+     &   0.638,0.651,0.663,0.674,0.690,0.692,0.696,0.697,0.704,0.713,
+     &   0.711,0.683,0.665,0.657,0.647,0.640,0.633,0.633,0.636,0.636,
+     %   0.637,0.635,0.645,0.633,0.608,0.582,0.562,0.540,0.525,0.522/
+      Data tau /0.457,0.459,0.465,0.480,0.520,
+     &   0.555,0.584,0.598,0.598,0.585,0.567,0.534,0.504,0.486,0.465,
+     &   0.430,0.406,0.385,0.365,0.373,0.383,0.391,0.403,0.412,0.432,
+     &   0.436,0.437,0.436,0.444,0.448,0.424,0.413,0.407,0.394,0.381,
+     &   0.365,0.378/
+c Set attenuation name                                                            
+c     Sourcetype = 0 Crustal
+c     Sourcetype = 1 Subduction - Interface
+c     Sourcetype = 2 Subduction - Slab
+c     Sourcetype = 3 Upper mantle
+c     Sclass = 0 Hard Rock
+c     Sclass = 1 SC I
+c     Sclass = 2 SC II
+c     Sclass = 3 SC III
+c     Sclass = 4 SC IV
+
+                                                       
+C Find the requested spectral period and corresponding coefficients
+      nper = 37
+
+C First check for the PGA case (i.e., specT=0.0) 
+      if (specT .eq. 0.0) then
+       period1 = period(1)
+       Amax1T =  Amax1(1) 
+       SRC1T =   SRC1(1)  
+       Amax2T =  Amax2(1) 
+       SRC2T =   SRC2(1)  
+       Amax3T =  Amax3(1) 
+       SRC3T =   SRC3(1)  
+       Amax4T =  Amax4(1) 
+       SRC4T =   SRC4(1)  
+       AmSCIT =  AmSCI(1) 
+       fsr1T = fsr1(1)
+       fsr2T = fsr2(1)
+       fsr3T = fsr3(1)
+       fsr4T = fsr4(1)
+       c1T   =  c1(1)
+       cSL1T =  cSL1(1)
+       cSL2T =  cSL2(1)
+       dSLT  =  dSL(1)
+       bSLT  =  bSL(1)
+       gSLT  =  gSL(1)
+       gSLLT =  gSLL(1)
+       eSLT  =  eSL(1)
+       eSLHT =  eSLH(1)
+       gammaT =  gamma(1) 
+       S2T =     S2(1)    
+       S3T =     S3(1)    
+       S4T =     S4(1)    
+       phiS1T =  phiS1(1) 
+       tauS1T =  tauS1(1) 
+       sigma1T = sigma1(1)
+       phiS2T =  phiS2(1) 
+       tauS2T =  tauS2(1) 
+       sigma2T = sigma2(1)
+       phiS3T =  phiS3(1) 
+       tauS3T =  tauS3(1) 
+       sigma3T = sigma3(1)
+       phiS4T =  phiS4(1) 
+       tauS4T =  tauS4(1) 
+       sigma4T = sigma4(1)            
+       phiT =  phi(1) 
+       tauT =  tau(1) 
+       goto 1011
+      elseif (specT .ne. 0.0) then
+
+C Now loop over the spectral period range of the attenuation relationship.
+         do i=2,nper-1
+            if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
+               count1 = i
+               count2 = i+1
+               goto 1010 
+            endif
+         enddo
+      endif
+        
+      write (*,*) 
+      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
+      write (*,*) 'is not defined for a spectral period of: '
+      write (*,'(a10,f10.5)') ' Period = ',specT
+      write (*,*) 'This spectral period is outside the defined'
+      write (*,*) 'period range in the code or beyond the range'
+      write (*,*) 'of spectral periods for interpolation.'
+      write (*,*) 'Please check the input file.'
+      write (*,*) 
+      stop 99
+
+C Interpolate the coefficients for the requested spectral period.
+ 1010    call interp (period(count1),period(count2),Amax1(count1),Amax1(count2),
+     +                specT,Amax1T,iflag)
+         call interp (period(count1),period(count2),SRC1(count1),SRC1(count2),
+     +                specT,SRC1T,iflag)
+         call interp (period(count1),period(count2),Amax2(count1),Amax2(count2),
+     +                specT,Amax2T,iflag)
+         call interp (period(count1),period(count2),SRC2(count1),SRC2(count2),
+     +                specT,SRC2T,iflag)
+         call interp (period(count1),period(count2),Amax3(count1),Amax3(count2),
+     +                specT,Amax3T,iflag)
+         call interp (period(count1),period(count2),SRC3(count1),SRC3(count2),
+     +                specT,SRC3T,iflag)
+         call interp (period(count1),period(count2),Amax4(count1),Amax4(count2),
+     +                specT,Amax4T,iflag)
+         call interp (period(count1),period(count2),SRC4(count1),SRC4(count2),
+     +                specT,SRC4T,iflag)
+         call interp (period(count1),period(count2),AmSCI(count1),AmSCI(count2),
+     +                specT,AmSCIT,iflag)
+         call interp (period(count1),period(count2),fsr1(count1),fsr1(count2),
+     +                specT,fsr1T,iflag)
+         call interp (period(count1),period(count2),fsr2(count1),fsr2(count2),
+     +                specT,fsr2T,iflag)
+         call interp (period(count1),period(count2),fsr3(count1),fsr3(count2),
+     +                specT,fsr3T,iflag)
+         call interp (period(count1),period(count2),fsr4(count1),fsr4(count2),
+     +                specT,fsr4T,iflag)
+         call interp (period(count1),period(count2),c1(count1),c1(count2),
+     +                specT,c1T,iflag)
+         call interp (period(count1),period(count2),cSL1(count1),cSL1(count2),
+     +                specT,cSL1T,iflag)
+         call interp (period(count1),period(count2),cSL2(count1),cSL2(count2),
+     +                specT,cSL2T,iflag)
+         call interp (period(count1),period(count2),dSL(count1),dSL(count2),
+     +                specT,dSLT,iflag)
+         call interp (period(count1),period(count2),bSL(count1),bSL(count2),
+     +                specT,bSLT,iflag)
+         call interp (period(count1),period(count2),gSL(count1),gSL(count2),
+     +                specT,gSLT,iflag)
+         call interp (period(count1),period(count2),gSLL(count1),gSLL(count2),
+     +                specT,gSLLT,iflag)
+         call interp (period(count1),period(count2),eSL(count1),eSL(count2),
+     +                specT,eSLT,iflag)
+         call interp (period(count1),period(count2),eSLH(count1),eSLH(count2),
+     +                specT,eSLHT,iflag)
+         call interp (period(count1),period(count2),gamma(count1),gamma(count2),
+     +                specT,gammaT,iflag)
+         call interp (period(count1),period(count2),S2(count1),S2(count2),
+     +                specT,S2T,iflag)
+         call interp (period(count1),period(count2),S3(count1),S3(count2),
+     +                specT,S3T,iflag)
+         call interp (period(count1),period(count2),S4(count1),S4(count2),
+     +                specT,S4T,iflag)
+         call interp (period(count1),period(count2),phiS1(count1),phiS1(count2),
+     +                specT,phiS1T,iflag)
+         call interp (period(count1),period(count2),tauS1(count1),tauS1(count2),
+     +                specT,tauS1T,iflag)
+         call interp (period(count1),period(count2),sigma1(count1),sigma1(count2),
+     +                specT,sigma1T,iflag)
+         call interp (period(count1),period(count2),phiS2(count1),phiS2(count2),
+     +                specT,phiS2T,iflag)
+         call interp (period(count1),period(count2),tauS2(count1),tauS2(count2),
+     +                specT,tauS2T,iflag)
+         call interp (period(count1),period(count2),sigma2(count1),sigma2(count2),
+     +                specT,sigma2T,iflag)
+         call interp (period(count1),period(count2),phiS3(count1),phiS3(count2),
+     +                specT,phiS3T,iflag)
+         call interp (period(count1),period(count2),tauS3(count1),tauS3(count2),
+     +                specT,tauS3T,iflag)
+         call interp (period(count1),period(count2),sigma3(count1),sigma3(count2),
+     +                specT,sigma3T,iflag)
+         call interp (period(count1),period(count2),phiS4(count1),phiS4(count2),
+     +                specT,phiS4T,iflag)
+         call interp (period(count1),period(count2),tauS4(count1),tauS4(count2),
+     +                specT,tauS4T,iflag)
+         call interp (period(count1),period(count2),sigma4(count1),sigma4(count2),
+     +                specT,sigma4T,iflag)                                                  
+         call interp (period(count1),period(count2),tau(count1),tau(count2),
+     +                specT,tauT,iflag)
+         call interp (period(count1),period(count2),phi(count1),phi(count2),
+     +                specT,phiT,iflag)
+
+ 1011 period1 = specT
+
+
+C     Set mechanism term and source and near fault term.                
+ 
+         if (m .le. 7.1) then
+         	 fm = bSLT*depth + cSL1T*m + cSL2T*(m-6.3)**2
+         else
+         	 fm = bSLT*depth + cSL1T*7.1 + cSL2T*(7.1-6.3)**2 + dSLT*(m-7.1)
+         endif
+	  
+C    Set distance for geometric spreading term r
+	  
+      Cmax = 7.1
+      c2 = 1.151
+      if (m .le. Cmax) then
+       Cm = m
+      else
+       Cm = Cmax
+      endif
+      
+      r = dist + exp(c1T + c2*Cm)  
+	  
+C    Set geometric attenuation rate term 
+	    gmterm = gSLT*alog(r)
+
+C    Set large distance geometric attenuation rate term 
+ 	
+	    gmLterm = gSLLT*alog(dist+200)
+          
+	  
+C    Set anelastic attenuation rate term
+C    Ignore volcanic path term
+      if (depth .lt. 50  ) then
+	  
+	      qSLH = eSLHT*0
+	   
+      else
+	      qSLH = eSLHT*(0.02*depth -1)
+	  
+      endif	  
+      
+      qterm = qSLH * dist
+
+      eterm = eSLT * dist
+
+	  
+C    Set Site class term 
+
+         if (sclass .eq. 1) then
+            Amax = Amax1T
+            Src = Src1T
+			      fsr = fsr1T
+            Imf = 0.91		 
+            ANmax = AmSCIT 
+         elseif (sclass .eq. 2) then           
+            Amax = Amax2T	  
+            Src = Src2T		 
+			      fsr = fsr2T
+            Imf = 1.023		 
+            ANmax = AmSCIT * exp(S2T)
+         elseif (sclass .eq. 3) then           
+            Amax = Amax3T	  
+            Src = Src3T		 
+			      fsr = fsr3T
+            Imf = 1.034	 
+            ANmax = AmSCIT * exp(S3T)
+         elseif (sclass .eq. 4) then           
+            Amax = Amax4T	  
+            Src = Src4T		 
+			      fsr = fsr4T
+            Imf = 0.737	 
+            ANmax = AmSCIT * exp(S4T)
+         endif
+	  
+      rockterm = fm + gmterm + gmLterm + eterm + gammaT - alog(AmSCIT)
+      Sr = exp(rockterm) 
+       
+	    Sreff = Sr *Imf
+	    Sreffc = Src *Imf
+      Sf = ANmax/Amax
+        if (ANmax .lt. 1.25) then
+          ca=alog(Amax)/(alog(0.6)-alog(Sreffc**2 + 0.6))
+          cb=-ca*alog(Sreffc**2+0.6)
+          Snc=exp((ca*(2-1.0)*alog(0.6)*alog(10.0*0.6)-
+     &        alog(10.0)*(cb+alog(Sf)))/(ca*(2*alog(10.0*0.6)-
+     &        alog(0.6))))
+        else
+  	      Snc = (exp((alog(ANmax)*alog(Sreffc**2+0.6)-alog(Sf)* alog(0.6))/(alog(Amax)))-0.6)**(0.5)
+        endif
+	    	     
+	    Smr = Sreff * (Snc/Sreffc) * fsr
+  
+        if (Smr .ne. 0.0) then
+  
+	        logAn = alog(ANmax)-alog(Amax)*((alog(Smr**2+0.6)-alog(0.6))/(alog(Sreffc**2+0.6)-alog(0.6)))
+        else
+          logAn = alog(ANmax)  
+        end if
+
+      if (sclass .eq. 0) then
+         lnY =  rockterm 
+       else   
+	       lnY =  rockterm + logAn                                        
+      endif
+      
+      write(*,*) "--------------------------------- "
+      write(*,*) "dist = ", dist     
+      write(*,*) "sclass = ", sclass
+
+      write(*,*) "Sr = ", Sr
+      write(*,*) "Src = ", Src
+
+      write(*,*) "fm = ", fm
+      write(*,*) "gmterm = ", gmterm
+      write(*,*) "gmLterm = ", gmLterm
+      write(*,*) "qterm = ", qterm
+      write(*,*) "eterm = ", eterm
+      write(*,*) "gammaT = ", gammaT
+      write(*,*) "logAn = ", logAn
+      write(*,*) "Y(g) = ", exp(lnY)
+
+C     Convert ground motion to units of gals.
+      lnY = lnY + 6.89
+
+       write(*,*) "Y(gal) = ", exp(lnY)
+                                                                               
+c     Set standard error                                                       
+c      if (sclass .eq. 1) then
+c         phi = phiS1T
+c         sigma = sigma1T
+c         tau = tauS1T
+c      elseif (sclass .eq. 2) then
+c         phi = phiS2T
+c         sigma = sigma2T
+c         tau = tauS2T
+c      elseif (sclass .eq. 3) then
+c          phi = phiS3T
+c         sigma = sigma3T
+c         tau = tauS3T
+c      elseif (sclass .eq. 4) then
+c         phi = phiS4T
+c         sigma = sigma4T
+c         tau = tauS4T
+c      endif
+       sigma = SQRT(phiT**2 + tauT**2)
+
+      return                                                                    
+      end       
+
+c -------------------------------------------------------------------           
+C **** Zhao et al. 2016 (BSSA, Vol 106, No.4) *************
+c -------------------------------------------------------------------           
+
+      subroutine Zhaoetal2016_cru ( m, dist, ftype, lnY, sigma, sclass, specT,              
+     1                   attenName, period1, iflag, sourcetype, depth, phiT, tauT )                                   
+
+c     This  subroutine calculates the spectral acceleration from the 
+c     Zhao et al. (2016) attenuation model which is defined for crustal
+c     and upper mantle events. Four separate site classes are also modeled.
+                                                                         
+      parameter (MAXPER=37)                                                     
+      real ftype, dist, m, lnY, sigma, specT, sourcetype, sclass, cm, cmax, r
+      real period(MAXPER), Amax1(MAXPER), SRC1(MAXPER), Amax2(MAXPER)
+      real SRC2(MAXPER), Amax3(MAXPER), SRC3(MAXPER), Amax4(MAXPER), SRC4(MAXPER)
+      real AmSCI(MAXPER), fsrCR1(MAXPER), fsrCR2(MAXPER), fsrCR3(MAXPER)
+      real fsrCR4(MAXPER), fsrUM1(MAXPER), fsrUM2(MAXPER), fsrUM3(MAXPER)
+      real fsrUM4(MAXPER), c1(MAXPER), c2(MAXPER), ccr(MAXPER), dcr(MAXPER)
+      real FCRN(MAXPER), FumRV(MAXPER), FumNS(MAXPER), bcr(MAXPER), gcr(MAXPER)
+      real gUM(MAXPER), gcrN(MAXPER), gcrL(MAXPER), ecr(MAXPER), eum(MAXPER)
+      real ecrv(MAXPER), gamma(MAXPER), S2(MAXPER), S3(MAXPER), S4(MAXPER)
+      real phiS1(MAXPER), tauS1(MAXPER), sigma1(MAXPER), phiS2(MAXPER), tauS2(MAXPER)
+      real sigma2(MAXPER), phiS3(MAXPER), tauS3(MAXPER), sigma3(MAXPER), phiS4(MAXPER)
+      real tauS4(MAXPER), sigma4(MAXPER), phi(MAXPER), tau(MAXPER)
+      character*80 attenName                                                    
+      integer nper, count1, count2, iflag, xcro
+      real Amax1T, SRC1T, Amax2T, SRC2T, Amax3T, SRC3T, Amax4T, SRC4T
+      real AmSCIT, fsrCR1T, fsrCR2T, fsrCR3T
+      real fsrCR4T, fsrUM1T, fsrUM2T, fsrUM3T
+      real fsrUM4T, c1T, c2T, ccrT, dcrT
+      real FCRNT, FumRVT, FumNST, bcrT, gcrT
+      real gUMT, gcrNT, gcrLT, ecrT, eumT
+      real ecrvT, gammaT, S2T, S3T, S4T
+      real phiS1T, tauS1T, sigma1T, phiS2T, tauS2T
+      real sigma2T, phiS3T, tauS3T, sigma3T, phiS4T
+      real tauS4T, sigma4T, phiT, tauT
+      real mech, rockterm, ANmax, Amax, Sr, Src, fsr, Sreff, Sreffc, Snc, Sf, Smr
+      real fm, gmterm, gmLterm, gN, eterm, logAn, Imf
+                                                                                
+      data period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09,                                      
+     1              0.1, 0.12, 0.14, 0.15, 0.16, 0.18, 0.2, 0.25, 0.3, 0.35, 
+     1              0.4, 0.45, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.25, 1.5, 2, 2.5,                                       
+     1              3, 3.5, 4, 4.5, 5 /                     
+
+      data Amax1 / 1.916, 1.919, 1.922, 1.925, 1.921, 1.959, 2.013, 2.049, 2.046,                                      
+     1             2.066, 2.1, 2.143, 2.122, 2.092, 2.053, 1.923, 1.793, 1.793,                                       
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793,                                       
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793/ 
+      data  SRC1 / 8.429, 8.09, 6.992, 6.35, 4.883, 5.043, 6.271, 7.667, 9.034,                                       
+     1             11.251, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817,                                       
+     1             14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817,                                       
+     1             14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817,                                       
+     1             14.817, 14.817, 14.817, 14.817/ 
+      data Amax2 / 2.033, 2.027, 2.003, 1.989, 2.012, 2.017, 2.064, 2.103, 2.195,                                       
+     1             2.219, 2.263, 2.329, 2.188, 2.214, 2.245, 2.324, 2.405, 2.554,                                       
+     1             2.586, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
+     1             2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
+     1             2.718/ 
+      data  SRC2 /1.91368,1.88256,1.77861,1.71781,
+     &      2.05234,2.38713,2.83399,3.29447,3.99091,4.46576,5.04561,
+     &      5.89960,5.05353,5.20490,5.38694,5.87165,6.57391,8.50000,
+     &     10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,
+     &     10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,
+     &     10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,
+     &     10.67030/
+      data Amax3 / 1.905, 1.908, 1.894, 1.886, 1.833, 1.854, 1.893, 1.924, 1.974,                                       
+     1             2.032, 2.052, 2.066, 2.107, 2.14, 2.156, 2.132, 2.05, 1.925,                                       
+     1             2.006, 2.179, 2.288, 2.402, 2.522, 2.648, 2.78, 2.919, 3.065,                                       
+     1             3.217, 3.378, 3.547, 3.724, 3.909, 4.104, 4.309, 4.524, 4.75,                                       
+     1             4.987/ 
+      data  SRC3 /1.11714,1.11444,1.12437,1.13017,
+     &     1.15080,1.23971,1.34819,1.45181,1.58315,1.73292,1.84134,
+     &     2.03029,2.28133,2.44413,2.58017,2.74161,2.82587,2.71893,
+     &     2.41759,2.30375,2.23625,2.21678,2.24338,2.80535,6.65839,
+     &     30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,
+     &     30.0/ 
+      data Amax4 / 1.498, 1.498, 1.474, 1.46, 1.374, 1.363, 1.384, 1.425, 1.481,                                       
+     1             1.525, 1.549, 1.603, 1.67, 1.706, 1.734, 1.773, 1.816, 1.843,                                       
+     1             1.871, 1.878, 1.911, 1.899, 1.927, 1.987, 2.025, 2.043, 2.022,                                       
+     1             1.97, 1.843, 1.729, 1.583, 1.504, 1.439, 1.391, 1.362, 1.34, 1.729/ 
+      data  SRC4 /0.83644,0.83644,0.83000,0.82624,
+     &     0.76758,0.78632,0.83775,0.92616,1.02228,1.11802,1.16578,
+     &     1.28551,1.39808,1.44327,1.47177,1.54694,1.64401,1.79013,
+     &     1.82345,1.79037,1.76844,1.67539,1.62539,1.52453,1.39724,
+     &     1.32029,1.26637,1.22680,1.22065,1.31805,2.12485,14.38181,
+     &     14.38181,14.38181,14.38181,14.38181,14.38181/
+      data AmSCI / 1.381, 1.228, 1.087, 1.042, 1.035, 1.047, 1.071, 1.103, 1.141,                                       
+     1             1.184, 1.231, 1.334, 1.448, 1.51, 1.573, 1.707, 1.833, 1.954,                                       
+     1             2.034, 2.052, 2.025, 1.999, 1.975, 1.931, 1.891, 1.855, 1.822,                                       
+     1             1.791, 1.724, 1.667, 1.574, 1.5, 1.439, 1.387, 1.341, 1.301, 1.265/ 
+      data fsrCR1 /1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,
+     &     1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+     &     0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data fsrCR2/1.0,1.2,1.3,1.253,1.064,1.120,
+     &     1.207,1.238,1.360,1.355,1.341,1.195,0.835,0.781,0.738,0.684,
+     &     0.654,0.683,0.691,0.800,0.876,0.966,1.034,1.206,1.314,1.357,
+     &     1.357,1.357,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data fsrCR3/1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,
+     &     1.0,1.080,1.093,0.948,0.908,0.862,0.745,0.623,0.436,0.400,
+     &     0.433,0.460,0.496,0.529,0.578,0.578,0.578,0.578,0.000,0.0,
+     &     0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data fsrCR4 /1.0,1.0,0.949,0.550,0.477,0.492,
+     &     0.531,0.613,0.693,0.780,0.816,0.998,0.954,0.942,0.927,0.927,
+     &     0.949,0.970,0.961,0.948,0.965,0.958,0.984,1.055,1.114,1.175,
+     &     1.216,1.230,1.192,0.942,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data fsrUM1 /1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,
+     &      1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+     &      0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data fsrUM2 /1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,
+     &      1.0,1.0,1.0,0.767,0.708,0.657,0.568,0.509,0.433,0.337,0.337,
+     &      0.337,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+     &      0.0,0.0,0.0/
+      data fsrUM3 /1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.83,
+     &      0.706,0.8,0.759,0.715,0.686,0.644,0.549,0.434,0.292,0.275,
+     &      0.295,0.293,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+     &      0.0,0.0,0.0,0.0/
+      data fsrUM4 /1.0,1.0,1.15,0.8,0.613,0.542,0.534,
+     &      0.583,0.643,0.674,0.694,0.763,0.684,0.645,0.61,0.532,0.468,
+     &      0.291,0.275,0.295,0.293,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+     &      0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data c1    /-3.224,-3.357,-3.552,-3.640,-3.758,-3.826,
+     &        -3.890,-3.965,-4.055,-4.153,-4.255,-4.466,-4.677,-4.781,
+     &        -4.883,-5.085,-5.233,-5.229,-5.226,-5.223,-5.221,-5.218,
+     &        -5.216,-5.213,-5.210,-5.208,-5.206,-5.204,-5.200,-5.196,
+     &        -5.191,-5.187,-5.183,-5.181,-5.178,-5.176,-5.174/          
+      data c2     /0.900,0.909,0.927,0.937,0.944,0.948,0.956,
+     &         0.967,0.980,0.995,1.009,1.040,1.070,1.085,1.100,1.129,
+     &         1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,
+     &         1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,
+     &         1.151,1.151,1.151/
+      data ccr    /1.07312,1.0785,1.07254,1.05736,1.03568,
+     &    1.00578,0.98413,0.98059,0.98634,0.99121,1.00033,1.03440,
+     &    1.08388,1.10602,1.12674,1.16455,1.19837,1.27000,1.32852,
+     &    1.37801,1.42087,1.45868,1.49250,1.55102,1.60051,1.64337,
+     &    1.68118,1.71500,1.78663,1.84515,1.93750,2.00913,2.06765,
+     &    2.12357,2.13734,2.13734,2.13734/ 
+      data dcr    /0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,
+     &    0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.19,0.178,0.162,
+     &    0.148,0.136,0.125,0.101,0.083,0.053,0.02967,0.01078,0.0,0.0,
+     &    0.0,0.0/
+      data FcrN   /0.31282,0.31568,0.31854,0.32022,0.32141,
+     &    0.32185,0.32471,0.32860,0.32984,0.33637,0.34096,0.34562,
+     &    0.34596,0.34500,0.34347,0.33911,0.33355,0.31694,0.29912,
+     &    0.28167,0.26521,0.24997,0.23598,0.21157,0.19133,0.17456,
+     &    0.16062,0.14900,0.12761,0.11382,0.09918,0.09329,0.09106,
+     &    0.09003,0.08897,0.08722,0.08444/
+      data FumRV  /-0.20236,-0.21425,-0.22125,-0.22306,
+     &   -0.22334,-0.22297,-0.22229,-0.22145,-0.22053,-0.21956,-0.21858,
+     &   -0.21661,-0.21469,-0.21374,-0.21282,-0.21102,-0.20929,-0.20526,
+     &   -0.20159,-0.19822,-0.19511,-0.19221,-0.18950,-0.18454,-0.18008,
+     &   -0.17602,-0.17229,-0.16883,-0.16113,-0.15447,-0.14326,-0.13399,
+     &   -0.12604,-0.11905,-0.11280,-0.10713,-0.10194/
+      data FumNS  /0.25194,0.25847,0.26070,0.26025,0.25891,
+     &    0.25756,0.25606,0.25456,0.25301,0.25560,0.24023,0.24775,
+     &    0.24524,0.24410,0.24309,0.24098,0.23890,0.23447,0.23046,
+     &    0.22674,0.22355,0.22041,0.21760,0.21250,0.20807,0.20398,
+     &    0.20025,0.19671,0.18911,0.18269,0.17171,0.16289,0.15528,
+     &    0.14853,0.14260,0.13724,0.13245/
+      data bcr    /0.00907,0.00907,0.00907,0.00907,0.00907,
+     &    0.00907,0.00907,0.00907,0.00907,0.00907,0.00907,0.00958,
+     &    0.01055,0.01122,0.01170,0.01233,0.01346,0.01617,0.01831,
+     &    0.01980,0.02078,0.02138,0.02168,0.02161,0.02094,0.01987,
+     &    0.01854,0.01704,0.01292,0.00863,0.00042,-0.00687,-0.01315,
+     &   -0.01849,-0.02298,-0.02672,-0.02980/
+      data gcr    /-1.26034,-1.26949,-1.28775,-1.29619,-1.25147,
+     &   -1.14724,-1.09126,-1.04676,-1.01364,-0.99232,-0.98315,-0.97311,
+     &   -0.98324,-0.99261,-1.00423,-1.03299,-1.06493,-1.15136,-1.23723,
+     &   -1.31736,-1.38989,-1.45461,-1.51219,-1.60834,-1.68374,-1.74306,
+     &   -1.78967,-1.82603,-1.88672,-1.91705,-1.93178,-1.91787,-1.89632,
+     &   -1.87695,-1.86168,-1.85415,-1.85292/
+      data gUM    /-1.09985,-1.10720,-1.11766,-1.11392,-1.07971,
+     &   -0.98606,-0.93901,-0.90036,-0.87064,-0.85080,-0.84175,-0.82925,
+     &   -0.83484,-0.84153,-0.85033,-0.87328,-0.89945,-0.97276,-1.04809,
+     &   -1.12034,-1.18735,-1.24859,-1.30439,-1.40097,-1.48074,-1.54711,
+     &   -1.60263,-1.64914,-1.73810,-1.79802,-1.86912,-1.90393,-1.92241,
+     &   -1.93474,-1.94360,-1.95343,-1.96352/
+      data gcrN   /-0.49919,-0.48684,-0.44645,-0.42175,
+     &   -0.37622,-0.43576,-0.46789,-0.50260,-0.53802,-0.57301,-0.60839,
+     &   -0.67012,-0.72524,-0.74977,-0.77240,-0.81285,-0.84625,-0.90575,
+     &   -0.93933,-0.95403,-0.95484,-0.94513,-0.92771,-0.87661,-0.81164,
+     &   -0.73894,-0.66214,-0.58347,-0.40237,-0.24053,-0.03590,0.08743,
+     &    0.17408,0.24501,0.31173,0.37949,0.45204/
+      data gcrL   /1.26564,1.24149,1.19894,1.18654,1.14213,
+     &  1.14137,1.15749,1.18679,1.22338,1.26404,1.30526,1.39284,1.47770,
+     &  1.51881,1.55884,1.63476,1.70605,1.86247,1.99162,2.09823,2.18630,
+     &  2.25934,2.31973,2.41072,2.47179,2.51100,2.53418,2.54538,2.54707,
+     &  2.52581,2.49751,2.47889,2.46474,2.45267,2.44271,2.43391,2.42673/
+      data ecr    /-0.00794,-0.00772,-0.00756,-0.00788,-0.00863,
+     &     -0.00988,-0.01075,-0.01130,-0.01164,-0.01182,-0.01184,
+     &     -0.01174,-0.01142,-0.01123,-0.01101,-0.01054,-0.01007,
+     &     -0.00890,-0.00784,-0.00691,-0.00610,-0.00541,-0.00482,
+     &     -0.00387,-0.00315,-0.00261,-0.00220,-0.00189,-0.00139,
+     &     -0.00116,-0.00109,-0.00125,-0.00144,-0.00159,-0.00171,
+     &     -0.00176,-0.00177/
+      data eum    /-0.010830,-0.010580,-0.010505,-0.011005,
+     &     -0.011488,-0.012292,-0.012739,-0.013080,-0.013313,-0.013455,
+     &     -0.013479,-0.013488,-0.013335,-0.013231,-0.013115,-0.012840,
+     &     -0.012558,-0.011817,-0.011100,-0.010436,-0.009831,-0.009285,
+     &     -0.008788,-0.007922,-0.007193,-0.006568,-0.006025,-0.005551,
+     &     -0.004580,-0.003842,-0.002838,-0.002226,-0.001844,-0.001604,
+     &     -0.001488,-0.001452,-0.001499/
+      data ecrv   /-0.00628,-0.00629,-0.00634,-0.00647,
+     &     -0.00681,-0.00710,-0.00724,-0.00734,-0.00741,-0.00746,
+     &     -0.00749,-0.00751,-0.00748,-0.00746,-0.00743,-0.00735,
+     &     -0.00725,-0.00696,-0.00661,-0.00624,-0.00586,-0.00548,
+     &     -0.00511,-0.00439,-0.00374,-0.00315,-0.00261,-0.00214,
+     &     -0.00119,-0.00054,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
+      data gamma  /-9.08724,-9.05206,-8.85775,-8.62794,
+     &  -8.39822,-8.15307,-8.00327,-8.04783,-8.19691,-8.35079,-8.5243,
+     &  -9.05478,-9.67640,-9.96595,-10.24160,-10.75200,-11.22492,
+     &  -12.26275,-13.14181,-13.90254,-14.57355,-15.17384,-15.71567,
+     &  -16.66219,-17.46728,-18.16453,-18.77798,-19.32562,-20.46705,
+     &  -21.38822,-22.81170,-23.90512,-24.79448,-25.58872,-26.04635,
+     &  -26.37008,-26.67797/
+      data S2     /0.28877,0.29991,0.29778,0.22535,0.15865,
+     &  0.08257,0.05542,0.04177,0.06040,0.09304,0.15210,0.26161,0.35467,
+     &  0.39410,0.42523,0.47642,0.51169,0.55177,0.55325,0.53555,0.50855,
+     &  0.47913,0.45094,0.39849,0.35254,0.31707,0.28896,0.26685,0.22889,
+     &  0.20778,0.18675,0.17749,0.16807,0.15988,0.15433,0.15116,0.15275/
+      data S3     /0.12210,0.10321,0.11109,0.08972,0.04037,
+     &  -0.05934,-0.10956,-0.13262,-0.13537,-0.12513,-0.07090,0.00261,
+     &   0.11202,0.15670,0.19678,0.27414,0.33785,0.47868,0.57391,
+     &   0.63824,0.67945,0.70517,0.72065,0.72820,0.71582,0.69660,
+     &   0.67366,0.64985,0.59394,0.55120,0.50247,0.48879,0.48245,
+     &   0.47612,0.46978,0.46344,0.45711/
+      data S4     /0.20813,0.21925,0.21713,0.15948,0.07029,
+     &   -0.03529,-0.09017,-0.09583,-0.07321,-0.03629,0.01110,0.10298,
+     &    0.21434,0.25574,0.29811,0.36360,0.42568,0.55643,0.65844,
+     &    0.73536,0.79334,0.83853,0.87505,0.92621,0.95627,0.97619,
+     &    0.98819,0.99485,0.99639,0.98814,0.96004,0.92903,0.89351,
+     &    0.85603,0.81676,0.77379,0.72802/
+      data phiS1  /0.4153,0.4142,0.4123,0.4089,0.4072,
+     &      0.4059,0.4066,0.4171,0.4255,0.4315,0.4371,0.4515,0.4559,
+     &      0.4594,0.4647,0.4721,0.4722,0.4780,0.4906,0.4918,0.4951,
+     &      0.4927,0.4890,0.4792,0.4665,0.4600,0.4541,0.4475,0.4404,
+     &      0.4284,0.4148,0.4003,0.4033,0.4026,0.3804,0.3736,0.3831/
+      data tauS1  /0.3581,0.3581,0.3581,0.3625,0.3832,
+     &      0.4052,0.4341,0.4517,0.4745,0.4884,0.4932,0.4927,0.4906,
+     &      0.4815,0.4725,0.4640,0.4708,0.4650,0.4595,0.4432,0.4296,
+     &      0.4310,0.4323,0.4402,0.4390,0.4491,0.4579,0.4663,0.4644,
+     &      0.4546,0.4190,0.4084,0.4052,0.3861,0.3756,0.3595,0.3594/
+      data sigma1 /0.548, 0.548, 0.546, 0.547, 0.559, 0.574, 0.595, 0.615, 0.637,                                            
+     1             0.652, 0.659, 0.668, 0.67, 0.666, 0.663, 0.662, 0.667, 0.667,                                            
+     1             0.672, 0.662, 0.656, 0.655, 0.653, 0.651, 0.641, 0.643, 0.645,                                            
+     1             0.646, 0.64, 0.625, 0.59, 0.572, 0.572, 0.558, 0.535, 0.519, 0.525 / 
+      data phiS2  /0.4363,0.4356,0.4344,0.4307,0.4275,
+     &      0.4294,0.4304,0.4329,0.4361,0.4417,0.4478,0.4476,0.4553,
+     &      0.4547,0.4607,0.4697,0.4800,0.4882,0.4991,0.5043,0.5074,
+     &      0.5074,0.5149,0.5177,0.5044,0.4954,0.4834,0.4720,0.4595,
+     &      0.4499,0.4374,0.4343,0.4328,0.4214,0.4264,0.4290,0.4378/
+      data tauS2  /0.3620,0.3627,0.3646,0.3580,0.3666,
+     &      0.3760,0.3911,0.4057,0.4247,0.4445,0.4485,0.4641,0.4758,
+     &      0.4817,0.4820,0.4830,0.4932,0.5436,0.5246,0.4872,0.4722,
+     &      0.4651,0.4493,0.4472,0.4515,0.4504,0.4559,0.4593,0.4606,
+     &      0.4688,0.4530,0.4310,0.4152,0.3953,0.3681,0.3589,0.3298/
+      data sigma2 /0.567, 0.567, 0.567, 0.56, 0.563, 0.571, 0.582, 0.593, 0.609,                                            
+     1             0.627, 0.634, 0.645, 0.659, 0.662, 0.667, 0.674, 0.688, 0.731,                                            
+     1             0.724, 0.701, 0.693, 0.688, 0.683, 0.684, 0.677, 0.67, 0.665,                                            
+     1             0.659, 0.651, 0.65, 0.63, 0.612, 0.6, 0.578, 0.563, 0.559, 0.548 / 
+      data phiS3  /0.4235,0.4230,0.4226,0.4207,0.4208,
+     &      0.4168,0.4156,0.4215,0.4220,0.4161,0.4241,0.4332,0.4347,
+     &      0.4380,0.4419,0.4514,0.4493,0.4626,0.4833,0.4783,0.4720,
+     &      0.4944,0.4949,0.4848,0.4816,0.4751,0.4554,0.4415,0.4380,
+     &      0.4219,0.4172,0.3955,0.3995,0.4131,0.4060,0.3921,0.3779/
+      data tauS3  /0.3486,0.3482,0.3483,0.3544,0.3544,
+     &      0.3508,0.3453,0.3605,0.3821,0.3958,0.4229,0.4768,0.4592,
+     &      0.4519,0.4617,0.4660,0.4452,0.4192,0.4356,0.4689,0.4821,
+     &      0.4638,0.4327,0.4577,0.4712,0.4622,0.4781,0.4743,0.4495,
+     &      0.4633,0.4718,0.4530,0.4030,0.3803,0.3228,0.3069,0.3076/
+      data sigma3 /0.549, 0.548, 0.548, 0.55, 0.55, 0.545, 0.54, 0.555, 0.569,                                            
+     1             0.574, 0.599, 0.644, 0.632, 0.629, 0.639, 0.649, 0.633, 0.624,                                            
+     1             0.651, 0.67, 0.675, 0.678, 0.657, 0.667, 0.674, 0.663, 0.66,                                            
+     1             0.648, 0.628, 0.627, 0.63, 0.601, 0.567, 0.562, 0.519, 0.498, 0.487 / 
+      data phiS4  /0.4426,0.4419,0.4418,0.4415,0.4435,
+     &      0.4446,0.4415,0.4407,0.4351,0.4374,0.4402,0.4594,0.4697,
+     &      0.4707,0.4744,0.4784,0.4825,0.4843,0.4930,0.4914,0.4783,
+     &      0.4787,0.4764,0.4854,0.4707,0.4837,0.4729,0.4709,0.4627,
+     &      0.4564,0.4323,0.4128,0.4170,0.4265,0.4259,0.4256,0.4195/
+      data tauS4  /0.2778,0.2804,0.2823,0.2857,0.2881,
+     &      0.2945,0.3082,0.3378,0.3557,0.3784,0.4182,0.4216,0.3869,
+     &      0.3867,0.3788,0.3903,0.4010,0.3942,0.3725,0.3421,0.3466,
+     &      0.3594,0.3998,0.4454,0.4982,0.5183,0.5358,0.5240,0.4932,
+     &      0.4942,0.5195,0.5059,0.4886,0.4928,0.4510,0.4386,0.3774/
+      data sigma4 /0.523, 0.523, 0.524, 0.526, 0.529, 0.533, 0.538, 0.555, 0.562,                                            
+     1             0.578, 0.607, 0.624, 0.609, 0.609, 0.607, 0.617, 0.627, 0.624,                                            
+     1             0.618, 0.599, 0.591, 0.599, 0.622, 0.659, 0.685, 0.709, 0.715,                                            
+     1             0.705, 0.676, 0.673, 0.676, 0.653, 0.642, 0.652, 0.62, 0.611, 0.564 / 
+      data phi /0.556,0.556,0.555,0.553,0.558,0.564,0.577,
+     &     0.599,0.616,0.629,0.641,0.657,0.663,0.666,0.671,0.680,0.692,
+     &     0.694,0.688,0.675,0.667,0.665,0.664,0.669,0.670,0.674,0.673,
+     &     0.670,0.660,0.656,0.631,0.605,0.591,0.578,0.556,0.542,0.538/
+      data tau /0.391,0.390,0.396,0.408,0.438,0.460,
+     &     0.481,0.488,0.481,0.477,0.460,0.437,0.414,0.402,0.384,0.380,
+     &     0.359,0.340,0.344,0.353,0.363,0.359,0.361,0.362,0.370,0.378,
+     &     0.386,0.390,0.399,0.397,0.381,0.376,0.363,0.363,0.376,0.377,
+     &     0.395/
+c Set attenuation name                                                            
+c     Sourcetype = 0 Crustal
+c     Sourcetype = 1 Subduction - Interface
+c     Sourcetype = 2 Subduction - Slab
+c     Sourcetype = 3 Upper mantle
+c     Sclass = 0 Hard Rock
+c     Sclass = 1 SC I
+c     Sclass = 2 SC II
+c     Sclass = 3 SC III
+c     Sclass = 4 SC IV
+
+
+                                                                       
+C Find the requested spectral period and corresponding coefficients
+      nper = 37
+
+C First check for the PGA case (i.e., specT=0.0) 
+      if (specT .eq. 0.0) then
+       period1 = period(1)
+       Amax1T =  Amax1(1) 
+       SRC1T =   SRC1(1)  
+       Amax2T =  Amax2(1) 
+       SRC2T =   SRC2(1)  
+       Amax3T =  Amax3(1) 
+       SRC3T =   SRC3(1)  
+       Amax4T =  Amax4(1) 
+       SRC4T =   SRC4(1)  
+       AmSCIT =  AmSCI(1) 
+       fsrCR1T = fsrCR1(1)
+       fsrCR2T = fsrCR2(1)
+       fsrCR3T = fsrCR3(1)
+       fsrCR4T = fsrCR4(1)
+       fsrUM1T = fsrUM1(1)
+       fsrUM2T = fsrUM2(1)
+       fsrUM3T = fsrUM3(1)
+       fsrUM4T = fsrUM4(1)
+       c1T =     c1(1)    
+       c2T =     c2(1)    
+       ccrT =    ccr(1)   
+       dcrT =    dcr(1)   
+       FcrNT =   FcrN(1)  
+       FumRVT =  FumRV(1) 
+       FumNST =  FumNS(1) 
+       bcrT =    bcr(1)   
+       gcrT =    gcr(1)   
+       gUMT =    gUM(1)   
+       gcrNT =   gcrN(1)  
+       gcrLT =   gcrL(1)  
+       ecrT =    ecr(1)   
+       eumT =    eum(1)   
+       ecrvT =   ecrv(1)  
+       gammaT =  gamma(1) 
+       S2T =     S2(1)    
+       S3T =     S3(1)    
+       S4T =     S4(1)    
+       phiS1T =  phiS1(1) 
+       tauS1T =  tauS1(1) 
+       sigma1T = sigma1(1)
+       phiS2T =  phiS2(1) 
+       tauS2T =  tauS2(1) 
+       sigma2T = sigma2(1)
+       phiS3T =  phiS3(1) 
+       tauS3T =  tauS3(1) 
+       sigma3T = sigma3(1)
+       phiS4T =  phiS4(1) 
+       tauS4T =  tauS4(1) 
+       sigma4T = sigma4(1)            
+       phiT =  phi(1) 
+       tauT =  tau(1) 
+       goto 1011
+      elseif (specT .ne. 0.0) then
+
+C Now loop over the spectral period range of the attenuation relationship.
+         do i=2,nper-1
+            if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
+               count1 = i
+               count2 = i+1
+               goto 1010 
+            endif
+         enddo
+      endif
+        
+      write (*,*) 
+      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
+      write (*,*) 'is not defined for a spectral period of: '
+      write (*,'(a10,f10.5)') ' Period = ',specT
+      write (*,*) 'This spectral period is outside the defined'
+      write (*,*) 'period range in the code or beyond the range'
+      write (*,*) 'of spectral periods for interpolation.'
+      write (*,*) 'Please check the input file.'
+      write (*,*) 
+      stop 99
+
+C Interpolate the coefficients for the requested spectral period.
+ 1010    call interp (period(count1),period(count2),Amax1(count1),Amax1(count2),
+     +                specT,Amax1T,iflag)
+         call interp (period(count1),period(count2),SRC1(count1),SRC1(count2),
+     +                specT,SRC1T,iflag)
+         call interp (period(count1),period(count2),Amax2(count1),Amax2(count2),
+     +                specT,Amax2T,iflag)
+         call interp (period(count1),period(count2),SRC2(count1),SRC2(count2),
+     +                specT,SRC2T,iflag)
+         call interp (period(count1),period(count2),Amax3(count1),Amax3(count2),
+     +                specT,Amax3T,iflag)
+         call interp (period(count1),period(count2),SRC3(count1),SRC3(count2),
+     +                specT,SRC3T,iflag)
+         call interp (period(count1),period(count2),Amax4(count1),Amax4(count2),
+     +                specT,Amax4T,iflag)
+         call interp (period(count1),period(count2),SRC4(count1),SRC4(count2),
+     +                specT,SRC4T,iflag)
+         call interp (period(count1),period(count2),AmSCI(count1),AmSCI(count2),
+     +                specT,AmSCIT,iflag)
+         call interp (period(count1),period(count2),fsrCR1(count1),fsrCR1(count2),
+     +                specT,fsrCR1T,iflag)
+         call interp (period(count1),period(count2),fsrCR2(count1),fsrCR2(count2),
+     +                specT,fsrCR2T,iflag)
+         call interp (period(count1),period(count2),fsrCR3(count1),fsrCR3(count2),
+     +                specT,fsrCR3T,iflag)
+         call interp (period(count1),period(count2),fsrCR4(count1),fsrCR4(count2),
+     +                specT,fsrCR4T,iflag)
+         call interp (period(count1),period(count2),fsrUM1(count1),fsrUM1(count2),
+     +                specT,fsrUM1T,iflag)
+         call interp (period(count1),period(count2),fsrUM2(count1),fsrUM2(count2),
+     +                specT,fsrUM2T,iflag)
+         call interp (period(count1),period(count2),fsrUM3(count1),fsrUM3(count2),
+     +                specT,fsrUM3T,iflag)
+         call interp (period(count1),period(count2),fsrUM4(count1),fsrUM4(count2),
+     +                specT,fsrUM4T,iflag)
+         call interp (period(count1),period(count2),c1(count1),c1(count2),
+     +                specT,c1T,iflag)
+         call interp (period(count1),period(count2),c2(count1),c2(count2),
+     +                specT,c2T,iflag)
+         call interp (period(count1),period(count2),ccr(count1),ccr(count2),
+     +                specT,ccrT,iflag)
+         call interp (period(count1),period(count2),dcr(count1),dcr(count2),
+     +                specT,dcrT,iflag)
+         call interp (period(count1),period(count2),FCRN(count1),FCRN(count2),
+     +                specT,FcrNT,iflag)
+         call interp (period(count1),period(count2),FumRV(count1),FumRV(count2),
+     +                specT,FumRVT,iflag)
+         call interp (period(count1),period(count2),FumNS(count1),FumNS(count2),
+     +                specT,FumNST,iflag)
+         call interp (period(count1),period(count2),bcr(count1),bcr(count2),
+     +                specT,bcrT,iflag)
+         call interp (period(count1),period(count2),gcr(count1),gcr(count2),
+     +                specT,gcrT,iflag)
+         call interp (period(count1),period(count2),gUM(count1),gUM(count2),
+     +                specT,gUMT,iflag)
+         call interp (period(count1),period(count2),gcrN(count1),gcrN(count2),
+     +                specT,gcrNT,iflag)
+         call interp (period(count1),period(count2),gcrL(count1),gcrL(count2),
+     +                specT,gcrLT,iflag)
+         call interp (period(count1),period(count2),ecr(count1),ecr(count2),
+     +                specT,ecrT,iflag)
+         call interp (period(count1),period(count2),eum(count1),eum(count2),
+     +                specT,eumT,iflag)
+         call interp (period(count1),period(count2),ecrv(count1),ecrv(count2),
+     +                specT,ecrvT,iflag)
+         call interp (period(count1),period(count2),gamma(count1),gamma(count2),
+     +                specT,gammaT,iflag)
+         call interp (period(count1),period(count2),S2(count1),S2(count2),
+     +                specT,S2T,iflag)
+         call interp (period(count1),period(count2),S3(count1),S3(count2),
+     +                specT,S3T,iflag)
+         call interp (period(count1),period(count2),S4(count1),S4(count2),
+     +                specT,S4T,iflag)
+         call interp (period(count1),period(count2),phiS1(count1),phiS1(count2),
+     +                specT,phiS1T,iflag)
+         call interp (period(count1),period(count2),tauS1(count1),tauS1(count2),
+     +                specT,tauS1T,iflag)
+         call interp (period(count1),period(count2),sigma1(count1),sigma1(count2),
+     +                specT,sigma1T,iflag)
+         call interp (period(count1),period(count2),phiS2(count1),phiS2(count2),
+     +                specT,phiS2T,iflag)
+         call interp (period(count1),period(count2),tauS2(count1),tauS2(count2),
+     +                specT,tauS2T,iflag)
+         call interp (period(count1),period(count2),sigma2(count1),sigma2(count2),
+     +                specT,sigma2T,iflag)
+         call interp (period(count1),period(count2),phiS3(count1),phiS3(count2),
+     +                specT,phiS3T,iflag)
+         call interp (period(count1),period(count2),tauS3(count1),tauS3(count2),
+     +                specT,tauS3T,iflag)
+         call interp (period(count1),period(count2),sigma3(count1),sigma3(count2),
+     +                specT,sigma3T,iflag)
+         call interp (period(count1),period(count2),phiS4(count1),phiS4(count2),
+     +                specT,phiS4T,iflag)
+         call interp (period(count1),period(count2),tauS4(count1),tauS4(count2),
+     +                specT,tauS4T,iflag)
+         call interp (period(count1),period(count2),sigma4(count1),sigma4(count2),
+     +                specT,sigma4T,iflag)                                                  
+         call interp (period(count1),period(count2),tau(count1),tau(count2),
+     +                specT,tauT,iflag)
+         call interp (period(count1),period(count2),phi(count1),phi(count2),
+     +                specT,phiT,iflag)
+
+ 1011 period1 = specT
+
+
+C     Set mechanism term and source and near fault term.                
+
+      xcro=2
+
+      if (sourcetype .eq. 0 ) then
+         if (ftype .lt. 0) then
+            mech = FcrNT
+         else
+            mech = 0.0
+         endif
+         if (m .le. 7.1) then
+         	 fm = bcrT*depth + mech + CcrT*m
+         else
+         	 fm = bcrT*depth + mech + ccrT*7.1 + dcrT*(m-7.1)
+         endif
+		 
+         if (dist .le. 30) then
+         	 gN = gcrNT*alog(xcro+dist + exp(c1T + 6.5*c2T))
+         else
+         	 gN = gcrNT*alog(xcro+30 + exp(c1T + 6.5*c2T))
+         endif
+
+      elseif (sourcetype .eq. 3) then         
+      	 if (ftype .gt. 0) then
+      	 	 mech = FumRVT
+      	 	else
+      	 	 mech = FumNST
+      	 endif
+         
+         if (m .le. 7.1) then
+         	 fm = mech + ccrT*m
+         else
+         	 fm = mech + ccrT*7.1 + dcrT*(m-7.1)
+         endif
+      endif
+	  
+C    Set distance for geometric spreading term r
+	  
+      Cmax = 7.1
+      if (m .le. Cmax) then
+       Cm = m
+      else
+       Cm = Cmax
+      endif
+      
+      r = xcro + dist + exp(c1T + c2T*Cm)  
+	    write(*,*) "r0 = ", r     
+
+C    Set geometric attenuation rate term 
+      if (sourcetype .eq. 0 ) then
+	    gmterm = gcrT*alog(r)
+	  
+      elseif (sourcetype .eq. 3) then     
+	    gmterm = gumT*alog(r)
+	  
+      endif
+
+C    Set large distance geometric attenuation rate term 
+
+	    gmLterm = gcrLT*alog(dist+200)
+	  
+C    Set anelastic attenuation rate term
+C    Ignore volcanic path term
+      if (sourcetype .eq. 0 ) then
+	    eterm = ecrT*dist
+	  
+      elseif (sourcetype .eq. 3) then     
+	    eterm = eumT*dist
+	  
+      endif	  
+	  
+C    Set Site class term 
+	  
+      if (sourcetype .eq. 0 ) then
+
+         if (sclass .eq. 1) then
+            Amax = Amax1T
+            Src = Src1T
+			      fsr = fsrCR1T
+            Imf = 0.91		 
+            ANmax = AmSCIT 
+         elseif (sclass .eq. 2) then           
+            Amax = Amax2T	  
+            Src = Src2T		 
+			      fsr = fsrCR2T
+            Imf = 1.023		 
+            ANmax = AmSCIT * exp(S2T)
+         elseif (sclass .eq. 3) then           
+            Amax = Amax3T	  
+            Src = Src3T		 
+			      fsr = fsrCR3T
+            Imf = 1.034	 
+            ANmax = AmSCIT * exp(S3T)
+         elseif (sclass .eq. 4) then           
+            Amax = Amax4T	  
+            Src = Src4T		 
+			      fsr = fsrCR4T
+            Imf = 0.737	 
+            ANmax = AmSCIT * exp(S4T)
+         endif
+
+      elseif ( sourcetype .eq. 3 ) then
+
+         if (sclass .eq. 1) then
+            Amax = Amax1T
+            Src = Src1T
+			      fsr = fsrUM1T
+            Imf = 0.91		 
+            ANmax = AmSCIT 
+         elseif (sclass .eq. 2) then           
+            Amax = Amax2T	  
+            Src = Src2T		 
+			      fsr = fsrUM2T
+            Imf = 1.023		 
+            ANmax = AmSCIT * exp(S2T)
+         elseif (sclass .eq. 3) then           
+            Amax = Amax3T	  
+            Src = Src3T		 
+			      fsr = fsrUM3T
+            Imf = 1.034	 
+            ANmax = AmSCIT * exp(S3T)
+         elseif (sclass .eq. 4) then           
+            Amax = Amax4T	  
+            Src = Src4T		 
+			      fsr = fsrUM4T
+            Imf = 0.737	 
+            ANmax = AmSCIT * exp(S4T)
+         endif
+	    endif
+	  
+      rockterm = fm + gmterm + gmLterm + gN + eterm + gammaT - alog(AmSCIT)
+      Sr = exp(rockterm) 
+       
+	    Sreff = Sr *Imf
+	    Sreffc = Src *Imf
+      Sf = ANmax/Amax
+      
+        if (ANmax .lt. 1.25) then
+          ca=alog(Amax)/(alog(0.6)-alog(Sreffc**2 + 0.6))
+          cb=-ca*alog(Sreffc**2+0.6)
+          Snc=exp((ca*(2-1.0)*alog(0.6)*alog(10.0*0.6)-
+     &        alog(10.0)*(cb+alog(Sf)))/(ca*(2*alog(10.0*0.6)-
+     &        alog(0.6))))
+        else
+  	      Snc = (exp((alog(ANmax)*alog(Sreffc**2+0.6)-alog(Sf)* alog(0.6))/(alog(Amax)))-0.6)**(0.5)
+        endif
+	    	     
+        Smr = Sreff * (Snc/Sreffc) * fsr
+
+        if (Smr .ne. 0.0) then
+  
+	        logAn = alog(ANmax)-alog(Amax)*((alog(Smr**2+0.6)-alog(0.6))/(alog(Sreffc**2+0.6)-alog(0.6)))
+        else
+          logAn = alog(ANmax)  
+        endif
+
+      if (sclass .eq. 0) then
+         lnY =  rockterm 
+       else   
+	       lnY =  rockterm + logAn                                        
+      endif
+
+      write(*,*) "--------------------------------- "
+      write(*,*) "dist = ", dist     
+      write(*,*) "sclass = ", sclass
+
+      write(*,*) "Sr = ", Sr
+      write(*,*) "Src = ", Src
+
+      write(*,*) "fm = ", fm
+      write(*,*) "gmterm = ", gmterm
+      write(*,*) "gmLterm = ", gmLterm
+      write(*,*) "gN = ", gN
+      write(*,*) "eterm = ", eterm
+      write(*,*) "gammaT = ", gammaT
+      write(*,*) "logAn = ", logAn
+      write(*,*) "Y(g) = ", exp(lnY)
+
+C     Convert ground motion to units of gals.
+      lnY = lnY + 6.89
+
+       write(*,*) "Y(gal) = ", exp(lnY)
+                                                                               
+c     Set standard error                                                       
+c      if (sclass .eq. 1) then
+c         phi = phiS1T
+c         sigma = sigma1T
+c         tau = tauS1T
+c      elseif (sclass .eq. 2) then
+c         phi = phiS2T
+c         sigma = sigma2T
+c         tau = tauS2T
+c      elseif (sclass .eq. 3) then
+c          phi = phiS3T
+c         sigma = sigma3T
+c         tau = tauS3T
+c      elseif (sclass .eq. 4) then
+c         phi = phiS4T
+c         sigma = sigma4T
+c         tau = tauS4T
+c      endif
+       sigma = SQRT(phiT**2 + tauT**2)
+
+      return                                                                    
+      end       
+          

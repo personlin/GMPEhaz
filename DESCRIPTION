@@ -1,7 +1,7 @@
 Package: GMPEhaz
 Type: Package
 Title: GMPE funciton using Norman Abrahamson's HAZ fortran code
-Version: 0.1.6
+Version: 0.1.8
 Author: Person Lin
 Maintainer: Person Lin <personlin@gmail.com>
 Depends: R (>= 3.1.0), lattice

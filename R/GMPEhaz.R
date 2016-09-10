@@ -7,6 +7,7 @@
 #' @docType package
 #' @name GMPEhaz
 #' @useDynLib GMPEhaz
+#' @param libpath library path
 
 .onUnload <- function(libpath){
   library.dynam.unload("GMPEhaz", libpath)
