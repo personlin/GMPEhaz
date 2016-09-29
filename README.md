@@ -2,6 +2,8 @@
 
 
 # GMPEhaz
+
+[![Join the chat at https://gitter.im/GMPEhaz/Lobby](https://badges.gitter.im/GMPEhaz/Lobby.svg)](https://gitter.im/GMPEhaz/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A R package for wrapping GMPE functions from Norman Abrahamson's fortran [HAZ](https://github.com/abrahamson/HAZ) code.
 
 # Install
