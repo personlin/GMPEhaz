@@ -4,7 +4,7 @@
 #'
 #'Akkar, S., M. a. Sandikkaya, and J. J. Bommer(2014), Empirical ground-motion models for
 #'point- and extended-source crustal earthquake scenarios in europe and the middle east,
-#'Bulletin of Earthquake Engineering, Volume 12, Issue 1, pp 359–387.
+#'Bulletin of Earthquake Engineering, Volume 12, Issue 1, pp 359-387.
 #'\url{http://dx.doi.org/10.1007/s10518-013-9461-4}
 #'
 #' @param Mag Earthquake momnet magnitude, Numeric.
@@ -16,8 +16,8 @@
 #' @return A list will be return, including mag, Rjb, specT, period, lnY, sigma, iflag, ftype, Vs30, phi, tau.
 #'
 #' @examples
-#' ASB13(6, 20, 0, 0, 760)
-#' ASB13(7, 10, 0, 0, 760)
+#' ASB14(6, 20, 0, 0, 760)
+#' ASB14(7, 10, 0, 0, 760)
 #'
 #' @export
 ASB14 <- function(Mag, Rjb, Prd=0, ftype=0, Vs30=760){
