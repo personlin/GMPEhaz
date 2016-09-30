@@ -37,3 +37,6 @@
 .Rproj.user
 *.Rproj
 .Rapp.history
+
+# Ultraedit files
+.bak

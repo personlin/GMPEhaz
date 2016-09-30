@@ -110,15 +110,15 @@ C Set PGA coefficients for non-pga spectral periods.
          enddo
 
 C Requested spectral period is not in the period range of the attenuation model.
-         write (*,*)
-         write (*,*) 'Abrahamson and Silva (1997) Horizontal atttenuation model'
-         write (*,*) 'is not defined for a spectral period of: '
-         write (*,'(a10,f10.5)') ' Period = ',specT
-         write (*,*) 'This spectral period is outside the defined'
-         write (*,*) 'period range in the code or beyond the range'
-         write (*,*) 'of spectral periods for interpolation.'
-         write (*,*) 'Please check the input file.'
-         write (*,*)
+C         write (*,*)
+C         write (*,*) 'Abrahamson and Silva (1997) Horizontal atttenuation model'
+C         write (*,*) 'is not defined for a spectral period of: '
+C         write (*,*)') ' Period = ',specT
+C         write (*,*) 'This spectral period is outside the defined'
+C         write (*,*) 'period range in the code or beyond the range'
+C         write (*,*) 'of spectral periods for interpolation.'
+C         write (*,*) 'Please check the input file.'
+C         write (*,*)
          stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -309,16 +309,16 @@ C Set PGA coefficients for non-pga spectral periods.
          enddo
 
 C Requested spectral period is not in the period range of the attenuation model.
-         write (*,*)
-         write (*,*) 'Abrahamson and Silva (1997) Horizontal atttenuation model'
-         write (*,*) 'for normal faulting regimes'
-         write (*,*) 'is not defined for a spectral period of: '
-         write (*,'(a10,f10.5)') ' Period = ',specT
-         write (*,*) 'This spectral period is outside the defined'
-         write (*,*) 'period range in the code or beyond the range'
-         write (*,*) 'of spectral periods for interpolation.'
-         write (*,*) 'Please check the input file.'
-         write (*,*)
+C         write (*,*)
+C         write (*,*) 'Abrahamson and Silva (1997) Horizontal atttenuation model'
+C         write (*,*) 'for normal faulting regimes'
+C         write (*,*) 'is not defined for a spectral period of: '
+C         write (*,*)') ' Period = ',specT
+C         write (*,*) 'This spectral period is outside the defined'
+C         write (*,*) 'period range in the code or beyond the range'
+C         write (*,*) 'of spectral periods for interpolation.'
+C         write (*,*) 'Please check the input file.'
+C         write (*,*)
          stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -515,15 +515,15 @@ C Set PGA coefficients for non-pga spectral periods.
          enddo
 
 C Requested spectral period is not in the period range of the attenuation model.
-         write (*,*)
-         write (*,*) 'Abrahamson and Silva (1997) Vertical atttenuation model'
-         write (*,*) 'is not defined for a spectral period of: '
-         write (*,'(a10,f10.5)') ' Period = ',specT
-         write (*,*) 'This spectral period is outside the defined'
-         write (*,*) 'period range in the code or beyond the range'
-         write (*,*) 'of spectral periods for interpolation.'
-         write (*,*) 'Please check the input file.'
-         write (*,*)
+C         write (*,*)
+C         write (*,*) 'Abrahamson and Silva (1997) Vertical atttenuation model'
+C         write (*,*) 'is not defined for a spectral period of: '
+C         write (*,*)') ' Period = ',specT
+C         write (*,*) 'This spectral period is outside the defined'
+C         write (*,*) 'period range in the code or beyond the range'
+C         write (*,*) 'of spectral periods for interpolation.'
+C         write (*,*) 'Please check the input file.'
+C         write (*,*)
          stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -709,16 +709,16 @@ C Set PGA coefficients for non-pga spectral periods.
          enddo
 
 C Requested spectral period is not in the period range of the attenuation model.
-         write (*,*)
-         write (*,*) 'Abrahamson and Silva (1997) Vertical atttenuation model'
-         write (*,*) 'for normal faulting regimes'
-         write (*,*) 'is not defined for a spectral period of: '
-         write (*,'(a10,f10.5)') ' Period = ',specT
-         write (*,*) 'This spectral period is outside the defined'
-         write (*,*) 'period range in the code or beyond the range'
-         write (*,*) 'of spectral periods for interpolation.'
-         write (*,*) 'Please check the input file.'
-         write (*,*)
+C         write (*,*)
+C         write (*,*) 'Abrahamson and Silva (1997) Vertical atttenuation model'
+C         write (*,*) 'for normal faulting regimes'
+C         write (*,*) 'is not defined for a spectral period of: '
+C         write (*,*)') ' Period = ',specT
+C         write (*,*) 'This spectral period is outside the defined'
+C         write (*,*) 'period range in the code or beyond the range'
+C         write (*,*) 'of spectral periods for interpolation.'
+C         write (*,*) 'Please check the input file.'
+C         write (*,*)
          stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -960,15 +960,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Boore et al. (1994) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Boore et al. (1994) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -1081,15 +1081,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Boore et al. (1997) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Boore et al. (1997) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -1201,15 +1201,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Campbell (1990) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell (1990) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -1328,15 +1328,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Campbell (1990) Vertical atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell (1990) Vertical atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -1456,15 +1456,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Campbell (1990;94) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell (1990;94) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -1610,15 +1610,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Campbell (1994) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell (1994) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -1647,7 +1647,7 @@ c     Set name
       elseif ( hardRock .eq. 1 ) then
         attenName = 'Campbell (1993;1994), hard-rock'
       else
-        write (*,'( 2x,''bad site flags for Campbell 94'')')
+C        write (*,*)')
         stop 99
       endif
 
@@ -1767,15 +1767,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Campbell (1997) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell (1997) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -1905,15 +1905,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Campbell (1997) Vertical atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell (1997) Vertical atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -2063,15 +2063,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Idriss (1991) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Idriss (1991) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -2161,15 +2161,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Idriss (1991) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Idriss (1991) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -2380,15 +2380,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Idriss (1991:1995) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Idriss (1991:1995) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -2493,15 +2493,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Idriss (1991:1995) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Idriss (1991:1995) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -2631,15 +2631,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Geomatrix (1993) Vertical atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Geomatrix (1993) Vertical atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -2731,15 +2731,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Geomatrix (1993) Vertical atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Geomatrix (1993) Vertical atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -2861,15 +2861,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Geomatrix (1997) Horizontal Rock atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Geomatrix (1997) Horizontal Rock atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -2965,15 +2965,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Geomatrix (1997) Horizontal Rock atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Geomatrix (1997) Horizontal Rock atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
 
       stop 99
 
@@ -3069,15 +3069,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Geomatrix (1997) Horizontal Soil atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Geomatrix (1997) Horizontal Soil atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -3196,15 +3196,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Spudich et al. (1997) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Spudich et al. (1997) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -3231,8 +3231,8 @@ c     Set atten name
       elseif ( iSite .eq. 1 ) then
         attenName = 'Spudich et al. (1996), Soil'
       else
-        write (*,'( 2x,''iSite is bad in Spudich 96'')')
-        write (*,'( 2x,''iSite ='',i5)') iSite
+C        write (*,*)')
+C        write (*,*)') iSite
         stop 99
       endif
 
@@ -3300,15 +3300,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Youngs et al. (1993) Subduction atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Youngs et al. (1993) Subduction atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -3328,7 +3328,7 @@ c            (flag=1 for intraslab at 55 km)
       elseif ( flag .eq. 1. ) then
         c1 = 0.9908
       else
-        write (*,'( 2x,''bad flag in youngs93'', i5)') flag
+C        write (*,*)') flag
         stop 99
       endif
       c2 = 1.4142
@@ -3403,15 +3403,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Youngs et al. (1997) Rock Subduction atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Youngs et al. (1997) Rock Subduction atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -3494,15 +3494,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Youngs et al. (1997) Soil Subduction atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Youngs et al. (1997) Soil Subduction atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -3624,15 +3624,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson and Boore (2003) Subduction atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson and Boore (2003) Subduction atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -3770,8 +3770,8 @@ c     Now set Sl function based on PGArx and period
          sigma = sigsT
 
       else
-         write (*,*) 'Wrong Ftype for Atkinson and Boore (2003)'
-         write (*,*) 'attenuation relationship. Check fault file.'
+C         write (*,*) 'Wrong Ftype for Atkinson and Boore (2003)'
+C         write (*,*) 'attenuation relationship. Check fault file.'
          stop 99
       endif
 
@@ -3871,16 +3871,16 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson and Boore (2003) Cascadia'
-      write (*,*) 'Subduction attenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson and Boore (2003) Cascadia'
+C      write (*,*) 'Subduction attenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -4018,8 +4018,8 @@ c     Now set Sl function based on PGArx and period
          sigma = sigsT
 
       else
-         write (*,*) 'Wrong Ftype for Atkinson and Boore (2003)'
-         write (*,*) 'attenuation relationship. Check fault file.'
+C         write (*,*) 'Wrong Ftype for Atkinson and Boore (2003)'
+C         write (*,*) 'attenuation relationship. Check fault file.'
          stop 99
       endif
 
@@ -4120,16 +4120,16 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson and Boore (2003) Cascadia'
-      write (*,*) 'Subduction attenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson and Boore (2003) Cascadia'
+C      write (*,*) 'Subduction attenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -4267,8 +4267,8 @@ c     Now set Sl function based on PGArx and period
          sigma = sigsT
 
       else
-         write (*,*) 'Wrong Ftype for Atkinson and Boore (2003)'
-         write (*,*) 'attenuation relationship. Check fault file.'
+C         write (*,*) 'Wrong Ftype for Atkinson and Boore (2003)'
+C         write (*,*) 'attenuation relationship. Check fault file.'
          stop 99
       endif
 
@@ -4362,16 +4362,16 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Gregor et al. (2002) Cascadia'
-      write (*,*) 'Subduction attenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Gregor et al. (2002) Cascadia'
+C      write (*,*) 'Subduction attenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -4491,16 +4491,16 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Gregor et al. (2002) Cascadia'
-      write (*,*) 'Subduction attenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Gregor et al. (2002) Cascadia'
+C      write (*,*) 'Subduction attenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -4647,16 +4647,16 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Gregor et al. (2006) Cascadia'
-      write (*,*) 'Subduction attenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Gregor et al. (2006) Cascadia'
+C      write (*,*) 'Subduction attenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -4814,16 +4814,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Kanno et al (2006) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Kanno et al (2006) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -5092,15 +5092,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Zhao etal. (2006) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Zhao etal. (2006) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -5272,15 +5272,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson and Boore (1995) EUS (Mw) atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson and Boore (1995) EUS (Mw) atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -5364,15 +5364,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson and Boore (1995) EUS (mbLG) atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson and Boore (1995) EUS (mbLG) atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -5474,15 +5474,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Toro et al. (1996) MidCont. (Mw) atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Toro et al. (1996) MidCont. (Mw) atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -5626,15 +5626,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Toro et al. (1996) MidCont. (MLg) atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Toro et al. (1996) MidCont. (MLg) atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -5780,15 +5780,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Toro et al. (1996) Gulf (Mw) atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Toro et al. (1996) Gulf (Mw) atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -5932,15 +5932,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Toro et al. (1996) Gulf (MLg) atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Toro et al. (1996) Gulf (MLg) atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -6233,16 +6233,16 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Campbell and Bozorgnia (2003) Horizonal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell and Bozorgnia (2003) Horizonal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -6449,16 +6449,16 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Campbell and Bozorgnia (2003) Vertical'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell and Bozorgnia (2003) Vertical'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -6614,15 +6614,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Garcia et al. (2005) Sub-Inslab Hor. atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Garcia et al. (2005) Sub-Inslab Hor. atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -6713,15 +6713,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Garcia et al. (2005) Sub-Inslab Ver. atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Garcia et al. (2005) Sub-Inslab Ver. atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -6815,15 +6815,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Lin and Lee (2008) Sub-Hor. Rock atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Lin and Lee (2008) Sub-Hor. Rock atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -6916,15 +6916,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Lin and Lee (2008) Sub-Hor. Soil atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Lin and Lee (2008) Sub-Hor. Soil atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -7016,15 +7016,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson&Macias (2009) Subduction atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson&Macias (2009) Subduction atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -7066,11 +7066,11 @@ c     See Seed and Idriss (1982) pg 110.
       data ynode /1.58, 1.50, 1.32, 1.13, 1.00, 0.89/
       n = 6
       if (mag .lt. xnode(1)) then
-        write (*,'( 2x,''Error - magnitude too small for csratio'')')
+C        write (*,*)')
         goto 100
       endif
       if (mag .gt. xnode(6)) then
-        write (*,'( 2x,''Error - magnitude too large for csratio'')')
+C        write (*,*)')
         goto 100
       endif
       do i=2,n
@@ -7207,16 +7207,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Akkar&Cagan (2010) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Akkar&Cagan (2010) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -7504,16 +7504,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Akkar&Bommer (2010) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Akkar&Bommer (2010) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -7678,16 +7678,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Akkar,Sandikkaya&Bommer (2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Akkar,Sandikkaya&Bommer (2013) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -7969,16 +7969,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Bradley (2010) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Bradley (2010) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -8255,16 +8255,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'McVerry et al. (2006) Crustal Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'McVerry et al. (2006) Crustal Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -8490,16 +8490,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Bindi et al. (2009) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Bindi et al. (2009) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -8672,16 +8672,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Bindi et al. (2011) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Bindi et al. (2011) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -8907,16 +8907,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Bindi et al. (2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Bindi et al. (2013) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -9051,16 +9051,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Graizer and Kalkan et al. (Nov. 2011) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Graizer and Kalkan et al. (Nov. 2011) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -9248,16 +9248,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'DCPP Common Model ASK Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Common Model ASK Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -9365,16 +9365,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'DCPP Common Model BSSA Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Common Model BSSA Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -9483,16 +9483,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'DCPP Common Model001 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Common Model001 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -9600,16 +9600,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'DCPP Common Model002 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Common Model002 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -9717,16 +9717,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'DCPP Common Model003 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Common Model003 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -9834,16 +9834,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'DCPP Common Model004 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Common Model004 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -9951,16 +9951,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'DCPP Common Model005 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Common Model005 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -10068,16 +10068,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'DCPP Common Model006 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Common Model006 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -10185,16 +10185,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'DCPP Common Model007 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Common Model007 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -10302,16 +10302,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'DCPP Common Model008 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Common Model008 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -10419,16 +10419,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'DCPP Common Model009 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Common Model009 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -10542,16 +10542,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'PVNGS Common Model ASK Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Common Model ASK Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -10659,16 +10659,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'PVNGS Common Model Bindi Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Common Model Bindi Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -10776,16 +10776,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'PVNGS Common Model001 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Common Model001 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -10893,16 +10893,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'PVNGS Common Model002 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Common Model002 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -11010,16 +11010,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'PVNGS Common Model003 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Common Model003 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -11127,16 +11127,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'PVNGS Common Model004 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Common Model004 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -11244,16 +11244,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'PVNGS Common Model005 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Common Model005 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -11361,16 +11361,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'PVNGS Common Model006 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Common Model006 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -11478,16 +11478,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'PVNGS Common Model007 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Common Model007 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -11595,16 +11595,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'PVNGS Common Model008 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Common Model008 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -11711,16 +11711,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'PVNGS Common Model009 Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Common Model009 Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -11959,16 +11959,16 @@ C Now loop over the spectral period range of the SWUS Hanging Wall Model.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'SWUS Hanging Wall Model'
-      write (*,*) 'is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Hanging Wall Model'
+C      write (*,*) 'is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -14414,7 +14414,7 @@ C     Model Number = 9011, Hor
 
 c     Check for valid jcalc
       if ( anper .lt. 0 ) then
-         write (*,'( 2x,''invalid jcalc:'',i7)') jcalc
+C         write (*,*)') jcalc
          stop 99
       endif
 
@@ -14481,15 +14481,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Lin (2011) crustal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Lin (2011) crustal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -14576,15 +14576,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Lin (2011) crustal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Lin (2011) crustal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -14671,15 +14671,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Lin (2011) crustal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Lin (2011) crustal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -14766,15 +14766,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Lin (2011) crustal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Lin (2011) crustal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -14894,15 +14894,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Lin (2009) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Lin (2009) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -15129,17 +15129,17 @@ C Now loop over the spectral period range of the attenuation relationship.
             endif
          enddo
       endif
-c            write(*,*) 'specT = ', specT
+c      C      write(*,*) 'specT = ', specT
 
-      write (*,*)
-      write (*,*) 'TG09221 (2012) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'TG09221 (2012) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -15202,7 +15202,7 @@ c     Convert units to spectral acceleration in gal
       end
 
 c ------------------------------------------------------------
-C *** NCREE (2011)  Vs30¡Ù360m/sec  ******************
+C *** NCREE (2011)  Vs30>=360m/sec  ******************
 c ------------------------------------------------------------
       subroutine NCREE_2011(mag, rupDist, specT, period1, lnY, sigma )
 
@@ -15274,17 +15274,17 @@ C Now loop over the spectral period range of the attenuation relationship.
             endif
          enddo
       endif
-c      write(*,*) 'specT = ', specT
+cC      write(*,*) 'specT = ', specT
 
-      write (*,*)
-      write (*,*) 'NCREE (2011) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'NCREE (2011) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -15497,16 +15497,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Ambreseys et al 2005 Horizontal '
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Ambreseys et al 2005 Horizontal '
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -15745,16 +15745,16 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'BCHydro Sub (3/2009 Model) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'BCHydro Sub (3/2009 Model) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -15817,9 +15817,9 @@ C  Intraslab events
      1             a11T*(depth - 60.0) + faba*(a3T + a8T*alog(R2/40.0)) + a12T*alog(vs30/1000)
 
       else
-         write (*,*) 'Undefined Mechanism for BC Hydro Subduction Attenuation Model.'
-         write (*,*) 'Ftype = ', ftype
-         write (*,*) 'Check input fault file.'
+C         write (*,*) 'Undefined Mechanism for BC Hydro Subduction Attenuation Model.'
+C         write (*,*) 'Ftype = ', ftype
+C         write (*,*) 'Check input fault file.'
          stop 99
       endif
 
@@ -15948,16 +15948,16 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'BCHydro Sub (3/2009 Model) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'BCHydro Sub (3/2009 Model) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -16047,9 +16047,9 @@ C  Intraslab events
      1             a15T*alog(vs30/1000.0)
           endif
       else
-         write (*,*) 'Undefined Mechanism for BC Hydro Subduction Attenuation Model.'
-         write (*,*) 'Ftype = ', ftype
-         write (*,*) 'Check input fault file.'
+C         write (*,*) 'Undefined Mechanism for BC Hydro Subduction Attenuation Model.'
+C         write (*,*) 'Ftype = ', ftype
+C         write (*,*) 'Check input fault file.'
          stop 99
       endif
 
@@ -16220,16 +16220,16 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'BCHydro Sub (6/2010 Model) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'BCHydro Sub (6/2010 Model) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -16277,8 +16277,8 @@ c         (Interface events) of Hypocentral distance (Intraslab events).
          R = disthypo + c4*exp( (mag-6.0)*a9 )
          sumgm = a1T + a4*deltaC1 + (a2T + a14T*ftype + a3*(mag - 7.8))*alog(R) + a6T*disthypo + a10T*ftype
       else
-         write (*,*) 'BC Hydro V3 Model not defined for Ftype'
-         write (*,*) 'other than 0 (interface) or 1 (intraslab)'
+C         write (*,*) 'BC Hydro V3 Model not defined for Ftype'
+C         write (*,*) 'other than 0 (interface) or 1 (intraslab)'
          stop 99
       endif
 
@@ -16370,16 +16370,16 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'BCHydro Hard Rock to Vs760 Amp Factors'
-      write (*,*) 'model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'BCHydro Hard Rock to Vs760 Amp Factors'
+C      write (*,*) 'model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -16485,15 +16485,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 2 Corner atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 2 Corner atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -16595,15 +16595,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 2 Corner-Sat atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 2 Corner-Sat atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -16702,15 +16702,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Var-High atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Var-High atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -16809,15 +16809,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Var-Med atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Var-Med atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -16916,15 +16916,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Var-Low atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Var-Low atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -17023,15 +17023,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-High atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-High atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -17129,15 +17129,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Med atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Med atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -17235,15 +17235,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Low atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Low atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -17341,15 +17341,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-High-Sat atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-High-Sat atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -17447,15 +17447,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Med-Sat atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Med-Sat atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -17553,15 +17553,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Low-Sat atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Low-Sat atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -17659,15 +17659,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 2 Corner atttenuation Gulf model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 2 Corner atttenuation Gulf model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -17765,15 +17765,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 2 Corner-Sat atttenuation Gulf model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 2 Corner-Sat atttenuation Gulf model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -17871,15 +17871,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Var-High atttenuation Gulf model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Var-High atttenuation Gulf model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -17977,15 +17977,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Var-Med atttenuation Gulf model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Var-Med atttenuation Gulf model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -18083,15 +18083,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Var-Low atttenuation Gulf model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Var-Low atttenuation Gulf model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -18189,15 +18189,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-High atttenuation Gulf model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-High atttenuation Gulf model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -18295,15 +18295,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Med atttenuation Gulf model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Med atttenuation Gulf model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -18401,15 +18401,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Low atttenuation Gulf model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Low atttenuation Gulf model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -18507,15 +18507,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-High-Sat atttenuation Gulf model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-High-Sat atttenuation Gulf model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -18614,15 +18614,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Med-Sat atttenuation Gulf model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Med-Sat atttenuation Gulf model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -18721,15 +18721,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Low-Sat atttenuation Gulf model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Silva et al. (2002) 1 Corner-Const-Low-Sat atttenuation Gulf model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -18848,15 +18848,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Campbell (2003) Hor. Hybrid-CEUS atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell (2003) Hor. Hybrid-CEUS atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -18999,15 +18999,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Campbell (2003) Hor. Hybrid-CEUS Epistemic model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell (2003) Hor. Hybrid-CEUS Epistemic model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -19121,15 +19121,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson and Boore (2006) Hor. CEUS Hard Rock atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson and Boore (2006) Hor. CEUS Hard Rock atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -19224,16 +19224,16 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson and Boore (2006) Hor. CEUS Hard Rock atttenuation model'
-      write (*,*) 'variable stress drop factors'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson and Boore (2006) Hor. CEUS Hard Rock atttenuation model'
+C      write (*,*) 'variable stress drop factors'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -19337,15 +19337,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson and Boore (2006) Hor. CEUS Vs=760m/s atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson and Boore (2006) Hor. CEUS Vs=760m/s atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -19432,15 +19432,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson (2008) Hor. CEUS-NGA BA08 Vs760 atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson (2008) Hor. CEUS-NGA BA08 Vs760 atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -19506,15 +19506,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson (2008) Hor. CEUS-NGA BA08 Vs760 atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson (2008) Hor. CEUS-NGA BA08 Vs760 atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -19577,15 +19577,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'NGA sigma model (M5.5)'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'NGA sigma model (M5.5)'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -19641,15 +19641,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 
-      write (*,*)
-      write (*,*) 'Atkinson (2010) Hor. Fena adustment model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Atkinson (2010) Hor. Fena adustment model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -19825,7 +19825,7 @@ c-----------------------------------------------------------------------------
 c     Lin 2009 Doctoral thesis
 C     Model Number = 315
       if ( jcalc .eq. 315) then
-c      write(*,*) 'specT = ', specT
+cC      write(*,*) 'specT = ', specT
 
          call  Lin2009
      1( mag, rupDist, specT, period2, lnY, sigma, vs, iflag, ftype)
@@ -19836,7 +19836,7 @@ c-----------------------------------------------------------------------------
 c     TG09221 2012 project
 C     Model Number = 441
       if ( jcalc .eq. 441) then
-c      write(*,*) 'specT = ', specT
+cC      write(*,*) 'specT = ', specT
 
          call  TG09221_2012
      1( mag, rupDist, specT, period2, lnY, sigma, vs, iflag, ftype)
@@ -19850,7 +19850,7 @@ C     Model Number = 451
       if ( jcalc .eq. 451) then
          call  NCREE_2011
      1    ( mag, rupDist, specT, period2, lnY, sigma)
-         attenname1 = 'NCREE Report 2011/01, Vs30Â°Å¸360m/sec'
+         attenname1 = 'NCREE Report 2011/01, Vs30>=360m/sec'
          lnY = lnY + efac
       endif
 
@@ -20526,8 +20526,8 @@ C     Model Number = 2910
      1                     period2, lnY, sigma, iflag )
             attenname1 = 'Idriss_NGAWest2_2013_Hor'
          else
-            write (*,*) 'Idriss NGA West 2 GMPE not defined'
-            write (*,*) 'for Vs<450m/s.'
+C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
+C            write (*,*) 'for Vs<450m/s.'
             stop 99
          endif
          lnY = lnY + efac
@@ -21504,9 +21504,9 @@ c     soft-soil
          iflag = 0
          lnY = lnY + efac
       elseif (jcalc .eq. 41 .and. specT .ne. 0.0) then
-        write (*,*) 'Idriss (1991), Horizontal, Soft Soil'
-        write (*,*) 'not defined for spectral acclereation!!!'
-        write (*,*) 'Check input file.'
+C        write (*,*) 'Idriss (1991), Horizontal, Soft Soil'
+C        write (*,*) 'not defined for spectral acclereation!!!'
+C        write (*,*) 'Check input file.'
         stop 99
       endif
 
@@ -21518,9 +21518,9 @@ C     Model Number = 042
          iflag = 0
          lnY = lnY + efac
       elseif (jcalc .eq. 42 .and. specT .ne. 0.0) then
-         write (*,*) 'Idriss (1997), Horizontal, Soft Soil'
-         write (*,*) 'not defined for spectral acclereation!!!'
-         write (*,*) 'Check input file.'
+C         write (*,*) 'Idriss (1997), Horizontal, Soft Soil'
+C         write (*,*) 'not defined for spectral acclereation!!!'
+C         write (*,*) 'Check input file.'
          stop 99
       endif
 
@@ -22303,12 +22303,12 @@ C           requested falls within this range.
       if (jcalc .eq. 240) then
 C        Check the magnitude range.
 c         if (mag .lt. 8.0 .or. mag .gt. 9.0) then
-c            write (*,*) 'User has requested the Gregor et al. (2002)'
-c            write (*,*) 'Cascadia Subduction attenuation relationship,'
-c            write (*,*) 'however, the magnitude of = ', mag
-c            write (*,*) 'falls outside of the applicable magnitude'
-c            write (*,*) 'range for this attenuation relationship.'
-c            write (*,*) 'Check your input fault parameter file.'
+c   C         write (*,*) 'User has requested the Gregor et al. (2002)'
+c   C         write (*,*) 'Cascadia Subduction attenuation relationship,'
+c   C         write (*,*) 'however, the magnitude of = ', mag
+c   C         write (*,*) 'falls outside of the applicable magnitude'
+c   C         write (*,*) 'range for this attenuation relationship.'
+c   C         write (*,*) 'Check your input fault parameter file.'
 c            stop 99
 c         endif
          call Gregor02CasR ( mag, rupdist, lnY, sigma, specT,
@@ -22326,12 +22326,12 @@ C           requested falls within this range.
       if (jcalc .eq. 241) then
 C        Check the magnitude range.
 c         if (mag .lt. 8.0 .or. mag .gt. 9.0) then
-c            write (*,*) 'User has requested the Gregor et al. (2002)'
-c            write (*,*) 'Cascadia Subduction attenuation relationship,'
-c            write (*,*) 'however, the magnitude of = ', mag
-c            write (*,*) 'falls outside of the applicable magnitude'
-c            write (*,*) 'range for this attenuation relationship.'
-c            write (*,*) 'Check your input fault parameter file.'
+c   C         write (*,*) 'User has requested the Gregor et al. (2002)'
+c   C         write (*,*) 'Cascadia Subduction attenuation relationship,'
+c   C         write (*,*) 'however, the magnitude of = ', mag
+c   C         write (*,*) 'falls outside of the applicable magnitude'
+c   C         write (*,*) 'range for this attenuation relationship.'
+c   C         write (*,*) 'Check your input fault parameter file.'
 c            stop 99
 c         endif
          call Gregor02CasS ( mag, rupdist, lnY, sigma, specT,
@@ -22549,11 +22549,11 @@ c     Garcia et al. (2005) - Horizontal, Subduction-Inslab
 C     Model Number = 270
       if ( jcalc .eq. 270 ) then
          if (ftype .ne. 1) then
-            write (*,*)
-            write (*,*) 'Garcia et al. (2005) Subduction atttenuation model'
-            write (*,*) 'is defined only for inslab events'
-            write (*,*) 'Mechanism Ftype = 1'
-            write (*,*) 'Please check the input file.'
+C            write (*,*)
+C            write (*,*) 'Garcia et al. (2005) Subduction atttenuation model'
+C            write (*,*) 'is defined only for inslab events'
+C            write (*,*) 'Mechanism Ftype = 1'
+C            write (*,*) 'Please check the input file.'
          else
             call GarciaH05 ( mag, rupdist, specT,
      1                    period2, lnY, sigma, iflag, depth )
@@ -22566,11 +22566,11 @@ C     Model Number = 271
 c     Garcia et al. (2005) - Vertical, Subduction-Inslab
       if ( jcalc .eq. 271 ) then
          if (ftype .ne. 1) then
-            write (*,*)
-            write (*,*) 'Garcia et al. (2005) Subduction atttenuation model'
-            write (*,*) 'is defined only for inslab events'
-            write (*,*) 'Mechanism Ftype = 1'
-            write (*,*) 'Please check the input file.'
+C            write (*,*)
+C            write (*,*) 'Garcia et al. (2005) Subduction atttenuation model'
+C            write (*,*) 'is defined only for inslab events'
+C            write (*,*) 'Mechanism Ftype = 1'
+C            write (*,*) 'Please check the input file.'
          else
             call GarciaV05 ( mag, rupdist, specT,
      1                       period2, lnY, sigma, iflag, depth )
@@ -23318,9 +23318,9 @@ C     Model Number = 300
           iflag = 0
          lnY = lnY + efac
       elseif ( jcalc .eq. 300 .and. specT .ne. 0.0) then
-          write (*,*) 'McVerry (1993), Horizontal, Rock'
-          write (*,*) 'not defined for spectral acclereation!!!'
-          write (*,*) 'Check input file.'
+C          write (*,*) 'McVerry (1993), Horizontal, Rock'
+C          write (*,*) 'not defined for spectral acclereation!!!'
+C          write (*,*) 'Check input file.'
           stop 99
       endif
 
@@ -23332,9 +23332,9 @@ C     Model Number = 301
           iflag = 0
          lnY = lnY + efac
       elseif (jcalc .eq. 301 .and. specT .ne. 0.0) then
-          write (*,*) 'Fukushima (1990), Horizontal, Rock'
-          write (*,*) 'not defined for spectral acclereation!!!'
-          write (*,*) 'Check input file.'
+C          write (*,*) 'Fukushima (1990), Horizontal, Rock'
+C          write (*,*) 'not defined for spectral acclereation!!!'
+C          write (*,*) 'Check input file.'
           stop 99
       endif
 
@@ -23346,9 +23346,9 @@ C     Model Number = 302
          iflag = 0
          lnY = lnY + efac
       elseif (jcalc .eq. 302 .and. specT .ne. 0.0 ) then
-         write (*,*) 'Loh High Speed Rail, Horizontal, Rock'
-         write (*,*) 'not defined for spectral acclereation!!!'
-         write (*,*) 'Check input file.'
+C         write (*,*) 'Loh High Speed Rail, Horizontal, Rock'
+C         write (*,*) 'not defined for spectral acclereation!!!'
+C         write (*,*) 'Check input file.'
          stop 99
       endif
 
@@ -23359,9 +23359,9 @@ C     Model Number = 303
          iflag = 0
          lnY = lnY + efac
       elseif (jcalc .eq. 303 .and. specT .ne. 0.0 ) then
-         write (*,*) 'Loh (1996), Horizontal, Rock'
-         write (*,*) 'not defined for spectral acclereation!!!'
-         write (*,*) 'Check input file.'
+C         write (*,*) 'Loh (1996), Horizontal, Rock'
+C         write (*,*) 'not defined for spectral acclereation!!!'
+C         write (*,*) 'Check input file.'
          stop 99
       endif
 
@@ -23945,8 +23945,8 @@ C         10,000 < jcalc < 11,000
       if ( jcalc .gt. 10000 .and. jcalc .lt. 11000 ) then
          coefcountrrup = jcalc - 10000
          if (coefcountrrup .lt. 0) then
-            write (*,*) 'Incorrect jcalc for SWUS Common Functional Model Rrup!!!'
-            write (*,*) 'Check input file.'
+C            write (*,*) 'Incorrect jcalc for SWUS Common Functional Model Rrup!!!'
+C            write (*,*) 'Check input file.'
             Stop 99
          endif
          call SWUS_CFRrup ( mag, RupDist, jbDist, depthtop, ftype, dip1(1), RupWidth, Rx, HWFlag,
@@ -23961,8 +23961,8 @@ C         11,000 < jcalc < 12,000
       if ( jcalc .gt. 11000 .and. jcalc .lt. 12000 ) then
          coefcountrjb = jcalc - 11000
          if (coefcountrjb .lt. 0) then
-            write (*,*) 'Incorrect jcalc for SWUS Common Functional Model Rjb!!!'
-            write (*,*) 'Check input file.'
+C            write (*,*) 'Incorrect jcalc for SWUS Common Functional Model Rjb!!!'
+C            write (*,*) 'Check input file.'
             Stop 99
          endif
          call SWUS_CFRjb ( mag, RupDist, jbDist, depthtop, ftype, dip1(1), RupWidth, Rx, HWFlag,
@@ -24352,8 +24352,8 @@ C     Model Number = 8910
      1                     period2, lnY, sigma, iflag )
             attenname1 = 'Idriss_NGAWest2_2014_Hor, Zone123-Cent'
          else
-            write (*,*) 'Idriss NGA West 2 GMPE not defined'
-            write (*,*) 'for Vs<450m/s.'
+C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
+C            write (*,*) 'for Vs<450m/s.'
             stop 99
          endif
 
@@ -24386,8 +24386,8 @@ C     Model Number = 8911
      1                     period2, lnY, sigma, iflag )
             attenname1 = 'Idriss_NGAWest2_2014_Hor, Zone123-Low'
          else
-            write (*,*) 'Idriss NGA West 2 GMPE not defined'
-            write (*,*) 'for Vs<450m/s.'
+C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
+C            write (*,*) 'for Vs<450m/s.'
             stop 99
          endif
 
@@ -24420,8 +24420,8 @@ C     Model Number = 8912
      1                     period2, lnY, sigma, iflag )
             attenname1 = 'Idriss_NGAWest2_2014_Hor, Zone123-High'
          else
-            write (*,*) 'Idriss NGA West 2 GMPE not defined'
-            write (*,*) 'for Vs<450m/s.'
+C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
+C            write (*,*) 'for Vs<450m/s.'
             stop 99
          endif
 
@@ -24748,8 +24748,8 @@ C     Model Number = 9910
      1                     period2, lnY, sigma, iflag )
             attenname1 = 'Idriss_NGAWest2_2014_Hor, Zone123-Cent'
          else
-            write (*,*) 'Idriss NGA West 2 GMPE not defined'
-            write (*,*) 'for Vs<450m/s.'
+C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
+C            write (*,*) 'for Vs<450m/s.'
             stop 99
          endif
 
@@ -24776,8 +24776,8 @@ C     Model Number = 9911
      1                     period2, lnY, sigma, iflag )
             attenname1 = 'Idriss_NGAWest2_2014_Hor, Zone123-Low'
          else
-            write (*,*) 'Idriss NGA West 2 GMPE not defined'
-            write (*,*) 'for Vs<450m/s.'
+C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
+C            write (*,*) 'for Vs<450m/s.'
             stop 99
          endif
 
@@ -24804,8 +24804,8 @@ C     Model Number = 9912
      1                     period2, lnY, sigma, iflag )
             attenname1 = 'Idriss_NGAWest2_2014_Hor, Zone123-High'
          else
-            write (*,*) 'Idriss NGA West 2 GMPE not defined'
-            write (*,*) 'for Vs<450m/s.'
+C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
+C            write (*,*) 'for Vs<450m/s.'
             stop 99
          endif
 
@@ -24853,8 +24853,8 @@ C     Kepp median ground motions large since this is only for sigma model
 
 c     Check for valid jcalc
       if ( lnY .gt. 1.0e10 ) then
-         write (*,'( 2x,''invalid jcalc:'',i7,3f10.4,e12.4,f12.4)') jcalc, mag,
-     1      rupDist, ftype, lnY, sigma
+C         write (*,*)') jcalc, mag,
+C     1      rupDist, ftype, lnY, sigma
          stop 99
       endif
 
@@ -25415,16 +25415,16 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Abrahamson and Silva (NGA-2008) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Abrahamson and Silva (NGA-2008) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -26238,16 +26238,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Chiou and Youngs (NGA-2008) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Chiou and Youngs (NGA-2008) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -26936,16 +26936,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Chiou and Youngs (NGA-2008) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Chiou and Youngs (NGA-2008) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -27029,13 +27029,13 @@ C     Reset necessary coefficients.
          tau = 0.3651
          sigma = 0.6135
       else
-         write (*,*)
-         write (*,*) 'Chiou and Youngs (NGA-2008) Horizontal'
-         write (*,*) 'Southern California small magnitude'
-         write (*,*) 'attenuation model is not defined for a '
-         write (*,*) ' spectral period of: '
-         write (*,'(a10,f10.5)') ' Period = ',specT
-         write (*,*)
+C         write (*,*)
+C         write (*,*) 'Chiou and Youngs (NGA-2008) Horizontal'
+C         write (*,*) 'Southern California small magnitude'
+C         write (*,*) 'attenuation model is not defined for a '
+C         write (*,*) ' spectral period of: '
+C         write (*,*)') ' Period = ',specT
+C         write (*,*)
          stop 99
       endif
 
@@ -27668,16 +27668,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Chiou and Youngs (NGA-2008) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Chiou and Youngs (NGA-2008) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -27760,13 +27760,13 @@ C     Reset necessary coefficients.
          tau = 0.3651
          sigma = 0.6135
       else
-         write (*,*)
-         write (*,*) 'Chiou and Youngs (NGA-2008) Horizontal'
-         write (*,*) 'Central California small magnitude'
-         write (*,*) 'attenuation model is not defined for a '
-         write (*,*) ' spectral period of: '
-         write (*,'(a10,f10.5)') ' Period = ',specT
-         write (*,*)
+C         write (*,*)
+C         write (*,*) 'Chiou and Youngs (NGA-2008) Horizontal'
+C         write (*,*) 'Central California small magnitude'
+C         write (*,*) 'attenuation model is not defined for a '
+C         write (*,*) ' spectral period of: '
+C         write (*,*)') ' Period = ',specT
+C         write (*,*)
          stop 99
       endif
 
@@ -27989,16 +27989,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Idriss (NGA-2008) Horizontal Vs=450-900m/s'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Idriss (NGA-2008) Horizontal Vs=450-900m/s'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -28183,16 +28183,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Idriss (NGA-2008) Horizontal Vs>=900m/s'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Idriss (NGA-2008) Horizontal Vs>=900m/s'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -28455,16 +28455,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Campbell&Bozorgnia (NGA-2008) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell&Bozorgnia (NGA-2008) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -28936,16 +28936,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Boore&Atkinson (NGA-2008) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Boore&Atkinson (NGA-2008) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -29674,16 +29674,16 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Abrahamson and Silva (NGA-2008-TR) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Abrahamson and Silva (NGA-2008-TR) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -30588,16 +30588,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Chiou and Youngs (NGA-2008-TR) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Chiou and Youngs (NGA-2008-TR) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -30910,16 +30910,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Idriss (NGA-2008-TR) Horizontal Vs=450-900m/s'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Idriss (NGA-2008-TR) Horizontal Vs=450-900m/s'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -31191,16 +31191,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Campbell&Bozorgnia (NGA-2008-TR) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell&Bozorgnia (NGA-2008-TR) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -31670,16 +31670,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Boore&Atkinson (NGA-2008-TR) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Boore&Atkinson (NGA-2008-TR) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -31958,16 +31958,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Idriss (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Idriss (NGA West2-2013) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -32537,16 +32537,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'BSSA (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'BSSA (NGA West2-2013) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -33080,16 +33080,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Campbell&Bozorgnia (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Campbell&Bozorgnia (NGA West2-2013) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -33357,9 +33357,9 @@ C     For Rock PGA the D25 value should be set at the recommended value of D25=0
       pgasoil = alog(pgarock) - term5_rk - term6_RK + term5 + term6
       psoil2 = (TERM1+TERM2+TERM3+TERM4+TERM5+TERM6+TERM7+TERM8+TERM9)
 
-C      write (*,*) 'PGA Rock:', pgarock, term1-c1T, term2, term3, term4, term5, term6, term7, term8, term9
-c      write (*,*) term5, exp(pgasoil)
-c      write (*,*) exp(pgasoil), exp(psoil2)
+CC      write (*,*) 'PGA Rock:', pgarock, term1-c1T, term2, term3, term4, term5, term6, term7, term8, term9
+cC      write (*,*) term5, exp(pgasoil)
+cC      write (*,*) exp(pgasoil), exp(psoil2)
 c      pause
 
 
@@ -33511,10 +33511,10 @@ C.....Compute anelastic attenuation term.....
 
       LnY = (TERM1+TERM2+TERM3+TERM4+TERM5+TERM6+TERM7+TERM8+TERM9)
 
-C      write (*,*) spect, Rrup, 'Soil Rock:',term1-c1T, term2, term3, term4, term5, term6, term7, term8, term9
-c      write (*,*) c14T, c15T,d25,(C14T+c15T)*(D25-1.0), (C14T)*(D25-1.0)
-C      write (*,*) exp(lnY), exp(pgasoil), exp(psoil2)
-c      write (*,*) exp(pgasoil), exp(psoil2)
+CC      write (*,*) spect, Rrup, 'Soil Rock:',term1-c1T, term2, term3, term4, term5, term6, term7, term8, term9
+cC      write (*,*) c14T, c15T,d25,(C14T+c15T)*(D25-1.0), (C14T)*(D25-1.0)
+CC      write (*,*) exp(lnY), exp(pgasoil), exp(psoil2)
+cC      write (*,*) exp(pgasoil), exp(psoil2)
 c      pause
 
 C    Check that SA is not less than PGA for T<0.25sec
@@ -33934,16 +33934,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Chiou and Youngs (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Chiou and Youngs (NGA West2-2013) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -34559,16 +34559,16 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Abrahamson, Silva, and Kamai (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Abrahamson, Silva, and Kamai (NGA West2-2013) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -35356,16 +35356,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'SSBA (NGA West2-2015) Vertical'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SSBA (NGA West2-2015) Vertical'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -35814,16 +35814,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Bozorgnia&Campbell (NGA West2-2013) Vertical'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Bozorgnia&Campbell (NGA West2-2013) Vertical'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -36085,9 +36085,9 @@ C     For Rock PGA the D25 value should be set at the recommended value of D25=0
       pgasoil = alog(pgarock) - term5_rk - term6_RK + term5 + term6
       psoil2 = (TERM1+TERM2+TERM3+TERM4+TERM5+TERM6+TERM7+TERM8+TERM9)
 
-c      write (*,*) pgarock, term1, term2, term3, term4, term5_rk, term6, term7, term8, term9
-c      write (*,*) term5, exp(pgasoil)
-c      write (*,*) exp(pgasoil), exp(psoil2)
+cC      write (*,*) pgarock, term1, term2, term3, term4, term5_rk, term6, term7, term8, term9
+cC      write (*,*) term5, exp(pgasoil)
+cC      write (*,*) exp(pgasoil), exp(psoil2)
 c      pause
 
 
@@ -36239,10 +36239,10 @@ C.....Compute anelastic attenuation term.....
 
       LnY = (TERM1+TERM2+TERM3+TERM4+TERM5+TERM6+TERM7+TERM8+TERM9)
 
-c      write (*,*) term1, term2, term3, term4, term5, term6, term7, term8, term9
-c      write (*,*) exp(lnY)
-c      write (*,*) term5, exp(pgasoil)
-c      write (*,*) exp(pgasoil), exp(psoil2)
+cC      write (*,*) term1, term2, term3, term4, term5, term6, term7, term8, term9
+cC      write (*,*) exp(lnY)
+cC      write (*,*) term5, exp(pgasoil)
+cC      write (*,*) exp(pgasoil), exp(psoil2)
 c      pause
 
 C    Check that SA is not less than PGA for T<0.25sec
@@ -36702,16 +36702,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Chiou and Youngs (NGA West2-2013) Vertical'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Chiou and Youngs (NGA West2-2013) Vertical'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -37317,16 +37317,16 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Gulerce, Kamai, Abrahamson, and Silva (NGA West2-2013) Vertical'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Gulerce, Kamai, Abrahamson, and Silva (NGA West2-2013) Vertical'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -37978,9 +37978,9 @@ C     PhiSS, European, Outside Zone1,2,3: High
 
 
       else
-         write (*,*) 'Invalid Single Station Sigma Model.'
-         write (*,*) 'SSSCalc1 = ', ssscalc1
-         write (*,*) 'Check input file.'
+C         write (*,*) 'Invalid Single Station Sigma Model.'
+C         write (*,*) 'SSSCalc1 = ', ssscalc1
+C         write (*,*) 'Check input file.'
          stop 99
       endif
 
@@ -38029,16 +38029,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'Pegasos Constant PhiSS Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Pegasos Constant PhiSS Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38091,16 +38091,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'Pegasos Constant PhiSS Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Pegasos Constant PhiSS Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38156,16 +38156,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'Pegasos Constant PhiSS Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Pegasos Constant PhiSS Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38225,16 +38225,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'Pegasos Constant PhiSS Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Pegasos Constant PhiSS Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38311,16 +38311,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'Pegasos Constant PhiSS Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Pegasos Constant PhiSS Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38396,16 +38396,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'DCPP California Constant PhiSS Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP California Constant PhiSS Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38454,16 +38454,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'DCPP Global Constant PhiSS Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Global Constant PhiSS Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38516,16 +38516,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'DCPP California Magnitude PhiSS Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP California Magnitude PhiSS Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38585,16 +38585,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'PVNGS Local Source Global Constant PhiSS Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Local Source Global Constant PhiSS Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38644,16 +38644,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'PVNGS Distant Source Global Constant PhiSS Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Distant Source Global Constant PhiSS Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38703,16 +38703,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'PVNGS Single Path North Constant PhiSP Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Single Path North Constant PhiSP Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38761,16 +38761,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'PVNGS Single Path South Constant PhiSP Model'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS Single Path South Constant PhiSP Model'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38834,16 +38834,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'DCPP California Constant PhiSS Model - July 2014'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP California Constant PhiSS Model - July 2014'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -38913,16 +38913,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'DCPP Global Constant PhiSS Model - July 2014'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP Global Constant PhiSS Model - July 2014'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39000,16 +39000,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'DCPP California Mag Dependent PhiSS Model - July 2014'
-      write (*,*) 'PhiSS Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'DCPP California Mag Dependent PhiSS Model - July 2014'
+C      write (*,*) 'PhiSS Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39096,16 +39096,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'PVNGS PhiSS European, Outside Zones 1,2,3 Model - July 2014'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS PhiSS European, Outside Zones 1,2,3 Model - July 2014'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39173,16 +39173,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'PVNGS PhiSS Global, Outside Zones 1,2,3 Model - July 2014'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS PhiSS Global, Outside Zones 1,2,3 Model - July 2014'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39258,16 +39258,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'PVNGS PhiSP-R, Zones 1,2,3 Model - July 2014'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS PhiSP-R, Zones 1,2,3 Model - July 2014'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39335,16 +39335,16 @@ C     For other periods, loop over the spectral period range of the PhiSS Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'PVNGS PhiSS Global, Zones 1,2,3 Model - July 2014'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'PVNGS PhiSS Global, Zones 1,2,3 Model - July 2014'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39409,16 +39409,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: DCPP Central'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: DCPP Central'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39480,16 +39480,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: DCPP Low'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: DCPP Low'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39552,16 +39552,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: DCPP High'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: DCPP High'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39623,16 +39623,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: PVNGS Arizona Sources Central'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: PVNGS Arizona Sources Central'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39694,16 +39694,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: PVNGS Arizona Sources Low'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: PVNGS Arizona Sources Low'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39765,16 +39765,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: PVNGS Arizona Sources High'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: PVNGS Arizona Sources High'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39833,16 +39833,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources with Path Central'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources with Path Central'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39893,16 +39893,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources with Path Low'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources with Path Low'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -39954,16 +39954,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources with Path High'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources with Path High'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -40014,16 +40014,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources no Path Central'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources no Path Central'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -40074,16 +40074,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources no Path Low'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources no Path Low'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -40134,16 +40134,16 @@ C     For other periods, loop over the spectral period range of the Sigma Model.
       enddo
 
 C     Selected spectral period is outside range defined by the model.
-      write (*,*)
-      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources no Path High'
-      write (*,*) 'Model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'SWUS Total Sigma Model: PVNGS California Sources no Path High'
+C      write (*,*) 'Model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C     Interpolate the coefficients for the requested spectral period.
@@ -40382,16 +40382,16 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Kale, et al. (2015) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
+C      write (*,*)
+C      write (*,*) 'Kale, et al. (2015) Horizontal'
+C      write (*,*) 'attenuation model is not defined for a '
+C      write (*,*) ' spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -40919,15 +40919,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
         
-      write (*,*) 
-      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*) 
+C      write (*,*) 
+C      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*) 
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -41170,25 +41170,25 @@ C    Set Site class term
 	       lnY =  rockterm + logAn                                        
       endif                                       
 
-      write(*,*) "--------------------------------- "
-      write(*,*) "dist = ", dist     
-      write(*,*) "sclass = ", sclass
+C      write(*,*) "--------------------------------- "
+C      write(*,*) "dist = ", dist     
+C      write(*,*) "sclass = ", sclass
 
-      write(*,*) "Sr = ", Sr
-      write(*,*) "Src = ", Src
+C      write(*,*) "Sr = ", Sr
+C      write(*,*) "Src = ", Src
 
-      write(*,*) "fm = ", fm
-      write(*,*) "gmterm = ", gmterm
-      write(*,*) "gmLterm = ", gmLterm
-      write(*,*) "eterm = ", eterm
-      write(*,*) "gammaT = ", gammaT
-      write(*,*) "logAn = ", logAn
-      write(*,*) "Y(g) = ", exp(lnY)
+C      write(*,*) "fm = ", fm
+C      write(*,*) "gmterm = ", gmterm
+C      write(*,*) "gmLterm = ", gmLterm
+C      write(*,*) "eterm = ", eterm
+C      write(*,*) "gammaT = ", gammaT
+C      write(*,*) "logAn = ", logAn
+C      write(*,*) "Y(g) = ", exp(lnY)
 
 C     Convert ground motion to units of gals.
       lnY = lnY + 6.89
 
-       write(*,*) "Y(gal) = ", exp(lnY)
+C      write(*,*) "Y(gal) = ", exp(lnY)
                                                                                
 c     Set standard error                                                       
 c      if (sclass .eq. 1) then
@@ -41528,15 +41528,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
         
-      write (*,*) 
-      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*) 
+C      write (*,*) 
+C      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*) 
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -41622,6 +41622,10 @@ C Interpolate the coefficients for the requested spectral period.
      +                specT,phiT,iflag)
 
  1011 period1 = specT
+ 
+      if (depth .gt. 150.0) then 
+          depth = 150.0
+      endif
 
 
 C     Set mechanism term and source and near fault term.                
@@ -41727,26 +41731,26 @@ C    Set Site class term
 	       lnY =  rockterm + logAn                                        
       endif
       
-      write(*,*) "--------------------------------- "
-      write(*,*) "dist = ", dist     
-      write(*,*) "sclass = ", sclass
+C      write(*,*) "--------------------------------- "
+C      write(*,*) "dist = ", dist     
+C      write(*,*) "sclass = ", sclass
 
-      write(*,*) "Sr = ", Sr
-      write(*,*) "Src = ", Src
+C      write(*,*) "Sr = ", Sr
+C      write(*,*) "Src = ", Src
 
-      write(*,*) "fm = ", fm
-      write(*,*) "gmterm = ", gmterm
-      write(*,*) "gmLterm = ", gmLterm
-      write(*,*) "qterm = ", qterm
-      write(*,*) "eterm = ", eterm
-      write(*,*) "gammaT = ", gammaT
-      write(*,*) "logAn = ", logAn
-      write(*,*) "Y(g) = ", exp(lnY)
+C      write(*,*) "fm = ", fm
+C      write(*,*) "gmterm = ", gmterm
+C      write(*,*) "gmLterm = ", gmLterm
+C      write(*,*) "qterm = ", qterm
+C      write(*,*) "eterm = ", eterm
+C      write(*,*) "gammaT = ", gammaT
+C      write(*,*) "logAn = ", logAn
+C      write(*,*) "Y(g) = ", exp(lnY)
 
 C     Convert ground motion to units of gals.
       lnY = lnY + 6.89
 
-       write(*,*) "Y(gal) = ", exp(lnY)
+C      write(*,*) "Y(gal) = ", exp(lnY)
                                                                                
 c     Set standard error                                                       
 c      if (sclass .eq. 1) then
@@ -42149,15 +42153,15 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
         
-      write (*,*) 
-      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
-      write (*,*) 'is not defined for a spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*) 
+C      write (*,*) 
+C      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
+C      write (*,*) 'is not defined for a spectral period of: '
+C      write (*,*)') ' Period = ',specT
+C      write (*,*) 'This spectral period is outside the defined'
+C      write (*,*) 'period range in the code or beyond the range'
+C      write (*,*) 'of spectral periods for interpolation.'
+C      write (*,*) 'Please check the input file.'
+C      write (*,*) 
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -42311,7 +42315,7 @@ C    Set distance for geometric spreading term r
       endif
       
       r = xcro + dist + exp(c1T + c2T*Cm)  
-	    write(*,*) "r0 = ", r     
+C	    write(*,*) "r0 = ", r     
 
 C    Set geometric attenuation rate term 
       if (sourcetype .eq. 0 ) then
@@ -42427,26 +42431,26 @@ C    Set Site class term
 	       lnY =  rockterm + logAn                                        
       endif
 
-      write(*,*) "--------------------------------- "
-      write(*,*) "dist = ", dist     
-      write(*,*) "sclass = ", sclass
+C      write(*,*) "--------------------------------- "
+C      write(*,*) "dist = ", dist     
+C      write(*,*) "sclass = ", sclass
 
-      write(*,*) "Sr = ", Sr
-      write(*,*) "Src = ", Src
+C      write(*,*) "Sr = ", Sr
+C      write(*,*) "Src = ", Src
 
-      write(*,*) "fm = ", fm
-      write(*,*) "gmterm = ", gmterm
-      write(*,*) "gmLterm = ", gmLterm
-      write(*,*) "gN = ", gN
-      write(*,*) "eterm = ", eterm
-      write(*,*) "gammaT = ", gammaT
-      write(*,*) "logAn = ", logAn
-      write(*,*) "Y(g) = ", exp(lnY)
+C      write(*,*) "fm = ", fm
+C      write(*,*) "gmterm = ", gmterm
+C      write(*,*) "gmLterm = ", gmLterm
+C      write(*,*) "gN = ", gN
+C      write(*,*) "eterm = ", eterm
+C      write(*,*) "gammaT = ", gammaT
+C      write(*,*) "logAn = ", logAn
+C      write(*,*) "Y(g) = ", exp(lnY)
 
 C     Convert ground motion to units of gals.
       lnY = lnY + 6.89
 
-       write(*,*) "Y(gal) = ", exp(lnY)
+C      write(*,*) "Y(gal) = ", exp(lnY)
                                                                                
 c     Set standard error                                                       
 c      if (sclass .eq. 1) then
