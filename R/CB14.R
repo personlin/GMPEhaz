@@ -44,6 +44,6 @@ CB14 <- function(Mag, Rrup, Rjb, ftype=0, Prd, Vs30=760,
                       rupwidth=as.single(rupwidth), regionflag=as.integer(regionflag),
                       phi=as.single(0.0), tau=as.single(0.0))
   names(retvals) <- c("mag", "Rrup", "Rjb", "ftype", "specT", "period", "lnY", "sigma", "iflag", "Vs30",
-                      "Ztor", "Z25", "dip", "depth", "hwflag", "Rx", "rupwidth", "regionflag", "phi", "tau")
+                      "Ztor", "Z2.5", "dip", "depth", "hwflag", "Rx", "rupwidth", "regionflag", "phi", "tau")
   return(retvals)
 }

@@ -12,7 +12,7 @@
 #' @param Prd Period of spectral acceleration.
 #' @param ftype style of faulting.
 #' @param Vs30 Vs30(m/s).
-#' @param region 0 for Turkey, 1 for Iran.
+#' @param regionflag 0 for Turkey, 1 for Iran.
 #'
 #' @return A list will be return, including mag, Rjb, specT, period, lnY, sigma, iflag, ftype, Vs30, pgaref, region.
 #'
@@ -21,14 +21,14 @@
 #' KAAH15(7, 10, 0, 0, 760, 0)
 #'
 #' @export
-KAAH15 <- function(Mag, Rjb, Prd=0, ftype=0, Vs30=760, region=0){
+KAAH15 <- function(Mag, Rjb, Prd=0, ftype=0, Vs30=760, regionflag=0){
   #subroutine KAAH_2015 ( mag, Rbjf, specT,
   #                     period2, lnY, sigma, iflag, vs, ftype, pgaref, region)
   retvals <- .Fortran("KAAH_2015", mag=as.single(Mag), Rbjf=as.single(Rjb), specT=as.single(Prd),
                       period2=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1),
                       iflag=as.integer(0), vs=as.single(Vs30), ftype=as.single(ftype),
-                      pgaref=as.single(0.0), region=as.integer(region))
+                      pgaref=as.single(0.0), region=as.integer(regionflag))
   names(retvals) <- c("mag", "Rjb", "specT", "period", "lnY", "sigma", "iflag", "ftype", "Vs30",
-                      "pgaref", "region")
+                      "pgaref", "regionflag")
   return(retvals)
 }

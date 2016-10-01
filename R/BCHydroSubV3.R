@@ -13,7 +13,7 @@
 #' @param Vs30 Vs30(m/s).
 #' @param forearc 0 = Forearc site, 1 = Backarc site
 #' @param depth hypocentral depth(km).
-#' @param disthypo hypocentral distance(km)
+#' @param Rhypo hypocentral distance(km)
 #'
 #' @return A list will be return, including mag, ftype, Rrup, Vs30, lnY, sigma, specT, period, iflag, forearc, depth, Rhypo, deltac1.
 #'
@@ -22,7 +22,7 @@
 #' BCHydroSubV3(7, 10, 0, 0, 760, 1, 10, 20)
 #'
 #' @export
-BCHydroSubV3 <- function(Mag, Rrup, Prd, ftype=0, Vs30, forearc=1, depth, disthypo) {
+BCHydroSubV3 <- function(Mag, Rrup, Prd, ftype=0, Vs30, forearc=1, depth, Rhypo) {
   if (ftype == 0) {
     if (Prd <= 0.3) {
       deltaC1 = 0.2

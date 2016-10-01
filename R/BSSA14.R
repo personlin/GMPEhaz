@@ -41,6 +41,6 @@ BSSA14 <- function(Mag, Rjb, Prd, Vs30, ftype=0, Z1.0, regionflag=0, basinflag=0
                       regionflag=as.integer(regionflag), basinflag=as.integer(basinflag),
                       phi=as.single(0.0), tau=as.single(0.0))
   names(retvals) <- c("mag", "Rjb", "specT", "period", "lnY", "sigma", "iflag", "Vs30",
-                      "ftype", "pga4nl", "Z10", "regionflag", "basinflag", "phi", "tau")
+                      "ftype", "pga4nl", "Z1.0", "regionflag", "basinflag", "phi", "tau")
   return(retvals)
 }

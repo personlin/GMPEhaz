@@ -52,7 +52,7 @@ CY14 <- function(Mag, Rrup, Rjb, Prd, Vs30, Dip, Ztor, ftype=0, Z1.0, Vs30_class
                       hwflag=as.integer(hwflag), Rx=as.single(Rx), regionflag=as.integer(regionflag),
                       phi=as.single(0.0), tau=as.single(0.0))
   names(retvals) <- c("mag", "Rrup", "Rjb", "specT", "period", "lnY", "sigma", "iflag", "Vs30",
-                      "dip", "Ztor", "ftype", "Z10", "vs3-_class", "hwflag", "Rx", "regionflag",
+                      "dip", "Ztor", "ftype", "Z1.0", "vs30_class", "hwflag", "Rx", "regionflag",
                       "phi", "tau")
   return(retvals)
 }

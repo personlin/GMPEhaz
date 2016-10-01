@@ -51,8 +51,8 @@ ASK14 <- function(Mag, Rrup, Rjb, Prd, Dip, ftype=0, rupwidth, Vs30=760, hwflag=
                       vs30_class=as.integer(Vs30_class),z10=as.single(Z1.0), Rx=as.single(Rx), Ry0=as.single(Ry0),
                       regionflag=as.integer(regionflag),msasflag=as.integer(msasflag),
                       phi=as.single(0.0), tau=as.single(0.0))
-  names(retvals) <- c("mag", "dip", "ftype", "rupwidth","Rrup", "Rjb", "Vs30", "hwflag", "lnY", "sigma",
-                      "specT", "period", "Ztor", "iflag", "vs30_class", "z10", "Rx", "Ry0", "regionflag",
+  names(retvals) <- c("mag", "dip", "ftype", "rupwidth", "Rrup", "Rjb", "Vs30", "hwflag", "lnY", "sigma",
+                      "specT", "period", "Ztor", "iflag", "vs30_class", "Z1.0", "Rx", "Ry0", "regionflag",
                       "msasflag","phi", "tau")
   return(retvals)
 }
