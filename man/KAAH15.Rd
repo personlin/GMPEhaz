@@ -4,7 +4,7 @@
 \alias{KAAH15}
 \title{GMPE function for Kale et al.(2015)}
 \usage{
-KAAH15(Mag, Rjb, Prd = 0, ftype = 0, Vs30 = 760, region = 0)
+KAAH15(Mag, Rjb, Prd = 0, ftype = 0, Vs30 = 760, regionflag = 0)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}
@@ -17,7 +17,7 @@ KAAH15(Mag, Rjb, Prd = 0, ftype = 0, Vs30 = 760, region = 0)
 
 \item{Vs30}{Vs30(m/s).}
 
-\item{region}{0 for Turkey, 1 for Iran.}
+\item{regionflag}{0 for Turkey, 1 for Iran.}
 }
 \value{
 A list will be return, including mag, Rjb, specT, period, lnY, sigma, iflag, ftype, Vs30, pgaref, region.

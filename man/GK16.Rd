@@ -4,7 +4,7 @@
 \alias{GK16}
 \title{GMPE function for Graizer and Kalkan(2016)}
 \usage{
-GK16(Mag, Rrup, ftype = 0, Prd, Vs30 = 760, q0 = 150, Z15)
+GK16(Mag, Rrup, ftype = 0, Prd, Vs30 = 760, q0 = 150, Z1.5)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}
@@ -19,7 +19,7 @@ GK16(Mag, Rrup, ftype = 0, Prd, Vs30 = 760, q0 = 150, Z15)
 
 \item{q0}{Quality factor (Q0).}
 
-\item{Z15}{Depth to the 1.5km/s shear-wave velocity isosurfac.}
+\item{Z1.5}{Depth to the 1.5km/s shear-wave velocity isosurfac.}
 }
 \value{
 A list will be return, including mag, Rrup, specT, ftype, period, lnY, sigma, iflag, Vs30, q0, Z15.

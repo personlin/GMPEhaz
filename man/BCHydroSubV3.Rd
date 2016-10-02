@@ -4,7 +4,7 @@
 \alias{BCHydroSubV3}
 \title{GMPE function for Abrahamson et al.(2016)}
 \usage{
-BCHydroSubV3(Mag, Rrup, Prd, ftype = 0, Vs30, forearc = 1, depth, disthypo)
+BCHydroSubV3(Mag, Rrup, Prd, ftype = 0, Vs30, forearc = 1, depth, Rhypo)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}
@@ -21,7 +21,7 @@ BCHydroSubV3(Mag, Rrup, Prd, ftype = 0, Vs30, forearc = 1, depth, disthypo)
 
 \item{depth}{hypocentral depth(km).}
 
-\item{disthypo}{hypocentral distance(km)}
+\item{Rhypo}{hypocentral distance(km)}
 }
 \value{
 A list will be return, including mag, ftype, Rrup, Vs30, lnY, sigma, specT, period, iflag, forearc, depth, Rhypo, deltac1.
