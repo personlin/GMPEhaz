@@ -27,8 +27,8 @@ GK16 <- function(Mag, Rrup, ftype=0, Prd, Vs30=760, q0=150, Z1.5){
   #                     period2, lnY, sigma, iflag, vs, q0, depthvs15 )
 
   # Model Number = 90
-  retvals <- .Fortran("GK_Nov2012", mag=as.single(Mag), Rrup=as.single(Rrup), ftype=as.single(ftype),
-                      specT=as.single(Prd), period2=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1),
+  retvals <- .Fortran("GK_Nov2012", mag=as.single(Mag), Rrup=as.single(Rrup),  specT=as.single(Prd), 
+                      ftype=as.single(ftype), period2=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1),
                       iflag=as.integer(0), vs=as.single(Vs30), q0=as.single(q0), depthvs15=as.single(Z1.5))
   names(retvals) <- c("mag", "Rrup", "specT", "ftype", "period", "lnY", "sigma", "iflag", "Vs30",
                       "q0", "Z1.5")
