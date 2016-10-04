@@ -44,13 +44,13 @@ Zh16Sub <- function(Mag, Rrup, sclass=1.0, Prd=0, sourceclass=1.0, depth=10){
     retvals <- .Fortran("Zhaoetal2016_int", m=as.single(Mag), dist=as.single(Rrup), ftype=as.single(0.0),
                         lnY=as.single(0.1), sigma=as.single(0.1), sclass=as.single(sclass),
                         specT=as.single(Prd), attenName=as.character("attenName"), period1=as.single(0), iflag=as.integer(0),
-                        sourcetype=as.single(1.0), depth=as.single(depth),
+                        sourcetype=as.single(sourceclass), depth=as.single(depth),
                         phiT=as.single(0.0), tauT=as.single(0.0))
   } else {
     retvals <- .Fortran("Zhaoetal2016_slab", m=as.single(Mag), dist=as.single(Rrup), ftype=as.single(0.0),
                         lnY=as.single(0.1), sigma=as.single(0.1), sclass=as.single(sclass),
                         specT=as.single(Prd), attenName=as.character("attenName"), period1=as.single(0), iflag=as.integer(0),
-                        sourcetype=as.single(1.0), depth=as.single(depth),
+                        sourcetype=as.single(sourceclass), depth=as.single(depth),
                         phiT=as.single(0.0), tauT=as.single(0.0))
   }
   names(retvals) <- c("mag", "Rrup", "ftype", "lnY", "sigma", "sclass", "specT", "attenName", "period", "iflag",
