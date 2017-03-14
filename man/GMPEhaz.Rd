@@ -2,8 +2,8 @@
 % Please edit documentation in R/GMPEhaz.R
 \docType{package}
 \name{GMPEhaz}
-\alias{.onUnload}
 \alias{GMPEhaz}
+\alias{.onUnload}
 \alias{GMPEhaz-package}
 \title{GMPEhaz: A package for wrapping GMPE functions from Norman Abrahamson's fortran HAZ code.}
 \usage{
@@ -16,4 +16,3 @@
 The GMPEhaz package provides several GMPE functions:
 AB03, AC10, ASB13, ASK14, BCHydroSubV3, BI14, BSSA14, CB14, CY14, Gregor06, Kanno06, Lin11, LL08, Youngs97, Zh06.
 }
-

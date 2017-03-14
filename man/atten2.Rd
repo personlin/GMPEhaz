@@ -37,4 +37,3 @@ atten2("LL08Rock", 0, Mag=c(6,7,8), 20, 0, 0, 10, 0, FALSE)
 atten2("LL08Rock", Periods=c(0.01, 0.1, 0.2, 0.5, 1, 2, 5), 6, 10, 0, 0, 10, 0, FALSE)
 
 }
-

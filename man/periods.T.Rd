@@ -12,4 +12,3 @@ periods.T
 Periods of NGA-West GMPE
 }
 \keyword{datasets}
-
