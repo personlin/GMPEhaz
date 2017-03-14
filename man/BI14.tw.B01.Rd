@@ -32,7 +32,7 @@ dataset, Bulletin of Earthquake Engineering, 12(1), 391-430.
 \url{http://dx.doi.org/10.1007/s10518-013-9525-5}
 }
 \examples{
-BI14(6, 20, 0, 0, 760)
-BI14(7, 10, 0, 0, 760)
+BI14.tw.B01(6, 20, 0, 0, 760)
+BI14.tw.B01(7, 10, 0, 0, 760)
 
 }

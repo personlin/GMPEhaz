@@ -20,8 +20,8 @@
 #' Z10, regionflag, basinflag, phi, tau.
 #'
 #' @examples
-#' BSSA14(6, 20, 0, 760, 0, 0.5, 0, 0)
-#' BSSA14(7, 20, 0, 760, 0, 0.5, 0, 0)
+#' BSSA14.tw.B01(6, 20, 0, 760, 0, 0.5, 0, 0)
+#' BSSA14.tw.B01(7, 20, 0, 760, 0, 0.5, 0, 0)
 #'
 #' @export
 BSSA14.tw.B01 <- function(Mag, Rjb, Prd, Vs30, ftype=0, Z1.0, regionflag=0, basinflag=0){

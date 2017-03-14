@@ -39,7 +39,7 @@ Earthquake Spectra, 30(3), 1155-1177.
                 Reverse and Oblique (1)
 }
 \examples{
-I14(6, 20, 0, 0, 760)
-I14(7, 10, 0, 0, 760)
+I14.tw.B01(6, 20, 0, 0, 760)
+I14.tw.B01(7, 10, 0, 0, 760)
 
 }

@@ -18,8 +18,8 @@
 #' @return A list will be return, including mag, Rjb, ftype, specT, period, lnY, sigma, iflag, Vs30, phi, tau.
 #'
 #' @examples
-#' BI14(6, 20, 0, 0, 760)
-#' BI14(7, 10, 0, 0, 760)
+#' BI14.tw.B01(6, 20, 0, 0, 760)
+#' BI14.tw.B01(7, 10, 0, 0, 760)
 #'
 #' @export
 BI14.tw.B01 <- function(Mag, Rjb, Prd=0, ftype=0, Vs30=760){

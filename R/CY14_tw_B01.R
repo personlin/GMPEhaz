@@ -26,8 +26,8 @@
 #' dip, Ztor, ftype, Z10, vs3-_class, hwflag, Rx, regionflag, phi, tau.
 #'
 #' @examples
-#' CY14(6, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
-#' CY14(7, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+#' CY14.tw.B01(6, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+#' CY14.tw.B01(7, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
 #'
 #' @export
 CY14.tw.B01 <- function(Mag, Rrup, Rjb, Prd, Vs30, Dip, Ztor, ftype=0, Z1.0, Vs30_class=1, hwflag=0, Rx,

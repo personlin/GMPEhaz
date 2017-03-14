@@ -38,7 +38,7 @@ PGA, PGV, and 5% damped PSA for shallow crustal earthquakes, Earthquake Spectra,
 \url{http://dx.doi.org/10.1193/070113EQS184M}
 }
 \examples{
-BSSA14(6, 20, 0, 760, 0, 0.5, 0, 0)
-BSSA14(7, 20, 0, 760, 0, 0.5, 0, 0)
+BSSA14.tw.B01(6, 20, 0, 760, 0, 0.5, 0, 0)
+BSSA14.tw.B01(7, 20, 0, 760, 0, 0.5, 0, 0)
 
 }

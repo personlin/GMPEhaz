@@ -31,7 +31,7 @@ Bulletin of Earthquake Engineering, Volume 12, Issue 1, pp 359-387.
 \url{http://dx.doi.org/10.1007/s10518-013-9461-4}
 }
 \examples{
-ASB14(6, 20, 0, 0, 760)
-ASB14(7, 10, 0, 0, 760)
+ASB14.tw.B01(6, 20, 0, 0, 760)
+ASB14.tw.B01(7, 10, 0, 0, 760)
 
 }

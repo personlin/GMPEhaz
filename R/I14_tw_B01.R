@@ -25,8 +25,8 @@
 #' @return A list will be return, including mag, Rrup, ftype, Vs30, specT, period, lnY, sigma, iflag.
 #'
 #' @examples
-#' I14(6, 20, 0, 0, 760)
-#' I14(7, 10, 0, 0, 760)
+#' I14.tw.B01(6, 20, 0, 0, 760)
+#' I14.tw.B01(7, 10, 0, 0, 760)
 #'
 #' @export
 I14.tw.B01 <- function(Mag, Rrup, Prd=0, ftype=0, Vs30=760){

@@ -28,8 +28,8 @@
 #' lnY, sigma, specT, period, Ztor, iflag, vs30_class, z10, Rx, Ry0, regionflag, msasflag, phi, tau.
 #'
 #' @examples
-#' ASK14(6, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
-#' ASK14(7, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
+#' ASK14.tw.B01(6, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
+#' ASK14.tw.B01(7, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
 #'
 #' @export
 ASK14.tw.B01 <- function(Mag, Rrup, Rjb, Prd, Dip, ftype=0, rupwidth, Vs30=760, hwflag=0,
