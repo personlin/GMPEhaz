@@ -31839,7 +31839,8 @@ C     Convert ground motion to units of gals.
 
 
 
-
+
+
 C  ***** PEER NGA-West 2 MODELS (2013) **********
 
 c ---------------------------------------------------------------------
@@ -42513,23 +42514,27 @@ C     Last Updated: 5/18/13
       real a1T, a2T, a3T, b1T, b2T, a1mlt675T, a2mlt675T, a3mlt675T, b1mlt675T, b2mlt675T
       integer iflag, count1, count2, nPer, i
 
-      Data Period / 0.0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 
-     1      2, 3, 4, 5, 7.5, 10/
-      Data a1mlt675 / 9.0138, 9.0138, 9.0408, 9.1338, 8.48609726910026, 7.9837, 7.756, 9.4252, 9.51468239707057, 9.6242,
-     1      10.2793352298525, 11.13, 11.3629, 11.7818, 11.6097, 11.4484, 10.9065, 9.8565, 8.3363, 6.8656, 4.1178, 1.8102, 0.0977,
-     1      -3.0563, -4.4387/
-      Data a2mlt675 / -0.0794, -0.0794, -0.0794, -0.0794, -0.142981982713312, -0.1923, -0.1614, -0.1887, -0.133751512954654,
-     1      -0.0665, -0.111443199125889, -0.1698, -0.1766, -0.2798, -0.3048, -0.2911, -0.3097, -0.2565, -0.232, -0.1226, 0.1724,
-     1      0.3001, 0.4609, 0.6948, 0.8393/
+      Data Period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3, 4,
+     1      5, 7.5, 10/
+      Data a1mlt675 / 2.52717160622891, 2.53234425798523, 2.57009563882438, 2.64348244049103, 2.96390206180402, 3.28063158557095,
+     1      3.36397158262202, 4.16247647949706, 4.11037653533263, 3.7910964029315, 4.09440601055076, 4.32570942349766,
+     1      4.18827278322137, 4.51231841039853, 4.3497169606023, 4.25776196853824, 3.56061505213009, 2.46466483649309,
+     1      1.91631584881243, 0.439690835121291, -1.25103903611714, -2.11714556942583, -3.51887081562755, -4.79113307280219,
+     1      -6.89391327951502/
+      Data a2mlt675 / 0.460312671375271, 0.459405267637648, 0.448879735050439, 0.434062498502365, 0.321778345213789,
+     1      0.217082211958214, 0.217955862935735, 0.177038021760217, 0.213032953920886, 0.288055385973761, 0.279940285807971,
+     1      0.276944578377992, 0.306499165667397, 0.290922802609074, 0.350863102110982, 0.394077574831295, 0.575107425986237,
+     1      0.820077695671963, 0.915580192283733, 1.08926214360982, 1.25355703117415, 1.19040821139199, 1.25930202906491,
+     1      1.19688590523688, 1.30080116276695/
       Data a3mlt675 / 0.0589, 0.0589, 0.0589, 0.0589, 0.0492134623324272, 0.0417, 0.0527, 0.0442, 0.0391188387593093, 0.0329,
      1      0.0267654491028554, 0.0188, 0.0095, -0.0039, -0.0133, -0.0224, -0.0267, -0.0198, -0.0367, -0.0291, -0.0214, -0.024,
      1      -0.0202, -0.0219, -0.0035/
-      Data b1mlt675 / 2.9935, 2.9935, 2.9935, 2.9935, 2.88424486584249, 2.7995, 2.8143, 2.8131, 2.63143724413814, 2.4091,
-     1      2.44595081283604, 2.4938, 2.3773, 2.3772, 2.3413, 2.3477, 2.2042, 2.1493, 2.0408, 2.0013, 1.9408, 1.7763, 1.703,
-     1      1.5212, 1.4195/
-      Data b2mlt675 / -0.2287, -0.2287, -0.2287, -0.2287, -0.230502146542804, -0.2319, -0.2326, -0.2211, -0.197043174656907,
-     1      -0.1676, -0.167991567078541, -0.1685, -0.1531, -0.1595, -0.1594, -0.1584, -0.1577, -0.1532, -0.147, -0.1439, -0.1278,
-     1      -0.1326, -0.1291, -0.122, -0.1145/
+      Data b1mlt675 / 2.9935, 2.9935, 2.9935, 2.9935, 2.92192099200299, 2.8664, 2.9406, 3.019, 2.91472377949414, 2.7871,
+     1      2.81929551534672, 2.8611, 2.8289, 2.8423, 2.83, 2.856, 2.7544, 2.7339, 2.68, 2.6837, 2.6907, 2.5782, 2.5468, 2.4478,
+     1      2.3922/
+      Data b2mlt675 / -0.2287, -0.2287, -0.2287, -0.2287, -0.236077537409605, -0.2418, -0.2513, -0.2516, -0.23900951196997,
+     1      -0.2236, -0.223295447827801, -0.2229, -0.22, -0.2284, -0.2318, -0.2337, -0.2392, -0.2398, -0.2417, -0.245, -0.2389,
+     1      -0.2514, -0.2541, -0.2593, -0.2586/
       Data xsi / -0.40369717245562, -0.403622508356977, -0.394835992368106, -0.379338783879813, -0.356178966894812,
      1      -0.326544254243393, -0.295817444297612, -0.305192740774835, -0.32883171799589, -0.355084382346931, -0.373179047923669,
      1      -0.382702508916895, -0.404009611502278, -0.460813853407414, -0.541103541075086, -0.589823372166685, -0.794504321991067,
@@ -42545,26 +42550,21 @@ C     Last Updated: 5/18/13
      1      0.215411900150502, 0.215633575575745, 0.243078347711887, 0.259782846355648, 0.280669544145687, 0.303352249897888,
      1      0.273461339948178, 0.244844582664493, 0.179658901559622, 0.0879225310576709, 0.103931838361066, -0.0411424501970152,
      1      -0.0199216949439069/
-      Data a1 / 2.52717160622891, 2.53234425798523, 2.57009563882438, 2.64348244049103, 2.96390206180402, 3.28063158557095,
-     1      3.36397158262202, 4.16247647949706, 4.11037653533263, 3.7910964029315, 4.09440601055076, 4.32570942349766,
-     1      4.18827278322137, 4.51231841039853, 4.3497169606023, 4.25776196853824, 3.56061505213009, 2.46466483649309,
-     1      1.91631584881243, 0.439690835121291, -1.25103903611714, -2.11714556942583, -3.51887081562755, -4.79113307280219,
-     1      -6.89391327951502/
-      Data a2 / 0.460312671375271, 0.459405267637648, 0.448879735050439, 0.434062498502365, 0.321778345213789, 0.217082211958214,
-     1      0.217955862935735, 0.177038021760217, 0.213032953920886, 0.288055385973761, 0.279940285807971, 0.276944578377992,
-     1      0.306499165667397, 0.290922802609074, 0.350863102110982, 0.394077574831295, 0.575107425986237, 0.820077695671963,
-     1      0.915580192283733, 1.08926214360982, 1.25355703117415, 1.19040821139199, 1.25930202906491, 1.19688590523688,
-     1      1.30080116276695/
+      Data a1 / 9.0138, 9.0138, 9.0408, 9.1338, 8.48609726910026, 7.9837, 7.756, 9.4252, 9.51468239707057, 9.6242,
+     1      10.2793352298525, 11.13, 11.3629, 11.7818, 11.6097, 11.4484, 10.9065, 9.8565, 8.3363, 6.8656, 4.1178, 1.8102, 0.0977,
+     1      -3.0563, -4.4387/
+      Data a2 / -0.0794, -0.0794, -0.0794, -0.0794, -0.142981982713312, -0.1923, -0.1614, -0.1887, -0.133751512954654, -0.0665,
+     1      -0.111443199125889, -0.1698, -0.1766, -0.2798, -0.3048, -0.2911, -0.3097, -0.2565, -0.232, -0.1226, 0.1724, 0.3001,
+     1      0.4609, 0.6948, 0.8393/
       Data a3 / 0.0589, 0.0589, 0.0589, 0.0589, 0.0492134623324272, 0.0417, 0.0527, 0.0442, 0.0391188387593093, 0.0329,
      1      0.0267654491028554, 0.0188, 0.0095, -0.0039, -0.0133, -0.0224, -0.0267, -0.0198, -0.0367, -0.0291, -0.0214, -0.024,
      1      -0.0202, -0.0219, -0.0035/
-      Data b1 / 2.9935, 2.9935, 2.9935, 2.9935, 2.92192099200299, 2.8664, 2.9406, 3.019, 2.91472377949414, 2.7871,
-     1      2.81929551534672, 2.8611, 2.8289, 2.8423, 2.83, 2.856, 2.7544, 2.7339, 2.68, 2.6837, 2.6907, 2.5782, 2.5468, 2.4478,
-     1      2.3922/
-      Data b2 / -0.2287, -0.2287, -0.2287, -0.2287, -0.236077537409605, -0.2418, -0.2513, -0.2516, -0.23900951196997, -0.2236,
-     1      -0.223295447827801, -0.2229, -0.22, -0.2284, -0.2318, -0.2337, -0.2392, -0.2398, -0.2417, -0.245, -0.2389, -0.2514,
-     1      -0.2541, -0.2593, -0.2586/
-
+      Data b1 / 2.9935, 2.9935, 2.9935, 2.9935, 2.88424486584249, 2.7995, 2.8143, 2.8131, 2.63143724413814, 2.4091,
+     1      2.44595081283604, 2.4938, 2.3773, 2.3772, 2.3413, 2.3477, 2.2042, 2.1493, 2.0408, 2.0013, 1.9408, 1.7763, 1.703,
+     1      1.5212, 1.4195/
+      Data b2 / -0.2287, -0.2287, -0.2287, -0.2287, -0.230502146542804, -0.2319, -0.2326, -0.2211, -0.197043174656907, -0.1676,
+     1      -0.167991567078541, -0.1685, -0.1531, -0.1595, -0.1594, -0.1584, -0.1577, -0.1532, -0.147, -0.1439, -0.1278, -0.1326,
+     1      -0.1291, -0.122, -0.1145/
 
       
 C Find the requested spectral period and corresponding coefficients
@@ -42646,12 +42646,14 @@ C.....Set the mechanism term.....................
 C     Strike-slip and normal events --> SOF = 0
 C     Reverse and oblique events     --> SOF = 1
 C     Otherwise assume SOF = 0
-      if (ftype .eq. 1.0) then
+      if (ftype .gt. 0.0) then
          SOF = 1.0
       else
          SOF = 0.0
       endif
-
+      
+	  a1T = a1mlt675T + (a2mlt675T - a2T) * 6.75
+	  
       if (m .lt. 6.75) then
          lnY = a1mlt675T + a2mlt675T*m + a3mlt675T*(8.5 - m)**2.0 - (b1mlt675T+b2mlt675T*m) * alog(Rrup+10.0) +
      1         xsiT*alog(Vs30) + gamT*rRup + SOF*phiT
@@ -43108,7 +43110,7 @@ c     Compute the DeltaZ1 term. Apply the California model for all regions excep
      1           exp(-5.23/2.0 * alog((vs**2.0 + 412.29**2.0)/(1360.0**2.0 + 412.39**2.0)))/1000.0
          else
              deltaz1 = z10 -
-     1           exp(-2.63 / 4.0 * alog((vs30**4.0 + 253**4.0) / (2492**4.0 + 253**4.0))  )/1000.0        
+     1           exp(-2.63/4.0 * alog((vs**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))/1000.0        
          endif
 
          if (specT .le. 0.65) then
@@ -43171,781 +43173,6 @@ C     Convert ground motion to units of gals.
       return
       END
 
-c ---------------------------------------------------------------------            
-C     *** Campbell and Bozorgnia NGA West2 (NGA-2013) ***
-C         Earthquake Spectra Paper:
-C            Campbell-Bozorgnia NGA-West2 ground motion model
-C                 for the average horizontal components of PGA, 
-C                 PGV, and 5%-damped linear Response Spectra
-C             K. W. Campbel and Y. Bozorgnia
-C     Notes:
-C        Applicable Range:
-C            3.3 < M < 8.5 (strike-slip)
-C            3.3 < M < 8.0 (reverse)
-C            3.3 < M < 7.5 (normal)
-C            Distance < 300km
-C            150 < Vs30m < 1500 m/s
-C            0 < Z25 < 10 km
-C            0 < Zhyp < 20 km
-C            15 < Dip < 90 
-C        Report provides formulation for estimating recommended
-C           parameters when they are not defined (e.g., Z25 given Vs30m).
-C           See Chapter 06 of the report. 
-c ---------------------------------------------------------------------------            
-
-      subroutine CB14_TW_B01 ( mag, Rrup, Rbjf, Ftype, specT, 
-     1                     period2, lnY, sigma, iflag, vs,
-     2                     depthtop, D25, Dip, depth, HWflag, Rx, rupwidth, regionflag, phi, tau ) 
-
-C     Last Updated: 5/22/14
-C     Coefficients updated from PEER Report version to be consistent with EQ Spectra paper in press. 
-C     Minor change to T=5, 7.5, and 10 sec for coefficient C6
-
-      parameter (MAXPER=23)
-      REAL Period(MAXPER), C0(MAXPER), C1(MAXPER), C2(MAXPER), C3(MAXPER), C4(MAXPER), C5(MAXPER)
-      REAL C6(MAXPER), C7(MAXPER), C8(MAXPER), C9(MAXPER), C10(MAXPER), C11(MAXPER), C12(MAXPER)
-      REAL C13(MAXPER), C14(MAXPER), C15(MAXPER), C16(MAXPER), C17(MAXPER), C18(MAXPER), C19(MAXPER)
-      REAL A2(MAXPER), h1(MAXPER), h2(MAXPER), h3(MAXPER), h4(MAXPER)
-      REAL h5(MAXPER), h6(MAXPER)
-      REAL K1(MAXPER), K2(MAXPER), K3(MAXPER)
-      REAL C20(MAXPER), DC20CA(MAXPER), DC20JP(MAXPER), DC20CH(MAXPER)
-      REAL T1(MAXPER), T2(MAXPER), phi1(MAXPER), Phi2(MAXPER), phic(MAXPER)
-      REAL flnAF(MAXPER), rho(MAXPER)
-
-      REAL MAG, RRUP, RBJF, VS, D25, FHWR, FHWM, FHWZ, FHWD, PGAROCK, C, N
-      real lnY, ftype, Dip, pgasoil, Rx, R1, R2, f1, f2
-      real fhypH, D25_RK
-      INTEGER count1, count2, HWFlag, regionflag
-
-      real c0T, c1T, c2T, c3T, c4T, c5T, c6T, c7T, c8T, c9T, c10T, c11T, c12T
-      real c13T, c14T, c15T ,c16T, c17T, c18T, c19T, c20T, Dc20CAT, Dc20JPT, Dc20CHT
-      real k1T, k2T, k3T, a2T, h1T, h2T, h3T, h4T, h5T, h6T
-      real t1T, t2T, phi1T, phi2T, phicT
-      real rhoT, flnAFT
-
-      real alpha, tau
-      real tau_lnyB, tau_lnPGAB, phi_lnY, phi_lnyB, phi_lnPGAB, phi, sigmatot
-
-C.....MODEL COEFFICIENTS.....................
-
-      data Period / 0.0, -1.0, 0.01, 0.02, 0.03, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 
-     1       0.3, 0.4, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 4.0, 5.0, 7.5, 10.0 /
-      data c0 / -4.416, -2.895, -4.365, -4.348, -4.024, -3.479, -3.293, -3.666, -4.866, 
-     1       -5.411, -5.962, -6.403, -7.566, -8.379, -9.841, -11.011, -12.469, -12.969, 
-     2      -13.306, -14.02, -14.558, -15.509, -15.975 / 
-      data c1 / 0.984, 1.51, 0.977, 0.976, 0.931, 0.887, 0.902, 0.993, 1.267, 1.366, 
-     1       1.458, 1.528, 1.739, 1.872, 2.021, 2.18, 2.27, 2.271, 2.15, 2.132, 2.116,
-     2       2.223, 2.132  /
-      data c2 / 0.537, 0.27, 0.533, 0.549, 0.628, 0.674, 0.726, 0.698, 0.51, 0.447, 0.274, 
-     1       0.193, -0.02, -0.121, -0.042, -0.069, 0.047, 0.149, 0.368, 0.726, 1.027, 
-     2       0.169, 0.367  /
-      data c3 / -1.499, -1.299, -1.485, -1.488, -1.494, -1.388, -1.469, -1.572, -1.669, 
-     1      -1.75, -1.711, -1.77, -1.594, -1.577, -1.757, -1.707, -1.621, -1.512, -1.315, 
-     2      -1.506, -1.721, -0.756, -0.8  /
-      data c4 / -0.496, -0.453, -0.499, -0.501, -0.517, -0.615, -0.596, -0.536, -0.49, 
-     1      -0.451, -0.404, -0.321, -0.426, -0.44, -0.443, -0.527, -0.63, -0.768, -0.89, 
-     2      -0.885, -0.878, -1.077, -1.282  /
-      data c5 / -2.773, -2.466, -2.773, -2.772, -2.782, -2.791, -2.745, -2.633, -2.458, 
-     1      -2.421, -2.392, -2.376, -2.303, -2.296, -2.232, -2.158, -2.063, -2.104, -2.051,
-     2      -1.986, -2.021, -2.179, -2.244  /
-      data c6 / 0.248, 0.204, 0.248, 0.247, 0.246, 0.24, 0.227, 0.21, 0.183, 0.182, 0.189, 
-     1       0.195, 0.185, 0.186, 0.186, 0.169, 0.158, 0.158, 0.148, 0.135, 0.135, 0.165, 0.180  /
-      data c7 / 6.768, 5.837, 6.753, 6.502, 6.291, 6.317, 6.861, 7.294, 8.031, 8.385, 7.534, 
-     1       6.99, 7.012, 6.902, 5.522, 5.65, 5.795, 6.632, 6.759, 7.978, 8.538, 8.468, 6.564  /
-      data c8 / 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-     1       0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0  /
-      data c9 / -0.212, -0.168, -0.214, -0.208, -0.213, -0.244, -0.266, -0.229, -0.211, -0.163,
-     1      -0.15, -0.131, -0.159, -0.153, -0.09, -0.105, -0.058, -0.028, 0.0, 0.0, 0.0, 0.0, 0.0  /
-      data c10 / 0.72, 0.305, 0.72, 0.73, 0.759, 0.826, 0.815, 0.831, 0.749, 0.764, 0.716, 0.737, 
-     1       0.738, 0.718, 0.795, 0.556, 0.48, 0.401, 0.206, 0.105, 0.0, 0.0, 0.0  /
-      data c11 / 1.09, 1.713, 1.094, 1.149, 1.29, 1.449, 1.535, 1.615, 1.877, 2.069, 2.205, 
-     1       2.306, 2.398, 2.355, 1.995, 1.447, 0.33, -0.514, -0.848, -0.793, -0.748,
-     2      -0.664, -0.576  /
-      data c12 / 2.186, 2.602, 2.191, 2.189, 2.164, 2.138, 2.446, 2.969, 3.544, 3.707, 
-     1       3.343, 3.334, 3.544, 3.016, 2.616, 2.47, 2.108, 1.327, 0.601, 0.568, 0.356, 
-     2       0.075, -0.027  /
-      data c13 / 1.42, 2.457, 1.416, 1.453, 1.476, 1.549, 1.772, 1.916, 2.161, 2.465, 
-     1       2.766, 3.011, 3.203, 3.333, 3.054, 2.562, 1.453, 0.657, 0.367, 0.306, 0.268, 
-     2       0.374, 0.297 /
-      data c14 / -0.0064, 0.106, -0.007, -0.0167, -0.0422, -0.0663, -0.0794, -0.0294, 
-     1       0.0642, 0.0968, 0.1441, 0.1597, 0.141, 0.1474, 0.1764, 0.2593, 0.2881,
-     2       0.3112, 0.3478, 0.3747, 0.3382, 0.3754, 0.3506  /
-      data c15 / -0.202, 0.332, -0.207, -0.199, -0.202, -0.339, -0.404, -0.416, -0.407,
-     1      -0.311, -0.172, -0.084, 0.085, 0.233, 0.411, 0.479, 0.566, 0.562, 0.534, 
-     2       0.522, 0.477, 0.321, 0.174  /
-      data c16 / 0.393, 0.585, 0.39, 0.387, 0.378, 0.295, 0.322, 0.384, 0.417, 0.404, 
-     1       0.466, 0.528, 0.54, 0.638, 0.776, 0.771, 0.748, 0.763, 0.686, 0.691, 
-     2       0.67, 0.757, 0.621  /
-      data c17 / 0.0977, 0.0517, 0.0981, 0.1009, 0.1095, 0.1226, 0.1165, 0.0998, 0.076, 
-     1       0.0571, 0.0437, 0.0323, 0.0209, 0.0092, -0.0082, -0.0131, -0.0187, -0.0258, 
-     2      -0.0311, -0.0413, -0.0281, -0.0205, 0.0009  /
-      data c18 / 0.0333, 0.0327, 0.0334, 0.0327, 0.0331, 0.027, 0.0288, 0.0325, 0.0388, 
-     1       0.0437, 0.0463, 0.0508, 0.0432, 0.0405, 0.042, 0.0426, 0.038, 0.0252, 0.0236, 
-     2       0.0102, 0.0034, 0.005, 0.0099  /
-      data c19 / 0.00757, 0.00613, 0.00755, 0.00759, 0.0079, 0.00803, 0.00811, 0.00744, 
-     1       0.00716, 0.00688, 0.00556, 0.00458, 0.00401, 0.00388, 0.0042, 0.00409, 0.00424, 
-     2       0.00448, 0.00345, 0.00603, 0.00805, 0.0028, 0.00458  /
-      data k1 / 865.0, 400.0, 865.0, 865.0, 908.0, 1054.0, 1086.0, 1032.0, 878.0, 748.0, 654.0, 
-     1       587.0, 503.0, 457.0, 410.0, 400.0, 400.0, 400.0, 400.0, 400.0, 400.0, 400.0, 400.0  /
-      data k2 / -1.186, -1.955, -1.186, -1.219, -1.273, -1.346, -1.471, -1.624, -1.931, -2.188,
-     1      -2.381, -2.518, -2.657, -2.669, -2.401, -1.955, -1.025, -0.299, 0.0, 0.0,
-     2       0.0, 0.0, 0.0  /
-      data k3 / 1.839, 1.929, 1.839, 1.84, 1.841, 1.843, 1.845, 1.847, 1.852, 1.856, 1.861, 
-     1       1.865, 1.874, 1.883, 1.906, 1.929, 1.974, 2.019, 2.11, 2.2, 2.291, 2.517, 2.744  /
-      data a2 / 0.167, 0.596, 0.168, 0.166, 0.167, 0.173, 0.198, 0.174, 0.198, 0.204, 0.185, 0.164,
-     1       0.16, 0.184, 0.216, 0.596, 0.596, 0.596, 0.596, 0.596, 0.596, 0.596, 0.596  /
-      data h1 / 0.241, 0.117, 0.242, 0.244, 0.246, 0.251, 0.26, 0.259, 0.254, 0.237, 0.206, 0.21, 
-     1       0.226, 0.217, 0.154, 0.117, 0.117, 0.117, 0.117, 0.117, 0.117, 0.117, 0.117  /
-      data h2 / 1.474, 1.616, 1.471, 1.467, 1.467, 1.449, 1.435, 1.449, 1.461, 1.484, 1.581, 
-     1       1.586, 1.544, 1.554, 1.626, 1.616, 1.616, 1.616, 1.616, 1.616, 1.616, 1.616, 1.616  /
-      data h3 / -0.715, -0.733, -0.714, -0.711, -0.713, -0.701, -0.695, -0.708, -0.715, -0.721, 
-     1      -0.787, -0.795, -0.77, -0.77, -0.78, -0.733, -0.733, -0.733, -0.733, -0.733, -0.733, 
-     2      -0.733, -0.733 /
-      data h4 / 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 
-     1       1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0  /
-      data h5 / -0.337, -0.128, -0.336, -0.339, -0.338, -0.338, -0.347, -0.391, -0.449, -0.393, 
-     1      -0.339, -0.447, -0.525, -0.407, -0.371, -0.128, -0.128, -0.128, -0.128, -0.128, 
-     2      -0.128, -0.128, -0.128  /
-      data h6 / -0.27, -0.756, -0.27, -0.263, -0.259, -0.263, -0.219, -0.201, -0.099, -0.198,
-     1      -0.21, -0.121, -0.086, -0.281, -0.285, -0.756, -0.756, -0.756, -0.756, -0.756, 
-     2      -0.756, -0.756, -0.756  /
-      data c20 / -0.0055, -0.0017, -0.0055, -0.0055, -0.0057, -0.0063, -0.007, -0.0073,
-     1      -0.0069, -0.006, -0.0055, -0.0049, -0.0037, -0.0027, -0.0016, -0.0006, 0.0, 
-     2       0.0, 0.0, 0.0, 0.0, 0.0, 0.0  /
-      data Dc20CA / 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-     1       0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0  /
-      data Dc20JP / -0.0035, -0.0006, -0.0035, -0.0035, -0.0034, -0.0037, -0.0037, 
-     1      -0.0034, -0.003, -0.0031, -0.0033, -0.0035, -0.0034, -0.0034, -0.0032, 
-     2      -0.003, -0.0019, -0.0005, 0.0, 0.0, 0.0, 0.0, 0.0  /
-      data Dc20CH / 0.0036, 0.0017, 0.0036, 0.0036, 0.0037, 0.004, 0.0039, 0.0042, 
-     1       0.0042, 0.0041, 0.0036, 0.0031, 0.0028, 0.0025, 0.0016, 0.0006, 0.0, 
-     2       0.0, 0.0, 0.0, 0.0, 0.0, 0.0  /
-      data t1 / 0.409, 0.317, 0.404, 0.417, 0.446, 0.508, 0.504, 0.445, 0.382, 0.339, 
-     1          0.34, 0.34, 0.356, 0.379, 0.43, 0.47, 0.497, 0.499, 0.5, 0.543, 0.534, 
-     2          0.523, 0.466  /
-      data t2 / 0.322, 0.297, 0.325, 0.326, 0.344, 0.377, 0.418, 0.426, 0.387, 0.338, 
-     1          0.316, 0.3, 0.264, 0.263, 0.326, 0.353, 0.399, 0.4, 0.417, 0.393, 
-     2          0.421, 0.438, 0.438  /
-      data phi1 / 0.734, 0.655, 0.734, 0.738, 0.747, 0.777, 0.782, 0.769, 0.769, 
-     1            0.761, 0.744, 0.727, 0.69, 0.663, 0.606, 0.579, 0.541, 0.529, 0.527, 
-     2            0.521, 0.502, 0.457, 0.441  /
-      data phi2 / 0.492, 0.494, 0.492, 0.496, 0.503, 0.52, 0.535, 0.543, 0.543, 0.552,
-     1            0.545, 0.568, 0.593, 0.611, 0.633, 0.628, 0.603, 0.588, 0.578, 0.559, 
-     2            0.551, 0.546, 0.543  /
-      data flnaf / 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 
-     1             0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3  /
-      data phic / 0.166, 0.19, 0.166, 0.166, 0.165, 0.162, 0.158, 0.17, 0.18, 0.186,
-     1            0.191, 0.198, 0.206, 0.208, 0.221, 0.225, 0.222, 0.226, 0.229, 
-     2            0.237, 0.237, 0.271, 0.29  /
-      data rho / 1.00, 0.684, 1.00, 0.998, 0.986, 0.938, 0.887, 0.87, 0.876, 0.87,
-     1           0.85, 0.819, 0.743, 0.684, 0.562, 0.467, 0.364, 0.298, 0.234, 0.202, 
-     1           0.184, 0.176, 0.154 /
-
-      nPer = 23
-      c = 1.88
-      n = 1.18
-
-C First check for the PGA case (i.e., specT=0.0) 
-      if (specT .eq. 0.0) then
-         period1 = period(1)
-         c0T = c0(1)
-         c1T = c1(1)
-         c2T = c2(1)
-         c3T = c3(1)
-         c4T = c4(1)
-         c5T = c5(1)
-         c6T = c6(1)
-         c7T = c7(1)
-         c8T = c8(1)
-         c9T = c9(1)
-         c10T = c10(1)
-         c11T = c11(1)
-         c12T = c12(1)
-         c13T = c13(1)
-         c14T = c14(1)
-         c15T = c15(1)
-         c16T = c16(1)
-         c17T = c17(1)
-         c18T = c18(1)
-         c19T = c19(1)
-
-         a2T = a2(1)
-         h1T = h1(1)
-         h2T = h2(1)
-         h3T = h3(1)
-         h4T = h4(1)
-         h5T = h5(1)
-         h6T = h6(1)
-
-         k1T = k1(1)
-         k2T = k2(1)
-         k3T = k3(1)
-         c20T = c20(1)
-         Dc20CAT = Dc20CA(1)
-         Dc20JPT = Dc20JP(1)
-         Dc20CHT = Dc20CH(1)
-         
-         phi1T = phi1(1)
-         phi2T = phi2(1)
-         t1T = t1(1)
-         t2T = t2(1)
-         flnAFT = flnaf(1)
-         phicT = phic(1)
-         rhoT = rho(1)
-
-         goto 1011
-      elseif (specT .eq. -1.0) then
-         period1 = period(2)
-        c0T = c0(2)
-         c1T = c1(2)
-         c2T = c2(2)
-         c3T = c3(2)
-         c4T = c4(2)
-         c5T = c5(2)
-         c6T = c6(2)
-         c7T = c7(2)
-         c8T = c8(2)
-         c9T = c9(2)
-         c10T = c10(2)
-         c11T = c11(2)
-         c12T = c12(2)
-         c13T = c13(2)
-         c14T = c14(2)
-         c15T = c15(2)
-         c16T = c16(2)
-         c17T = c17(2)
-         c18T = c18(2)
-         c19T = c19(2)
-         
-         a2T = a2(2)
-         h1T = h1(2)
-         h2T = h2(2)
-         h3T = h3(2)
-         h4T = h4(2)
-         h5T = h5(2)
-         h6T = h6(2)
-
-         k1T = k1(2)
-         k2T = k2(2)
-         k3T = k3(2)
-         c20T = c20(2)
-         Dc20CAT = Dc20CA(2)
-         Dc20JPT = Dc20JP(2)
-         Dc20CHT = Dc20CH(2)
-         
-         phi1T = phi1(2)
-         phi2T = phi2(2)
-         t1T = t1(2)
-         t2T = t2(2)
-         flnAFT = flnaf(2)
-         phicT = phic(2)
-         rhoT = rho(2)
-
-         goto 1011
-
-      elseif (specT .gt. 0.0) then
-C Now loop over the spectral period range of the attenuation relationship.
-         do i=2,nper-1
-            if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
-               count1 = i
-               count2 = i+1
-               goto 1020 
-            endif
-         enddo
-      endif
-
-C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
-      write (*,*) 'Campbell&Bozorgnia (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*) 
-      stop 99
-
-C Interpolate the coefficients for the requested spectral period.
- 1020       call interp (period(count1),period(count2),c0(count1),c0(count2),
-     +                   specT,c0T,iflag)
-            call interp (period(count1),period(count2),c1(count1),c1(count2),
-     +                   specT,c1T,iflag)
-            call interp (period(count1),period(count2),c2(count1),c2(count2),
-     +                   specT,c2T,iflag)
-            call interp (period(count1),period(count2),c3(count1),c3(count2),
-     +                   specT,c3T,iflag)
-            call interp (period(count1),period(count2),c4(count1),c4(count2),
-     +                   specT,c4T,iflag)
-            call interp (period(count1),period(count2),c5(count1),c5(count2),
-     +                   specT,c5T,iflag)
-            call interp (period(count1),period(count2),c6(count1),c6(count2),
-     +                   specT,c6T,iflag)
-            call interp (period(count1),period(count2),c7(count1),c7(count2),
-     +                   specT,c7T,iflag)
-            call interp (period(count1),period(count2),c8(count1),c8(count2),
-     +                   specT,c8T,iflag)
-            call interp (period(count1),period(count2),c9(count1),c9(count2),
-     +                   specT,c9T,iflag)
-            call interp (period(count1),period(count2),c10(count1),c10(count2),
-     +                   specT,c10T,iflag)
-            call interp (period(count1),period(count2),c11(count1),c11(count2),
-     +                   specT,c11T,iflag)
-            call interp (period(count1),period(count2),c12(count1),c12(count2),
-     +                   specT,c12T,iflag)
-            call interp (period(count1),period(count2),c13(count1),c13(count2),
-     +                   specT,c13T,iflag)
-            call interp (period(count1),period(count2),c14(count1),c14(count2),
-     +                   specT,c14T,iflag)
-            call interp (period(count1),period(count2),c15(count1),c15(count2),
-     +                   specT,c15T,iflag)
-            call interp (period(count1),period(count2),c16(count1),c16(count2),
-     +                   specT,c16T,iflag)
-            call interp (period(count1),period(count2),c17(count1),c17(count2),
-     +                   specT,c17T,iflag)
-            call interp (period(count1),period(count2),c18(count1),c18(count2),
-     +                   specT,c18T,iflag)
-            call interp (period(count1),period(count2),c19(count1),c19(count2),
-     +                   specT,c19T,iflag)
-            call interp (period(count1),period(count2),a2(count1),a2(count2),
-     +                   specT,a2T,iflag)
-            call interp (period(count1),period(count2),h1(count1),h1(count2),
-     +                   specT,h1T,iflag)
-            call interp (period(count1),period(count2),h2(count1),h2(count2),
-     +                   specT,h2T,iflag)
-            call interp (period(count1),period(count2),h3(count1),h3(count2),
-     +                   specT,h3T,iflag)
-            call interp (period(count1),period(count2),h4(count1),h4(count2),
-     +                   specT,h4T,iflag)
-            call interp (period(count1),period(count2),h5(count1),h5(count2),
-     +                   specT,h5T,iflag)
-            call interp (period(count1),period(count2),h6(count1),h6(count2),
-     +                   specT,h6T,iflag)
-
-            call interp (period(count1),period(count2),k1(count1),k1(count2),
-     +                   specT,k1T,iflag)
-            call interp (period(count1),period(count2),k2(count1),k2(count2),
-     +                   specT,k2T,iflag)
-            call interp (period(count1),period(count2),k3(count1),k3(count2),
-     +                   specT,k3T,iflag)
-
-            call interp (period(count1),period(count2),c20(count1),c20(count2),
-     +                   specT,c20T,iflag)
-            call interp (period(count1),period(count2),Dc20CA(count1),Dc20CA(count2),
-     +                   specT,Dc20CAT,iflag)
-            call interp (period(count1),period(count2),Dc20JP(count1),Dc20JP(count2),
-     +                   specT,Dc20JPT,iflag)
-            call interp (period(count1),period(count2),Dc20CH(count1),Dc20CH(count2),
-     +                   specT,Dc20CHT,iflag)
-     
-            call interp (period(count1),period(count2),phi1(count1),phi1(count2),
-     +                   specT,phi1T,iflag)
-            call interp (period(count1),period(count2),phi2(count1),phi2(count2),
-     +                   specT,phi2T,iflag)
-            call interp (period(count1),period(count2),t1(count1),t1(count2),
-     +                   specT,t1T,iflag)
-            call interp (period(count1),period(count2),t2(count1),t2(count2),
-     +                   specT,t2T,iflag)
-            call interp (period(count1),period(count2),flnAF(count1),flnAF(count2),
-     +                   specT,flnAfT,iflag)
-            call interp (period(count1),period(count2),phic(count1),phic(count2),
-     +                   specT,phicT,iflag)
-            call interp (period(count1),period(count2),rho(count1),rho(count2),
-     +                   specT,rhoT,iflag)
-
- 1011 period1 = specT                                                                                                              
-
-C.....COMPUTE ROCK PGA VALUE FIRST.........................
-C.....MAGNITUDE DEPENDENCE (Eq 3.2)........................
-      IF (MAG .LE. 4.5) THEN
-         TERM1 = C0(1) + C1(1)*MAG
-      elseif (mag .le. 5.5) then
-         TERM1 = C0(1) + c1(1)*MAG + c2(1)*(MAG-4.5)
-      elseif (mag .le. 6.5) then
-         TERM1 = C0(1) + C1(1)*MAG + c2(1)*(MAG-4.5) + c3(1)*(mag-5.5)
-      ELSE
-         TERM1 = C0(1) + C1(1)*MAG + c2(1)*(MAG-4.5) + C3(1)*(MAG-5.5) + c4(1)*(mag-6.5)
-      ENDIF
-      
-C.....Distance dependence (Eq 3.3).....
-      R = SQRT( RRUP*RRUP+C7(1)*C7(1) )
-      TERM2 = (C5(1) + C6(1)*MAG)*ALOG(R)
-
-C.....SET UP STYLE OF FAULTING TERMS (Eq 3.4, 3.5, and 3.6).........
-
-C     Set mechanism term and corresponding Frv and Fnm values.
-C     fType     Mechanism                      Rake
-C     ------------------------------------------------------
-C    -1,-0.5    Normal and NMl/Obl       -150 < Rake < -30.0
-C     1, 0.5    Reverse and Rev/Obl        30 < Rake < 150.0
-C       0       Strike-Slip                    Otherwise
-      IF (Ftype .EQ. 0.0) THEN
-         TERM3 = 0.0
-      ELSEIF (Ftype .ge. 0.5) THEN
-         if (mag .le. 4.5) then
-            TERM3 = 0.0
-         elseif (mag .le. 5.5) then
-            TERM3 = C8(1)*(mag-4.5)
-         else
-            TERM3 = c8(1)
-         endif
-      ELSEIF (Ftype .le. -0.5) THEN
-         if (mag .le. 4.5) then
-            TERM3 = 0.0
-         elseif (mag .le. 5.5) then
-            TERM3 = C9(1)*(mag-4.5)
-         else
-            TERM3 = C9(1)
-         endif
-      ENDIF
-
-C.....SET UP HANGING WALL TERMS (Eq 3.7)..............
-      if (HWflag .eq. 1) then
-         R1 = rupwidth*cos(abs(dip)*3.14159/180.0)
-         R2 = 62.0*mag - 350.0
-         f1 = h1(1) + h2(1)*(Rx/R1) + h3(1)*(Rx/R1)**2.0
-         f2 = h4(1) + h5(1)*((Rx-R1)/(R2-R1)) + h6(1)*((Rx-R1)/(R2-R1))**2.0
-         if (Rrup .eq. 0.0) then
-            fhwrrup = 1.0
-         else
-            fhwrrup = ((Rrup-Rbjf)/Rrup)         
-         endif
-         if (Rx .lt. R1) Then
-            fhwr = f1*fhwrrup
-         else
-            fhwr = max(f2,0.0)*fhwrrup
-         endif
-         if (mag .le. 5.5) then
-            fhwm = 0.0         
-         elseif (mag .le. 6.5) then
-            fhwm = (mag-5.5)*(1.0+a2(1)*(mag-6.5))
-         else
-            fhwm = 1.0 + a2(1)*(mag-6.5)        
-         endif
-         if (depthtop .le. 16.66) then
-            fhwz = 1.0 - 0.06*depthtop 
-         else
-            fhwz = 0.0
-         endif
-         fhwd = (90.0 - dip)/45.0        
-         TERM4 = c10(1)*fhwr*fhwm*fhwz*fhwd
-      else   
-         term4 = 0.0
-      endif 
-
-C.....NOW COMPUTE THE SITE CONDITION FACTORS...............
-C.....(FOR PGA ROCK, VS=1100, i.e., Vs>k1)
-      TERM5_RK = (C11(1) + K2(1)*n)*ALOG( 1100.0/K1(1) )
-      if (regionflag .eq. 1) then
-         TERM5_RK = TERM5_RK + (C13(1) + K2(1)*n)*ALOG( 1100.0/K1(1) )
-      endif
-C.....NOW COMPUTE THE SEDIMENT DEPTH DEPENDENCE (Eq 3.17)............
-C     For Rock PGA the D25 value should be set at the recommended value of D25=0.398
-      D25_RK = 0.398
-      if (D25_RK .le. 1.0) then
-         if (regionflag .eq. 1) then
-c            TERM6 = (C14(1)+c15(1))*(D25-1.0)
-            TERM6_RK = (C14(1)+c15(1))*(D25_RK-1.0)
-         else
-c            TERM6 = C14(1)*(D25-1.0)
-            TERM6_RK = C14(1)*(D25_RK-1.0)
-         endif   
-      elseif (D25_RK .GT. 1.0 .AND. D25_RK .LE. 3.0) then
-        TERM6_RK = 0.0
-      elseif (D25_RK .GT. 3.0) then
-         TERM6_RK = c16(1)*k3(1)*exp(-0.75)*(1.0-exp(-0.25*(D25_RK-3.0)))
-      endif
-
-C.....Now compute the hypocentral depth term (Eq 3.21).........
-      if (depth .le. 7.0) then
-         fhypH = 0.0
-      elseif (depth .le. 20.0) then
-         fhypH = depth - 7.0      
-      else
-         fhypH = 13.0
-      endif
-      if (mag .le. 5.5) then
-          term7 = c17(1)*fhypH
-      elseif (mag .le. 6.5) then
-          term7 = (c17(1) + (c18(1)-c17(1))*(mag-5.5))*fhypH
-      else
-          term7 = c18(1)*fhypH     
-      endif
-
-C.....Compute Rupture Dip term (Eq 3.24)............
-      if (mag .le. 4.5) then
-          term8 = c19(1)*dip
-      elseif (mag .le. 5.5) then
-          term8 = c19(1)*(5.5-mag)*dip      
-      else 
-          term8 = 0.0
-      endif
-
-C.....Compute anelastic attenuation term.....
-      if (Rrup .le. 80.0) then
-         term9 = 0.0
-      else      
-         if (regionflag .eq. 0) then
-            term9 = (c20(1)+Dc20CA(1) ) * (Rrup-80.0)
-         elseif (regionflag .eq. 1 .or. regionflag .eq. 3) then
-            term9 = (c20(1)+Dc20JP(1) ) * (Rrup-80.0)
-         elseif (regionflag .eq. 2) then
-            term9 = (c20(1)+Dc20CH(1) ) * (Rrup-80.0)      
-         endif
-      endif      
-      
-      PGAROCK = EXP(TERM1+TERM2+TERM3+TERM4+TERM5_RK+TERM6_RK+TERM7+TERM8+TERM9)
-            
-C.....For PGA Specific Vs30m Value
-      if (vs .le. k1(1) ) then
-         term5 = c11(1)*alog(vs/k1(1)) + 
-     1           k2(1)*(alog(pgarock+c*((vs/k1(1))**n)) - 
-     2           alog(pgarock+c))
-      else
-         term5 = (c11(1) + k2(1)*n)*alog(vs/k1(1))
-      endif
-
-C     Add Japan Site response Factor is requested
-      if (regionflag .eq. 1) then
-         if (VS .le. 200.0) then
-            term5 = term5 + (c12(1)+k2(1)*n)*(alog(VS/k1(1))-alog(200.0/k1(1)))
-         else
-            term5 = term5 + (c13(1)+k2(1)*n)*alog(Vs/k1(1))
-         endif
-      endif
-
-C.....NOW COMPUTE THE SEDIMENT DEPTH DEPENDENCE (Eq 3.17)............
-C     For Rock PGA the D25 value should be set at the recommended value of D25=0.398
-      if (D25 .le. 1.0) then
-         if (regionflag .eq. 1) then
-            TERM6 = (C14(1)+c15(1))*(D25-1.0)
-         else
-            TERM6 = C14(1)*(D25-1.0)
-         endif   
-      elseif (D25 .GT. 1.0 .AND. D25 .LE. 3.0) then
-        TERM6 = 0.0
-      elseif (D25 .GT. 3.0) then
-         TERM6 = c16(1)*k3(1)*exp(-0.75)*(1.0-exp(-0.25*(D25-3.0)))
-      endif
-
-      pgasoil = alog(pgarock) - term5_rk - term6_RK + term5 + term6
-      psoil2 = (TERM1+TERM2+TERM3+TERM4+TERM5+TERM6+TERM7+TERM8+TERM9)
-
-
-C.....NOW COMPUTE THE GROUND MOTION VALUES.................
-C.....MAGNITUDE DEPENDENCE.................................
-      IF (MAG .LE. 4.5) THEN
-         TERM1 = C0T + C1T*MAG
-      elseif (mag .le. 5.5) then
-         TERM1 = C0T + c1T*MAG + c2T*(MAG-4.5)
-      elseif (mag .le. 6.5) then
-         TERM1 = C0T + C1T*MAG + c2T*(MAG-4.5) + c3T*(mag-5.5)
-      ELSE
-         TERM1 = C0T + C1T*MAG + c2T*(MAG-4.5) + C3T*(MAG-5.5) + c4T*(mag-6.5)
-      ENDIF
-
-C.....Distance dependence......
-      R = SQRT( RRUP*RRUP+C7T*C7T )
-      TERM2 = (C5T + C6T*MAG)*ALOG(R)
-
-C.....SET UP STYLE OF FAULTING TERMS...........
-
-C     Set mechanism term and corresponding Frv and Fnm values.
-C     fType     Mechanism                      Rake
-C     ------------------------------------------------------
-C    -1,-0.5    Normal and NMl/Obl       -150 < Rake < -30.0
-C     1, 0.5    Reverse and Rev/Obl        30 < Rake < 150.0
-C       0       Strike-Slip                    Otherwise
-      IF (Ftype .EQ. 0.0) THEN
-         TERM3 = 0.0
-      ELSEIF (Ftype .ge. 0.5) THEN
-         if (mag .le. 4.5) then
-            TERM3 = 0.0
-         elseif (mag .le. 5.5) then
-            TERM3 = C8T*(mag-4.5)
-         else
-            TERM3 = C8T
-         endif
-      ELSEIF (Ftype .le. -0.5) THEN
-         if (mag .le. 4.5) then
-            TERM3 = 0.0
-         elseif (mag .le. 5.5) then
-            TERM3 = C9T*(mag-4.5)
-         else
-            TERM3 = C9T
-         endif
-      ENDIF
-
-C.....SET UP HANGING WALL TERMS................
-      if (HWflag .eq. 1) then
-         R1 = rupwidth*cos(abs(dip)*3.14159/180.0)
-         R2 = 62.0*mag - 350.0
-         f1 = h1T + h2T*(Rx/R1) + h3T*(Rx/R1)**2.0
-         f2 = h4T + h5T*((Rx-R1)/(R2-R1)) + h6T*((Rx-R1)/(R2-R1))**2.0
-         if (Rrup .eq. 0.0) then
-            fhwrrup = 1.0
-         else
-            fhwrrup = ((Rrup-Rbjf)/Rrup)         
-         endif
-         if (Rx .lt. R1) Then
-            fhwr = f1*fhwrrup
-         else
-            fhwr = max(f2,0.0)*fhwrrup
-         endif
-         if (mag .le. 5.5) then
-            fhwm = 0.0         
-         elseif (mag .le. 6.5) then
-            fhwm = (mag-5.5)*(1.0+a2T*(mag-6.5))
-         else
-            fhwm = 1.0 + a2T*(mag-6.5)        
-         endif
-         if (depthtop .le. 16.66) then
-            fhwz = 1.0 - 0.06*depthtop 
-         else
-            fhwz = 0.0
-         endif
-         fhwd = (90.0 - dip)/45.0        
-         TERM4 = c10T*fhwr*fhwm*fhwz*fhwd
-      else   
-         term4 = 0.0
-      endif 
-
-C.....NOW COMPUTE THE SITE CONDITION FACTORS...............
-      IF (VS .LE. K1T ) THEN
-         TERM5 = C11T*ALOG( VS/K1T ) +
-     1           K2T*( ALOG( PGAROCK+c*( (VS/K1T)**N) ) -
-     2           ALOG( PGAROCK+c ) )
-      ELSE
-         TERM5 = ( C11T+K2T*n )*ALOG( VS/K1T )
-      ENDIF
-c     Add Japan Site Term Effects
-      if (regionflag .eq. 1) then
-         IF (VS .LE. 200.0 ) THEN
-            TERM5 = term5 + (C12T+k2T*n)*(alog(Vs/k1T)-alog(200/k1T))
-         ELSE
-            TERM5 = term5 + ( C13T+K2T*n )*ALOG( VS/K1T )
-         ENDIF
-      endif
-
-C.....NOW COMPUTE THE SEDIMENT DEPTH DEPENDENCE.............
-      IF (D25 .LE. 1.0) THEN
-         if (regionflag .eq. 1) then
-            TERM6 = (C14T+c15T)*(D25-1.0)
-          else
-            TERM6 = C14T*(D25-1.0)
-          endif
-      ELSEIF (D25 .GT. 1.0 .AND. D25 .LE. 3.0) THEN
-         TERM6 = 0.0
-      ELSEIF (D25 .GT. 3.0)  THEN
-         TERM6 = c16T*k3T*exp(-0.75)*( 1.0 - exp(-0.25*(D25-3.0)))
-      ENDIF
-      
-C.....Now compute the hypocentral depth term..........
-      if (depth .le. 7.0) then
-         fhypH = 0.0
-      elseif (depth .le. 20.0) then
-         fhypH = depth - 7.0      
-      else
-         fhypH = 13.0
-      endif
-      if (mag .le. 5.5) then
-          term7 = c17T*fhypH
-      elseif (mag .le. 6.5) then
-          term7 = (c17T + (c18T-c17T)*(mag-5.5))*fhypH
-      else
-          term7 = c18T*fhypH     
-      endif
-
-C.....Compute Rupture Dip term.............
-      if (mag .le. 4.5) then
-          term8 = c19T*dip
-      elseif (mag .le. 5.5) then
-          term8 = c19T*(5.5-mag)*dip      
-      else 
-          term8 = 0.0
-      endif
-
-C.....Compute anelastic attenuation term.....
-      if (Rrup .le. 80.0) then
-         term9 = 0.0
-      else
-         if (regionflag .eq. 0) then
-            term9 = (c20T+Dc20CAT)*(Rrup-80.0)
-         elseif (regionflag .eq. 1 .or. regionflag .eq. 3) then
-             term9 = (c20T+Dc20JPT)*(Rrup-80.0)
-         elseif (regionflag .eq. 2) then
-             term9 = (c20T+Dc20CHT)*(Rrup-80.0)
-         endif
-      endif
-
-      LnY = (TERM1+TERM2+TERM3+TERM4+TERM5+TERM6+TERM7+TERM8+TERM9)
-
-C    Check that SA is not less than PGA for T<0.25sec
-      if (specT .lt. 0.25) then
-         if (lnY .lt. pgasoil ) then
-            lnY = pgasoil
-         endif
-      endif
-
-C.....Now compute the sigma value..........
-      IF (Vs .LT. k1T) THEN
-        alpha = k2T*pgarock*(1/(pgarock  
-     &    +c*(Vs/k1T)**n) 
-     &    -1/(pgarock + c))
-      ELSE
-        alpha = 0.0
-      ENDIF
-
-      If (Mag.le.4.5) then
-	   tau_lnyB = t1T
-	   tau_lnPGAB = t1(1)
-	elseif (Mag.lt.5.5) then
-	   tau_lnyB = t2T + 
-     &          (t1T - t2T)*(5.5-mag)
-	   tau_lnPGAB = t2(1) + 
-     &          (t1(1) - t2(1))*(5.5-Mag)
-	else
-	   tau_lnyB = t2T
-	   tau_lnPGAB = t2(1)
-	endif
-
-      tau = SQRT(tau_lnyB**2 +  
-     &           (alpha * tau_lnPGAB)**2 +
-     &           2.0*alpha*rhoT*tau_lnyB*tau_lnPGAB)
-
-      If (Mag.le.4.5) then
-	   phi_lny = phi1T
-           phi_lnPGAB = phi1(1)
-      elseif (Mag.lt.5.5) then
-	   phi_lny = phi2T + 
-     &          (phi1T - phi2T)*(5.5-mag)
-	   phi_lnPGAB = phi2(1) + 
-     &          (phi1(1) - phi2(1))*(5.5-mag)
-      else
-	   phi_lny = phi2T 
-	   phi_lnPGAB = phi2(1) 
-      endif
-
-      phi_lnyB = SQRT(phi_lny**2 - flnAFT**2)
-
-      phi_lnPGAB = SQRT(phi_lnPGAB**2 - flnAF(1)**2)
-
-      phi = SQRT(phi_lny**2 + 
-     &           (alpha*phi_lnPGAB)**2 +
-     &           2.0*alpha*rhoT*phi_lnyB*phi_lnPGAB)
-	
-      Sigmatot = SQRT(phi**2 + Tau**2)
-
-      period2 = period1
-      
-C     Convert ground motion to units of gals.
-
-      lnY = lnY + 6.89
-      sigma = sigmaTot
-
-      return
-      END
 
 c ---------------------------------------------------------------------            
 C ** Chiou and Youngs (NGA West2-2013 Model) Horizontal **
@@ -43981,7 +43208,7 @@ C     Last Updated: 8/1/13
 
       parameter (MAXPER=25)
       REAL Period(MAXPER), C1(MAXPER), C1a(MAXPER), C1b(MAXPER)
-      REAL cn(MAXPER), cm(MAXPER), c5(MAXPER), c6(MAXPER)
+      REAL cn(MAXPER), cm(MAXPER), c5(MAXPER), c6(MAXPER), c8(MAXPER)
       REAL c7(MAXPER), c9(MAXPER), gamma1(MAXPER), gamma2(MAXPER)
       REAL phi1(MAXPER), phi2(MAXPER), phi3(MAXPER), phi4(MAXPER)
       REAL phi5(MAXPER), phi6(MAXPER), phi1jp(MAXPER), phi5jp(MAXPER), phi6jp(MAXPER)
@@ -43992,7 +43219,7 @@ C     Last Updated: 8/1/13
       real C11(MAXPER), C11B(MAXPER)
       real gscaleJapIt(MAXPER), gscaleWen(MAXPER), sigma2Jap(MAXPER)
  
-      REAL c1T, c1aT, c1bT, cnT, cmT, c5T, c6T, c7T, c9T, c9aT, c3T
+      REAL c1T, c1aT, c1bT, cnT, cmT, c5T, c6T, c7T, c9T, c9aT, c3T, c8T
       REAL gamma1T, gamma2T, phi1T, phi2T, phi3T, phi4T, sigma3T
       REAL phi5T, phi6T, tau1T, tau2T, sigma1T, sigma2T
       real C1cT, C1dT, C7bT, C11T, C11bT, CHMT
@@ -44001,7 +43228,7 @@ C     Last Updated: 8/1/13
       integer iflag, count1, count2, hwflag, vs30_class, regionflag
       REAL M, RRUP, RBJF, DTOR, Delta, specT, sigma, Ftype, Rx
       REAL period2, lnY, F_RV, F_NM, depthvs10, tau, rkdepth
-      real c8, c8a, c8bT, deltaZ1, fd
+      real c8a, c8bT, deltaZ1, fd
       real NL0, sigma_NL0, F_Measured, F_Inferred, mz_TOR, deltaZ_TOR, coshM
       real gscaleJapItT, gscaleWenT, sigma2JapT, phi
       real phi1jpT, phi5jpT, phi6jpT
@@ -44144,7 +43371,7 @@ C     Last Updated: 8/1/13
      1      0.531176947346726, 0.53091866775, 0.53069348684478, 0.530953922960708, 0.531256171294916, 0.530904125925903,
      1      0.53016308922439, 0.527603492956116, 0.516719512970182, 0.491681001472351, 0.468235579988731, 0.451748161403632,
      1      0.416734686252964, 0.375505067353143/
-
+      Data c8 / 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0991,0.1982,0.2154,0.2154,0.2154,0.2154,0.2154,0.2154,0.2154,0.2154/
 
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
@@ -44190,6 +43417,7 @@ C First check for the PGA case (i.e., specT=0.0)
          phi5jpT = phi5jp(1)
          phi6jpT = phi6jp(1)
          gscaleWenT = gscaleWen(1)
+         c8T = c8(1)
          goto 1011
       elseif (specT .gt. 0.0) then
 C Now loop over the spectral period range of the attenuation relationship.
@@ -44294,6 +43522,8 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,phi6jpT,iflag)
             call interp (period(count1),period(count2),gscaleWen(count1),gscaleWen(count2),
      +                   specT,gscaleWenT,iflag)
+            call interp (period(count1),period(count2),c8(count1),c8(count2),
+     +                   specT,c8T,iflag)
 
  1011 period1 = specT                                                                                                              
 
@@ -44319,7 +43549,7 @@ C     Constant terms
         c4 = -2.1
         c4a = -0.5
         cRB = 50.0
-        c8 = 0.2154
+C        c8 = 0.2154
         c8a = 0.2695
 
         pi = atan(1.0)*4.0
@@ -44412,8 +43642,8 @@ c Linear soil amplification
 
 c Nonlinear soil amplification
         b = phi2T *
-     1      (exp(phi3T*(min(Vs,1130.0)-360.0)) - exp(phi3T*(1130.0-360.0)))
-        c = phi4T
+     1      (exp(-exp(phi3T)*(min(Vs,1130.0)-360.0)) - exp(-exp(phi3T)*(1130.0-360.0)))
+        c = exp(phi4T)
 
 C Deviation from ln(Vs30) scaling: bedrock depth (Z1) effect.
         if (regionflag .eq. 1) then
@@ -44421,8 +43651,7 @@ C Deviation from ln(Vs30) scaling: bedrock depth (Z1) effect.
      1     exp(-5.23/2.0 * alog((VS**2.0 + 412.0**2.0)/(1360.0**2.0 + 412.0**2.0)))      
         else
            deltaZ1 = depthvs10*1000.0 -
-c     1  exp(-7.15/4.0 * log((VS**4.0 + 570.94**4.0)/(1360.0**4.0 + 570.94**4.0)))
-     1     exp(-7.15/4.0 * alog((VS**4.0 + 571.0**4.0)/(1360.0**4.0 + 571.0**4.0)))
+     1     exp(-2.63 / 4.0 * alog((VS**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))
         endif
         rkdepth = phi5T * ( 1.0 - exp(-deltaZ1/phi6T ) )
 
@@ -44976,7 +44205,7 @@ c     Set VS30_star (eq 4.8 and 4.9)
       if ( vs30 .lt. v1 ) then
          vs30Star = vs30
       else
-	vs30Star = v1
+	    vs30Star = v1
       endif		
 
 c     Compute site amplification (Eq. 4.7)  
@@ -44989,11 +44218,11 @@ c     Compute site amplification (Eq. 4.7)
 
 c     Set Regional z1 reference (eq 4.18)
       if (regionflag .eq. 1) then  
-         z1_ref = exp (-2.629/4.0 * alog( (Vs30**4 + 253.299**4) /(2491.945**4 + 253.299**4))) / 1000.
+         z1_ref =  exp(-2.63 / 4.0 * alog((vs30**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))/ 1000.
       elseif (regionflag .eq. 3) then
-         z1_ref = exp ( -5.23/2. * alog( (Vs30**2 + 412.**2)/(1360.**2+412.**2) ) ) / 1000.
+         z1_ref = exp ( -5.23/2. * alog( (Vs30**2.0 + 412.**2.0)/(1360.**2.0+412.**2.0) ) ) / 1000.
       else
-         z1_ref = exp ( -7.67/4. * alog( (Vs30**4 + 610.**4)/(1360.**4+610.**4) ) ) / 1000.
+         z1_ref = exp ( -7.67/4. * alog( (Vs30**4.0 + 610.**4.0)/(1360.**4.0+610.**4.0) ) ) / 1000.
       endif 
       
 C     Soil Depth Model (eq 4.17)
@@ -45688,3 +44917,2227 @@ c      lnY = lnY*alog(10.0)
       return
       end 
       
+c ---------------------------------------------------------------------            
+C     *** Akkar, Sandikkaya, and Bommer (2013) *** Adjusted in Taiwan SSHAC Project
+c ---------------------------------------------------------------------            
+      subroutine ASB14_TW_C01 ( mag, Rbjf, specT, 
+     1                     period2, lnY, sigma, iflag, ftype, Vs, phiT, tauT ) 
+      implicit none
+      integer MAXPER
+      parameter (MAXPER=22)
+      REAL Period(MAXPER), a1(MAXPER), a3(MAXPER), a4(MAXPER), a8(MAXPER)
+      Real a9(MAXPER), b1(MAXPER), b2(MAXPER), phi(MAXPER), tau(MAXPER)
+      real specT, a1T, a3T, a4T, a8T, a9T, b1T, b2T, phiT, tauT, period2
+      real mag, Rbjf, Ftype, Fn, Fr, Vs, lnY
+      real a5, a6, a7, c1, c, n, sigma, period1, pgaref
+      INTEGER iFlag, count1, count2, nPer, i
+      real a2(MAXPER), a2T
+ 
+ 
+      Data Period(1:22) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
+     1      3, 4/
+      Data a1(1:22) / 1.95754376344839, 2.00817307775539, 2.10206659629286, 2.20961153930911, 2.35078005202385, 2.49873114534198,
+     1      2.81381004271636, 3.12694681898327, 3.21378881748549, 3.32779032291873, 3.24345450186723, 3.12402349228009,
+     1      2.91284344812683, 2.72736664472706, 2.24534448743599, 1.99211376932964, 1.1530939925732, 0.641079591580465,
+     1      -0.0254787065133857, -0.511129081837452, -1.18463752251569, -1.73520928065602/
+      Data a3(1:22) / -0.02807, -0.0274, -0.02715, -0.02403, -0.01797, -0.01248, -0.00532, -0.00925, -0.0149516924364565, -0.02193,
+     1      -0.0274510958074301, -0.03462, -0.0467825076620119, -0.05672, -0.07684, -0.0949, -0.12347, -0.14345, -0.17187,
+     1      -0.19029, -0.21392, -0.23848/
+      Data a4(1:22) / -1.23452, -1.23698, -1.25363, -1.27525, -1.30123, -1.32632, -1.35722, -1.38182, -1.37407684986153, -1.3646,
+     1      -1.33160829826025, -1.28877, -1.22380239685518, -1.17072, -1.0653, -1.01909, -0.88393, -0.81838, -0.75751, -0.72033,
+     1      -0.69085, -0.66482/
+      Data a8(1:22) / -0.103636044256603, -0.132928920885736, -0.12986863151264, -0.129851892594279, -0.116141160848401,
+     1      -0.119177416631283, -0.139260487428174, -0.171750171226412, -0.157099766506712, -0.120064436335966, -0.10406684558815,
+     1      -0.104366241763941, -0.0899951148151869, -0.0994122752510732, -0.144947920374219, -0.196997416408109,
+     1      -0.222073676123046, -0.25282351912814, -0.234590527565048, -0.232998579238557, -0.0848380615438779, 0.0861377135345235/
+      Data a9(1:22) / 0.126400204982005, 0.0932411706137936, 0.0919391699827972, 0.0864920444615963, 0.0846063286281077,
+     1      0.0774891547676303, 0.0493136670345936, 0.0343857396319973, 0.0339561453478299, 0.0418349456816038, 0.0612488290723383,
+     1      0.0952480389354383, 0.122571526364686, 0.122639270021399, 0.13891186952902, 0.144080973849871, 0.164385885840223,
+     1      0.17991213158502, 0.163888527122665, 0.144017834272244, 0.108612885472365, 0.0432613427525789/
+      Data b1(1:22) / -0.511626065987955, -0.53046724276345, -0.52254494554547, -0.50864646002686, -0.485614368483321,
+     1      -0.453434312321338, -0.407260400776915, -0.434402182634647, -0.46871799480745, -0.50684048713477, -0.53389023952211,
+     1      -0.553869172268956, -0.561144973177327, -0.608010203560465, -0.666054146807456, -0.700286156154561, -0.855477635291906,
+     1      -0.966259736674558, -1.04096576213125, -1.02116484088795, -1.02432695483163, -1.01420693530889/
+      Data b2(1:22) / -0.28846, -0.28685, -0.28241, -0.26842, -0.24759, -0.22385, -0.17525, -0.29293, -0.339056152218589, -0.39551,
+     1      -0.417668345900112, -0.44644, -0.452416689285495, -0.4573, -0.43008, -0.37408, -0.28957, -0.28702, -0.24695, -0.17336,
+     1      -0.13336, -0.07749/
+      Data phi(1:22) / 0.332271753816561, 0.331853645328173, 0.332226638023841, 0.340352054536531, 0.356032340893303,
+     1      0.375882001454717, 0.414401540225185, 0.425576834343117, 0.421822057126099, 0.401352020442047, 0.390089235488791,
+     1      0.370563407684413, 0.347128326879158, 0.339900164897318, 0.32815538601622, 0.317687018977947, 0.325315598182983,
+     1      0.327742581374142, 0.354898012625689, 0.371465570115995, 0.390612539946501, 0.395777102651996/
+      Data tau(1:22) / 0.350418686172617, 0.347748165151219, 0.350377709334341, 0.358987239286868, 0.369064296128902,
+     1      0.378518325684224, 0.396400441287509, 0.396733147119714, 0.390535011398694, 0.386521582565263, 0.384648579313126,
+     1      0.375129445685108, 0.362144468664536, 0.366581082849823, 0.386276478084319, 0.406760171807368, 0.436916198216006,
+     1      0.454080668424532, 0.4699258063812, 0.48322880880426, 0.506656166693695, 0.521040518558988/
+       Data a2(1:22) / 0.050335468, 0.106913336, 0.106685064, 0.106873132, 0.117318196, 0.111561424, 0.10736431 , 0.103185029,
+     1       0.095335574, 0.131059036, 0.127769367, 0.131100025, 0.131821032, 0.153387307, 0.129558757, 0.125270741,
+     1       0.116455398, 0.143364126, 0.146078527, 0.131832393, 0.128727888, 0.007683513 /
+
+ 
+ 
+C First check for the PGA case (i.e., specT=0.0) 
+      nPer = 22
+      if (specT .eq. 0.0) then
+         period1 = period(1)
+         a1T = a1(1)
+         a2T = a2(1)
+         a3T = a3(1)
+         a4T = a4(1)
+         a8T = a8(1)
+         a9T = a9(1)
+         b1T = b1(1)
+         b2T = b2(1)
+         phiT = phi(1)
+         tauT = tau(1)
+         goto 1011
+      elseif (specT .gt. 0.0) then
+C Now loop over the spectral period range of the attenuation relationship.
+         do i=2,nper-1
+            if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
+               count1 = i
+               count2 = i+1
+               goto 1020 
+            endif
+         enddo
+      endif
+C Selected spectral period is outside range defined by attenuaton model.
+      write (*,*) 
+      write (*,*) 'Akkar,Sandikkaya&Bommer (2013) Horizontal'
+      write (*,*) 'attenuation model is not defined for a '
+      write (*,*) ' spectral period of: ' 
+      write (*,'(a10,f10.5)') ' Period = ',specT
+      write (*,*) 'This spectral period is outside the defined'
+      write (*,*) 'period range in the code or beyond the range'
+      write (*,*) 'of spectral periods for interpolation.'
+      write (*,*) 'Please check the input file.'
+      write (*,*) 
+      stop 99
+C Interpolate the coefficients for the requested spectral period.
+ 1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
+     +                   specT,a1T,iflag)
+            call interp (period(count1),period(count2),a2(count1),a2(count2),
+     +                   specT,a2T,iflag)
+            call interp (period(count1),period(count2),a3(count1),a3(count2),
+     +                   specT,a3T,iflag)
+            call interp (period(count1),period(count2),a4(count1),a4(count2),
+     +                   specT,a4T,iflag)
+            call interp (period(count1),period(count2),a8(count1),a8(count2),
+     +                   specT,a8T,iflag)
+            call interp (period(count1),period(count2),a9(count1),a9(count2),
+     +                   specT,a9T,iflag)
+            call interp (period(count1),period(count2),b1(count1),b1(count2),
+     +                   specT,b1T,iflag)
+            call interp (period(count1),period(count2),b2(count1),b2(count2),
+     +                   specT,b2T,iflag)
+            call interp (period(count1),period(count2),phi(count1),phi(count2),
+     +                   specT,phiT,iflag)
+            call interp (period(count1),period(count2),tau(count1),tau(count2),
+     +                   specT,tauT,iflag)
+ 1011 period1 = specT                                                                                                              
+C.....Set the mechanism terms based on ftype............
+C     Set mechanism term and corresponding Frv and Fnm values.
+C     fType     Mechanism                      Rake
+C     ------------------------------------------------------
+C      -1       Normal                    -120 < Rake <  -60
+C     -0.5      Normal/Oblique            -150 < Rake < -120
+C                                          -60 < Rake <  -30
+C       0       Strike-Slip               -180 < Rake < -150
+C                                          -30 < Rake <   30
+C                                          150 < Rake <  180
+C      0.5      Reverse/Oblique             30 < Rake <   60
+C                                          120 < Rake <  150
+C       1       Reverse                     60 < Rake <  120   
+      if (ftype .eq. -1.0) then
+         Fr = 0.0
+         Fn = 1.0
+      elseif (ftype .eq. -0.5) then 
+         Fr = 0.0
+         Fn = 1.0
+      elseif (ftype .eq. 0.0) then 
+         Fr = 0.0
+         Fn = 0.0
+      elseif (ftype .eq. 0.5) then
+         Fr = 1.0
+         Fn = 0.0
+      elseif (ftype .eq. 1.0) then
+         Fr = 1.0
+         Fn = 0.0
+      endif 
+C     Set frequency independent terms
+c      a2 = 0.0029
+      a5 = 0.2529
+      a6 = 7.5
+      a7 = -0.5096
+      c1 = 6.75
+      c = 2.5
+      n = 3.2
+C     Compute the PGA for reference Vs=750m/s.
+      if (mag .lt. c1 ) then
+         pgaref = a1(1) + a2(1)*(mag-c1) + a3(1)*(8.5-mag)**2.0 + 
+     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
+     2                  a8(1)*Fn + a9(1)*Fr
+      else
+         pgaref = a1(1) + a7*(mag-c1) + a3(1)*(8.5-mag)**2.0 + 
+     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
+     2                  a8(1)*Fn + a9(1)*Fr      
+      endif
+      pgaref = exp(pgaref) 
+C.....Now compute the ground motion value........
+      if (mag .lt. c1 ) then
+         lnY = a1T + a2T*(mag-c1) + a3T*(8.5-mag)**2.0 + 
+     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
+     2                  a8T*Fn + a9T*Fr
+      else
+         lnY = a1T + a7*(mag-c1) + a3T*(8.5-mag)**2.0 + 
+     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
+     2                  a8T*Fn + a9T*Fr      
+      endif
+C.....Now apply site amplification term......
+      if (vs .le. 750.0) then
+         lnY = lnY + b1T*alog(Vs/750.0) + 
+     1         b2T*alog( (pgaref + c*(Vs/750.0)**n) / ((pgaref+c)*(Vs/750.0)**n) )
+      else
+         lnY = lnY + b1T*alog( min(Vs,1000.0)/750.0)
+      endif
+C.....Set Sigma value.........
+      sigma = sqrt (phiT*phiT + tauT*tauT)
+C     Convert ground motion to units of gals.
+      lnY = lnY + 6.89
+      period2 = period1
+      return
+      END
+      
+c ------------------------------------------------------------------            
+C *** Abrahamson, Silva, and Kamai (NGA-West2 2013) Horizontal ****
+C     Earthquake Spectra Paper:
+C        Summary of the Abrahamson, Silva, and Kamai NGA-West2 
+C            Ground-Motion Relations for Active Crustal REgions
+C         N. A. Abrahamson, S. J. Silva, and R. Kamai
+C     Notes:
+C        Applicable Range (see Abstract):  
+C           3 <= M <= 8.5
+C           Rrup <= 300 km
+C        Regional attenuation included based on Regionflag
+C             0 = Global
+C             1 = Taiwan
+C             2 = China
+C             3 = Japan
+C         Mainshock and Aftershocks included based on MSASFlag
+C             0 = Mainshocks
+C             1 = Aftershocks
+C         Sigma dependent on estimated or measured Vs30m based on 
+C             Vs30_Class
+C             0 = Estimated Vs30m
+C             1 = Measured Vs30m
+c ------------------------------------------------------------------            
+      subroutine ASK14_TW_C01 ( mag, dip, fType, fltWidth, rRup, Rjb,  
+     1                     vs30, hwflag, lnY, sigma, specT, period2, ztor,
+     2                     iflag, vs30_class, z10, Rx, Ry0, regionflag, msasflag,
+     1                     phi, tau )
+C     Last Updated: 8/1/13
+      implicit none
+ 
+      real mag, dip, fType, rRup, rjb, Rx, Ry0, vs30, SA1180,
+     1      Z10,  ZTOR, fltWidth, lnSa, sigma, lnY, vs30_rock
+      real Fn, Frv, specT, period2, CRjb, phi, tau, z10_rock, SA_rock
+      integer hwflag, iflag, vs30_class, regionflag, msasflag
+ 
+c     Vs30 class is to distinguish between the sigma if the Vs30 is measured
+c     vs the VS30 being estimated from surface geology.
+c         Vs30_class = 0 for estimated
+c         Vs30_class = 1 for measured 
+ 
+C     Current version is not programmed for Aftershock cases. 
+C       For implementation of Aftershock a new distance metric, CRjb
+C       will need to be computed and passed along to this subroutine. 
+ 
+      CRjb = 999.9 
+ 
+C     Set mechanism term and corresponding Frv and Fnm values.     
+C     fType     Mechanism                      Rake
+C     ------------------------------------------------------
+C      -1       Normal                   -120 < Rake < -60.0
+C     1, 0.5    Reverse and Rev/Obl        30 < Rake < 150.0
+C     0,-0.5    Strike-Slip and NMl/Obl        Otherwise
+C 
+      if ( fType .eq. 1.0 ) then
+        Frv = 1.0
+        Fn = 0.0
+      elseif ( fType .eq. 0.5 ) then
+        Frv = 1.0
+        Fn = 0.0
+      elseif ( fType .eq. -1.0 ) then
+        Frv = 0.0
+        Fn = 1.0
+      elseif ( fType .eq. -0.5 ) then
+        Frv = 0.0
+        Fn = 1.0
+      else
+        Frv = 0.0
+        Fn = 0.0
+      endif
+ 
+c     Compute SA1180
+      vs30_rock = 1180.
+      z10_rock = 0.005
+      SA_rock = 0.
+      
+      call ASK14_TW_C01_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0, 
+     1                     vs30_rock, SA_rock, Z10_rock, hwflag, vs30_class,
+     2                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb )
+      Sa1180 = exp(lnSa)
+ 
+c     Compute Sa at spectral period for given Vs30
+ 
+      call ASK14_TW_C01_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0, 
+     1                     vs30, SA1180, Z10, hwflag, vs30_class,
+     2                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb )
+ 
+c     compute Sa (given the PGA rock value)
+      sigma = sqrt( phi**2 + tau**2 )
+ 
+      lnY = lnSa + 6.89
+ 
+      period2 = specT
+ 
+      return
+      end
+ 
+c ----------------------------------------------------------------------
+      subroutine ASK14_TW_C01_model ( mag, dip, FltWidth, ZTOR, Frv, Fn, rRup, rjb, Rx, Ry0, 
+     1                     vs30, Sa1180, Z1, hwflag, vs30_class,
+     3                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb)
+ 
+      implicit none
+      
+      integer MAXPER     
+      parameter (MAXPER=25)
+      real Vlin(MAXPER), b(MAXPER), c4(MAXPER), M1(MAXPER), a1(MAXPER)
+      real a2(MAXPER), a3(MAXPER), a6(MAXPER), a8(MAXPER), a10(MAXPER)
+      real a11(MAXPER), a12(MAXPER), a13(MAXPER), a14(MAXPER), a15(MAXPER)
+      real a17(MAXPER), a43(MAXPER), a44(MAXPER), a45(MAXPER), a46(MAXPER)
+      real a25(MAXPER), a28(MAXPER), a29(MAXPER), a31(MAXPER), a36(MAXPER)
+      real a37(MAXPER), a38(MAXPER), a39(MAXPER), a40(MAXPER), a41(MAXPER), a42(MAXPER)
+      real s1est(MAXPER), s2est(MAXPER), s1msr(MAXPER), s2msr(MAXPER)
+      real s3(MAXPER), s4(MAXPER), s5(MAXPER), s6(MAXPER), period(MAXPER)
+      real a4(MAXPER), a5, a7
+      real VlinT, bT, c4T, M1T, a1T
+      real a2T, a3T, a6T, a8T, a10T, a4T
+      real a11T, a12T, a13T, a14T, a15T
+      real a17T, a43T, a44T, a45T, a46T
+      real a25T, a28T, a29T, a31T, a36T
+      real a37T, a38T, a39T, a40T, a41T, a42T
+      real s1estT, s2estT, s1msrT, s2msrT
+      real s3T, s4T, s5T, s6T, c4_mag
+      real phiA_est, phiA_msr, period1
+      
+      real M2
+      real lnSa, SA1180, rjb, rRup, Rx, Ry0, dip, mag, vs30
+      real HW_taper1, HW_taper2, HW_taper3, HW_taper4, HW_taper5
+      real damp_dSA1180, sigAmp, fltWidth
+      real f1, f4, f5, f6, f7, f8, f10, f11, fReg, f12, f13
+      real Ry1, ZTOR, Frv, Fn, SpecT
+      real phiA, phiB, tauA, tauB, phi, tau
+      integer vs30_class, hwflag, iflag, nPer, regionflag, msasflag
+      real n, c, z1, z1_ref
+      real R, V1, Vs30Star, hw_a2, h1, h2, h3, R1, R2, CRjb
+      integer count1, count2, i
+      real y1, y2, x1, x2, y1z, y2z, x1z, x2z
+ 
+ 
+      Data Period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
+     1      3, 4, 5, 7.5, 10/
+      Data Vlin(1:25) / 660, 660, 680, 770, 851.659765220817, 915, 960, 910, 833.557751246246, 740, 674.738820243143, 590, 495,
+     1      430, 360, 340, 330, 330, 330, 330, 330, 330, 330, 330, 330/
+      Data b(1:25) / -1.47, -1.47, -1.459, -1.39, -1.2936977941189, -1.219, -1.152, -1.23, -1.39052872238288, -1.587,
+     1      -1.77190667597776, -2.012, -2.411, -2.757, -3.278, -3.599, -3.8, -3.5, -2.4, -1, 0, 0, 0, 0, 0/
+      Data c4(1:25) / 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5,
+     1      4.5, 4.5, 4.5/
+      Data M1(1:25) / 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75, 6.75,
+     1      6.75, 6.75, 6.82, 6.92, 7, 7.15, 7.25/
+      Data a1(1:25) / 0.593866860165754, 0.593866860165754, 0.607350205626504, 0.623596721976998, 0.652048054162018,
+     1      0.706900122976899, 0.977092520718666, 1.19353371909298, 1.32002501982816, 1.41943704493427, 1.45760409041355,
+     1      1.48593774481291, 1.5482692399218, 1.59530501168755, 1.52577976900992, 1.42330982305614, 1.28852744087696,
+     1      1.21763682762334, 0.926314398721161, 0.752132501511978, 0.306567902675289, -0.0776771579300297, -0.336929967399733,
+     1      -1.3124274646718, -1.96852544897435/
+      Data a2(1:25) / -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.79,
+     1      -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.765, -0.634, -0.529/
+      Data a3(1:25) / 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275,
+     1      0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275/
+      Data a4(1:25) / 0.028559622, 0.028559622, 0.024114472, 0.029331155, 0.019548333, 0.004946714, 0.005303378, -0.005794728,
+     1       -0.013326944, -0.023008825, -0.033586465, -0.066345205, -0.057650858, -0.029948392, -0.002088881, 0.0203011,
+     1       0.031432073, 0.135117619, 0.263006151, 0.363764714, 0.299931624, 0.171388832, 0.125319644, 0.000172165, 0.001611885/
+      Data a6(1:25) / 1.0971052478214, 1.0971052478214, 1.07034252625442, 1.01191011946962, 0.960151214531469, 0.895279929309867,
+     1      0.92654506977541, 1.00221368734431, 1.08991983886901, 1.22240081684137, 1.29468215932786, 1.40361090204586,
+     1      1.51069901081663, 1.63441282368804, 1.74891808838416, 1.86175559265212, 2.18640072401506, 2.42168821321506,
+     1      2.68100338021949, 2.76037541026386, 2.74674409095451, 2.81072195031604, 2.96079416196568, 2.54253432152637,
+     1      1.22631618381355/
+      Data a8(1:25) / -0.015, -0.015, -0.015, -0.015, -0.015, -0.015, -0.015, -0.015, -0.0181476220075075, -0.022,
+     1      -0.0254805962536991, -0.03, -0.038, -0.045, -0.055, -0.065, -0.095, -0.11, -0.124, -0.138, -0.172, -0.197, -0.218,
+     1      -0.255, -0.285/
+      Data a10(1:25) / 1.88550206478838, 1.88550206478838, 1.87041425559732, 1.75625542618031, 1.60356687034528, 1.49217324726696,
+     1      1.39247214525391, 1.4779307664696, 1.62803769217999, 1.82902654690301, 2.07844213755755, 2.42387695711654,
+     1      3.05112199129081, 3.36681275006325, 4.14386296817676, 4.64423228581923, 4.84231546795258, 4.30714161619116,
+     1      2.63511186125103, 0.617331058415303, -0.758430542317734, -0.737742033861981, -0.713264155594585, -0.777366444748309,
+     1      -0.79623295261254/
+      Data a11(1:25) / 0.0865290017628497, 0.0865290017628497, 0.0863920308121283, 0.0833475966285011, 0.0805940005440329,
+     1      0.0739970397632909, 0.0317420642709333, 0.00950566126829064, 0.0278573208474259, 0.0617341652642051,
+     1      0.0765627168872937, 0.100927646749515, 0.133863284021228, 0.158502746654088, 0.174755835638996, 0.189203321064511,
+     1      0.196322660498526, 0.194565992382258, 0.163916257091526, 0.138191034588059, 0.119417922134445, 0.0518858982566291,
+     1      -0.000299209835122006, -0.126816643183004, -0.0952237645759153/
+      Data a12(1:25) / -0.0851813014732252, -0.0851813014732252, -0.0811946125443235, -0.0736733480467424, -0.0447695469303866,
+     1      -0.0326016592728057, -0.057299086049061, -0.109198803849594, -0.0892438233690082, -0.0570349718601036,
+     1      -0.0425580668821486, -0.0512274722133986, -0.0561371570080197, -0.0617139982746329, -0.091740938717726,
+     1      -0.151914306681818, -0.178531415315115, -0.210716153796932, -0.216476851197754, -0.22661557721623, -0.0950274132257672,
+     1      0.129608160368009, -0.154555139232628, 0.0114922876378795, -0.0640609795492863/
+      Data a13(1:25) / 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.58, 0.56, 0.53, 0.5, 0.42, 0.35,
+     1      0.2, 0, 0, 0, 0/
+      Data a14(1:25) / -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.24, -0.19, -0.11, -0.04, 0.07,
+     1      0.15, 0.27, 0.35, 0.46, 0.54, 0.61, 0.72, 0.8/
+      Data a15(1:25) / 1.35951090458584, 1.35951090458584, 1.36654581947039, 1.40869323733483, 1.48532549730173, 1.57986239181509,
+     1      1.739195456708, 1.79908761029304, 1.77441289606063, 1.69212932619259, 1.672990391914, 1.55489999718983,
+     1      1.39852777161035, 1.3162179619873, 1.2259862575015, 1.11569501263915, 0.991158857090293, 0.958925297374564,
+     1      0.810318882076326, 0.769601371751858, 0.378047007927471, 0.227924124763207, -0.0330462634934479, -0.0979718229415627,
+     1      -0.181661927158766/
+      Data a17(1:25) / -0.00781955144257678, -0.00781955144257678, -0.00794388960832398, -0.00861792272478135,
+     1      -0.00918743653244077, -0.0098216355840628, -0.010534120645979, -0.0103669729589076, -0.0100175235859223,
+     1      -0.00894850816177607, -0.008255299022226, -0.00709893304178311, -0.00581931156279194, -0.00505808157463984,
+     1      -0.00368321099920911, -0.0028063952303506, -0.00289623937801703, -0.00387904788105345, -0.00384632217298883,
+     1      -0.00493839857385291, -0.00347153307789942, -0.00226353012210327, -0.00179670583741962, -0.00252889897970746,
+     1      -0.00310008394168946/
+      Data a25(1:25) / -0.0015, -0.0015, -0.0015, -0.0016, -0.00182526831785053, -0.002, -0.0027, -0.0033, -0.00338993205735736,
+     1      -0.0035, -0.00341298509365752, -0.0033, -0.0029, -0.0027, -0.0023, -0.002, -0.001, -5e-04, -4e-04, -2e-04, 0, 0, 0, 0,
+     1      0/
+      Data a28(1:25) / 0.0025, 0.0025, 0.0024, 0.0023, 0.00252526831785053, 0.0027, 0.0032, 0.0036, 0.00346510191396396, 0.0033,
+     1      0.00303895528097257, 0.0027, 0.0024, 0.002, 0.001, 8e-04, 7e-04, 7e-04, 6e-04, 3e-04, 0, 0, 0, 0, 0/
+      Data a29(1:25) / -0.0034, -0.0034, -0.0033, -0.0034, -0.00334368292053737, -0.0033, -0.0029, -0.0025, -0.0025, -0.0025,
+     1      -0.00276104471902743, -0.0031, -0.0036, -0.0039, -0.0048, -0.005, -0.0041, -0.0032, -0.002, -0.0017, -0.002, -0.002,
+     1      -0.002, -0.002, -0.002/
+      Data a31(1:25) / -0.1503, -0.1503, -0.1479, -0.1447, -0.137885633385021, -0.1326, -0.1353, -0.1128, -0.0448563306665158,
+     1      0.0383, 0.0553549216431254, 0.0775, 0.0741, 0.2548, 0.2136, 0.1542, 0.0787, 0.0476, -0.0163, -0.1203, -0.2719, -0.2958,
+     1      -0.2718, -0.14, -0.0216/
+      Data a36(1:25) / 0.265, 0.265, 0.255, 0.249, 0.222530972652563, 0.202, 0.126, 0.022, -0.049046325312313, -0.136,
+     1      -0.110765677160682, -0.078, 0.037, -0.091, 0.129, 0.31, 0.505, 0.358, 0.131, 0.123, 0.109, 0.135, 0.189, 0.15, 0.092/
+      Data a37(1:25) / 0.337, 0.337, 0.328, 0.32, 0.302541705366584, 0.289, 0.275, 0.256, 0.213731933042042, 0.162,
+     1      0.188974620966168, 0.224, 0.248, 0.203, 0.232, 0.252, 0.208, 0.208, 0.108, 0.068, -0.023, 0.028, 0.031, -0.07, -0.159/
+      Data a38(1:25) / 0.188, 0.188, 0.184, 0.18, 0.172678779669858, 0.167, 0.173, 0.189, 0.15257751677027, 0.108,
+     1      0.111045521721987, 0.115, 0.122, 0.096, 0.123, 0.134, 0.129, 0.152, 0.118, 0.119, 0.093, 0.084, 0.058, 0, -0.05/
+      Data a39(1:25) / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0/
+      Data a40(1:25) / 0.088, 0.088, 0.088, 0.093, 0.115526831785053, 0.133, 0.186, 0.16, 0.118631253615615, 0.068,
+     1      0.0592985093657524, 0.048, 0.055, 0.073, 0.143, 0.16, 0.158, 0.145, 0.131, 0.083, 0.07, 0.101, 0.095, 0.151, 0.124/
+      Data a41(1:25) / -0.196, -0.196, -0.194, -0.175, -0.127130482456762, -0.09, 0.09, 0.006, -0.0668449664594602, -0.156,
+     1      -0.207338794742061, -0.274, -0.248, -0.203, -0.154, -0.159, -0.141, -0.144, -0.126, -0.075, -0.021, 0.072, 0.205,
+     1      0.329, 0.301/
+      Data a42(1:25) / 0.044, 0.044, 0.061, 0.162, 0.324756359647008, 0.451, 0.506, 0.335, 0.146592339836334, -0.084,
+     1      -0.124897005980964, -0.178, -0.187, -0.159, -0.023, -0.029, 0.061, 0.062, 0.037, -0.143, -0.028, -0.097, 0.015, 0.299,
+     1      0.243/
+      Data a43(1:25) / -0.122962023498924, -0.122962023498924, -0.120092998613746, -0.126886260792928, -0.126035664024335,
+     1      -0.0904729506991718, -0.0149049072273536, 0.0103808659653804, -0.0154811955589853, -0.0841622352036735,
+     1      -0.119282978541206, -0.12421065727408, -0.107040732978698, -0.0960315277316025, -0.157890828883787, -0.19410442396108,
+     1      -0.211688638835866, -0.182842209269601, 0.0357796738204077, 0.0978715683661098, 0.180188769627975, 0.267208253179032,
+     1      0.288512616632419, 0.336857781708233, 0.402190602744037/
+      Data a44(1:25) / 0.172338591249922, 0.172338591249922, 0.170022426697282, 0.17246825329291, 0.177160008120209,
+     1      0.183647781047614, 0.188806700354148, 0.243698862114109, 0.222677566880558, 0.237785176023185, 0.237613022368251,
+     1      0.218308740069599, 0.2032746665851, 0.181666749213636, 0.161804828013144, 0.122191096979769, 0.0662625613004855,
+     1      0.0475907780093519, 0.069351375345784, 0.129000718045731, 0.190504182454582, 0.170342502732787, 0.157276582209913,
+     1      0.137031837000311, 0.0589963511005088/
+      Data a45(1:25) / 0.0614738216205322, 0.0614738216205322, 0.0583202285935086, 0.0619929094404484, 0.0716204505668039,
+     1      0.0735921825736064, 0.0738034667488054, 0.064417927749121, 0.0598856791348016, 0.0357966722878199, 0.0346058994769634,
+     1      0.0318550184537276, 0.0222552236580935, 0.023693014881416, 0.0490897682923249, 0.105075768222844, 0.180265627533596,
+     1      0.222035554590515, 0.260100426376672, 0.254045901077365, 0.236586467752453, 0.214938951003774, 0.178100653589404,
+     1      0.12514948661591, 0.116411079489916/
+      Data a46(1:25) / 0.0626052993621598, 0.0626052993621598, 0.058744653649071, 0.0544910136649466, 0.0302800958064618,
+     1      0.00511890031399667, -0.0298335598698967, -0.0480238700565291, -0.0326498810238118, 0.0142571550229835,
+     1      0.0402025828982244, 0.0551568774847881, 0.0972265261342537, 0.151626103452716, 0.233058972791216, 0.265871303338564,
+     1      0.297582627738386, 0.289181720276543, 0.235785512188508, 0.27699299739719, 0.249507530382689, 0.219942760963378,
+     1      0.254640765867001, 0.162535435459097, 0.0900289349548069/
+      Data s1est(1:25) / 0.754, 0.754, 0.76, 0.781, 0.797331953044163, 0.81, 0.81, 0.81, 0.805953057418919, 0.801,
+     1      0.795779105619451, 0.789, 0.77, 0.74, 0.699, 0.676, 0.631, 0.609, 0.578, 0.555, 0.548, 0.527, 0.505, 0.457, 0.429/
+      Data s2est(1:25) / 0.52, 0.52, 0.52, 0.52, 0.525631707946263, 0.53, 0.54, 0.55, 0.554496602867868, 0.56, 0.562175372658562,
+     1      0.565, 0.57, 0.58, 0.59, 0.6, 0.615, 0.63, 0.64, 0.65, 0.64, 0.63, 0.63, 0.63, 0.63/
+      Data s1msr(1:25) / 0.741, 0.741, 0.747, 0.769, 0.785331953044163, 0.798, 0.798, 0.795, 0.785107473690691, 0.773,
+     1      0.764298509365752, 0.753, 0.729, 0.693, 0.644, 0.616, 0.566, 0.541, 0.506, 0.48, 0.472, 0.447, 0.425, 0.378, 0.359/
+      Data s2msr(1:25) / 0.501, 0.501, 0.501, 0.501, 0.50719487874089, 0.512, 0.522, 0.527, 0.523402717705706, 0.519,
+     1      0.516824627341438, 0.514, 0.513, 0.519, 0.524, 0.532, 0.548, 0.565, 0.576, 0.587, 0.576, 0.565, 0.568, 0.575, 0.585/
+      Data s3(1:25) / 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47,
+     1      0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47/
+      Data s4(1:25) / 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36,
+     1      0.36, 0.36, 0.36, 0.36, 0.36, 0.36, 0.36/
+      Data s5(1:25) / 0.54, 0.54, 0.54, 0.55, 0.555631707946263, 0.56, 0.57, 0.57, 0.574496602867868, 0.58, 0.584350745317124,
+     1      0.59, 0.61, 0.63, 0.66, 0.69, 0.73, 0.77, 0.8, 0.8, 0.8, 0.76, 0.72, 0.67, 0.64/
+      Data s6(1:25) / 0.63, 0.63, 0.63, 0.63, 0.641263415892527, 0.65, 0.69, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.69,
+     1      0.68, 0.66, 0.62, 0.55, 0.52, 0.5, 0.5, 0.5/
+ 
+ 
+C Find the requested spectral period and corresponding coefficients
+      nPer = 25
+ 
+C First check for the PGA, PGV, PGD cases 
+      if (specT .eq. 0.0) then
+         period1 = period(1)
+         a1T = a1(1)
+         a2T = a2(1)
+         a3T = a3(1)
+         a4T = a4(1)
+         a6T = a6(1)
+         a8T = a8(1)
+         M1T = M1(1)
+         a10T = a10(1)
+         a11T = a11(1)
+         a12T = a12(1)
+         a13T = a13(1)
+         a14T = a14(1)
+         a15T = a15(1)
+         a17T = a17(1)
+         a43T = a43(1)
+         a44T = a44(1)
+         a45T = a45(1)
+         a46T = a46(1)
+         a25T = a25(1)
+         a28T = a28(1)
+         a29T = a29(1)
+         a31T = a31(1)
+         a36T = a36(1)
+         a37T = a37(1)
+         a38T = a38(1)
+         a39T = a39(1)
+         a40T = a40(1)
+         a41T = a41(1)
+         a42T = a42(1)
+         VlinT = Vlin(1)
+         bT = b(1)
+         c4T = c4(1)
+         s1estT = s1est(1)
+         s2estT = s2est(1)
+         s1msrT = s1msr(1)
+         s2msrT = s2msr(1)
+         s3T = s3(1)
+         s4T = s4(1)
+         s5T = s5(1)
+         s6T = s6(1)
+         goto 1011
+      endif
+C   For other periods, loop over the spectral period range of the attenuation relationship.
+      do i=2,nper-1
+         if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
+            count1 = i
+            count2 = i+1
+            goto 1020 
+         endif
+      enddo
+C Selected spectral period is outside range defined by attenuaton model.
+      write (*,*) 
+      write (*,*) 'Abrahamson, Silva, and Kamai (NGA West2-2013) Horizontal'
+      write (*,*) 'attenuation model is not defined for a '
+      write (*,*) ' spectral period of: ' 
+      write (*,'(a10,f10.5)') ' Period = ',specT
+      write (*,*) 'This spectral period is outside the defined'
+      write (*,*) 'period range in the code or beyond the range'
+      write (*,*) 'of spectral periods for interpolation.'
+      write (*,*) 'Please check the input file.'
+      write (*,*) 
+      stop 99
+C Interpolate the coefficients for the requested spectral period.
+ 1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
+     +                   specT,a1T,iflag)
+            call interp (period(count1),period(count2),a2(count1),a2(count2),
+     +                   specT,a2T,iflag)
+            call interp (period(count1),period(count2),a3(count1),a3(count2),
+     +                   specT,a3T,iflag)
+            call interp (period(count1),period(count2),a4(count1),a4(count2),
+     +                   specT,a4T,iflag)
+            call interp (period(count1),period(count2),a6(count1),a6(count2),
+     +                   specT,a6T,iflag)
+            call interp (period(count1),period(count2),a8(count1),a8(count2),
+     +                   specT,a8T,iflag)
+            call interp (period(count1),period(count2),M1(count1),M1(count2),
+     +                   specT,M1T,iflag)
+            call interp (period(count1),period(count2),a10(count1),a10(count2),
+     +                   specT,a10T,iflag)
+            call interp (period(count1),period(count2),a11(count1),a11(count2),
+     +                   specT,a11T,iflag)
+            call interp (period(count1),period(count2),a12(count1),a12(count2),
+     +                   specT,a12T,iflag)
+            call interp (period(count1),period(count2),a13(count1),a13(count2),
+     +                   specT,a13T,iflag)
+            call interp (period(count1),period(count2),a14(count1),a14(count2),
+     +                   specT,a14T,iflag)
+            call interp (period(count1),period(count2),a15(count1),a15(count2),
+     +                   specT,a15T,iflag)
+            call interp (period(count1),period(count2),a17(count1),a17(count2),
+     +                   specT,a17T,iflag)
+            call interp (period(count1),period(count2),a43(count1),a43(count2),
+     +                   specT,a43T,iflag)
+            call interp (period(count1),period(count2),a44(count1),a44(count2),
+     +                   specT,a44T,iflag)
+            call interp (period(count1),period(count2),a45(count1),a45(count2),
+     +                   specT,a45T,iflag)
+            call interp (period(count1),period(count2),a46(count1),a46(count2),
+     +                   specT,a46T,iflag)
+            call interp (period(count1),period(count2),a25(count1),a25(count2),
+     +                   specT,a25T,iflag)
+            call interp (period(count1),period(count2),a28(count1),a28(count2),
+     +                   specT,a28T,iflag)
+            call interp (period(count1),period(count2),a29(count1),a29(count2),
+     +                   specT,a29T,iflag)
+            call interp (period(count1),period(count2),a31(count1),a31(count2),
+     +                   specT,a31T,iflag)
+            call interp (period(count1),period(count2),a36(count1),a36(count2),
+     +                   specT,a36T,iflag)
+            call interp (period(count1),period(count2),a37(count1),a37(count2),
+     +                   specT,a37T,iflag)
+            call interp (period(count1),period(count2),a38(count1),a38(count2),
+     +                   specT,a38T,iflag)
+            call interp (period(count1),period(count2),a39(count1),a39(count2),
+     +                   specT,a39T,iflag)
+            call interp (period(count1),period(count2),a40(count1),a40(count2),
+     +                   specT,a40T,iflag)
+            call interp (period(count1),period(count2),a41(count1),a41(count2),
+     +                   specT,a41T,iflag)
+            call interp (period(count1),period(count2),a42(count1),a42(count2),
+     +                   specT,a42T,iflag)
+            call interp (period(count1),period(count2),Vlin(count1),Vlin(count2),
+     +                   specT,VlinT,iflag)
+            call interp (period(count1),period(count2),b(count1),b(count2),
+     +                   specT,bT,iflag)
+            call interp (period(count1),period(count2),c4(count1),c4(count2),
+     +                   specT,c4T,iflag)
+            call interp (period(count1),period(count2),s1est(count1),s1est(count2),
+     +                   specT,s1estT,iflag)
+            call interp (period(count1),period(count2),s2est(count1),s2est(count2),
+     +                   specT,s2estT,iflag)
+            call interp (period(count1),period(count2),s1msr(count1),s1msr(count2),
+     +                   specT,s1msrT,iflag)
+            call interp (period(count1),period(count2),s2msr(count1),s2msr(count2),
+     +                   specT,s2msrT,iflag)
+            call interp (period(count1),period(count2),s3(count1),s3(count2),
+     +                   specT,s3T,iflag)
+            call interp (period(count1),period(count2),s4(count1),s4(count2),
+     +                   specT,s4T,iflag)
+            call interp (period(count1),period(count2),s5(count1),s5(count2),
+     +                   specT,s5T,iflag)
+            call interp (period(count1),period(count2),s6(count1),s6(count2),
+     +                   specT,s6T,iflag)
+ 1011 period1 = specT                                                                                                              
+C     Constant values
+      n = 1.5
+      M2 = 5.0
+c      a4 = -0.1
+      a5 = -0.41
+      a7 = 0.0
+C     Set C term
+      if (period1 .eq. -1.0) then
+         c = 2400.0
+      else
+         c = 2.4
+      endif
+C     Magnitude dependent taper for C4 (eq. 4.4)
+      if (mag .ge. 5.0) then
+         c4_mag = c4T
+      elseif (mag .ge. 4.0) then
+         c4_mag = c4T - (c4T-1.0) * (5.0-mag)
+      else
+         c4_mag = 1.0
+      endif 
+     
+c     Set distance (eq 4.3)
+      R = sqrt(rRup**2 + c4_mag**2)
+       	  
+C     Base Model (eq 4.2)
+      if ( mag .lt. M2 ) then
+        f1 = a1T + a6T*(Mag-M2) + a7*(Mag-M2)**2 + a4T*(M2-M1T) + a8T*(8.5-M2)**2 +
+     1                (a2T + a3T*(M2-M1T)) * alog(R) + a17T*Rrup
+      elseif ( mag .lt. M1T ) then
+        f1 = a1T + a4T*(Mag-M1T) + a8T*(8.5-Mag)**2 + (a2T + a3T*(Mag-M1T)) * alog(R) + a17T*Rrup
+      else
+        f1 = a1T + a5*(Mag-M1T) + a8T*(8.5-Mag)**2 + (a2T + a3T*(Mag-M1T)) * alog(R) + a17T*Rrup
+      endif
+	  
+c     style of faulting (eq 4.5 and 4.6) 
+      if ( mag .gt. 5. ) then
+        f7 = Frv * a11T
+        f8 = Fn * a12T
+      elseif ( mag .ge. 4. ) then
+        f7 = Frv * a11T * (mag-4.)
+        f8 = Fn * a12T * (mag-4.)
+      else 
+        f7 = 0
+        f8 = 0
+      endif
+c     ZTOR (eq 14) 
+c     form modified"Extend the upper bound ZTOR to 50km:"
+      if (ZTOR .lt. 50.) then 
+        f6 = a15T * ZTOR/50.0
+      else
+        f6 = a15T
+      endif    
+c     Set VS30_star (eq 4.8 and 4.9)
+      if ( specT .ge. 3.0 ) then
+        V1 = 800.
+      elseif ( specT .gt. 0.5 ) then
+        V1 = exp( -0.35 * alog(specT/0.5)  + alog(1500.) )
+      else
+        V1=1500.
+      endif      
+      if ( vs30 .lt. v1 ) then
+         vs30Star = vs30
+      else
+	     vs30Star = v1
+      endif		
+c     Compute site amplification (Eq. 4.7)  
+      if (vs30 .lt. vLinT) then
+        f5 = a10T*alog(vs30Star/vLinT) - bT*alog(c+Sa1180) 
+     1              + bT*alog(Sa1180+c*((vs30Star/vLinT)**(n)) )
+      else
+     	f5 = (a10T + bT*n) * alog(vs30Star/vLinT)
+      endif
+c     Set Regional z1 reference (eq 4.18)
+      if (regionflag .eq. 1) then  
+         z1_ref =  exp(-2.629 / 4.0 * alog((vs30**4.0 + 253.299**4.0)/(2491.945**4.0 + 253.299**4.0)))/ 1000.
+      elseif (regionflag .eq. 3) then
+         z1_ref = exp ( -5.23/2. * alog( (Vs30**2.0 + 412.**2.0)/(1360.**2.0+412.**2.0) ) ) / 1000.
+      else
+         z1_ref = exp ( -7.67/4. * alog( (Vs30**4.0 + 610.**4.0)/(1360.**4.0+610.**4.0) ) ) / 1000.
+      endif 
+      
+C     Soil Depth Model (eq 4.17)
+C     Updated 8/1/13
+      if ( vs30 .lt. 150.0 ) then
+         y1z = a43T
+         y2z = a43T 
+         x1z = 50.0
+         x2z = 150.0
+      elseif ( vs30 .lt. 250.0 ) then
+         y1z = a43T
+         y2z = a44T 
+         x1z = 150.0
+         x2z = 250.0
+      elseif ( vs30 .lt. 400.0 ) then
+         y1z = a44T
+         y2z = a45T 
+         x1z = 250.0
+         x2z = 400.0
+      elseif ( vs30 .lt. 700.0 ) then
+         y1z = a45T
+         y2z = a46T 
+         x1z = 400.0
+         x2z = 700.0
+      else
+         y1z = a46T
+         y2z = a46T 
+         x1z = 700.0
+         x2z = 1000.0
+      endif
+C     Calculation f10 term and set it equal to zero for Vs=1180m/s (i.e., reference condition)
+      if (vs30 .eq. 1180.0) then
+          f10 = 0.0
+      else
+         f10 = ( y1z + (Vs30-x1z)*(y2z-y1z)/(x2z-x1z))*alog( (z1 + 0.01) / (z1_ref+0.01) )
+      endif
+c     Compute HW taper1 (eq 4.11) 
+      if ( dip .le. 30. ) then
+        HW_taper1 = 60./ 45.
+      else
+        HW_taper1 = (90.-dip)/45.
+      endif
+c     Compute HW taper2 (eq. 4.12)
+      hw_a2 = 0.2
+      if( mag .ge. 6.5 ) then
+        HW_taper2 = 1. + hw_a2 * (mag-6.5) 
+      elseif ( mag .gt. 5.5 ) then
+        HW_taper2 = 1. + HW_a2 * (mag-6.5) - (1.0 - HW_a2)*(mag-6.5)**2
+      else
+        HW_taper2 = 0.
+      endif
+c     Compute HW taper 3 (eq. 4.13)
+C	  April 11, correction by ronnie for HW_taper3 when Rx.gt.R2
+      h1 = 0.25
+      h2 = 1.5
+      h3 = -0.75
+      R1 = fltWidth * cos(dip*3.1415926/180.)
+      R2 = 3.*R1
+      if ( Rx .lt. R1 ) then
+        HW_taper3 = h1 + h2*(Rx/R1) + h3*(Rx/R1)**2
+      elseif ( Rx . le. R2 ) then
+        HW_taper3 = 1. - (Rx-R1)/(R2-R1)
+      else
+        HW_taper3 = 0.
+      endif 
+c     Compute HW taper 4 (eq 4.14)
+      if ( ZTOR .le. 10. ) then
+        HW_taper4 = 1. - (ZTOR**2) / 100.
+      else
+        HW_taper4 = 0.
+      endif
+      
+c     Compute HW taper 5 (eq. 13)  **** Ry0 version ***
+      Ry1 = Rx * tan(20.*3.1415926/180.)
+      if ( Ry0 .lt. Ry1 ) then
+        HW_taper5 = 1.
+      elseif ( Ry0-Ry1 .lt. 5. ) then
+        HW_taper5 = 1. - (Ry0-Ry1) / 5.
+      else
+        HW_taper5 = 0.
+      endif
+c     Compute HW taper 5 (eq. 4.15b)  **** No Ry0 version ***     
+c      if (Rjb .eq. 0. ) then
+c        HW_taper5 = 1. 
+c      elseif ( Rjb .lt. 30. ) then
+c        HW_taper5 = 1 - Rjb/30.
+c      else
+c        HW_taper5 = 0.
+c      endif
+c     Hanging wall Model (eq 4.10)
+      if ( HWFlag .eq. 1 ) then
+        f4 = a13T * HW_taper1 * HW_taper2 * HW_taper3 * HW_taper4 * HW_taper5
+      else
+        f4 = 0.
+      endif
+C     Add aftershock factor (eq 4.21)
+      if (msasflag .eq. 1) then
+         if (CRjb .gt. 15.0) then
+             f11 = 0.0
+         elseif (CRjb .le. 5.0) then
+             f11 = a14T
+         else
+             f11 = a14T * ( 1.0 - (CRjb - 5.0) /10.0) 
+         endif
+      elseif (msasflag .eq. 0) then
+         f11 = 0.0
+      endif 
+C     Now apply the regional attenuation differences (eq 4.22)
+C     Global No Change
+      if (regionflag .eq. 0) then
+         freg = 0.0
+C     Taiwan
+      elseif (regionflag .eq. 1) then
+         f12 = a31T * alog(Vs30star/VlinT) 
+         freg = f12 + a25T*Rrup 
+C     China
+      elseif (regionflag .eq. 2) then
+         freg = a28T*Rrup 
+C     Japan
+      elseif (regionflag .eq. 3) then
+         if (vs30 .lt. 150.0) then
+             y1 = a36T
+             y2 = a36T
+             x1 = 50.0
+             x2 = 150.0
+         elseif (vs30 .lt. 250.0) then
+             y1 = a36T
+             y2 = a37T
+             x1 = 150.0
+             x2 = 250.0
+         elseif (vs30 .lt. 350.0) then
+             y1 = a37T
+             y2 = a38T
+             x1 = 250.0
+             x2 = 350.0
+         elseif (vs30 .lt. 450.0) then
+             y1 = a38T
+             y2 = a39T
+             x1 = 350.0
+             x2 = 450.0
+         elseif (vs30 .lt. 600.0) then
+             y1 = a39T
+             y2 = a40T
+             x1 = 450.0
+             x2 = 600.0
+         elseif (vs30 .lt. 850.0) then
+             y1 = a40T
+             y2 = a41T
+             x1 = 600.0
+             x2 = 850.0
+         elseif (vs30 .lt. 1150.0) then
+             y1 = a41T
+             y2 = a42T
+             x1 = 850.0
+             x2 = 1150.0
+         else
+             y1 = a42T
+             y2 = a42T
+             x1 = 1150.0
+             x2 = 3000.0
+         endif
+         f13 = y1 + (y2-y1)/(x2-x1) * (vs30-x1)
+         freg = f13 + a29T*Rrup 
+      endif
+C     Set the Sigma Values
+      if (regionflag .ne. 3)  then
+c     Compute within-event term, phiA, at the surface for linear site response (eq 7.1)
+        if (mag .lt. 4.0) then
+           phiA_est = s1estT
+        elseif (mag .le. 6.0) then
+           phiA_est = s1estT + ((s2estT-s1estT)/2.0)*(mag-4.0)
+        else
+           phiA_est = s2estT
+        endif
+c     Compute within-event term, phiA, for known Vs30
+        if (mag .lt. 4.0) then
+           phiA_msr = s1msrT
+        elseif (mag .le. 6.0) then
+           phiA_msr = s1msrT + ((s2msrT-s1msrT)/2.0)*(mag-4.0)
+        else
+           phiA_msr = s2msrT
+        endif
+C     choose phiA by Vs30 class
+        if (vs30_class .eq. 0 ) then
+	     phiA = phiA_est
+        elseif (vs30_class .eq. 1) then
+	     phiA = phiA_msr
+        else
+	     stop 99
+        endif
+C     Set Sigma values for Japan Region
+      else
+C calculate phi_A for Japan (eq. 7.3)
+        if (Rrup .lt. 30) then
+           phiA = s5T        
+        elseif (Rrup .le. 80) then
+           phiA = s5T + (s6T-s5T)/50*(Rrup-30)
+        else
+           phiA = s6T
+        endif
+      endif
+	  
+c     Compute between-event term, tau (eq. 7.2)
+      if (mag .lt. 5.0) then
+         tauA = s3T
+      elseif (mag .le. 7.0) then
+         tauA = s3T + ((s4T-s3T)/2.0)*(mag-5.0)
+      else
+         tauA = s4T
+      endif
+      tauB = tauA
+c     Compute phiB, within-event term with site amp variability removed (eq. 7.7)
+c     with fix to model for small mag at long periods - limit sigAmp to be less than phiA
+      sigAmp = 0.4
+      if (phiA .le. sigAmp) then
+        sigAmp = phiA*0.99
+      endif
+      phiB = sqrt( phiA**2 - sigAmp**2)
+      
+c     Compute partial derivative of alog(soil amp) w.r.t. alog(Sa1180) (eq. 7.10)
+      if ( vs30 .ge. vLinT) then
+        dAmp_dSa1180 = 0.
+      else
+        dAmp_dSa1180 = bT*Sa1180 * ( -1. / (Sa1180+c) 
+     1              + 1./ (Sa1180 + c*(vs30/vLinT)**(n)) )
+      endif
+C     Compute phi, with non-linear effects (eq. 7.8)
+      phi = sqrt( phiB**2 * (1. + dAmp_dSa1180)**2 + sigAmp**2 )
+C     Compute tau, with non-linear effects (eq. 7.9)
+      tau = tauB * (1. + dAmp_dSa1180)
+      
+c     Compute median ground motion (eq. 1)
+      lnSa = f1 + f4 + f5 + f6 + f7 + f8 + f10 + f11 + freg 
+      return
+      end
+ 
+ 
+c-------------------- Adjusted in Taiwan SSHAC Project--------------------------------------------------  
+              
+      Subroutine Bindi14_TW_C01 ( m, jbDist, ftype, specT,
+     1                     period2, lnY, sigma, iflag, vs, phiT, tauT )
+      implicit none
+      integer MAXPER
+      parameter (MAXPER=21)
+      REAL Period(MAXPER), e1(MAXPER), c1(MAXPER), c2(MAXPER), h(MAXPER)
+      REAL c3(MAXPER), b1(MAXPER), b2(MAXPER), b3(MAXPER), gamma(MAXPER)
+      REAL sofN(MAXPER), sofR(MAXPER), sofS(MAXPER), phi(MAXPER), tau(MAXPER), sig(MAXPER), sigs2s(MAXPER)
+      real e1T, c1T, c2T, hT, c3T, b1T, b2T, b3T, gammaT, sofNT, sofRT, sofST, sigs2sT
+      real phiT, tauT, sigT, period1
+      real Rref, Mref, Mh, R, Vref, vs
+ 
+      REAL M, jbDist, specT, sigma, termsof
+      REAL period2, lnY, ftype
+      integer iflag, count1, count2, nPer, i
+      real f_D, f_M, f_S
+  
+ 
+      Data period(1:21) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
+     1      3/
+      Data e1(1:21) / 0.659508496312107, 0.659508496312107, 0.684257395856917, 0.792185875253012, 0.910245329949904,
+     1      1.04124346176327, 1.36695980240164, 1.58175260431507, 1.55527075935291, 1.48876800771044, 1.47418275968898,
+     1      1.43106965774598, 1.32383819300195, 1.3382650551676, 1.08674468845801, 0.744502966314904, 0.339631620365221,
+     1      0.267909172341515, -0.363413009167707, -0.8677036818281, -1.77042537043066/
+      Data c1(1:21) / -1.26358, -1.26358, -1.26358, -1.29088019990866, -1.31025, -1.30237878943392, -1.28882132582112, -1.28178,
+     1      -1.23465110534188, -1.17697, -1.14479188763455, -1.10301, -1.08792194443592, -1.10591, -1.09538, -1.05767,
+     1      -1.04831378793046, -1.0527, -0.983388, -0.979215, -0.940373/
+      Data c2(1:21) / 0.220527, 0.220527, 0.220527, 0.234653259429915, 0.244676, 0.239572871690745, 0.229465497782482, 0.219406,
+     1      0.202883682422306, 0.182662, 0.161122330083983, 0.133154, 0.118226690912901, 0.108276, 0.101111, 0.112197,
+     1      0.122345650356548, 0.103471, 0.109072, 0.163344, 0.227241/
+      Data h(1:21) / 5.20082, 5.20082, 5.20082, 5.0346146046701, 4.91669, 5.09314627212803, 5.50666272693079, 6.12146,
+     1      5.95062506384396, 5.74154, 5.55812998041133, 5.31998, 5.16226984536375, 5.12846, 4.95386, 4.43205, 4.18619685740845,
+     1      4.41613, 4.56697, 4.58186, 5.74173/
+      Data c3(1:21) / -0.00162234204269646, -0.00162234204269646, -0.00169729704805731, -0.00182364633843366, -0.00211014463275481,
+     1      -0.00287513335217997, -0.004184784769582, -0.00466828237187935, -0.00500654836196918, -0.00499803696576266,
+     1      -0.00473066619716198, -0.00423022629441665, -0.00300999356000803, -0.00189118393920752, -0.000589441966065091,
+     1      -0.000241978980141242, 0.000285085906072067, -1.74038270368973e-05, -0.00134660884745955, -0.00283883648666463,
+     1      -0.00339965384388641/
+      Data b1(1:21) / -0.270897727235864, -0.270897727235864, -0.281154290911621, -0.291943091967611, -0.312942644598605,
+     1      -0.279796632295181, -0.224987839767471, -0.275839067753525, -0.276546876529609, -0.247413951462292, -0.15365006490395,
+     1      -0.0299424838422354, -0.0227660513080655, 0.0145880936350126, 0.0160023913376982, 0.0708600769194794,
+     1      0.304811546059666, 0.646443935653183, 0.889724237533995, 0.819623500158111, 0.957007301722072/
+      Data b2(1:21) / -0.210951793811668, -0.210951793811668, -0.210951793811668, -0.193123478069862, -0.180474086745271,
+     1      -0.160842272902352, -0.139406648181843, -0.173459491517974, -0.201518836294038, -0.235860698830659, -0.238616639987212,
+     1      -0.242195110421486, -0.285257767878105, -0.319087637016929, -0.373226017723405, -0.377872634441067, -0.365550258824207,
+     1      -0.339764851152015, -0.322055669201798, -0.341431922759343, -0.256611595688721/
+      Data b3(1:21) / 0, 0, 0, 0, 0, 0, 0, 0, 0.0765190099149165, 0.170170709229651, 0.246865015276161, 0.346449255676977,
+     1      0.402141458721742, 0.436758945609297, 0.517683298702572, 0.356325043140829, 0.186190244946956, 0.213765783053816,
+     1      0.227350804843972, 0, 0/
+      Data gamma(1:21) / -0.422676821032021, -0.422676821032021, -0.414978878595817, -0.406699004557271, -0.3914970371187,
+     1      -0.369326047622375, -0.343869768741454, -0.333289584723655, -0.352050474022221, -0.367605646663696, -0.387393323332123,
+     1      -0.396818066941227, -0.39952338981378, -0.445165123281344, -0.512409231991832, -0.561508199422803, -0.752231535522345,
+     1      -0.873980613150435, -0.968710126360196, -0.981012736821664, -0.992114119974754/
+      Data sofN(1:21) / -0.117251075170762, -0.117251075170762, -0.115338543884633, -0.119347338965019, -0.108122399642431,
+     1      -0.110836575215843, -0.127904216218309, -0.151584972241392, -0.131927184713145, -0.091333399271005,
+     1      -0.0734541746220918, -0.0720743866300066, -0.053504945030001, -0.0577148145517801, -0.0967772518776173,
+     1      -0.153197353204361, -0.176638749464974, -0.202427135498213, -0.184012887842084, -0.180956841720691,
+     1      -0.0658311164233819/
+      Data sofR(1:21) / 0.0950331165879268, 0.0950331165879268, 0.0942147492408604, 0.0886194576576785, 0.0865931352500485,
+     1      0.0798032805953013, 0.0518078943711761, 0.0377736339116048, 0.0374540870711511, 0.0461070357350431, 0.0650643320300671,
+     1      0.0987719958171821, 0.125118256865787, 0.123740513623839, 0.137614216748372, 0.143277552748404, 0.160418527309156,
+     1      0.172380927444367, 0.156550741034289, 0.135252483671118, 0.10353955455201/
+      Data sofS(1:21) / -0.096283977, -0.096283977, -0.096283977, -0.0966103375235148, -0.096841894, -0.0963783235595202,
+     1      -0.0979532926457108, -0.107435167, -0.101695221063626, -0.094670095, -0.0968825621131357, -0.099755355,
+     1      -0.0954761145312324, -0.090850567, -0.108074134, -0.098696165, -0.0876704883298241, -0.103411629, -0.096162861,
+     1      -0.058467241, -0.005358461/
+      Data tau(1:21) / 0.317898754427414, 0.317898754427414, 0.319323264507343, 0.332912367257089, 0.345138786542856,
+     1      0.356539794838403, 0.373304099976226, 0.365831192336457, 0.352942682997377, 0.334646212108993, 0.328499912385758,
+     1      0.313551883565158, 0.297330303430244, 0.299006855270763, 0.33361918283012, 0.364066847460064, 0.40039358200669,
+     1      0.420084326301466, 0.436932806015766, 0.45401623183321, 0.490721750019259/
+      Data phi(1:21) / 0.32571333838296, 0.32571333838296, 0.325174907932113, 0.334158210279457, 0.35048253853852,
+     1      0.370382687881984, 0.409261273800818, 0.41946450409783, 0.415563072394708, 0.393759932519684, 0.382737515801976,
+     1      0.363483599894857, 0.341015171374459, 0.335643324687049, 0.327306984921592, 0.31669506610895, 0.328111960636172,
+     1      0.334986782672972, 0.363636845023503, 0.388384142446741, 0.404771608028183/
+      Data sigs2s(1:21) / 0.474767396333149, 0.474767396333149, 0.474134438654724, 0.480278729542088, 0.486514622964184,
+     1      0.488556279560537, 0.487077378450021, 0.481594309301403, 0.477211581548162, 0.47594992226976, 0.472293215881846,
+     1      0.475976807032338, 0.48288546933477, 0.488981047072412, 0.499582923250037, 0.506548849370516, 0.50222265741314,
+     1      0.491260159723756, 0.472398005717859, 0.454546252692053, 0.434481072336867/
+      Data sig(1:21) / 0.745772773, 0.745772773, 0.745772773, 0.753543188479092, 0.759056386, 0.767508805717544, 0.783602925138285,
+     1      0.797567122, 0.792929650007148, 0.787253843, 0.780874405181787, 0.772590981, 0.777647499576309, 0.775374807,
+     1      0.77430871, 0.78683247, 0.795506751916842, 0.819874566, 0.835458462, 0.84932463, 0.829789498/
+ 
+C Find the requested spectral period and corresponding coefficients
+      nPer = 21
+C First check for the PGA case (i.e., specT=0.0) 
+      if (specT .eq. 0.0) then
+         period1  = period(1)
+         e1T      = e1(1)
+         c1T      = c1(1)
+         c2T      = c2(1)
+         hT       = h(1)
+         c3T      = c3(1)
+         b1T      = b1(1)
+         b2T      = b2(1)
+         b3T      = b3(1)
+         gammaT   = gamma(1)
+         sofNT    = sofN(1)
+         sofRT    = sofR(1)
+         sofST    = sofS(1)
+         sigs2sT  = sigs2s(1)
+         phiT     = phi(1)
+         tauT     = tau(1)
+         sigT     = sig(1)
+         goto 1011
+      elseif (specT .gt. 0.0) then
+C Now loop over the spectral period range of the attenuation relationship.
+         do i=2,nper-1
+            if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
+               count1 = i
+               count2 = i+1
+               goto 1020 
+            endif
+         enddo
+      endif
+C Selected spectral period is outside range defined by attenuaton model.
+      write (*,*) 
+      write (*,*) 'Bindi et al. (2013) Horizontal'
+      write (*,*) 'attenuation model is not defined for a '
+      write (*,*) ' spectral period of: ' 
+      write (*,'(a10,f10.5)') ' Period = ',specT
+      write (*,*) 'This spectral period is outside the defined'
+      write (*,*) 'period range in the code or beyond the range'
+      write (*,*) 'of spectral periods for interpolation.'
+      write (*,*) 'Please check the input file.'
+      write (*,*) 
+      stop 99
+C Interpolate the coefficients for the requested spectral period.
+ 1020 call interp (period(count1),period(count2),e1(count1),e1(count2),
+     +             specT,e1T,iflag)
+      call interp (period(count1),period(count2),c1(count1),c1(count2),
+     +             specT,c1T,iflag)
+      call interp (period(count1),period(count2),c2(count1),c2(count2),
+     +             specT,c2T,iflag)
+      call interp (period(count1),period(count2),h(count1),h(count2),
+     +             specT,hT,iflag)
+      call interp (period(count1),period(count2),c3(count1),c3(count2),
+     +             specT,c3T,iflag)
+      call interp (period(count1),period(count2),b1(count1),b1(count2),
+     +             specT,b1T,iflag)
+      call interp (period(count1),period(count2),b2(count1),b2(count2),
+     +             specT,b2T,iflag)
+      call interp (period(count1),period(count2),b3(count1),b3(count2),
+     +             specT,b3T,iflag)
+      call interp (period(count1),period(count2),gamma(count1),gamma(count2),
+     +             specT,gammaT,iflag)
+      call interp (period(count1),period(count2),sofN(count1),sofN(count2),
+     +             specT,sofNT,iflag)
+      call interp (period(count1),period(count2),sofR(count1),sofR(count2),
+     +             specT,sofRT,iflag)
+      call interp (period(count1),period(count2),sofS(count1),sofS(count2),
+     +             specT,sofST,iflag)
+      call interp (period(count1),period(count2),sigs2s(count1),sigs2s(count2),
+     +             specT,sigs2sT,iflag)
+      call interp (period(count1),period(count2),phi(count1),phi(count2),
+     +             specT,phiT,iflag)
+      call interp (period(count1),period(count2),tau(count1),tau(count2),
+     +             specT,tauT,iflag)
+      call interp (period(count1),period(count2),sig(count1),sig(count2),
+     +             specT,sigT,iflag)
+   
+ 1011 period1 = specT                                                                                                              
+C     Set Constant Terms
+      Mref = 5.5
+      Rref = 1.0
+      Mh = 6.75
+      Vref = 800.0
+C     Set the mechanism term. 
+      if (ftype .eq. 0 ) then
+         termsof = 0
+      elseif (ftype .ge. 0.5) then
+         termsof = sofRT
+      elseif (ftype .le. -0.5) then
+         termsof = sofNT
+      endif
+      R = sqrt (jbdist**2 + hT**2)
+	  f_D = (c1T+c2T*(M-Mref))*alog(R/Rref) + c3T*(R-Rref)
+C     Compute the ground motion for the given spectral period. 
+      if (M .le. Mh) then
+         f_M = b1T*(M-Mh) + b2T*(M-Mh)**2.0 
+      else
+         f_M = b3T*(M-Mh) 
+      endif
+	  
+	  f_S = gammaT*alog(vs/vref)
+	  
+	  lnY = e1T + f_D + f_M + f_S + termsof
+	  
+C     Set the sigma value and convert from log10 to Ln units
+c      phiT = phiT*alog(10.0)
+c      tauT = tauT*alog(10.0)
+c      sigma = sigT*alog(10.0)
+c      sigs2sT = sigs2sT*alog(10.0)
+C     Convert ground motion to units of gals in natural log units.
+c      lnY = lnY*alog(10.0)
+      lnY = lnY + 6.89
+      period2 = period1
+      return
+      end
+ 
+ 
+c ---------------------------------------------------------------------------            
+C     *** Boore, Stewart, Seyhan and Atkinson NGA West 2 (NGA West2-2013) ***
+C         Earthquake Spectra Report:
+C            NGA-West2 Equations for Predicting PGA, PGV, and 5%-Damped
+C                PSA for Shallow Crustal Earthquakes.
+C             D. M. Boore, J. P. Stewart, E. Seyhan, and G. M. Atkinson
+C     Notes:
+C        Applicable Range:
+C            3.0 < M < 8.5 (Strike-Slip)
+C            3.0 < M < 7.0 (Normal)
+C            Distance < 300km
+C            150 < Vs < 1500 m/s
+C            0.0 < Z1 < 3.0 km
+C            Region Flag:
+C               0 = Global 
+C               1 = China-Turkey
+C               2 = Italy-Japan
+c ---------------------------------------------------------------------------            
+      subroutine BSSA14_TW_C01 ( mag, Rbjf, specT, 
+     1        period2, lnY, sigma, iflag, vs, ftype, pga4nl, z10, regionflag, basinflag,
+     1        phi, tau ) 
+C     Last Updated: 9/16/13
+      parameter (MAXPER=25)
+      REAL Period(MAXPER), c1(MAXPER), c2(MAXPER), c3(MAXPER)
+      real h(MAXPER), DC3ChinaTrk(MAXPER), DC3ItalyJapan(MAXPER), e0(MAXPER)
+      real e1(MAXPER), e2(MAXPER), e3(MAXPER), e4(MAXPER)
+      real e5(MAXPER), e6(MAXPER), mh(MAXPER), c(MAXPER), Vc(MAXPER)
+      real phi2(MAXPER), phi3(MAXPER), f4(MAXPER)
+      real l1(MAXPER), l2(MAXPER), t1(MAXPER), t2(MAXPER)
+      real f5(MAXPER), rjbbar(MAXPER), Dfr(MAXPER), Dfv(MAXPER)
+      real R1(MAXPER), R2(MAXPER), DC3Global(MAXPER), f6(MAXPER), f7(MAXPER)
+      real Mref, Rref, Vref, f1, f3, specT
+      REAL MAG, RBJF, VS, z10
+      real ftype, Rp, R
+      INTEGER iFlag, count1, count2, regionflag, basinflag
+      real lnY, mechS, mechN, mechR, pga4nl
+      real f2, flin, fBasin, phi, tau
+      real c1T, c2T, c3T, hT, e0T, e1T, e2T, e3T, e4T
+      real e5T, e6T, mhT, cT, VcT, phi2T, phi3T, f4T, l1T, l2T, t1T, t2T
+      real deltaz1, f5T, rjbbarT, DfrT, DfvT, R1T, R2T, DC3GlobalT
+      real DC3ChinaTrkT, DC3ItalyJapanT, f6T, f7T
+ 
+ 
+      Data Period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
+     1      3, 4, 5, 7.5, 10/
+      Data e0(1:25) / 0.4534, 0.48598, 0.56916, 0.673459231164795, 0.75436, 0.96447, 1.1268, 1.20895293439595, 1.3095,
+     1      1.3164611925074, 1.3255, 1.2766, 1.2217, 1.1046, 0.96991, 0.66903, 0.3932, -0.14954, -0.58669, -1.1898, -1.6388,
+     1      -1.966, -2.5865, -3.0702, 0.4473/
+      Data e1(1:25) / -0.0192358695063516, 0.0567227727912004, 0.103830570426141, 0.198897708101522, 0.271900769282252,
+     1      0.367398657969924, 0.606318878890423, 0.823883469673358, 0.913809415580094, 0.972718537695808, 0.972741127823899,
+     1      0.952673927272273, 0.929588626686887, 0.906677969774733, 0.843243142498517, 0.70851892231752, 0.369210918626143,
+     1      0.162950871861978, -0.505519010009077, -0.791847279739693, -1.52940409045199, -2.08919352516209, -2.29332932326379,
+     1      -2.99734840119961, -3.09836742174658/
+      Data e2(1:25) / -0.0466127974661881, -0.0899522328065243, -0.0889941216873682, -0.0881837044024162, -0.0738384916140176,
+     1      -0.0774606068618486, -0.0933753870789509, -0.119805547559339, -0.102166706267363, -0.0619031495690598,
+     1      -0.0438630892907241, -0.0424937532989739, -0.0281214761287716, -0.0309767673715999, -0.081060821379759,
+     1      -0.135927788790708, -0.141847724215483, -0.157893131542867, -0.119300477644201, -0.103636530614135, 0.0302804751375015,
+     1      0.197391958820006, -0.105591250006451, 0.09472882175673, 0.0180272297249192/
+      Data e3(1:25) / 0.113150415770813, 0.100661193118287, 0.0982992168992328, 0.0926856182254271, 0.0910574057573448,
+     1      0.0841869161547781, 0.0561265104794706, 0.0417968407844044, 0.0410646271818258, 0.0492102889262502, 0.0678307028722051,
+     1      0.101248016855977, 0.129758071123678, 0.128286336016744, 0.141561631803489, 0.145442944817284, 0.163752332665633,
+     1      0.176717020297631, 0.158522053758111, 0.13897165041878, 0.10401554209148, 0.0505868993201825, -0.0453840386998217,
+     1      -0.150207517493787, -0.13838956231916/
+      Data e4(1:25) / 0.634956463990215, 0.619860972185183, 0.633560416066013, 0.626773923260574, 0.605074753181471,
+     1      0.566320478533912, 0.565076405914992, 0.596866780802841, 0.589028550987566, 0.607990040954619, 0.624159967438116,
+     1      0.623636047860314, 0.588632504600515, 0.678668378713168, 0.67378138305232, 0.762124819833728, 1.11558730063412,
+     1      1.40281398367416, 1.861987715669, 2.03842856513544, 2.2278862997874, 2.24750560056704, 2.27392203189865,
+     1      2.02295395240319, 1.47472914989199/
+      Data e5(1:25) / 0.05053, 0.04932, 0.05339, 0.06144, 0.0647739711041879, 0.06736, 0.07355, 0.05523, 0.0114780540956452,
+     1      -0.04207, -0.072042284489666, -0.11096, -0.16213, -0.1959, -0.22608, -0.23522, -0.21591, -0.18983, -0.1467, -0.11237,
+     1      -0.04332, -0.01464, -0.01486, -0.08161, -0.15096/
+      Data e6(1:25) / -0.1662, -0.1659, -0.16561, -0.1669, -0.174739337461198, -0.18082, -0.19665, -0.19838, -0.19116744899994,
+     1      -0.18234, -0.171976524654611, -0.15852, -0.12784, -0.09286, -0.02319, 0.02912, 0.10829, 0.17895, 0.33896, 0.44788,
+     1      0.62694, 0.76303, 0.87314, 1.0121, 1.0651/
+      Data Mh(1:25) / 5.75939535845878, 5.93161026644103, 5.89125554011655, 5.90885411844775, 5.92355835882231, 5.93448092637676,
+     1      5.91330519700299, 5.90874187926377, 5.92092742673115, 5.94829040352112, 5.93622578077096, 5.96033962320899,
+     1      6.06055764485135, 6.03454555393634, 6.20028144493362, 6.22545222018765, 6.17573383439527, 6.18463084988356,
+     1      6.01489943068217, 6.0514358625268, 6.07860067368602, 6.1072608317045, 6.18885674149109, 6.23781972475555,
+     1      6.57470966466657/
+      Data c1(1:25) / -1.134, -1.134, -1.1394, -1.1421, -1.12734492518079, -1.1159, -1.0831, -1.0652, -1.05980407655856, -1.0532,
+     1      -1.05646305898784, -1.0607, -1.0773, -1.0948, -1.1243, -1.1459, -1.1777, -1.193, -1.2063, -1.2159, -1.2179, -1.2162,
+     1      -1.2189, -1.2543, -1.3253/
+      Data c2(1:25) / 0.1917, 0.1916, 0.18962, 0.18842, 0.187670982843147, 0.18709, 0.18225, 0.17203, 0.163927121632102, 0.15401,
+     1      0.150042120270783, 0.14489, 0.13925, 0.13388, 0.12512, 0.12015, 0.11054, 0.10248, 0.09645, 0.09636, 0.09764, 0.10218,
+     1      0.10353, 0.12507, 0.15183/
+      Data c3(1:25) / -0.00788875587408985, -0.0078818509689674, -0.00780428543929034, -0.00832664074171499, -0.0092200593557657,
+     1      -0.0100375197535989, -0.0115480726222495, -0.0118959621513459, -0.0115081781258884, -0.0105994476660068,
+     1      -0.00984494177643466, -0.00870503597848327, -0.00695258543010702, -0.00578513843981538, -0.00361675198164066,
+     1      -0.00202594754252705, -0.000393963454749957, -0.000268145047578852, 0.000338647265255224, -0.000274615471785213,
+     1      0.000881504173671615, 0.00121342431999415, 0.00142297452256839, 0.00116987226508603, 0.00197956130485759/
+      Data h(1:25) / 4.5, 4.5, 4.5, 4.49, 4.32668046955837, 4.2, 4.04, 4.13, 4.24691167456457, 4.39, 4.48571639697672, 4.61, 4.78,
+     1      4.93, 5.16, 5.34, 5.6, 5.74, 6.18, 6.54, 6.93, 7.32, 7.78, 9.48, 9.66/
+      Data Dc3Global(1:25) / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0/
+      Data Dc3ChinaTrk(1:25) / 0.002816, 0.00278, 0.002765, 0.00287312879256825, 0.002957, 0.002957, 0.002879, 0.00283718159332883,
+     1      0.002786, 0.00271029703148205, 0.002612, 0.002444, 0.002196, 0.002107, 0.002348, 0.00269, 0.002921, 0.003039, 0.002923,
+     1      0.002616, 0.002605, 0.002604, 0.0026, 0.00303, 0.002858/
+      Data Dc3ItalyJapan(1:25) / -0.002437, -0.00234, -0.002168, -0.00206831876935114, -0.001991, -0.002159, -0.002439,
+     1      -0.00255905929657207, -0.002706, -0.00282085967637207, -0.00297, -0.00314, -0.003297, -0.003212, -0.002907, -0.002527,
+     1      -0.002089, -0.001518, -0.00117, -0.001188, -0.001083, -0.000571, 0.000385, 0.00149, -0.00255/
+      Data c(1:25) / -0.494639525126874, -0.492386790829841, -0.486959917611639, -0.483734070461185, -0.473331126329196,
+     1      -0.453061661114652, -0.428535271473178, -0.422096875367947, -0.442766131734041, -0.460824990697695, -0.480490619799534,
+     1      -0.48968579619744, -0.492658432074322, -0.536122783765441, -0.599481092255171, -0.641720588625172, -0.829810827332613,
+     1      -0.948492569720881, -1.03094032845303, -1.03669695507734, -1.05585320583303, -1.07883768198775, -1.0420295546124,
+     1      -0.981155106166575, -0.88092955963527/
+      Data Vc(1:25) / 1500, 1500.2, 1500.36, 1502.95, 1502.08834868422, 1501.42, 1494, 1479.12, 1462.81082139824, 1442.85,
+     1      1420.99185552677, 1392.61, 1356.21, 1308.47, 1252.66, 1203.91, 1147.59, 1109.95, 1072.39, 1009.49, 922.43, 844.48,
+     1      793.13, 771.01, 775/
+      Data f4(1:25) / -0.15, -0.14833, -0.1471, -0.15485, -0.1782103245611, -0.19633, -0.22866, -0.24916, -0.252743792485691,
+     1      -0.25713, -0.252539963690434, -0.24658, -0.23574, -0.21912, -0.19582, -0.17041, -0.13866, -0.10521, -0.06794, -0.03614,
+     1      -0.01358, -0.00321, -0.00025, -5e-05, 0/
+      Data f5(1:25) / -0.00701, -0.00701, -0.00728, -0.00735, -0.00685440970072883, -0.00647, -0.00573, -0.0056,
+     1      -0.0057124150716967, -0.00585, -0.00597617161419659, -0.00614, -0.00644, -0.0067, -0.00713, -0.00744, -0.00812,
+     1      -0.00844, -0.00771, -0.00479, -0.00183, -0.00152, -0.00144, -0.00137, -0.00136/
+      Data f6(1:25) / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.092, 0.367, 0.638, 0.871, 1.135, 1.271, 1.329, 1.329,
+     1      1.183/
+      Data f7(1:25) / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.059, 0.208, 0.309, 0.382, 0.516, 0.629, 0.738, 0.809,
+     1      0.703/
+      Data R1(1:25) / 111.667, 113.105, 112.133, 104.132595691538, 97.927, 85.989, 79.587, 80.3689592387222, 81.326,
+     1      85.4944490883363, 90.907, 97.039, 103.152, 106.018, 105.536, 108.388, 116.388, 125.38, 130.369, 130.365, 129.489,
+     1      130.224, 130.716, 130, 110/
+      Data R2(1:25) / 270, 270, 269.998, 269.999126341589, 270, 270.035, 270.092, 270.123925880362, 270.163, 270.092082851331, 270,
+     1      269.449, 268.593, 266.543, 265, 266.511, 270, 262.413, 240.138, 195, 199.446, 230, 250.395, 210, 270/
+      Data Dfr(1:25) / 0.096, 0.092, 0.081, 0.0708629256967262, 0.063, 0.064, 0.087, 0.101838789463964, 0.12, 0.126961192507398,
+     1      0.136, 0.141, 0.138, 0.122, 0.109, 0.1, 0.098, 0.104, 0.105, 0.088, 0.07, 0.061, 0.058, 0.06, 0.1/
+      Data Dfv(1:25) / 0.07, 0.03, 0.029, 0.0295631707946263, 0.03, 0.022, 0.014, 0.0144496602867868, 0.015, 0.0280522359513715,
+     1      0.045, 0.055, 0.05, 0.049, 0.06, 0.07, 0.02, 0.01, 0.008, 0, 0, 0, 0, 0, 0.07/
+      Data l1(1:25) / 0.698, 0.7018, 0.7212, 0.73916514834858, 0.7531, 0.7447, 0.7279, 0.72448258182042, 0.7203, 0.716384329214589,
+     1      0.7113, 0.6984, 0.6754, 0.6428, 0.6147, 0.5815, 0.5527, 0.5317, 0.5263, 0.5335, 0.536, 0.5285, 0.5117, 0.5103, 0.6951/
+      Data l2(1:25) / 0.4992, 0.5023, 0.5136, 0.524131293859512, 0.5323, 0.5423, 0.5407, 0.538946324881531, 0.5368,
+     1      0.537670149063425, 0.5388, 0.5471, 0.5614, 0.5804, 0.599, 0.6218, 0.625, 0.6192, 0.6182, 0.619, 0.6156, 0.6223, 0.6344,
+     1      0.6036, 0.4951/
+      Data t1(1:25) / 0.4019, 0.4087, 0.4449, 0.477451271929402, 0.5027, 0.4744, 0.4153, 0.387780790448648, 0.3541,
+     1      0.34953171741702, 0.3436, 0.35, 0.3634, 0.381, 0.4101, 0.4572, 0.4983, 0.5248, 0.5325, 0.5369, 0.5427, 0.532, 0.511,
+     1      0.4869, 0.3982/
+      Data t2(1:25) / 0.3446, 0.3464, 0.364, 0.39908554050522, 0.4263, 0.4658, 0.4583, 0.42664391581021, 0.3879, 0.353355082182037,
+     1      0.3085, 0.2664, 0.229, 0.2097, 0.2235, 0.2664, 0.2984, 0.3151, 0.3291, 0.3438, 0.3492, 0.3354, 0.2699, 0.2392, 0.348/
+ 
+C     Set constant parameters
+      mref = 4.5
+      rref = 1.0
+      vref = 760.0
+      f1 = 0.0
+      f3 = 0.1
+      V1 = 225.0
+      V2 = 300.0
+C First check for the PGA case (i.e., specT=0.0) 
+      nPer = 25
+      if (specT .eq. 0.0) then
+         period1 = period(1)
+         e0T = e0(1)
+         e1T = e1(1)
+         e2T = e2(1)
+         e3T = e3(1)
+         e4T = e4(1)
+         e5T = e5(1)
+         e6T = e6(1)
+         mhT = mh(1)
+         c1T = c1(1)
+         c2T = c2(1)
+         c3T = c3(1)        
+         hT = h(1)
+         cT = c(1)
+         VcT = vc(1)
+         phi2T = phi2(1)
+         phi3T = phi3(1)
+         Dc3GlobalT = DC3global(1)
+         Dc3ChinaTrkT = DC3ChinaTrk(1)
+         Dc3ItalyJapanT = DC3ItalyJapan(1)
+         f4T = f4(1)
+         f5T = f5(1)
+         f6T = f6(1)
+         f7T = f7(1)
+         R1T = R1(1)
+         R2T = R2(1)
+         l1T = l1(1)
+         l2T = l2(1)
+         t1T = t1(1)
+         t2T = t2(1)
+         rjbbarT = rjbbar(1)
+         DfrT = Dfr(1)
+         DfvT = Dfv(1)
+         goto 1011
+      elseif (specT .gt. 0.0) then
+C Now loop over the spectral period range of the attenuation relationship.
+         do i=2,nper-1
+            if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
+               count1 = i
+               count2 = i+1
+               goto 1020 
+            endif
+         enddo
+      endif
+C Selected spectral period is outside range defined by attenuaton model.
+      write (*,*) 
+      write (*,*) 'BSSA (NGA West2-2013) Horizontal'
+      write (*,*) 'attenuation model is not defined for a '
+      write (*,*) ' spectral period of: ' 
+      write (*,'(a10,f10.5)') ' Period = ',specT
+      write (*,*) 'This spectral period is outside the defined'
+      write (*,*) 'period range in the code or beyond the range'
+      write (*,*) 'of spectral periods for interpolation.'
+      write (*,*) 'Please check the input file.'
+      write (*,*) 
+      stop 99
+C Interpolate the coefficients for the requested spectral period.
+ 1020       call interp (period(count1),period(count2),e0(count1),e0(count2),
+     +                   specT,e0T,iflag)
+            call interp (period(count1),period(count2),e1(count1),e1(count2),
+     +                   specT,e1T,iflag)
+            call interp (period(count1),period(count2),e2(count1),e2(count2),
+     +                   specT,e2T,iflag)
+            call interp (period(count1),period(count2),e3(count1),e3(count2),
+     +                   specT,e3T,iflag)
+            call interp (period(count1),period(count2),e4(count1),e4(count2),
+     +                   specT,e4T,iflag)
+            call interp (period(count1),period(count2),e5(count1),e5(count2),
+     +                   specT,e5T,iflag)
+            call interp (period(count1),period(count2),e6(count1),e6(count2),
+     +                   specT,e6T,iflag)
+            call interp (period(count1),period(count2),mh(count1),mh(count2),
+     +                   specT,mhT,iflag)
+            call interp (period(count1),period(count2),c1(count1),c1(count2),
+     +                   specT,c1T,iflag)
+            call interp (period(count1),period(count2),c2(count1),c2(count2),
+     +                   specT,c2T,iflag)
+            call interp (period(count1),period(count2),c3(count1),c3(count2),
+     +                   specT,c3T,iflag)
+            call interp (period(count1),period(count2),h(count1),h(count2),
+     +                   specT,hT,iflag)
+            call interp (period(count1),period(count2),c(count1),c(count2),
+     +                   specT,cT,iflag)
+            call interp (period(count1),period(count2),phi2(count1),phi2(count2),
+     +                   specT,phi2T,iflag)
+            call interp (period(count1),period(count2),phi3(count1),phi3(count2),
+     +                   specT,phi3T,iflag)
+            call interp (period(count1),period(count2),DC3Global(count1),DC3Global(count2),
+     +                   specT,DC3GlobalT,iflag)
+            call interp (period(count1),period(count2),DC3ChinaTrk(count1),DC3ChinaTrk(count2),
+     +                   specT,DC3ChinaTrkT,iflag)
+            call interp (period(count1),period(count2),DC3ItalyJapan(count1),DC3ItalyJapan(count2),
+     +                   specT,DC3ItalyJapanT,iflag)
+            call interp (period(count1),period(count2),Vc(count1),Vc(count2),
+     +                   specT,VcT,iflag)
+            call interp (period(count1),period(count2),f4(count1),f4(count2),
+     +                   specT,f4T,iflag)
+            call interp (period(count1),period(count2),f5(count1),f5(count2),
+     +                   specT,f5T,iflag)
+            call interp (period(count1),period(count2),f6(count1),f6(count2),
+     +                   specT,f6T,iflag)
+            call interp (period(count1),period(count2),f7(count1),f7(count2),
+     +                   specT,f7T,iflag)
+            call interp (period(count1),period(count2),R1(count1),R1(count2),
+     +                   specT,R1T,iflag)
+            call interp (period(count1),period(count2),R2(count1),R2(count2),
+     +                   specT,R2T,iflag)
+            call interp (period(count1),period(count2),l1(count1),l1(count2),
+     +                   specT,l1T,iflag)
+            call interp (period(count1),period(count2),l2(count1),l2(count2),
+     +                   specT,l2T,iflag)
+            call interp (period(count1),period(count2),t1(count1),t1(count2),
+     +                   specT,t1T,iflag)
+            call interp (period(count1),period(count2),t2(count1),t2(count2),
+     +                   specT,t2T,iflag)
+            call interp (period(count1),period(count2),rjbbar(count1),rjbbar(count2),
+     +                   specT,rjbbarT,iflag)
+            call interp (period(count1),period(count2),Dfr(count1),Dfr(count2),
+     +                   specT,DfrT,iflag)
+            call interp (period(count1),period(count2),Dfv(count1),Dfv(count2),
+     +                   specT,DfvT,iflag)
+ 1011 period1 = specT                                                                                                              
+C.....Set the mechanism terms based on ftype............
+C     Set mechanism term and corresponding Frv and Fnm values.
+C     fType     Mechanism                      Rake
+C     ------------------------------------------------------
+C      -1       Normal                    -120 < Rake <  -60
+C     -0.5      Normal/Oblique            -150 < Rake < -120
+C                                          -60 < Rake <  -30
+C       0       Strike-Slip               -180 < Rake < -150
+C                                          -30 < Rake <   30
+C                                          150 < Rake <  180
+C      0.5      Reverse/Oblique             30 < Rake <   60
+C                                          120 < Rake <  150
+C       1       Reverse                     60 < Rake <  120 
+C     Note: Unknown Mechanism is not currently coded.  
+      if (ftype .eq. -1.0) then
+         mechS = 0.0
+         mechN = 1.0
+         mechR = 0.0
+      elseif (ftype .eq. -0.5) then 
+         mechS = 0.0
+         mechN = 1.0
+         mechR = 0.0
+      elseif (ftype .eq. 0.0) then 
+         mechS = 1.0
+         mechN = 0.0
+         mechR = 0.0
+      elseif (ftype .eq. 0.5) then
+         mechS = 0.0
+         mechN = 0.0
+         mechR = 1.0
+      elseif (ftype .eq. 1.0) then
+         mechS = 0.0
+         mechN = 0.0
+         mechR = 1.0
+      endif 
+C.....First compute the Reference Rock PGA value...........
+C.....This will include the regional dependence for PGA....
+C.....MAGNITUDE DEPENDENCE.................................
+      if (mag .le. mh(1)) then
+         term1 = e1(1) + e2(1)*mechN + e3(1)*mechR +
+     1           e4(1)*(mag-mh(1)) + e5(1)*(mag-mh(1))**2.0
+      else
+         term1 = e1(1) + e2(1)*mechN + e3(1)*mechR +
+     1           e6(1)*(mag-mh(1))
+      endif
+C.....Distance dependence......
+      Rp = SQRT( Rbjf*Rbjf+h(1)*h(1) )
+C.....Apply Regional term.....
+         TERM2 = ( c1(1) + c2(1)*(mag-mref) ) * alog(Rp/rref) + 
+     1           c3(1)  * (Rp-rref)
+     
+      pga4nl = exp(term1+term2)
+C.....Now compute the requested ground motion value........
+C.....MAGNITUDE DEPENDENCE.................................
+      if (mag .le. mhT) then
+         term1 = e1T + e2T*mechN + e3T*mechR +
+     1           e4T*(mag-mhT) + e5T*(mag-mhT)**2.0
+      else
+         term1 = e1T + e2T*mechN + e3T*mechR +
+     1           e6T*(mag-mhT)
+      endif
+C.....Distance dependence......
+      R = SQRT( Rbjf*Rbjf+hT*hT )
+C     Now apply the regional attenuation differnece.
+C     Global Case
+         TERM2 = ( c1T + c2T*(mag-mref) ) * alog(R/rref) + 
+     1        c3T * (R-rref) 
+C.....Site Response Term.........
+C.....Now compute the site term........
+C.....First the linear term......
+      if (vs .le. VcT ) then
+         flin = cT*alog(Vs/Vref)
+      else
+         flin = cT*alog(VcT/Vref)
+      endif
+C.....Next the non-linear term......
+      f2 = f4T*(exp(f5T*(min(vs,760.0)-360.0))-exp(f5T*(760.0-360.0))) 
+      
+C.....Now compute the basin effect term......
+C Deviation from ln(Vs30) scaling: bedrock depth (Z1) effect for California.
+c      if (basinflag .eq. 1) then 
+c     Compute the DeltaZ1 term. Apply the California model for all regions except for Japan. 
+          deltaz1 = z10 -
+     1           exp(-2.63/4.0 * alog((vs**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))/1000.0        
+          fbasin = min(f7T, f6T * deltaZ1)
+
+c      else
+c         fbasin = 0.0
+c      endif
+      TERM3 = flin + f1 + f2*alog((pga4nl+f3)/f3) + fBasin
+      
+      lnY = term1 + term2 + term3 
+      period2 = period1
+c     Now compute the sigma value which is a function of magnitude and Vs
+C     Tau (Eq. 4.11)
+      if (mag .le. 4.5) then
+         tau = t1T
+      elseif (mag .gt. 4.5 .and. mag .lt. 5.5) then
+         tau = t1T + (t2T - t1T)*(mag - 4.5)
+      else
+         tau = t2T
+      endif
+      
+C     Phi - Magnitude (Eq. 4.12) 
+      if (mag .le. 4.5) then
+         phi = l1T
+      elseif (mag .gt. 4.5 .and. mag .lt. 5.5) then
+         phi = l1T + (l2T - l1T)*(mag - 4.5)
+      else
+         phi = l2T
+      endif
+C     Phi - Distance (Eq. 4.13)
+      if (rbjf .le. R1T) then
+          phi = phi
+      elseif (rbjf .gt. R1T .and. rbjf .le. R2T) then
+          phi = phi + DfrT*( (alog(rbjf/R1T))/(alog(R2T/R1T)) )
+      else
+          phi = phi + DfrT 
+      endif
+C     Phi - Vs30 (Eq. 4.14)
+      if (vs .ge. V2) then
+         phi = phi
+      elseif (vs .ge. V1 .and. vs .lt. V2) then
+         phi = phi - DfvT*( alog(V2/vs) / alog(V2/V1) )
+      else
+         phi = phi - DfvT
+      endif
+      sigma = sqrt (tau**2 + phi**2)
+C     Convert ground motion to units of gals.
+      lnY = lnY + 6.89
+      return
+      END
+c ---------------------------------------------------------------------            
+C ** Chiou and Youngs (NGA West2-2013 Model) Horizontal **
+C     Earthquake Spectra Paper:
+C        Update of the Chiou and Youngs NGA Model for the
+C            Average Horizontal Component of Peak
+C            Ground Motion and Response Spectra
+C         B. S.J. Chiou and R.R. Youngs
+C     Notes:
+C        Applicable Range (see Abstract):  
+C           3.5 <= M <= 8.5 Strike-slip
+C           3.5 <= M <= 8.0 Reverse and Normal
+C           Rrup <= 300 km
+C           Ztor <= 20 km
+C           180m/s <= Vs30m <= 1500m/s
+C           Mainshock events only
+C        Regional attenuation included based on Regionflag
+C             0 = Global
+C             1 = Japan/Italy
+C             2 = Wenchuan (note only applicable for M7.9 event)
+C         Sigma dependent on estimated or measured Vs30m based on 
+C             Vs30_Class
+C             0 = Estimated Vs30m
+C             1 = Measured Vs30m
+c ---------------------------------------------------------------------            
+      Subroutine CY14_TW_C01 ( m, Rrup, Rbjf, specT,
+     1                     period2, lnY, sigma, iflag, 
+     2                     vs, Delta, DTor, Ftype, depthvs10, vs30_class,
+     3                     hwflag, Rx, regionflag, phi, tau )
+C     Last Updated: 8/1/13
+      parameter (MAXPER=25)
+      REAL Period(MAXPER), C1(MAXPER), C1a(MAXPER), C1b(MAXPER)
+      REAL cn(MAXPER), cm(MAXPER), c5(MAXPER), c6(MAXPER), c8(MAXPER)
+      REAL c7(MAXPER), c9(MAXPER), gamma1(MAXPER), gamma2(MAXPER)
+      REAL phi1(MAXPER), phi2(MAXPER), phi3(MAXPER), phi4(MAXPER)
+      REAL phi5(MAXPER), phi6(MAXPER), phi1jp(MAXPER), phi5jp(MAXPER), phi6jp(MAXPER)
+      REAL tau1(MAXPER), tau2(MAXPER), sigma1(MAXPER), sigma2(MAXPER)
+      REAL sigma3(MAXPER), c9a(MAXPER)
+      REAL c3(MAXPER), gm(MAXPER), c9b(MAXPER)
+      Real CHM(MAXPER), C1c(MAXPER), C1d(MAXPER), C7b(MAXPER), C8b(MAXPER)
+      real C11(MAXPER), C11B(MAXPER)
+      real gscaleJapIt(MAXPER), gscaleWen(MAXPER), sigma2Jap(MAXPER)
+ 
+      REAL c1T, c1aT, c1bT, cnT, cmT, c5T, c6T, c7T, c9T, c9aT, c3T, c8T
+      REAL gamma1T, gamma2T, phi1T, phi2T, phi3T, phi4T, sigma3T
+      REAL phi5T, phi6T, tau1T, tau2T, sigma1T, sigma2T
+      real C1cT, C1dT, C7bT, C11T, C11bT, CHMT
+      REAL c2, c4, c4a, cRB, pi, d2r, gamma, gmT, c9bT
+      real cc, cosdelta, r1, r2, r3, r4, hw, psa_ref, psa, a, b, c
+      integer iflag, count1, count2, hwflag, vs30_class, regionflag
+      REAL M, RRUP, RBJF, DTOR, Delta, specT, sigma, Ftype, Rx
+      REAL period2, lnY, F_RV, F_NM, depthvs10, tau, rkdepth
+      real c8a, c8bT, deltaZ1, fd
+      real NL0, sigma_NL0, F_Measured, F_Inferred, mz_TOR, deltaZ_TOR, coshM
+      real gscaleJapItT, gscaleWenT, sigma2JapT, phi
+      real phi1jpT, phi5jpT, phi6jpT
+ 
+ 
+      Data period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
+     1      3, 4, 5, 7.5, 10/
+      Data c1(1:25) / -1.31266420077258, -1.31266420077258, -1.27052159841083, -1.15311329373526, -1.00621910291969,
+     1      -0.847745315342867, -0.506698132668687, -0.34011520483206, -0.304795250685725, -0.376848741110481, -0.437416783354322,
+     1      -0.536485802809589, -0.705314012467511, -0.884076206174429, -1.25954659234479, -1.57601313090642, -2.13561675748938,
+     1      -2.43819675871175, -2.86642751914157, -3.04157367665102, -3.45879762569914, -3.67827599612404, -3.80553683316369,
+     1      -4.14696033561859, -4.59281925797601/
+      Data c1a(1:25) / 0.18246709014369, 0.18246709014369, 0.178309224403595, 0.158716871514361, 0.136398107463104,
+     1      0.11936121227405, 0.107073183963987, 0.159893513444579, 0.222972184210787, 0.297692608763902, 0.311114442939766,
+     1      0.310324821840864, 0.369412804286422, 0.434878712929772, 0.489932697682775, 0.52782991756011, 0.459542012425824,
+     1      0.363115431495551, 0.234026514862835, 0.173812951157414, 0.064526297612305, -0.0890925475898438, -0.168344291391401,
+     1      -0.389030032261896, -0.365470360970178/
+      Data c1b(1:25) / -0.167760549207099, -0.167760549207099, -0.151515173695688, -0.163132859539498, -0.162472505617202,
+     1      -0.221893645353074, -0.284833283451462, -0.269908988021925, -0.253098159297076, -0.167316655333099, -0.128183304040673,
+     1      -0.0815500335830345, -0.0388320763843968, -0.0710297213106874, -0.0831223427861709, -0.117869383232857,
+     1      -0.168476132541299, -0.338866311701415, -0.453619201467275, -0.452653695489928, -0.320455666547956,
+     1      -0.0163505888400868, -0.0385758573257073, -0.0688076694199481, -0.201948320081607/
+      Data c1c(1:25) / 0.108289511741018, 0.108289511741018, 0.117493112308231, 0.166099933928779, 0.236069585545508,
+     1      0.287333206939413, 0.290840813361722, 0.140626983543901, -0.00892928682460603, -0.178471416007927, -0.202091399690708,
+     1      -0.179864089834803, -0.296685382036618, -0.422875653161692, -0.484879731863843, -0.532238646990341, -0.3777514162866,
+     1      -0.181032482609988, -0.0234286549494071, 0.0430130382831375, 0.172098227714921, 0.377617402576038, 0.445213852683411,
+     1      0.641855063614217, 0.678886019451774/
+      Data c1d(1:25) / 0.305816299049586, 0.305816299049586, 0.287611795011559, 0.323395585491379, 0.380558607840273,
+     1      0.499784003610166, 0.562091379441839, 0.407925321289974, 0.393524081511871, 0.305684778605879, 0.219827912926136,
+     1      0.13378053808553, 0.0446584872502858, 0.10219487164099, 0.122601530820636, 0.100196434191248, 0.141479092793457,
+     1      0.353765525486546, 0.551135413760324, 0.596493950421738, 0.623873999403419, 0.543943402945403, -0.101415672062659,
+     1      0.0891998953807712, 0.00297285487244325/
+      Data cn(1:25) / 16.0875, 16.0875, 15.7118, 15.8819, 16.4556, 17.6453, 20.1772, 19.9992, 18.7106, 16.6246, 15.3709, 13.7012,
+     1      11.2667, 9.1908, 6.5459, 5.2305, 3.7896, 3.3024, 2.8498, 2.5417, 2.1488, 1.8957, 1.7228, 1.5737, 1.5265/
+      Data cM(1:25) / 4.9993, 4.9993, 4.9993, 4.9993, 4.9993, 4.9993, 5.0031, 5.0172, 5.0315, 5.0547, 5.0704, 5.0939, 5.1315,
+     1      5.167, 5.2317, 5.2893, 5.4109, 5.5106, 5.6705, 5.7981, 5.9983, 6.1552, 6.2856, 6.5428, 6.7415/
+      Data c3(1:25) / 1.16592367966216, 1.16592367966216, 1.12830120699638, 1.07978867952166, 1.06523941578527, 1.04218816686773,
+     1      1.14153732705161, 1.14747191330801, 1.18716213766583, 1.24109745493194, 1.29977223747474, 1.40201902033596,
+     1      1.51446360204558, 1.64340184698047, 1.77923120143032, 1.85464518277339, 2.21522772742916, 2.60354231791946,
+     1      2.9855138517209, 3.15987852562695, 3.26159427177443, 3.30665315926803, 3.27930774108803, 3.19724048046314,
+     1      3.00085309764975/
+      Data c5(1:25) / 6.4551, 6.4551, 6.4551, 6.4551, 6.4551, 6.4551, 6.4551, 6.8305, 7.1333, 7.3621, 7.4365, 7.4972, 7.5416, 7.56,
+     1      7.5735, 7.5778, 7.5808, 7.5814, 7.5817, 7.5818, 7.5818, 7.5818, 7.5818, 7.5818, 7.5818/
+      Data cHM(1:25) / 3.0956, 3.0956, 3.0963, 3.0974, 3.0988, 3.1011, 3.1094, 3.2381, 3.3407, 3.43, 3.4688, 3.5146, 3.5746,
+     1      3.6232, 3.6945, 3.7401, 3.7941, 3.8144, 3.8284, 3.833, 3.8361, 3.8369, 3.8376, 3.838, 3.838/
+      Data c6(1:25) / 0.4908, 0.4908, 0.4925, 0.4992, 0.5037, 0.5048, 0.5048, 0.5048, 0.5048, 0.5045, 0.5036, 0.5016, 0.4971,
+     1      0.4919, 0.4807, 0.4707, 0.4575, 0.4522, 0.4501, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45/
+      Data c7(1:25) / 0.0206913326016277, 0.0206913326016277, 0.0207295305470051, 0.0207758273344614, 0.0213063949326634,
+     1      0.0223491127548945, 0.0242401920598548, 0.0280050260478514, 0.0275296793481186, 0.0284827099580447, 0.0288451884510878,
+     1      0.0273907953297194, 0.0238321506745443, 0.0213283545610859, 0.0202646590294867, 0.0195915595381851, 0.0166455490057581,
+     1      0.0141714984212119, 0.0118838505771454, 0.0104635707293479, 0.00237705091080518, -0.00600975826092364,
+     1      -0.0108012350729907, -0.0152387032851066, -0.0180976550452297/
+      Data c7b(1:25) / 0.0193395871686318, 0.0193395871686318, 0.0196111041243464, 0.0219350089169555, 0.0238886678030938,
+     1      0.0246148494646156, 0.0235295139674962, 0.0138917888720577, 0.0124974976814102, 0.00630765722218034,
+     1      0.00482354753413154, 0.00397587341462028, 0.00611253593560759, 0.0087913752708122, 0.0076244392096242,
+     1      0.00504899023750188, 0.00672890981765682, 0.00910206491385782, 0.00562559209974137, 0.00605716808870929,
+     1      0.00765199592400173, 0.0221861811513163, 0.0312372545353795, 0.0483241134635139, 0.0652336102841609/
+      Data c8b(1:25) / 0.4833, 0.4833, 1.2144, 1.6421, 1.9456, 2.181, 2.6087, 2.9122, 3.1045, 3.3399, 3.4719, 3.6434, 3.8787,
+     1      4.0711, 4.3745, 4.6099, 5.0376, 5.3411, 5.7688, 6.0723, 6.5, 6.8035, 7.0389, 7.4666, 7.77/
+      Data c9(1:25) / 0.9228, 0.9228, 0.9296, 0.9396, 0.9661, 0.9794, 1.026, 1.0177, 1.0008, 0.9801, 0.9652, 0.9459, 0.9196,
+     1      0.8829, 0.8302, 0.7884, 0.6754, 0.6196, 0.5101, 0.3917, 0.1244, 0.0086, 0, 0, 0/
+      Data c9a(1:25) / 0.1202, 0.1202, 0.1217, 0.1194, 0.1166, 0.1176, 0.1171, 0.1146, 0.1128, 0.1106, 0.115, 0.1208, 0.1208,
+     1      0.1175, 0.106, 0.1061, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1/
+      Data c9b(1:25) / 6.8607, 6.8607, 6.8697, 6.9113, 7.0271, 7.0959, 7.3298, 7.2588, 7.2372, 7.2109, 7.2491, 7.2988, 7.3691,
+     1      6.8789, 6.5334, 6.526, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5/
+      Data c11(1:25) / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0/
+      Data c11b(1:25) / -0.4536, -0.4536, -0.4536, -0.4536, -0.4536, -0.4536, -0.4536, -0.4536, -0.4536, -0.4536, -0.4536, -0.444,
+     1      -0.3539, -0.2688, -0.1793, -0.1428, -0.1138, -0.1062, -0.102, -0.1009, -0.1003, -0.1001, -0.1001, -0.1, -0.1/
+      Data gamma1(1:25) / -0.00783493702135279, -0.00783493702135279, -0.00786128761621098, -0.00778079877094438,
+     1      -0.00780076858327062, -0.00810910287093641, -0.00912151012877523, -0.0106273581887152, -0.0110305348350741,
+     1      -0.0122773873835144, -0.0123798742277027, -0.012084026107517, -0.0113593004922249, -0.0100391491127564,
+     1      -0.00770496369836205, -0.00593665980807693, -0.00477597053626469, -0.00578040071664831, -0.00715653723401061,
+     1      -0.00843770016421773, -0.00717222257275659, -0.00610799690698496, -0.00476134903941374, -0.00377468396919992,
+     1      -0.00158837559327459/
+      Data gamma2(1:25) / -0.0153089549093592, -0.0153089549093592, -0.0156946231637086, -0.0180473134509439, -0.0196742447234555,
+     1      -0.019990050777154, -0.0178990960171151, -0.0127698636872442, -0.0102565070902433, -0.00547601025969077,
+     1      -0.00389061715956447, -0.00242026662929076, -0.000968015013739525, -0.00143340361892399, -0.00209160361537034,
+     1      -0.00326463289495902, -0.00426625880121567, -0.00254580133231734, 0.003706273954965, 0.00606790118927974,
+     1      0.00770828253872531, 0.00687887371514652, 0.00257091239027114, 0.00221896024249813, -0.00410767355413492/
+      Data gm(1:25) / 4.2542, 4.2542, 4.2386, 4.2519, 4.296, 4.3578, 4.5455, 4.7603, 4.8963, 5.0644, 5.1371, 5.188, 5.2164, 5.1954,
+     1      5.0899, 4.7854, 4.3304, 4.1667, 4.0029, 3.8949, 3.7928, 3.7443, 3.709, 3.6632, 3.623/
+      Data phi1(1:25) / -0.478295601468722, -0.478295601468722, -0.469350764099948, -0.46172967994569, -0.451078399262125,
+     1      -0.434858964898445, -0.425178256509881, -0.430145396922332, -0.446790915722155, -0.465667035381067, -0.482521496092297,
+     1      -0.493897938945111, -0.492815169820979, -0.532833891414964, -0.589495724586852, -0.62420819116978, -0.787788908491935,
+     1      -0.901784713782365, -1.00639980254843, -1.02277834678832, -1.04028777564407, -1.04611389204112, -0.997886189821876,
+     1      -0.933873385132495, -0.837232537244328/
+      Data phi2(1:25) / -0.1417, -0.1417, -0.1364, -0.1403, -0.1591, -0.1862, -0.2538, -0.2943, -0.3077, -0.3113, -0.3062, -0.2927,
+     1      -0.2662, -0.2405, -0.1975, -0.1633, -0.1028, -0.0699, -0.0425, -0.0302, -0.0129, -0.0016, 0, 0, 0/
+      Data phi3(1:25) / -4.96041757793564, -4.96041757793564, -4.92276178884602, -4.91251089610306, -4.96513625402504,
+     1      -5.04104295651768, -5.16134191152096, -5.18427465050738, -5.16799110487246, -5.14216868405811, -5.1228525972173,
+     1      -5.09276768363488, -5.04538203042609, -5.00505091580236, -4.94414555282742, -4.90155669907002, -4.81342512480855,
+     1      -4.77429914899606, -4.86562627218628, -5.34080741816899, -6.30453280595018, -6.48707320506911, -6.54311216539423,
+     1      -6.59367473267582, -6.59953555531281/
+      Data phi4(1:25) / -2.28130316824122, -2.28130316824122, -2.22229626176524, -2.12119730536018, -2.01259817873199,
+     1      -1.90429902597891, -1.65759927434112, -1.4668018434511, -1.37369802906703, -1.32250111763273, -1.3277990635296,
+     1      -1.36550006882328, -1.4629983153057, -1.5736992160094, -1.79900163048511, -2.01119988561788, -2.46330564055044,
+     1      -2.83710591027157, -3.44869787781101, -3.92632479013901, -4.64152301545389, -5.22525279569103, -5.73744267614884,
+     1      -6.78200407367658, -7.57134365730054/
+      Data phi5(1:25) / 0.0139926199706649, 0.0139926199706649, 0.0137650452723175, 0.0140339515445724, 0.0173393648081361,
+     1      0.0221061501659787, 0.0416600809735219, 0.0637396168303911, 0.0508535274577875, 0.041714225815666, 0.0309579228046502,
+     1      0.025016098336011, 0.0264586215769839, 0.0225557672812644, 0.0174484052235742, -0.000523452997460243,
+     1      -0.0150610705243032, -0.00345810627559283, 0.0631461836018504, 0.0955736653255159, 0.130800857675134,
+     1      0.128174100854778, 0.125397135621374, 0.130974459736013, 0.115120841547345/
+      Data phi6(1:25) / 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300,
+     1      300, 300, 300, 300/
+      Data tau1(1:25) / 0.4, 0.4, 0.40260697107594, 0.406254677901244, 0.409536599100115, 0.412362151356064, 0.417868294570895,
+     1      0.421889928589278, 0.424427487574697, 0.427481452707345, 0.429157682348667, 0.431284929241235, 0.434101130455258,
+     1      0.436302393283048, 0.439579110622969, 0.441948893180584, 0.445868511544276, 0.448355188391465, 0.451470005001172,
+     1      0.453423408395737, 0.455849456889221, 0.457360780855491, 0.458424490145996, 0.460138736069957, 0.461201624142458/
+      Data tau2(1:25) / 0.26, 0.26, 0.2637242443942, 0.268935254144634, 0.273623713000165, 0.277660216222949, 0.285526135101279,
+     1      0.291271326556111, 0.294896410820996, 0.29925921815335, 0.301653831926667, 0.304692756058908, 0.308715900650368,
+     1      0.311860561832925, 0.316541586604241, 0.319926990257977, 0.325526445063252, 0.329078840559236, 0.333528578573103,
+     1      0.336319154851053, 0.339784938413173, 0.341943972650702, 0.343463557351422, 0.345912480099939, 0.347430891632083/
+      Data sigma1(1:25) / 0.491174072226289, 0.491174072226289, 0.490392102266757, 0.49884629286719, 0.504893375136174,
+     1      0.509564336873576, 0.517904200145505, 0.523587992281292, 0.526987000584287, 0.530830818870199, 0.532795897236441,
+     1      0.535092985589259, 0.537693444822054, 0.539459005039374, 0.542235827503619, 0.543286483861406, 0.529446500271604,
+     1      0.510487062001946, 0.478270612673322, 0.468082689790949, 0.461651268718433, 0.457088102848047, 0.453548636419445,
+     1      0.447117215346928, 0.442554049476542/
+      Data sigma2(1:25) / 0.376232982006498, 0.376232982006498, 0.376232982006498, 0.384851051972815, 0.390965669923574,
+     1      0.395708536077288, 0.404326606043605, 0.410441223994364, 0.414316427806967, 0.419059293960682, 0.421719608502208,
+     1      0.42517391191144, 0.429916778065155, 0.433791981877758, 0.439906599828517, 0.444649465982231, 0.453267535948548,
+     1      0.459382153899307, 0.468000223865624, 0.468082689790949, 0.461651268718433, 0.457088102848047, 0.453548636419445,
+     1      0.447117215346928, 0.442554049476542/
+      Data sigma3(1:25) / 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.7999, 0.7997, 0.7988, 0.7966, 0.7792,
+     1      0.7504, 0.7136, 0.7035, 0.7006, 0.7001, 0.7, 0.7, 0.7/
+      Data gscaleJapIt(1:25) / 1.581682, 1.581682, 1.574012, 1.554376, 1.550154, 1.539148, 1.480416, 1.40939, 1.368192, 1.324078,
+     1      1.307137, 1.293133, 1.314989, 1.351437, 1.405064, 1.440233, 1.52797, 1.652328, 1.887186, 2.134757, 3.575186, 3.864586,
+     1      3.729218, 2.376267, 1.767935/
+      Data phi1Jp(1:25) / -0.684621362856666, -0.684621362856666, -0.668104490153807, -0.631364652348356, -0.585522686567435,
+     1      -0.545659123699481, -0.468510173737368, -0.498485421565652, -0.560262194908129, -0.645129113225058, -0.698050600056553,
+     1      -0.765310551536843, -0.846945325590174, -0.899885267655382, -0.961772613950091, -0.994485940646074, -1.02254530165975,
+     1      -1.0001741238606, -0.924505251934862, -0.862638634236657, -0.788170491672007, -0.719494506504419, -0.655991993310966,
+     1      -0.520223846723544, -0.406803274628334/
+      Data phi5Jp(1:25) / 0.459, 0.459, 0.458, 0.462, 0.453, 0.436, 0.383, 0.375, 0.377, 0.379, 0.38, 0.384, 0.393, 0.408, 0.462,
+     1      0.524, 0.658, 0.78, 0.96, 1.11, 1.291, 1.387, 1.433, 1.46, 1.464/
+      Data phi6Jp(1:25) / 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+     1      800, 800, 800, 800/
+      Data gscaleWen(1:25) / 0.75937, 0.75937, 0.760565, 0.76416, 0.767627, 0.773871, 0.795556, 0.79319, 0.776833, 0.743674,
+     1      0.721908, 0.692222, 0.657901, 0.636173, 0.604851, 0.550656, 0.358158, 0.200263, 0.035633, 0, 0, 0, 0, 0, 0/
+      Data sigma2jap(1:25) / 0.452832136505141, 0.452832136505141, 0.455081474488854, 0.457089607558063, 0.464232248075043,
+     1      0.471593304149618, 0.502235058788957, 0.522972224766759, 0.527828908598616, 0.530427671390517, 0.530985974389397,
+     1      0.531176947346726, 0.53091866775, 0.53069348684478, 0.530953922960708, 0.531256171294916, 0.530904125925903,
+     1      0.53016308922439, 0.527603492956116, 0.516719512970182, 0.491681001472351, 0.468235579988731, 0.451748161403632,
+     1      0.416734686252964, 0.375505067353143/
+      Data c8(1:25) / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0991, 0.1982, 0.2154, 0.2154, 0.2154, 0.2154, 
+     1      0.2154, 0.2154, 0.2154, 0.2154/
+	 
+ 
+C Find the requested spectral period and corresponding coefficients
+      nPer = 25
+C First check for the PGA case (i.e., specT=0.0) 
+      if (specT .eq. 0.0) then
+         period1  = period(1)
+         c1T      = c1(1)
+         c1aT     = c1a(1)
+         c1bT     = c1b(1)
+         c1cT     = c1c(1)
+         c1dT     = c1d(1)
+         c3T      = c3(1)
+         cHMT     = CHM(1)
+         cnT      = cn(1)
+         cmT      = cm(1)
+         c5T      = c5(1)
+         c6T      = c6(1)
+         c7T      = c7(1) 
+         c7bT      = c7b(1) 
+         c8bT      = c8b(1)
+         c9T      = c9(1)
+         c9aT      = c9a(1)
+         c9bT      = c9b(1)
+         c11T      = c11(1)
+         c11bT      = c11b(1)
+         gamma1T  = gamma1(1)
+         gamma2T  = gamma2(1)
+         gmT      = gm(1)
+         phi1T    = phi1(1)
+         phi2T    = phi2(1)
+         phi3T    = phi3(1)
+         phi4T    = phi4(1)
+         phi5T    = phi5(1)
+         phi6T    = phi6(1)
+         tau1T    = tau1(1)
+         tau2T    = tau2(1)
+         sigma1T = sigma1(1)
+         sigma2T = sigma2(1)
+         sigma2JapT = sigma2Jap(1)
+         sigma3T = sigma3(1)
+         gscaleJapItT = gscaleJapIt(1)
+         phi1jpT = phi1jp(1)
+         phi5jpT = phi5jp(1)
+         phi6jpT = phi6jp(1)
+         gscaleWenT = gscaleWen(1)
+         c8T = c8(1)
+         goto 1011
+      elseif (specT .gt. 0.0) then
+C Now loop over the spectral period range of the attenuation relationship.
+         do i=2,nper-1
+            if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
+               count1 = i
+               count2 = i+1
+               goto 1020 
+            endif
+         enddo
+      endif
+C Selected spectral period is outside range defined by attenuaton model.
+      write (*,*) 
+      write (*,*) 'Chiou and Youngs (NGA West2-2013) Horizontal'
+      write (*,*) 'attenuation model is not defined for a '
+      write (*,*) ' spectral period of: ' 
+      write (*,'(a10,f10.5)') ' Period = ',specT
+      write (*,*) 'This spectral period is outside the defined'
+      write (*,*) 'period range in the code or beyond the range'
+      write (*,*) 'of spectral periods for interpolation.'
+      write (*,*) 'Please check the input file.'
+      write (*,*) 
+      stop 99
+C Interpolate the coefficients for the requested spectral period.
+ 1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
+     +                   specT,c1T,iflag)
+            call interp (period(count1),period(count2),c1a(count1),c1a(count2),
+     +                   specT,c1aT,iflag)
+            call interp (period(count1),period(count2),c1b(count1),c1b(count2),
+     +                   specT,c1bT,iflag)
+            call interp (period(count1),period(count2),c1c(count1),c1c(count2),
+     +                   specT,c1cT,iflag)
+            call interp (period(count1),period(count2),c1d(count1),c1d(count2),
+     +                   specT,c1dT,iflag)
+            call interp (period(count1),period(count2),cn(count1),cn(count2),
+     +                   specT,cnT,iflag)
+            call interp (period(count1),period(count2),cm(count1),cm(count2),
+     +                   specT,cmT,iflag)
+            call interp (period(count1),period(count2),cHM(count1),cHM(count2),
+     +                   specT,cHMT,iflag)
+            call interp (period(count1),period(count2),c3(count1),c3(count2),
+     +                   specT,c3T,iflag)
+            call interp (period(count1),period(count2),c5(count1),c5(count2),
+     +                   specT,c5T,iflag)
+            call interp (period(count1),period(count2),c6(count1),c6(count2),
+     +                   specT,c6T,iflag)
+            call interp (period(count1),period(count2),c7(count1),c7(count2),
+     +                   specT,c7T,iflag)
+            call interp (period(count1),period(count2),c7b(count1),c7b(count2),
+     +                   specT,c7bT,iflag)
+            call interp (period(count1),period(count2),c8b(count1),c8b(count2),
+     +                   specT,c8bT,iflag)
+            call interp (period(count1),period(count2),c9(count1),c9(count2),
+     +                   specT,c9T,iflag)
+            call interp (period(count1),period(count2),c9a(count1),c9a(count2),
+     +                   specT,c9aT,iflag)
+            call interp (period(count1),period(count2),c9b(count1),c9b(count2),
+     +                   specT,c9bT,iflag)
+            call interp (period(count1),period(count2),c11(count1),c11(count2),
+     +                   specT,c11T,iflag)
+            call interp (period(count1),period(count2),c11b(count1),c11b(count2),
+     +                   specT,c11bT,iflag)
+            call interp (period(count1),period(count2),gamma1(count1),gamma1(count2),
+     +                   specT,gamma1T,iflag)
+            call interp (period(count1),period(count2),gamma2(count1),gamma2(count2),
+     +                   specT,gamma2T,iflag)
+            call interp (period(count1),period(count2),gm(count1),gm(count2),
+     +                   specT,gmT,iflag)
+            call interp (period(count1),period(count2),phi1(count1),phi1(count2),
+     +                   specT,phi1T,iflag)
+            call interp (period(count1),period(count2),phi2(count1),phi2(count2),
+     +                   specT,phi2T,iflag)
+            call interp (period(count1),period(count2),phi3(count1),phi3(count2),
+     +                   specT,phi3T,iflag)
+            call interp (period(count1),period(count2),phi4(count1),phi4(count2),
+     +                   specT,phi4T,iflag)
+            call interp (period(count1),period(count2),phi5(count1),phi5(count2),
+     +                   specT,phi5T,iflag)
+            call interp (period(count1),period(count2),phi6(count1),phi6(count2),
+     +                   specT,phi6T,iflag)
+            call interp (period(count1),period(count2),tau1(count1),tau1(count2),
+     +                   specT,tau1T,iflag)
+            call interp (period(count1),period(count2),tau2(count1),tau2(count2),
+     +                   specT,tau2T,iflag)
+            call interp (period(count1),period(count2),sigma1(count1),sigma1(count2),
+     +                   specT,sigma1T,iflag)
+            call interp (period(count1),period(count2),sigma2(count1),sigma2(count2),
+     +                   specT,sigma2T,iflag)
+            call interp (period(count1),period(count2),sigma2Jap(count1),sigma2Jap(count2),
+     +                   specT,sigma2JapT,iflag)
+            call interp (period(count1),period(count2),sigma3(count1),sigma3(count2),
+     +                   specT,sigma3T,iflag)
+            call interp (period(count1),period(count2),gscaleJapIt(count1),gscaleJapIt(count2),
+     +                   specT,gscaleJapItT,iflag)
+            call interp (period(count1),period(count2),phi1jp(count1),phi1jp(count2),
+     +                   specT,phi1jpT,iflag)
+            call interp (period(count1),period(count2),phi5jp(count1),phi5jp(count2),
+     +                   specT,phi5jpT,iflag)
+            call interp (period(count1),period(count2),phi6jp(count1),phi6jp(count2),
+     +                   specT,phi6jpT,iflag)
+            call interp (period(count1),period(count2),gscaleWen(count1),gscaleWen(count2),
+     +                   specT,gscaleWenT,iflag)
+            call interp (period(count1),period(count2),c8(count1),c8(count2),
+     +                   specT,c8T,iflag)
+ 1011 period1 = specT                                                                                                              
+c     Set the fault mechanism term.
+C     fType     Mechanism                      Rake
+C     ------------------------------------------------------
+C      -1       Normal                   -120 < Rake < -60.0
+C     1, 0.5    Reverse and Rev/Obl        30 < Rake < 150.0
+C     0,-0.5    Strike-Slip and NMl/Obl        Otherwise
+         if (ftype .eq. -1) then
+            F_RV = 0.0
+            F_NM = 1.0
+         elseif (ftype .ge. 0.5) then
+            F_RV = 1.0
+            F_NM = 0.0
+         else
+            F_RV = 0.0
+            F_NM = 0.0
+         endif
+C     Constant terms
+        c2 = 1.06
+        c4 = -2.1
+        c4a = -0.5
+        cRB = 50.0
+C        c8 = 0.2154
+        c8a = 0.2695
+        pi = atan(1.0)*4.0
+        d2r = pi/180.0
+        cc = c5T* cosh(c6T * max((M-cHMT),0.0))
+        gamma = gamma1T + gamma2T/cosh(max((M-gmT),0.0))
+C     Apply Regional scaling factor.
+C     Regionflag = 0 Global
+C     Regionflag = 1 Japan and Italy
+C        Also set sigma2 equal to Japan specific value
+C     Regionflag = 2 Wenchuan (note only for M7.9)
+c        if (regionflag .eq. 1 ) then
+c           gamma = gamma * gscaleJapItT
+c           sigma2T = sigma2JapT
+c        elseif (regionflag .eq. 2) then
+c           gamma = gamma * gscaleWenT        
+c        endif
+c        cosDELTA = cos(abs(DELTA)*d2r)
+c Magnitude scaling
+        r1 = c1T + c2 * (M-6.0) +
+     1       (c2-c3T)/cnT *
+     1             alog(1.0 + exp(-cnT*(M-cMT)))
+c Near-field magnitude and distance scaling
+        r2 = c4 * alog(Rrup + cc)
+c Distance scaling at large distance
+        r3 = (c4a-c4)/2.0 *
+     1            alog( Rrup*Rrup+cRB*cRB ) +
+     1       Rrup * gamma
+c Center Z_TOR on the Z_TOR-M relation in Chiou and Youngs (2013)
+        if (F_RV.EQ.1) then
+          if (M .le. 5.849) then
+              mZ_TOR = 2.704*2.704
+          else
+              mZ_TOR = max(2.704-1.226*(M-5.849), 0.0)
+              mZ_TOR = mZ_TOR * mZ_TOR
+          endif
+        else
+          if (M .le. 4.970) then
+              mZ_TOR = 2.673*2.673
+          else
+              mZ_TOR = max(2.673-1.136*(M-4.970), 0.0)
+              mZ_TOR = mZ_TOR * mZ_TOR
+          endif
+        endif
+        deltaZ_TOR = Dtor - 2*mZ_TOR
+        
+c Scaling with other source variables (F_RV, F_NM, deltaZ_TOR, and Dip)
+        coshM = cosh(2*max(M-4.5,0.0))
+        cosDELTA = cos(DELTA*d2r)
+        r4 = (c1aT+c1cT/coshM) * F_RV +
+     1       (c1bT+c1dT/coshM) * F_NM +
+     1       (c7T +c7bT/coshM) * deltaZ_TOR +
+     1       (c11T+c11bT/coshM)* cosDELTA**2
+        
+c HW effect
+        if (HWFlag .eq. 0) then
+           hw = 0.0
+        else
+         hw = c9T * (cosDELTA) * (c9aT+(1-c9aT)
+     1        *tanh(abs(Rx)/c9bT)) *
+     1          (1.0 - sqrt(Rbjf**2+DTor**2)/(Rrup + 1))
+        endif
+C     Current version of the code sets cDPP=0 (i.e., no directivity)
+c Directivity effect
+        cDPP = 0.0
+        fd = c8T * exp(-c8aT * (M-c8bT)**2) *
+     1       max(0.0, 1.0-max(0.0,Rrup-40.0)/30.0) *
+     1       min(max(0.0,M-5.5)/0.8, 1.0) * cDPP
+c Predicted median Sa on reference condition (Vs=1130 m/sec)
+c        fd = 0.0
+        psa_ref = r1+r2+r3+r4+hw+fd
+C     Set Phi1, Phi5, and Phi6 term for Japan is region is requested
+c        if (regionflag .eq. 1) then
+c           phi1T = phi1jpT
+c           phi5T = phi5jpT
+c           phi6T = phi6jpT
+c        endif       
+        
+c Linear soil amplification
+        a = phi1T * min(alog(Vs/1130.0), 0.0)
+c Nonlinear soil amplification
+        b = phi2T *
+     1      (exp(-exp(phi3T)*(min(Vs,1130.0)-360.0)) - exp(-exp(phi3T)*(1130.0-360.0)))
+        c = exp(phi4T)
+C Deviation from ln(Vs30) scaling: bedrock depth (Z1) effect.
+c        if (regionflag .eq. 1) then
+c           deltaZ1 = depthvs10*1000.0 -
+c     1     exp(-5.23/2.0 * alog((VS**2.0 + 412.0**2.0)/(1360.0**2.0 + 412.0**2.0)))      
+c        else
+           deltaZ1 = depthvs10*1000.0 -
+     1     exp(-2.63 / 4.0 * alog((VS**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))
+c        endif
+        rkdepth = phi5T * ( 1.0 - exp(-deltaZ1/phi6T ) )
+c Sa on soil condition
+        psa = psa_ref + (a + b * alog((exp(psa_ref)+c)/c)) + rkdepth
+C Compute the sigma term
+        NL0 = b * exp(psa_ref)/(exp(psa_ref)+c)
+        tau = tau1T +
+     1            (tau2T-tau1T)/1.5*(min(max(M,5.0),6.5)-5.0)
+        sigma_NL0 = sigma1T +
+     1              (sigma2T-sigma1T)/1.5*(min(max(M,5.0),6.5)-5.0)
+C     Current code set for Measured Vs30 values (i.e., Vs30class=1)
+      if (vs30_class .eq. 0) then
+         F_measured = 0.0
+         F_Inferred = 1.0
+      elseif (vs30_class .eq. 1) then      
+         F_measured = 1.0
+         F_Inferred = 0.0
+      endif
+        sigma_NL0 = sigma_NL0 *
+     1        sqrt(0.7*F_Measured+F_Inferred*sigma3T+(1+NL0)**2.0)
+        sigma = sqrt((tau*(1.0+NL0))**2.0+sigma_NL0**2.0)
+      phi = sigma_NL0
+      tau = (tau*(1.0+NL0))
+      
+C     Convert ground motion to units of gals.
+      lnY = psa + 6.89
+      period2 = period1
+      return
+      end 
+  
+C  ***** PEER NGA-West 2 MODELS (2013) **********
+c ---------------------------------------------------------------------            
+C ** Idriss (NGA-2013) Horizontal **
+C     PEER Report 2013/08
+C        NGA-West2 Model for Estimating Average Horizontal Values of 
+C            Pseudo-Absolute Spectral Accelerations Generated by
+C            Crustal Earthquakes
+C         I. M. Idriss
+C     Notes:
+C        Applicable Range (see Abstract):  
+C           5 <= M <= 8.5
+C           Vs>=450 m/sec
+C              for Vs>1200 use Vs=1200
+C           Rrup <= 150 km
+C        Mechanisms: Strike-slip and Norml (0)
+C                    Reverse and Oblique (1)
+c ---------------------------------------------------------------------            
+      Subroutine I14_TW_C01 ( m, Rrup, ftype, vs30, specT,
+     1                     period2, lnY, sigma, iflag )
+C     Last Updated: 5/18/13
+      implicit none
+      integer MAXPER
+      parameter (MAXPER=25)
+      REAL Period(MAXPER), a1mlt675(MAXPER), a2mlt675(MAXPER), a3mlt675(MAXPER)
+      REAL b1mlt675(MAXPER), b2mlt675(MAXPER)
+      REAL a1(MAXPER), a2(MAXPER), a3(MAXPER), b1(MAXPER), b2(MAXPER) 
+      real gam(MAXPER), phi(MAXPER), xsi(MAXPER), period1
+      REAL M, Rrup, Vs30, specT, sigma
+      REAL SOF, period2, lnY, PhiT, gamT, XsiT, ftype
+      real a1T, a2T, a3T, b1T, b2T, a1mlt675T, a2mlt675T, a3mlt675T, b1mlt675T, b2mlt675T
+      integer iflag, count1, count2, nPer, i
+ 
+ 
+      Data Period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
+     1      3, 4, 5, 7.5, 10/
+      Data a1mlt675(1:25) / 2.500233380713, 2.50558343921901, 2.54905389007533, 2.66315218302058, 3.0465390943314,
+     1      3.41168122348334, 3.53305607116099, 4.21379608491631, 4.12227689763015, 3.72362656328493, 4.00303950423054,
+     1      4.20873194310916, 3.95556883190431, 4.2483082536625, 4.06438168106831, 3.97839067786446, 3.2169039370047,
+     1      2.03558750338934, 1.33122659044408, -0.185188948776329, -1.92219595865101, -2.75022102589597, -4.14418500864792,
+     1      -5.36713918636102, -7.44125982871721/
+      Data a2mlt675(1:25) / 0.501420705570071, 0.50045274486304, 0.49013841997293, 0.476630410483486, 0.364470577366067,
+     1      0.260841471360512, 0.2614288686757, 0.220757752258636, 0.258514730282064, 0.334072823230007, 0.329265244826973,
+     1      0.325192262976761, 0.350819255594322, 0.329717876309448, 0.379780263480321, 0.419759529827459, 0.603851798024095,
+     1      0.856643686843613, 0.960706519770273, 1.14832767985058, 1.33436528125161, 1.29373670045768, 1.37441955857378,
+     1      1.31373625595917, 1.41503742549729/
+      Data a3mlt675(1:25) / 0.0589, 0.0589, 0.0589, 0.0589, 0.0492134623324272, 0.0417, 0.0527, 0.0442, 0.0391188387593093, 0.0329,
+     1      0.0267654491028554, 0.0188, 0.0095, -0.0039, -0.0133, -0.0224, -0.0267, -0.0198, -0.0367, -0.0291, -0.0214, -0.024,
+     1      -0.0202, -0.0219, -0.0035/
+      Data b1mlt675(1:25) / 2.9935, 2.9935, 2.9935, 2.9935, 2.92192099200299, 2.8664, 2.9406, 3.019, 2.91472377949414, 2.7871,
+     1      2.81929551534672, 2.8611, 2.8289, 2.8423, 2.83, 2.856, 2.7544, 2.7339, 2.68, 2.6837, 2.6907, 2.5782, 2.5468, 2.4478,
+     1      2.3922/
+      Data b2mlt675(1:25) / -0.2287, -0.2287, -0.2287, -0.2287, -0.236077537409605, -0.2418, -0.2513, -0.2516, -0.23900951196997,
+     1      -0.2236, -0.223295447827801, -0.2229, -0.22, -0.2284, -0.2318, -0.2337, -0.2392, -0.2398, -0.2417, -0.245, -0.2389,
+     1      -0.2514, -0.2541, -0.2593, -0.2586/
+      Data xsi(1:25) / -0.418699682752246, -0.418615223959223, -0.410872380718745, -0.403366643966195, -0.390638638085288,
+     1      -0.369589338311506, -0.343323354414622, -0.330917990949051, -0.349509622112699, -0.3645285353545, -0.383246394748638,
+     1      -0.390867061900157, -0.393160229911773, -0.439607616873627, -0.50735066440335, -0.555860494660592, -0.750091656095736,
+     1      -0.872310784811448, -0.967396910488233, -0.979257377149927, -0.987613564785966, -0.997568672611442, -0.953592248112969,
+     1      -0.891337622105761, -0.794820984688996/
+      Data gam(1:25) / -0.00283013920396674, -0.00282803033499828, -0.00290526852332255, -0.0035024282565208, -0.00571328650969498,
+     1      -0.00758878173241265, -0.00846045072079165, -0.00769077769427285, -0.00776930447201177, -0.00738500857491979,
+     1      -0.00628375110597102, -0.0046841295810579, -0.00346640983735254, -0.00322976125564237, -0.00218135066244653,
+     1      -0.000916435063493218, -0.00195789280161822, -0.00282711858804776, -0.00364343441913228, -0.004785164050821,
+     1      -0.00281482371882879, -0.00461977029165467, -0.00480352660804264, -0.00599454233673703, -0.0062195400597961/
+      Data phi(1:25) / 0.200739641446067, 0.200813356085181, 0.199656078139181, 0.194723442703274, 0.18902048140083,
+     1      0.182402028007246, 0.160818007837235, 0.155060599538377, 0.149501396019003, 0.147001197734822, 0.161553742915627,
+     1      0.1945576588434, 0.215937776551892, 0.216160624099592, 0.239974142176991, 0.257520562672612, 0.277554637391253,
+     1      0.297363818562307, 0.276583423687761, 0.256719938372776, 0.180567884489731, 0.0750113965684316, 0.0606074683089297,
+     1      -0.107929819900768, -0.121318376812063/
+      Data a1(1:25) / 9.0138, 9.0408, 9.1338, 8.48609726910026, 7.9837, 7.756, 9.4252, 9.51468239707057, 9.6242, 10.2793352298525,
+     1      11.13, 11.3629, 11.7818, 11.6097, 11.4484, 10.9065, 9.8565, 8.3363, 6.8656, 4.1178, 1.8102, 0.0977, -3.0563, -4.4387,
+     1      9.0138/
+      Data a2(1:25) / -0.0794, -0.0794, -0.0794, -0.0794, -0.142981982713312, -0.1923, -0.1614, -0.1887, -0.133751512954654,
+     1      -0.0665, -0.111443199125889, -0.1698, -0.1766, -0.2798, -0.3048, -0.2911, -0.3097, -0.2565, -0.232, -0.1226, 0.1724,
+     1      0.3001, 0.4609, 0.6948, 0.8393/
+      Data a3(1:25) / 0.0589, 0.0589, 0.0589, 0.0492134623324272, 0.0417, 0.0527, 0.0442, 0.0391188387593093, 0.0329,
+     1      0.0267654491028554, 0.0188, 0.0095, -0.0039, -0.0133, -0.0224, -0.0267, -0.0198, -0.0367, -0.0291, -0.0214, -0.024,
+     1      -0.0202, -0.0219, -0.0035, 0.0589/
+      Data b1(1:25) / 2.9935, 2.9935, 2.9935, 2.9935, 2.88424486584249, 2.7995, 2.8143, 2.8131, 2.63143724413814, 2.4091,
+     1      2.44595081283604, 2.4938, 2.3773, 2.3772, 2.3413, 2.3477, 2.2042, 2.1493, 2.0408, 2.0013, 1.9408, 1.7763, 1.703,
+     1      1.5212, 1.4195/
+      Data b2(1:25) / -0.2287, -0.2287, -0.2287, -0.2287, -0.230502146542804, -0.2319, -0.2326, -0.2211, -0.197043174656907,
+     1      -0.1676, -0.167991567078541, -0.1685, -0.1531, -0.1595, -0.1594, -0.1584, -0.1577, -0.1532, -0.147, -0.1439, -0.1278,
+     1      -0.1326, -0.1291, -0.122, -0.1145/
+ 
+       
+C Find the requested spectral period and corresponding coefficients
+      nPer = 25
+C First check for the PGA case (i.e., specT=0.0) 
+      if (specT .eq. 0.0) then
+         period1 = period(1)
+         a1T     = a1(1)
+         a2T     = a2(1)
+         a3T     = a3(1)
+         b1T     = b1(1)
+         b2T     = b2(1)
+         a1mlt675T = a1mlt675(1)
+         a2mlt675T = a2mlt675(1)
+         a3mlt675T = a3mlt675(1)
+         b1mlt675T = b1mlt675(1)
+         b2mlt675T = b2mlt675(1)
+         xsiT   = xsi(1)
+         gamT   = gam(1)
+         phiT   = phi(1)
+         goto 1011
+      elseif (specT .gt. 0.0) then
+C Now loop over the spectral period range of the attenuation relationship.
+         do i=2,nper-1
+            if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
+               count1 = i
+               count2 = i+1
+               goto 1020 
+            endif
+         enddo
+      endif
+C Selected spectral period is outside range defined by attenuaton model.
+      write (*,*) 
+      write (*,*) 'Idriss (NGA West2-2013) Horizontal'
+      write (*,*) 'attenuation model is not defined for a '
+      write (*,*) ' spectral period of: ' 
+      write (*,'(a10,f10.5)') ' Period = ',specT
+      write (*,*) 'This spectral period is outside the defined'
+      write (*,*) 'period range in the code or beyond the range'
+      write (*,*) 'of spectral periods for interpolation.'
+      write (*,*) 'Please check the input file.'
+      write (*,*) 
+      stop 99
+C Interpolate the coefficients for the requested spectral period.
+ 1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
+     +                   specT,a1T,iflag)
+            call interp (period(count1),period(count2),a2(count1),a2(count2),
+     +                   specT,a2T,iflag)
+            call interp (period(count1),period(count2),a3(count1),a3(count2),
+     +                   specT,a3T,iflag)
+            call interp (period(count1),period(count2),b1(count1),b1(count2),
+     +                   specT,b1T,iflag)
+            call interp (period(count1),period(count2),b2(count1),b2(count2),
+     +                   specT,b2T,iflag)
+            call interp (period(count1),period(count2),a1mlt675(count1),a1mlt675(count2),
+     +                   specT,a1mlt675T,iflag)
+            call interp (period(count1),period(count2),a2mlt675(count1),a2mlt675(count2),
+     +                   specT,a2mlt675T,iflag)
+            call interp (period(count1),period(count2),a3mlt675(count1),a3mlt675(count2),
+     +                   specT,a3mlt675T,iflag)
+            call interp (period(count1),period(count2),b1mlt675(count1),b1mlt675(count2),
+     +                   specT,b1mlt675T,iflag)
+            call interp (period(count1),period(count2),b2mlt675(count1),b2mlt675(count2),
+     +                   specT,b2mlt675T,iflag)
+            call interp (period(count1),period(count2),phi(count1),phi(count2),
+     +                   specT,phiT,iflag)
+            call interp (period(count1),period(count2),gam(count1),gam(count2),
+     +                   specT,gamT,iflag)
+            call interp (period(count1),period(count2),xsi(count1),xsi(count2),
+     +                   specT,xsiT,iflag)
+ 1011 period1 = specT                                                                                                              
+C.....Compute the Ground motion.......
+C.....Set the mechanism term.....................
+C     Strike-slip and normal events --> SOF = 0
+C     Reverse and oblique events     --> SOF = 1
+C     Otherwise assume SOF = 0
+      if (ftype .gt. 0.0) then
+         SOF = 1.0
+      else
+         SOF = 0.0
+      endif
+      
+	  a1T = a1mlt675T + (a2mlt675T - a2T) * 6.75
+	  
+      if (m .le. 6.75) then
+         lnY = a1mlt675T + a2mlt675T*m + a3mlt675T*(8.5 - m)**2.0 - (b1mlt675T+b2mlt675T*m) * alog(Rrup+10.0) +
+     1         xsiT*alog(Vs30) + gamT*rRup + SOF*phiT
+      else
+         lnY = a1T + a2T*m + a3T*(8.5 - m)**2.0 - (b1T+b2T*m) * alog(Rrup+10.0) +
+     1         xsiT*alog(Vs30) + gamT*rRup + SOF*phiT
+      endif
+C     Convert ground motion to units of gals.
+      lnY = lnY + 6.89
+C     Compute Sigma which is Period and magnitude dependent.
+C     Note report does not state a limit on sigma for M<5 but 
+C     Since model is only applicable for M>=5 a limit is retained
+C     for sigma with M<5 equal to M=5 values. 
+      if (specT .le. 0.05) then
+         if (m .le. 5.0) then
+            sigma = 1.18 + 0.035*alog(0.05) - 0.06*5.0
+         elseif (m .ge. 7.5) then
+            sigma = 1.18 + 0.035*alog(0.05) - 0.06*7.5
+         else
+            sigma = 1.18 + 0.035*alog(0.05) - 0.06*m
+         endif
+      elseif (specT .ge. 3.0) then
+         if (m .le. 5.0) then
+            sigma = 1.18 + 0.035*alog(3.00) - 0.06*5.0
+         elseif (m .ge. 7.5) then
+            sigma = 1.18 + 0.035*alog(3.00) - 0.06*7.5
+         else
+            sigma = 1.18 + 0.035*alog(3.00) - 0.06*m
+         endif
+      else
+         if (m .le. 5.0) then
+            sigma = 1.18 + 0.035*alog(specT) - 0.06*5.0
+         elseif (m .ge. 7.5) then
+            sigma = 1.18 + 0.035*alog(specT) - 0.06*7.5
+         else
+            sigma = 1.18 + 0.035*alog(specT) - 0.06*m
+         endif
+      endif
+      period2 = period1
+      return
+      end 
+
