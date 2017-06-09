@@ -32,6 +32,7 @@
 I14.tw.C01 <- function(Mag, Rrup, Prd=0, ftype=0, Vs30=760){
   #Subroutine I_NGAWest2_2013 ( m, Rrup, ftype, vs30, specT,
   #                     period2, lnY, sigma, iflag )
+  if (Vs30 >1200) Vs30 <- 1200
   retvals <- .Fortran("I14_TW_C01", m=as.single(Mag), Rrup=as.single(Rrup), ftype=as.single(ftype),
                       vs30=as.single(Vs30), specT=as.single(Prd), period2=as.single(0),
                       lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(0))
