@@ -47335,54 +47335,6 @@ C First check for the PGA case (i.e., specT=0.0)
          rhoT = rho(1)
 
          goto 1011
-      elseif (specT .eq. -1.0) then
-         period1 = period(2)
-         c0T = c0(2)
-         c1T = c1(2)
-         c2T = c2(2)
-         c3T = c3(2)
-         c4T = c4(2)
-         c5T = c5(2)
-         c6T = c6(2)
-         c7T = c7(2)
-         c8T = c8(2)
-         c9T = c9(2)
-         c10T = c10(2)
-         c11T = c11(2)
-         c12T = c12(2)
-         c13T = c13(2)
-         c14T = c14(2)
-         c15T = c15(2)
-         c16T = c16(2)
-         c17T = c17(2)
-         c18T = c18(2)
-         c19T = c19(2)
-         
-         a2T = a2(2)
-         h1T = h1(2)
-         h2T = h2(2)
-         h3T = h3(2)
-         h4T = h4(2)
-         h5T = h5(2)
-         h6T = h6(2)
-
-         k1T = k1(2)
-         k2T = k2(2)
-         k3T = k3(2)
-         c20T = c20(2)
-         Dc20CAT = Dc20CA(2)
-         Dc20JPT = Dc20JP(2)
-         Dc20CHT = Dc20CH(2)
-         
-         phi1T = phi1(2)
-         phi2T = phi2(2)
-         t1T = t1(2)
-         t2T = t2(2)
-         flnAFT = flnaf(2)
-         phicT = phic(2)
-         rhoT = rho(2)
-
-         goto 1011
 
       elseif (specT .gt. 0.0) then
 C Now loop over the spectral period range of the attenuation relationship.
@@ -47564,11 +47516,11 @@ C.....SET UP HANGING WALL TERMS (Eq 3.7)..............
          else
             fhwm = 1.0 + a2(1)*(mag-6.5)        
          endif
-         if (depthtop .le. 16.66) then
+c         if (depthtop .le. 16.66) then
             fhwz = 1.0 - 0.06*depthtop 
-         else
-            fhwz = 0.0
-         endif
+c         else
+c            fhwz = 0.0
+c         endif
          fhwd = (90.0 - dip)/45.0        
          TERM4 = c10(1)*fhwr*fhwm*fhwz*fhwd
       else   
@@ -47584,7 +47536,7 @@ C      endif
 C.....NOW COMPUTE THE SEDIMENT DEPTH DEPENDENCE (Eq 3.17)............
 C     For Rock PGA the D25 value should be set at the recommended value of D25=0.398
       D25_RK = 0.398
-      if (D25_RK .le. 1.0) then
+c      if (D25_RK .le. 1.0) then
 C         if (regionflag .eq. 1) then
 c            TERM6 = (C14(1)+c15(1))*(D25-1.0)
 c            TERM6_RK = (C14(1)+c15(1))*(D25_RK-1.0)
@@ -47592,11 +47544,11 @@ C         else
 c            TERM6 = C14(1)*(D25-1.0)
             TERM6_RK = C14(1)*(D25_RK-1.0)
 C         endif   
-      elseif (D25_RK .GT. 1.0 .AND. D25_RK .LE. 3.0) then
-        TERM6_RK = 0.0
-      elseif (D25_RK .GT. 3.0) then
-         TERM6_RK = c16(1)*k3(1)*exp(-0.75)*(1.0-exp(-0.25*(D25_RK-3.0)))
-      endif
+c      elseif (D25_RK .GT. 1.0 .AND. D25_RK .LE. 3.0) then
+c        TERM6_RK = 0.0
+c      elseif (D25_RK .GT. 3.0) then
+c         TERM6_RK = c16(1)*k3(1)*exp(-0.75)*(1.0-exp(-0.25*(D25_RK-3.0)))
+c      endif
 
 C.....Now compute the hypocentral depth term (Eq 3.21).........
       if (depth .le. 7.0) then
@@ -47616,11 +47568,11 @@ C.....Now compute the hypocentral depth term (Eq 3.21).........
 
 C.....Compute Rupture Dip term (Eq 3.24)............
       if (mag .le. 4.5) then
-          term8 = c19(1)*dip
+          term8 = c19(1)
       elseif (mag .le. 5.5) then
-          term8 = c19(1)*(5.5-mag)*dip      
+          term8 = c19(1) - c19(1)*(mag-4.5)*dip      
       else 
-          term8 = 0.0
+          term8 = c19(1)- c19(1)*Dip
       endif
 
 C.....Compute anelastic attenuation term.....
@@ -47741,11 +47693,11 @@ C.....SET UP HANGING WALL TERMS................
          else
             fhwm = 1.0 + a2T*(mag-6.5)        
          endif
-         if (depthtop .le. 16.66) then
+c         if (depthtop .le. 16.66) then
             fhwz = 1.0 - 0.06*depthtop 
-         else
-            fhwz = 0.0
-         endif
+c         else
+c            fhwz = 0.0
+c         endif
          fhwd = (90.0 - dip)/45.0        
          TERM4 = c10T*fhwr*fhwm*fhwz*fhwd
       else   
@@ -47800,11 +47752,11 @@ C.....Now compute the hypocentral depth term..........
 
 C.....Compute Rupture Dip term.............
       if (mag .le. 4.5) then
-          term8 = c19T*dip
+          term8 = c19T
       elseif (mag .le. 5.5) then
-          term8 = c19T*(5.5-mag)*dip      
+          term8 = c19T-c19T*(mag-4.5)*dip      
       else 
-          term8 = 0.0
+          term8 = c19T- c19T*Dip
       endif
 
 C.....Compute anelastic attenuation term.....
@@ -47823,11 +47775,11 @@ c         endif
       LnY = (TERM1+TERM2+TERM3+TERM4+TERM5+TERM6+TERM7+TERM8+TERM9)
 
 C    Check that SA is not less than PGA for T<0.25sec
-      if (specT .lt. 0.25) then
-         if (lnY .lt. pgasoil ) then
-            lnY = pgasoil
-         endif
-      endif
+c     if (specT .lt. 0.25) then
+c        if (lnY .lt. pgasoil ) then
+c           lnY = pgasoil
+c        endif
+c     endif
 
 C.....Now compute the sigma value..........
       IF (Vs .LT. k1T) THEN
@@ -47912,7 +47864,7 @@ C         1 = Aftershocks
 
 c     Compute SA1100
       vs30_rock = 1100.
-	  z10_rock = 0.008959
+      z10_rock = 0.0058959
       SA_rock = 0.
       
          call Chaoetal2017 ( mag, dist, ftype, sigma, specT, vs30_rock, Ztor, z10_rock,
@@ -48081,8 +48033,7 @@ c -------------------------------------------------------------------
 
 c Set attenuation name                                                            
 c     Sourcetype = 0 Crustal
-c     Sourcetype = 1 Subduction - Interface
-c     Sourcetype = 2 Subduction - Slab
+c     Sourcetype = 1 Subduction 
                                                                        
 C Find the requested spectral period and corresponding coefficients
       nper = 20
@@ -48257,9 +48208,9 @@ c     Vs30_class = 1 for measured
       Fks17 = 0
       Frf = 0
       Fmanila = 0
-	  C11flag = 0
-	  C20flag = 0
-	  C26flag = 0
+      C11flag = 0
+      C20flag = 0
+      C26flag = 0
 	  
       if (sourcetype .eq. 0 ) then
        Fcr = 1
@@ -48300,10 +48251,10 @@ C     Set Source scaling term
      
       if(mag .LE. 5 ) then  
 	      C11flag=1
-	  endif
+      endif
       if(mag .GE. Mc ) then  
 	      C26flag=1
-	  endif
+      endif
 	  
       if (sourcetype .eq. 0 ) then
         Smag = c8T*(min(mag, Mmax) - Mref)+ c10T*(min(mag, Mmax) - Mref)**2 + c11T*(5-mag)*C11flag  
@@ -48327,17 +48278,26 @@ C     Set Path scaling term
 	   
 C     Set Site scaling term 
 	   
-      Z10ref = (-4.08/2)*alog((vs**2+355.4**2)/(1750**2+355.4**2))
+      Z10ref = exp((-4.08/2)*alog((vs**2+355.4**2)/(1750**2+355.4**2)))
       Ssitelin = c21T * alog(vs/vs30ref) + c22T*alog(Z10*1000/Z10ref)
 
-      if(vs .LE. vs30ref ) then  
+      if(vs .LT. vs30ref ) then  
            C20flag=1
-	  endif
+      endif
 	    
       Ssitenon = c20T * C20flag * (-1.5*alog(vs/vs30ref)-alog(SA1100+2.4)+alog(SA1100+2.4*(vs/vs30ref)**1.5))  
       Ssite = Ssitenon + Ssitelin
 
       lnSa =  lnYref + Ssource + Spath + Ssite                                        
+	  
+	  write(*,*) "lnYref = ", lnYref
+	  write(*,*) "Ssource = ", Ssource
+	  write(*,*) "Spath = ", Spath
+	  write(*,*) "Ssitelin = ", Ssitelin
+	  write(*,*) "Ssitenon = ", Ssitenon
+	  write(*,*) "lnSa = ", lnSa
+	  write(*,*) "Sa = ", exp(lnSa)
+
 	  
 C     Set the event-specific residual term
  
