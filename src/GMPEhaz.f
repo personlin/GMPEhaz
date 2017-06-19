@@ -47149,8 +47149,8 @@ C     Minor change to T=5, 7.5, and 10 sec for coefficient C6
 
       REAL MAG, RRUP, RBJF, VS, D25, FHWR, FHWM, FHWZ, FHWD, PGAROCK, C, N
       real lnY, ftype, Dip, pgasoil, Rx, R1, R2, f1, f2
-      real fhypH, D25_RK
-      INTEGER count1, count2, HWFlag, regionflag
+      real fhypH, D25_RK, depthtop, depth, rupwidth, specT, period2, sigma
+      INTEGER count1, count2, HWFlag, regionflag, iflag
 
       real c0T, c1T, c2T, c3T, c4T, c5T, c6T, c7T, c8T, c9T, c10T, c11T, c12T
       real c13T, c14T, c15T ,c16T, c17T, c18T, c19T, c20T, Dc20CAT, Dc20JPT, Dc20CHT
