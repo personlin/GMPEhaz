@@ -48542,7 +48542,7 @@ C     Depth Scaling
         fdepth = a11aT*(Ztor - 20.0)
       elseif (ftype .eq. 1) then
 C        fdepth = a11T*(depth - 60 )
-        fdepth =  a11T*(min(depth, 120.0) -60 )
+        fdepth =  a11T*(min(depth, 80.0) -60 )
       else
          write (*,*) 'AGA16_TW_C01 Model not defined for Ftype'
          write (*,*) 'other than 0 (interface) or 1 (intraslab)'
