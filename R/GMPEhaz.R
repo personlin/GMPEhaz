@@ -6,7 +6,7 @@
 #'
 #' @docType package
 #' @name GMPEhaz
-#' @useDynLib GMPEhaz
+#' @useDynLib GMPEhaz, .registration = TRUE
 #' @param libpath library path
 
 .onUnload <- function(libpath){
