@@ -10,6 +10,7 @@ Check these declarations against the C/Fortran source code.
 extern void F77_NAME(ab03)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(ac_2010)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(aga16_tw_c01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(am09_cas)(void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(asb_2013)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(asb14_tw_b01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(asb14_tw_c01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -62,6 +63,7 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"ab03",                        (DL_FUNC) &F77_NAME(ab03),                        13},
   {"ac_2010",                     (DL_FUNC) &F77_NAME(ac_2010),                     10},
   {"aga16_tw_c01",                (DL_FUNC) &F77_NAME(aga16_tw_c01),                12},
+  {"am09_cas",                    (DL_FUNC) &F77_NAME(am09_cas),                     7},
   {"asb_2013",                    (DL_FUNC) &F77_NAME(asb_2013),                    11},
   {"asb14_tw_b01",                (DL_FUNC) &F77_NAME(asb14_tw_b01),                11},
   {"asb14_tw_c01",                (DL_FUNC) &F77_NAME(asb14_tw_c01),                11},
