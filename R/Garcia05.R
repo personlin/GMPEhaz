@@ -4,7 +4,7 @@
 #'
 #'Garcia, D., Singh, S. K., Herraiz, M., Ordaz, M., &Pacheco, J. F. (2005). Inslab Earthquakes of Central
 #'Mexico: Peak Ground-Motion Parameters and Response Spectra. Bulletin of the Seismological Society of America,
-#'95(6), 2272 LP-2282. Retrieved from http://www.bssaonline.org/content/95/6/2272.abstract
+#'95(6), 2272 LP-2282. Retrieved from \url{http://www.bssaonline.org/content/95/6/2272.abstract}
 #'
 #' @param Mag Earthquake momnet magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
