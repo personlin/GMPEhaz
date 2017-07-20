@@ -8412,11 +8412,11 @@ C     Convert ground motion to units of gals.
       return
       end
 
-c----------------------------------------------------------------------                
+c----------------------------------------------------------------------
       subroutine S02_McVerry_Subduction_2006 ( m, Rrup, specT,
-     1                     period2, lnY, sigma, iflag, Ftype, 
+     1                     period2, lnY, sigma, iflag, Ftype,
      3                     depthtop, dip, width, hypodepth, Sc, Sd )
-     
+
       Implicit None
 
       integer MAXPER
@@ -8438,48 +8438,48 @@ c----------------------------------------------------------------------
       integer iflag, count1, count2, nPer, i
 
       Data Period / 0.0, 0.01, 0.03, 0.075, 0.1, 0.2, 0.3, 0.4, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0 /
-      Data C11 / 8.08611, 8.08611, 8.08611, 8.69303, 9.30400, 10.41628, 9.21783, 
+      Data C11 / 8.08611, 8.08611, 8.08611, 8.69303, 9.30400, 10.41628, 9.21783,
      1           8.01150, 7.87495, 7.26785, 6.98741, 6.77543, 6.48775, 5.05424 /
-      Data C12 / 1.41400, 1.41400, 1.41400, 1.41400, 1.41400, 1.41400, 1.41400, 
+      Data C12 / 1.41400, 1.41400, 1.41400, 1.41400, 1.41400, 1.41400, 1.41400,
      1           1.41400, 1.41400, 1.41400, 1.41400, 1.41400, 1.41400, 1.41400 /
-      Data C13 / 0.00000, 0.00000, 0.00000, 0.00000, -0.00110, -0.00270, -0.00360, 
+      Data C13 / 0.00000, 0.00000, 0.00000, 0.00000, -0.00110, -0.00270, -0.00360,
      1          -0.00430, -0.00480, -0.00570, -0.00640, -0.00730, -0.00730, -0.00890 /
-      Data C15 / -2.55200, -2.55200, -2.55200, -2.70700, -2.65500, -2.52800, -2.45400, 
+      Data C15 / -2.55200, -2.55200, -2.55200, -2.70700, -2.65500, -2.52800, -2.45400,
      1           -2.40100, -2.36000, -2.28600, -2.23400, -2.16000, -2.16000, -2.03300 /
-      Data C17 / -2.49894, -2.49894, -2.49894, -2.55903, -2.61372, -2.70038, -2.47356, 
+      Data C17 / -2.49894, -2.49894, -2.49894, -2.55903, -2.61372, -2.70038, -2.47356,
      1           -2.30457, -2.31991, -2.28460, -2.28256, -2.27895, -2.27895, -2.05560 /
-      Data C18 / 1.78180, 1.78180, 1.78180, 1.78180, 1.78180, 1.78180, 1.78180, 
+      Data C18 / 1.78180, 1.78180, 1.78180, 1.78180, 1.78180, 1.78180, 1.78180,
      1           1.78180, 1.78180, 1.78180, 1.78180, 1.78180, 1.78180, 1.78180 /
-      Data C19 / 0.55400, 0.55400, 0.55400, 0.55400, 0.55400, 0.55400, 0.55400, 
+      Data C19 / 0.55400, 0.55400, 0.55400, 0.55400, 0.55400, 0.55400, 0.55400,
      1           0.55400, 0.55400, 0.55400, 0.55400, 0.55400, 0.55400, 0.55400 /
-      Data C20 / 0.01590, 0.01590, 0.01590, 0.01821, 0.01737, 0.01531, 0.01304, 
+      Data C20 / 0.01590, 0.01590, 0.01590, 0.01821, 0.01737, 0.01531, 0.01304,
      1           0.01426, 0.01277, 0.01055, 0.00927, 0.00748, 0.00748, -0.00273 /
-      Data C24 / -0.43223, -0.43223, -0.43223, -0.52504, -0.61452, -0.65966, -0.56604, 
+      Data C24 / -0.43223, -0.43223, -0.43223, -0.52504, -0.61452, -0.65966, -0.56604,
      1           -0.33169, -0.24374, -0.01583, 0.02009, -0.07051, -0.07051, -0.23967 /
-      Data C29 / 0.3873, 0.3873, 0.3873, 0.27879, 0.28619, 0.34064, 0.53213, 0.63272, 
+      Data C29 / 0.3873, 0.3873, 0.3873, 0.27879, 0.28619, 0.34064, 0.53213, 0.63272,
      1           0.58809, 0.50708, 0.33002, 0.07445, 0.07445, 0.09869 /
-      Data C30 / -0.23, -0.23, -0.23, -0.28, -0.28, -0.245, -0.195, -0.16, -0.121, -0.05, 
+      Data C30 / -0.23, -0.23, -0.23, -0.28, -0.28, -0.245, -0.195, -0.16, -0.121, -0.05,
      1            0.0, 0.04, 0.04, 0.04 /
-      Data C43 / -0.31036, -0.31036, -0.31036, -0.49068, -0.46604, -0.31282, -0.07565, 
-     1            0.17615, 0.34775, 0.7238, 0.89239, 0.77743, 0.77743, 0.60938 /      
+      Data C43 / -0.31036, -0.31036, -0.31036, -0.49068, -0.46604, -0.31282, -0.07565,
+     1            0.17615, 0.34775, 0.7238, 0.89239, 0.77743, 0.77743, 0.60938 /
 
-      Data C46 / -0.03250, -0.03250, -0.03250, -0.03441, -0.03594, -0.03823, -0.03535, 
+      Data C46 / -0.03250, -0.03250, -0.03250, -0.03441, -0.03594, -0.03823, -0.03535,
      1           -0.03354, -0.03211, -0.02857, -0.02500, -0.02008, -0.02008, -0.01587 /
-     
+
 
       Data SigmaM6 / 0.4871, 0.4871, 0.4871, 0.5297, 0.5401, 0.5599, 0.5456, 0.5556,
      1               0.5658, 0.5611, 0.5573, 0.5419, 0.5419, 0.5809 /
-      Data sigslope / -0.1011, -0.1011, -0.1011, -0.0703, -0.0292, 0.0172, -0.0566, -0.1064, 
+      Data sigslope / -0.1011, -0.1011, -0.1011, -0.0703, -0.0292, 0.0172, -0.0566, -0.1064,
      1                -0.1123, -0.0836, -0.062, 0.0385, 0.0385, 0.1403 /
-      Data tau / 0.2469, 0.2469, 0.2469, 0.3139, 0.3017, 0.2583, 0.1967, 0.1802, 
+      Data tau / 0.2469, 0.2469, 0.2469, 0.3139, 0.3017, 0.2583, 0.1967, 0.1802,
      1           0.144, 0.1871, 0.2073, 0.2405, 0.2405, 0.2053 /
-      data a9 / 0.370, 0.370, 0.370, 0.370, 0.370, 0.370, 0.370, 0.370, 0.370, 
+      data a9 / 0.370, 0.370, 0.370, 0.370, 0.370, 0.370, 0.370, 0.370, 0.370,
      1          0.331, 0.281, 0.210, 0.160, 0.089 /
-C     Notes Travel path term for Volcanic region is not included. 
+C     Notes Travel path term for Volcanic region is not included.
 
 C Find the requested spectral period and corresponding coefficients
       nPer = 14
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1   = period(1)
          c11T       = c11(1)
@@ -8506,22 +8506,22 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'McVerry et al. (2006) Subduction'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -8560,7 +8560,7 @@ C Interpolate the coefficients for the requested spectral period.
       call S24_interp (period(count1),period(count2),a9(count1),a9(count2),
      +             specT,a9T,iflag)
 
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 
 c     Set the fault mechanism term.
 c     fType     Mechanism
@@ -8582,19 +8582,19 @@ c     Set the Centroid Depth
 c     The centroid is assumed to be at the center of the rupture plane.
       Hc = depthtop + width * cos(dip/180*3.14159) / 2
 c     OR the centroid depth is assumed to be the same as the hypocenter depth.
-      Hc = hypodepth      
-      
+      Hc = hypodepth
+
 c     Set the location of the intraslab earthquake
 c     A rupture centroid depth of 50 km separates the deep from the shallow events.
       if (Hc . ge. 50.0) then
        DS = 1.0
       else
        DS = 0.0
-      endif      
-      
-c     Set distance through volcanic attenuation            
+      endif
+
+c     Set distance through volcanic attenuation
       RVOL = 0.0*Rrup
-      
+
 
 C     Next compute the PGA unprimed for later scaling.
       c11up = 8.57343
@@ -8612,7 +8612,7 @@ C     Next compute the PGA unprimed for later scaling.
       c46up = -0.03255
 
       pgaupab = c11up + (c12up + (c15up - c17up) * c19up)*(M-6.0) +
-     1          c13up * (10.0-M)**3 + 
+     1          c13up * (10.0-M)**3 +
      2          c17up * alog (Rrup + c18up * exp(c19up * M)) +
      3          c20up * Hc + c24up * SI +
      4          c46up * RVOL * (1-DS)
@@ -8620,26 +8620,26 @@ C     Next compute the PGA unprimed for later scaling.
 
       pgaup = pgaupab + c29up*Sc + (c30up*alog(exp(pgaupab)+0.03) + c43up)*Sd
 
-C     Next compute the primed PGA value. 
+C     Next compute the primed PGA value.
 
       pgapab = c11(1) + (c12(1) + (c15(1) - c17(1)) * c19(1))*(M-6.0) +
-     1          c13(1) * (10.0-M)**3 + 
+     1          c13(1) * (10.0-M)**3 +
      2          c17(1) * alog (Rrup + c18(1) * exp(c19(1) * M)) +
      3          c20(1) * Hc + c24(1) * SI +
      4          c46(1) * RVOL * (1-DS)
 
       pgap = pgapab + c29(1)*Sc + (c30(1)*alog(exp(pgapab)+0.03) + c43(1))*Sd
 
-C     Now compute the ground motion for the given spectral period. 
+C     Now compute the ground motion for the given spectral period.
 
       lnYab = c11T + (c12T + (c15T - c17T) * c19T)*(M-6.0) +
-     1          c13T * (10.0-M)**3 + 
+     1          c13T * (10.0-M)**3 +
      2          c17T * alog (Rrup + c18T * exp(c19T * M)) +
      3          c20T * Hc + c24T * SI +
      4          c46T * RVOL * (1-DS)
 
       lnY = lnYab + c29T*Sc + (c30T*alog(exp(pgap)+0.03) + c43T)*Sd
-      
+
 C     Now make dataset adjustment.
 
       lnY = lnY + (pgaup - pgap)
@@ -8649,7 +8649,7 @@ C Compute the sigma term
          sig = sigmaM6T - sigslopeT
       elseif (M .gt. 7.0) then
          sig = sigmaM6T + sigslopeT
-      else 
+      else
          sig = sigmaM6T + sigslopeT*(M-6.0)
       endif
 
@@ -8660,7 +8660,7 @@ C     Convert ground motion to units of gals.
       period2 = period1
 
       return
-      end 
+      end
 
 c----------------------------------------------------------------------
       Subroutine Bindi_Hor_2009 ( m, jbDist, specT,
@@ -19963,7 +19963,7 @@ C Convert the Log Periods back to period.
 
 C This subroutine will perform the Log-linear interpolation
 C of the given input values. This routine is used to interpolate
-C the regression cofficients of the attenuation models for 
+C the regression cofficients of the attenuation models for
 C spectral periods other than those defined in the model.
 
        implicit none
@@ -19972,7 +19972,7 @@ C spectral periods other than those defined in the model.
        real x1, x2, y1, y2, x, y
 
 C Check to see if the interpolation period is at an end point.
-C Return the 'iflag' for output purposes with 
+C Return the 'iflag' for output purposes with
 C             iflag = 0  No interpolation
 C                   = 1  Interpolation need.
 
@@ -19992,7 +19992,7 @@ C Take the Log of the Period values.
        x2 = alog(x2)
        x  = alog(x)
 C Perform the log-linear interpolation.
-       y = y1 + (y2-y1)*((x-x1)/(x2-x1))       
+       y = y1 + (y2-y1)*((x-x1)/(x2-x1))
 
 C Convert the Log Periods back to period.
        x1 = exp(x1)
@@ -40862,18 +40862,18 @@ C.....magnitude-dependent sigma.....
       return
       END
 
-c -------------------------------------------------------------------           
+c -------------------------------------------------------------------
 C **** Zhao et al. 2016 (BSSA, Vol 106, No.4) *************
-c -------------------------------------------------------------------           
+c -------------------------------------------------------------------
 
-      subroutine Zhaoetal2016_int ( m, dist, ftype, lnY, sigma, sclass, specT,              
-     1                   attenName, period1, iflag, sourcetype, depth, phiT, tauT )                                   
+      subroutine Zhaoetal2016_int ( m, dist, ftype, lnY, sigma, sclass, specT,
+     1                   attenName, period1, iflag, sourcetype, depth, phiT, tauT )
 
-c     This  subroutine calculates the spectral acceleration from the 
+c     This  subroutine calculates the spectral acceleration from the
 c     Zhao et al. (2016) attenuation model which is defined for subduction
 c     interface events. Four separate site classes are also modeled.
-                                                                         
-      parameter (MAXPER=37)                                                     
+
+      parameter (MAXPER=37)
       real ftype, dist, m, lnY, sigma, specT, sourcetype, sclass, cm, cmax, r
       real period(MAXPER), Amax1(MAXPER), SRC1(MAXPER), Amax2(MAXPER)
       real SRC2(MAXPER), Amax3(MAXPER), SRC3(MAXPER), Amax4(MAXPER), SRC4(MAXPER)
@@ -40885,7 +40885,7 @@ c     interface events. Four separate site classes are also modeled.
       real phiS1(MAXPER), tauS1(MAXPER), sigma1(MAXPER), phiS2(MAXPER), tauS2(MAXPER)
       real sigma2(MAXPER), phiS3(MAXPER), tauS3(MAXPER), sigma3(MAXPER), phiS4(MAXPER)
       real tauS4(MAXPER), sigma4(MAXPER), phi(MAXPER), tau(MAXPER)
-      character*80 attenName                                                    
+      character*80 attenName
       integer nper, count1, count2, iflag, xinto
       real Amax1T, SRC1T, Amax2T, SRC2T, Amax3T, SRC3T, Amax4T, SRC4T
       real AmSCIT, fsr1T, fsr2T, fsr3T, fsr4T
@@ -40897,47 +40897,47 @@ c     interface events. Four separate site classes are also modeled.
       real tauS4T, sigma4T, phiT, tauT
       real mech, rockterm, ANmax, Amax, Sr, Src, fsr, Sreff, Sreffc, Snc, Sf, Smr
       real fm, gmterm, gmLterm, eterm, logAn, Imf
-                                                                                
-      data period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09,                                      
-     1              0.1, 0.12, 0.14, 0.15, 0.16, 0.18, 0.2, 0.25, 0.3, 0.35, 
-     1              0.4, 0.45, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.25, 1.5, 2, 2.5,                                       
-     1              3, 3.5, 4, 4.5, 5 /                     
 
-      data Amax1 / 1.916, 1.919, 1.922, 1.925, 1.921, 1.959, 2.013, 2.049, 2.046,                                      
-     1             2.066, 2.1, 2.143, 2.122, 2.092, 2.053, 1.923, 1.793, 1.793,                                       
-     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793,                                       
-     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793/ 
+      data period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09,
+     1              0.1, 0.12, 0.14, 0.15, 0.16, 0.18, 0.2, 0.25, 0.3, 0.35,
+     1              0.4, 0.45, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.25, 1.5, 2, 2.5,
+     1              3, 3.5, 4, 4.5, 5 /
+
+      data Amax1 / 1.916, 1.919, 1.922, 1.925, 1.921, 1.959, 2.013, 2.049, 2.046,
+     1             2.066, 2.1, 2.143, 2.122, 2.092, 2.053, 1.923, 1.793, 1.793,
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793,
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793/
       data  SRC1 /8.42900,8.09039,6.99211,6.34965,
      &   4.88339,5.04257,6.27132,7.66694,9.03436,11.25066,14.81739,
      &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
      &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
      &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
-     &  14.81739,14.81739,14.81739,14.81739,14.81739/ 
-      data Amax2 / 2.033, 2.027, 2.003, 1.989, 2.012, 2.017, 2.064, 2.103, 2.195,                                       
-     1             2.219, 2.263, 2.329, 2.188, 2.214, 2.245, 2.324, 2.405, 2.554,                                       
-     1             2.586, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
-     1             2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
-     1             2.718/ 
+     &  14.81739,14.81739,14.81739,14.81739,14.81739/
+      data Amax2 / 2.033, 2.027, 2.003, 1.989, 2.012, 2.017, 2.064, 2.103, 2.195,
+     1             2.219, 2.263, 2.329, 2.188, 2.214, 2.245, 2.324, 2.405, 2.554,
+     1             2.586, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,
+     1             2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,
+     1             2.718/
       data  SRC2 /1.91368,1.88256,1.77861,1.71781,
      &  2.05234,2.38713,2.83399,3.29447,3.99091,4.46576,5.04561,5.89960,
      &  5.05353,5.20490,5.38694,5.87165,6.57391,8.50000,10.67030,
      & 10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,
      & 10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,
      & 10.67030,10.67030,10.67030,10.67030/
-      data Amax3 / 1.905, 1.908, 1.894, 1.886, 1.833, 1.854, 1.893, 1.924, 1.974,                                       
-     1             2.032, 2.052, 2.066, 2.107, 2.14, 2.156, 2.132, 2.05, 1.925,                                       
-     1             2.006, 2.179, 2.288, 2.402, 2.522, 2.648, 2.78, 2.919, 3.065,                                       
-     1             3.217, 3.378, 3.547, 3.724, 3.909, 4.104, 4.309, 4.524, 4.75,                                       
-     1             4.987/ 
+      data Amax3 / 1.905, 1.908, 1.894, 1.886, 1.833, 1.854, 1.893, 1.924, 1.974,
+     1             2.032, 2.052, 2.066, 2.107, 2.14, 2.156, 2.132, 2.05, 1.925,
+     1             2.006, 2.179, 2.288, 2.402, 2.522, 2.648, 2.78, 2.919, 3.065,
+     1             3.217, 3.378, 3.547, 3.724, 3.909, 4.104, 4.309, 4.524, 4.75,
+     1             4.987/
       data  SRC3 /1.11714,1.11444,1.12437,1.13017,
      &  1.15080,1.23971,1.34819,1.45181,1.58315,1.73292,1.84134,2.03029,
      %  2.28133,2.44413,2.58017,2.74161,2.82587,2.71893,2.41759,2.30375,
      &  2.23625,2.21678,2.24338,2.80535,6.65839,30.0,30.0,30.0,30.0,
      &  30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0/
-      data Amax4 / 1.498, 1.498, 1.474, 1.46, 1.374, 1.363, 1.384, 1.425, 1.481,                                       
-     1             1.525, 1.549, 1.603, 1.67, 1.706, 1.734, 1.773, 1.816, 1.843,                                       
-     1             1.871, 1.878, 1.911, 1.899, 1.927, 1.987, 2.025, 2.043, 2.022,                                       
-     1             1.97, 1.843, 1.729, 1.583, 1.504, 1.439, 1.391, 1.362, 1.34, 1.729/ 
+      data Amax4 / 1.498, 1.498, 1.474, 1.46, 1.374, 1.363, 1.384, 1.425, 1.481,
+     1             1.525, 1.549, 1.603, 1.67, 1.706, 1.734, 1.773, 1.816, 1.843,
+     1             1.871, 1.878, 1.911, 1.899, 1.927, 1.987, 2.025, 2.043, 2.022,
+     1             1.97, 1.843, 1.729, 1.583, 1.504, 1.439, 1.391, 1.362, 1.34, 1.729/
       data  SRC4 /0.83644,0.83644,0.83000,0.82624,
      &  0.76758,0.78632,0.83775,0.92616,1.02228,1.11802,1.16578,1.28551,
      &  1.39808,1.44327,1.47177,1.54694,1.64401,1.79013,1.82345,1.79037,
@@ -41031,10 +41031,10 @@ c     interface events. Four separate site classes are also modeled.
      & -11.54596,-12.28722,-12.93630,-13.51000,-14.69034,-15.60298,
      & -16.90010,-17.73658,-18.27135,-18.59264,-18.75474,-18.79351,
      & -18.73393/
-      data AmSCI  / 1.358, 1.247, 1.149, 1.097, 1.065, 1.037, 1.038, 1.05, 1.103,  
-     1              1.191, 1.278, 1.401, 1.525, 1.578, 1.626, 1.706, 1.768, 1.868,  
-     1              1.917, 1.939, 1.944, 1.944, 1.943, 1.927, 1.912, 1.893, 1.874,  
-     1              1.853, 1.799, 1.74, 1.619, 1.508, 1.416, 1.347, 1.303, 1.285, 1.267 / 
+      data AmSCI  / 1.358, 1.247, 1.149, 1.097, 1.065, 1.037, 1.038, 1.05, 1.103,
+     1              1.191, 1.278, 1.401, 1.525, 1.578, 1.626, 1.706, 1.768, 1.868,
+     1              1.917, 1.939, 1.944, 1.944, 1.943, 1.927, 1.912, 1.893, 1.874,
+     1              1.853, 1.799, 1.74, 1.619, 1.508, 1.416, 1.347, 1.303, 1.285, 1.267 /
       data S2    /0.31288,0.30850,0.29297,0.22869,0.16316,
      &  0.12129,0.12345,0.13970,0.16385,0.20501,0.24449,0.32284,0.40120,
      &  0.43622,0.46736,0.51201,0.53926,0.58602,0.60465,0.60640,0.60277,
@@ -41068,66 +41068,66 @@ c     interface events. Four separate site classes are also modeled.
      &  0.23258,0.26248,0.31974,0.37313,0.48765,0.57779,0.64821,0.71323,
      &  0.75082,0.79378,0.84953,0.87979,0.89539,0.90256,0.90528,0.91793,
      &  0.92130,0.91709,0.90551,0.88668,0.85880,0.82025,0.76990,0.70705/
-      data phiS1    / 0.388, 0.388, 0.386, 0.383, 0.386, 0.386, 0.386, 0.389, 0.397,  
-     1              0.402, 0.406, 0.411, 0.413, 0.414, 0.416, 0.423, 0.426, 0.424,  
-     1              0.422, 0.413, 0.413, 0.419, 0.409, 0.395, 0.395, 0.392, 0.395,  
-     1              0.402, 0.408, 0.409, 0.415, 0.406, 0.397, 0.388, 0.39, 0.384,  
-     1              0.394 / 
-      data tauS1    / 0.419, 0.42, 0.425, 0.444, 0.474, 0.486, 0.5, 0.531, 0.553,  
-     1              0.559, 0.562, 0.564, 0.556, 0.552, 0.548, 0.534, 0.528, 0.493,  
-     1              0.471, 0.474, 0.449, 0.423, 0.415, 0.419, 0.429, 0.427, 0.433,  
-     1              0.453, 0.457, 0.464, 0.464, 0.441, 0.412, 0.394, 0.376, 0.363,  
-     1              0.346 / 
-      data sigma1   / 0.571, 0.571, 0.574, 0.586, 0.611, 0.62, 0.632, 0.658, 0.681,  
-     1              0.688, 0.693, 0.697, 0.692, 0.69, 0.688, 0.681, 0.679, 0.65,  
-     1              0.632, 0.629, 0.61, 0.595, 0.583, 0.576, 0.583, 0.58, 0.586,  
-     1              0.606, 0.613, 0.619, 0.623, 0.599, 0.572, 0.553, 0.541, 0.528,  
-     1              0.525 / 
-      data phiS2    / 0.421, 0.421, 0.42, 0.42, 0.42, 0.419, 0.419, 0.42, 0.424,  
-     1              0.425, 0.424, 0.424, 0.439, 0.44, 0.446, 0.454, 0.469, 0.468,  
-     1              0.473, 0.481, 0.47, 0.464, 0.457, 0.45, 0.442, 0.444, 0.434,  
-     1              0.428, 0.425, 0.441, 0.437, 0.438, 0.44, 0.435, 0.442, 0.441,  
-     1              0.461 / 
-      data tauS2    / 0.424, 0.424, 0.425, 0.422, 0.434, 0.44, 0.449, 0.466, 0.489,  
-     1              0.521, 0.54, 0.537, 0.56, 0.574, 0.573, 0.557, 0.532, 0.551,  
-     1              0.509, 0.485, 0.496, 0.495, 0.473, 0.45, 0.454, 0.448, 0.446,  
-     1              0.445, 0.457, 0.448, 0.458, 0.443, 0.441, 0.424, 0.409, 0.393,  
-     1              0.408 / 
-      data sigma2   / 0.597, 0.598, 0.598, 0.595, 0.604, 0.608, 0.614, 0.628, 0.647,  
-     1              0.672, 0.687, 0.684, 0.712, 0.724, 0.726, 0.719, 0.71, 0.723,  
-     1              0.695, 0.683, 0.683, 0.679, 0.658, 0.636, 0.634, 0.631, 0.622,  
-     1              0.617, 0.624, 0.628, 0.633, 0.623, 0.623, 0.608, 0.603, 0.591,  
-     1              0.615 / 
-      data phiS3    / 0.393, 0.393, 0.394, 0.397, 0.394, 0.399, 0.398, 0.412, 0.406,  
-     1              0.406, 0.403, 0.415, 0.407, 0.41, 0.404, 0.411, 0.414, 0.41,  
-     1              0.398, 0.4, 0.393, 0.389, 0.383, 0.385, 0.385, 0.393, 0.392,  
-     1              0.394, 0.402, 0.421, 0.412, 0.419, 0.399, 0.403, 0.398, 0.384,  
-     1              0.375 / 
-      data tauS3    / 0.376, 0.377, 0.376, 0.386, 0.393, 0.384, 0.379, 0.377, 0.374,  
-     1              0.381, 0.409, 0.48, 0.44, 0.427, 0.429, 0.436, 0.437, 0.398,  
-     1              0.421, 0.457, 0.463, 0.447, 0.435, 0.434, 0.448, 0.44, 0.445,  
-     1              0.422, 0.428, 0.434, 0.47, 0.446, 0.4, 0.353, 0.365, 0.349,  
-     1              0.293 / 
-      data sigma3   / 0.544, 0.545, 0.544, 0.553, 0.557, 0.554, 0.55, 0.558, 0.552,  
-     1              0.557, 0.574, 0.635, 0.599, 0.592, 0.589, 0.6, 0.602, 0.572,  
-     1              0.579, 0.607, 0.607, 0.593, 0.579, 0.58, 0.591, 0.59, 0.593,  
-     1              0.578, 0.587, 0.604, 0.625, 0.612, 0.565, 0.536, 0.54, 0.519,  
-     1              0.476 / 
-      data phiS4    / 0.458, 0.416, 0.415, 0.415, 0.421, 0.419, 0.42, 0.42, 0.419,  
-     1              0.419, 0.423, 0.426, 0.438, 0.43, 0.437, 0.455, 0.456, 0.452,  
-     1              0.439, 0.432, 0.423, 0.419, 0.42, 0.403, 0.412, 0.417, 0.407,  
-     1              0.406, 0.419, 0.415, 0.409, 0.421, 0.414, 0.407, 0.396, 0.38,  
-     1              0.371 / 
-      data tauS4    / 0.346, 0.348, 0.352, 0.355, 0.362, 0.375, 0.388, 0.41, 0.416,  
-     1              0.435, 0.469, 0.517, 0.507, 0.504, 0.496, 0.488, 0.481, 0.448,  
-     1              0.442, 0.442, 0.435, 0.418, 0.432, 0.442, 0.454, 0.468, 0.485,  
-     1              0.498, 0.507, 0.505, 0.524, 0.529, 0.524, 0.535, 0.542, 0.53,  
-     1              0.514 / 
-      data sigma4   / 0.574, 0.543, 0.544, 0.546, 0.555, 0.562, 0.571, 0.587, 0.591,  
-     1              0.604, 0.632, 0.67, 0.67, 0.663, 0.661, 0.667, 0.663, 0.637,  
-     1              0.623, 0.618, 0.607, 0.592, 0.603, 0.598, 0.613, 0.627, 0.633,  
-     1              0.642, 0.657, 0.653, 0.665, 0.676, 0.668, 0.672, 0.671, 0.652,  
-     1              0.633 / 
+      data phiS1    / 0.388, 0.388, 0.386, 0.383, 0.386, 0.386, 0.386, 0.389, 0.397,
+     1              0.402, 0.406, 0.411, 0.413, 0.414, 0.416, 0.423, 0.426, 0.424,
+     1              0.422, 0.413, 0.413, 0.419, 0.409, 0.395, 0.395, 0.392, 0.395,
+     1              0.402, 0.408, 0.409, 0.415, 0.406, 0.397, 0.388, 0.39, 0.384,
+     1              0.394 /
+      data tauS1    / 0.419, 0.42, 0.425, 0.444, 0.474, 0.486, 0.5, 0.531, 0.553,
+     1              0.559, 0.562, 0.564, 0.556, 0.552, 0.548, 0.534, 0.528, 0.493,
+     1              0.471, 0.474, 0.449, 0.423, 0.415, 0.419, 0.429, 0.427, 0.433,
+     1              0.453, 0.457, 0.464, 0.464, 0.441, 0.412, 0.394, 0.376, 0.363,
+     1              0.346 /
+      data sigma1   / 0.571, 0.571, 0.574, 0.586, 0.611, 0.62, 0.632, 0.658, 0.681,
+     1              0.688, 0.693, 0.697, 0.692, 0.69, 0.688, 0.681, 0.679, 0.65,
+     1              0.632, 0.629, 0.61, 0.595, 0.583, 0.576, 0.583, 0.58, 0.586,
+     1              0.606, 0.613, 0.619, 0.623, 0.599, 0.572, 0.553, 0.541, 0.528,
+     1              0.525 /
+      data phiS2    / 0.421, 0.421, 0.42, 0.42, 0.42, 0.419, 0.419, 0.42, 0.424,
+     1              0.425, 0.424, 0.424, 0.439, 0.44, 0.446, 0.454, 0.469, 0.468,
+     1              0.473, 0.481, 0.47, 0.464, 0.457, 0.45, 0.442, 0.444, 0.434,
+     1              0.428, 0.425, 0.441, 0.437, 0.438, 0.44, 0.435, 0.442, 0.441,
+     1              0.461 /
+      data tauS2    / 0.424, 0.424, 0.425, 0.422, 0.434, 0.44, 0.449, 0.466, 0.489,
+     1              0.521, 0.54, 0.537, 0.56, 0.574, 0.573, 0.557, 0.532, 0.551,
+     1              0.509, 0.485, 0.496, 0.495, 0.473, 0.45, 0.454, 0.448, 0.446,
+     1              0.445, 0.457, 0.448, 0.458, 0.443, 0.441, 0.424, 0.409, 0.393,
+     1              0.408 /
+      data sigma2   / 0.597, 0.598, 0.598, 0.595, 0.604, 0.608, 0.614, 0.628, 0.647,
+     1              0.672, 0.687, 0.684, 0.712, 0.724, 0.726, 0.719, 0.71, 0.723,
+     1              0.695, 0.683, 0.683, 0.679, 0.658, 0.636, 0.634, 0.631, 0.622,
+     1              0.617, 0.624, 0.628, 0.633, 0.623, 0.623, 0.608, 0.603, 0.591,
+     1              0.615 /
+      data phiS3    / 0.393, 0.393, 0.394, 0.397, 0.394, 0.399, 0.398, 0.412, 0.406,
+     1              0.406, 0.403, 0.415, 0.407, 0.41, 0.404, 0.411, 0.414, 0.41,
+     1              0.398, 0.4, 0.393, 0.389, 0.383, 0.385, 0.385, 0.393, 0.392,
+     1              0.394, 0.402, 0.421, 0.412, 0.419, 0.399, 0.403, 0.398, 0.384,
+     1              0.375 /
+      data tauS3    / 0.376, 0.377, 0.376, 0.386, 0.393, 0.384, 0.379, 0.377, 0.374,
+     1              0.381, 0.409, 0.48, 0.44, 0.427, 0.429, 0.436, 0.437, 0.398,
+     1              0.421, 0.457, 0.463, 0.447, 0.435, 0.434, 0.448, 0.44, 0.445,
+     1              0.422, 0.428, 0.434, 0.47, 0.446, 0.4, 0.353, 0.365, 0.349,
+     1              0.293 /
+      data sigma3   / 0.544, 0.545, 0.544, 0.553, 0.557, 0.554, 0.55, 0.558, 0.552,
+     1              0.557, 0.574, 0.635, 0.599, 0.592, 0.589, 0.6, 0.602, 0.572,
+     1              0.579, 0.607, 0.607, 0.593, 0.579, 0.58, 0.591, 0.59, 0.593,
+     1              0.578, 0.587, 0.604, 0.625, 0.612, 0.565, 0.536, 0.54, 0.519,
+     1              0.476 /
+      data phiS4    / 0.458, 0.416, 0.415, 0.415, 0.421, 0.419, 0.42, 0.42, 0.419,
+     1              0.419, 0.423, 0.426, 0.438, 0.43, 0.437, 0.455, 0.456, 0.452,
+     1              0.439, 0.432, 0.423, 0.419, 0.42, 0.403, 0.412, 0.417, 0.407,
+     1              0.406, 0.419, 0.415, 0.409, 0.421, 0.414, 0.407, 0.396, 0.38,
+     1              0.371 /
+      data tauS4    / 0.346, 0.348, 0.352, 0.355, 0.362, 0.375, 0.388, 0.41, 0.416,
+     1              0.435, 0.469, 0.517, 0.507, 0.504, 0.496, 0.488, 0.481, 0.448,
+     1              0.442, 0.442, 0.435, 0.418, 0.432, 0.442, 0.454, 0.468, 0.485,
+     1              0.498, 0.507, 0.505, 0.524, 0.529, 0.524, 0.535, 0.542, 0.53,
+     1              0.514 /
+      data sigma4   / 0.574, 0.543, 0.544, 0.546, 0.555, 0.562, 0.571, 0.587, 0.591,
+     1              0.604, 0.632, 0.67, 0.67, 0.663, 0.661, 0.667, 0.663, 0.637,
+     1              0.623, 0.618, 0.607, 0.592, 0.603, 0.598, 0.613, 0.627, 0.633,
+     1              0.642, 0.657, 0.653, 0.665, 0.676, 0.668, 0.672, 0.671, 0.652,
+     1              0.633 /
       data phi /0.553,0.554,0.553,0.555,0.565,0.570,0.583,
      &    0.602,0.614,0.625,0.637,0.646,0.654,0.659,0.663,0.672,0.678,
      &    0.659,0.640,0.634,0.627,0.620,0.612,0.613,0.625,0.628,0.628,
@@ -41137,8 +41137,8 @@ c     interface events. Four separate site classes are also modeled.
      &    0.778,0.753,0.729,0.729,0.720,0.719,0.712,0.720,0.739,0.743,
      &    0.743,0.750,0.753,0.754,0.741,0.734,0.712,0.692,0.682,0.667,
      &    0.675/
- 	 
-c Set attenuation name                                                            
+
+c Set attenuation name
 c     Sourcetype = 0 Crustal
 c     Sourcetype = 1 Subduction - Interface
 c     Sourcetype = 2 Subduction - Slab
@@ -41149,58 +41149,58 @@ c     Sclass = 2 SC II
 c     Sclass = 3 SC III
 c     Sclass = 4 SC IV
 
-                                                                 
+
 C Find the requested spectral period and corresponding coefficients
       nper = 37
 
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
        period1 = period(1)
-       Amax1T =  Amax1(1) 
-       SRC1T =   SRC1(1)  
-       Amax2T =  Amax2(1) 
-       SRC2T =   SRC2(1)  
-       Amax3T =  Amax3(1) 
-       SRC3T =   SRC3(1)  
-       Amax4T =  Amax4(1) 
-       SRC4T =   SRC4(1)  
-       AmSCIT =  AmSCI(1) 
+       Amax1T =  Amax1(1)
+       SRC1T =   SRC1(1)
+       Amax2T =  Amax2(1)
+       SRC2T =   SRC2(1)
+       Amax3T =  Amax3(1)
+       SRC3T =   SRC3(1)
+       Amax4T =  Amax4(1)
+       SRC4T =   SRC4(1)
+       AmSCIT =  AmSCI(1)
        fsr1T = fsr1(1)
        fsr2T = fsr2(1)
        fsr3T = fsr3(1)
        fsr4T = fsr4(1)
-       c1T =     c1(1)    
-       c2T =     c2(1)    
-       CintST =    CintS(1)   
-       CintDT =    CintD(1)   
-       dintT =    dint(1)   
-       bintT =    bint(1)   
-       gintT =    gint(1)   
-       gintLST =   gintLS(1)  
-       gintLDT =   gintLD(1)  
-       eintST =    eintS(1)   
-       gammaT =  gamma(1) 
-       gammaST =  gammaS(1) 
-       S2T =     S2(1)    
-       S3T =     S3(1)    
-       S4T =     S4(1)    
-       S5T =     S5(1)    
-       S6T =     S6(1)    
-       S7T =     S7(1)    
-       phiS1T =  phiS1(1) 
-       tauS1T =  tauS1(1) 
+       c1T =     c1(1)
+       c2T =     c2(1)
+       CintST =    CintS(1)
+       CintDT =    CintD(1)
+       dintT =    dint(1)
+       bintT =    bint(1)
+       gintT =    gint(1)
+       gintLST =   gintLS(1)
+       gintLDT =   gintLD(1)
+       eintST =    eintS(1)
+       gammaT =  gamma(1)
+       gammaST =  gammaS(1)
+       S2T =     S2(1)
+       S3T =     S3(1)
+       S4T =     S4(1)
+       S5T =     S5(1)
+       S6T =     S6(1)
+       S7T =     S7(1)
+       phiS1T =  phiS1(1)
+       tauS1T =  tauS1(1)
        sigma1T = sigma1(1)
-       phiS2T =  phiS2(1) 
-       tauS2T =  tauS2(1) 
+       phiS2T =  phiS2(1)
+       tauS2T =  tauS2(1)
        sigma2T = sigma2(1)
-       phiS3T =  phiS3(1) 
-       tauS3T =  tauS3(1) 
+       phiS3T =  phiS3(1)
+       tauS3T =  tauS3(1)
        sigma3T = sigma3(1)
-       phiS4T =  phiS4(1) 
-       tauS4T =  tauS4(1) 
-       sigma4T = sigma4(1)            
-       phiT =  phi(1) 
-       tauT =  tau(1) 
+       phiS4T =  phiS4(1)
+       tauS4T =  tauS4(1)
+       sigma4T = sigma4(1)
+       phiT =  phi(1)
+       tauT =  tau(1)
        goto 1011
       elseif (specT .ne. 0.0) then
 
@@ -41209,12 +41209,12 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1010 
+               goto 1010
             endif
          enddo
       endif
-        
-C      write (*,*) 
+
+C      write (*,*)
 C      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
 C      write (*,*) 'is not defined for a spectral period of: '
 C      write (*,*)') ' Period = ',specT
@@ -41222,7 +41222,7 @@ C      write (*,*) 'This spectral period is outside the defined'
 C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
-C      write (*,*) 
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -41256,23 +41256,23 @@ C Interpolate the coefficients for the requested spectral period.
      +                specT,c1T,iflag)
          call interp (period(count1),period(count2),c2(count1),c2(count2),
      +                specT,c2T,iflag)
-         call interp (period(count1),period(count2),CintS(count1),CintS(count2), 
+         call interp (period(count1),period(count2),CintS(count1),CintS(count2),
      +                specT,CintST,iflag)
-         call interp (period(count1),period(count2),CintD(count1),CintD(count2), 
+         call interp (period(count1),period(count2),CintD(count1),CintD(count2),
      +                specT,CintDT,iflag)
-         call interp (period(count1),period(count2),dint(count1),dint(count2), 
+         call interp (period(count1),period(count2),dint(count1),dint(count2),
      +                specT,dintT,iflag)
-         call interp (period(count1),period(count2),bint(count1),bint(count2), 
+         call interp (period(count1),period(count2),bint(count1),bint(count2),
      +                specT,bintT,iflag)
-         call interp (period(count1),period(count2),gint(count1),gint(count2), 
+         call interp (period(count1),period(count2),gint(count1),gint(count2),
      +                specT,gintT,iflag)
-         call interp (period(count1),period(count2),gintLS(count1),gintLS(count2), 
+         call interp (period(count1),period(count2),gintLS(count1),gintLS(count2),
      +                specT,gintLST,iflag)
-         call interp (period(count1),period(count2),gintLD(count1),gintLD(count2), 
+         call interp (period(count1),period(count2),gintLD(count1),gintLD(count2),
      +                specT,gintLDT,iflag)
-         call interp (period(count1),period(count2),eintS(count1),eintS(count2), 
+         call interp (period(count1),period(count2),eintS(count1),eintS(count2),
      +                specT,eintST,iflag)
-         call interp (period(count1),period(count2),gammaS(count1),gammaS(count2), 
+         call interp (period(count1),period(count2),gammaS(count1),gammaS(count2),
      +                specT,gammaST,iflag)
          call interp (period(count1),period(count2),gamma(count1),gamma(count2),
      +                specT,gammaT,iflag)
@@ -41282,11 +41282,11 @@ C Interpolate the coefficients for the requested spectral period.
      +                specT,S3T,iflag)
          call interp (period(count1),period(count2),S4(count1),S4(count2),
      +                specT,S4T,iflag)
-         call interp (period(count1),period(count2),S5(count1),S5(count2), 
+         call interp (period(count1),period(count2),S5(count1),S5(count2),
      +                specT,S5T,iflag)
-         call interp (period(count1),period(count2),S6(count1),S6(count2), 
+         call interp (period(count1),period(count2),S6(count1),S6(count2),
      +                specT,S6T,iflag)
-         call interp (period(count1),period(count2),S7(count1),S7(count2), 
+         call interp (period(count1),period(count2),S7(count1),S7(count2),
      +                specT,S7T,iflag)
          call interp (period(count1),period(count2),phiS1(count1),phiS1(count2),
      +                specT,phiS1T,iflag)
@@ -41311,7 +41311,7 @@ C Interpolate the coefficients for the requested spectral period.
          call interp (period(count1),period(count2),tauS4(count1),tauS4(count2),
      +                specT,tauS4T,iflag)
          call interp (period(count1),period(count2),sigma4(count1),sigma4(count2),
-     +                specT,sigma4T,iflag)                                                  
+     +                specT,sigma4T,iflag)
          call interp (period(count1),period(count2),tau(count1),tau(count2),
      +                specT,tauT,iflag)
          call interp (period(count1),period(count2),phi(count1),phi(count2),
@@ -41320,7 +41320,7 @@ C Interpolate the coefficients for the requested spectral period.
  1011 period1 = specT
 
 
-C     Set mechanism term and source and near fault term.                
+C     Set mechanism term and source and near fault term.
       if (depth .le. 25 ) then
 
          if (m .le. 7.1) then
@@ -41328,18 +41328,18 @@ C     Set mechanism term and source and near fault term.
          else
          	 fm = bintT*depth + gammaST + CintST*7.1 + dintT*(m-7.1)
          endif
-         
+
       else
          if (m .le. 7.1) then
          	 fm = bintT*depth + CintDT*m
          else
          	 fm = bintT*depth + CintDT*7.1 + dintT*(m-7.1)
          endif
-          
+
       endif
-	  
+
 C    Set distance for geometric spreading term r
-	  
+
       xinto=10
       Cmax = 7.1
       if (m .le. Cmax) then
@@ -41347,60 +41347,60 @@ C    Set distance for geometric spreading term r
       else
        Cm = Cmax
       endif
-      
-      r = xinto + dist + exp(c1T + c2T*Cm)  
-	  
-C    Set geometric attenuation rate term 
+
+      r = xinto + dist + exp(c1T + c2T*Cm)
+
+C    Set geometric attenuation rate term
 	    gmterm = gintT*alog(r)
 
-C    Set large distance geometric attenuation rate term 
+C    Set large distance geometric attenuation rate term
       if (depth .le. 25 ) then
 
 	      gmLterm = gintLST*alog(dist+200)
 
       else
-      	
+
 	      gmLterm = gintLDT*alog(dist+200)
-          
+
       endif
-	  
+
 C    Set anelastic attenuation rate term
 C    Ignore volcanic path term
       if (depth .le. 25  ) then
 	      eterm = eintST*dist
-	  
+
       else
 	      eterm = 0
-	  
-      endif	  
-	  
-C    Set Site class term 
-	  
+
+      endif
+
+C    Set Site class term
+
       if (depth .le. 25 ) then
 
          if (sclass .eq. 1) then
             Amax = Amax1T
             Src = Src1T
 			      fsr = fsr1T
-            Imf = 0.91		 
-            ANmax = AmSCIT 
-         elseif (sclass .eq. 2) then           
-            Amax = Amax2T	  
-            Src = Src2T		 
+            Imf = 0.91
+            ANmax = AmSCIT
+         elseif (sclass .eq. 2) then
+            Amax = Amax2T
+            Src = Src2T
 			      fsr = fsr2T
-            Imf = 1.023		 
+            Imf = 1.023
             ANmax = AmSCIT * exp(S2T)
-         elseif (sclass .eq. 3) then           
-            Amax = Amax3T	  
-            Src = Src3T		 
+         elseif (sclass .eq. 3) then
+            Amax = Amax3T
+            Src = Src3T
 			      fsr = fsr3T
-            Imf = 1.034	 
+            Imf = 1.034
             ANmax = AmSCIT * exp(S3T)
-         elseif (sclass .eq. 4) then           
-            Amax = Amax4T	  
-            Src = Src4T		 
+         elseif (sclass .eq. 4) then
+            Amax = Amax4T
+            Src = Src4T
 			      fsr = fsr4T
-            Imf = 0.737	 
+            Imf = 0.737
             ANmax = AmSCIT * exp(S4T)
          endif
       else
@@ -41408,33 +41408,33 @@ C    Set Site class term
             Amax = Amax1T
             Src = Src1T
 			      fsr = fsr1T
-            Imf = 0.91		 
-            ANmax = AmSCIT 
-         elseif (sclass .eq. 2) then           
-            Amax = Amax2T	  
-            Src = Src2T		 
+            Imf = 0.91
+            ANmax = AmSCIT
+         elseif (sclass .eq. 2) then
+            Amax = Amax2T
+            Src = Src2T
 			      fsr = fsr2T
-            Imf = 1.023		 
+            Imf = 1.023
             ANmax = AmSCIT * exp(S5T)
-         elseif (sclass .eq. 3) then           
-            Amax = Amax3T	  
-            Src = Src3T		 
+         elseif (sclass .eq. 3) then
+            Amax = Amax3T
+            Src = Src3T
 			      fsr = fsr3T
-            Imf = 1.034	 
+            Imf = 1.034
             ANmax = AmSCIT * exp(S6T)
-         elseif (sclass .eq. 4) then           
-            Amax = Amax4T	  
-            Src = Src4T		 
+         elseif (sclass .eq. 4) then
+            Amax = Amax4T
+            Src = Src4T
 			      fsr = fsr4T
-            Imf = 0.737	 
+            Imf = 0.737
             ANmax = AmSCIT * exp(S7T)
          endif
-	  
-      endif	  
-	  
+
+      endif
+
       rockterm = fm + gmterm + gmLterm + eterm + gammaT - alog(AmSCIT)
-      Sr = exp(rockterm) 
-       
+      Sr = exp(rockterm)
+
 	    Sreff = Sr *Imf
 	    Sreffc = Src *Imf
       Sf = ANmax/Amax
@@ -41448,25 +41448,25 @@ C    Set Site class term
         else
   	      Snc = (exp((alog(ANmax)*alog(Sreffc**2+0.6)-alog(Sf)* alog(0.6))/(alog(Amax)))-0.6)**(0.5)
         endif
-	    	     
+
 	    Smr = Sreff * (Snc/Sreffc) * fsr
 
         if (Smr .ne. 0.0) then
-  
+
 	        logAn = alog(ANmax)-alog(Amax)*((alog(Smr**2+0.6)-alog(0.6))/(alog(Sreffc**2+0.6)-alog(0.6)))
         else
-          logAn = alog(ANmax)  
+          logAn = alog(ANmax)
         end if
 
 
       if (sclass .eq. 0) then
-         lnY =  rockterm 
-       else   
-	       lnY =  rockterm + logAn                                        
-      endif                                       
+         lnY =  rockterm
+       else
+	       lnY =  rockterm + logAn
+      endif
 
 C      write(*,*) "--------------------------------- "
-C      write(*,*) "dist = ", dist     
+C      write(*,*) "dist = ", dist
 C      write(*,*) "sclass = ", sclass
 
 C      write(*,*) "Sr = ", Sr
@@ -41484,8 +41484,8 @@ C     Convert ground motion to units of gals.
       lnY = lnY + 6.89
 
 C      write(*,*) "Y(gal) = ", exp(lnY)
-                                                                               
-c     Set standard error                                                       
+
+c     Set standard error
 c      if (sclass .eq. 1) then
 c         phi = phiS1T
 c         sigma = sigma1T
@@ -41505,32 +41505,32 @@ c         tau = tauS4T
 c      endif
        sigma = SQRT(phiT**2 + tauT**2)
 
-      return                                                                    
-      end       
-          
-c -------------------------------------------------------------------           
+      return
+      end
+
+c -------------------------------------------------------------------
 C **** Zhao et al. 2016 (BSSA, Vol 106, No.4) *************
-c -------------------------------------------------------------------           
+c -------------------------------------------------------------------
 
-      subroutine Zhaoetal2016_slab ( m, dist, ftype, lnY, sigma, sclass, specT,              
-     1                   attenName, period1, iflag, sourcetype, depth, phiT, tauT )                                   
+      subroutine Zhaoetal2016_slab ( m, dist, ftype, lnY, sigma, sclass, specT,
+     1                   attenName, period1, iflag, sourcetype, depth, phiT, tauT )
 
-c     This  subroutine calculates the spectral acceleration from the 
+c     This  subroutine calculates the spectral acceleration from the
 c     Zhao et al. (2016) attenuation model which is defined for subduction
 c     intraslab events. Four separate site classes are also modeled.
-                                                                         
-      parameter (MAXPER=37)                                                     
+
+      parameter (MAXPER=37)
       real ftype, dist, m, lnY, sigma, specT, sourcetype, sclass, cm, cmax, r
       real period(MAXPER), Amax1(MAXPER), SRC1(MAXPER), Amax2(MAXPER)
       real SRC2(MAXPER), Amax3(MAXPER), SRC3(MAXPER), Amax4(MAXPER), SRC4(MAXPER)
       real AmSCI(MAXPER), fsr1(MAXPER), fsr2(MAXPER), fsr3(MAXPER), fsr4(MAXPER)
       real gamma(MAXPER), c1(MAXPER), cSL1(MAXPER), cSL2(MAXPER), dSL(MAXPER)
-      real bSL(MAXPER), gSL(MAXPER), gSLL(MAXPER), eSL(MAXPER), eSLH(MAXPER)       
+      real bSL(MAXPER), gSL(MAXPER), gSLL(MAXPER), eSL(MAXPER), eSLH(MAXPER)
       real S2(MAXPER), S3(MAXPER), S4(MAXPER)
       real phiS1(MAXPER), tauS1(MAXPER), sigma1(MAXPER), phiS2(MAXPER), tauS2(MAXPER)
       real sigma2(MAXPER), phiS3(MAXPER), tauS3(MAXPER), sigma3(MAXPER), phiS4(MAXPER)
       real tauS4(MAXPER), sigma4(MAXPER), phi(MAXPER), tau(MAXPER)
-      character*80 attenName                                                    
+      character*80 attenName
       integer nper, count1, count2, iflag, xinto
       real Amax1T, SRC1T, Amax2T, SRC2T, Amax3T, SRC3T, Amax4T, SRC4T
       real AmSCIT, fsr1T, fsr2T, fsr3T, fsr4T
@@ -41541,16 +41541,16 @@ c     intraslab events. Four separate site classes are also modeled.
       real tauS4T, sigma4T, phiT, tauT
       real mech, rockterm, ANmax, Amax, Sr, Src, fsr, Sreff, Sreffc, Snc, Sf, Smr
       real fm, gmterm, gmLterm, eterm, logAn, Imf, c2, qterm, qSLH
-                                                                                
-      data period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09,                                      
-     1              0.1, 0.12, 0.14, 0.15, 0.16, 0.18, 0.2, 0.25, 0.3, 0.35, 
-     1              0.4, 0.45, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.25, 1.5, 2, 2.5,                                       
-     1              3, 3.5, 4, 4.5, 5 /                     
 
-      data Amax1 / 1.916, 1.919, 1.922, 1.925, 1.921, 1.959, 2.013, 2.049, 2.046,                                      
-     1             2.066, 2.1, 2.143, 2.122, 2.092, 2.053, 1.923, 1.793, 1.793,                                       
-     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793,                                       
-     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793/ 
+      data period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09,
+     1              0.1, 0.12, 0.14, 0.15, 0.16, 0.18, 0.2, 0.25, 0.3, 0.35,
+     1              0.4, 0.45, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.25, 1.5, 2, 2.5,
+     1              3, 3.5, 4, 4.5, 5 /
+
+      data Amax1 / 1.916, 1.919, 1.922, 1.925, 1.921, 1.959, 2.013, 2.049, 2.046,
+     1             2.066, 2.1, 2.143, 2.122, 2.092, 2.053, 1.923, 1.793, 1.793,
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793,
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793/
       data  SRC1 /8.42900,8.09039,6.99211,6.34965,
      &   4.88339,5.04257,6.27132,7.66694,9.03436,11.25066,14.81739,
      &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
@@ -41558,31 +41558,31 @@ c     intraslab events. Four separate site classes are also modeled.
      &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
      &  14.81739,14.81739,14.81739,14.81739,14.81739,14.81739,
      &  14.81739,14.81739/
-      data Amax2 / 2.033, 2.027, 2.003, 1.989, 2.012, 2.017, 2.064, 2.103, 2.195,                                       
-     1             2.219, 2.263, 2.329, 2.188, 2.214, 2.245, 2.324, 2.405, 2.554,                                       
-     1             2.586, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
-     1             2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
-     1             2.718/ 
+      data Amax2 / 2.033, 2.027, 2.003, 1.989, 2.012, 2.017, 2.064, 2.103, 2.195,
+     1             2.219, 2.263, 2.329, 2.188, 2.214, 2.245, 2.324, 2.405, 2.554,
+     1             2.586, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,
+     1             2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,
+     1             2.718/
       data  SRC2 /1.91368,1.88256,1.77861,1.71781,
      &   2.05234,2.38713,2.83399,3.29447,3.99091,4.46576,5.04561,
      &   5.89960,5.05353,5.20490,5.38694,5.87165,6.57391,8.50000,
      &  10.6703,10.6703,10.6703,10.6703,10.6703,10.6703,10.6703,
      &  10.6703,10.6703,10.6703,10.6703,10.6703,10.6703,10.6703,
      &  10.6703,10.6703,10.6703,10.6703,10.6703/
-      data Amax3 / 1.905, 1.908, 1.894, 1.886, 1.833, 1.854, 1.893, 1.924, 1.974,                                       
-     1             2.032, 2.052, 2.066, 2.107, 2.14, 2.156, 2.132, 2.05, 1.925,                                       
-     1             2.006, 2.179, 2.288, 2.402, 2.522, 2.648, 2.78, 2.919, 3.065,                                       
-     1             3.217, 3.378, 3.547, 3.724, 3.909, 4.104, 4.309, 4.524, 4.75,                                       
-     1             4.987/ 
+      data Amax3 / 1.905, 1.908, 1.894, 1.886, 1.833, 1.854, 1.893, 1.924, 1.974,
+     1             2.032, 2.052, 2.066, 2.107, 2.14, 2.156, 2.132, 2.05, 1.925,
+     1             2.006, 2.179, 2.288, 2.402, 2.522, 2.648, 2.78, 2.919, 3.065,
+     1             3.217, 3.378, 3.547, 3.724, 3.909, 4.104, 4.309, 4.524, 4.75,
+     1             4.987/
       data  SRC3 /1.11714,1.11444,1.12437,1.13017,
      &   1.15080,1.23971,1.34819,1.45181,1.58315,1.73292,1.84134,
      &   2.03029,2.28133,2.44413,2.58017,2.74161,2.82587,2.71893,
      &   2.41759,2.30375,2.23625,2.21678,2.24338,2.80535,6.65839,
      &  30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0/
-      data Amax4 / 1.498, 1.498, 1.474, 1.46, 1.374, 1.363, 1.384, 1.425, 1.481,                                       
-     1             1.525, 1.549, 1.603, 1.67, 1.706, 1.734, 1.773, 1.816, 1.843,                                       
-     1             1.871, 1.878, 1.911, 1.899, 1.927, 1.987, 2.025, 2.043, 2.022,                                       
-     1             1.97, 1.843, 1.729, 1.583, 1.504, 1.439, 1.391, 1.362, 1.34, 1.729/ 
+      data Amax4 / 1.498, 1.498, 1.474, 1.46, 1.374, 1.363, 1.384, 1.425, 1.481,
+     1             1.525, 1.549, 1.603, 1.67, 1.706, 1.734, 1.773, 1.816, 1.843,
+     1             1.871, 1.878, 1.911, 1.899, 1.927, 1.987, 2.025, 2.043, 2.022,
+     1             1.97, 1.843, 1.729, 1.583, 1.504, 1.439, 1.391, 1.362, 1.34, 1.729/
       data  SRC4 /0.83644,0.83644,0.83000,0.82624,
      &   0.76758,0.78632,0.83775,0.92616,1.02228,1.11802,1.16578,
      &   1.28551,1.39808,1.44327,1.47177,1.54694,1.64401,1.79013,
@@ -41590,9 +41590,9 @@ c     intraslab events. Four separate site classes are also modeled.
      &   1.32029,1.26637,1.22680,1.22065,1.31805,2.12485,14.38181,
      &   14.38181,14.38181,14.38181,14.38181,14.38181/
       data AmSCI / 1.381, 1.228, 1.087, 1.042, 1.035, 1.047, 1.071, 1.103, 1.141,
-     1             1.184, 1.231, 1.334, 1.448, 1.51, 1.573, 1.707, 1.833, 1.954, 
-     1             2.034, 2.052, 2.025, 1.999, 1.975, 1.931, 1.891, 1.855, 1.822, 
-     1             1.791, 1.724, 1.667, 1.574, 1.5, 1.439, 1.387, 1.341, 1.301, 1.265 / 
+     1             1.184, 1.231, 1.334, 1.448, 1.51, 1.573, 1.707, 1.833, 1.954,
+     1             2.034, 2.052, 2.025, 1.999, 1.975, 1.931, 1.891, 1.855, 1.822,
+     1             1.791, 1.724, 1.667, 1.574, 1.5, 1.439, 1.387, 1.341, 1.301, 1.265 /
       data fsr1  /1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,
      &   1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
      &   0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
@@ -41696,10 +41696,10 @@ c     intraslab events. Four separate site classes are also modeled.
      &   0.590,0.555,0.532,0.505,0.479,0.461,0.451,0.436,0.430,0.427,
      &   0.431,0.440,0.440,0.449,0.441,0.425,0.396,0.386,0.373,0.364,
      &   0.359/
-      data sigma1  / 0.648, 0.651, 0.652, 0.663, 0.691, 0.702, 0.73, 0.75, 0.765, 
-     1             0.759, 0.759, 0.755, 0.755, 0.752, 0.75, 0.752, 0.749, 0.73, 
-     1             0.711, 0.688, 0.663, 0.644, 0.633, 0.625, 0.615, 0.614, 0.612, 
-     1             0.613, 0.603, 0.612, 0.601, 0.582, 0.556, 0.545, 0.53, 0.512, 0.509 / 
+      data sigma1  / 0.648, 0.651, 0.652, 0.663, 0.691, 0.702, 0.73, 0.75, 0.765,
+     1             0.759, 0.759, 0.755, 0.755, 0.752, 0.75, 0.752, 0.749, 0.73,
+     1             0.711, 0.688, 0.663, 0.644, 0.633, 0.625, 0.615, 0.614, 0.612,
+     1             0.613, 0.603, 0.612, 0.601, 0.582, 0.556, 0.545, 0.53, 0.512, 0.509 /
       data phiS2   /0.417,0.417,0.417,0.418,0.420,0.422,
      &   0.416,0.412,0.412,0.412,0.418,0.429,0.435,0.440,0.444,0.447,
      &   0.450,0.470,0.475,0.478,0.484,0.477,0.470,0.460,0.460,0.460,
@@ -41710,10 +41710,10 @@ c     intraslab events. Four separate site classes are also modeled.
      &   0.596,0.601,0.557,0.518,0.488,0.479,0.471,0.467,0.464,0.456,
      &   0.466,0.466,0.476,0.473,0.462,0.427,0.407,0.401,0.386,0.373,
      &   0.322/
-      data sigma2  / 0.613, 0.614, 0.613, 0.614, 0.62, 0.639, 0.656, 0.673, 0.692, 
-     1             0.702, 0.704, 0.713, 0.739, 0.743, 0.744, 0.749, 0.747, 0.763, 
-     1             0.732, 0.705, 0.687, 0.676, 0.665, 0.655, 0.653, 0.647, 0.652, 
-     1             0.647, 0.649, 0.651, 0.636, 0.606, 0.587, 0.574, 0.564, 0.556, 0.551 / 
+      data sigma2  / 0.613, 0.614, 0.613, 0.614, 0.62, 0.639, 0.656, 0.673, 0.692,
+     1             0.702, 0.704, 0.713, 0.739, 0.743, 0.744, 0.749, 0.747, 0.763,
+     1             0.732, 0.705, 0.687, 0.676, 0.665, 0.655, 0.653, 0.647, 0.652,
+     1             0.647, 0.649, 0.651, 0.636, 0.606, 0.587, 0.574, 0.564, 0.556, 0.551 /
       data phiS3   /0.409,0.409,0.408,0.409,0.413,0.409,
      &   0.401,0.394,0.389,0.391,0.394,0.428,0.433,0.420,0.424,0.446,
      &   0.441,0.459,0.437,0.444,0.453,0.477,0.472,0.459,0.461,0.457,
@@ -41724,10 +41724,10 @@ c     intraslab events. Four separate site classes are also modeled.
      &   0.491,0.450,0.499,0.532,0.546,0.529,0.495,0.470,0.473,0.457,
      &   0.439,0.442,0.432,0.461,0.472,0.484,0.447,0.434,0.406,0.383,
      &   0.316/
-      data sigma3  / 0.594, 0.594, 0.594, 0.593, 0.595, 0.592, 0.602, 0.603, 0.599, 
-     1             0.615, 0.642, 0.695, 0.667, 0.645, 0.651, 0.67, 0.66, 0.643, 
-     1             0.663, 0.692, 0.709, 0.713, 0.684, 0.657, 0.66, 0.646, 0.628, 
-     1             0.625, 0.608, 0.622, 0.623, 0.62, 0.58, 0.574, 0.544, 0.531, 0.495 / 
+      data sigma3  / 0.594, 0.594, 0.594, 0.593, 0.595, 0.592, 0.602, 0.603, 0.599,
+     1             0.615, 0.642, 0.695, 0.667, 0.645, 0.651, 0.67, 0.66, 0.643,
+     1             0.663, 0.692, 0.709, 0.713, 0.684, 0.657, 0.66, 0.646, 0.628,
+     1             0.625, 0.608, 0.622, 0.623, 0.62, 0.58, 0.574, 0.544, 0.531, 0.495 /
       data phiS4   /0.415,0.415,0.416,0.417,0.420,0.422,
      &   0.423,0.420,0.423,0.427,0.426,0.445,0.442,0.440,0.437,0.436,
      &   0.432,0.432,0.432,0.432,0.416,0.408,0.409,0.407,0.403,0.407,
@@ -41738,11 +41738,11 @@ c     intraslab events. Four separate site classes are also modeled.
      &   0.562,0.507,0.489,0.463,0.466,0.461,0.467,0.434,0.430,0.454,
      &   0.456,0.462,0.444,0.443,0.439,0.427,0.431,0.413,0.391,0.366,
      &   0.324/
-      data sigma4  / 0.592, 0.589, 0.594, 0.593, 0.602, 0.609, 0.614, 0.633, 0.648, 
-     1             0.671, 0.703, 0.728, 0.714, 0.708, 0.704, 0.705, 0.709, 0.666, 
-     1             0.653, 0.633, 0.624, 0.616, 0.62, 0.594, 0.589, 0.61, 0.612, 
-     1             0.616, 0.606, 0.609, 0.603, 0.595, 0.596, 0.576, 0.555, 0.532, 0.499 / 
-	 
+      data sigma4  / 0.592, 0.589, 0.594, 0.593, 0.602, 0.609, 0.614, 0.633, 0.648,
+     1             0.671, 0.703, 0.728, 0.714, 0.708, 0.704, 0.705, 0.709, 0.666,
+     1             0.653, 0.633, 0.624, 0.616, 0.62, 0.594, 0.589, 0.61, 0.612,
+     1             0.616, 0.606, 0.609, 0.603, 0.595, 0.596, 0.576, 0.555, 0.532, 0.499 /
+
       Data phi /0.587,0.587,0.587,0.588,0.600,0.607,0.623,
      &   0.638,0.651,0.663,0.674,0.690,0.692,0.696,0.697,0.704,0.713,
      &   0.711,0.683,0.665,0.657,0.647,0.640,0.633,0.633,0.636,0.636,
@@ -41752,7 +41752,7 @@ c     intraslab events. Four separate site classes are also modeled.
      &   0.430,0.406,0.385,0.365,0.373,0.383,0.391,0.403,0.412,0.432,
      &   0.436,0.437,0.436,0.444,0.448,0.424,0.413,0.407,0.394,0.381,
      &   0.365,0.378/
-c Set attenuation name                                                            
+c Set attenuation name
 c     Sourcetype = 0 Crustal
 c     Sourcetype = 1 Subduction - Interface
 c     Sourcetype = 2 Subduction - Slab
@@ -41763,22 +41763,22 @@ c     Sclass = 2 SC II
 c     Sclass = 3 SC III
 c     Sclass = 4 SC IV
 
-                                                       
+
 C Find the requested spectral period and corresponding coefficients
       nper = 37
 
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
        period1 = period(1)
-       Amax1T =  Amax1(1) 
-       SRC1T =   SRC1(1)  
-       Amax2T =  Amax2(1) 
-       SRC2T =   SRC2(1)  
-       Amax3T =  Amax3(1) 
-       SRC3T =   SRC3(1)  
-       Amax4T =  Amax4(1) 
-       SRC4T =   SRC4(1)  
-       AmSCIT =  AmSCI(1) 
+       Amax1T =  Amax1(1)
+       SRC1T =   SRC1(1)
+       Amax2T =  Amax2(1)
+       SRC2T =   SRC2(1)
+       Amax3T =  Amax3(1)
+       SRC3T =   SRC3(1)
+       Amax4T =  Amax4(1)
+       SRC4T =   SRC4(1)
+       AmSCIT =  AmSCI(1)
        fsr1T = fsr1(1)
        fsr2T = fsr2(1)
        fsr3T = fsr3(1)
@@ -41792,24 +41792,24 @@ C First check for the PGA case (i.e., specT=0.0)
        gSLLT =  gSLL(1)
        eSLT  =  eSL(1)
        eSLHT =  eSLH(1)
-       gammaT =  gamma(1) 
-       S2T =     S2(1)    
-       S3T =     S3(1)    
-       S4T =     S4(1)    
-       phiS1T =  phiS1(1) 
-       tauS1T =  tauS1(1) 
+       gammaT =  gamma(1)
+       S2T =     S2(1)
+       S3T =     S3(1)
+       S4T =     S4(1)
+       phiS1T =  phiS1(1)
+       tauS1T =  tauS1(1)
        sigma1T = sigma1(1)
-       phiS2T =  phiS2(1) 
-       tauS2T =  tauS2(1) 
+       phiS2T =  phiS2(1)
+       tauS2T =  tauS2(1)
        sigma2T = sigma2(1)
-       phiS3T =  phiS3(1) 
-       tauS3T =  tauS3(1) 
+       phiS3T =  phiS3(1)
+       tauS3T =  tauS3(1)
        sigma3T = sigma3(1)
-       phiS4T =  phiS4(1) 
-       tauS4T =  tauS4(1) 
-       sigma4T = sigma4(1)            
-       phiT =  phi(1) 
-       tauT =  tau(1) 
+       phiS4T =  phiS4(1)
+       tauS4T =  tauS4(1)
+       sigma4T = sigma4(1)
+       phiT =  phi(1)
+       tauT =  tau(1)
        goto 1011
       elseif (specT .ne. 0.0) then
 
@@ -41818,12 +41818,12 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1010 
+               goto 1010
             endif
          enddo
       endif
-        
-C      write (*,*) 
+
+C      write (*,*)
 C      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
 C      write (*,*) 'is not defined for a spectral period of: '
 C      write (*,*)') ' Period = ',specT
@@ -41831,7 +41831,7 @@ C      write (*,*) 'This spectral period is outside the defined'
 C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
-C      write (*,*) 
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -41910,29 +41910,29 @@ C Interpolate the coefficients for the requested spectral period.
          call interp (period(count1),period(count2),tauS4(count1),tauS4(count2),
      +                specT,tauS4T,iflag)
          call interp (period(count1),period(count2),sigma4(count1),sigma4(count2),
-     +                specT,sigma4T,iflag)                                                  
+     +                specT,sigma4T,iflag)
          call interp (period(count1),period(count2),tau(count1),tau(count2),
      +                specT,tauT,iflag)
          call interp (period(count1),period(count2),phi(count1),phi(count2),
      +                specT,phiT,iflag)
 
  1011 period1 = specT
- 
-      if (depth .gt. 150.0) then 
+
+      if (depth .gt. 150.0) then
           depth = 150.0
       endif
 
 
-C     Set mechanism term and source and near fault term.                
- 
+C     Set mechanism term and source and near fault term.
+
          if (m .le. 7.1) then
          	 fm = bSLT*depth + cSL1T*m + cSL2T*(m-6.3)**2
          else
          	 fm = bSLT*depth + cSL1T*7.1 + cSL2T*(7.1-6.3)**2 + dSLT*(m-7.1)
          endif
-	  
+
 C    Set distance for geometric spreading term r
-	  
+
       Cmax = 7.1
       c2 = 1.151
       if (m .le. Cmax) then
@@ -41940,64 +41940,64 @@ C    Set distance for geometric spreading term r
       else
        Cm = Cmax
       endif
-      
-      r = dist + exp(c1T + c2*Cm)  
-	  
-C    Set geometric attenuation rate term 
+
+      r = dist + exp(c1T + c2*Cm)
+
+C    Set geometric attenuation rate term
 	    gmterm = gSLT*alog(r)
 
-C    Set large distance geometric attenuation rate term 
- 	
+C    Set large distance geometric attenuation rate term
+
 	    gmLterm = gSLLT*alog(dist+200)
-          
-	  
+
+
 C    Set anelastic attenuation rate term
 C    Ignore volcanic path term
       if (depth .lt. 50  ) then
-	  
+
 	      qSLH = eSLHT*0
-	   
+
       else
 	      qSLH = eSLHT*(0.02*depth -1)
-	  
-      endif	  
-      
+
+      endif
+
       qterm = qSLH * dist
 
       eterm = eSLT * dist
 
-	  
-C    Set Site class term 
+
+C    Set Site class term
 
          if (sclass .eq. 1) then
             Amax = Amax1T
             Src = Src1T
 			      fsr = fsr1T
-            Imf = 0.91		 
-            ANmax = AmSCIT 
-         elseif (sclass .eq. 2) then           
-            Amax = Amax2T	  
-            Src = Src2T		 
+            Imf = 0.91
+            ANmax = AmSCIT
+         elseif (sclass .eq. 2) then
+            Amax = Amax2T
+            Src = Src2T
 			      fsr = fsr2T
-            Imf = 1.023		 
+            Imf = 1.023
             ANmax = AmSCIT * exp(S2T)
-         elseif (sclass .eq. 3) then           
-            Amax = Amax3T	  
-            Src = Src3T		 
+         elseif (sclass .eq. 3) then
+            Amax = Amax3T
+            Src = Src3T
 			      fsr = fsr3T
-            Imf = 1.034	 
+            Imf = 1.034
             ANmax = AmSCIT * exp(S3T)
-         elseif (sclass .eq. 4) then           
-            Amax = Amax4T	  
-            Src = Src4T		 
+         elseif (sclass .eq. 4) then
+            Amax = Amax4T
+            Src = Src4T
 			      fsr = fsr4T
-            Imf = 0.737	 
+            Imf = 0.737
             ANmax = AmSCIT * exp(S4T)
          endif
-	  
+
       rockterm = fm + gmterm + gmLterm + eterm + gammaT - alog(AmSCIT)
-      Sr = exp(rockterm) 
-       
+      Sr = exp(rockterm)
+
 	    Sreff = Sr *Imf
 	    Sreffc = Src *Imf
       Sf = ANmax/Amax
@@ -42010,24 +42010,24 @@ C    Set Site class term
         else
   	      Snc = (exp((alog(ANmax)*alog(Sreffc**2+0.6)-alog(Sf)* alog(0.6))/(alog(Amax)))-0.6)**(0.5)
         endif
-	    	     
+
 	    Smr = Sreff * (Snc/Sreffc) * fsr
-  
+
         if (Smr .ne. 0.0) then
-  
+
 	        logAn = alog(ANmax)-alog(Amax)*((alog(Smr**2+0.6)-alog(0.6))/(alog(Sreffc**2+0.6)-alog(0.6)))
         else
-          logAn = alog(ANmax)  
+          logAn = alog(ANmax)
         end if
 
       if (sclass .eq. 0) then
-         lnY =  rockterm 
-       else   
-	       lnY =  rockterm + logAn                                        
+         lnY =  rockterm
+       else
+	       lnY =  rockterm + logAn
       endif
-      
+
 C      write(*,*) "--------------------------------- "
-C      write(*,*) "dist = ", dist     
+C      write(*,*) "dist = ", dist
 C      write(*,*) "sclass = ", sclass
 
 C      write(*,*) "Sr = ", Sr
@@ -42046,8 +42046,8 @@ C     Convert ground motion to units of gals.
       lnY = lnY + 6.89
 
 C      write(*,*) "Y(gal) = ", exp(lnY)
-                                                                               
-c     Set standard error                                                       
+
+c     Set standard error
 c      if (sclass .eq. 1) then
 c         phi = phiS1T
 c         sigma = sigma1T
@@ -42067,21 +42067,21 @@ c         tau = tauS4T
 c      endif
        sigma = SQRT(phiT**2 + tauT**2)
 
-      return                                                                    
-      end       
+      return
+      end
 
-c -------------------------------------------------------------------           
+c -------------------------------------------------------------------
 C **** Zhao et al. 2016 (BSSA, Vol 106, No.4) *************
-c -------------------------------------------------------------------           
+c -------------------------------------------------------------------
 
-      subroutine Zhaoetal2016_cru ( m, dist, ftype, lnY, sigma, sclass, specT,              
-     1                   attenName, period1, iflag, sourcetype, depth, phiT, tauT )                                   
+      subroutine Zhaoetal2016_cru ( m, dist, ftype, lnY, sigma, sclass, specT,
+     1                   attenName, period1, iflag, sourcetype, depth, phiT, tauT )
 
-c     This  subroutine calculates the spectral acceleration from the 
+c     This  subroutine calculates the spectral acceleration from the
 c     Zhao et al. (2016) attenuation model which is defined for crustal
 c     and upper mantle events. Four separate site classes are also modeled.
-                                                                         
-      parameter (MAXPER=37)                                                     
+
+      parameter (MAXPER=37)
       real ftype, dist, m, lnY, sigma, specT, sourcetype, sclass, cm, cmax, r
       real period(MAXPER), Amax1(MAXPER), SRC1(MAXPER), Amax2(MAXPER)
       real SRC2(MAXPER), Amax3(MAXPER), SRC3(MAXPER), Amax4(MAXPER), SRC4(MAXPER)
@@ -42094,7 +42094,7 @@ c     and upper mantle events. Four separate site classes are also modeled.
       real phiS1(MAXPER), tauS1(MAXPER), sigma1(MAXPER), phiS2(MAXPER), tauS2(MAXPER)
       real sigma2(MAXPER), phiS3(MAXPER), tauS3(MAXPER), sigma3(MAXPER), phiS4(MAXPER)
       real tauS4(MAXPER), sigma4(MAXPER), phi(MAXPER), tau(MAXPER)
-      character*80 attenName                                                    
+      character*80 attenName
       integer nper, count1, count2, iflag, xcro
       real Amax1T, SRC1T, Amax2T, SRC2T, Amax3T, SRC3T, Amax4T, SRC4T
       real AmSCIT, fsrCR1T, fsrCR2T, fsrCR3T
@@ -42108,26 +42108,26 @@ c     and upper mantle events. Four separate site classes are also modeled.
       real tauS4T, sigma4T, phiT, tauT
       real mech, rockterm, ANmax, Amax, Sr, Src, fsr, Sreff, Sreffc, Snc, Sf, Smr
       real fm, gmterm, gmLterm, gN, eterm, logAn, Imf
-                                                                                
-      data period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09,                                      
-     1              0.1, 0.12, 0.14, 0.15, 0.16, 0.18, 0.2, 0.25, 0.3, 0.35, 
-     1              0.4, 0.45, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.25, 1.5, 2, 2.5,                                       
-     1              3, 3.5, 4, 4.5, 5 /                     
 
-      data Amax1 / 1.916, 1.919, 1.922, 1.925, 1.921, 1.959, 2.013, 2.049, 2.046,                                      
-     1             2.066, 2.1, 2.143, 2.122, 2.092, 2.053, 1.923, 1.793, 1.793,                                       
-     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793,                                       
-     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793/ 
-      data  SRC1 / 8.429, 8.09, 6.992, 6.35, 4.883, 5.043, 6.271, 7.667, 9.034,                                       
-     1             11.251, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817,                                       
-     1             14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817,                                       
-     1             14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817,                                       
-     1             14.817, 14.817, 14.817, 14.817/ 
-      data Amax2 / 2.033, 2.027, 2.003, 1.989, 2.012, 2.017, 2.064, 2.103, 2.195,                                       
-     1             2.219, 2.263, 2.329, 2.188, 2.214, 2.245, 2.324, 2.405, 2.554,                                       
-     1             2.586, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
-     1             2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,                                       
-     1             2.718/ 
+      data period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09,
+     1              0.1, 0.12, 0.14, 0.15, 0.16, 0.18, 0.2, 0.25, 0.3, 0.35,
+     1              0.4, 0.45, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.25, 1.5, 2, 2.5,
+     1              3, 3.5, 4, 4.5, 5 /
+
+      data Amax1 / 1.916, 1.919, 1.922, 1.925, 1.921, 1.959, 2.013, 2.049, 2.046,
+     1             2.066, 2.1, 2.143, 2.122, 2.092, 2.053, 1.923, 1.793, 1.793,
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793,
+     1             1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793, 1.793/
+      data  SRC1 / 8.429, 8.09, 6.992, 6.35, 4.883, 5.043, 6.271, 7.667, 9.034,
+     1             11.251, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817,
+     1             14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817,
+     1             14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817, 14.817,
+     1             14.817, 14.817, 14.817, 14.817/
+      data Amax2 / 2.033, 2.027, 2.003, 1.989, 2.012, 2.017, 2.064, 2.103, 2.195,
+     1             2.219, 2.263, 2.329, 2.188, 2.214, 2.245, 2.324, 2.405, 2.554,
+     1             2.586, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,
+     1             2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718, 2.718,
+     1             2.718/
       data  SRC2 /1.91368,1.88256,1.77861,1.71781,
      &      2.05234,2.38713,2.83399,3.29447,3.99091,4.46576,5.04561,
      &      5.89960,5.05353,5.20490,5.38694,5.87165,6.57391,8.50000,
@@ -42135,31 +42135,31 @@ c     and upper mantle events. Four separate site classes are also modeled.
      &     10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,
      &     10.67030,10.67030,10.67030,10.67030,10.67030,10.67030,
      &     10.67030/
-      data Amax3 / 1.905, 1.908, 1.894, 1.886, 1.833, 1.854, 1.893, 1.924, 1.974,                                       
-     1             2.032, 2.052, 2.066, 2.107, 2.14, 2.156, 2.132, 2.05, 1.925,                                       
-     1             2.006, 2.179, 2.288, 2.402, 2.522, 2.648, 2.78, 2.919, 3.065,                                       
-     1             3.217, 3.378, 3.547, 3.724, 3.909, 4.104, 4.309, 4.524, 4.75,                                       
-     1             4.987/ 
+      data Amax3 / 1.905, 1.908, 1.894, 1.886, 1.833, 1.854, 1.893, 1.924, 1.974,
+     1             2.032, 2.052, 2.066, 2.107, 2.14, 2.156, 2.132, 2.05, 1.925,
+     1             2.006, 2.179, 2.288, 2.402, 2.522, 2.648, 2.78, 2.919, 3.065,
+     1             3.217, 3.378, 3.547, 3.724, 3.909, 4.104, 4.309, 4.524, 4.75,
+     1             4.987/
       data  SRC3 /1.11714,1.11444,1.12437,1.13017,
      &     1.15080,1.23971,1.34819,1.45181,1.58315,1.73292,1.84134,
      &     2.03029,2.28133,2.44413,2.58017,2.74161,2.82587,2.71893,
      &     2.41759,2.30375,2.23625,2.21678,2.24338,2.80535,6.65839,
      &     30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,30.0,
-     &     30.0/ 
-      data Amax4 / 1.498, 1.498, 1.474, 1.46, 1.374, 1.363, 1.384, 1.425, 1.481,                                       
-     1             1.525, 1.549, 1.603, 1.67, 1.706, 1.734, 1.773, 1.816, 1.843,                                       
-     1             1.871, 1.878, 1.911, 1.899, 1.927, 1.987, 2.025, 2.043, 2.022,                                       
-     1             1.97, 1.843, 1.729, 1.583, 1.504, 1.439, 1.391, 1.362, 1.34, 1.729/ 
+     &     30.0/
+      data Amax4 / 1.498, 1.498, 1.474, 1.46, 1.374, 1.363, 1.384, 1.425, 1.481,
+     1             1.525, 1.549, 1.603, 1.67, 1.706, 1.734, 1.773, 1.816, 1.843,
+     1             1.871, 1.878, 1.911, 1.899, 1.927, 1.987, 2.025, 2.043, 2.022,
+     1             1.97, 1.843, 1.729, 1.583, 1.504, 1.439, 1.391, 1.362, 1.34, 1.729/
       data  SRC4 /0.83644,0.83644,0.83000,0.82624,
      &     0.76758,0.78632,0.83775,0.92616,1.02228,1.11802,1.16578,
      &     1.28551,1.39808,1.44327,1.47177,1.54694,1.64401,1.79013,
      &     1.82345,1.79037,1.76844,1.67539,1.62539,1.52453,1.39724,
      &     1.32029,1.26637,1.22680,1.22065,1.31805,2.12485,14.38181,
      &     14.38181,14.38181,14.38181,14.38181,14.38181/
-      data AmSCI / 1.381, 1.228, 1.087, 1.042, 1.035, 1.047, 1.071, 1.103, 1.141,                                       
-     1             1.184, 1.231, 1.334, 1.448, 1.51, 1.573, 1.707, 1.833, 1.954,                                       
-     1             2.034, 2.052, 2.025, 1.999, 1.975, 1.931, 1.891, 1.855, 1.822,                                       
-     1             1.791, 1.724, 1.667, 1.574, 1.5, 1.439, 1.387, 1.341, 1.301, 1.265/ 
+      data AmSCI / 1.381, 1.228, 1.087, 1.042, 1.035, 1.047, 1.071, 1.103, 1.141,
+     1             1.184, 1.231, 1.334, 1.448, 1.51, 1.573, 1.707, 1.833, 1.954,
+     1             2.034, 2.052, 2.025, 1.999, 1.975, 1.931, 1.891, 1.855, 1.822,
+     1             1.791, 1.724, 1.667, 1.574, 1.5, 1.439, 1.387, 1.341, 1.301, 1.265/
       data fsrCR1 /1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,
      &     1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
      &     0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0/
@@ -42194,7 +42194,7 @@ c     and upper mantle events. Four separate site classes are also modeled.
      &        -3.890,-3.965,-4.055,-4.153,-4.255,-4.466,-4.677,-4.781,
      &        -4.883,-5.085,-5.233,-5.229,-5.226,-5.223,-5.221,-5.218,
      &        -5.216,-5.213,-5.210,-5.208,-5.206,-5.204,-5.200,-5.196,
-     &        -5.191,-5.187,-5.183,-5.181,-5.178,-5.176,-5.174/          
+     &        -5.191,-5.187,-5.183,-5.181,-5.178,-5.176,-5.174/
       data c2     /0.900,0.909,0.927,0.937,0.944,0.948,0.956,
      &         0.967,0.980,0.995,1.009,1.040,1.070,1.085,1.100,1.129,
      &         1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,1.151,
@@ -42205,7 +42205,7 @@ c     and upper mantle events. Four separate site classes are also modeled.
      &    1.08388,1.10602,1.12674,1.16455,1.19837,1.27000,1.32852,
      &    1.37801,1.42087,1.45868,1.49250,1.55102,1.60051,1.64337,
      &    1.68118,1.71500,1.78663,1.84515,1.93750,2.00913,2.06765,
-     &    2.12357,2.13734,2.13734,2.13734/ 
+     &    2.12357,2.13734,2.13734,2.13734/
       data dcr    /0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,
      &    0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.19,0.178,0.162,
      &    0.148,0.136,0.125,0.101,0.083,0.053,0.02967,0.01078,0.0,0.0,
@@ -42311,10 +42311,10 @@ c     and upper mantle events. Four separate site classes are also modeled.
      &      0.4815,0.4725,0.4640,0.4708,0.4650,0.4595,0.4432,0.4296,
      &      0.4310,0.4323,0.4402,0.4390,0.4491,0.4579,0.4663,0.4644,
      &      0.4546,0.4190,0.4084,0.4052,0.3861,0.3756,0.3595,0.3594/
-      data sigma1 /0.548, 0.548, 0.546, 0.547, 0.559, 0.574, 0.595, 0.615, 0.637,                                            
-     1             0.652, 0.659, 0.668, 0.67, 0.666, 0.663, 0.662, 0.667, 0.667,                                            
-     1             0.672, 0.662, 0.656, 0.655, 0.653, 0.651, 0.641, 0.643, 0.645,                                            
-     1             0.646, 0.64, 0.625, 0.59, 0.572, 0.572, 0.558, 0.535, 0.519, 0.525 / 
+      data sigma1 /0.548, 0.548, 0.546, 0.547, 0.559, 0.574, 0.595, 0.615, 0.637,
+     1             0.652, 0.659, 0.668, 0.67, 0.666, 0.663, 0.662, 0.667, 0.667,
+     1             0.672, 0.662, 0.656, 0.655, 0.653, 0.651, 0.641, 0.643, 0.645,
+     1             0.646, 0.64, 0.625, 0.59, 0.572, 0.572, 0.558, 0.535, 0.519, 0.525 /
       data phiS2  /0.4363,0.4356,0.4344,0.4307,0.4275,
      &      0.4294,0.4304,0.4329,0.4361,0.4417,0.4478,0.4476,0.4553,
      &      0.4547,0.4607,0.4697,0.4800,0.4882,0.4991,0.5043,0.5074,
@@ -42325,10 +42325,10 @@ c     and upper mantle events. Four separate site classes are also modeled.
      &      0.4817,0.4820,0.4830,0.4932,0.5436,0.5246,0.4872,0.4722,
      &      0.4651,0.4493,0.4472,0.4515,0.4504,0.4559,0.4593,0.4606,
      &      0.4688,0.4530,0.4310,0.4152,0.3953,0.3681,0.3589,0.3298/
-      data sigma2 /0.567, 0.567, 0.567, 0.56, 0.563, 0.571, 0.582, 0.593, 0.609,                                            
-     1             0.627, 0.634, 0.645, 0.659, 0.662, 0.667, 0.674, 0.688, 0.731,                                            
-     1             0.724, 0.701, 0.693, 0.688, 0.683, 0.684, 0.677, 0.67, 0.665,                                            
-     1             0.659, 0.651, 0.65, 0.63, 0.612, 0.6, 0.578, 0.563, 0.559, 0.548 / 
+      data sigma2 /0.567, 0.567, 0.567, 0.56, 0.563, 0.571, 0.582, 0.593, 0.609,
+     1             0.627, 0.634, 0.645, 0.659, 0.662, 0.667, 0.674, 0.688, 0.731,
+     1             0.724, 0.701, 0.693, 0.688, 0.683, 0.684, 0.677, 0.67, 0.665,
+     1             0.659, 0.651, 0.65, 0.63, 0.612, 0.6, 0.578, 0.563, 0.559, 0.548 /
       data phiS3  /0.4235,0.4230,0.4226,0.4207,0.4208,
      &      0.4168,0.4156,0.4215,0.4220,0.4161,0.4241,0.4332,0.4347,
      &      0.4380,0.4419,0.4514,0.4493,0.4626,0.4833,0.4783,0.4720,
@@ -42339,10 +42339,10 @@ c     and upper mantle events. Four separate site classes are also modeled.
      &      0.4519,0.4617,0.4660,0.4452,0.4192,0.4356,0.4689,0.4821,
      &      0.4638,0.4327,0.4577,0.4712,0.4622,0.4781,0.4743,0.4495,
      &      0.4633,0.4718,0.4530,0.4030,0.3803,0.3228,0.3069,0.3076/
-      data sigma3 /0.549, 0.548, 0.548, 0.55, 0.55, 0.545, 0.54, 0.555, 0.569,                                            
-     1             0.574, 0.599, 0.644, 0.632, 0.629, 0.639, 0.649, 0.633, 0.624,                                            
-     1             0.651, 0.67, 0.675, 0.678, 0.657, 0.667, 0.674, 0.663, 0.66,                                            
-     1             0.648, 0.628, 0.627, 0.63, 0.601, 0.567, 0.562, 0.519, 0.498, 0.487 / 
+      data sigma3 /0.549, 0.548, 0.548, 0.55, 0.55, 0.545, 0.54, 0.555, 0.569,
+     1             0.574, 0.599, 0.644, 0.632, 0.629, 0.639, 0.649, 0.633, 0.624,
+     1             0.651, 0.67, 0.675, 0.678, 0.657, 0.667, 0.674, 0.663, 0.66,
+     1             0.648, 0.628, 0.627, 0.63, 0.601, 0.567, 0.562, 0.519, 0.498, 0.487 /
       data phiS4  /0.4426,0.4419,0.4418,0.4415,0.4435,
      &      0.4446,0.4415,0.4407,0.4351,0.4374,0.4402,0.4594,0.4697,
      &      0.4707,0.4744,0.4784,0.4825,0.4843,0.4930,0.4914,0.4783,
@@ -42353,10 +42353,10 @@ c     and upper mantle events. Four separate site classes are also modeled.
      &      0.3867,0.3788,0.3903,0.4010,0.3942,0.3725,0.3421,0.3466,
      &      0.3594,0.3998,0.4454,0.4982,0.5183,0.5358,0.5240,0.4932,
      &      0.4942,0.5195,0.5059,0.4886,0.4928,0.4510,0.4386,0.3774/
-      data sigma4 /0.523, 0.523, 0.524, 0.526, 0.529, 0.533, 0.538, 0.555, 0.562,                                            
-     1             0.578, 0.607, 0.624, 0.609, 0.609, 0.607, 0.617, 0.627, 0.624,                                            
-     1             0.618, 0.599, 0.591, 0.599, 0.622, 0.659, 0.685, 0.709, 0.715,                                            
-     1             0.705, 0.676, 0.673, 0.676, 0.653, 0.642, 0.652, 0.62, 0.611, 0.564 / 
+      data sigma4 /0.523, 0.523, 0.524, 0.526, 0.529, 0.533, 0.538, 0.555, 0.562,
+     1             0.578, 0.607, 0.624, 0.609, 0.609, 0.607, 0.617, 0.627, 0.624,
+     1             0.618, 0.599, 0.591, 0.599, 0.622, 0.659, 0.685, 0.709, 0.715,
+     1             0.705, 0.676, 0.673, 0.676, 0.653, 0.642, 0.652, 0.62, 0.611, 0.564 /
       data phi /0.556,0.556,0.555,0.553,0.558,0.564,0.577,
      &     0.599,0.616,0.629,0.641,0.657,0.663,0.666,0.671,0.680,0.692,
      &     0.694,0.688,0.675,0.667,0.665,0.664,0.669,0.670,0.674,0.673,
@@ -42366,7 +42366,7 @@ c     and upper mantle events. Four separate site classes are also modeled.
      &     0.359,0.340,0.344,0.353,0.363,0.359,0.361,0.362,0.370,0.378,
      &     0.386,0.390,0.399,0.397,0.381,0.376,0.363,0.363,0.376,0.377,
      &     0.395/
-c Set attenuation name                                                            
+c Set attenuation name
 c     Sourcetype = 0 Crustal
 c     Sourcetype = 1 Subduction - Interface
 c     Sourcetype = 2 Subduction - Slab
@@ -42378,22 +42378,22 @@ c     Sclass = 3 SC III
 c     Sclass = 4 SC IV
 
 
-                                                                       
+
 C Find the requested spectral period and corresponding coefficients
       nper = 37
 
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
        period1 = period(1)
-       Amax1T =  Amax1(1) 
-       SRC1T =   SRC1(1)  
-       Amax2T =  Amax2(1) 
-       SRC2T =   SRC2(1)  
-       Amax3T =  Amax3(1) 
-       SRC3T =   SRC3(1)  
-       Amax4T =  Amax4(1) 
-       SRC4T =   SRC4(1)  
-       AmSCIT =  AmSCI(1) 
+       Amax1T =  Amax1(1)
+       SRC1T =   SRC1(1)
+       Amax2T =  Amax2(1)
+       SRC2T =   SRC2(1)
+       Amax3T =  Amax3(1)
+       SRC3T =   SRC3(1)
+       Amax4T =  Amax4(1)
+       SRC4T =   SRC4(1)
+       AmSCIT =  AmSCI(1)
        fsrCR1T = fsrCR1(1)
        fsrCR2T = fsrCR2(1)
        fsrCR3T = fsrCR3(1)
@@ -42402,39 +42402,39 @@ C First check for the PGA case (i.e., specT=0.0)
        fsrUM2T = fsrUM2(1)
        fsrUM3T = fsrUM3(1)
        fsrUM4T = fsrUM4(1)
-       c1T =     c1(1)    
-       c2T =     c2(1)    
-       ccrT =    ccr(1)   
-       dcrT =    dcr(1)   
-       FcrNT =   FcrN(1)  
-       FumRVT =  FumRV(1) 
-       FumNST =  FumNS(1) 
-       bcrT =    bcr(1)   
-       gcrT =    gcr(1)   
-       gUMT =    gUM(1)   
-       gcrNT =   gcrN(1)  
-       gcrLT =   gcrL(1)  
-       ecrT =    ecr(1)   
-       eumT =    eum(1)   
-       ecrvT =   ecrv(1)  
-       gammaT =  gamma(1) 
-       S2T =     S2(1)    
-       S3T =     S3(1)    
-       S4T =     S4(1)    
-       phiS1T =  phiS1(1) 
-       tauS1T =  tauS1(1) 
+       c1T =     c1(1)
+       c2T =     c2(1)
+       ccrT =    ccr(1)
+       dcrT =    dcr(1)
+       FcrNT =   FcrN(1)
+       FumRVT =  FumRV(1)
+       FumNST =  FumNS(1)
+       bcrT =    bcr(1)
+       gcrT =    gcr(1)
+       gUMT =    gUM(1)
+       gcrNT =   gcrN(1)
+       gcrLT =   gcrL(1)
+       ecrT =    ecr(1)
+       eumT =    eum(1)
+       ecrvT =   ecrv(1)
+       gammaT =  gamma(1)
+       S2T =     S2(1)
+       S3T =     S3(1)
+       S4T =     S4(1)
+       phiS1T =  phiS1(1)
+       tauS1T =  tauS1(1)
        sigma1T = sigma1(1)
-       phiS2T =  phiS2(1) 
-       tauS2T =  tauS2(1) 
+       phiS2T =  phiS2(1)
+       tauS2T =  tauS2(1)
        sigma2T = sigma2(1)
-       phiS3T =  phiS3(1) 
-       tauS3T =  tauS3(1) 
+       phiS3T =  phiS3(1)
+       tauS3T =  tauS3(1)
        sigma3T = sigma3(1)
-       phiS4T =  phiS4(1) 
-       tauS4T =  tauS4(1) 
-       sigma4T = sigma4(1)            
-       phiT =  phi(1) 
-       tauT =  tau(1) 
+       phiS4T =  phiS4(1)
+       tauS4T =  tauS4(1)
+       sigma4T = sigma4(1)
+       phiT =  phi(1)
+       tauT =  tau(1)
        goto 1011
       elseif (specT .ne. 0.0) then
 
@@ -42443,12 +42443,12 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1010 
+               goto 1010
             endif
          enddo
       endif
-        
-C      write (*,*) 
+
+C      write (*,*)
 C      write (*,*) 'Zhao et al. (2016) Horizontal atttenuation model'
 C      write (*,*) 'is not defined for a spectral period of: '
 C      write (*,*)') ' Period = ',specT
@@ -42456,7 +42456,7 @@ C      write (*,*) 'This spectral period is outside the defined'
 C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
-C      write (*,*) 
+C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -42555,7 +42555,7 @@ C Interpolate the coefficients for the requested spectral period.
          call interp (period(count1),period(count2),tauS4(count1),tauS4(count2),
      +                specT,tauS4T,iflag)
          call interp (period(count1),period(count2),sigma4(count1),sigma4(count2),
-     +                specT,sigma4T,iflag)                                                  
+     +                specT,sigma4T,iflag)
          call interp (period(count1),period(count2),tau(count1),tau(count2),
      +                specT,tauT,iflag)
          call interp (period(count1),period(count2),phi(count1),phi(count2),
@@ -42564,7 +42564,7 @@ C Interpolate the coefficients for the requested spectral period.
  1011 period1 = specT
 
 
-C     Set mechanism term and source and near fault term.                
+C     Set mechanism term and source and near fault term.
 
       xcro=2
 
@@ -42579,89 +42579,89 @@ C     Set mechanism term and source and near fault term.
          else
          	 fm = bcrT*depth + mech + ccrT*7.1 + dcrT*(m-7.1)
          endif
-		 
+
          if (dist .le. 30) then
          	 gN = gcrNT*alog(xcro+dist + exp(c1T + 6.5*c2T))
          else
          	 gN = gcrNT*alog(xcro+30 + exp(c1T + 6.5*c2T))
          endif
 
-      elseif (sourcetype .eq. 3) then         
+      elseif (sourcetype .eq. 3) then
       	 if (ftype .gt. 0) then
       	 	 mech = FumRVT
       	 	else
       	 	 mech = FumNST
       	 endif
-         
+
          if (m .le. 7.1) then
          	 fm = mech + ccrT*m
          else
          	 fm = mech + ccrT*7.1 + dcrT*(m-7.1)
          endif
       endif
-	  
+
 C    Set distance for geometric spreading term r
-	  
+
       Cmax = 7.1
       if (m .le. Cmax) then
        Cm = m
       else
        Cm = Cmax
       endif
-      
-      r = xcro + dist + exp(c1T + c2T*Cm)  
-C	    write(*,*) "r0 = ", r     
 
-C    Set geometric attenuation rate term 
+      r = xcro + dist + exp(c1T + c2T*Cm)
+C	    write(*,*) "r0 = ", r
+
+C    Set geometric attenuation rate term
       if (sourcetype .eq. 0 ) then
 	    gmterm = gcrT*alog(r)
-	  
-      elseif (sourcetype .eq. 3) then     
+
+      elseif (sourcetype .eq. 3) then
 	    gmterm = gumT*alog(r)
-	  
+
       endif
 
-C    Set large distance geometric attenuation rate term 
+C    Set large distance geometric attenuation rate term
 
 	    gmLterm = gcrLT*alog(dist+200)
-	  
+
 C    Set anelastic attenuation rate term
 C    Ignore volcanic path term
       if (sourcetype .eq. 0 ) then
 	    eterm = ecrT*dist
-	  
-      elseif (sourcetype .eq. 3) then     
+
+      elseif (sourcetype .eq. 3) then
 	    eterm = eumT*dist
-	  
-      endif	  
-	  
-C    Set Site class term 
-	  
+
+      endif
+
+C    Set Site class term
+
       if (sourcetype .eq. 0 ) then
 
          if (sclass .eq. 1) then
             Amax = Amax1T
             Src = Src1T
 			      fsr = fsrCR1T
-            Imf = 0.91		 
-            ANmax = AmSCIT 
-         elseif (sclass .eq. 2) then           
-            Amax = Amax2T	  
-            Src = Src2T		 
+            Imf = 0.91
+            ANmax = AmSCIT
+         elseif (sclass .eq. 2) then
+            Amax = Amax2T
+            Src = Src2T
 			      fsr = fsrCR2T
-            Imf = 1.023		 
+            Imf = 1.023
             ANmax = AmSCIT * exp(S2T)
-         elseif (sclass .eq. 3) then           
-            Amax = Amax3T	  
-            Src = Src3T		 
+         elseif (sclass .eq. 3) then
+            Amax = Amax3T
+            Src = Src3T
 			      fsr = fsrCR3T
-            Imf = 1.034	 
+            Imf = 1.034
             ANmax = AmSCIT * exp(S3T)
-         elseif (sclass .eq. 4) then           
-            Amax = Amax4T	  
-            Src = Src4T		 
+         elseif (sclass .eq. 4) then
+            Amax = Amax4T
+            Src = Src4T
 			      fsr = fsrCR4T
-            Imf = 0.737	 
+            Imf = 0.737
             ANmax = AmSCIT * exp(S4T)
          endif
 
@@ -42671,36 +42671,36 @@ C    Set Site class term
             Amax = Amax1T
             Src = Src1T
 			      fsr = fsrUM1T
-            Imf = 0.91		 
-            ANmax = AmSCIT 
-         elseif (sclass .eq. 2) then           
-            Amax = Amax2T	  
-            Src = Src2T		 
+            Imf = 0.91
+            ANmax = AmSCIT
+         elseif (sclass .eq. 2) then
+            Amax = Amax2T
+            Src = Src2T
 			      fsr = fsrUM2T
-            Imf = 1.023		 
+            Imf = 1.023
             ANmax = AmSCIT * exp(S2T)
-         elseif (sclass .eq. 3) then           
-            Amax = Amax3T	  
-            Src = Src3T		 
+         elseif (sclass .eq. 3) then
+            Amax = Amax3T
+            Src = Src3T
 			      fsr = fsrUM3T
-            Imf = 1.034	 
+            Imf = 1.034
             ANmax = AmSCIT * exp(S3T)
-         elseif (sclass .eq. 4) then           
-            Amax = Amax4T	  
-            Src = Src4T		 
+         elseif (sclass .eq. 4) then
+            Amax = Amax4T
+            Src = Src4T
 			      fsr = fsrUM4T
-            Imf = 0.737	 
+            Imf = 0.737
             ANmax = AmSCIT * exp(S4T)
          endif
 	    endif
-	  
+
       rockterm = fm + gmterm + gmLterm + gN + eterm + gammaT - alog(AmSCIT)
-      Sr = exp(rockterm) 
-       
+      Sr = exp(rockterm)
+
 	    Sreff = Sr *Imf
 	    Sreffc = Src *Imf
       Sf = ANmax/Amax
-      
+
         if (ANmax .lt. 1.25) then
           ca=alog(Amax)/(alog(0.6)-alog(Sreffc**2 + 0.6))
           cb=-ca*alog(Sreffc**2+0.6)
@@ -42710,24 +42710,24 @@ C    Set Site class term
         else
   	      Snc = (exp((alog(ANmax)*alog(Sreffc**2+0.6)-alog(Sf)* alog(0.6))/(alog(Amax)))-0.6)**(0.5)
         endif
-	    	     
+
         Smr = Sreff * (Snc/Sreffc) * fsr
 
         if (Smr .ne. 0.0) then
-  
+
 	        logAn = alog(ANmax)-alog(Amax)*((alog(Smr**2+0.6)-alog(0.6))/(alog(Sreffc**2+0.6)-alog(0.6)))
         else
-          logAn = alog(ANmax)  
+          logAn = alog(ANmax)
         endif
 
       if (sclass .eq. 0) then
-         lnY =  rockterm 
-       else   
-	       lnY =  rockterm + logAn                                        
+         lnY =  rockterm
+       else
+	       lnY =  rockterm + logAn
       endif
 
 C      write(*,*) "--------------------------------- "
-C      write(*,*) "dist = ", dist     
+C      write(*,*) "dist = ", dist
 C      write(*,*) "sclass = ", sclass
 
 C      write(*,*) "Sr = ", Sr
@@ -42746,8 +42746,8 @@ C     Convert ground motion to units of gals.
       lnY = lnY + 6.89
 
 C      write(*,*) "Y(gal) = ", exp(lnY)
-                                                                               
-c     Set standard error                                                       
+
+c     Set standard error
 c      if (sclass .eq. 1) then
 c         phi = phiS1T
 c         sigma = sigma1T
@@ -42767,27 +42767,27 @@ c         tau = tauS4T
 c      endif
        sigma = SQRT(phiT**2 + tauT**2)
 
-      return                                                                    
-      end       
+      return
+      end
 
 C  ***** PEER NGA-West 2 MODELS (2013) **********
 
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
 C ** Idriss (NGA-2013) Horizontal **
 C     PEER Report 2013/08
-C        NGA-West2 Model for Estimating Average Horizontal Values of 
+C        NGA-West2 Model for Estimating Average Horizontal Values of
 C            Pseudo-Absolute Spectral Accelerations Generated by
 C            Crustal Earthquakes
 C         I. M. Idriss
 C     Notes:
-C        Applicable Range (see Abstract):  
+C        Applicable Range (see Abstract):
 C           5 <= M <= 8.5
 C           Vs>=450 m/sec
 C              for Vs>1200 use Vs=1200
 C           Rrup <= 150 km
 C        Mechanisms: Strike-slip and Norml (0)
 C                    Reverse and Oblique (1)
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
       Subroutine I14_TW_B01 ( m, Rrup, ftype, vs30, specT,
      1                     period2, lnY, sigma, iflag )
 
@@ -42799,7 +42799,7 @@ C     Last Updated: 5/18/13
       parameter (MAXPER=25)
       REAL Period(MAXPER), a1mlt675(MAXPER), a2mlt675(MAXPER), a3mlt675(MAXPER)
       REAL b1mlt675(MAXPER), b2mlt675(MAXPER)
-      REAL a1(MAXPER), a2(MAXPER), a3(MAXPER), b1(MAXPER), b2(MAXPER) 
+      REAL a1(MAXPER), a2(MAXPER), a3(MAXPER), b1(MAXPER), b2(MAXPER)
       real gam(MAXPER), phi(MAXPER), xsi(MAXPER), period1
 
       REAL M, Rrup, Vs30, specT, sigma
@@ -42860,10 +42860,10 @@ C     Last Updated: 5/18/13
      1      -0.167991567078541, -0.1685, -0.1531, -0.1595, -0.1594, -0.1584, -0.1577, -0.1532, -0.147, -0.1439, -0.1278, -0.1326,
      1      -0.1291, -0.122, -0.1145/
 
-      
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1 = period(1)
          a1T     = a1(1)
@@ -42886,22 +42886,22 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Idriss (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -42932,7 +42932,7 @@ C Interpolate the coefficients for the requested spectral period.
             call interp (period(count1),period(count2),xsi(count1),xsi(count2),
      +                   specT,xsiT,iflag)
 
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 
 C.....Compute the Ground motion.......
 
@@ -42945,9 +42945,9 @@ C     Otherwise assume SOF = 0
       else
          SOF = 0.0
       endif
-      
+
 	  a1T = a1mlt675T + (a2mlt675T - a2T) * 6.75
-	  
+
       if (m .lt. 6.75) then
          lnY = a1mlt675T + a2mlt675T*m + a3mlt675T*(8.5 - m)**2.0 - (b1mlt675T+b2mlt675T*m) * alog(Rrup+10.0) +
      1         xsiT*alog(Vs30) + gamT*rRup + SOF*phiT
@@ -42960,9 +42960,9 @@ C     Convert ground motion to units of gals.
       lnY = lnY + 6.89
 
 C     Compute Sigma which is Period and magnitude dependent.
-C     Note report does not state a limit on sigma for M<5 but 
+C     Note report does not state a limit on sigma for M<5 but
 C     Since model is only applicable for M>=5 a limit is retained
-C     for sigma with M<5 equal to M=5 values. 
+C     for sigma with M<5 equal to M=5 values.
       if (specT .le. 0.05) then
          if (m .le. 5.0) then
             sigma = 1.18 + 0.035*alog(0.05) - 0.06*5.0
@@ -42992,10 +42992,10 @@ C     for sigma with M<5 equal to M=5 values.
       period2 = period1
 
       return
-      end 
+      end
 
 
-c ---------------------------------------------------------------------------            
+c ---------------------------------------------------------------------------
 C     *** Boore, Stewart, Seyhan and Atkinson NGA West 2 (NGA West2-2013) ***
 C         Earthquake Spectra Report:
 C            NGA-West2 Equations for Predicting PGA, PGV, and 5%-Damped
@@ -43009,14 +43009,14 @@ C            Distance < 300km
 C            150 < Vs < 1500 m/s
 C            0.0 < Z1 < 3.0 km
 C            Region Flag:
-C               0 = Global 
+C               0 = Global
 C               1 = China-Turkey
 C               2 = Italy-Japan
-c ---------------------------------------------------------------------------            
+c ---------------------------------------------------------------------------
 
-      subroutine BSSA14_TW_B01 ( mag, Rbjf, specT, 
+      subroutine BSSA14_TW_B01 ( mag, Rbjf, specT,
      1        period2, lnY, sigma, iflag, vs, ftype, pga4nl, z10, regionflag, basinflag,
-     1        phi, tau ) 
+     1        phi, tau )
 
 C     Last Updated: 9/16/13
 
@@ -43144,7 +43144,7 @@ C     Set constant parameters
       V1 = 225.0
       V2 = 300.0
 
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       nPer = 25
       if (specT .eq. 0.0) then
          period1 = period(1)
@@ -43158,7 +43158,7 @@ C First check for the PGA case (i.e., specT=0.0)
          mhT = mh(1)
          c1T = c1(1)
          c2T = c2(1)
-         c3T = c3(1)        
+         c3T = c3(1)
          hT = h(1)
          cT = c(1)
          VcT = vc(1)
@@ -43193,7 +43193,7 @@ C First check for the PGA case (i.e., specT=0.0)
          mhT = mh(2)
          c1T = c1(2)
          c2T = c2(2)
-         c3T = c3(2)        
+         c3T = c3(2)
          hT = h(2)
          cT = c(2)
          VcT = vc(2)
@@ -43222,22 +43222,22 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'BSSA (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -43305,7 +43305,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,DfrT,iflag)
             call interp (period(count1),period(count2),Dfv(count1),Dfv(count2),
      +                   specT,DfvT,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 
 C.....Set the mechanism terms based on ftype............
 C     Set mechanism term and corresponding Frv and Fnm values.
@@ -43319,17 +43319,17 @@ C                                          -30 < Rake <   30
 C                                          150 < Rake <  180
 C      0.5      Reverse/Oblique             30 < Rake <   60
 C                                          120 < Rake <  150
-C       1       Reverse                     60 < Rake <  120 
-C     Note: Unknown Mechanism is not currently coded.  
+C       1       Reverse                     60 < Rake <  120
+C     Note: Unknown Mechanism is not currently coded.
       if (ftype .eq. -1.0) then
          mechS = 0.0
          mechN = 1.0
          mechR = 0.0
-      elseif (ftype .eq. -0.5) then 
+      elseif (ftype .eq. -0.5) then
          mechS = 0.0
          mechN = 1.0
          mechR = 0.0
-      elseif (ftype .eq. 0.0) then 
+      elseif (ftype .eq. 0.0) then
          mechS = 1.0
          mechN = 0.0
          mechR = 0.0
@@ -43341,7 +43341,7 @@ C     Note: Unknown Mechanism is not currently coded.
          mechS = 0.0
          mechN = 0.0
          mechR = 1.0
-      endif 
+      endif
 
 C.....First compute the Reference Rock PGA value...........
 C.....This will include the regional dependence for PGA....
@@ -43358,9 +43358,9 @@ C.....Distance dependence......
 
 C.....Apply Regional term.....
 
-         TERM2 = ( c1(1) + c2(1)*(mag-mref) ) * alog(Rp/rref) + 
+         TERM2 = ( c1(1) + c2(1)*(mag-mref) ) * alog(Rp/rref) +
      1           c3(1)  * (Rp-rref)
-     
+
       pga4nl = exp(term1+term2)
 
 
@@ -43380,8 +43380,8 @@ C.....Distance dependence......
 C     Now apply the regional attenuation differnece.
 C     Global Case
 
-         TERM2 = ( c1T + c2T*(mag-mref) ) * alog(R/rref) + 
-     1        c3T * (R-rref) 
+         TERM2 = ( c1T + c2T*(mag-mref) ) * alog(R/rref) +
+     1        c3T * (R-rref)
 
 C.....Site Response Term.........
 C.....Now compute the site term........
@@ -43393,18 +43393,18 @@ C.....First the linear term......
       endif
 
 C.....Next the non-linear term......
-      f2 = f4T*(exp(f5T*(min(vs,760.0)-360.0))-exp(f5T*(760.0-360.0))) 
-      
+      f2 = f4T*(exp(f5T*(min(vs,760.0)-360.0))-exp(f5T*(760.0-360.0)))
+
 C.....Now compute the basin effect term......
 C Deviation from ln(Vs30) scaling: bedrock depth (Z1) effect for California.
-      if (basinflag .eq. 1) then 
-c     Compute the DeltaZ1 term. Apply the California model for all regions except for Japan. 
+      if (basinflag .eq. 1) then
+c     Compute the DeltaZ1 term. Apply the California model for all regions except for Japan.
          if (regionflag .eq. 2) then
              deltaz1 = z10 -
      1           exp(-5.23/2.0 * alog((vs**2.0 + 412.29**2.0)/(1360.0**2.0 + 412.39**2.0)))/1000.0
          else
              deltaz1 = z10 -
-     1           exp(-2.63/4.0 * alog((vs**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))/1000.0        
+     1           exp(-2.63/4.0 * alog((vs**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))/1000.0
          endif
 
          if (specT .le. 0.65) then
@@ -43417,8 +43417,8 @@ c     Compute the DeltaZ1 term. Apply the California model for all regions excep
       endif
 
       TERM3 = flin + f1 + f2*alog((pga4nl+f3)/f3) + fBasin
-      
-      lnY = term1 + term2 + term3 
+
+      lnY = term1 + term2 + term3
 
       period2 = period1
 
@@ -43431,8 +43431,8 @@ C     Tau (Eq. 4.11)
       else
          tau = t2T
       endif
-      
-C     Phi - Magnitude (Eq. 4.12) 
+
+C     Phi - Magnitude (Eq. 4.12)
       if (mag .le. 4.5) then
          phi = l1T
       elseif (mag .gt. 4.5 .and. mag .lt. 5.5) then
@@ -43447,7 +43447,7 @@ C     Phi - Distance (Eq. 4.13)
       elseif (rbjf .gt. R1T .and. rbjf .le. R2T) then
           phi = phi + DfrT*( (alog(rbjf/R1T))/(alog(R2T/R1T)) )
       else
-          phi = phi + DfrT 
+          phi = phi + DfrT
       endif
 
 C     Phi - Vs30 (Eq. 4.14)
@@ -43468,7 +43468,7 @@ C     Convert ground motion to units of gals.
       END
 
 
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
 C ** Chiou and Youngs (NGA West2-2013 Model) Horizontal **
 C     Earthquake Spectra Paper:
 C        Update of the Chiou and Youngs NGA Model for the
@@ -43476,7 +43476,7 @@ C            Average Horizontal Component of Peak
 C            Ground Motion and Response Spectra
 C         B. S.J. Chiou and R.R. Youngs
 C     Notes:
-C        Applicable Range (see Abstract):  
+C        Applicable Range (see Abstract):
 C           3.5 <= M <= 8.5 Strike-slip
 C           3.5 <= M <= 8.0 Reverse and Normal
 C           Rrup <= 300 km
@@ -43487,14 +43487,14 @@ C        Regional attenuation included based on Regionflag
 C             0 = Global
 C             1 = Japan/Italy
 C             2 = Wenchuan (note only applicable for M7.9 event)
-C         Sigma dependent on estimated or measured Vs30m based on 
+C         Sigma dependent on estimated or measured Vs30m based on
 C             Vs30_Class
 C             0 = Estimated Vs30m
 C             1 = Measured Vs30m
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
 
       Subroutine CY14_TW_B01 ( m, Rrup, Rbjf, specT,
-     1                     period2, lnY, sigma, iflag, 
+     1                     period2, lnY, sigma, iflag,
      2                     vs, Delta, DTor, Ftype, depthvs10, vs30_class,
      3                     hwflag, Rx, regionflag, phi, tau )
 
@@ -43512,7 +43512,7 @@ C     Last Updated: 8/1/13
       Real CHM(MAXPER), C1c(MAXPER), C1d(MAXPER), C7b(MAXPER), C8b(MAXPER)
       real C11(MAXPER), C11B(MAXPER)
       real gscaleJapIt(MAXPER), gscaleWen(MAXPER), sigma2Jap(MAXPER)
- 
+
       REAL c1T, c1aT, c1bT, cnT, cmT, c5T, c6T, c7T, c9T, c9aT, c3T, c8T
       REAL gamma1T, gamma2T, phi1T, phi2T, phi3T, phi4T, sigma3T
       REAL phi5T, phi6T, tau1T, tau2T, sigma1T, sigma2T
@@ -43669,7 +43669,7 @@ C     Last Updated: 8/1/13
 
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1  = period(1)
          c1T      = c1(1)
@@ -43683,8 +43683,8 @@ C First check for the PGA case (i.e., specT=0.0)
          cmT      = cm(1)
          c5T      = c5(1)
          c6T      = c6(1)
-         c7T      = c7(1) 
-         c7bT      = c7b(1) 
+         c7T      = c7(1)
+         c7bT      = c7b(1)
          c8bT      = c8b(1)
          c9T      = c9(1)
          c9aT      = c9a(1)
@@ -43719,22 +43719,22 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Chiou and Youngs (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -43819,7 +43819,7 @@ C Interpolate the coefficients for the requested spectral period.
             call interp (period(count1),period(count2),c8(count1),c8(count2),
      +                   specT,c8T,iflag)
 
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 
 c     Set the fault mechanism term.
 C     fType     Mechanism                      Rake
@@ -43860,7 +43860,7 @@ C     Regionflag = 2 Wenchuan (note only for M7.9)
            gamma = gamma * gscaleJapItT
            sigma2T = sigma2JapT
         elseif (regionflag .eq. 2) then
-           gamma = gamma * gscaleWenT        
+           gamma = gamma * gscaleWenT
         endif
 
         cosDELTA = cos(abs(DELTA)*d2r)
@@ -43895,7 +43895,7 @@ c Center Z_TOR on the Z_TOR-M relation in Chiou and Youngs (2013)
           endif
         endif
         deltaZ_TOR = Dtor - mZ_TOR
-        
+
 c Scaling with other source variables (F_RV, F_NM, deltaZ_TOR, and Dip)
         coshM = cosh(2*max(M-4.5,0.0))
         cosDELTA = cos(DELTA*d2r)
@@ -43903,7 +43903,7 @@ c Scaling with other source variables (F_RV, F_NM, deltaZ_TOR, and Dip)
      1       (c1bT+c1dT/coshM) * F_NM +
      1       (c7T +c7bT/coshM) * deltaZ_TOR +
      1       (c11T+c11bT/coshM)* cosDELTA**2
-        
+
 c HW effect
         if (HWFlag .eq. 0) then
            hw = 0.0
@@ -43929,8 +43929,8 @@ C     Set Phi1, Phi5, and Phi6 term for Japan is region is requested
            phi1T = phi1jpT
            phi5T = phi5jpT
            phi6T = phi6jpT
-        endif       
-        
+        endif
+
 c Linear soil amplification
         a = phi1T * min(alog(Vs/1130.0), 0.0)
 
@@ -43942,7 +43942,7 @@ c Nonlinear soil amplification
 C Deviation from ln(Vs30) scaling: bedrock depth (Z1) effect.
         if (regionflag .eq. 1) then
            deltaZ1 = depthvs10*1000.0 -
-     1     exp(-5.23/2.0 * alog((VS**2.0 + 412.0**2.0)/(1360.0**2.0 + 412.0**2.0)))      
+     1     exp(-5.23/2.0 * alog((VS**2.0 + 412.0**2.0)/(1360.0**2.0 + 412.0**2.0)))
         else
            deltaZ1 = depthvs10*1000.0 -
      1     exp(-2.63 / 4.0 * alog((VS**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))
@@ -43963,7 +43963,7 @@ C     Current code set for Measured Vs30 values (i.e., Vs30class=1)
       if (vs30_class .eq. 0) then
          F_measured = 0.0
          F_Inferred = 1.0
-      elseif (vs30_class .eq. 1) then      
+      elseif (vs30_class .eq. 1) then
          F_measured = 1.0
          F_Inferred = 0.0
       endif
@@ -43974,22 +43974,22 @@ C     Current code set for Measured Vs30 values (i.e., Vs30class=1)
 
       phi = sigma_NL0
       tau = (tau*(1.0+NL0))
-      
+
 C     Convert ground motion to units of gals.
       lnY = psa + 6.89
       period2 = period1
 
       return
-      end 
-  
-c ------------------------------------------------------------------            
+      end
+
+c ------------------------------------------------------------------
 C *** Abrahamson, Silva, and Kamai (NGA-West2 2013) Horizontal ****
 C     Earthquake Spectra Paper:
-C        Summary of the Abrahamson, Silva, and Kamai NGA-West2 
+C        Summary of the Abrahamson, Silva, and Kamai NGA-West2
 C            Ground-Motion Relations for Active Crustal REgions
 C         N. A. Abrahamson, S. J. Silva, and R. Kamai
 C     Notes:
-C        Applicable Range (see Abstract):  
+C        Applicable Range (see Abstract):
 C           3 <= M <= 8.5
 C           Rrup <= 300 km
 C        Regional attenuation included based on Regionflag
@@ -44000,12 +44000,12 @@ C             3 = Japan
 C         Mainshock and Aftershocks included based on MSASFlag
 C             0 = Mainshocks
 C             1 = Aftershocks
-C         Sigma dependent on estimated or measured Vs30m based on 
+C         Sigma dependent on estimated or measured Vs30m based on
 C             Vs30_Class
 C             0 = Estimated Vs30m
 C             1 = Measured Vs30m
-c ------------------------------------------------------------------            
-      subroutine ASK14_TW_B01 ( mag, dip, fType, fltWidth, rRup, Rjb,  
+c ------------------------------------------------------------------
+      subroutine ASK14_TW_B01 ( mag, dip, fType, fltWidth, rRup, Rjb,
      1                     vs30, hwflag, lnY, sigma, specT, period2, ztor,
      2                     iflag, vs30_class, z10, Rx, Ry0, regionflag, msasflag,
      1                     phi, tau )
@@ -44022,21 +44022,21 @@ C     Last Updated: 8/1/13
 c     Vs30 class is to distinguish between the sigma if the Vs30 is measured
 c     vs the VS30 being estimated from surface geology.
 c         Vs30_class = 0 for estimated
-c         Vs30_class = 1 for measured 
+c         Vs30_class = 1 for measured
 
-C     Current version is not programmed for Aftershock cases. 
+C     Current version is not programmed for Aftershock cases.
 C       For implementation of Aftershock a new distance metric, CRjb
-C       will need to be computed and passed along to this subroutine. 
+C       will need to be computed and passed along to this subroutine.
 
-      CRjb = 999.9 
+      CRjb = 999.9
 
-C     Set mechanism term and corresponding Frv and Fnm values.     
+C     Set mechanism term and corresponding Frv and Fnm values.
 C     fType     Mechanism                      Rake
 C     ------------------------------------------------------
 C      -1       Normal                   -120 < Rake < -60.0
 C     1, 0.5    Reverse and Rev/Obl        30 < Rake < 150.0
 C     0,-0.5    Strike-Slip and NMl/Obl        Otherwise
-C 
+C
       if ( fType .eq. 1.0 ) then
         Frv = 1.0
         Fn = 0.0
@@ -44058,15 +44058,15 @@ c     Compute SA1180
       vs30_rock = 1180.
       z10_rock = 0.005
       SA_rock = 0.
-      
-      call ASK14_B01_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0, 
+
+      call ASK14_B01_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0,
      1                     vs30_rock, SA_rock, Z10_rock, hwflag, vs30_class,
      2                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb )
       Sa1180 = exp(lnSa)
 
 c     Compute Sa at spectral period for given Vs30
 
-      call ASK14_B01_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0, 
+      call ASK14_B01_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0,
      1                     vs30, SA1180, Z10, hwflag, vs30_class,
      2                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb )
 
@@ -44081,13 +44081,13 @@ c     compute Sa (given the PGA rock value)
       end
 
 c ----------------------------------------------------------------------
-      subroutine ASK14_B01_model ( mag, dip, FltWidth, ZTOR, Frv, Fn, rRup, rjb, Rx, Ry0, 
+      subroutine ASK14_B01_model ( mag, dip, FltWidth, ZTOR, Frv, Fn, rRup, rjb, Rx, Ry0,
      1                     vs30, Sa1180, Z1, hwflag, vs30_class,
      3                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb)
- 
+
       implicit none
-      
-      integer MAXPER     
+
+      integer MAXPER
       parameter (MAXPER=25)
       real Vlin(MAXPER), b(MAXPER), c4(MAXPER), M1(MAXPER), a1(MAXPER)
       real a2(MAXPER), a3(MAXPER), a6(MAXPER), a8(MAXPER), a10(MAXPER)
@@ -44107,7 +44107,7 @@ c ----------------------------------------------------------------------
       real s1estT, s2estT, s1msrT, s2msrT
       real s3T, s4T, s5T, s6T, c4_mag
       real phiA_est, phiA_msr, period1
-      
+
       real M2
       real lnSa, SA1180, rjb, rRup, Rx, Ry0, dip, mag, vs30
       real HW_taper1, HW_taper2, HW_taper3, HW_taper4, HW_taper5
@@ -44242,7 +44242,7 @@ c ----------------------------------------------------------------------
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
 
-C First check for the PGA, PGV, PGD cases 
+C First check for the PGA, PGV, PGD cases
       if (specT .eq. 0.0) then
          period1 = period(1)
          a1T = a1(1)
@@ -44333,21 +44333,21 @@ C   For other periods, loop over the spectral period range of the attenuation re
          if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
             count1 = i
             count2 = i+1
-            goto 1020 
+            goto 1020
          endif
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Abrahamson, Silva, and Kamai (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -44430,7 +44430,7 @@ C Interpolate the coefficients for the requested spectral period.
             call interp (period(count1),period(count2),s6(count1),s6(count2),
      +                   specT,s6T,iflag)
 
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 
 C     Constant values
       n = 1.5
@@ -44453,11 +44453,11 @@ C     Magnitude dependent taper for C4 (eq. 4.4)
          c4_mag = c4T - (c4T-1.0) * (5.0-mag)
       else
          c4_mag = 1.0
-      endif 
-     
+      endif
+
 c     Set distance (eq 4.3)
       R = sqrt(rRup**2 + c4_mag**2)
-       	  
+
 C     Base Model (eq 4.2)
       if ( mag .lt. M2 ) then
         f1 = a1T + a6T*(Mag-M2) + a7*(Mag-M2)**2 + a4*(M2-M1T) + a8T*(8.5-M2)**2 +
@@ -44468,25 +44468,25 @@ C     Base Model (eq 4.2)
         f1 = a1T + a5*(Mag-M1T) + a8T*(8.5-Mag)**2 + (a2T + a3T*(Mag-M1T)) * alog(R) + a17T*Rrup
       endif
 
-c     style of faulting (eq 4.5 and 4.6) 
+c     style of faulting (eq 4.5 and 4.6)
       if ( mag .lt. 4. ) then
         f7 = 0
         f8 = 0
       elseif ( mag .le. 5. ) then
         f7 = Frv * a11T * (mag-4.)
         f8 = Fn * a12T * (mag-4.)
-      else 
+      else
         f7 = Frv * a11T
         f8 = Fn * a12T
       endif
 
-c     ZTOR (eq 14) 
+c     ZTOR (eq 14)
 c     form modified"Extend the upper bound ZTOR to 50km:"
-      if (ZTOR .le. 50.) then 
+      if (ZTOR .le. 50.) then
         f6 = a15T * ZTOR/50.0
       else
         f6 = a15T
-      endif    
+      endif
 
 c     Set VS30_star (eq 4.8 and 4.9)
       if ( specT .ge. 3.0 ) then
@@ -44495,55 +44495,55 @@ c     Set VS30_star (eq 4.8 and 4.9)
         V1 = exp( -0.35 * alog(specT/0.5)  + alog(1500.) )
       else
         V1=1500.
-      endif      
+      endif
       if ( vs30 .lt. v1 ) then
          vs30Star = vs30
       else
 	    vs30Star = v1
-      endif		
+      endif
 
-c     Compute site amplification (Eq. 4.7)  
+c     Compute site amplification (Eq. 4.7)
       if (vs30 .lt. vLinT) then
-        f5 = a10T*alog(vs30Star/vLinT) - bT*alog(c+Sa1180) 
+        f5 = a10T*alog(vs30Star/vLinT) - bT*alog(c+Sa1180)
      1              + bT*alog(Sa1180+c*((vs30Star/vLinT)**(n)) )
       else
      	f5 = (a10T + bT*n) * alog(vs30Star/vLinT)
       endif
 
 c     Set Regional z1 reference (eq 4.18)
-      if (regionflag .eq. 1) then  
+      if (regionflag .eq. 1) then
          z1_ref =  exp(-2.63 / 4.0 * alog((vs30**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))/ 1000.
       elseif (regionflag .eq. 3) then
          z1_ref = exp ( -5.23/2. * alog( (Vs30**2.0 + 412.**2.0)/(1360.**2.0+412.**2.0) ) ) / 1000.
       else
          z1_ref = exp ( -7.67/4. * alog( (Vs30**4.0 + 610.**4.0)/(1360.**4.0+610.**4.0) ) ) / 1000.
-      endif 
-      
+      endif
+
 C     Soil Depth Model (eq 4.17)
 C     Updated 8/1/13
       if ( vs30 .le. 150.0 ) then
          y1z = a43T
-         y2z = a43T 
+         y2z = a43T
          x1z = 50.0
          x2z = 150.0
       elseif ( vs30 .le. 250.0 ) then
          y1z = a43T
-         y2z = a44T 
+         y2z = a44T
          x1z = 150.0
          x2z = 250.0
       elseif ( vs30 .le. 400.0 ) then
          y1z = a44T
-         y2z = a45T 
+         y2z = a45T
          x1z = 250.0
          x2z = 400.0
       elseif ( vs30 .le. 700.0 ) then
          y1z = a45T
-         y2z = a46T 
+         y2z = a46T
          x1z = 400.0
          x2z = 700.0
       else
          y1z = a46T
-         y2z = a46T 
+         y2z = a46T
          x1z = 700.0
          x2z = 1000.0
       endif
@@ -44554,7 +44554,7 @@ C     Calculation f10 term and set it equal to zero for Vs=1180m/s (i.e., refere
          f10 = ( y1z + (Vs30-x1z)*(y2z-y1z)/(x2z-x1z))*alog( (z1 + 0.01) / (z1_ref+0.01) )
       endif
 
-c     Compute HW taper1 (eq 4.11) 
+c     Compute HW taper1 (eq 4.11)
       if ( dip .le. 30. ) then
         HW_taper1 = 60./ 45.
       else
@@ -44564,7 +44564,7 @@ c     Compute HW taper1 (eq 4.11)
 c     Compute HW taper2 (eq. 4.12)
       hw_a2 = 0.2
       if( mag .gt. 6.5 ) then
-        HW_taper2 = 1. + hw_a2 * (mag-6.5) 
+        HW_taper2 = 1. + hw_a2 * (mag-6.5)
       elseif ( mag .gt. 5.5 ) then
         HW_taper2 = 1. + HW_a2 * (mag-6.5) - (1.0 - HW_a2)*(mag-6.5)**2
       else
@@ -44584,7 +44584,7 @@ C	  April 11, correction by ronnie for HW_taper3 when Rx.gt.R2
         HW_taper3 = 1. - (Rx-R1)/(R2-R1)
       else
         HW_taper3 = 0.
-      endif 
+      endif
 
 c     Compute HW taper 4 (eq 4.14)
       if ( ZTOR .lt. 10. ) then
@@ -44592,7 +44592,7 @@ c     Compute HW taper 4 (eq 4.14)
       else
         HW_taper4 = 0.
       endif
-      
+
 c     Compute HW taper 5 (eq. 13)  **** Ry0 version ***
       Ry1 = Rx * tan(20.*3.1415926/180.)
       if ( Ry0 .lt. Ry1 ) then
@@ -44603,9 +44603,9 @@ c     Compute HW taper 5 (eq. 13)  **** Ry0 version ***
         HW_taper5 = 0.
       endif
 
-c     Compute HW taper 5 (eq. 4.15b)  **** No Ry0 version ***     
+c     Compute HW taper 5 (eq. 4.15b)  **** No Ry0 version ***
 c      if (Rjb .eq. 0. ) then
-c        HW_taper5 = 1. 
+c        HW_taper5 = 1.
 c      elseif ( Rjb .lt. 30. ) then
 c        HW_taper5 = 1 - Rjb/30.
 c      else
@@ -44626,11 +44626,11 @@ C     Add aftershock factor (eq 4.21)
          elseif (CRjb .le. 5.0) then
              f11 = a14T
          else
-             f11 = a14T * ( 1.0 - (CRjb - 5.0) /10.0) 
+             f11 = a14T * ( 1.0 - (CRjb - 5.0) /10.0)
          endif
       elseif (msasflag .eq. 0) then
          f11 = 0.0
-      endif 
+      endif
 
 C     Now apply the regional attenuation differences (eq 4.22)
 C     Global No Change
@@ -44638,11 +44638,11 @@ C     Global No Change
          freg = 0.0
 C     Taiwan
       elseif (regionflag .eq. 1) then
-         f12 = a31T * alog(Vs30star/VlinT) 
-         freg = f12 + a25T*Rrup 
+         f12 = a31T * alog(Vs30star/VlinT)
+         freg = f12 + a25T*Rrup
 C     China
       elseif (regionflag .eq. 2) then
-         freg = a28T*Rrup 
+         freg = a28T*Rrup
 C     Japan
       elseif (regionflag .eq. 3) then
          if (vs30 .lt. 150.0) then
@@ -44687,7 +44687,7 @@ C     Japan
              x2 = 3000.0
          endif
          f13 = y1 + (y2-y1)/(x2-x1) * (vs30-x1)
-         freg = f13 + a29T*Rrup 
+         freg = f13 + a29T*Rrup
       endif
 
 C     Set the Sigma Values
@@ -44724,14 +44724,14 @@ C     Set Sigma values for Japan Region
 
 C calculate phi_A for Japan (eq. 7.3)
         if (Rrup .lt. 30) then
-           phiA = s5T        
+           phiA = s5T
         elseif (Rrup .le. 80) then
            phiA = s5T + (s6T-s5T)/50*(Rrup-30)
         else
            phiA = s6T
         endif
       endif
-	  
+
 c     Compute between-event term, tau (eq. 7.2)
       if (mag .lt. 5.0) then
          tauA = s3T
@@ -44749,12 +44749,12 @@ c     with fix to model for small mag at long periods - limit sigAmp to be less 
         sigAmp = phiA*0.99
       endif
       phiB = sqrt( phiA**2 - sigAmp**2)
-      
+
 c     Compute partial derivative of alog(soil amp) w.r.t. alog(Sa1180) (eq. 7.10)
       if ( vs30 .ge. vLinT) then
         dAmp_dSa1180 = 0.
       else
-        dAmp_dSa1180 = bT*Sa1180 * ( -1. / (Sa1180+c) 
+        dAmp_dSa1180 = bT*Sa1180 * ( -1. / (Sa1180+c)
      1              + 1./ (Sa1180 + c*(vs30/vLinT)**(n)) )
       endif
 
@@ -44763,20 +44763,20 @@ C     Compute phi, with non-linear effects (eq. 7.8)
 
 C     Compute tau, with non-linear effects (eq. 7.9)
       tau = tauB * (1. + dAmp_dSa1180)
-      
+
 c     Compute median ground motion (eq. 1)
-      lnSa = f1 + f4 + f5 + f6 + f7 + f8 + f10 + f11 + freg 
+      lnSa = f1 + f4 + f5 + f6 + f7 + f8 + f10 + f11 + freg
 
       return
       end
- 
- 
-c ---------------------------------------------------------------------            
-C     *** Akkar, Sandikkaya, and Bommer (2013) *** Adjusted in Taiwan SSHAC Project
-c ---------------------------------------------------------------------            
 
-      subroutine ASB14_TW_B01 ( mag, Rbjf, specT, 
-     1                     period2, lnY, sigma, iflag, ftype, Vs, phiT, tauT ) 
+
+c ---------------------------------------------------------------------
+C     *** Akkar, Sandikkaya, and Bommer (2013) *** Adjusted in Taiwan SSHAC Project
+c ---------------------------------------------------------------------
+
+      subroutine ASB14_TW_B01 ( mag, Rbjf, specT,
+     1                     period2, lnY, sigma, iflag, ftype, Vs, phiT, tauT )
 
       implicit none
 
@@ -44823,13 +44823,13 @@ c ---------------------------------------------------------------------
      1      0.35692161370857, 0.360549438147831, 0.382106474902984, 0.404417574880376, 0.428749763477024, 0.441719248359787,
      1      0.449928617337981, 0.465665315601137, 0.475600872655558, 0.505107922646745/
 
-c      Data sigma  / 0.7121, 0.6865, 0.7146, 0.7204, 0.7335, 0.7405, 0.7514, 0.7618, 
+c      Data sigma  / 0.7121, 0.6865, 0.7146, 0.7204, 0.7335, 0.7405, 0.7514, 0.7618,
 c     1              0.7812, 0.7832, 0.7676, 0.7623, 0.7781, 0.7653, 0.7863, 0.7849,
 c     2              0.8109, 0.8151, 0.8083, 0.7149 /
 
 
 
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       nPer = 22
       if (specT .eq. 0.0) then
          period1 = period(1)
@@ -44843,7 +44843,7 @@ C First check for the PGA case (i.e., specT=0.0)
          phiT = phi(1)
          tauT = tau(1)
          goto 1011
-C Check for the PGV case (i.e., specT=-1.0) 
+C Check for the PGV case (i.e., specT=-1.0)
       elseif (specT .eq. -1.0) then
          period1 = period(2)
          a1T = a1(2)
@@ -44862,22 +44862,22 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Akkar,Sandikkaya&Bommer (2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -44899,7 +44899,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,phiT,iflag)
             call interp (period(count1),period(count2),tau(count1),tau(count2),
      +                   specT,tauT,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 
 C.....Set the mechanism terms based on ftype............
 C     Set mechanism term and corresponding Frv and Fnm values.
@@ -44913,14 +44913,14 @@ C                                          -30 < Rake <   30
 C                                          150 < Rake <  180
 C      0.5      Reverse/Oblique             30 < Rake <   60
 C                                          120 < Rake <  150
-C       1       Reverse                     60 < Rake <  120   
+C       1       Reverse                     60 < Rake <  120
       if (ftype .eq. -1.0) then
          Fr = 0.0
          Fn = 1.0
-      elseif (ftype .eq. -0.5) then 
+      elseif (ftype .eq. -0.5) then
          Fr = 0.0
          Fn = 1.0
-      elseif (ftype .eq. 0.0) then 
+      elseif (ftype .eq. 0.0) then
          Fr = 0.0
          Fn = 0.0
       elseif (ftype .eq. 0.5) then
@@ -44929,7 +44929,7 @@ C       1       Reverse                     60 < Rake <  120
       elseif (ftype .eq. 1.0) then
          Fr = 1.0
          Fn = 0.0
-      endif 
+      endif
 
 C     Set frequency independent terms
       a2 = 0.0029
@@ -44943,31 +44943,31 @@ C     Set frequency independent terms
 
 C     Compute the PGA for reference Vs=750m/s.
       if (mag .le. c1 ) then
-         pgaref = a1(1) + a2*(mag-c1) + a3(1)*(8.5-mag)**2.0 + 
-     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
+         pgaref = a1(1) + a2*(mag-c1) + a3(1)*(8.5-mag)**2.0 +
+     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
      2                  a8(1)*Fn + a9(1)*Fr
       else
-         pgaref = a1(1) + a7*(mag-c1) + a3(1)*(8.5-mag)**2.0 + 
-     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
-     2                  a8(1)*Fn + a9(1)*Fr      
+         pgaref = a1(1) + a7*(mag-c1) + a3(1)*(8.5-mag)**2.0 +
+     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
+     2                  a8(1)*Fn + a9(1)*Fr
       endif
 
-      pgaref = exp(pgaref) 
+      pgaref = exp(pgaref)
 
 C.....Now compute the ground motion value........
       if (mag .le. c1 ) then
-         lnY = a1T + a2*(mag-c1) + a3T*(8.5-mag)**2.0 + 
-     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
+         lnY = a1T + a2*(mag-c1) + a3T*(8.5-mag)**2.0 +
+     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
      2                  a8T*Fn + a9T*Fr
       else
-         lnY = a1T + a7*(mag-c1) + a3T*(8.5-mag)**2.0 + 
-     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
-     2                  a8T*Fn + a9T*Fr      
+         lnY = a1T + a7*(mag-c1) + a3T*(8.5-mag)**2.0 +
+     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
+     2                  a8T*Fn + a9T*Fr
       endif
 
 C.....Now apply site amplification term......
       if (vs .le. 750.0) then
-         lnY = lnY + b1T*alog(Vs/750.0) + 
+         lnY = lnY + b1T*alog(Vs/750.0) +
      1         b2T*alog( (pgaref + c*(Vs/750.0)**n) / ((pgaref+c)*(Vs/750.0)**n) )
       else
          lnY = lnY + b1T*alog( min(Vs,1000.0)/750.0)
@@ -44982,9 +44982,9 @@ C     Convert ground motion to units of gals.
 
       return
       END
-      
-c-------------------- Adjusted in Taiwan SSHAC Project--------------------------------------------------  
-              
+
+c-------------------- Adjusted in Taiwan SSHAC Project--------------------------------------------------
+
       Subroutine Bindi14_TW_B01 ( m, jbDist, ftype, specT,
      1                     period2, lnY, sigma, iflag, vs, phiT, tauT )
 
@@ -44998,7 +44998,7 @@ c-------------------- Adjusted in Taiwan SSHAC Project--------------------------
       real e1T, c1T, c2T, hT, c3T, b1T, b2T, b3T, gammaT, sofNT, sofRT, sofST, sigs2sT
       real phiT, tauT, sigT, period1
       real Rref, Mref, Mh, R, Vref, vs
- 
+
       REAL M, jbDist, specT, sigma, termsof
       REAL period2, lnY, ftype
 
@@ -45071,7 +45071,7 @@ c-------------------- Adjusted in Taiwan SSHAC Project--------------------------
 
 C Find the requested spectral period and corresponding coefficients
       nPer = 21
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1  = period(1)
          e1T      = e1(1)
@@ -45117,22 +45117,22 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Bindi et al. (2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -45168,8 +45168,8 @@ C Interpolate the coefficients for the requested spectral period.
      +             specT,tauT,iflag)
       call interp (period(count1),period(count2),sig(count1),sig(count2),
      +             specT,sigT,iflag)
-   
- 1011 period1 = specT                                                                                                              
+
+ 1011 period1 = specT
 
 C     Set Constant Terms
       Mref = 5.5
@@ -45177,7 +45177,7 @@ C     Set Constant Terms
       Mh = 6.75
       Vref = 800.0
 
-C     Set the mechanism term. 
+C     Set the mechanism term.
       if (ftype .eq. 0 ) then
          termsof = 0
       elseif (ftype .ge. 0.5) then
@@ -45188,7 +45188,7 @@ C     Set the mechanism term.
 
       R = sqrt (jbdist**2 + hT**2)
 
-C     Compute the ground motion for the given spectral period. 
+C     Compute the ground motion for the given spectral period.
       if (M .le. Mh) then
          lnY = e1T + (c1T+c2T*(M-Mref))*alog(R/Rref) + c3T*(R-Rref) +
      1       b1T*(M-Mh) + b2T*(M-Mh)**2.0 + gammaT*alog(vs/vref) + termsof
@@ -45209,13 +45209,13 @@ c      lnY = lnY*alog(10.0)
       period2 = period1
 
       return
-      end 
-      
-c ---------------------------------------------------------------------            
+      end
+
+c ---------------------------------------------------------------------
 C     *** Akkar, Sandikkaya, and Bommer (2013) *** Adjusted in Taiwan SSHAC Project
-c ---------------------------------------------------------------------            
-      subroutine ASB14_TW_C01 ( mag, Rbjf, specT, 
-     1                     period2, lnY, sigma, iflag, ftype, Vs, phiT, tauT ) 
+c ---------------------------------------------------------------------
+      subroutine ASB14_TW_C01 ( mag, Rbjf, specT,
+     1                     period2, lnY, sigma, iflag, ftype, Vs, phiT, tauT )
       implicit none
       integer MAXPER
       parameter (MAXPER=22)
@@ -45226,8 +45226,8 @@ c ---------------------------------------------------------------------
       real a5, a6, a7, c1, c, n, sigma, period1, pgaref
       INTEGER iFlag, count1, count2, nPer, i
       real a2(MAXPER), a2T
- 
- 
+
+
       Data Period(1:22) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
      1      3, 4/
       Data a1(1:22) / 1.95754376344839, 2.00817307775539, 2.10206659629286, 2.20961153930911, 2.35078005202385, 2.49873114534198,
@@ -45267,9 +45267,9 @@ c ---------------------------------------------------------------------
      1       0.095335574, 0.131059036, 0.127769367, 0.131100025, 0.131821032, 0.153387307, 0.129558757, 0.125270741,
      1       0.116455398, 0.143364126, 0.146078527, 0.131832393, 0.128727888, 0.007683513 /
 
- 
- 
-C First check for the PGA case (i.e., specT=0.0) 
+
+
+C First check for the PGA case (i.e., specT=0.0)
       nPer = 22
       if (specT .eq. 0.0) then
          period1 = period(1)
@@ -45290,21 +45290,21 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Akkar,Sandikkaya&Bommer (2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -45327,7 +45327,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,phiT,iflag)
             call interp (period(count1),period(count2),tau(count1),tau(count2),
      +                   specT,tauT,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 C.....Set the mechanism terms based on ftype............
 C     Set mechanism term and corresponding Frv and Fnm values.
 C     fType     Mechanism                      Rake
@@ -45340,14 +45340,14 @@ C                                          -30 < Rake <   30
 C                                          150 < Rake <  180
 C      0.5      Reverse/Oblique             30 < Rake <   60
 C                                          120 < Rake <  150
-C       1       Reverse                     60 < Rake <  120   
+C       1       Reverse                     60 < Rake <  120
       if (ftype .eq. -1.0) then
          Fr = 0.0
          Fn = 1.0
-      elseif (ftype .eq. -0.5) then 
+      elseif (ftype .eq. -0.5) then
          Fr = 0.0
          Fn = 1.0
-      elseif (ftype .eq. 0.0) then 
+      elseif (ftype .eq. 0.0) then
          Fr = 0.0
          Fn = 0.0
       elseif (ftype .eq. 0.5) then
@@ -45356,7 +45356,7 @@ C       1       Reverse                     60 < Rake <  120
       elseif (ftype .eq. 1.0) then
          Fr = 1.0
          Fn = 0.0
-      endif 
+      endif
 C     Set frequency independent terms
 c      a2 = 0.0029
       a5 = 0.2529
@@ -45367,28 +45367,28 @@ c      a2 = 0.0029
       n = 3.2
 C     Compute the PGA for reference Vs=750m/s.
       if (mag .lt. c1 ) then
-         pgaref = a1(1) + a2(1)*(mag-c1) + a3(1)*(8.5-mag)**2.0 + 
-     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
+         pgaref = a1(1) + a2(1)*(mag-c1) + a3(1)*(8.5-mag)**2.0 +
+     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
      2                  a8(1)*Fn + a9(1)*Fr
       else
-         pgaref = a1(1) + a7*(mag-c1) + a3(1)*(8.5-mag)**2.0 + 
-     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
-     2                  a8(1)*Fn + a9(1)*Fr      
+         pgaref = a1(1) + a7*(mag-c1) + a3(1)*(8.5-mag)**2.0 +
+     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
+     2                  a8(1)*Fn + a9(1)*Fr
       endif
-      pgaref = exp(pgaref) 
+      pgaref = exp(pgaref)
 C.....Now compute the ground motion value........
       if (mag .lt. c1 ) then
-         lnY = a1T + a2T*(mag-c1) + a3T*(8.5-mag)**2.0 + 
-     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
+         lnY = a1T + a2T*(mag-c1) + a3T*(8.5-mag)**2.0 +
+     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
      2                  a8T*Fn + a9T*Fr
       else
-         lnY = a1T + a7*(mag-c1) + a3T*(8.5-mag)**2.0 + 
-     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
-     2                  a8T*Fn + a9T*Fr      
+         lnY = a1T + a7*(mag-c1) + a3T*(8.5-mag)**2.0 +
+     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
+     2                  a8T*Fn + a9T*Fr
       endif
 C.....Now apply site amplification term......
       if (vs .le. 750.0) then
-         lnY = lnY + b1T*alog(Vs/750.0) + 
+         lnY = lnY + b1T*alog(Vs/750.0) +
      1         b2T*alog( (pgaref + c*(Vs/750.0)**n) / ((pgaref+c)*(Vs/750.0)**n) )
       else
          lnY = lnY + b1T*alog( min(Vs,1000.0)/750.0)
@@ -45400,15 +45400,15 @@ C     Convert ground motion to units of gals.
       period2 = period1
       return
       END
-      
-c ------------------------------------------------------------------            
+
+c ------------------------------------------------------------------
 C *** Abrahamson, Silva, and Kamai (NGA-West2 2013) Horizontal ****
 C     Earthquake Spectra Paper:
-C        Summary of the Abrahamson, Silva, and Kamai NGA-West2 
+C        Summary of the Abrahamson, Silva, and Kamai NGA-West2
 C            Ground-Motion Relations for Active Crustal REgions
 C         N. A. Abrahamson, S. J. Silva, and R. Kamai
 C     Notes:
-C        Applicable Range (see Abstract):  
+C        Applicable Range (see Abstract):
 C           3 <= M <= 8.5
 C           Rrup <= 300 km
 C        Regional attenuation included based on Regionflag
@@ -45419,41 +45419,41 @@ C             3 = Japan
 C         Mainshock and Aftershocks included based on MSASFlag
 C             0 = Mainshocks
 C             1 = Aftershocks
-C         Sigma dependent on estimated or measured Vs30m based on 
+C         Sigma dependent on estimated or measured Vs30m based on
 C             Vs30_Class
 C             0 = Estimated Vs30m
 C             1 = Measured Vs30m
-c ------------------------------------------------------------------            
-      subroutine ASK14_TW_C01 ( mag, dip, fType, fltWidth, rRup, Rjb,  
+c ------------------------------------------------------------------
+      subroutine ASK14_TW_C01 ( mag, dip, fType, fltWidth, rRup, Rjb,
      1                     vs30, hwflag, lnY, sigma, specT, period2, ztor,
      2                     iflag, vs30_class, z10, Rx, Ry0, regionflag, msasflag,
      1                     phi, tau )
 C     Last Updated: 8/1/13
       implicit none
- 
+
       real mag, dip, fType, rRup, rjb, Rx, Ry0, vs30, SA1180,
      1      Z10,  ZTOR, fltWidth, lnSa, sigma, lnY, vs30_rock
       real Fn, Frv, specT, period2, CRjb, phi, tau, z10_rock, SA_rock
       integer hwflag, iflag, vs30_class, regionflag, msasflag
- 
+
 c     Vs30 class is to distinguish between the sigma if the Vs30 is measured
 c     vs the VS30 being estimated from surface geology.
 c         Vs30_class = 0 for estimated
-c         Vs30_class = 1 for measured 
- 
-C     Current version is not programmed for Aftershock cases. 
+c         Vs30_class = 1 for measured
+
+C     Current version is not programmed for Aftershock cases.
 C       For implementation of Aftershock a new distance metric, CRjb
-C       will need to be computed and passed along to this subroutine. 
- 
-      CRjb = 999.9 
- 
-C     Set mechanism term and corresponding Frv and Fnm values.     
+C       will need to be computed and passed along to this subroutine.
+
+      CRjb = 999.9
+
+C     Set mechanism term and corresponding Frv and Fnm values.
 C     fType     Mechanism                      Rake
 C     ------------------------------------------------------
 C      -1       Normal                   -120 < Rake < -60.0
 C     1, 0.5    Reverse and Rev/Obl        30 < Rake < 150.0
 C     0,-0.5    Strike-Slip and NMl/Obl        Otherwise
-C 
+C
       if ( fType .eq. 1.0 ) then
         Frv = 1.0
         Fn = 0.0
@@ -45470,41 +45470,41 @@ C
         Frv = 0.0
         Fn = 0.0
       endif
- 
+
 c     Compute SA1180
       vs30_rock = 1180.
       z10_rock = 0.005
       SA_rock = 0.
-      
-      call ASK14_TW_C01_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0, 
+
+      call ASK14_TW_C01_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0,
      1                     vs30_rock, SA_rock, Z10_rock, hwflag, vs30_class,
      2                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb )
       Sa1180 = exp(lnSa)
- 
+
 c     Compute Sa at spectral period for given Vs30
- 
-      call ASK14_TW_C01_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0, 
+
+      call ASK14_TW_C01_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0,
      1                     vs30, SA1180, Z10, hwflag, vs30_class,
      2                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb )
- 
+
 c     compute Sa (given the PGA rock value)
       sigma = sqrt( phi**2 + tau**2 )
- 
+
       lnY = lnSa + 6.89
- 
+
       period2 = specT
- 
+
       return
       end
- 
+
 c ----------------------------------------------------------------------
-      subroutine ASK14_TW_C01_model ( mag, dip, FltWidth, ZTOR, Frv, Fn, rRup, rjb, Rx, Ry0, 
+      subroutine ASK14_TW_C01_model ( mag, dip, FltWidth, ZTOR, Frv, Fn, rRup, rjb, Rx, Ry0,
      1                     vs30, Sa1180, Z1, hwflag, vs30_class,
      3                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb)
- 
+
       implicit none
-      
-      integer MAXPER     
+
+      integer MAXPER
       parameter (MAXPER=25)
       real Vlin(MAXPER), b(MAXPER), c4(MAXPER), M1(MAXPER), a1(MAXPER)
       real a2(MAXPER), a3(MAXPER), a6(MAXPER), a8(MAXPER), a10(MAXPER)
@@ -45524,7 +45524,7 @@ c ----------------------------------------------------------------------
       real s1estT, s2estT, s1msrT, s2msrT
       real s3T, s4T, s5T, s6T, c4_mag
       real phiA_est, phiA_msr, period1
-      
+
       real M2
       real lnSa, SA1180, rjb, rRup, Rx, Ry0, dip, mag, vs30
       real HW_taper1, HW_taper2, HW_taper3, HW_taper4, HW_taper5
@@ -45537,8 +45537,8 @@ c ----------------------------------------------------------------------
       real R, V1, Vs30Star, hw_a2, h1, h2, h3, R1, R2, CRjb
       integer count1, count2, i
       real y1, y2, x1, x2, y1z, y2z, x1z, x2z
- 
- 
+
+
       Data Period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
      1      3, 4, 5, 7.5, 10/
       Data Vlin(1:25) / 660, 660, 680, 770, 851.659765220817, 915, 960, 910, 833.557751246246, 740, 674.738820243143, 590, 495,
@@ -45661,12 +45661,12 @@ c ----------------------------------------------------------------------
      1      0.59, 0.61, 0.63, 0.66, 0.69, 0.73, 0.77, 0.8, 0.8, 0.8, 0.76, 0.72, 0.67, 0.64/
       Data s6(1:25) / 0.63, 0.63, 0.63, 0.63, 0.641263415892527, 0.65, 0.69, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.69,
      1      0.68, 0.66, 0.62, 0.55, 0.52, 0.5, 0.5, 0.5/
- 
- 
+
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
- 
-C First check for the PGA, PGV, PGD cases 
+
+C First check for the PGA, PGV, PGD cases
       if (specT .eq. 0.0) then
          period1 = period(1)
          a1T = a1(1)
@@ -45716,20 +45716,20 @@ C   For other periods, loop over the spectral period range of the attenuation re
          if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
             count1 = i
             count2 = i+1
-            goto 1020 
+            goto 1020
          endif
       enddo
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Abrahamson, Silva, and Kamai (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -45812,7 +45812,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,s5T,iflag)
             call interp (period(count1),period(count2),s6(count1),s6(count2),
      +                   specT,s6T,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 C     Constant values
       n = 1.5
       M2 = 5.0
@@ -45832,11 +45832,11 @@ C     Magnitude dependent taper for C4 (eq. 4.4)
          c4_mag = c4T - (c4T-1.0) * (5.0-mag)
       else
          c4_mag = 1.0
-      endif 
-     
+      endif
+
 c     Set distance (eq 4.3)
       R = sqrt(rRup**2 + c4_mag**2)
-       	  
+
 C     Base Model (eq 4.2)
       if ( mag .lt. M2 ) then
         f1 = a1T + a6T*(Mag-M2) + a7*(Mag-M2)**2 + a4T*(M2-M1T) + a8T*(8.5-M2)**2 +
@@ -45846,25 +45846,25 @@ C     Base Model (eq 4.2)
       else
         f1 = a1T + a5*(Mag-M1T) + a8T*(8.5-Mag)**2 + (a2T + a3T*(Mag-M1T)) * alog(R) + a17T*Rrup
       endif
-	  
-c     style of faulting (eq 4.5 and 4.6) 
+
+c     style of faulting (eq 4.5 and 4.6)
       if ( mag .gt. 5. ) then
         f7 = Frv * a11T
         f8 = Fn * a12T
       elseif ( mag .ge. 4. ) then
         f7 = Frv * a11T * (mag-4.)
         f8 = Fn * a12T * (mag-4.)
-      else 
+      else
         f7 = 0
         f8 = 0
       endif
-c     ZTOR (eq 14) 
+c     ZTOR (eq 14)
 c     form modified"Extend the upper bound ZTOR to 50km:"
-      if (ZTOR .lt. 50.) then 
+      if (ZTOR .lt. 50.) then
         f6 = a15T * ZTOR/50.0
       else
         f6 = a15T
-      endif    
+      endif
 c     Set VS30_star (eq 4.8 and 4.9)
       if ( specT .gt. 3.0 ) then
         V1 = 800.
@@ -45872,15 +45872,15 @@ c     Set VS30_star (eq 4.8 and 4.9)
         V1 = exp( -0.35 * alog(specT/0.5)  + alog(1500.) )
       else
         V1=1500.
-      endif      
-      if ( vs30 .lt. v1 ) then 
+      endif
+      if ( vs30 .lt. v1 ) then
          vs30Star = vs30
       else
 	     vs30Star = v1
-      endif		
-c     Compute site amplification (Eq. 4.7)  
+      endif
+c     Compute site amplification (Eq. 4.7)
       if (vs30 .lt. vLinT) then
-        f5 = a10T*alog(vs30Star/vLinT) - bT*alog(c+Sa1180) 
+        f5 = a10T*alog(vs30Star/vLinT) - bT*alog(c+Sa1180)
      1              + bT*alog(Sa1180+c*((vs30Star/vLinT)**(n)) )
       else
      	f5 = (a10T + bT*n) * alog(vs30Star/vLinT)
@@ -45888,41 +45888,41 @@ c     Compute site amplification (Eq. 4.7)
       if (vs30 .eq. 1180.) then
      	f5 = (a10T + bT*n) * alog(1180/vLinT)
       endif
-	  
+
 c     Set Regional z1 reference (eq 4.18)
-      if (regionflag .eq. 1) then  
+      if (regionflag .eq. 1) then
          z1_ref =  exp(-2.629 / 4.0 * alog((vs30**4.0 + 253.299**4.0)/(2491.945**4.0 + 253.299**4.0)))/ 1000.
       elseif (regionflag .eq. 3) then
          z1_ref = exp ( -5.23/2. * alog( (Vs30**2.0 + 412.**2.0)/(1360.**2.0+412.**2.0) ) ) / 1000.
       else
          z1_ref = exp ( -7.67/4. * alog( (Vs30**4.0 + 610.**4.0)/(1360.**4.0+610.**4.0) ) ) / 1000.
-      endif 
-      
+      endif
+
 C     Soil Depth Model (eq 4.17)
 C     Updated 8/1/13
       if ( vs30 .lt. 150.0 ) then
          y1z = a43T
-         y2z = a43T 
+         y2z = a43T
          x1z = 50.0
          x2z = 150.0
       elseif ( vs30 .lt. 250.0 ) then
          y1z = a43T
-         y2z = a44T 
+         y2z = a44T
          x1z = 150.0
          x2z = 250.0
       elseif ( vs30 .lt. 400.0 ) then
          y1z = a44T
-         y2z = a45T 
+         y2z = a45T
          x1z = 250.0
          x2z = 400.0
       elseif ( vs30 .lt. 700.0 ) then
          y1z = a45T
-         y2z = a46T 
+         y2z = a46T
          x1z = 400.0
          x2z = 700.0
       else
          y1z = a46T
-         y2z = a46T 
+         y2z = a46T
          x1z = 700.0
          x2z = 1000.0
       endif
@@ -45932,7 +45932,7 @@ C     Calculation f10 term and set it equal to zero for Vs=1180m/s (i.e., refere
       else
          f10 = ( y1z + (Vs30-x1z)*(y2z-y1z)/(x2z-x1z))*alog( (z1 + 0.01) / (z1_ref+0.01) )
       endif
-c     Compute HW taper1 (eq 4.11) 
+c     Compute HW taper1 (eq 4.11)
       if ( dip .le. 30. ) then
         HW_taper1 = 60./ 45.
       else
@@ -45941,7 +45941,7 @@ c     Compute HW taper1 (eq 4.11)
 c     Compute HW taper2 (eq. 4.12)
       hw_a2 = 0.2
       if( mag .ge. 6.5 ) then
-        HW_taper2 = 1. + hw_a2 * (mag-6.5) 
+        HW_taper2 = 1. + hw_a2 * (mag-6.5)
       elseif ( mag .gt. 5.5 ) then
         HW_taper2 = 1. + HW_a2 * (mag-6.5) - (1.0 - HW_a2)*(mag-6.5)**2
       else
@@ -45960,14 +45960,14 @@ C	  April 11, correction by ronnie for HW_taper3 when Rx.gt.R2
         HW_taper3 = 1. - (Rx-R1)/(R2-R1)
       else
         HW_taper3 = 0.
-      endif 
+      endif
 c     Compute HW taper 4 (eq 4.14)
       if ( ZTOR .le. 10. ) then
         HW_taper4 = 1. - (ZTOR**2) / 100.
       else
         HW_taper4 = 0.
       endif
-      
+
 c     Compute HW taper 5 (eq. 13)  **** Ry0 version ***
       Ry1 = Rx * tan(20.*3.1415926/180.)
       if ( Ry0 .lt. Ry1 ) then
@@ -45977,9 +45977,9 @@ c     Compute HW taper 5 (eq. 13)  **** Ry0 version ***
       else
         HW_taper5 = 0.
       endif
-c     Compute HW taper 5 (eq. 4.15b)  **** No Ry0 version ***     
+c     Compute HW taper 5 (eq. 4.15b)  **** No Ry0 version ***
 c      if (Rjb .eq. 0. ) then
-c        HW_taper5 = 1. 
+c        HW_taper5 = 1.
 c      elseif ( Rjb .lt. 30. ) then
 c        HW_taper5 = 1 - Rjb/30.
 c      else
@@ -45998,28 +45998,28 @@ C     Add aftershock factor (eq 4.21)
          elseif (CRjb .le. 5.0) then
              f11 = a14T
          else
-             f11 = a14T * ( 1.0 - (CRjb - 5.0) /10.0) 
+             f11 = a14T * ( 1.0 - (CRjb - 5.0) /10.0)
          endif
       elseif (msasflag .eq. 0) then
          f11 = 0.0
-      endif 
+      endif
 C     Now apply the regional attenuation differences (eq 4.22)
 C     Global No Change
       if (regionflag .eq. 0) then
          freg = 0.0
 C     Taiwan
       elseif (regionflag .eq. 1) then
-         f12 = a31T * alog(vs30Star/VlinT) 
-         freg = f12 + a25T*Rrup 
+         f12 = a31T * alog(vs30Star/VlinT)
+         freg = f12 + a25T*Rrup
       elseif (regionflag .eq. 1 .and. vs30 .eq. 1180.0) then
-         f12 = a31T * alog(1180/VlinT) 
-         freg = f12 + a25T*Rrup 
+         f12 = a31T * alog(1180/VlinT)
+         freg = f12 + a25T*Rrup
 C     China
       elseif (regionflag .eq. 2) then
-         freg = a28T*Rrup 
+         freg = a28T*Rrup
 C     Japan
       elseif (regionflag .eq. 3) then
-         freg = a42T + a29T*Rrup 
+         freg = a42T + a29T*Rrup
       endif
 C     Set the Sigma Values
       if (regionflag .ne. 3)  then
@@ -46051,14 +46051,14 @@ C     Set Sigma values for Japan Region
       else
 C calculate phi_A for Japan (eq. 7.3)
         if (Rrup .lt. 30) then
-           phiA = s5T        
+           phiA = s5T
         elseif (Rrup .le. 80) then
            phiA = s5T + (s6T-s5T)/50*(Rrup-30)
         else
            phiA = s6T
         endif
       endif
-	  
+
 c     Compute between-event term, tau (eq. 7.2)
       if (mag .lt. 5.0) then
          tauA = s3T
@@ -46075,27 +46075,27 @@ c     with fix to model for small mag at long periods - limit sigAmp to be less 
         sigAmp = phiA*0.99
       endif
       phiB = sqrt( phiA**2 - sigAmp**2)
-      
+
 c     Compute partial derivative of alog(soil amp) w.r.t. alog(Sa1180) (eq. 7.10)
       if ( vs30 .ge. vLinT) then
         dAmp_dSa1180 = 0.
       else
-        dAmp_dSa1180 = bT*Sa1180 * ( -1. / (Sa1180+c) 
+        dAmp_dSa1180 = bT*Sa1180 * ( -1. / (Sa1180+c)
      1              + 1./ (Sa1180 + c*(vs30/vLinT)**(n)) )
       endif
 C     Compute phi, with non-linear effects (eq. 7.8)
       phi = sqrt( phiB**2 * (1. + dAmp_dSa1180)**2 + sigAmp**2 )
 C     Compute tau, with non-linear effects (eq. 7.9)
       tau = tauB * (1. + dAmp_dSa1180)
-      
+
 c     Compute median ground motion (eq. 1)
-      lnSa = f1 + f4 + f5 + f6 + f7 + f8 + f10 + f11 + freg 
+      lnSa = f1 + f4 + f5 + f6 + f7 + f8 + f10 + f11 + freg
       return
       end
- 
- 
-c-------------------- Adjusted in Taiwan SSHAC Project--------------------------------------------------  
-              
+
+
+c-------------------- Adjusted in Taiwan SSHAC Project--------------------------------------------------
+
       Subroutine Bindi14_TW_C01 ( m, jbDist, ftype, specT,
      1                     period2, lnY, sigma, iflag, vs, phiT, tauT )
       implicit none
@@ -46107,13 +46107,13 @@ c-------------------- Adjusted in Taiwan SSHAC Project--------------------------
       real e1T, c1T, c2T, hT, c3T, b1T, b2T, b3T, gammaT, sofNT, sofRT, sofST, sigs2sT
       real phiT, tauT, sigT, period1
       real Rref, Mref, Mh, R, Vref, vs
- 
+
       REAL M, jbDist, specT, sigma, termsof
       REAL period2, lnY, ftype
       integer iflag, count1, count2, nPer, i
       real f_D, f_M, f_S
-  
- 
+
+
       Data period(1:21) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
      1      3/
       Data e1(1:21) / 0.659508496312107, 0.659508496312107, 0.684257395856917, 0.792185875253012, 0.910245329949904,
@@ -46177,10 +46177,10 @@ c-------------------- Adjusted in Taiwan SSHAC Project--------------------------
       Data sig(1:21) / 0.745772773, 0.745772773, 0.745772773, 0.753543188479092, 0.759056386, 0.767508805717544, 0.783602925138285,
      1      0.797567122, 0.792929650007148, 0.787253843, 0.780874405181787, 0.772590981, 0.777647499576309, 0.775374807,
      1      0.77430871, 0.78683247, 0.795506751916842, 0.819874566, 0.835458462, 0.84932463, 0.829789498/
- 
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 21
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1  = period(1)
          e1T      = e1(1)
@@ -46206,21 +46206,21 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Bindi et al. (2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),e1(count1),e1(count2),
@@ -46255,14 +46255,14 @@ C Interpolate the coefficients for the requested spectral period.
      +             specT,tauT,iflag)
       call interp (period(count1),period(count2),sig(count1),sig(count2),
      +             specT,sigT,iflag)
-   
- 1011 period1 = specT                                                                                                              
+
+ 1011 period1 = specT
 C     Set Constant Terms
       Mref = 5.5
       Rref = 1.0
       Mh = 6.75
       Vref = 800.0
-C     Set the mechanism term. 
+C     Set the mechanism term.
       if (ftype .eq. 0 ) then
          termsof = 0
       elseif (ftype .ge. 0.5) then
@@ -46272,17 +46272,17 @@ C     Set the mechanism term.
       endif
       R = sqrt (jbdist**2 + hT**2)
 	  f_D = (c1T+c2T*(M-Mref))*alog(R/Rref) + c3T*(R-Rref)
-C     Compute the ground motion for the given spectral period. 
+C     Compute the ground motion for the given spectral period.
       if (M .le. Mh) then
-         f_M = b1T*(M-Mh) + b2T*(M-Mh)**2.0 
+         f_M = b1T*(M-Mh) + b2T*(M-Mh)**2.0
       else
-         f_M = b3T*(M-Mh)  
+         f_M = b3T*(M-Mh)
       endif
-	  
+
 	  f_S = gammaT*alog(vs/vref)
-	  
+
 	  lnY = e1T + f_D + f_M + f_S + termsof
-	  
+
 C     Set the sigma value and convert from log10 to Ln units
 c      phiT = phiT*alog(10.0)
 c      tauT = tauT*alog(10.0)
@@ -46294,9 +46294,9 @@ c      lnY = lnY*alog(10.0)
       period2 = period1
       return
       end
- 
- 
-c ---------------------------------------------------------------------------            
+
+
+c ---------------------------------------------------------------------------
 C     *** Boore, Stewart, Seyhan and Atkinson NGA West 2 (NGA West2-2013) ***
 C         Earthquake Spectra Report:
 C            NGA-West2 Equations for Predicting PGA, PGV, and 5%-Damped
@@ -46310,13 +46310,13 @@ C            Distance < 300km
 C            150 < Vs < 1500 m/s
 C            0.0 < Z1 < 3.0 km
 C            Region Flag:
-C               0 = Global 
+C               0 = Global
 C               1 = China-Turkey
 C               2 = Italy-Japan
-c ---------------------------------------------------------------------------            
-      subroutine BSSA14_TW_C01 ( mag, Rbjf, specT, 
+c ---------------------------------------------------------------------------
+      subroutine BSSA14_TW_C01 ( mag, Rbjf, specT,
      1        period2, lnY, sigma, iflag, vs, ftype, pga4nl, z10, regionflag, basinflag,
-     1        phi, tau ) 
+     1        phi, tau )
 C     Last Updated: 9/16/13
       parameter (MAXPER=25)
       REAL Period(MAXPER), c1(MAXPER), c2(MAXPER), c3(MAXPER)
@@ -46337,8 +46337,8 @@ C     Last Updated: 9/16/13
       real e5T, e6T, mhT, cT, VcT, phi2T, phi3T, f4T, l1T, l2T, t1T, t2T
       real deltaz1, f5T, rjbbarT, DfrT, DfvT, R1T, R2T, DC3GlobalT
       real DC3ChinaTrkT, DC3ItalyJapanT, f6T, f7T
- 
- 
+
+
       Data Period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
      1      3, 4, 5, 7.5, 10/
       Data e0(1:25) / 0.4534, 0.48598, 0.56916, 0.673459231164795, 0.75436, 0.96447, 1.1268, 1.20895293439595, 1.3095,
@@ -46432,7 +46432,7 @@ C     Last Updated: 9/16/13
      1      0.4869, 0.3982/
       Data t2(1:25) / 0.3446, 0.3464, 0.364, 0.39908554050522, 0.4263, 0.4658, 0.4583, 0.42664391581021, 0.3879, 0.353355082182037,
      1      0.3085, 0.2664, 0.229, 0.2097, 0.2235, 0.2664, 0.2984, 0.3151, 0.3291, 0.3438, 0.3492, 0.3354, 0.2699, 0.2392, 0.348/
- 
+
 C     Set constant parameters
       mref = 4.5
       rref = 1.0
@@ -46441,7 +46441,7 @@ C     Set constant parameters
       f3 = 0.1
       V1 = 225.0
       V2 = 300.0
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       nPer = 25
       if (specT .eq. 0.0) then
          period1 = period(1)
@@ -46455,7 +46455,7 @@ C First check for the PGA case (i.e., specT=0.0)
          mhT = mh(1)
          c1T = c1(1)
          c2T = c2(1)
-         c3T = c3(1)        
+         c3T = c3(1)
          hT = h(1)
          cT = c(1)
          VcT = vc(1)
@@ -46484,21 +46484,21 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'BSSA (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),e0(count1),e0(count2),
@@ -46565,7 +46565,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,DfrT,iflag)
             call interp (period(count1),period(count2),Dfv(count1),Dfv(count2),
      +                   specT,DfvT,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 C.....Set the mechanism terms based on ftype............
 C     Set mechanism term and corresponding Frv and Fnm values.
 C     fType     Mechanism                      Rake
@@ -46578,17 +46578,17 @@ C                                          -30 < Rake <   30
 C                                          150 < Rake <  180
 C      0.5      Reverse/Oblique             30 < Rake <   60
 C                                          120 < Rake <  150
-C       1       Reverse                     60 < Rake <  120 
-C     Note: Unknown Mechanism is not currently coded.  
+C       1       Reverse                     60 < Rake <  120
+C     Note: Unknown Mechanism is not currently coded.
       if (ftype .eq. -1.0) then
          mechS = 0.0
          mechN = 1.0
          mechR = 0.0
-      elseif (ftype .eq. -0.5) then 
+      elseif (ftype .eq. -0.5) then
          mechS = 0.0
          mechN = 1.0
          mechR = 0.0
-      elseif (ftype .eq. 0.0) then 
+      elseif (ftype .eq. 0.0) then
          mechS = 1.0
          mechN = 0.0
          mechR = 0.0
@@ -46600,7 +46600,7 @@ C     Note: Unknown Mechanism is not currently coded.
          mechS = 0.0
          mechN = 0.0
          mechR = 1.0
-      endif 
+      endif
 C.....First compute the Reference Rock PGA value...........
 C.....This will include the regional dependence for PGA....
 C.....MAGNITUDE DEPENDENCE.................................
@@ -46614,9 +46614,9 @@ C.....MAGNITUDE DEPENDENCE.................................
 C.....Distance dependence......
       Rp = SQRT( Rbjf*Rbjf+h(1)*h(1) )
 C.....Apply Regional term.....
-         TERM2 = ( c1(1) + c2(1)*(mag-mref) ) * alog(Rp/rref) + 
+         TERM2 = ( c1(1) + c2(1)*(mag-mref) ) * alog(Rp/rref) +
      1           c3(1)  * (Rp-rref)
-     
+
       pga4nl = exp(term1+term2)
 C.....Now compute the requested ground motion value........
 C.....MAGNITUDE DEPENDENCE.................................
@@ -46631,8 +46631,8 @@ C.....Distance dependence......
       R = SQRT( Rbjf*Rbjf+hT*hT )
 C     Now apply the regional attenuation differnece.
 C     Global Case
-         TERM2 = ( c1T + c2T*(mag-mref) ) * alog(R/rref) + 
-     1        c3T * (R-rref) 
+         TERM2 = ( c1T + c2T*(mag-mref) ) * alog(R/rref) +
+     1        c3T * (R-rref)
 C.....Site Response Term.........
 C.....Now compute the site term........
 C.....First the linear term......
@@ -46642,22 +46642,22 @@ C.....First the linear term......
          flin = cT*alog(VcT/Vref)
       endif
 C.....Next the non-linear term......
-      f2 = f4T*(exp(f5T*(min(vs,760.0)-360.0))-exp(f5T*(760.0-360.0))) 
-      
+      f2 = f4T*(exp(f5T*(min(vs,760.0)-360.0))-exp(f5T*(760.0-360.0)))
+
 C.....Now compute the basin effect term......
 C Deviation from ln(Vs30) scaling: bedrock depth (Z1) effect for California.
-c      if (basinflag .eq. 1) then 
-c     Compute the DeltaZ1 term. Apply the California model for all regions except for Japan. 
+c      if (basinflag .eq. 1) then
+c     Compute the DeltaZ1 term. Apply the California model for all regions except for Japan.
           deltaz1 = z10 -
-     1           exp(-2.63/4.0 * alog((vs**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))/1000.0        
+     1           exp(-2.63/4.0 * alog((vs**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))/1000.0
           fbasin = min(f7T, f6T * deltaZ1)
 
 c      else
 c         fbasin = 0.0
 c      endif
       TERM3 = flin + f1 + f2*alog((pga4nl+f3)/f3) + fBasin
-      
-      lnY = term1 + term2 + term3 
+
+      lnY = term1 + term2 + term3
       period2 = period1
 c     Now compute the sigma value which is a function of magnitude and Vs
 C     Tau (Eq. 4.11)
@@ -46668,8 +46668,8 @@ C     Tau (Eq. 4.11)
       else
          tau = t2T
       endif
-      
-C     Phi - Magnitude (Eq. 4.12) 
+
+C     Phi - Magnitude (Eq. 4.12)
       if (mag .le. 4.5) then
          phi = l1T
       elseif (mag .gt. 4.5 .and. mag .lt. 5.5) then
@@ -46683,7 +46683,7 @@ C     Phi - Distance (Eq. 4.13)
       elseif (rbjf .gt. R1T .and. rbjf .le. R2T) then
           phi = phi + DfrT*( (alog(rbjf/R1T))/(alog(R2T/R1T)) )
       else
-          phi = phi + DfrT 
+          phi = phi + DfrT
       endif
 C     Phi - Vs30 (Eq. 4.14)
       if (vs .ge. V2) then
@@ -46698,7 +46698,7 @@ C     Convert ground motion to units of gals.
       lnY = lnY + 6.89
       return
       END
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
 C ** Chiou and Youngs (NGA West2-2013 Model) Horizontal **
 C     Earthquake Spectra Paper:
 C        Update of the Chiou and Youngs NGA Model for the
@@ -46706,7 +46706,7 @@ C            Average Horizontal Component of Peak
 C            Ground Motion and Response Spectra
 C         B. S.J. Chiou and R.R. Youngs
 C     Notes:
-C        Applicable Range (see Abstract):  
+C        Applicable Range (see Abstract):
 C           3.5 <= M <= 8.5 Strike-slip
 C           3.5 <= M <= 8.0 Reverse and Normal
 C           Rrup <= 300 km
@@ -46717,13 +46717,13 @@ C        Regional attenuation included based on Regionflag
 C             0 = Global
 C             1 = Japan/Italy
 C             2 = Wenchuan (note only applicable for M7.9 event)
-C         Sigma dependent on estimated or measured Vs30m based on 
+C         Sigma dependent on estimated or measured Vs30m based on
 C             Vs30_Class
 C             0 = Estimated Vs30m
 C             1 = Measured Vs30m
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
       Subroutine CY14_TW_C01 ( m, Rrup, Rbjf, specT,
-     1                     period2, lnY, sigma, iflag, 
+     1                     period2, lnY, sigma, iflag,
      2                     vs, Delta, DTor, Ftype, depthvs10, vs30_class,
      3                     hwflag, Rx, regionflag, phi, tau )
 C     Last Updated: 8/1/13
@@ -46739,7 +46739,7 @@ C     Last Updated: 8/1/13
       Real CHM(MAXPER), C1c(MAXPER), C1d(MAXPER), C7b(MAXPER), C8b(MAXPER)
       real C11(MAXPER), C11B(MAXPER)
       real gscaleJapIt(MAXPER), gscaleWen(MAXPER), sigma2Jap(MAXPER)
- 
+
       REAL c1T, c1aT, c1bT, cnT, cmT, c5T, c6T, c7T, c9T, c9aT, c3T, c8T
       REAL gamma1T, gamma2T, phi1T, phi2T, phi3T, phi4T, sigma3T
       REAL phi5T, phi6T, tau1T, tau2T, sigma1T, sigma2T
@@ -46753,8 +46753,8 @@ C     Last Updated: 8/1/13
       real NL0, sigma_NL0, F_Measured, F_Inferred, mz_TOR, deltaZ_TOR, coshM
       real gscaleJapItT, gscaleWenT, sigma2JapT, phi
       real phi1jpT, phi5jpT, phi6jpT
- 
- 
+
+
       Data period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
      1      3, 4, 5, 7.5, 10/
       Data c1(1:25) / -1.31266420077258, -1.31266420077258, -1.27052159841083, -1.15311329373526, -1.00621910291969,
@@ -46894,13 +46894,13 @@ C     Last Updated: 8/1/13
      1      0.531176947346726, 0.53091866775, 0.53069348684478, 0.530953922960708, 0.531256171294916, 0.530904125925903,
      1      0.53016308922439, 0.527603492956116, 0.516719512970182, 0.491681001472351, 0.468235579988731, 0.451748161403632,
      1      0.416734686252964, 0.375505067353143/
-      Data c8(1:25) / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0991, 0.1982, 0.2154, 0.2154, 0.2154, 0.2154, 
+      Data c8(1:25) / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0991, 0.1982, 0.2154, 0.2154, 0.2154, 0.2154,
      1      0.2154, 0.2154, 0.2154, 0.2154/
-	 
- 
+
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1  = period(1)
          c1T      = c1(1)
@@ -46914,8 +46914,8 @@ C First check for the PGA case (i.e., specT=0.0)
          cmT      = cm(1)
          c5T      = c5(1)
          c6T      = c6(1)
-         c7T      = c7(1) 
-         c7bT      = c7b(1) 
+         c7T      = c7(1)
+         c7bT      = c7b(1)
          c8bT      = c8b(1)
          c9T      = c9(1)
          c9aT      = c9a(1)
@@ -46950,21 +46950,21 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Chiou and Youngs (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -47047,7 +47047,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,gscaleWenT,iflag)
             call interp (period(count1),period(count2),c8(count1),c8(count2),
      +                   specT,c8T,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 c     Set the fault mechanism term.
 C     fType     Mechanism                      Rake
 C     ------------------------------------------------------
@@ -47084,7 +47084,7 @@ c        if (regionflag .eq. 1 ) then
 c           gamma = gamma * gscaleJapItT
 c           sigma2T = sigma2JapT
 c        elseif (regionflag .eq. 2) then
-c           gamma = gamma * gscaleWenT        
+c           gamma = gamma * gscaleWenT
 c        endif
 c        cosDELTA = cos(abs(DELTA)*d2r)
 c Magnitude scaling
@@ -47114,7 +47114,7 @@ c Center Z_TOR on the Z_TOR-M relation in Chiou and Youngs (2013)
           endif
         endif
         deltaZ_TOR = Dtor - 2*mZ_TOR
-        
+
 c Scaling with other source variables (F_RV, F_NM, deltaZ_TOR, and Dip)
         coshM = cosh(2*max(M-4.5,0.0))
         cosDELTA = cos(DELTA*d2r)
@@ -47122,7 +47122,7 @@ c Scaling with other source variables (F_RV, F_NM, deltaZ_TOR, and Dip)
      1       (c1bT+c1dT/coshM) * F_NM +
      1       (c7T +c7bT/coshM) * deltaZ_TOR +
      1       (c11T+c11bT/coshM)* cosDELTA**2
-        
+
 c HW effect
         if (HWFlag .eq. 0) then
            hw = 0.0
@@ -47145,8 +47145,8 @@ c        if (regionflag .eq. 1) then
 c           phi1T = phi1jpT
 c           phi5T = phi5jpT
 c           phi6T = phi6jpT
-c        endif       
-        
+c        endif
+
 c Linear soil amplification
         a = phi1T * min(alog(Vs/1130.0), 0.0)
 c Nonlinear soil amplification
@@ -47156,7 +47156,7 @@ c Nonlinear soil amplification
 C Deviation from ln(Vs30) scaling: bedrock depth (Z1) effect.
 c        if (regionflag .eq. 1) then
 c           deltaZ1 = depthvs10*1000.0 -
-c     1     exp(-5.23/2.0 * alog((VS**2.0 + 412.0**2.0)/(1360.0**2.0 + 412.0**2.0)))      
+c     1     exp(-5.23/2.0 * alog((VS**2.0 + 412.0**2.0)/(1360.0**2.0 + 412.0**2.0)))
 c        else
            deltaZ1 = depthvs10*1000.0 -
      1     exp(-2.63 / 4.0 * alog((VS**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))
@@ -47174,7 +47174,7 @@ C     Current code set for Measured Vs30 values (i.e., Vs30class=1)
       if (vs30_class .eq. 0) then
          F_measured = 0.0
          F_Inferred = 1.0
-      elseif (vs30_class .eq. 1) then      
+      elseif (vs30_class .eq. 1) then
          F_measured = 1.0
          F_Inferred = 0.0
       endif
@@ -47183,30 +47183,30 @@ C     Current code set for Measured Vs30 values (i.e., Vs30class=1)
         sigma = sqrt((tau*(1.0+NL0))**2.0+sigma_NL0**2.0)
       phi = sigma_NL0
       tau = (tau*(1.0+NL0))
-      
+
 C     Convert ground motion to units of gals.
       lnY = psa + 6.89
       period2 = period1
       return
-      end 
-  
+      end
+
 C  ***** PEER NGA-West 2 MODELS (2013) **********
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
 C ** Idriss (NGA-2013) Horizontal **
 C     PEER Report 2013/08
-C        NGA-West2 Model for Estimating Average Horizontal Values of 
+C        NGA-West2 Model for Estimating Average Horizontal Values of
 C            Pseudo-Absolute Spectral Accelerations Generated by
 C            Crustal Earthquakes
 C         I. M. Idriss
 C     Notes:
-C        Applicable Range (see Abstract):  
+C        Applicable Range (see Abstract):
 C           5 <= M <= 8.5
 C           Vs>=450 m/sec
 C              for Vs>1200 use Vs=1200
 C           Rrup <= 150 km
 C        Mechanisms: Strike-slip and Norml (0)
 C                    Reverse and Oblique (1)
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
       Subroutine I14_TW_C01 ( m, Rrup, ftype, vs30, specT,
      1                     period2, lnY, sigma, iflag )
 C     Last Updated: 5/18/13
@@ -47215,14 +47215,14 @@ C     Last Updated: 5/18/13
       parameter (MAXPER=25)
       REAL Period(MAXPER), a1mlt675(MAXPER), a2mlt675(MAXPER), a3mlt675(MAXPER)
       REAL b1mlt675(MAXPER), b2mlt675(MAXPER)
-      REAL a1(MAXPER), a2(MAXPER), a3(MAXPER), b1(MAXPER), b2(MAXPER) 
+      REAL a1(MAXPER), a2(MAXPER), a3(MAXPER), b1(MAXPER), b2(MAXPER)
       real gam(MAXPER), phi(MAXPER), xsi(MAXPER), period1
       REAL M, Rrup, Vs30, specT, sigma
       REAL SOF, period2, lnY, PhiT, gamT, XsiT, ftype
       real a1T, a2T, a3T, b1T, b2T, a1mlt675T, a2mlt675T, a3mlt675T, b1mlt675T, b2mlt675T
       integer iflag, count1, count2, nPer, i
- 
- 
+
+
       Data Period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2,
      1      3, 4, 5, 7.5, 10/
       Data a1mlt675(1:25) / 2.500233380713, 2.50558343921901, 2.54905389007533, 2.66315218302058, 3.0465390943314,
@@ -47274,11 +47274,11 @@ C     Last Updated: 5/18/13
       Data b2(1:25) / -0.2287, -0.2287, -0.2287, -0.2287, -0.230502146542804, -0.2319, -0.2326, -0.2211, -0.197043174656907,
      1      -0.1676, -0.167991567078541, -0.1685, -0.1531, -0.1595, -0.1594, -0.1584, -0.1577, -0.1532, -0.147, -0.1439, -0.1278,
      1      -0.1326, -0.1291, -0.122, -0.1145/
- 
-       
+
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1 = period(1)
          a1T     = a1(1)
@@ -47301,21 +47301,21 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Idriss (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -47344,7 +47344,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,gamT,iflag)
             call interp (period(count1),period(count2),xsi(count1),xsi(count2),
      +                   specT,xsiT,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 C.....Compute the Ground motion.......
 C.....Set the mechanism term.....................
 C     Strike-slip and normal events --> SOF = 0
@@ -47355,9 +47355,9 @@ C     Otherwise assume SOF = 0
       else
          SOF = 0.0
       endif
-      
+
 	  a1T = a1mlt675T + (a2mlt675T - a2T) * 6.75
-	  
+
       if (m .le. 6.75) then
          lnY = a1mlt675T + a2mlt675T*m + a3mlt675T*(8.5 - m)**2.0 - (b1mlt675T+b2mlt675T*m) * alog(Rrup+10.0) +
      1         xsiT*alog(Vs30) + gamT*rRup + SOF*phiT
@@ -47368,9 +47368,9 @@ C     Otherwise assume SOF = 0
 C     Convert ground motion to units of gals.
       lnY = lnY + 6.89
 C     Compute Sigma which is Period and magnitude dependent.
-C     Note report does not state a limit on sigma for M<5 but 
+C     Note report does not state a limit on sigma for M<5 but
 C     Since model is only applicable for M>=5 a limit is retained
-C     for sigma with M<5 equal to M=5 values. 
+C     for sigma with M<5 equal to M=5 values.
       if (specT .le. 0.05) then
          if (m .le. 5.0) then
             sigma = 1.18 + 0.035*alog(0.05) - 0.06*5.0
@@ -47398,7 +47398,7 @@ C     for sigma with M<5 equal to M=5 values.
       endif
       period2 = period1
       return
-      end 
+      end
 
 c ---------------------------------------------------------------------
 C     *** Campbell and Bozorgnia NGA West2 (NGA-2013) ***
@@ -47421,13 +47421,13 @@ C        Report provides formulation for estimating recommended
 C           parameters when they are not defined (e.g., Z25 given Vs30m).
 C           See Chapter 06 of the report.
 c ---------------------------------------------------------------------------
- 
-       subroutine CB14_TW_C01 ( mag, Rrup, Rbjf, Ftype, specT, 
+
+       subroutine CB14_TW_C01 ( mag, Rrup, Rbjf, Ftype, specT,
      1                     period2, lnY, sigma, iflag, vs,
-     2                     depthtop, D25, Dip, depth, HWflag, Rx, rupwidth, regionflag, phi, tau ) 
+     2                     depthtop, D25, Dip, depth, HWflag, Rx, rupwidth, regionflag, phi, tau )
 
 C     Last Updated: 5/17/17
-C     Coefficients updated from PEER Report version to be consistent with EQ Spectra paper in press. 
+C     Coefficients updated from PEER Report version to be consistent with EQ Spectra paper in press.
 C     Minor change to T=5, 7.5, and 10 sec for coefficient C6
 
       parameter (MAXPER=25)
@@ -47574,13 +47574,13 @@ C.....MODEL COEFFICIENTS.....................
      1      0.186, 0.191, 0.198, 0.206, 0.208, 0.221, 0.225, 0.222, 0.226, 0.229, 0.237, 0.237, 0.271, 0.29, 0.166/
       Data rho(1:25) / 1, 0.998, 0.986, 0.958967801857936, 0.938, 0.887, 0.87, 0.872697961720721, 0.876, 0.873389552809726, 0.87,
      1      0.85, 0.819, 0.743, 0.684, 0.562, 0.467, 0.364, 0.298, 0.234, 0.202, 0.184, 0.176, 0.154, 1/
-   
+
 
       nPer = 25
       c = 1.88
       n = 1.18
 
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1 = period(1)
          c0T = c0(1)
@@ -47619,7 +47619,7 @@ C First check for the PGA case (i.e., specT=0.0)
          Dc20CAT = Dc20CA(1)
          Dc20JPT = Dc20JP(1)
          Dc20CHT = Dc20CH(1)
-         
+
          phi1T = phi1(1)
          phi2T = phi2(1)
          t1T = t1(1)
@@ -47636,22 +47636,22 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Campbell&Bozorgnia (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -47725,7 +47725,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,Dc20JPT,iflag)
             call interp (period(count1),period(count2),Dc20CH(count1),Dc20CH(count2),
      +                   specT,Dc20CHT,iflag)
-     
+
             call interp (period(count1),period(count2),phi1(count1),phi1(count2),
      +                   specT,phi1T,iflag)
             call interp (period(count1),period(count2),phi2(count1),phi2(count2),
@@ -47741,7 +47741,7 @@ C Interpolate the coefficients for the requested spectral period.
             call interp (period(count1),period(count2),rho(count1),rho(count2),
      +                   specT,rhoT,iflag)
 
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 
 C.....COMPUTE ROCK PGA VALUE FIRST.........................
 C.....MAGNITUDE DEPENDENCE (Eq 3.2)........................
@@ -47754,7 +47754,7 @@ C.....MAGNITUDE DEPENDENCE (Eq 3.2)........................
       ELSE
          TERM1 = C0(1) + c2(1) + C3(1) + c4(1)*(mag-6.5)
       ENDIF
-      
+
 C.....Distance dependence (Eq 3.3).....
       R = SQRT( RRUP*RRUP+C7(1)*C7(1) )
       TERM2 = (C5(1) + C6(1)*MAG)*ALOG(R)
@@ -47796,7 +47796,7 @@ C.....SET UP HANGING WALL TERMS (Eq 3.7)..............
          if (Rrup .eq. 0.0) then
             fhwrrup = 1.0
          else
-            fhwrrup = ((Rrup-Rbjf)/Rrup)         
+            fhwrrup = ((Rrup-Rbjf)/Rrup)
          endif
          if (Rx .lt. R1) Then
             fhwr = f1*fhwrrup
@@ -47804,22 +47804,22 @@ C.....SET UP HANGING WALL TERMS (Eq 3.7)..............
             fhwr = max(f2,0.0)*fhwrrup
          endif
          if (mag .le. 5.5) then
-            fhwm = 0.0         
+            fhwm = 0.0
          elseif (mag .le. 6.5) then
             fhwm = (mag-5.5)*(1.0+a2(1)*(mag-6.5))
          else
-            fhwm = 1.0 + a2(1)*(mag-6.5)        
+            fhwm = 1.0 + a2(1)*(mag-6.5)
          endif
          if (depthtop .le. 16.66) then
-            fhwz = 1.0 - 0.06*depthtop 
+            fhwz = 1.0 - 0.06*depthtop
          else
             fhwz = 0.0
          endif
-         fhwd = (90.0 - dip)/45.0        
+         fhwd = (90.0 - dip)/45.0
          TERM4 = c10(1)*fhwr*fhwm*fhwz*fhwd
-      else   
+      else
          term4 = 0.0
-      endif 
+      endif
 
 C.....NOW COMPUTE THE SITE CONDITION FACTORS...............
 C.....(FOR PGA ROCK, VS=1100, i.e., Vs>k1)
@@ -47828,14 +47828,14 @@ C.....(FOR PGA ROCK, VS=1100, i.e., Vs>k1)
 C.....NOW COMPUTE THE SEDIMENT DEPTH DEPENDENCE (Eq 3.17)............
 C     For Rock PGA the D25 value should be set at the recommended value of D25=0.398
       D25_RK = 0.398
-      
+
 	   TERM6_RK = C14(1)*(D25_RK-1.0)
- 
+
 C.....Now compute the hypocentral depth term (Eq 3.21).........
       if (depth .le. 7.0) then
          fhypH = 0.0
       elseif (depth .le. 20.0) then
-         fhypH = depth - 7.0      
+         fhypH = depth - 7.0
       else
          fhypH = 13.0
       endif
@@ -47844,26 +47844,26 @@ C.....Now compute the hypocentral depth term (Eq 3.21).........
       elseif (mag .le. 6.5) then
           term7 = (c17(1) + (c18(1)-c17(1))*(mag-5.5))*fhypH
       else
-          term7 = c18(1)*fhypH     
+          term7 = c18(1)*fhypH
       endif
 
 C.....Compute Rupture Dip term (Eq 3.24)............
       if (mag .le. 4.5) then
           term8 = c19(1)*dip
       elseif (mag .le. 5.5) then
-          term8 = c19(1)*(5.5-mag)*dip      
-      else 
+          term8 = c19(1)*(5.5-mag)*dip
+      else
           term8 =0
       endif
 
 C.....Compute anelastic attenuation term.....
       if (Rrup .le. 80.0) then
          term9 = 0.0
-      else      
+      else
          term9 = (c20(1)+Dc20CA(1) ) * (Rrup-80.0)
 
-      endif      
-      
+      endif
+
       PGAROCK = EXP(TERM1+TERM2+TERM3+TERM4+TERM5_RK+TERM6_RK+TERM7+TERM8+TERM9)
  	  write(*,*) "fmag  = ", TERM1
  	  write(*,*) "fdis  = ", TERM2
@@ -47874,11 +47874,11 @@ C.....Compute anelastic attenuation term.....
  	  write(*,*) "fhyp  = ", TERM7
  	  write(*,*) "fdip  = ", TERM8
  	  write(*,*) "fatn  = ", TERM9
-            
+
 C.....For PGA Specific Vs30m Value
       if (vs .le. k1(1) ) then
-         term5 = c11(1)*alog(vs/k1(1)) + 
-     1           k2(1)*(alog(pgarock+c*((vs/k1(1))**n)) - 
+         term5 = c11(1)*alog(vs/k1(1)) +
+     1           k2(1)*(alog(pgarock+c*((vs/k1(1))**n)) -
      2           alog(pgarock+c))
       else
          term5 = (c11(1) + k2(1)*n)*alog(vs/k1(1))
@@ -47955,7 +47955,7 @@ C.....SET UP HANGING WALL TERMS................
          if (Rrup .eq. 0.0) then
             fhwrrup = 1.0
          else
-            fhwrrup = ((Rrup-Rbjf)/Rrup)         
+            fhwrrup = ((Rrup-Rbjf)/Rrup)
          endif
          if (Rx .lt. R1) Then
             fhwr = f1*fhwrrup
@@ -47963,22 +47963,22 @@ C.....SET UP HANGING WALL TERMS................
             fhwr = max(f2,0.0)*fhwrrup
          endif
          if (mag .le. 5.5) then
-            fhwm = 0.0         
+            fhwm = 0.0
          elseif (mag .le. 6.5) then
             fhwm = (mag-5.5)*(1.0+a2T*(mag-6.5))
          else
-            fhwm = 1.0 + a2T*(mag-6.5)        
+            fhwm = 1.0 + a2T*(mag-6.5)
          endif
          if (depthtop .le. 16.66) then
-            fhwz = 1.0 - 0.06*depthtop 
+            fhwz = 1.0 - 0.06*depthtop
          else
             fhwz = 0.0
          endif
-         fhwd = (90.0 - dip)/45.0        
+         fhwd = (90.0 - dip)/45.0
          TERM4 = c10T*fhwr*fhwm*fhwz*fhwd
-      else   
+      else
          term4 = 0.0
-      endif 
+      endif
 
 C.....NOW COMPUTE THE SITE CONDITION FACTORS...............
       IF (VS .LE. K1T ) THEN
@@ -47997,12 +47997,12 @@ C.....NOW COMPUTE THE SEDIMENT DEPTH DEPENDENCE.............
       ELSEIF (D25 .GT. 3.0)  THEN
          TERM6 = c16T*k3T*exp(-0.75)*( 1.0 - exp(-0.25*(D25-3.0)))
       ENDIF
-      
+
 C.....Now compute the hypocentral depth term..........
       if (depth .le. 7.0) then
          fhypH = 0.0
       elseif (depth .le. 20.0) then
-         fhypH = depth - 7.0      
+         fhypH = depth - 7.0
       else
          fhypH = 13.0
       endif
@@ -48011,15 +48011,15 @@ C.....Now compute the hypocentral depth term..........
       elseif (mag .le. 6.5) then
           term7 = (c17T + (c18T-c17T)*(mag-5.5))*fhypH
       else
-          term7 = c18T*fhypH     
+          term7 = c18T*fhypH
       endif
 
 C.....Compute Rupture Dip term.............
       if (mag .le. 4.5) then
           term8 = c19T*dip
       elseif (mag .le. 5.5) then
-          term8 = c19T*(5.5-mag)*dip      
-      else 
+          term8 = c19T*(5.5-mag)*dip
+      else
           term8 = 0
       endif
 
@@ -48054,8 +48054,8 @@ c     endif
 
 C.....Now compute the sigma value..........
       IF (Vs .LT. k1T) THEN
-        alpha = k2T*pgarock*(1/(pgarock  
-     &    +c*(Vs/k1T)**n) 
+        alpha = k2T*pgarock*(1/(pgarock
+     &    +c*(Vs/k1T)**n)
      &    -1/(pgarock + c))
       ELSE
         alpha = 0.0
@@ -48065,16 +48065,16 @@ C.....Now compute the sigma value..........
 	   tau_lnyB = t1T
 	   tau_lnPGAB = t1(1)
 	elseif (Mag.lt.5.5) then
-	   tau_lnyB = t2T + 
+	   tau_lnyB = t2T +
      &          (t1T - t2T)*(5.5-mag)
-	   tau_lnPGAB = t2(1) + 
+	   tau_lnPGAB = t2(1) +
      &          (t1(1) - t2(1))*(5.5-Mag)
 	else
 	   tau_lnyB = t2T
 	   tau_lnPGAB = t2(1)
 	endif
 
-      tau = SQRT(tau_lnyB**2 +  
+      tau = SQRT(tau_lnyB**2 +
      &           (alpha * tau_lnPGAB)**2 +
      &           2.0*alpha*rhoT*tau_lnyB*tau_lnPGAB)
 
@@ -48082,27 +48082,27 @@ C.....Now compute the sigma value..........
 	   phi_lny = phi1T
            phi_lnPGAB = phi1(1)
       elseif (Mag.lt.5.5) then
-	   phi_lny = phi2T + 
+	   phi_lny = phi2T +
      &          (phi1T - phi2T)*(5.5-mag)
-	   phi_lnPGAB = phi2(1) + 
+	   phi_lnPGAB = phi2(1) +
      &          (phi1(1) - phi2(1))*(5.5-mag)
       else
-	   phi_lny = phi2T 
-	   phi_lnPGAB = phi2(1) 
+	   phi_lny = phi2T
+	   phi_lnPGAB = phi2(1)
       endif
 
       phi_lnyB = SQRT(phi_lny**2 - flnAFT**2)
 
       phi_lnPGAB = SQRT(phi_lnPGAB**2 - flnAF(1)**2)
 
-      phi = SQRT(phi_lny**2 + 
+      phi = SQRT(phi_lny**2 +
      &           (alpha*phi_lnPGAB)**2 +
      &           2.0*alpha*rhoT*phi_lnyB*phi_lnPGAB)
-	
+
       Sigmatot = SQRT(phi**2 + Tau**2)
 
       period2 = period1
-      
+
 C     Convert ground motion to units of gals.
 
       lnY = lnY + 6.89
@@ -48110,11 +48110,11 @@ C     Convert ground motion to units of gals.
 
       return
       END
-	  
 
-c ------------------------------------------------------------------            
-      subroutine Chao2017 ( mag, dist, ftype, lnY, sigma, specT, vs, Ztor, Z10,           
-     1            vs30_class, attenName, period2, iflag, sourcetype, phi, tau, msasflag )         
+
+c ------------------------------------------------------------------
+      subroutine Chao2017 ( mag, dist, ftype, lnY, sigma, specT, vs, Ztor, Z10,
+     1            vs30_class, attenName, period2, iflag, sourcetype, phi, tau, msasflag )
 
       implicit none
 
@@ -48122,13 +48122,13 @@ c ------------------------------------------------------------------
      1      Z10,  ZTOR, fltWidth, lnSa, sigma, lnY, vs30_rock
       real Fn, Frv, specT, period2, CRjb, phi, tau, z10_rock, SA_rock
       integer hwflag, iflag, vs30_class, regionflag, msasflag, sourcetype
-      character*80 attenName                                                    
+      character*80 attenName
 
-C     Set the reference spectrum.                
+C     Set the reference spectrum.
 c     sourcetype = 0 for crustal
-c                  1 for Subduction 
+c                  1 for Subduction
 c     Vs30_class = 0 for estimated
-c     Vs30_class = 1 for measured 
+c     Vs30_class = 1 for measured
 C     Mainshock and Aftershocks included based on MSASFlag
 C         0 = Mainshocks
 C         1 = Aftershocks
@@ -48137,7 +48137,7 @@ c     Compute SA1100
       vs30_rock = 1100.
       z10_rock = 0.0058959
       SA_rock = 0.
-      
+
          call Chaoetal2017 ( mag, dist, ftype, sigma, specT, vs30_rock, Ztor, z10_rock,
      1             SA_rock, vs30_class, attenName, iflag, sourcetype, phi, tau, lnSa, msasflag)
       Sa1100 = exp(lnSa)
@@ -48154,17 +48154,17 @@ C     Convert ground motion to units of gals.
 
       return
       end
-c -------------------------------------------------------------------           
+c -------------------------------------------------------------------
 C **** Chao et al. 2017 (SSHAC model) *************
-c -------------------------------------------------------------------           
+c -------------------------------------------------------------------
 
-      subroutine Chaoetal2017 ( mag, dist, ftype, sigma, specT, vs, Ztor, Z10,           
-     1            sa1100, vs30_class, attenName, iflag, sourcetype, phi, tau, lnSa, msasflag )                                   
+      subroutine Chaoetal2017 ( mag, dist, ftype, sigma, specT, vs, Ztor, Z10,
+     1            sa1100, vs30_class, attenName, iflag, sourcetype, phi, tau, lnSa, msasflag )
 
       implicit none
-      
-      integer MAXPER                                                                            
-      parameter (MAXPER=20)                                                     
+
+      integer MAXPER
+      parameter (MAXPER=20)
       real ftype, dist, mag, lnSa, sigma, specT, lnYref, vs, Ztor, Z10, period1
       real period(MAXPER), c1(MAXPER), c2(MAXPER), c3(MAXPER), c4(MAXPER), c5(MAXPER)
       real c6(MAXPER), c7(MAXPER), c8(MAXPER), c9(MAXPER), c10(MAXPER), c11(MAXPER)
@@ -48173,10 +48173,10 @@ c -------------------------------------------------------------------
       real c24(MAXPER), c25(MAXPER), c26(MAXPER), c27(MAXPER), taucr1(MAXPER), taucr2(MAXPER)
       real tausb1(MAXPER), tausb2(MAXPER), phisscr1(MAXPER), phisscr2(MAXPER), phisssb1(MAXPER)
       real phisssb2(MAXPER), arfacr(MAXPER), arfasb(MAXPER), phis2s(MAXPER)
-      character*80 attenName                                                    
+      character*80 attenName
       integer nper, count1, count2, C11flag, C20flag, C26flag, iflag
       integer vs30_class, h, n, sourcetype, i, msasflag
-      integer Fcr, Fsb, Fcrss, Fcrno, Fcrro, Fsbintra, Fsbinter, Fas, Fkuo17, Fks17, Frf, Fmanila 
+      integer Fcr, Fsb, Fcrss, Fcrno, Fcrro, Fsbintra, Fsbinter, Fas, Fkuo17, Fks17, Frf, Fmanila
       real Mc, Mref, Mmax, Rrupref, Vs30ref, Zref
       real c1T, c2T, c3T, c4T, c5T, c6T, c7T, c8T, c9T, c10T, c11T, c12T, c13T, c14T, c15T
       real c16T, c17T, c18T, c19T, c20T, c21T, c22T, c23T, c24T, c25T, c26T, c27T
@@ -48184,132 +48184,132 @@ c -------------------------------------------------------------------
       real arfacrT, arfasbT, phis2sT, phi, tau, fm, SA1100, Z10ref
       real Ssource, Spath, Ssite, Ssitelin, Ssitenon, Sztor, Smag, Sgeom, Sanel
 	  real taucr, tausb, phisscr, phisssb, phiss, sigmass
-                                                                                
-      data period  / 0, 0.01, 0.02, 0.03, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4,  
-     &          0.5, 0.75, 1, 1.5, 2, 3, 4, 5 / 
-      data c1 / -0.42682, -0.42617, -0.38267, -0.30514, -0.17682, -0.06398, -0.01395,  
-     &          0.00575, -0.04985, -0.12963, -0.21231, -0.38179, -0.54385, -0.90047,  
-     &          -1.20935, -1.72357, -2.15733, -2.89398, -3.49691, -4.05677 / 
-      data c2 / -0.57576, -0.57399, -0.52904, -0.44828, -0.29911, -0.15800, -0.09117,  
-     &          -0.07933, -0.16741, -0.28157, -0.39457, -0.60337, -0.78423, -1.15145,  
-     &          -1.44846, -1.93170, -2.32776, -2.98541, -3.51400, -4.01754 / 
-      data c3 / -0.56614, -0.56367, -0.51227, -0.42253, -0.24552, -0.08661, -0.02380,  
-     &          -0.04936, -0.17938, -0.33569, -0.48978, -0.75722, -0.98086, -1.39035,  
-     &          -1.68527, -2.13907, -2.50355, -3.12984, -3.64054, -4.22973 / 
-      data c4 / -0.59679, -0.59948, -0.54896, -0.45758, -0.23559, -0.02770, 0.07032,  
-     &          0.06111, -0.05191, -0.19320, -0.33347, -0.56778, -0.76385, -1.20988,  
-     &          -1.56650, -2.15102, -2.60304, -3.33785, -3.93845, -4.56577 / 
-      data c5 / -0.27336, -0.28004, -0.23702, -0.14609, 0.09781, 0.34210, 0.47686,  
-     &          0.49113, 0.32613, 0.12375, -0.07993, -0.43822, -0.72362, -1.30331,  
-     &          -1.75247, -2.42949, -2.88125, -3.49756, -3.93043, -4.31969 / 
-      data c6 / -0.15066, -0.14965, -0.14920, -0.14601, -0.13802, -0.13783, -0.14249,  
-     &          -0.15125, -0.15390, -0.15240, -0.14882, -0.14188, -0.13795, -0.13962,  
-     &          -0.14688, -0.14972, -0.13286, -0.09571, -0.06254, -0.04672 / 
-      data c7 / 0.18374, 0.17900, 0.18516, 0.17620, 0.17060, 0.17877, 0.19418, 0.24573,  
-     &          0.27648, 0.28582, 0.28807, 0.24809, 0.18660, 0.07403, 0.00114, -0.06290,  
-     &          -0.09683, -0.19885, -0.31814, -0.42574 / 
-      data c8 / 0.69358, 0.69599, 0.66643, 0.61448, 0.53997, 0.54911, 0.61070, 0.75072,  
-     &          0.87959, 0.98255, 1.06785, 1.21051, 1.32141, 1.51422, 1.64692, 1.82708,  
-     &          1.94116, 2.06926, 2.13724, 2.18800 / 
-      data c9 / 0.65185, 0.64948, 0.60930, 0.56920, 0.55149, 0.59056, 0.65929, 0.84132,  
-     &          1.00469, 1.14291, 1.24782, 1.37894, 1.46404, 1.56895, 1.63417, 1.65603,  
-     &          1.62994, 1.54933, 1.48562, 1.40692 / 
-      data c10 / -0.13872, -0.13920, -0.13329, -0.12290, -0.10799, -0.10982, -0.12214,  
-     &           -0.15014, -0.17592, -0.19651, -0.21357, -0.24210, -0.26428, -0.30284,   
-     &           -0.32938, -0.36542, -0.38823, -0.41385, -0.42745, -0.43760 / 
-      data c11 / -0.04953, -0.04495, -0.04775, -0.05401, -0.04126, -0.01951, -0.01249,   
-     &           -0.08485, -0.18925, -0.29110, -0.38255, -0.49316, -0.52701, -0.46679,   
-     &           -0.35296, -0.16278, -0.07360, -0.00361, 0.00000, 0.00000 / 
-      data c12 / 0.02846, 0.02853, 0.02907, 0.03050, 0.03437, 0.03732, 0.03774, 0.03435,   
-     &           0.02885, 0.02380, 0.01946, 0.01337, 0.00967, 0.00559, 0.00419, 0.00260,   
-     &           0.00116, -0.00263, -0.00665, -0.01553 / 
-      data c13 / 0.00919, 0.00923, 0.00988, 0.01075, 0.01238, 0.01338, 0.01332, 0.01179,   
-     &           0.00982, 0.00785, 0.00624, 0.00411, 0.00268, 0.00117, 0.00087, 0.00059,   
-     &           0.00024, -0.00096, -0.00228, -0.00431 / 
-      data c14 / -1.90982, -1.90965, -1.93011, -1.97278, -1.95803, -1.87814, -1.77781,   
-     &           -1.65632, -1.57576, -1.52224, -1.49528, -1.46281, -1.44274, -1.41615,   
-     &           -1.38993, -1.35565, -1.33932, -1.32171, -1.31274, -1.28503 / 
-      data c15 / -1.63583, -1.63218, -1.64190, -1.67487, -1.74968, -1.79673, -1.79306,   
-     &           -1.72580, -1.64287, -1.57054, -1.51230, -1.43027, -1.37373, -1.25896,   
-     &           -1.18777, -1.10246, -1.06588, -1.02734, -0.99037, -0.94811 / 
-      data c16 / 0.34806, 0.34729, 0.35611, 0.37509, 0.39998, 0.38893, 0.36491, 0.31819,   
-     &           0.27725, 0.24717, 0.22297, 0.18919, 0.17368, 0.17194, 0.18538, 0.20432,   
-     &           0.21646, 0.23573, 0.25375, 0.26914 / 
-      data c17 / 0.20176, 0.20014, 0.21494, 0.22245, 0.20085, 0.15835, 0.12373, 0.08516,   
-     &           0.06822, 0.05435, 0.04964, 0.05306, 0.05612, 0.08094, 0.10162, 0.14942,   
-     &           0.19708, 0.26366, 0.30340, 0.31352 / 
-      data c18 / 0.00000, 0.00000, 0.00000, -0.00003, -0.00161, -0.00363, -0.00514, -0.00570,   
-     &           -0.00512, -0.00429, -0.00334, -0.00191, -0.00106, -0.00012, 0.00000, 0.00000,   
-     &           0.00000, -0.00003, -0.00006, -0.00024 / 
-      data c19 / -0.00315, -0.00316, -0.00334, -0.00337, -0.00324, -0.00312, -0.00315, -0.00320,   
-     &           -0.00306, -0.00283, -0.00259, -0.00222, -0.00198, -0.00196, -0.00196, -0.00200,   
-     &           -0.00211, -0.00255, -0.00318, -0.00362 / 
-      data c20 / -3.37443, -3.37957, -3.26276, -3.12039, -2.77699, -2.45023, -2.19165, -1.85215,   
-     &           -1.62798, -1.49980, -1.44580, -1.45380, -1.52110, -1.59305, -1.46595, -0.89634,   
-     &           -0.48495, -0.02762, 0.00000, 0.00000 / 
-      data c21 / -0.53674, -0.53652, -0.52911, -0.51328, -0.48078, -0.46572, -0.46949, -0.49343,   
-     &           -0.51786, -0.54454, -0.57046, -0.62522, -0.68213, -0.78909, -0.85442, -0.91005,   
-     &           -0.92335, -0.91464, -0.89283, -0.85483 / 
-      data c22 / 0.04523, 0.04544, 0.04662, 0.04976, 0.05873, 0.06324, 0.06127, 0.05315, 0.04813,   
-     &           0.04907, 0.05354, 0.06521, 0.07589, 0.09600, 0.11018, 0.12800, 0.13712, 0.13748,   
-     &           0.12787, 0.11250 / 
-      data c23 / -0.58641, -0.58670, -0.55816, -0.50549, -0.40157, -0.32642, -0.30593, -0.34304,   
-     &           -0.42439, -0.51573, -0.60347, -0.76233, -0.89923, -1.15933, -1.34357, -1.58317,   
-     &           -1.71310, -1.79927, -1.79038, -1.70330 / 
-      data c24 / -0.66005, -0.66006, -0.63650, -0.59453, -0.50578, -0.43321, -0.40897, -0.43638,   
-     &           -0.50625, -0.58308, -0.65623, -0.79171, -0.91483, -1.16552, -1.35415, -1.59529,   
-     &           -1.72062, -1.79429, -1.77800, -1.68840 / 
-      data c25 / -0.57611, -0.57563, -0.54296, -0.47735, -0.34285, -0.25612, -0.24798, -0.33656,   
-     &           -0.46536, -0.58483, -0.68520, -0.84288, -0.96167, -1.17506, -1.33319, -1.54295,   
-     &           -1.65505, -1.71968, -1.70446, -1.64548 / 
-      data c26 / -0.09885, -0.09648, -0.05630, -0.01620, 0.00151, -0.03756, -0.10629, -0.28832,   
-     &           -0.45169, -0.58991, -0.69482, -0.82594, -0.91104, -0.99861, -1.01217, -0.95103,   
-     &           -0.86194, -0.68633, -0.55062, -0.41292 / 
-      data c27 / -0.22539, -0.22873, -0.20875, -0.20487, -0.25149, -0.25548, -0.28929, -0.39132,   
-     &           -0.49569, -0.58791, -0.65482, -0.72694, -0.76904, -0.80158, -0.82217, -0.79503,   
-     &           -0.74594, -0.64933, -0.58562, -0.50692 / 
-      data taucr1 / 0.32270, 0.32290, 0.33291, 0.34636, 0.36504, 0.36988, 0.36764, 0.36766, 
-     &              0.38435, 0.40767, 0.42422, 0.44443, 0.45178, 0.44390, 0.43348, 0.41861,  
-     &              0.39601, 0.37594, 0.36949, 0.42843 / 
-      data taucr2 / 0.32595, 0.32442, 0.32587, 0.32941, 0.34135, 0.35775, 0.36540, 0.35112,  
-     &              0.32432, 0.30171, 0.28995, 0.29053, 0.31136, 0.38256, 0.43299, 0.48885,  
-     &              0.51573, 0.53354, 0.54041, 0.49538 / 
-      data tausb1 / 0.25683, 0.25386, 0.25123, 0.24759, 0.24218, 0.24447, 0.25710, 0.31560,  
-     &              0.38679, 0.44282, 0.48555, 0.53440, 0.54554, 0.52292, 0.48796, 0.43807,  
-     &              0.39735, 0.34954, 0.30732, 0.33465 / 
-      data tausb2 / 0.59159, 0.59451, 0.61853, 0.64800, 0.69230, 0.71020, 0.69445, 0.60944,  
-     &              0.53922, 0.49368, 0.46672, 0.46083, 0.48019, 0.52884, 0.58232, 0.65015,  
-     &              0.68099, 0.66195, 0.60955, 0.52706 / 
-      data phisscr1 / 0.53254, 0.53259, 0.52733, 0.52005, 0.50843, 0.50827, 0.52071, 0.55228,  
-     &              0.57885, 0.59736, 0.60769, 0.61086, 0.60090, 0.55589, 0.51336, 0.45771,  
-     &              0.42721, 0.39838, 0.38461, 0.37698 / 
-      data phisscr2 / 0.42278, 0.42262, 0.42746, 0.43800, 0.45841, 0.46418, 0.45535, 0.43212,  
-     &              0.41800, 0.41410, 0.41806, 0.43197, 0.44586, 0.47073, 0.48275, 0.48885,  
-     &              0.48432, 0.46852, 0.45047, 0.44101 / 
-      data phisssb1 / 0.46609, 0.46818, 0.46163, 0.44776, 0.41437, 0.39915, 0.40914, 0.45847,  
-     &              0.49875, 0.51974, 0.53135, 0.53489, 0.52593, 0.50290, 0.48257, 0.45684,  
-     &              0.44057, 0.42007, 0.40229, 0.37888 / 
-      data phisssb2 / 0.46213, 0.46184, 0.46785, 0.47969, 0.50154, 0.50900, 0.50192, 0.47897,  
-     &              0.45854, 0.44536, 0.43689, 0.43234, 0.43663, 0.45184, 0.46434, 0.46862,  
-     &              0.46433, 0.43642, 0.40445, 0.34992 / 
-      data arfacr / 0.25318, 0.25414, 0.26085, 0.26648, 0.25936, 0.23528, 0.21591, 0.21253,  
-     &              0.21733, 0.21368, 0.20487, 0.18226, 0.16450, 0.16298, 0.17668, 0.18885,  
-     &              0.18576, 0.18142, 0.19052, 0.19394 / 
-      data arfasb / 0.19692, 0.20383, 0.20481, 0.20131, 0.19567, 0.19501, 0.19415, 0.18761,  
-     &              0.18374, 0.18200, 0.17591, 0.16516, 0.15715, 0.15460, 0.17358, 0.22851,  
-     &              0.26757, 0.31216, 0.33304, 0.35954 / 
-      data phis2s / 0.31600, 0.31613, 0.32192, 0.33755, 0.38533, 0.42476, 0.43829, 0.42157,  
-     &              0.39303, 0.36995, 0.35307, 0.33529, 0.32910, 0.33174, 0.34038, 0.35318,  
+
+      data period  / 0, 0.01, 0.02, 0.03, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4,
+     &          0.5, 0.75, 1, 1.5, 2, 3, 4, 5 /
+      data c1 / -0.42682, -0.42617, -0.38267, -0.30514, -0.17682, -0.06398, -0.01395,
+     &          0.00575, -0.04985, -0.12963, -0.21231, -0.38179, -0.54385, -0.90047,
+     &          -1.20935, -1.72357, -2.15733, -2.89398, -3.49691, -4.05677 /
+      data c2 / -0.57576, -0.57399, -0.52904, -0.44828, -0.29911, -0.15800, -0.09117,
+     &          -0.07933, -0.16741, -0.28157, -0.39457, -0.60337, -0.78423, -1.15145,
+     &          -1.44846, -1.93170, -2.32776, -2.98541, -3.51400, -4.01754 /
+      data c3 / -0.56614, -0.56367, -0.51227, -0.42253, -0.24552, -0.08661, -0.02380,
+     &          -0.04936, -0.17938, -0.33569, -0.48978, -0.75722, -0.98086, -1.39035,
+     &          -1.68527, -2.13907, -2.50355, -3.12984, -3.64054, -4.22973 /
+      data c4 / -0.59679, -0.59948, -0.54896, -0.45758, -0.23559, -0.02770, 0.07032,
+     &          0.06111, -0.05191, -0.19320, -0.33347, -0.56778, -0.76385, -1.20988,
+     &          -1.56650, -2.15102, -2.60304, -3.33785, -3.93845, -4.56577 /
+      data c5 / -0.27336, -0.28004, -0.23702, -0.14609, 0.09781, 0.34210, 0.47686,
+     &          0.49113, 0.32613, 0.12375, -0.07993, -0.43822, -0.72362, -1.30331,
+     &          -1.75247, -2.42949, -2.88125, -3.49756, -3.93043, -4.31969 /
+      data c6 / -0.15066, -0.14965, -0.14920, -0.14601, -0.13802, -0.13783, -0.14249,
+     &          -0.15125, -0.15390, -0.15240, -0.14882, -0.14188, -0.13795, -0.13962,
+     &          -0.14688, -0.14972, -0.13286, -0.09571, -0.06254, -0.04672 /
+      data c7 / 0.18374, 0.17900, 0.18516, 0.17620, 0.17060, 0.17877, 0.19418, 0.24573,
+     &          0.27648, 0.28582, 0.28807, 0.24809, 0.18660, 0.07403, 0.00114, -0.06290,
+     &          -0.09683, -0.19885, -0.31814, -0.42574 /
+      data c8 / 0.69358, 0.69599, 0.66643, 0.61448, 0.53997, 0.54911, 0.61070, 0.75072,
+     &          0.87959, 0.98255, 1.06785, 1.21051, 1.32141, 1.51422, 1.64692, 1.82708,
+     &          1.94116, 2.06926, 2.13724, 2.18800 /
+      data c9 / 0.65185, 0.64948, 0.60930, 0.56920, 0.55149, 0.59056, 0.65929, 0.84132,
+     &          1.00469, 1.14291, 1.24782, 1.37894, 1.46404, 1.56895, 1.63417, 1.65603,
+     &          1.62994, 1.54933, 1.48562, 1.40692 /
+      data c10 / -0.13872, -0.13920, -0.13329, -0.12290, -0.10799, -0.10982, -0.12214,
+     &           -0.15014, -0.17592, -0.19651, -0.21357, -0.24210, -0.26428, -0.30284,
+     &           -0.32938, -0.36542, -0.38823, -0.41385, -0.42745, -0.43760 /
+      data c11 / -0.04953, -0.04495, -0.04775, -0.05401, -0.04126, -0.01951, -0.01249,
+     &           -0.08485, -0.18925, -0.29110, -0.38255, -0.49316, -0.52701, -0.46679,
+     &           -0.35296, -0.16278, -0.07360, -0.00361, 0.00000, 0.00000 /
+      data c12 / 0.02846, 0.02853, 0.02907, 0.03050, 0.03437, 0.03732, 0.03774, 0.03435,
+     &           0.02885, 0.02380, 0.01946, 0.01337, 0.00967, 0.00559, 0.00419, 0.00260,
+     &           0.00116, -0.00263, -0.00665, -0.01553 /
+      data c13 / 0.00919, 0.00923, 0.00988, 0.01075, 0.01238, 0.01338, 0.01332, 0.01179,
+     &           0.00982, 0.00785, 0.00624, 0.00411, 0.00268, 0.00117, 0.00087, 0.00059,
+     &           0.00024, -0.00096, -0.00228, -0.00431 /
+      data c14 / -1.90982, -1.90965, -1.93011, -1.97278, -1.95803, -1.87814, -1.77781,
+     &           -1.65632, -1.57576, -1.52224, -1.49528, -1.46281, -1.44274, -1.41615,
+     &           -1.38993, -1.35565, -1.33932, -1.32171, -1.31274, -1.28503 /
+      data c15 / -1.63583, -1.63218, -1.64190, -1.67487, -1.74968, -1.79673, -1.79306,
+     &           -1.72580, -1.64287, -1.57054, -1.51230, -1.43027, -1.37373, -1.25896,
+     &           -1.18777, -1.10246, -1.06588, -1.02734, -0.99037, -0.94811 /
+      data c16 / 0.34806, 0.34729, 0.35611, 0.37509, 0.39998, 0.38893, 0.36491, 0.31819,
+     &           0.27725, 0.24717, 0.22297, 0.18919, 0.17368, 0.17194, 0.18538, 0.20432,
+     &           0.21646, 0.23573, 0.25375, 0.26914 /
+      data c17 / 0.20176, 0.20014, 0.21494, 0.22245, 0.20085, 0.15835, 0.12373, 0.08516,
+     &           0.06822, 0.05435, 0.04964, 0.05306, 0.05612, 0.08094, 0.10162, 0.14942,
+     &           0.19708, 0.26366, 0.30340, 0.31352 /
+      data c18 / 0.00000, 0.00000, 0.00000, -0.00003, -0.00161, -0.00363, -0.00514, -0.00570,
+     &           -0.00512, -0.00429, -0.00334, -0.00191, -0.00106, -0.00012, 0.00000, 0.00000,
+     &           0.00000, -0.00003, -0.00006, -0.00024 /
+      data c19 / -0.00315, -0.00316, -0.00334, -0.00337, -0.00324, -0.00312, -0.00315, -0.00320,
+     &           -0.00306, -0.00283, -0.00259, -0.00222, -0.00198, -0.00196, -0.00196, -0.00200,
+     &           -0.00211, -0.00255, -0.00318, -0.00362 /
+      data c20 / -3.37443, -3.37957, -3.26276, -3.12039, -2.77699, -2.45023, -2.19165, -1.85215,
+     &           -1.62798, -1.49980, -1.44580, -1.45380, -1.52110, -1.59305, -1.46595, -0.89634,
+     &           -0.48495, -0.02762, 0.00000, 0.00000 /
+      data c21 / -0.53674, -0.53652, -0.52911, -0.51328, -0.48078, -0.46572, -0.46949, -0.49343,
+     &           -0.51786, -0.54454, -0.57046, -0.62522, -0.68213, -0.78909, -0.85442, -0.91005,
+     &           -0.92335, -0.91464, -0.89283, -0.85483 /
+      data c22 / 0.04523, 0.04544, 0.04662, 0.04976, 0.05873, 0.06324, 0.06127, 0.05315, 0.04813,
+     &           0.04907, 0.05354, 0.06521, 0.07589, 0.09600, 0.11018, 0.12800, 0.13712, 0.13748,
+     &           0.12787, 0.11250 /
+      data c23 / -0.58641, -0.58670, -0.55816, -0.50549, -0.40157, -0.32642, -0.30593, -0.34304,
+     &           -0.42439, -0.51573, -0.60347, -0.76233, -0.89923, -1.15933, -1.34357, -1.58317,
+     &           -1.71310, -1.79927, -1.79038, -1.70330 /
+      data c24 / -0.66005, -0.66006, -0.63650, -0.59453, -0.50578, -0.43321, -0.40897, -0.43638,
+     &           -0.50625, -0.58308, -0.65623, -0.79171, -0.91483, -1.16552, -1.35415, -1.59529,
+     &           -1.72062, -1.79429, -1.77800, -1.68840 /
+      data c25 / -0.57611, -0.57563, -0.54296, -0.47735, -0.34285, -0.25612, -0.24798, -0.33656,
+     &           -0.46536, -0.58483, -0.68520, -0.84288, -0.96167, -1.17506, -1.33319, -1.54295,
+     &           -1.65505, -1.71968, -1.70446, -1.64548 /
+      data c26 / -0.09885, -0.09648, -0.05630, -0.01620, 0.00151, -0.03756, -0.10629, -0.28832,
+     &           -0.45169, -0.58991, -0.69482, -0.82594, -0.91104, -0.99861, -1.01217, -0.95103,
+     &           -0.86194, -0.68633, -0.55062, -0.41292 /
+      data c27 / -0.22539, -0.22873, -0.20875, -0.20487, -0.25149, -0.25548, -0.28929, -0.39132,
+     &           -0.49569, -0.58791, -0.65482, -0.72694, -0.76904, -0.80158, -0.82217, -0.79503,
+     &           -0.74594, -0.64933, -0.58562, -0.50692 /
+      data taucr1 / 0.32270, 0.32290, 0.33291, 0.34636, 0.36504, 0.36988, 0.36764, 0.36766,
+     &              0.38435, 0.40767, 0.42422, 0.44443, 0.45178, 0.44390, 0.43348, 0.41861,
+     &              0.39601, 0.37594, 0.36949, 0.42843 /
+      data taucr2 / 0.32595, 0.32442, 0.32587, 0.32941, 0.34135, 0.35775, 0.36540, 0.35112,
+     &              0.32432, 0.30171, 0.28995, 0.29053, 0.31136, 0.38256, 0.43299, 0.48885,
+     &              0.51573, 0.53354, 0.54041, 0.49538 /
+      data tausb1 / 0.25683, 0.25386, 0.25123, 0.24759, 0.24218, 0.24447, 0.25710, 0.31560,
+     &              0.38679, 0.44282, 0.48555, 0.53440, 0.54554, 0.52292, 0.48796, 0.43807,
+     &              0.39735, 0.34954, 0.30732, 0.33465 /
+      data tausb2 / 0.59159, 0.59451, 0.61853, 0.64800, 0.69230, 0.71020, 0.69445, 0.60944,
+     &              0.53922, 0.49368, 0.46672, 0.46083, 0.48019, 0.52884, 0.58232, 0.65015,
+     &              0.68099, 0.66195, 0.60955, 0.52706 /
+      data phisscr1 / 0.53254, 0.53259, 0.52733, 0.52005, 0.50843, 0.50827, 0.52071, 0.55228,
+     &              0.57885, 0.59736, 0.60769, 0.61086, 0.60090, 0.55589, 0.51336, 0.45771,
+     &              0.42721, 0.39838, 0.38461, 0.37698 /
+      data phisscr2 / 0.42278, 0.42262, 0.42746, 0.43800, 0.45841, 0.46418, 0.45535, 0.43212,
+     &              0.41800, 0.41410, 0.41806, 0.43197, 0.44586, 0.47073, 0.48275, 0.48885,
+     &              0.48432, 0.46852, 0.45047, 0.44101 /
+      data phisssb1 / 0.46609, 0.46818, 0.46163, 0.44776, 0.41437, 0.39915, 0.40914, 0.45847,
+     &              0.49875, 0.51974, 0.53135, 0.53489, 0.52593, 0.50290, 0.48257, 0.45684,
+     &              0.44057, 0.42007, 0.40229, 0.37888 /
+      data phisssb2 / 0.46213, 0.46184, 0.46785, 0.47969, 0.50154, 0.50900, 0.50192, 0.47897,
+     &              0.45854, 0.44536, 0.43689, 0.43234, 0.43663, 0.45184, 0.46434, 0.46862,
+     &              0.46433, 0.43642, 0.40445, 0.34992 /
+      data arfacr / 0.25318, 0.25414, 0.26085, 0.26648, 0.25936, 0.23528, 0.21591, 0.21253,
+     &              0.21733, 0.21368, 0.20487, 0.18226, 0.16450, 0.16298, 0.17668, 0.18885,
+     &              0.18576, 0.18142, 0.19052, 0.19394 /
+      data arfasb / 0.19692, 0.20383, 0.20481, 0.20131, 0.19567, 0.19501, 0.19415, 0.18761,
+     &              0.18374, 0.18200, 0.17591, 0.16516, 0.15715, 0.15460, 0.17358, 0.22851,
+     &              0.26757, 0.31216, 0.33304, 0.35954 /
+      data phis2s / 0.31600, 0.31613, 0.32192, 0.33755, 0.38533, 0.42476, 0.43829, 0.42157,
+     &              0.39303, 0.36995, 0.35307, 0.33529, 0.32910, 0.33174, 0.34038, 0.35318,
      &              0.36003, 0.36784, 0.37191, 0.38065 /
 
-c Set attenuation name                                                            
+c Set attenuation name
 c     Sourcetype = 0 Crustal
-c     Sourcetype = 1 Subduction 
-                                                                       
+c     Sourcetype = 1 Subduction
+
 C Find the requested spectral period and corresponding coefficients
       nper = 20
 
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
         c1T = c1(1)
         c2T = c2(1)
@@ -48357,12 +48357,12 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1010 
+               goto 1010
             endif
          enddo
       endif
-        
-      write (*,*) 
+
+      write (*,*)
       write (*,*) 'Chao et al. (2017) Horizontal atttenuation model'
       write (*,*) 'is not defined for a spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
@@ -48370,87 +48370,87 @@ C Now loop over the spectral period range of the attenuation relationship.
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
- 1010    call interp (period(count1),period(count2),c1(count1),c1(count2), 
+ 1010    call interp (period(count1),period(count2),c1(count1),c1(count2),
      +                specT,c1T,iflag)
-         call interp (period(count1),period(count2),c2(count1),c2(count2), 
+         call interp (period(count1),period(count2),c2(count1),c2(count2),
      +                specT,c2T,iflag)
-         call interp (period(count1),period(count2),c3(count1),c3(count2), 
+         call interp (period(count1),period(count2),c3(count1),c3(count2),
      +                specT,c3T,iflag)
-         call interp (period(count1),period(count2),c4(count1),c4(count2), 
+         call interp (period(count1),period(count2),c4(count1),c4(count2),
      +                specT,c4T,iflag)
-         call interp (period(count1),period(count2),c5(count1),c5(count2), 
+         call interp (period(count1),period(count2),c5(count1),c5(count2),
      +                specT,c5T,iflag)
-         call interp (period(count1),period(count2),c6(count1),c6(count2), 
+         call interp (period(count1),period(count2),c6(count1),c6(count2),
      +                specT,c6T,iflag)
-         call interp (period(count1),period(count2),c7(count1),c7(count2), 
+         call interp (period(count1),period(count2),c7(count1),c7(count2),
      +                 specT,c7T,iflag)
-         call interp (period(count1),period(count2),c8(count1),c8(count2), 
+         call interp (period(count1),period(count2),c8(count1),c8(count2),
      +                 specT,c8T,iflag)
-         call interp (period(count1),period(count2),c9(count1),c9(count2), 
+         call interp (period(count1),period(count2),c9(count1),c9(count2),
      +                 specT,c9T,iflag)
-         call interp (period(count1),period(count2),c10(count1),c10(count2), 
+         call interp (period(count1),period(count2),c10(count1),c10(count2),
      +                 specT,c10T,iflag)
-         call interp (period(count1),period(count2),c11(count1),c11(count2), 
+         call interp (period(count1),period(count2),c11(count1),c11(count2),
      +                 specT,c11T,iflag)
-         call interp (period(count1),period(count2),c12(count1),c12(count2), 
+         call interp (period(count1),period(count2),c12(count1),c12(count2),
      +                 specT,c12T,iflag)
-         call interp (period(count1),period(count2),c13(count1),c13(count2), 
+         call interp (period(count1),period(count2),c13(count1),c13(count2),
      +                 specT,c13T,iflag)
-         call interp (period(count1),period(count2),c14(count1),c14(count2), 
+         call interp (period(count1),period(count2),c14(count1),c14(count2),
      +                 specT,c14T,iflag)
-         call interp (period(count1),period(count2),c15(count1),c15(count2), 
+         call interp (period(count1),period(count2),c15(count1),c15(count2),
      +                 specT,c15T,iflag)
-         call interp (period(count1),period(count2),c16(count1),c16(count2), 
+         call interp (period(count1),period(count2),c16(count1),c16(count2),
      +                 specT,c16T,iflag)
-         call interp (period(count1),period(count2),c17(count1),c17(count2), 
+         call interp (period(count1),period(count2),c17(count1),c17(count2),
      +                 specT,c17T,iflag)
-         call interp (period(count1),period(count2),c18(count1),c18(count2), 
+         call interp (period(count1),period(count2),c18(count1),c18(count2),
      +                 specT,c18T,iflag)
-         call interp (period(count1),period(count2),c19(count1),c19(count2), 
+         call interp (period(count1),period(count2),c19(count1),c19(count2),
      +                 specT,c19T,iflag)
-         call interp (period(count1),period(count2),c20(count1),c20(count2), 
+         call interp (period(count1),period(count2),c20(count1),c20(count2),
      +                 specT,c20T,iflag)
-         call interp (period(count1),period(count2),c21(count1),c21(count2), 
+         call interp (period(count1),period(count2),c21(count1),c21(count2),
      +                 specT,c21T,iflag)
-         call interp (period(count1),period(count2),c22(count1),c22(count2), 
+         call interp (period(count1),period(count2),c22(count1),c22(count2),
      +                 specT,c22T,iflag)
-         call interp (period(count1),period(count2),c23(count1),c23(count2), 
+         call interp (period(count1),period(count2),c23(count1),c23(count2),
      +                 specT,c23T,iflag)
-         call interp (period(count1),period(count2),c24(count1),c24(count2), 
+         call interp (period(count1),period(count2),c24(count1),c24(count2),
      +                 specT,c24T,iflag)
-         call interp (period(count1),period(count2),c25(count1),c25(count2), 
+         call interp (period(count1),period(count2),c25(count1),c25(count2),
      +                 specT,c25T,iflag)
-         call interp (period(count1),period(count2),c26(count1),c26(count2), 
+         call interp (period(count1),period(count2),c26(count1),c26(count2),
      +                 specT,c26T,iflag)
-         call interp (period(count1),period(count2),c27(count1),c27(count2), 
+         call interp (period(count1),period(count2),c27(count1),c27(count2),
      +                 specT,c27T,iflag)
-         call interp (period(count1),period(count2),taucr1(count1),taucr1(count2), 
+         call interp (period(count1),period(count2),taucr1(count1),taucr1(count2),
      +                 specT,taucr1T,iflag)
-         call interp (period(count1),period(count2),taucr2(count1),taucr2(count2), 
+         call interp (period(count1),period(count2),taucr2(count1),taucr2(count2),
      +                 specT,taucr2T,iflag)
-         call interp (period(count1),period(count2),tausb1(count1),tausb1(count2), 
+         call interp (period(count1),period(count2),tausb1(count1),tausb1(count2),
      +                 specT,tausb1T,iflag)
-         call interp (period(count1),period(count2),tausb2(count1),tausb2(count2), 
+         call interp (period(count1),period(count2),tausb2(count1),tausb2(count2),
      +                 specT,tausb2T,iflag)
-         call interp (period(count1),period(count2),phisscr1(count1),phisscr1(count2), 
+         call interp (period(count1),period(count2),phisscr1(count1),phisscr1(count2),
      +                 specT,phisscr1T,iflag)
-         call interp (period(count1),period(count2),phisscr2(count1),phisscr2(count2), 
+         call interp (period(count1),period(count2),phisscr2(count1),phisscr2(count2),
      +                 specT,phisscr2T,iflag)
-         call interp (period(count1),period(count2),phisssb1(count1),phisssb1(count2), 
+         call interp (period(count1),period(count2),phisssb1(count1),phisssb1(count2),
      +                 specT,phisssb1T,iflag)
-         call interp (period(count1),period(count2),phisssb2(count1),phisssb2(count2), 
+         call interp (period(count1),period(count2),phisssb2(count1),phisssb2(count2),
      +                 specT,phisssb2T,iflag)
-         call interp (period(count1),period(count2),arfacr(count1),arfacr(count2), 
+         call interp (period(count1),period(count2),arfacr(count1),arfacr(count2),
      +                 specT,arfacrT,iflag)
-         call interp (period(count1),period(count2),arfasb(count1),arfasb(count2), 
+         call interp (period(count1),period(count2),arfasb(count1),arfasb(count2),
      +                 specT,arfasbT,iflag)
-         call interp (period(count1),period(count2),phis2s(count1),phis2s(count2), 
+         call interp (period(count1),period(count2),phis2s(count1),phis2s(count2),
      +                specT,phis2sT,iflag)
-	  
+
  1011 period1 = specT
 
       h = 10.0
@@ -48460,12 +48460,12 @@ C Interpolate the coefficients for the requested spectral period.
       Mmax = 8
       Rrupref = 0.0
       Vs30ref = 760.0
- 	  
-C     Set the reference spectrum.                
+
+C     Set the reference spectrum.
 c     sourcetype = 0 for crustal
-c                  1 for Subduction 
+c                  1 for Subduction
 c     Vs30_class = 0 for estimated
-c     Vs30_class = 1 for measured 
+c     Vs30_class = 1 for measured
 
       Fcr=0
       Fsb=0
@@ -48482,7 +48482,7 @@ c     Vs30_class = 1 for measured
       C11flag = 0
       C20flag = 0
       C26flag = 0
-	  
+
       if (sourcetype .eq. 0 ) then
        Fcr = 1
        Zref = 15
@@ -48502,11 +48502,11 @@ c     Vs30_class = 1 for measured
               Fsbintra = 1
          endif
       endif
-	  
-C     Add aftershock factor 
+
+C     Add aftershock factor
       if (msasflag .eq. 1) then
            Fas = 1
-      endif 
+      endif
 
 C     choose Site ref by Vs30 class
         if (vs30_class .eq. 0 ) then
@@ -48518,22 +48518,22 @@ C     choose Site ref by Vs30 class
       lnYref = c1T*Fcrro + c2T*Fcrss + c3T*Fcrno + c4T*Fsbinter + c5T*Fsbintra +
      &         c6T*Fas + c7T*Fmanila + c23T*Fkuo17 + c24T*Fks17 + c25T*Frf
 
-C     Set Source scaling term 
-     
-      if(mag .LE. 5 ) then  
+C     Set Source scaling term
+
+      if(mag .LE. 5 ) then
 	      C11flag=1
       endif
-      if(mag .GE. Mc ) then  
+      if(mag .GE. Mc ) then
 	      C26flag=1
       endif
-	  
+
       if (sourcetype .eq. 0 ) then
-        Smag = c8T*(min(mag, Mmax) - Mref)+ c10T*(min(mag, Mmax) - Mref)**2 + c11T*(5-mag)*C11flag  
+        Smag = c8T*(min(mag, Mmax) - Mref)+ c10T*(min(mag, Mmax) - Mref)**2 + c11T*(5-mag)*C11flag
       elseif (sourcetype .eq. 1) then
-        Smag = c9T*(mag - Mref) + c26T*Fsbinter*(Mag-Mc)*c26flag + c27T*Fsbintra*(Mag-Mc)*c26flag 
+        Smag = c9T*(mag - Mref) + c26T*Fsbinter*(Mag-Mc)*c26flag + c27T*Fsbintra*(Mag-Mc)*c26flag
       endif
 
-      Sztor = c12T * Fcr *(Ztor-Zref) + c13T * Fsb * ((Ztor-Zref))	  
+      Sztor = c12T * Fcr *(Ztor-Zref) + c13T * Fsb * ((Ztor-Zref))
       Ssource = Smag + Sztor
 
 C     Set Path scaling term
@@ -48545,22 +48545,22 @@ C     Set Path scaling term
       endif
 
       Sanel = c18T*Fcr*(dist-Rrupref) + c19T*Fsb*(dist-Rrupref)
-      Spath = Sgeom + Sanel 
-	   
-C     Set Site scaling term 
-	   
+      Spath = Sgeom + Sanel
+
+C     Set Site scaling term
+
       Z10ref = exp((-4.08/2)*alog((vs**2+355.4**2)/(1750**2+355.4**2)))
       Ssitelin = c21T * alog(vs/vs30ref) + c22T*alog(Z10*1000/Z10ref)
 
-      if(vs .LT. vs30ref ) then  
+      if(vs .LT. vs30ref ) then
            C20flag=1
       endif
-	    
-      Ssitenon = c20T * C20flag * (-1.5*alog(vs/vs30ref)-alog(SA1100+2.4)+alog(SA1100+2.4*(vs/vs30ref)**1.5))  
+
+      Ssitenon = c20T * C20flag * (-1.5*alog(vs/vs30ref)-alog(SA1100+2.4)+alog(SA1100+2.4*(vs/vs30ref)**1.5))
       Ssite = Ssitenon + Ssitelin
 
-      lnSa =  lnYref + Ssource + Spath + Ssite                                        
-	  
+      lnSa =  lnYref + Ssource + Spath + Ssite
+
 c 	  write(*,*) "lnYref = ", lnYref
 c 	  write(*,*) "Ssource = ", Ssource
 c 	  write(*,*) "Spath = ", Spath
@@ -48569,19 +48569,19 @@ c 	  write(*,*) "Ssitenon = ", Ssitenon
 c 	  write(*,*) "lnSa = ", lnSa
 c 	  write(*,*) "Sa = ", exp(lnSa)
 
-	  
+
 C     Set the event-specific residual term
- 
+
       fm = 0.5*(min(6.5, max(4.5, mag))-4.5)
-      
+
       taucr = taucr1T + (taucr2T - taucr1T)*fm
-      tausb = tausb1T + (tausb2T - tausb1T)*fm 
-      
-      tau = taucr*Fcr + tausb*Fsb   
-   
+      tausb = tausb1T + (tausb2T - tausb1T)*fm
+
+      tau = taucr*Fcr + tausb*Fsb
+
 C     Set Site-specific residual term
 
-      
+
 
 C     Set Recoed-specific residual term
 
@@ -48589,7 +48589,7 @@ C     Set Recoed-specific residual term
       phisssb = phisssb1T + (phisssb2T -phisssb1T)*fm
 
       phiss = phisscr*Fcr + phisssb*Fsb
-      
+
       phi=(phis2sT**2+phiss**2)**0.5
       sigma=(tau**2+phi**2)**0.5
       sigmass=(tau**2+phiss**2)**0.5
@@ -48598,23 +48598,23 @@ C     Set Recoed-specific residual term
 
 c       write(*,*) "Y(gal) = ", exp(lnSa)
 
-      return                                                                    
-      end       
-          
-c ------------------------------------------------------------------            
+      return
+      end
+
+c ------------------------------------------------------------------
 C *** BCHydro Subduction (06/2010 - Model) Horizontal ***********
-c ------------------------------------------------------------------            
-      subroutine AGA16_TW_C01 ( mag, fType, rRup, vs30, lnSa, sigma1, 
+c ------------------------------------------------------------------
+      subroutine AGA16_TW_C01 ( mag, fType, rRup, vs30, lnSa, sigma1,
      2           specT, period1, iflag, Ztor, depth, disthypo )
 
       implicit none
-     
+
       real mag, fType, rRup, vs30, pgaRock, faba, vs30_rock, period0,
      1     lnSa, sigma, tau, period1, sigma1, disthypo, deltac1,
      2     depth, specT, Ztor
       integer iflag, forearc
 
-c     Ftype defines an interface event or intraslab events      
+c     Ftype defines an interface event or intraslab events
 C     fType    Event Type
 C     -------------------
 C      0       Interface  - use rupture distance
@@ -48629,26 +48629,26 @@ C     Compute Rock PGA
       call AGA16_TW_C01_model ( mag, rRup, vs30_rock, pgaRock, lnSa, sigma, tau,
      2                     period0, Ftype, iflag, Ztor, depth, disthypo )
       pgaRock = exp(lnSa)
- 
-C     Compute regular ground motions. 
-      call AGA16_TW_C01_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau, 
+
+C     Compute regular ground motions.
+      call AGA16_TW_C01_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau,
      2                     specT, Ftype, iflag, Ztor, depth, disthypo )
 
 c     compute Sa (given the PGA rock value)
       sigma1 = sqrt( sigma**2 + tau**2 )
       period1 = specT
 
-c     Convert units spectral acceleration in gal                                
-      lnSa = lnSa + 6.89                                                
+c     Convert units spectral acceleration in gal
+      lnSa = lnSa + 6.89
       return
       end
 c ----------------------------------------------------------------------
-      subroutine AGA16_TW_C01_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau, 
+      subroutine AGA16_TW_C01_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau,
      2                     specT, Ftype, iflag, Ztor, depth, disthypo )
 
       implicit none
-      
-      integer MAXPER, nPer, i1, i      
+
+      integer MAXPER, nPer, i1, i
       parameter (MAXPER=25)
       real a1(MAXPER), a2(MAXPER),dC1_itf(MAXPER) ,dC1_itb(MAXPER),
      1     a6(MAXPER), a10(MAXPER), a11(MAXPER), a11a(MAXPER),
@@ -48663,55 +48663,55 @@ c ----------------------------------------------------------------------
       real n, c, c4, c1, deltac1, faba, R, testmag, VsStar, depth, specT
 	  real base, fmag, fdepth, fsite
 
-      Data Period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 
+      Data Period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25,
      1            0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3, 4, 5, 7.5, 10/
-       data a1 / 4.442324272, 4.454995106, 4.476989613, 4.570375455, 4.68085322, 4.795283362, 5.187708654, 
-     1           5.366885037, 5.493314388, 5.606487923, 5.588152124, 5.56106773, 5.458627336, 5.256968986,  
-     1           4.863221356, 4.406005361, 3.632386593, 3.163230307, 2.454565259, 1.873974482, 1.161774809,  
+       data a1 / 4.442324272, 4.454995106, 4.476989613, 4.570375455, 4.68085322, 4.795283362, 5.187708654,
+     1           5.366885037, 5.493314388, 5.606487923, 5.588152124, 5.56106773, 5.458627336, 5.256968986,
+     1           4.863221356, 4.406005361, 3.632386593, 3.163230307, 2.454565259, 1.873974482, 1.161774809,
      1           0.622785806, 0.063732135, -1.21868348, -2.213522559 /
-      data a2  / -1.35, -1.35, -1.35, -1.372125352, -1.38782354, -1.4, -1.45, -1.45, -1.45, -1.45, -1.428246273,  
+      data a2  / -1.35, -1.35, -1.35, -1.372125352, -1.38782354, -1.4, -1.45, -1.45, -1.45, -1.45, -1.428246273,
      1           -1.4, -1.35, -1.28, -1.18, -1.08, -0.91, -0.85, -0.77, -0.71, -0.64, -0.58, -0.54, -0.46, -0.4 /
-      data a6  / -0.000279112, -0.000236461, -0.000254929, -0.000277444, -0.000309597, -0.000328968, -0.000147104,  
-     1           -0.000143273, -0.000101224, -0.000228865, -0.000398518, -0.000509299, -0.00056124, -0.00099964,  
-     1           -0.001455436, -0.001931196, -0.003474407, -0.003950625, -0.004406306, -0.004095739, -0.003534331,  
+      data a6  / -0.000279112, -0.000236461, -0.000254929, -0.000277444, -0.000309597, -0.000328968, -0.000147104,
+     1           -0.000143273, -0.000101224, -0.000228865, -0.000398518, -0.000509299, -0.00056124, -0.00099964,
+     1           -0.001455436, -0.001931196, -0.003474407, -0.003950625, -0.004406306, -0.004095739, -0.003534331,
      1           -0.003889444, -0.003579808, -0.002904953, -0.004265509 /
-      data a10 /  2.614780773, 2.594860589, 2.601252405, 2.624840044, 2.66846963, 2.719062888, 2.82423238,  
-     1           2.870663541, 2.873690705, 2.854306237, 2.690740299, 2.465778348, 2.135003365, 1.878180458,  
-     1           1.517225292, 1.226658613, 0.719712006, 0.37882339, -0.02664084, -0.106219895, -0.17035158,  
+      data a10 /  2.614780773, 2.594860589, 2.601252405, 2.624840044, 2.66846963, 2.719062888, 2.82423238,
+     1           2.870663541, 2.873690705, 2.854306237, 2.690740299, 2.465778348, 2.135003365, 1.878180458,
+     1           1.517225292, 1.226658613, 0.719712006, 0.37882339, -0.02664084, -0.106219895, -0.17035158,
      1           -0.079613443, 0.070314474, -0.07113619, 0.117820808 /
-      data a11 /  0.019824826, 0.018076965, 0.01785939, 0.018011975, 0.017752615, 0.017565997, 0.017961591,  
-     1           0.018186982, 0.018242659, 0.018510535, 0.018229181, 0.017858183, 0.017389833, 0.017450025,  
-     1           0.018642358, 0.018912508, 0.019302661, 0.018150184, 0.015597208, 0.014257969, 0.011651582,  
+      data a11 /  0.019824826, 0.018076965, 0.01785939, 0.018011975, 0.017752615, 0.017565997, 0.017961591,
+     1           0.018186982, 0.018242659, 0.018510535, 0.018229181, 0.017858183, 0.017389833, 0.017450025,
+     1           0.018642358, 0.018912508, 0.019302661, 0.018150184, 0.015597208, 0.014257969, 0.011651582,
      1           0.009288783, 0.008337491, 0.005121553, 0.002275984 /
-      data a11a /  0.04081182, 0.036578254, 0.03708527, 0.038337152, 0.040004028, 0.041961023, 0.045225749,  
-     1           0.048061124, 0.048918252, 0.047045382, 0.046243618, 0.044247831, 0.04247908, 0.038177175,  
-     1           0.029427572, 0.022530308, 0.011216329, 0.004626401, -0.000948396, -0.004863106, -0.005063613, 
+      data a11a /  0.04081182, 0.036578254, 0.03708527, 0.038337152, 0.040004028, 0.041961023, 0.045225749,
+     1           0.048061124, 0.048918252, 0.047045382, 0.046243618, 0.044247831, 0.04247908, 0.038177175,
+     1           0.029427572, 0.022530308, 0.011216329, 0.004626401, -0.000948396, -0.004863106, -0.005063613,
      1            -0.007774634, -0.004944396, -0.007533656, -0.017715245 /
-      data a12  /  0.917324645, 0.918587417, 0.922959838, 1.009910498, 1.087815359, 1.150363857, 1.300591025,  
-     1           1.450179555, 1.601462189, 1.776459199, 1.87491032, 2.031540841, 2.229875976, 2.379374019,  
-     1           2.492260723, 2.537023323, 2.124665878, 1.57816376, 0.450025289, -0.391751696, -0.716939762,  
+      data a12  /  0.917324645, 0.918587417, 0.922959838, 1.009910498, 1.087815359, 1.150363857, 1.300591025,
+     1           1.450179555, 1.601462189, 1.776459199, 1.87491032, 2.031540841, 2.229875976, 2.379374019,
+     1           2.492260723, 2.537023323, 2.124665878, 1.57816376, 0.450025289, -0.391751696, -0.716939762,
      1           -0.66351539, -0.670875563, -0.587002599, -0.56025643 /
-      data a13  /  -0.0135, -0.0135, -0.0135, -0.013632752, -0.013726941, -0.0138, -0.0142, -0.0145, -0.014859728,  
-     1           -0.0153, -0.015691567, -0.0162, -0.0172, -0.0183, -0.0206, -0.0231, -0.0296, -0.0363, -0.0493,  
+      data a13  /  -0.0135, -0.0135, -0.0135, -0.013632752, -0.013726941, -0.0138, -0.0142, -0.0145, -0.014859728,
+     1           -0.0153, -0.015691567, -0.0162, -0.0172, -0.0183, -0.0206, -0.0231, -0.0296, -0.0363, -0.0493,
      1           -0.061, -0.0798, -0.0935, -0.098, -0.098, -0.098 /
-      data a14  /  -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.378246273, -0.35, -0.31, -0.28,  
+      data a14  /  -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.378246273, -0.35, -0.31, -0.28,
      1           -0.23, -0.19, -0.12, -0.07, 0, 0, 0, 0, 0, 0, 0 /
-      data Vlin /  865.1, 865.1, 865.1, 948.4683281, 1007.619098, 1053.5, 1085.7, 1032.5, 962.8476216, 877.6,  
+      data Vlin /  865.1, 865.1, 865.1, 948.4683281, 1007.619098, 1053.5, 1085.7, 1032.5, 962.8476216, 877.6,
      1           821.3013556, 748.2, 654.3, 587.1, 503, 456.6, 410.5, 400, 400, 400, 400, 400, 400, 400, 400 /
-      data b_soil / -1.186, -1.186, -1.186, -1.256801128, -1.307035328, -1.346, -1.471, -1.624, -1.762045708,  
-     1           -1.931, -2.042814155, -2.188, -2.381, -2.518, -2.657, -2.669, -2.401, -1.955, -1.025, -0.299,  
+      data b_soil / -1.186, -1.186, -1.186, -1.256801128, -1.307035328, -1.346, -1.471, -1.624, -1.762045708,
+     1           -1.931, -2.042814155, -2.188, -2.381, -2.518, -2.657, -2.669, -2.401, -1.955, -1.025, -0.299,
      1           0, 0, 0, 0, 0 /
-      data dC1_itf / 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.14, 0.1,  
+      data dC1_itf / 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.14, 0.1,
      1           0.04, 0, -0.06, -0.1, -0.2, -0.2, -0.2, -0.2, -0.2 /
-      data dC1_itb / -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3,  
+      data dC1_itb / -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3,
      1           -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3 /
-      data sigs /  0.60,0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 
+      data sigs /  0.60,0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60,
      1            0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60, 0.60 /
-      data sigt /  0.43,0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 
+      data sigt /  0.43,0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43,
      1            0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43, 0.43 /
 
 
-C Constant parameters            
+C Constant parameters
       n = 1.18
       c = 1.88
       a3 = 0.1
@@ -48725,11 +48725,11 @@ C Constant parameters
       a15 = 0
       a16 = 0
       a6a = 0
-      
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
 
-C First check for the PGA case 
+C First check for the PGA case
       if (specT .eq. 0.0) then
          i1=1
          period1 = period(i1)
@@ -48756,21 +48756,21 @@ C   For other periods, loop over the spectral period range of the attenuation re
          if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
             count1 = i
             count2 = i+1
-            goto 1020 
+            goto 1020
          endif
       enddo
- 
+
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'AGA16_TW_C01 Subduction Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -48805,32 +48805,32 @@ C Interpolate the coefficients for the requested spectral period.
             call interp (period(count1),period(count2),sigt(count1),sigt(count2),
      +                   specT,sigtT,iflag)
 
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 
-C     Compute the R term and base model based on either Rupture Distance 
-c         (Interface events) of Hypocentral distance (Intraslab events). 
+C     Compute the R term and base model based on either Rupture Distance
+c         (Interface events) of Hypocentral distance (Intraslab events).
       if (ftype .eq. 0) then
          deltaC1 = dC1_itfT
-         R = rRup + c4*exp( (mag-6.0)*a9 ) 
+         R = rRup + c4*exp( (mag-6.0)*a9 )
          base = a1T + a4*deltaC1 + (a2T + a14T*ftype + a3*(mag - 7.8))*alog(R) + a6T*rRup + a10T*ftype
       elseif (ftype .eq. 1) then
          deltaC1 = dC1_itbT
-         R = disthypo + c4*exp( (mag-6.0)*a9 ) 
+         R = disthypo + c4*exp( (mag-6.0)*a9 )
          base = a1T + a4*deltaC1 + (a2T + a14T*ftype + a3*(mag - 7.8))*alog(R) + a6T*disthypo + a10T*ftype
       else
          write (*,*) 'AGA16_TW_C01 Model not defined for Ftype'
          write (*,*) 'other than 0 (interface) or 1 (intraslab)'
          stop 99
       endif
-      
-C     Base model for Magnitude scaling.      
+
+C     Base model for Magnitude scaling.
       testmag = (7.8 + deltaC1)
       if (mag .le. testmag ) then
          fmag = a4*(mag-testmag) + a13T*(10.0-mag)**2.0
       else
          fmag = a5*(mag-testmag) + a13T*(10.0-mag)**2.0
-      endif      
-      
+      endif
+
 C     Depth Scaling
       if (ftype .eq. 0) then
         fdepth = a11aT*(Ztor - 20.0)
@@ -48843,18 +48843,18 @@ C        fdepth = a11T*(depth - 60 )
          stop 99
       endif
 
-C     Site Response 
+C     Site Response
       if (vs30 .ge. 1000.0) then
           VsStar = 1000.0
       else
           VsStar = vs30
       endif
-       
+
       if (vs30 .ge. VlinT) then
          fsite = a12T*alog(VsStar/vLinT) + b_soilT*n*alog(VsStar/vLinT)
       else
          fsite = a12T*alog(VsStar/vLinT) - b_soilT*alog(pgarock + c) +
-     1          b_soilT*alog(pgarock + c*(VsStar/vlinT)**n)     
+     1          b_soilT*alog(pgarock + c*(VsStar/vlinT)**n)
       endif
 
       sumgm = base + fmag + fdepth + fsite
@@ -48866,7 +48866,7 @@ c	  write(*,*) "fdepth = ", fdepth
 c	  write(*,*) "fsite = ", fsite
 c	  write(*,*) "lnYSa = ", sumgm
 c	  write(*,*) "Sa = ", exp(sumgm)
-	  
+
 C     Set sigma values to return
       sigma = sigsT
       tau = sigtT
@@ -48878,20 +48878,20 @@ c     Set SA to return
       end
 
 
-c ------------------------------------------------------------------            
+c ------------------------------------------------------------------
 C *** Montalva2017 Subduction (2017 - Model) Horizontal ***********
-c ------------------------------------------------------------------            
-      subroutine Montalva2017 ( mag, fType, rRup, vs30, lnSa, sigma1, 
+c ------------------------------------------------------------------
+      subroutine Montalva2017 ( mag, fType, rRup, vs30, lnSa, sigma1,
      2           specT, period1, iflag, forearc, depth1, disthypo )
 
       implicit none
-     
+
       real mag, fType, rRup, vs30, pgaRock, faba, vs30_rock, period0,
      1     lnSa, sigma, tau, period1, sigma1, disthypo, deltac1,
      2     depth, specT, depth1
       integer iflag, forearc
 
-c     Ftype defines an interface event or intraslab events      
+c     Ftype defines an interface event or intraslab events
 C     fType    Event Type
 C     -------------------
 C      0       Interface  - use rupture distance
@@ -48899,11 +48899,11 @@ C      1       Intraslab  - use hypocentral distance
 C
 C     faba     Note
 C     -------------------------
-C      0       Forearc site  
-C      1       Backarc site  
+C      0       Forearc site
+C      1       Backarc site
 C
 
-      
+
 c     compute pga on rock
       period0 = 0.0
       pgaRock = 0.0
@@ -48914,26 +48914,26 @@ C     Compute Rock PGA
       call Montalva2017_model ( mag, rRup, vs30_rock, pgaRock, lnSa, sigma, tau,
      2                     period0, Ftype, iflag, faba, depth, disthypo)
       pgaRock = exp(lnSa)
- 
-C     Compute regular ground motions. 
-      call Montalva2017_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau, 
+
+C     Compute regular ground motions.
+      call Montalva2017_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau,
      2                     specT, Ftype, iflag, faba, depth, disthypo)
 
 c     compute Sa (given the PGA rock value)
       sigma1 = sqrt( sigma**2 + tau**2 )
       period1 = specT
 
-c     Convert units spectral acceleration in gal                                
-      lnSa = lnSa + 6.89                                                
+c     Convert units spectral acceleration in gal
+      lnSa = lnSa + 6.89
       return
       end
 c ----------------------------------------------------------------------
-      subroutine Montalva2017_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau, 
+      subroutine Montalva2017_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau,
      2                     specT, Ftype, iflag, faba, depth, disthypo )
 
       implicit none
-      
-      integer MAXPER, nPer, i1, i      
+
+      integer MAXPER, nPer, i1, i
       parameter (MAXPER=23)
       real a1(MAXPER), a2(MAXPER),
      1     a6(MAXPER), a7(MAXPER), a8(MAXPER), a10(MAXPER), a11(MAXPER),
@@ -48950,85 +48950,85 @@ c ----------------------------------------------------------------------
 	  real base, fmag, fdepth, fsite, farc
 
       data period /  0.00, 0.02, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5,
-     1               0.6,  0.75, 1.00,  1.5, 2.00, 2.5, 3.00, 4.0, 5.0, 
+     1               0.6,  0.75, 1.00,  1.5, 2.00, 2.5, 3.00, 4.0, 5.0,
      2               6.0, 7.5, 10.00  /
-  
-      data vLin   / 865.1, 865.1, 1053.5, 1085.7, 1032.5, 877.6, 748.2, 654.3, 587.1, 503,
-     1             456.6, 430.3, 410.5, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400 / 
-      data b_soil / -1.186, -1.186, -1.346, -1.471, -1.624, -1.931, -2.188, -2.381, -2.518,
-     1             -2.657, -2.669, -2.599, -2.401, -1.955, -1.025, -0.299, 0, 0, 0, 0, 0, 
-     1            0, 0 / 
-      data a1 / 5.87504394, 5.97631438, 7.45297044, 8.04759521, 7.76085108, 6.171919, 
-     1            4.83403302, 4.42687615, 4.57008643, 3.98311294, 4.8603434, 4.67510367, 
-     1            4.30862113, 3.57339281, 2.92216459, 2.39779653, 1.64147667, 1.66482796, 
-     1            0.90564754, 0.6123444, 0.32672294, -0.24139803, -0.96313983 / 
-      data a2 / -1.75359772, -1.77010766, -2.03336398, -2.10610081, -1.99370934, -1.58654201, 
-     1            -1.2971103, -1.18774055, -1.24895678, -1.13377346, -1.38019755, -1.35362409, 
-     1            -1.30799859, -1.23082022, -1.18750273, -1.16319283, -1.06543862, -1.12677535, 
-     1            -1.07619985, -1.13079589, -1.1573438, -1.1407007, -1.09295336 / 
-      data a3 / 0.13125248, 0.12246057, 0.08332151, 0.08012671, 0.0730312, 0.05481839, 0.05249728, 
-     1            0.02995137, 0.03865827, 0.04682762, 0.03822425, 0.02523729, 0.00995253, 0.03605351, 
-     1            0.02768934, 0.040113, 0.08310064, 0.09403648, 0.13838017, 0.15259121, 0.1242091, 
-     1            0.10950824, 0.11343926 / 
-      data a4 / 0.80276784, 0.84131709, 1.03131243, 1.03436999, 1.07565004, 1.17061492, 1.20531288, 
-     1            1.37607187, 1.34990775, 1.3795388, 1.51949871, 1.66662746, 1.85625091, 1.81217177, 
-     1            2.03469107, 2.04340485, 1.88987024, 1.9050392, 1.71178342, 1.59358719, 1.69183532, 
-     1            1.71125604, 1.67160339 / 
-      data a5 / -0.33486952, -0.28054559, -0.03954116, -0.01295063, 0.00758131, 0.10490549, 0.17968066, 
-     1            0.22912175, 0.15592549, 0.11670946, 0.18347677, 0.21967977, 0.29782648, 0.24372341, 
-     1            0.22521403, 0.27382886, 0.18739875, 0.13268085, 0.01379686, 0.06464958, 0.32368231, 
-     1            0.60252124, 0.7762083 / 
-      data a6 / -0.00039095, -0.00038903, 0, -0.00009638, -0.00078515, -0.00267532, -0.0033759, -0.00355237, 
-     1            -0.00244847, -0.00207613, -0.00001896, 0, 0, 0, -0.00009996, -0.00033356, -0.00121364, 
-     1            -0.00087595, -0.00061861, 0, 0, 0, 0 / 
-      data a7 / 1.0988, 1.0988, 1.2536, 1.4175, 1.3997, 1.3582, 1.1648, 0.994, 0.8821, 0.7046, 0.5799, 
-     1            0.5021, 0.3687, 0.1746, -0.082, -0.2821, -0.4108, -0.4466, -0.4344, -0.4368, -0.4586, 
-     1            -0.4433, -0.4828 / 
-      data a8 / -1.42, -1.42, -1.65, -1.8, -1.8, -1.69, -1.49, -1.3, -1.18, -0.98, -0.82, -0.7, -0.54, 
-     1            -0.34, -0.05, 0.12, 0.25, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 / 
-      data a9 / 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 
-     1            0.4, 0.4, 0.4, 0.4, 0.4 / 
-      data a10 / 4.53143081, 4.57416129, 4.56070915, 4.36639286, 3.90922953, 3.06236311, 3.50112817, 
-     1            3.62815675, 3.87633808, 4.03388062, 4.31418239, 4.75196667, 4.70451938, 4.56020155, 
-     1            4.83342978, 4.59028522, 4.13415056, 4.18978319, 4.50906779, 4.56385964, 4.55836575, 
-     1            5.08281865, 5.49692364 / 
-      data a11 / 0.0056735, 0.00565448, 0.00848068, 0.00921589, 0.00629627, 0.00558843, 0.00319554, 
-     1            0.001817, 0.00212947, 0.00068979, 0.0006478, 0.0008707, -0.00031282, -0.00101097, 
-     1            0.00009741, 0.00108512, 0.00035459, 0.0007295, 0.00084112, 0.00068188, 0.00137322, 
-     1            0.00167053, -0.00070392 / 
-      data a12 / 1.01494528, 1.03738201, 1.31034079, 1.48158019, 1.65618649, 1.93944484, 2.08901131, 
-     1            2.25003086, 2.283387, 2.3140873, 2.33333479, 2.23421777, 2.05217228, 1.63506217, 
-     1            0.69338467, -0.09761879, -0.34931995, -0.33269783, -0.41320697, -0.42395126, -0.38759507, 
-     1            -0.32638288, -0.25811162 / 
-      data a13 / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 / 
-      data a14 / -0.73080261, -0.73868917, -0.69848828, -0.65335577, -0.5505116, -0.42997222, -0.53087673, 
-     1            -0.58085678, -0.66280655, -0.72244113, -0.79644275, -0.90120145, -0.89829099, -0.87330858, 
-     1            -0.94685865, -0.90845421, -0.80518214, -0.81689247, -0.87331394, -0.87800447, -0.88436295, 
-     1            -0.98803311, -1.05008478 / 
-      data a15 / 0.9969, 0.9969, 1.103, 1.2732, 1.3042, 1.26, 1.223, 1.16, 1.05, 0.8, 0.662, 0.58, 0.48, 
-     1            0.33, 0.31, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 / 
-      data a16 / -1, -1, -1.18, -1.36, -1.36, -1.3, -1.25, -1.17, -1.06, -0.78, -0.62, -0.5, -0.34, -0.14, 
-     1            0, 0, 0, 0, 0, 0, 0, 0, 0 / 
-      data sigs   / 0.6911808, 0.69938258, 0.70173433, 0.71412373, 0.741128, 0.74606525, 0.7451527, 
-     1            0.72855743, 0.72093248, 0.71005053, 0.66934213, 0.66733247, 0.66329494, 0.63504015, 
-     1            0.60012607, 0.56961713, 0.55384735, 0.53658882, 0.51345287, 0.51417184, 0.49080507, 
-     1            0.4706381, 0.46023151 / 
-      data sigt   / 0.47462209, 0.47631913, 0.53776165, 0.56188074, 0.52707475, 0.50642417, 0.44618739, 
-     1            0.45040229, 0.42549471, 0.42945015, 0.43333698, 0.44599448, 0.46723155, 0.50143305, 
-     1            0.51633193, 0.50688464, 0.51465398, 0.50365207, 0.45311429, 0.43900131, 0.4208419, 
-     1            0.41701232, 0.38872242 / 
 
-C Constant parameters            
+      data vLin   / 865.1, 865.1, 1053.5, 1085.7, 1032.5, 877.6, 748.2, 654.3, 587.1, 503,
+     1             456.6, 430.3, 410.5, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400 /
+      data b_soil / -1.186, -1.186, -1.346, -1.471, -1.624, -1.931, -2.188, -2.381, -2.518,
+     1             -2.657, -2.669, -2.599, -2.401, -1.955, -1.025, -0.299, 0, 0, 0, 0, 0,
+     1            0, 0 /
+      data a1 / 5.87504394, 5.97631438, 7.45297044, 8.04759521, 7.76085108, 6.171919,
+     1            4.83403302, 4.42687615, 4.57008643, 3.98311294, 4.8603434, 4.67510367,
+     1            4.30862113, 3.57339281, 2.92216459, 2.39779653, 1.64147667, 1.66482796,
+     1            0.90564754, 0.6123444, 0.32672294, -0.24139803, -0.96313983 /
+      data a2 / -1.75359772, -1.77010766, -2.03336398, -2.10610081, -1.99370934, -1.58654201,
+     1            -1.2971103, -1.18774055, -1.24895678, -1.13377346, -1.38019755, -1.35362409,
+     1            -1.30799859, -1.23082022, -1.18750273, -1.16319283, -1.06543862, -1.12677535,
+     1            -1.07619985, -1.13079589, -1.1573438, -1.1407007, -1.09295336 /
+      data a3 / 0.13125248, 0.12246057, 0.08332151, 0.08012671, 0.0730312, 0.05481839, 0.05249728,
+     1            0.02995137, 0.03865827, 0.04682762, 0.03822425, 0.02523729, 0.00995253, 0.03605351,
+     1            0.02768934, 0.040113, 0.08310064, 0.09403648, 0.13838017, 0.15259121, 0.1242091,
+     1            0.10950824, 0.11343926 /
+      data a4 / 0.80276784, 0.84131709, 1.03131243, 1.03436999, 1.07565004, 1.17061492, 1.20531288,
+     1            1.37607187, 1.34990775, 1.3795388, 1.51949871, 1.66662746, 1.85625091, 1.81217177,
+     1            2.03469107, 2.04340485, 1.88987024, 1.9050392, 1.71178342, 1.59358719, 1.69183532,
+     1            1.71125604, 1.67160339 /
+      data a5 / -0.33486952, -0.28054559, -0.03954116, -0.01295063, 0.00758131, 0.10490549, 0.17968066,
+     1            0.22912175, 0.15592549, 0.11670946, 0.18347677, 0.21967977, 0.29782648, 0.24372341,
+     1            0.22521403, 0.27382886, 0.18739875, 0.13268085, 0.01379686, 0.06464958, 0.32368231,
+     1            0.60252124, 0.7762083 /
+      data a6 / -0.00039095, -0.00038903, 0, -0.00009638, -0.00078515, -0.00267532, -0.0033759, -0.00355237,
+     1            -0.00244847, -0.00207613, -0.00001896, 0, 0, 0, -0.00009996, -0.00033356, -0.00121364,
+     1            -0.00087595, -0.00061861, 0, 0, 0, 0 /
+      data a7 / 1.0988, 1.0988, 1.2536, 1.4175, 1.3997, 1.3582, 1.1648, 0.994, 0.8821, 0.7046, 0.5799,
+     1            0.5021, 0.3687, 0.1746, -0.082, -0.2821, -0.4108, -0.4466, -0.4344, -0.4368, -0.4586,
+     1            -0.4433, -0.4828 /
+      data a8 / -1.42, -1.42, -1.65, -1.8, -1.8, -1.69, -1.49, -1.3, -1.18, -0.98, -0.82, -0.7, -0.54,
+     1            -0.34, -0.05, 0.12, 0.25, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 /
+      data a9 / 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4,
+     1            0.4, 0.4, 0.4, 0.4, 0.4 /
+      data a10 / 4.53143081, 4.57416129, 4.56070915, 4.36639286, 3.90922953, 3.06236311, 3.50112817,
+     1            3.62815675, 3.87633808, 4.03388062, 4.31418239, 4.75196667, 4.70451938, 4.56020155,
+     1            4.83342978, 4.59028522, 4.13415056, 4.18978319, 4.50906779, 4.56385964, 4.55836575,
+     1            5.08281865, 5.49692364 /
+      data a11 / 0.0056735, 0.00565448, 0.00848068, 0.00921589, 0.00629627, 0.00558843, 0.00319554,
+     1            0.001817, 0.00212947, 0.00068979, 0.0006478, 0.0008707, -0.00031282, -0.00101097,
+     1            0.00009741, 0.00108512, 0.00035459, 0.0007295, 0.00084112, 0.00068188, 0.00137322,
+     1            0.00167053, -0.00070392 /
+      data a12 / 1.01494528, 1.03738201, 1.31034079, 1.48158019, 1.65618649, 1.93944484, 2.08901131,
+     1            2.25003086, 2.283387, 2.3140873, 2.33333479, 2.23421777, 2.05217228, 1.63506217,
+     1            0.69338467, -0.09761879, -0.34931995, -0.33269783, -0.41320697, -0.42395126, -0.38759507,
+     1            -0.32638288, -0.25811162 /
+      data a13 / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 /
+      data a14 / -0.73080261, -0.73868917, -0.69848828, -0.65335577, -0.5505116, -0.42997222, -0.53087673,
+     1            -0.58085678, -0.66280655, -0.72244113, -0.79644275, -0.90120145, -0.89829099, -0.87330858,
+     1            -0.94685865, -0.90845421, -0.80518214, -0.81689247, -0.87331394, -0.87800447, -0.88436295,
+     1            -0.98803311, -1.05008478 /
+      data a15 / 0.9969, 0.9969, 1.103, 1.2732, 1.3042, 1.26, 1.223, 1.16, 1.05, 0.8, 0.662, 0.58, 0.48,
+     1            0.33, 0.31, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 /
+      data a16 / -1, -1, -1.18, -1.36, -1.36, -1.3, -1.25, -1.17, -1.06, -0.78, -0.62, -0.5, -0.34, -0.14,
+     1            0, 0, 0, 0, 0, 0, 0, 0, 0 /
+      data sigs   / 0.6911808, 0.69938258, 0.70173433, 0.71412373, 0.741128, 0.74606525, 0.7451527,
+     1            0.72855743, 0.72093248, 0.71005053, 0.66934213, 0.66733247, 0.66329494, 0.63504015,
+     1            0.60012607, 0.56961713, 0.55384735, 0.53658882, 0.51345287, 0.51417184, 0.49080507,
+     1            0.4706381, 0.46023151 /
+      data sigt   / 0.47462209, 0.47631913, 0.53776165, 0.56188074, 0.52707475, 0.50642417, 0.44618739,
+     1            0.45040229, 0.42549471, 0.42945015, 0.43333698, 0.44599448, 0.46723155, 0.50143305,
+     1            0.51633193, 0.50688464, 0.51465398, 0.50365207, 0.45311429, 0.43900131, 0.4208419,
+     1            0.41701232, 0.38872242 /
+
+C Constant parameters
       n = 1.18
       c = 1.88
       deltaC1 = 0.0
       c4 = 10.0
       c1 = 7.2
- 
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 23
 
-C First check for the PGA case 
+C First check for the PGA case
       if (specT .eq. 0.0) then
          i1=1
          period1 = period(i1)
@@ -49060,21 +49060,21 @@ C   For other periods, loop over the spectral period range of the attenuation re
          if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
             count1 = i
             count2 = i+1
-            goto 1020 
+            goto 1020
          endif
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'BCHydro Sub (6/2010 Model) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -49119,52 +49119,52 @@ C Interpolate the coefficients for the requested spectral period.
             call interp (period(count1),period(count2),sigt(count1),sigt(count2),
      +                   specT,sigtT,iflag)
 
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 
-C     Compute the R term and base model based on either Rupture Distance 
-c         (Interface events) of Hypocentral distance (Intraslab events). 
+C     Compute the R term and base model based on either Rupture Distance
+c         (Interface events) of Hypocentral distance (Intraslab events).
       if (ftype .eq. 0) then
-         R = rRup + c4*exp( (mag-6.0)*a9T ) 
+         R = rRup + c4*exp( (mag-6.0)*a9T )
          base = a1T + a4T*deltaC1 + (a2T + a14T*ftype + a3T*(mag - 7.2))*alog(R) + a6T*rRup + a10T*ftype
       elseif (ftype .eq. 1) then
-         R = disthypo + c4*exp( (mag-6.0)*a9T ) 
+         R = disthypo + c4*exp( (mag-6.0)*a9T )
          base = a1T + a4T*deltaC1 + (a2T + a14T*ftype + a3T*(mag - 7.2))*alog(R) + a6T*disthypo + a10T*ftype
       else
          write (*,*) 'BC Hydro V3 Model not defined for Ftype'
          write (*,*) 'other than 0 (interface) or 1 (intraslab)'
          stop 99
       endif
-      
-C     Base model for Magnitude scaling.      
+
+C     Base model for Magnitude scaling.
       testmag = (c1 + deltaC1)
       if (mag .le. testmag ) then
          fmag = a4T*(mag-testmag) + a13T*(10.0-mag)**2.0
       else
          fmag = a5T*(mag-testmag) + a13T*(10.0-mag)**2.0
-      endif      
-      
+      endif
+
 C     Depth Scaling
         fdepth =  a11T*(min(depth, 120.0) -60.0 )*ftype
 
-C     Forearc/Backarc scaling      
+C     Forearc/Backarc scaling
       if (ftype .eq. 1) then
          farc =  (a7T +a8T*alog(max(disthypo,85.0)/40.0))*faba
-      elseif (ftype .eq. 0) then   
+      elseif (ftype .eq. 0) then
          farc =  (a15T +a16T*alog(max(rRup,100.0)/40.0))*faba
-      endif 
+      endif
 
-C     Site Response 
+C     Site Response
       if (vs30 .gt. 1000.0) then
           VsStar = 1000.0
       else
           VsStar = vs30
       endif
-       
+
       if (vs30 .ge. VlinT) then
          fsite = a12T*alog(VsStar/vLinT) + b_soilT*n*alog(VsStar/vLinT)
       else
          fsite = a12T*alog(VsStar/vLinT) - b_soilT*alog(pgarock + c) +
-     1          b_soilT*alog(pgarock + c*(VsStar/vlinT)**n)     
+     1          b_soilT*alog(pgarock + c*(VsStar/vlinT)**n)
       endif
 
       sumgm = base + fmag + fdepth + farc + fsite
@@ -49179,4 +49179,261 @@ c     Set SA to return
       return
       end
 
+c ----------------------------------------------------------------------
+
+      subroutine Arroyo2010 ( mag, rRup, lnSa, specT, iflag, phi1, tau1, sigma)
+
+      implicit none
+
+      integer MAXPER, nPer, i1, i
+      parameter (MAXPER=57)
+      real a1(MAXPER), a2(MAXPER), a3(MAXPER), a4(MAXPER)
+      real period(MAXPER), sig(MAXPER), tau(MAXPER), phi(MAXPER)
+      real lnSa, rRup, sigma, mag
+      real a1T, a2T, a3T, a4T
+      real sigT, tauT, phiT, tau1, phi1, a4r,a4Rr0
+      real period1, E1a, E1b, r0square
+      integer count1, count2, iflag
+      real specT
+
+      data period / 0, 0.04, 0.045, 0.05, 0.055, 0.06, 0.065, 0.07, 0.075, 0.08, 0.085,
+     1           0.09, 0.095, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28,
+     1           0.3, 0.32, 0.34, 0.36, 0.38, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75,
+     1           0.8, 0.85, 0.9, 0.95, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2,
+     1           2.5, 3, 3.5, 4, 4.5, 5 /
+      data a1 / 2.4862, 3.8123, 4.044, 4.1429, 4.3092, 4.377, 4.5185, 4.4591, 4.5939, 4.4832, 4.5062,
+     1          4.4648, 4.394, 4.3391, 4.0505, 3.5599, 3.1311, 2.7012, 2.5485, 2.2699, 1.913, 1.7181,
+     1          1.4039, 1.108, 1.0652, 0.8319, 0.4965, 0.3173, 0.2735, 0.099, -0.0379, -0.3512, -0.6897,
+     1          -0.6673, -0.7154, -0.7015, -0.8581, -0.9712, -1.097, -1.2346, -1.26, -1.7687, -2.1339,
+     1          -2.4122, -2.5442, -2.8509, -3.0887, -3.4884, -3.7195, -4.0141, -4.1908, -5.1104, -5.5926,
+     1          -6.1202, -6.5318, -6.9744, -7.1389 /
+      data a2 / 0.9392, 0.8636, 0.8489, 0.858, 0.8424, 0.8458, 0.8273, 0.8394, 0.8313, 0.8541, 0.8481,
+     1          0.8536, 0.858, 0.862, 0.8933, 0.9379, 0.9736, 1.003, 0.9988, 1.0125, 1.045, 1.0418,
+     1          1.0782, 1.1038, 1.0868, 1.1088, 1.1408, 1.1388, 1.1533, 1.1662, 1.2206, 1.2445, 1.2522,
+     1          1.2995, 1.3263, 1.2994, 1.3205, 1.3375, 1.3532, 1.3687, 1.3652, 1.4146, 1.4417, 1.4577,
+     1          1.4618, 1.492, 1.5157, 1.575, 1.5966, 1.6162, 1.6314, 1.7269, 1.7515, 1.8077, 1.8353,
+     1          1.8685, 1.8721 /
+      data a3 / 0.5061, 0.5578, 0.5645, 0.5725, 0.5765, 0.5798, 0.5796, 0.5762, 0.5804, 0.5792, 0.5771,
+     1          0.5742, 0.5712, 0.5666, 0.5546, 0.535, 0.5175, 0.4985, 0.485, 0.471, 0.4591, 0.445, 0.4391,
+     1          0.4287, 0.4208, 0.4142, 0.4044, 0.393, 0.4067, 0.4127, 0.4523, 0.4493, 0.4421, 0.4785,
+     1          0.5068, 0.5056, 0.5103, 0.5201, 0.5278, 0.5345, 0.5426, 0.5342, 0.5263, 0.5201, 0.5242,
+     1          0.522, 0.5215, 0.5261, 0.5255, 0.5187, 0.5199, 0.5277, 0.5298, 0.5402, 0.5394, 0.5328, 0.5376 /
+      data a4 / 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015,
+     1          0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015,
+     1          0.015, 0.015, 0.0134, 0.0117, 0.0084, 0.0076, 0.0067, 0.0051, 0.0034, 0.0029, 0.0023, 0.0018,
+     1          0.0012, 0.0007, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001,
+     1          0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001 /
+      data sig / 0.75, 0.8228, 0.8429, 0.8512, 0.8583, 0.8591, 0.8452, 0.8423, 0.8473, 0.8421, 0.8344, 0.8304,
+     1          0.8294, 0.8254, 0.796, 0.7828, 0.7845, 0.7717, 0.7551, 0.7431, 0.7369, 0.7264, 0.7209, 0.7198,
+     1          0.7206, 0.7264, 0.7255, 0.7292, 0.7272, 0.7216, 0.7189, 0.7095, 0.7084, 0.7065, 0.707, 0.7092,
+     1          0.6974, 0.6906, 0.6923, 0.6863, 0.6798, 0.6701, 0.6697, 0.6801, 0.6763, 0.6765, 0.6674, 0.648,
+     1          0.6327, 0.6231, 0.6078, 0.6001, 0.6029, 0.6137, 0.6201, 0.6419, 0.6701 /
+      data tau / 0.4654, 0.5179, 0.5246, 0.5199, 0.5253, 0.5563, 0.527, 0.5241, 0.5205, 0.5148, 0.5115, 0.5273,
+     1          0.5309, 0.5116, 0.4768, 0.465, 0.4523, 0.4427, 0.4428, 0.4229, 0.4223, 0.4356, 0.4191, 0.4281,
+     1          0.4384, 0.425, 0.4348, 0.4419, 0.4574, 0.4249, 0.4265, 0.4215, 0.4304, 0.4096, 0.3999, 0.4113,
+     1          0.3923, 0.4047, 0.398, 0.3921, 0.3842, 0.3871, 0.3931, 0.3939, 0.4146, 0.4159, 0.4187, 0.4164,
+     1          0.3985, 0.4062, 0.3828, 0.3936, 0.4148, 0.4273, 0.4393, 0.4577, 0.5011 /
+      data phi / 0.5882, 0.6394, 0.6597, 0.674, 0.6788, 0.6547, 0.6607, 0.6594, 0.6685, 0.6664, 0.6593, 0.6415,
+     1          0.6373, 0.6477, 0.6374, 0.6298, 0.6409, 0.6321, 0.6116, 0.6109, 0.6039, 0.5814, 0.5865, 0.5787,
+     1          0.5719, 0.5891, 0.5808, 0.58, 0.5653, 0.5833, 0.5788, 0.5707, 0.5627, 0.5756, 0.583, 0.5778,
+     1          0.5766, 0.5596, 0.5665, 0.5632, 0.5608, 0.5471, 0.5422, 0.5544, 0.5343, 0.5335, 0.5197, 0.4965,
+     1          0.4914, 0.4726, 0.4721, 0.453, 0.4375, 0.4405, 0.4376, 0.45, 0.4449 /
+
+
+C Find the requested spectral period and corresponding coefficients
+      nPer = 57
+
+C First check for the PGA case
+      if (specT .eq. 0.0) then
+         i1=1
+         period1 = period(i1)
+         a1T = a1(i1)
+         a2T = a2(i1)
+         a3T = a3(i1)
+         a4T = a4(i1)
+         sigT = sig(i1)
+         phiT = phi(i1)
+         tauT = tau(i1)
+         goto 1011
+      endif
+
+C   For other periods, loop over the spectral period range of the attenuation relationship.
+      do i=2,nper-1
+         if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
+            count1 = i
+            count2 = i+1
+            goto 1020
+         endif
+      enddo
+
+C Selected spectral period is outside range defined by attenuaton model.
+      write (*,*)
+      write (*,*) 'Arroyo Sub-Interface (2010 Model) Horizontal'
+      write (*,*) 'attenuation model is not defined for a '
+      write (*,*) ' spectral period of: '
+      write (*,'(a10,f10.5)') ' Period = ',specT
+      write (*,*) 'This spectral period is outside the defined'
+      write (*,*) 'period range in the code or beyond the range'
+      write (*,*) 'of spectral periods for interpolation.'
+      write (*,*) 'Please check the input file.'
+      write (*,*)
+      stop 99
+
+C Interpolate the coefficients for the requested spectral period.
+ 1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
+     +                   specT,a1T,iflag)
+            call interp (period(count1),period(count2),a2(count1),a2(count2),
+     +                   specT,a2T,iflag)
+            call interp (period(count1),period(count2),a3(count1),a3(count2),
+     +                   specT,a3T,iflag)
+            call interp (period(count1),period(count2),a4(count1),a4(count2),
+     +                   specT,a4T,iflag)
+            call interp (period(count1),period(count2),sig(count1),sig(count2),
+     +                   specT,sigT,iflag)
+            call interp (period(count1),period(count2),phi(count1),phi(count2),
+     +                   specT,phiT,iflag)
+            call interp (period(count1),period(count2),tau(count1),tau(count2),
+     +                   specT,tauT,iflag)
+
+ 1011 period1 = specT
+
+
+	  r0square = 1.4447*0.00001*exp(2.3026*mag)
+
+	  a4R = a4T*rRup
+	  a4Rr0 = a4T*sqrt(rRup**2+r0square)
+
+	  call fEnx(a4R,E1a,1)
+	  call fEnx(a4Rr0,E1b,1)
+
+	  lnSa = a1T + a2T*mag + a3T*alog((E1a-E1b)/r0square)
+
+c	  write(*,*) "r0square = ", r0square
+c	  write(*,*) "a4R = ", a4R
+c 	  write(*,*) "a4Rr0 = ", a4Rr0
+c	  write(*,*) "E1a = ", E1a
+c	  write(*,*) "E1b = ", E1b
+c	  write(*,*) "lnYSa = ", lnSa
+c	  write(*,*) "Sa = ", exp(lnSa)
+c	  write(*,*) "Sa = ", exp(lnSa)/980
+
+C     Set sigma values to return
+      sigma = sigT
+      tau1 = tauT
+	  phi1 = phiT
+
+      return
+      end
+
+      subroutine fEnx( x, Enx, n)
+
+      Integer MaxIt, i, ii, nm1 As
+      real expint, Eps, FpMin, Euler, Enx
+      real a, b, c, d, del, Fact, H, psi
+
+c      'PARAMETER (MAXIT=100,EPS=1.e-7,FPMIN=1.e-30,EULER=.5772156649)
+       MaxIt = 100
+       Eps = 0.0000001
+       FpMin = 1E-30
+       Euler = 0.5772156649
+
+       nm1 = n - 1
+
+      If (n .le. 0 .or. x .le. 0 ) Then
+
+          write(*,*) "fEnx Input Error"
+		  goto 99
+
+		  elseif ( x .eq. 0 .And. n .eq.0 ) then
+          write(*,*) "fEnx Input Error"
+		  goto 99
+
+		    elseif ( x .eq. 0 .And.  n .eq. 1) then
+            write(*,*) "fEnx Input Error"
+		    goto 99
+
+      End If
+
+      If ( n .eq. 0) Then
+          expint = Exp(-x) / x
+      Else
+
+          If (x .eq. 0) Then
+              expint = 1.0/ nm1
+          Else
+
+              If (x .ge. 1) Then
+                  b = x + n
+                  c = 1.0 / FpMin
+                  d = 1.0 / b
+                  H = d
+
+                  Do i = 1 , MaxIt
+                      a = -i * (nm1 + i)
+                      b = b + 2.0
+                      d = 1.0 / (a * d + b)
+                      c = b + a / c
+                      del = c * d
+                      H = H * del
+
+                      If (Abs(del - 1.0) <= Eps) Then
+                          expint = H * Exp(-x)
+                          Enx = expint
+                          goto 99
+                      End If
+                   enddo
+
+                  write(*,*) "fEnx Input Error"
+                  goto 99
+
+              Else
+
+                  If (nm1 .ne. 0) Then
+                      expint = 1.0 / nm1
+                  Else
+                      expint = -Log(x) - Euler
+                  End If
+
+                  Fact = 1.0
+
+                  Do i = 1, MaxIt
+                      Fact = -Fact * x / i
+
+                      If (i .ne. nm1) Then
+                          del = -Fact / (i - nm1)
+                      Else
+                          psi = -Euler
+
+                          DO ii = 1, nm1
+                              psi = psi + 1.0 / ii
+                          enddo
+
+                          del = Fact * (-Log(x) + psi)
+                      End If
+
+                      expint = expint + del
+
+                      If (Abs(del) .le. Abs(expint) * Eps) Then
+                          Enx = expint
+                          goto 99
+                      End If
+                  enddo
+
+                  write(*,*)  "fEnx Input Error"
+                  goto 99
+
+              End If
+
+          End If
+
+      End If
+
+
+
+      Enx = expint
+
+
+99    continue
+      return
+      End
 
