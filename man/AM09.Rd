@@ -23,7 +23,7 @@ A list will be return, including mag, Rrup, lnY, sigma, specT, period, iflag.
 \details{
 Atkinson, G. M., and Macias, M. (2009). Predicted Ground Motions for Great Interface Earthquakes
 in the Cascadia Subduction Zone. Bulletin of the Seismological Society of America, 99(3), 1552-1578.
-http://doi.org/10.1785/0120080147
+\url{http://doi.org/10.1785/0120080147}
 }
 \examples{
 AM09(6, 20, 0)

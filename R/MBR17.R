@@ -4,7 +4,7 @@
 #'
 #' Montalva, G. A., Bastias, N., and Rodriguez-Marek, A. (2017). Ground-Motion Prediction Equation for the
 #' Chilean Subduction Zone. Bulletin of the Seismological Society of America, 107(2), 901-911.
-#' http://doi.org/10.1785/0120160221
+#' \url{http://doi.org/10.1785/0120160221}
 #'
 #' @param Mag Earthquake momnet magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.

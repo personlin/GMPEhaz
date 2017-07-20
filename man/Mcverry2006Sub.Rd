@@ -39,6 +39,7 @@ iflag, Vs30, Ztor, Z25, dip, depth, hwflag, Rx, rupwidth, regionflag, phi, tau.
 Mcverry, G. H., Zhao, J. X., Abrahamson, N. A., and Somerville, P. G. (2006). New Zealand acceleration response spectrum
 attenuation relations for crustal and subduction zone earthquakes,
 Bulletin of the New Zealand Society for Earthquake Engineering, 39(1), 1-58.
+\url{http://bulletin.nzsee.org.nz/39/1/0001}
 }
 \examples{
 Mcverry2006Sub(6, 20, 0, 0, 0, 90, 10, 10, 0, 0)
