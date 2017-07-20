@@ -49181,7 +49181,7 @@ c     Set SA to return
 
 c ----------------------------------------------------------------------
 
-      subroutine Arroyo2010 ( mag, rRup, lnSa, specT, iflag, phi1, tau1, sigma)
+      subroutine Arroyo2010 ( mag, rRup, lnSa, specT, iflag, period1, phi1, tau1, sigma)
 
       implicit none
 
