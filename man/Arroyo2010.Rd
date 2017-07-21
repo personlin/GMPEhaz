@@ -14,7 +14,7 @@ Arroyo2010(Mag, Rrup, Prd)
 \item{Prd}{Period of spectral acceleration.}
 }
 \value{
-A list will be return, including mag, Rrup, lnY, specT, iflag, phi1, tau1, sigma.
+A list will be return, including mag, Rrup, lnY, specT, iflag, period, phi1, tau1, sigma.
 }
 \description{
 \code{Arroyo2010} returns the ground-motion prediction with it sigma of Arroyo et al. (2010) GMPE.
