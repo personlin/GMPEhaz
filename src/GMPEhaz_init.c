@@ -51,6 +51,8 @@ extern void F77_NAME(linlee08soil)(void *, void *, void *, void *, void *, void 
 extern void F77_NAME(loh96)(void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(meaninten)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(montalva2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(phungcrust2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(phungsub2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s02_mcverry_subduction_2006)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(tg09221_2012)(void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(youngs97_rock)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -105,6 +107,8 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"loh96",                       (DL_FUNC) &F77_NAME(loh96),                        6},
   {"meaninten",                   (DL_FUNC) &F77_NAME(meaninten),                   35},
   {"montalva2017",                (DL_FUNC) &F77_NAME(montalva2017),                12},
+  {"phungcrust2017",              (DL_FUNC) &F77_NAME(phungcrust2017),              17},
+  {"phungsub2017",                (DL_FUNC) &F77_NAME(phungsub2017),                12},
   {"s02_mcverry_subduction_2006", (DL_FUNC) &F77_NAME(s02_mcverry_subduction_2006), 14},
   {"tg09221_2012",                (DL_FUNC) &F77_NAME(tg09221_2012),                 9},
   {"youngs97_rock",               (DL_FUNC) &F77_NAME(youngs97_rock),               10},

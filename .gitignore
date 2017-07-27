@@ -26,7 +26,6 @@
 # Ignore Mac OS X system files
 .DS_Store
 # RStudio files
-.Rbuildignore
 .Rhistory
 .Rproj.user
 inst/doc

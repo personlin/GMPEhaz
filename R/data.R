@@ -250,6 +250,21 @@
 #'
 "cnames.Mcverry2006Sub"
 
+
+#' Variable name of PhungCru17 GMPEs.
+#'
+#' @format Vectors of PhungCru17 GMPE.
+#'
+"cnames.PhungCru17"
+
+
+#' Variable name of PhungSub17 GMPEs.
+#'
+#' @format Vectors of PhungSub17 GMPE.
+#'
+"cnames.PhungSub17"
+
+
 #' Variable name of Sinotech12 GMPEs.
 #'
 #' @format Vectors of Sinotech12 GMPE.
