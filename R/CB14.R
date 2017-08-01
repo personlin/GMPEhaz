@@ -36,6 +36,9 @@ CB14 <- function(Mag, Rrup, Rjb, ftype=0, Prd, Vs30=760,
   #  depthtop, D25, Dip, depth, HWflag, Rx, rupwidth, regionflag, phi, tau )
 
   # Model Number = 2836
+  if (Prd != 0 & Prd != -1 & (Prd < 0.01 | Prd > 10)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("CB_NGAWest2_2013", mag=as.single(Mag), Rrup=as.single(Rrup), Rbjf=as.single(Rjb),
                       ftype=as.single(ftype), specT=as.single(Prd), period2=as.single(0),
                       lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(0),

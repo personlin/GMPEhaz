@@ -33,7 +33,10 @@ Mcverry2006Sub <- function(Mag, Rrup, Prd, ftype=0, Ztor, Dip, rupwidth, depth, 
   # C     ----------------------------------
   # c     0         Interface
   # c     1         Intraslab
-    retvals <- .Fortran("S02_McVerry_Subduction_2006", m=as.single(Mag), Rrup=as.single(Rrup),
+  if (Prd != 0 & (Prd < 0.01 | Prd > 3)) {
+    stop("Period out of range! \n\n")
+  }
+  retvals <- .Fortran("S02_McVerry_Subduction_2006", m=as.single(Mag), Rrup=as.single(Rrup),
                         specT=as.single(Prd), period2=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1),
                         iflag=as.integer(0), Ftype=as.single(ftype), depthtop=as.single(Ztor), dip=as.single(Dip),
                         width=as.single(rupwidth), hypodepth=as.single(depth), Sc=as.single(Sc), Sd=as.single(Sd))

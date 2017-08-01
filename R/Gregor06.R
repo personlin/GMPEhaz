@@ -19,6 +19,9 @@
 #' @export
 Gregor06 <- function(Mag, Rrup, Prd, Vs30) {
   #subroutine Gregor06Cas(mag, rupdist, lnY, sigma, specT, attenName, vs30, period,iflag )
+  if (Prd != 0 & (Prd < 0.02 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("Gregor06Cas", mag=as.single(Mag), rupdist=as.single(Rrup), lnY=as.single(0.1),
                       sigma=as.single(0.1), specT=as.single(Prd), attenName=as.character("attenName"), vs30=as.single(Vs30),
                       period=as.single(0), iflag=as.integer(1))

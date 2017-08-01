@@ -44,6 +44,9 @@ ASK14 <- function(Mag, Rrup, Rjb, Prd, Dip, ftype=0, rupwidth, Vs30=760, hwflag=
   #                               vs30, hwflag, lnY, sigma, specT, period2, ztor,
   #                               iflag, vs30_class, z10, Rx, Ry0, regionflag, msasflag,
   #                               phi, tau )
+  if (Prd != 0 & Prd != -1 & (Prd < 0.01 | Prd > 10)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("ASK_NGAWest2_2013", mag=as.single(Mag), dip=as.single(Dip), ftype=as.single(ftype),
                       fltWidth=as.single(rupwidth), Rrup=as.single(Rrup), Rjb=as.single(Rjb),
                       vs30=as.single(Vs30),hwflag=as.integer(hwflag), lnY=as.single(0.1), sigma=as.single(0.1),

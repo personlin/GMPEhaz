@@ -21,6 +21,9 @@
 AM09 <- function(Mag, Rrup, Prd) {
   # subroutine AM09_Cas ( mag, rupDist, lnY, sigma,
   #                       specT, period, iflag )
+  if (Prd != 0 & (Prd < 0.01 | Prd > 10)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("AM09_Cas", mag=as.single(Mag), rupDist=as.single(Rrup), lnY=as.single(0.1),
                       sigma=as.single(0.1), specT=as.single(Prd),
                       period=as.single(0), iflag=as.integer(1))

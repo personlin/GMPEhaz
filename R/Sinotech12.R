@@ -24,6 +24,9 @@ Sinotech12 <- function(Mag, Rrup, Prd, Vs30=760, ftype){
 #      -1       Normal                   -120 < Rake < -60.0
 #     1, 0.5    Reverse and Rev/Obl        30 < Rake < 150.0
 #     0,-0.5    Strike-Slip and NMl/Obl        Otherwise
+  if (Prd != 0 & (Prd < 0.01 | Prd > 10)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("TG09221_2012", mag=as.single(Mag), rupdist=as.single(Rrup), specT=as.single(Prd),
                       period1=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1),
                       vs=as.single(Vs30), iflag=as.integer(1), ftype=as.single(ftype))

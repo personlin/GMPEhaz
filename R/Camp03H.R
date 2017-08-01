@@ -27,6 +27,9 @@
 #' @export
 # ---- need to be rewrite !! ----
 Camp03H <- function(Mag, Rjb, Rseis, Prd, Svfs, Ssr, Sfr, Frv, Fth, hwflag=0) {
+  if (Prd != 0 & (Prd < 0.05 | Prd > 4)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("Camp03_H", mag=as.single(Mag), seismodist=as.single(Rseis), jbDist=as.single(Rjb),
                       lnY=as.single(0.1), sigma=as.single(0.1), specT=as.single(Prd), period1=as.single(0),
                       Svfs=as.single(Svfs), Ssr=as.single(Ssr), Sfr=as.single(Sfr),

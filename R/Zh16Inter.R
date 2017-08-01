@@ -30,6 +30,9 @@ Zh16Inter <- function(Mag, Rrup, sclass=1.0, Prd=0, depth=10){
   #     Sclass = 2 SC II
   #     Sclass = 3 SC III
   #     Sclass = 4 SC IV
+  if (Prd != 0 & (Prd < 0.01 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("Zhaoetal2016_int", m=as.single(Mag), dist=as.single(Rrup), ftype=as.single(0.0),
                       lnY=as.single(0.1), sigma=as.single(0.1), sclass=as.single(sclass),
                       specT=as.single(Prd), attenName=as.character("attenName"), period1=as.single(0), iflag=as.integer(0),

@@ -23,12 +23,13 @@
 PhungSub17 <- function(Mag, Rrup, Prd, ftype=0, Vs30, Z1.0, Ztor, regionflag=1) {
   #         subroutine PhungSub2017 ( mag, dist, vs, Z10, ZTor, lnY, sigma,  ftype,
   #                    specT, period2, iflag, regionflag )
-
-
+  if (Prd != 0 & (Prd < 0.01 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("PhungSub2017", mag=as.single(Mag), dist=as.single(Rrup),
-                      vs=as.single(Vs30), Z10=as.single(Z1.0), ZTor=as.single(Ztor), lnY=as.single(0.1),
-                      sigma=as.single(0.1), ftype=as.single(ftype), specT=as.single(Prd), period2=as.single(0),
-                      iflag=as.integer(1), regionflag=as.integer(regionflag))
+                        vs=as.single(Vs30), Z10=as.single(Z1.0), ZTor=as.single(Ztor), lnY=as.single(0.1),
+                        sigma=as.single(0.1), ftype=as.single(ftype), specT=as.single(Prd), period2=as.single(0),
+                        iflag=as.integer(1), regionflag=as.integer(regionflag))
   names(retvals) <- c("mag", "Rrup", "Vs30", "Z1.0", "Ztor", "lnY", "sigma", "ftype", "specT",
                       "period", "iflag", "regionflag")
   return(retvals)

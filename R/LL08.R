@@ -22,6 +22,9 @@
 #'
 #' @export
 LL08 <- function(Mag, Rrup, depth, ftype, Prd, Vs30=760) {
+  if (Prd != 0 & (Prd < 0.01 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   if (Vs30 > 360){
     retvals <- .Fortran("LinLee08rock", mag=as.single(Mag), rupdist=as.single(Rrup), specT=as.single(Prd),
                         period=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(1),
@@ -60,6 +63,9 @@ LL08 <- function(Mag, Rrup, depth, ftype, Prd, Vs30=760) {
 #' @export
 LL08Rock <- function(Mag, Rrup, depth, ftype, Prd) {
   #  subroutine LinLee08rock ( mag, rupdist, specT, period, lnY, sigma, iflag, depth, ftype )
+  if (Prd != 0 & (Prd < 0.01 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("LinLee08rock", mag=as.single(Mag), rupdist=as.single(Rrup), specT=as.single(Prd),
                       period=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(1),
                       depth=as.single(depth), ftype=as.single(ftype)
@@ -90,6 +96,9 @@ LL08Rock <- function(Mag, Rrup, depth, ftype, Prd) {
 #'
 #' @export
 LL08Soil <- function(Mag, Rrup, depth, ftype, Prd) {
+  if (Prd != 0 & (Prd < 0.01 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("LinLee08soil", mag=as.single(Mag), rupdist=as.single(Rrup), specT=as.single(Prd),
                       period=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(1),
                       depth=as.single(depth), ftype=as.single(ftype)

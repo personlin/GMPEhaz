@@ -25,6 +25,9 @@
 BI14.tw.B01 <- function(Mag, Rjb, Prd=0, ftype=0, Vs30=760){
   #Bindi_Hor_2013 ( m, jbDist, ftype, specT,
   #                     period2, lnY, sigma, iflag, vs, phiT, tauT )
+  if (Prd != 0 & (Prd < 0.01 | Prd > 3)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("Bindi14_TW_B01", mag=as.single(Mag), jbDist=as.single(Rjb), ftype=as.single(ftype),
                       specT=as.single(Prd), period2=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1),
                       iflag=as.integer(0), vs=as.single(Vs30), phi=as.single(0.0), tau=as.single(0.0))

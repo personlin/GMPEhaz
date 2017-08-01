@@ -35,6 +35,9 @@ Zh16Cru <- function(Mag, Rrup, ftype=0, sclass=1.0, Prd=0, sourceclass=0.0, dept
   #     Sclass = 2 SC II
   #     Sclass = 3 SC III
   #     Sclass = 4 SC IV
+  if (Prd != 0 & (Prd < 0.01 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   sourceclass <- 0   # set for crustal model
   retvals <- .Fortran("Zhaoetal2016_cru", m=as.single(Mag), dist=as.single(Rrup), ftype=as.single(ftype),
                       lnY=as.single(0.1), sigma=as.single(0.1), sclass=as.single(sclass),

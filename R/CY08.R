@@ -48,7 +48,9 @@ CY08 <- function(Mag, Rrup, Rjb, Prd, Vs30, Dip, Ztor, ftype=0, Z1.0, Vs30_class
   #     Regionflag = 1 Japan and Italy
   #        Also set sigma2 equal to Japan specific value
   #     Regionflag = 2 Wenchuan (note only for M7.9)
-
+  if (Prd != 0 & Prd != -1 & (Prd < 0.01 | Prd > 10)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("CY_NGA_2008", m=as.single(Mag), Rrup=as.single(Rrup), Rbjf=as.single(Rjb),
                       specT=as.single(Prd), period2=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1),
                       iflag=as.integer(0), vs=as.single(Vs30), Delta=as.single(Dip), DTor=as.single(Ztor),

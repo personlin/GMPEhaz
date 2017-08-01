@@ -25,6 +25,9 @@
 #' @export
 AGA16.tw.C01 <- function(Mag, Rrup, Prd, ftype=0, Vs30, Ztor, depth, Rhypo) {
   #subroutine       subroutine AGA16_TW_C01 ( mag, fType, rRup, vs30, lnSa, sigma1, specT, period1, iflag, Ztor, depth, disthypo)
+  if (Prd != 0 & (Prd < 0.01 | Prd > 10)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("AGA16_TW_C01", mag=as.single(Mag), fType=as.single(ftype), rRup=as.single(Rrup),
                       vs30=as.single(Vs30), lnSa=as.single(0.1), sigma1=as.single(0.1),
                       specT=as.single(Prd), period1=as.single(0), iflag=as.integer(1),

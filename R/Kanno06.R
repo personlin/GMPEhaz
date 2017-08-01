@@ -22,6 +22,9 @@
 #' @export
 Kanno06 <- function(Mag, Rrup, Prd, Vs30, depth) {
   #subroutine kanno2006 (mag, Rrup, specT, period2, lnY, sigma, iflag, vs30, depth )
+  if (Prd != 0 & (Prd < 0.05 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("kanno2006", mag=as.single(Mag), Rrup=as.single(Rrup), specT=as.single(Prd),
                       period2=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1),
                       iflag=as.integer(1), vs30=as.single(Vs30), depth=as.single(depth))

@@ -23,6 +23,9 @@
 #'
 #' @export
 BCHydroSubV3 <- function(Mag, Rrup, Prd, ftype=0, Vs30, forearc=1, depth, Rhypo) {
+  if (Prd != 0 & (Prd < 0.02 | Prd > 10)) {
+    stop("Period out of range! \n\n")
+  }
   if (ftype == 0) {
     if (Prd <= 0.3) {
       deltaC1 = 0.2

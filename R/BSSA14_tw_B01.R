@@ -35,6 +35,9 @@ BSSA14.tw.B01 <- function(Mag, Rjb, Prd, Vs30, ftype=0, Z1.0, regionflag=0, basi
   #     1        period2, lnY, sigma, iflag, vs, ftype, pga4nl, z10, regionflag, basinflag,
   #     1        phi, tau )
   # Model Number = 2925
+  if (Prd != 0 & (Prd < 0.01 | Prd > 10)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("BSSA14_TW_B01", mag=as.single(Mag), Rbjf=as.single(Rjb),
                       specT=as.single(Prd), period2=as.single(0), lnY=as.single(0.1),
                       sigma=as.single(0.1), iflag=as.integer(0), vs=as.single(Vs30),

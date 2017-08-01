@@ -20,6 +20,9 @@
 #' @export
 Garcia05 <- function(Mag, Rrup, Prd, depth) {
   #subroutine GarciaH05 ( mag, rupdist, specT, period, lnY, sigma, iflag, depth)
+  if (Prd != 0 & (Prd < 0.04 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("GarciaH05", mag=as.single(Mag), rupdist=as.single(Rrup), specT=as.single(Prd),
                       period=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(1),
                       depth=as.single(depth))

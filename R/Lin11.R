@@ -21,6 +21,9 @@
 #'
 #' @export
 Lin11 <- function(Mag, Rrup, Prd, hwflag=0, Vs30=760){
+  if (Prd != 0 & (Prd < 0.01 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   if(Vs30 >360){
     if(hwflag==0){
       retvals <- .Fortran("Lin_fw_rock", mag=as.single(Mag), rupdist=as.single(Rrup), specT=as.single(Prd),
@@ -63,6 +66,9 @@ Lin11 <- function(Mag, Rrup, Prd, hwflag=0, Vs30=760){
 #'
 #' @export
 Lin11Rock <- function(Mag, Rrup, Prd, hwflag=0){
+  if (Prd != 0 & (Prd < 0.01 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   if(hwflag==0){
     retvals <- .Fortran("Lin_fw_rock", mag=as.single(Mag), rupdist=as.single(Rrup), specT=as.single(Prd),
                         period=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(1))
@@ -95,6 +101,9 @@ Lin11Rock <- function(Mag, Rrup, Prd, hwflag=0){
 #'
 #' @export
 Lin11Soil <- function(Mag, Rrup, Prd, hwflag=0){
+  if (Prd != 0 & (Prd < 0.01 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   if(hwflag==0){
     retvals <- .Fortran("Lin_fw_soil", mag=as.single(Mag), rupdist=as.single(Rrup), specT=as.single(Prd),
                         period=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(1))

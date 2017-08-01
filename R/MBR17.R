@@ -25,6 +25,9 @@
 MBR17 <- function(Mag, Rrup, Prd, ftype=0, Vs30, forearc=1, depth, Rhypo) {
   # subroutine Montalva2017 ( mag, fType, rRup, vs30, lnSa, sigma1,
   #                           specT, period1, iflag, forearc, depth1, disthypo )
+  if (Prd != 0 & (Prd < 0.02 | Prd > 10)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("Montalva2017", mag=as.single(Mag), ftype=as.single(ftype), rRup=as.single(Rrup),
                       vs30=as.single(Vs30), lnSa=as.single(0.1), sigma=as.single(0.1),
                       specT=as.single(Prd), period1=as.single(0), iflag=as.integer(1),

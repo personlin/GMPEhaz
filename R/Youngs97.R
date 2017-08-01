@@ -21,6 +21,9 @@
 #' @export
 Youngs97Rock <- function(Mag, Rrup, Prd, ftype=0, depth) {
   #subroutine youngs97_rock ( mag, rupDist, lnY, sigma, attenName, period, specT, ftype, depth,iflag )
+  if (Prd != 0 & (Prd < 0.075 | Prd > 3)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("youngs97_rock", mag=as.single(Mag), rupdist=as.single(Rrup), lnY=as.single(0.1),
                       sigma=as.single(0.1), attenName=as.character("attenName"), period=as.single(0), specT=as.single(Prd),ftype=as.single(ftype),
                       depth=as.single(depth), iflag=as.integer(1))
@@ -52,6 +55,9 @@ Youngs97Rock <- function(Mag, Rrup, Prd, ftype=0, depth) {
 #' @export
 Youngs97Soil <- function(Mag, Rrup, Prd, ftype=0, depth) {
   #subroutine youngs97_soil ( mag, rupDist, lnY, sigma, attenName, period, specT, ftype, depth, iflag )
+  if (Prd != 0 & (Prd < 0.075 | Prd > 4)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("youngs97_soil", mag=as.single(Mag), rupdist=as.single(Rrup), lnY=as.single(0.1),
                       sigma=as.single(0.1), attenName=as.character("attenName"), period=as.single(0), specT=as.single(Prd),ftype=as.single(ftype),
                       depth=as.single(depth), iflag=as.integer(1))

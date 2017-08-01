@@ -23,6 +23,9 @@
 ASB14 <- function(Mag, Rjb, Prd=0, ftype=0, Vs30=760){
   #ASB_2013 ( mag, Rbjf, specT,
   #                     period2, lnY, sigma, iflag, ftype, Vs, phiT, tauT )
+  if (Prd != 0 & Prd != -1 & (Prd < 0.01 | Prd > 4)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("ASB_2013", mag=as.single(Mag), Rbjf=as.single(Rjb), specT=as.single(Prd),
                       period2=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1),
                       iflag=as.integer(0), ftype=as.single(ftype), vs=as.single(Vs30),

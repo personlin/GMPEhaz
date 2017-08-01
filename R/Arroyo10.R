@@ -19,6 +19,9 @@
 #' @export
 Arroyo2010 <- function(Mag, Rrup, Prd) {
   #subroutine Arroyo2010 ( mag, rRup, lnSa, specT, iflag, period1, phi1, tau1, sigma)
+  if (Prd != 0 & (Prd < 0.04 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("Arroyo2010", mag=as.single(Mag), rRup=as.single(Rrup), lnSa=as.single(0.1),
                       specT=as.single(Prd), iflag=as.integer(1), period1=as.single(0),
                       phi1=as.single(0.1), tau1=as.single(0.1), sigma=as.single(0.1))

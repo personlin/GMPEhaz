@@ -24,6 +24,9 @@
 KAAH15 <- function(Mag, Rjb, Prd=0, ftype=0, Vs30=760, regionflag=0){
   #subroutine KAAH_2015 ( mag, Rbjf, specT,
   #                     period2, lnY, sigma, iflag, vs, ftype, pgaref, region)
+  if (Prd != 0 & Prd != -1 & (Prd < 0.01 | Prd > 4)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("KAAH_2015", mag=as.single(Mag), Rbjf=as.single(Rjb), specT=as.single(Prd),
                       period2=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1),
                       iflag=as.integer(0), vs=as.single(Vs30), ftype=as.single(ftype),

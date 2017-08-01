@@ -30,6 +30,9 @@ AB03 <- function(Mag, Rrup, Prd, ftype=0, depth, Sc=0, Sd=0, Se=0) {
   #          NEHRP C --> Sc=1, Sd=0, Se=0   360<Vs<760
   #          NEHRP D --> Sc=0, Sd=1, Se=0   180<Vs<360
   #          NEHRP E --> Sc=0, Sd=0, Se=1   Vs<180
+  if (Prd != 0 & (Prd < 0.04 | Prd > 3)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("AB03", mag=as.single(Mag), rupdist=as.single(Rrup), lnY=as.single(0.1),
                       sigma=as.single(0.1), specT=as.single(Prd), attenName=as.character("attenName"),
                       period=as.single(0), iflag=as.integer(1),

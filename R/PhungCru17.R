@@ -40,7 +40,9 @@ PhungCru17 <- function(Mag, Rrup, Prd, Vs30, Dip, Ztor, ftype=0, Z1.0, Vs30_clas
   #Subroutine PhungCrust2017 ( m, Rrup, specT, period2, lnY, sigma, iflag,
   #                            vs, Delta, DTor, Ftype, depthvs10, vs30_class,
   #                           regionflag, msasflag, phi, tau )
-
+  if (Prd != 0 & (Prd < 0.01 | Prd > 5)) {
+    stop("Period out of range! \n\n")
+  }
   retvals <- .Fortran("PhungCrust2017", m=as.single(Mag), Rrup=as.single(Rrup), specT=as.single(Prd),
                       period2=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(0),
                       vs=as.single(Vs30), Delta=as.single(Dip), DTor=as.single(Ztor), Ftype=as.single(ftype),
