@@ -48,6 +48,7 @@ extern void F77_NAME(lin_hw_soil)(void *, void *, void *, void *, void *, void *
 extern void F77_NAME(lin2009)(void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(linlee08rock)(void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(linlee08soil)(void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(ll08_c02)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(loh96)(void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(meaninten)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(montalva2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -104,6 +105,7 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"lin2009",                     (DL_FUNC) &F77_NAME(lin2009),                      9},
   {"linlee08rock",                (DL_FUNC) &F77_NAME(linlee08rock),                 9},
   {"linlee08soil",                (DL_FUNC) &F77_NAME(linlee08soil),                 9},
+  {"ll08_c02",                    (DL_FUNC) &F77_NAME(ll08_c02),                    10},
   {"loh96",                       (DL_FUNC) &F77_NAME(loh96),                        6},
   {"meaninten",                   (DL_FUNC) &F77_NAME(meaninten),                   35},
   {"montalva2017",                (DL_FUNC) &F77_NAME(montalva2017),                12},

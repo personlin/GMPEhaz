@@ -3260,7 +3260,7 @@ C *** Youngs et al. (1993) Horizontal Rock for Subduction Zones *****
 c -------------------------------------------------------------------
 
       subroutine youngs93 ( mag, rupDist, lnY, sigma, attenName, period,
-     1           specT, flag,iflag )
+     1           specT, flag, iflag )
 
       real mag, rupDist, lnY, sigma, period
       character*80 attenName
@@ -50604,3 +50604,4 @@ c	  write(*,*) "Sa = ", exp(lnSa)
 
       return
       end
+
