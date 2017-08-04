@@ -68,3 +68,5 @@
 # depth, depthtop, Z10, Z25, rupwidth, Rx, Ry0, dip,
 # iflag, hwflag, regionflag, basinflag, msasflag, sigma, phi, tau
 
+# save cnames
+# save(list=ls(pattern = "cnames.*"), file="data/cnames.rda")
