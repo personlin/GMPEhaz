@@ -238,6 +238,12 @@
 #'
 "cnames.LL08Soil"
 
+#' Variable name of LL08.C02 GMPEs.
+#'
+#' @format Vectors of LL08.C02 GMPE.
+#'
+"cnames.LL08.C02"
+
 #' Variable name of MBR17 GMPEs.
 #'
 #' @format Vectors of MBR17 GMPE.
