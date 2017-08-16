@@ -2,13 +2,13 @@ c ------------------------------------------------------------------
 C *** Montalva2017 Subduction (2017 - Model) Horizontal ***********
 c ------------------------------------------------------------------
       subroutine Montalva2017 ( mag, fType, rRup, vs30, lnSa, sigma1,
-     2           specT, period1, iflag, forearc, depth1, disthypo )
+     2           specT, period1, iflag, forearc, depth, disthypo )
 
       implicit none
 
       real mag, fType, rRup, vs30, pgaRock, faba, vs30_rock, period0,
      1     lnSa, sigma, tau, period1, sigma1, disthypo, deltac1,
-     2     depth, specT, depth1
+     2     depth, specT
       integer iflag, forearc
 
 c     Ftype defines an interface event or intraslab events
