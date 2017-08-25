@@ -1,6 +1,6 @@
 #' GMPE function for Phung et al.(2017)
 #'
-#' \code{PhungInt17} returns the ground-motion prediction with it sigma of Phung et al.(2017) GMPE.
+#' \code{PhungSub17} returns the ground-motion prediction with it sigma of Phung et al.(2017) GMPE.
 #'
 #'Phung et al.(2017) Subduction GMPE
 #'

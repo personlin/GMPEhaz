@@ -27,7 +27,7 @@ PhungSub17(Mag, Rrup, Prd, ftype = 0, Vs30, Z1.0, Ztor, regionflag = 1)
 A list will be return, including mag, ftype, Rrup, Vs30, lnY, sigma, specT, period, iflag, forearc, depth, Rhypo.
 }
 \description{
-\code{PhungInt17} returns the ground-motion prediction with it sigma of Phung et al.(2017) GMPE.
+\code{PhungSub17} returns the ground-motion prediction with it sigma of Phung et al.(2017) GMPE.
 }
 \details{
 Phung et al.(2017) Subduction GMPE
