@@ -64,6 +64,12 @@
 #'
 "cnames.ASK14.tw.B01"
 
+#' Variable name of ASK14.tw.C01 GMPEs.
+#'
+#' @format Vectors of ASK14.tw.C01 GMPE.
+#'
+"cnames.ASK14.tw.C01"
+
 #' Variable name of BCHydroSubV3 GMPEs.
 #'
 #' @format Vectors of BCHydroSubV3 GMPE.
@@ -312,3 +318,309 @@
 #' @format Vectors of Zh16Sub GMPE.
 #'
 "cnames.Zh16Sub"
+
+#' Variable name of Cru.Com.001 GMPEs.
+#'
+#' @format Vectors of Cru.Com.001 GMPE.
+#'
+"cnames.Cru.Com.001"
+
+#' Variable name of Cru.Com.002 GMPEs.
+#'
+#' @format Vectors of Cru.Com.002 GMPE.
+#'
+"cnames.Cru.Com.002"
+
+#' Variable name of Cru.Com.003 GMPEs.
+#'
+#' @format Vectors of Cru.Com.003 GMPE.
+#'
+"cnames.Cru.Com.003"
+
+#' Variable name of Cru.Com.004 GMPEs.
+#'
+#' @format Vectors of Cru.Com.004 GMPE.
+#'
+"cnames.Cru.Com.004"
+
+#' Variable name of Cru.Com.005 GMPEs.
+#'
+#' @format Vectors of Cru.Com.005 GMPE.
+#'
+"cnames.Cru.Com.005"
+
+#' Variable name of Cru.Com.006 GMPEs.
+#'
+#' @format Vectors of Cru.Com.006 GMPE.
+#'
+"cnames.Cru.Com.006"
+
+#' Variable name of Cru.Com.007 GMPEs.
+#'
+#' @format Vectors of Cru.Com.007 GMPE.
+#'
+"cnames.Cru.Com.007"
+
+#' Variable name of Cru.Com.008 GMPEs.
+#'
+#' @format Vectors of Cru.Com.008 GMPE.
+#'
+"cnames.Cru.Com.008"
+
+#' Variable name of Cru.Com.009 GMPEs.
+#'
+#' @format Vectors of Cru.Com.009 GMPE.
+#'
+"cnames.Cru.Com.009"
+
+#' Variable name of Cru.Com.010 GMPEs.
+#'
+#' @format Vectors of Cru.Com.010 GMPE.
+#'
+"cnames.Cru.Com.010"
+
+#' Variable name of Cru.Com.011 GMPEs.
+#'
+#' @format Vectors of Cru.Com.011 GMPE.
+#'
+"cnames.Cru.Com.011"
+
+#' Variable name of Cru.Com.012 GMPEs.
+#'
+#' @format Vectors of Cru.Com.012 GMPE.
+#'
+"cnames.Cru.Com.012"
+
+#' Variable name of Cru.Com.013 GMPEs.
+#'
+#' @format Vectors of Cru.Com.013 GMPE.
+#'
+"cnames.Cru.Com.013"
+
+#' Variable name of Cru.Com.014 GMPEs.
+#'
+#' @format Vectors of Cru.Com.014 GMPE.
+#'
+"cnames.Cru.Com.014"
+
+#' Variable name of Cru.Com.015 GMPEs.
+#'
+#' @format Vectors of Cru.Com.015 GMPE.
+#'
+"cnames.Cru.Com.015"
+
+#' Variable name of Cru.Com.016 GMPEs.
+#'
+#' @format Vectors of Cru.Com.016 GMPE.
+#'
+"cnames.Cru.Com.016"
+
+#' Variable name of Cru.Com.017 GMPEs.
+#'
+#' @format Vectors of Cru.Com.017 GMPE.
+#'
+"cnames.Cru.Com.017"
+
+#' Variable name of Sub.Intra.Com.001 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.001 GMPE.
+#'
+"cnames.Sub.Intra.Com.001"
+
+#' Variable name of Sub.Intra.Com.002 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.002 GMPE.
+#'
+"cnames.Sub.Intra.Com.002"
+
+#' Variable name of Sub.Intra.Com.003 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.003 GMPE.
+#'
+"cnames.Sub.Intra.Com.003"
+
+#' Variable name of Sub.Intra.Com.004 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.004 GMPE.
+#'
+"cnames.Sub.Intra.Com.004"
+
+#' Variable name of Sub.Intra.Com.005 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.005 GMPE.
+#'
+"cnames.Sub.Intra.Com.005"
+
+#' Variable name of Sub.Intra.Com.006 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.006 GMPE.
+#'
+"cnames.Sub.Intra.Com.006"
+
+#' Variable name of Sub.Intra.Com.007 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.007 GMPE.
+#'
+"cnames.Sub.Intra.Com.007"
+
+#' Variable name of Sub.Intra.Com.008 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.008 GMPE.
+#'
+"cnames.Sub.Intra.Com.008"
+
+#' Variable name of Sub.Intra.Com.009 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.009 GMPE.
+#'
+"cnames.Sub.Intra.Com.009"
+
+#' Variable name of Sub.Intra.Com.010 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.010 GMPE.
+#'
+"cnames.Sub.Intra.Com.010"
+
+#' Variable name of Sub.Intra.Com.011 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.011 GMPE.
+#'
+"cnames.Sub.Intra.Com.011"
+
+#' Variable name of Sub.Intra.Com.012 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.012 GMPE.
+#'
+"cnames.Sub.Intra.Com.012"
+
+#' Variable name of Sub.Intra.Com.013 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.013 GMPE.
+#'
+"cnames.Sub.Intra.Com.013"
+
+#' Variable name of Sub.Intra.Com.014 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.014 GMPE.
+#'
+"cnames.Sub.Intra.Com.014"
+
+#' Variable name of Sub.Intra.Com.015 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.015 GMPE.
+#'
+"cnames.Sub.Intra.Com.015"
+
+#' Variable name of Sub.Intra.Com.016 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.016 GMPE.
+#'
+"cnames.Sub.Intra.Com.016"
+
+#' Variable name of Sub.Intra.Com.017 GMPEs.
+#'
+#' @format Vectors of Sub.Intra.Com.017 GMPE.
+#'
+"cnames.Sub.Intra.Com.017"
+
+#' Variable name of Sub.Inter.Com.001 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.001 GMPE.
+#'
+"cnames.Sub.Inter.Com.001"
+
+#' Variable name of Sub.Inter.Com.002 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.002 GMPE.
+#'
+"cnames.Sub.Inter.Com.002"
+
+#' Variable name of Sub.Inter.Com.003 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.003 GMPE.
+#'
+"cnames.Sub.Inter.Com.003"
+
+#' Variable name of Sub.Inter.Com.004 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.004 GMPE.
+#'
+"cnames.Sub.Inter.Com.004"
+
+#' Variable name of Sub.Inter.Com.005 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.005 GMPE.
+#'
+"cnames.Sub.Inter.Com.005"
+
+#' Variable name of Sub.Inter.Com.006 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.006 GMPE.
+#'
+"cnames.Sub.Inter.Com.006"
+
+#' Variable name of Sub.Inter.Com.007 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.007 GMPE.
+#'
+"cnames.Sub.Inter.Com.007"
+
+#' Variable name of Sub.Inter.Com.008 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.008 GMPE.
+#'
+"cnames.Sub.Inter.Com.008"
+
+#' Variable name of Sub.Inter.Com.009 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.009 GMPE.
+#'
+"cnames.Sub.Inter.Com.009"
+
+#' Variable name of Sub.Inter.Com.010 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.010 GMPE.
+#'
+"cnames.Sub.Inter.Com.010"
+
+#' Variable name of Sub.Inter.Com.011 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.011 GMPE.
+#'
+"cnames.Sub.Inter.Com.011"
+
+#' Variable name of Sub.Inter.Com.012 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.012 GMPE.
+#'
+"cnames.Sub.Inter.Com.012"
+
+#' Variable name of Sub.Inter.Com.013 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.013 GMPE.
+#'
+"cnames.Sub.Inter.Com.013"
+
+#' Variable name of Sub.Inter.Com.014 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.014 GMPE.
+#'
+"cnames.Sub.Inter.Com.014"
+
+#' Variable name of Sub.Inter.Com.015 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.015 GMPE.
+#'
+"cnames.Sub.Inter.Com.015"
+
+#' Variable name of Sub.Inter.Com.016 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.016 GMPE.
+#'
+"cnames.Sub.Inter.Com.016"
+
+#' Variable name of Sub.Inter.Com.017 GMPEs.
+#'
+#' @format Vectors of Sub.Inter.Com.017 GMPE.
+#'
+"cnames.Sub.Inter.Com.017"
