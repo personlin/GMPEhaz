@@ -28,7 +28,6 @@ extern void F77_NAME(bssa14_tw_c01)(void *, void *, void *, void *, void *, void
 extern void F77_NAME(camp03_h)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(cb_ngawest2_2013)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(cb14_tw_c01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
-extern void F77_NAME(chao2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(cy_nga_2008)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(cy_ngawest2_2013)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(cy14_tw_b01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -53,6 +52,7 @@ extern void F77_NAME(loh96)(void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(meaninten)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(montalva2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s02_mcverry_subduction_2006)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s04_chao2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common001)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common002)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common003)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -136,7 +136,6 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"camp03_h",                    (DL_FUNC) &F77_NAME(camp03_h),                    14},
   {"cb_ngawest2_2013",            (DL_FUNC) &F77_NAME(cb_ngawest2_2013),            20},
   {"cb14_tw_c01",                 (DL_FUNC) &F77_NAME(cb14_tw_c01),                 20},
-  {"chao2017",                    (DL_FUNC) &F77_NAME(chao2017),                    17},
   {"cy_nga_2008",                 (DL_FUNC) &F77_NAME(cy_nga_2008),                 19},
   {"cy_ngawest2_2013",            (DL_FUNC) &F77_NAME(cy_ngawest2_2013),            19},
   {"cy14_tw_b01",                 (DL_FUNC) &F77_NAME(cy14_tw_b01),                 19},
@@ -161,6 +160,7 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"meaninten",                   (DL_FUNC) &F77_NAME(meaninten),                   35},
   {"montalva2017",                (DL_FUNC) &F77_NAME(montalva2017),                12},
   {"s02_mcverry_subduction_2006", (DL_FUNC) &F77_NAME(s02_mcverry_subduction_2006), 14},
+  {"s04_chao2017",                (DL_FUNC) &F77_NAME(s04_chao2017),                17},
   {"s04_crustal_common001",       (DL_FUNC) &F77_NAME(s04_crustal_common001),       13},
   {"s04_crustal_common002",       (DL_FUNC) &F77_NAME(s04_crustal_common002),       13},
   {"s04_crustal_common003",       (DL_FUNC) &F77_NAME(s04_crustal_common003),       13},

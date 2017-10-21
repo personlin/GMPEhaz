@@ -40,7 +40,7 @@ Chao2017 <- function(Mag, Rrup, Prd=0, ftype=0, Vs30=760, Vs30_class=0, Ztor = 0
                       Ztor=as.single(Ztor), Z10=as.single(Z1.0), vs30_class=as.integer(Vs30_class),
                       attenName=as.character("attenName"), period1=as.single(0), iflag=as.integer(0),
                       sourcetype=as.integer(sourcetype),
-                      phi=as.single(0.0), tau=as.single(0.0), msasflag=as.integer(0))
+                      phi=as.single(0.0), tau=as.single(0.0), msasflag=as.integer(msasflag))
   names(retvals) <- c("mag", "Rrup", "ftype", "lnY", "sigma", "specT", "Vs30", "Ztor", "Z10", "Vs30_class",
                       "attenName", "period", "iflag", "sourcetype", "phi", "tau", "msasflag")
   retvals$attenName <- NULL
