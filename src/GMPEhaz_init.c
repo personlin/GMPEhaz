@@ -14,7 +14,6 @@ extern void F77_NAME(am09_cas)(void *, void *, void *, void *, void *, void *, v
 extern void F77_NAME(arroyo2010)(void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(asb_2013)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(asb14_tw_b01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
-extern void F77_NAME(asb14_tw_c01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(ask_ngawest2_2013)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(ask14_tw_b01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(ask14_tw_c01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -47,11 +46,11 @@ extern void F77_NAME(lin_hw_soil)(void *, void *, void *, void *, void *, void *
 extern void F77_NAME(lin2009)(void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(linlee08rock)(void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(linlee08soil)(void *, void *, void *, void *, void *, void *, void *, void *, void *);
-extern void F77_NAME(ll08_c02)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(loh96)(void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(meaninten)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(montalva2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s02_mcverry_subduction_2006)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s04_asb14_tw_c01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_chao2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common001)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common002)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -70,6 +69,7 @@ extern void F77_NAME(s04_crustal_common014)(void *, void *, void *, void *, void
 extern void F77_NAME(s04_crustal_common015)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common016)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s04_ll08_c02)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_phungcrust2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_phungsub2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_subinter_common001)(void *, void *, void *, void *, void *, void *, void *);
@@ -122,7 +122,6 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"arroyo2010",                  (DL_FUNC) &F77_NAME(arroyo2010),                   9},
   {"asb_2013",                    (DL_FUNC) &F77_NAME(asb_2013),                    11},
   {"asb14_tw_b01",                (DL_FUNC) &F77_NAME(asb14_tw_b01),                11},
-  {"asb14_tw_c01",                (DL_FUNC) &F77_NAME(asb14_tw_c01),                11},
   {"ask_ngawest2_2013",           (DL_FUNC) &F77_NAME(ask_ngawest2_2013),           22},
   {"ask14_tw_b01",                (DL_FUNC) &F77_NAME(ask14_tw_b01),                22},
   {"ask14_tw_c01",                (DL_FUNC) &F77_NAME(ask14_tw_c01),                22},
@@ -155,11 +154,11 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"lin2009",                     (DL_FUNC) &F77_NAME(lin2009),                      9},
   {"linlee08rock",                (DL_FUNC) &F77_NAME(linlee08rock),                 9},
   {"linlee08soil",                (DL_FUNC) &F77_NAME(linlee08soil),                 9},
-  {"ll08_c02",                    (DL_FUNC) &F77_NAME(ll08_c02),                    10},
   {"loh96",                       (DL_FUNC) &F77_NAME(loh96),                        6},
   {"meaninten",                   (DL_FUNC) &F77_NAME(meaninten),                   35},
   {"montalva2017",                (DL_FUNC) &F77_NAME(montalva2017),                12},
   {"s02_mcverry_subduction_2006", (DL_FUNC) &F77_NAME(s02_mcverry_subduction_2006), 14},
+  {"s04_asb14_tw_c01",            (DL_FUNC) &F77_NAME(s04_asb14_tw_c01),            11},
   {"s04_chao2017",                (DL_FUNC) &F77_NAME(s04_chao2017),                17},
   {"s04_crustal_common001",       (DL_FUNC) &F77_NAME(s04_crustal_common001),       13},
   {"s04_crustal_common002",       (DL_FUNC) &F77_NAME(s04_crustal_common002),       13},
@@ -178,6 +177,7 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"s04_crustal_common015",       (DL_FUNC) &F77_NAME(s04_crustal_common015),       13},
   {"s04_crustal_common016",       (DL_FUNC) &F77_NAME(s04_crustal_common016),       13},
   {"s04_crustal_common017",       (DL_FUNC) &F77_NAME(s04_crustal_common017),       13},
+  {"s04_ll08_c02",                (DL_FUNC) &F77_NAME(s04_ll08_c02),                10},
   {"s04_phungcrust2017",          (DL_FUNC) &F77_NAME(s04_phungcrust2017),          17},
   {"s04_phungsub2017",            (DL_FUNC) &F77_NAME(s04_phungsub2017),            12},
   {"s04_subinter_common001",      (DL_FUNC) &F77_NAME(s04_subinter_common001),       7},
