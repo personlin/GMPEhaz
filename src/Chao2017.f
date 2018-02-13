@@ -5,9 +5,9 @@ c ------------------------------------------------------------------
       implicit none
 
       real mag, dip, fType, dist, vs, SA1100,
-     1      Z10,  ZTOR, fltWidth, lnSa, sigma, lnY, vs30_rock
+     1      Z10,  ZTOR, fltWidth, lnSa, sigma, lnY, vs30_rock, sourcetype
       real Fn, Frv, specT, period2, CRjb, phi, tau, z10_rock, SA_rock
-      integer hwflag, iflag, vs30_class, regionflag, msasflag, sourcetype
+      integer hwflag, iflag, vs30_class, regionflag, msasflag
       character*80 attenName
 
 C     Set the reference spectrum.
@@ -40,7 +40,6 @@ C     Convert ground motion to units of gals.
 
       return
       end
-
 c -------------------------------------------------------------------
 C **** Chao et al. 2017 (SSHAC model) *************
 c -------------------------------------------------------------------
@@ -62,15 +61,15 @@ c -------------------------------------------------------------------
       real phisssb2(MAXPER), arfacr(MAXPER), arfasb(MAXPER), phis2s(MAXPER)
       character*80 attenName
       integer nper, count1, count2, C11flag, C20flag, C26flag, iflag, C10flag
-      integer vs30_class, h, n, sourcetype, i, msasflag
+      integer vs30_class, h, n, i, msasflag
       integer Fcr, Fsb, Fcrss, Fcrno, Fcrro, Fsbintra, Fsbinter, Fas, Fkuo17, Fks17, Frf, Fmanila
-      real Mc, Mref, Mmax, Rrupref, Vs30ref, Zref
+      real Mc, Mref, Mmax, Rrupref, Vs30ref, Zref, sourcetype
       real c1T, c2T, c3T, c4T, c5T, c6T, c7T, c8T, c9T, c10T, c11T, c12T, c13T, c14T, c15T
       real c16T, c17T, c18T, c19T, c20T, c21T, c22T, c23T, c24T, c25T, c26T, c27T
       real taucr1T, taucr2T, tausb1T, tausb2T, phisscr1T, phisscr2T, phisssb1T, phisssb2T
       real arfacrT, arfasbT, phis2sT, phi, tau, fm, SA1100, Z10ref
       real Ssource, Spath, Ssite, Ssitelin, Ssitenon, Sztor, Smag, Sgeom, Sanel
-	  real taucr, tausb, phisscr, phisssb, phiss, sigmass
+      real taucr, tausb, phisscr, phisssb, phiss, sigmass
 
       data period  / 0, -2.0, 0.01, 0.02, 0.03, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4,
      &          0.5, 0.75, 1, 1.5, 2, 3, 4, 5 /
@@ -238,7 +237,7 @@ C First check for the PGA case (i.e., specT=0.0)
         phis2sT = phis2s(1)
        goto 1011
 C   Function Form for PGAraw, max Regression
-      elseif (specT .eq. -2.0) then
+       elseif (specT .eq. -2.0) then
          period1 = period(2)
          c1T = c1(2)
          c2T = c2(2)
@@ -301,81 +300,81 @@ C Now loop over the spectral period range of the attenuation relationship.
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
- 1010    call interp (period(count1),period(count2),c1(count1),c1(count2),
+ 1010    call S24_interp (period(count1),period(count2),c1(count1),c1(count2),
      +                specT,c1T,iflag)
-         call interp (period(count1),period(count2),c2(count1),c2(count2),
+         call S24_interp (period(count1),period(count2),c2(count1),c2(count2),
      +                specT,c2T,iflag)
-         call interp (period(count1),period(count2),c3(count1),c3(count2),
+         call S24_interp (period(count1),period(count2),c3(count1),c3(count2),
      +                specT,c3T,iflag)
-         call interp (period(count1),period(count2),c4(count1),c4(count2),
+         call S24_interp (period(count1),period(count2),c4(count1),c4(count2),
      +                specT,c4T,iflag)
-         call interp (period(count1),period(count2),c5(count1),c5(count2),
+         call S24_interp (period(count1),period(count2),c5(count1),c5(count2),
      +                specT,c5T,iflag)
-         call interp (period(count1),period(count2),c6(count1),c6(count2),
+         call S24_interp (period(count1),period(count2),c6(count1),c6(count2),
      +                specT,c6T,iflag)
-         call interp (period(count1),period(count2),c7(count1),c7(count2),
+         call S24_interp (period(count1),period(count2),c7(count1),c7(count2),
      +                 specT,c7T,iflag)
-         call interp (period(count1),period(count2),c8(count1),c8(count2),
+         call S24_interp (period(count1),period(count2),c8(count1),c8(count2),
      +                 specT,c8T,iflag)
-         call interp (period(count1),period(count2),c9(count1),c9(count2),
+         call S24_interp (period(count1),period(count2),c9(count1),c9(count2),
      +                 specT,c9T,iflag)
-         call interp (period(count1),period(count2),c10(count1),c10(count2),
+         call S24_interp (period(count1),period(count2),c10(count1),c10(count2),
      +                 specT,c10T,iflag)
-         call interp (period(count1),period(count2),c11(count1),c11(count2),
+         call S24_interp (period(count1),period(count2),c11(count1),c11(count2),
      +                 specT,c11T,iflag)
-         call interp (period(count1),period(count2),c12(count1),c12(count2),
+         call S24_interp (period(count1),period(count2),c12(count1),c12(count2),
      +                 specT,c12T,iflag)
-         call interp (period(count1),period(count2),c13(count1),c13(count2),
+         call S24_interp (period(count1),period(count2),c13(count1),c13(count2),
      +                 specT,c13T,iflag)
-         call interp (period(count1),period(count2),c14(count1),c14(count2),
+         call S24_interp (period(count1),period(count2),c14(count1),c14(count2),
      +                 specT,c14T,iflag)
-         call interp (period(count1),period(count2),c15(count1),c15(count2),
+         call S24_interp (period(count1),period(count2),c15(count1),c15(count2),
      +                 specT,c15T,iflag)
-         call interp (period(count1),period(count2),c16(count1),c16(count2),
+         call S24_interp (period(count1),period(count2),c16(count1),c16(count2),
      +                 specT,c16T,iflag)
-         call interp (period(count1),period(count2),c17(count1),c17(count2),
+         call S24_interp (period(count1),period(count2),c17(count1),c17(count2),
      +                 specT,c17T,iflag)
-         call interp (period(count1),period(count2),c18(count1),c18(count2),
+         call S24_interp (period(count1),period(count2),c18(count1),c18(count2),
      +                 specT,c18T,iflag)
-         call interp (period(count1),period(count2),c19(count1),c19(count2),
+         call S24_interp (period(count1),period(count2),c19(count1),c19(count2),
      +                 specT,c19T,iflag)
-         call interp (period(count1),period(count2),c20(count1),c20(count2),
+         call S24_interp (period(count1),period(count2),c20(count1),c20(count2),
      +                 specT,c20T,iflag)
-         call interp (period(count1),period(count2),c21(count1),c21(count2),
+         call S24_interp (period(count1),period(count2),c21(count1),c21(count2),
      +                 specT,c21T,iflag)
-         call interp (period(count1),period(count2),c22(count1),c22(count2),
+         call S24_interp (period(count1),period(count2),c22(count1),c22(count2),
      +                 specT,c22T,iflag)
-         call interp (period(count1),period(count2),c23(count1),c23(count2),
+         call S24_interp (period(count1),period(count2),c23(count1),c23(count2),
      +                 specT,c23T,iflag)
-         call interp (period(count1),period(count2),c24(count1),c24(count2),
+         call S24_interp (period(count1),period(count2),c24(count1),c24(count2),
      +                 specT,c24T,iflag)
-         call interp (period(count1),period(count2),c25(count1),c25(count2),
+         call S24_interp (period(count1),period(count2),c25(count1),c25(count2),
      +                 specT,c25T,iflag)
-         call interp (period(count1),period(count2),c26(count1),c26(count2),
+         call S24_interp (period(count1),period(count2),c26(count1),c26(count2),
      +                 specT,c26T,iflag)
-         call interp (period(count1),period(count2),c27(count1),c27(count2),
+         call S24_interp (period(count1),period(count2),c27(count1),c27(count2),
      +                 specT,c27T,iflag)
-         call interp (period(count1),period(count2),taucr1(count1),taucr1(count2),
+         call S24_interp (period(count1),period(count2),taucr1(count1),taucr1(count2),
      +                 specT,taucr1T,iflag)
-         call interp (period(count1),period(count2),taucr2(count1),taucr2(count2),
+         call S24_interp (period(count1),period(count2),taucr2(count1),taucr2(count2),
      +                 specT,taucr2T,iflag)
-         call interp (period(count1),period(count2),tausb1(count1),tausb1(count2),
+         call S24_interp (period(count1),period(count2),tausb1(count1),tausb1(count2),
      +                 specT,tausb1T,iflag)
-         call interp (period(count1),period(count2),tausb2(count1),tausb2(count2),
+         call S24_interp (period(count1),period(count2),tausb2(count1),tausb2(count2),
      +                 specT,tausb2T,iflag)
-         call interp (period(count1),period(count2),phisscr1(count1),phisscr1(count2),
+         call S24_interp (period(count1),period(count2),phisscr1(count1),phisscr1(count2),
      +                 specT,phisscr1T,iflag)
-         call interp (period(count1),period(count2),phisscr2(count1),phisscr2(count2),
+         call S24_interp (period(count1),period(count2),phisscr2(count1),phisscr2(count2),
      +                 specT,phisscr2T,iflag)
-         call interp (period(count1),period(count2),phisssb1(count1),phisssb1(count2),
+         call S24_interp (period(count1),period(count2),phisssb1(count1),phisssb1(count2),
      +                 specT,phisssb1T,iflag)
-         call interp (period(count1),period(count2),phisssb2(count1),phisssb2(count2),
+         call S24_interp (period(count1),period(count2),phisssb2(count1),phisssb2(count2),
      +                 specT,phisssb2T,iflag)
-         call interp (period(count1),period(count2),arfacr(count1),arfacr(count2),
+         call S24_interp (period(count1),period(count2),arfacr(count1),arfacr(count2),
      +                 specT,arfacrT,iflag)
-         call interp (period(count1),period(count2),arfasb(count1),arfasb(count2),
+         call S24_interp (period(count1),period(count2),arfasb(count1),arfasb(count2),
      +                 specT,arfasbT,iflag)
-         call interp (period(count1),period(count2),phis2s(count1),phis2s(count2),
+         call S24_interp (period(count1),period(count2),phis2s(count1),phis2s(count2),
      +                specT,phis2sT,iflag)
 
  1011 period1 = specT
@@ -410,7 +409,7 @@ c     Vs30_class = 1 for measured
       C20flag = 0
       C26flag = 0
 
-      if (sourcetype .eq. 0 ) then
+      if (sourcetype .eq. 0.0 ) then
        Fcr = 1
        Zref = 15
          if(ftype .gt. 0) then
@@ -420,7 +419,7 @@ c     Vs30_class = 1 for measured
            else
               Fcrss = 1
          endif
-      elseif (sourcetype .eq. 1) then
+      elseif (sourcetype .eq. 1.0 ) then
         Fsb = 1
           Zref = 50
          if(ftype .eq. 0) then
@@ -457,10 +456,10 @@ C     Set Source scaling term
 	      C10flag=1
       endif
 
-      if (sourcetype .eq. 0 ) then
+      if (sourcetype .eq. 0.0 ) then
         Smag = c8T*(mag - Mref) + c10T*(mag - Mref)**2
      1         - c10T*(mag-7.6)**2*C10flag + c11T*(5-mag)*C11flag
-      elseif (sourcetype .eq. 1) then
+      elseif (sourcetype .eq. 1.0 ) then
         Smag = c9T*(mag - Mref) + c26T*Fsbinter*(Mag-Mc)*c26flag + c27T*Fsbintra*(Mag-Mc)*c26flag
       endif
 
@@ -469,9 +468,9 @@ C     Set Source scaling term
 
 C     Set Path scaling term
 
-      if (sourcetype .eq. 0 ) then
+      if (sourcetype .eq. 0.0 ) then
           Sgeom = (c14T + c16T*(min(mag,Mmax)- Mref )) * alog(SQRT(dist**2 + h**2)/SQRT(Rrupref**2 + h**2))
-      elseif (sourcetype .eq. 1) then
+      elseif (sourcetype .eq. 1.0 ) then
           Sgeom = (c15T + c17T*(min(mag,Mc)- Mref )) * alog(SQRT(dist**2 + h**2)/SQRT(Rrupref**2 + h**2))
       endif
 
@@ -513,6 +512,7 @@ C     Set the event-specific residual term
 C     Set Site-specific residual term
 
 
+
 C     Set Recoed-specific residual term
 
       phisscr = phisscr1T + (phisscr2T -phisscr1T)*fm
@@ -523,6 +523,8 @@ C     Set Recoed-specific residual term
       phi=(phis2sT**2+phiss**2)**0.5
       sigma=(tau**2+phi**2)**0.5
       sigmass=(tau**2+phiss**2)**0.5
+
+
 
 c       write(*,*) "Y(gal) = ", exp(lnSa)
 
