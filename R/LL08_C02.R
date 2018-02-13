@@ -26,7 +26,7 @@ LL08.C02 <- function(Mag, Rrup, Ztor, ftype=0, Prd, Vs30=760) {
   if (Prd != 0 & (Prd < 0.01 | Prd > 5)) {
     stop("Period out of range! \n\n")
   }
-  retvals <- .Fortran("LL08_C02", mag=as.single(Mag), rupdist=as.single(Rrup), specT=as.single(Prd),
+  retvals <- .Fortran("S04_LL08_C02", mag=as.single(Mag), rupdist=as.single(Rrup), specT=as.single(Prd),
                         period=as.single(0), lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(1),
                         Ztor=as.single(Ztor), ftype=as.single(ftype), vs30=as.single(Vs30))
   names(retvals) <- c("mag", "Rrup", "specT", "period", "lnY", "sigma", "iflag", "Ztor", "ftype", "Vs30")
