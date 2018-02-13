@@ -2,7 +2,7 @@ c ------------------------------------------------------------------
 C *** Adjusted Lin and Lee (2008) Horizontal for Subduction Zones, ****
 c ------------------------------------------------------------------
 
-      subroutine LL08_C02 ( mag, rupdist, specT, period, lnY, sigma,
+      subroutine S04_LL08_C02 ( mag, rupdist, specT, period, lnY, sigma,
      1  iflag, Ztor, ftype, vs30)
 
       implicit none
@@ -11,13 +11,13 @@ c ------------------------------------------------------------------
       parameter (MAXPER=23)
       real mag, rupDist, lnY, sigma, period
       real ftype, vs30, Ztor, eq1, eq2
-      real c1(MAXPER), c2(MAXPER), c3(MAXPER), c6(MAXPER), 
+      real c1(MAXPER), c2(MAXPER), c3(MAXPER), c6(MAXPER),
      1     c8(MAXPER), c9(MAXPER), c10(MAXPER), c11(MAXPER)
       real specT, c1T, c2T, c3T, c4, c5, c6T, c7, c8T, c9T, c10T, c11T, sigT
       integer count1, count2, iflag
       real period1(MAXPER), sig(MAXPER), tau(MAXPER)
 
-      Data period1 / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3, 
+      Data period1 / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3,
      1      4, 5/
       Data c1 / -2.67215141251388, -2.71177472200959, -2.72221832187676, -2.39784018709008, -2.03538207060753, -1.9088731533554,
      1      -1.51924693067264, -1.22860451814747, -1.46548753025297, -1.60073705472033, -1.73022355739054, -1.92135557019542,
@@ -99,23 +99,23 @@ C      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
- 1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
+ 1020 call S24_interp (period1(count1),period1(count2),c1(count1),c1(count2),
      +             specT,c1T,iflag)
-      call interp (period1(count1),period1(count2),c2(count1),c2(count2),
+      call S24_interp (period1(count1),period1(count2),c2(count1),c2(count2),
      +             specT,c2T,iflag)
-      call interp (period1(count1),period1(count2),c3(count1),c3(count2),
+      call S24_interp (period1(count1),period1(count2),c3(count1),c3(count2),
      +             specT,c3T,iflag)
-      call interp (period1(count1),period1(count2),c6(count1),c6(count2),
+      call S24_interp (period1(count1),period1(count2),c6(count1),c6(count2),
      +             specT,c6T,iflag)
-      call interp (period1(count1),period1(count2),c8(count1),c8(count2),
+      call S24_interp (period1(count1),period1(count2),c8(count1),c8(count2),
      +             specT,c8T,iflag)
-      call interp (period1(count1),period1(count2),c9(count1),c9(count2),
+      call S24_interp (period1(count1),period1(count2),c9(count1),c9(count2),
      +             specT,c9T,iflag)
-      call interp (period1(count1),period1(count2),c10(count1),c10(count2),
+      call S24_interp (period1(count1),period1(count2),c10(count1),c10(count2),
      +             specT,c10T,iflag)
-      call interp (period1(count1),period1(count2),c11(count1),c11(count2),
+      call S24_interp (period1(count1),period1(count2),c11(count1),c11(count2),
      +             specT,c11T,iflag)
-      call interp (period1(count1),period1(count2),sig(count1),sig(count2),
+      call S24_interp (period1(count1),period1(count2),sig(count1),sig(count2),
      +             specT,sigT,iflag)
 
  1011 period = specT
@@ -124,20 +124,20 @@ C     Compute the ground motions.
       c4 = 0.51552
       c5 = 0.63255
       c7 = 0.275
-      
+
       if (mag .lt. 7.2) then
       	eq1 = c8T*(mag - 7.2)**2.0
       else
         eq1 = 0
       endif
-      
+
       if (ftype .eq. 0) then
       	eq2 = c9T*(min(Ztor, 30.0) - 20.0)
       else
         eq2 = c6T*(min(Ztor, 80.0) - 20.0)
       endif
-      
-      lnY = c1T + c2T*mag + eq1 + c3T*alog(Rupdist+c4*exp(c5*mag)) + 
+
+      lnY = c1T + c2T*mag + eq1 + c3T*alog(Rupdist+c4*exp(c5*mag)) +
      1      c7*ftype + eq2 + c10T*Rupdist + c11T*alog(Vs30/760.0)
 
 
