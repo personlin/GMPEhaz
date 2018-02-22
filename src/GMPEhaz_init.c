@@ -9,7 +9,6 @@ Check these declarations against the C/Fortran source code.
 /* .Fortran calls */
 extern void F77_NAME(ab03)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(ac_2010)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
-extern void F77_NAME(aga16_tw_c01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(am09_cas)(void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(arroyo2010)(void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(asb_2013)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -50,6 +49,7 @@ extern void F77_NAME(loh96)(void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(meaninten)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(montalva2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s02_mcverry_subduction_2006)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s04_aga16_tw_c01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_asb14_tw_c01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_chao2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common001)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -117,7 +117,6 @@ extern void F77_NAME(zhaoetal2016_slab)(void *, void *, void *, void *, void *, 
 static const R_FortranMethodDef FortranEntries[] = {
   {"ab03",                        (DL_FUNC) &F77_NAME(ab03),                        13},
   {"ac_2010",                     (DL_FUNC) &F77_NAME(ac_2010),                     10},
-  {"aga16_tw_c01",                (DL_FUNC) &F77_NAME(aga16_tw_c01),                12},
   {"am09_cas",                    (DL_FUNC) &F77_NAME(am09_cas),                     7},
   {"arroyo2010",                  (DL_FUNC) &F77_NAME(arroyo2010),                   9},
   {"asb_2013",                    (DL_FUNC) &F77_NAME(asb_2013),                    11},
@@ -158,6 +157,7 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"meaninten",                   (DL_FUNC) &F77_NAME(meaninten),                   35},
   {"montalva2017",                (DL_FUNC) &F77_NAME(montalva2017),                12},
   {"s02_mcverry_subduction_2006", (DL_FUNC) &F77_NAME(s02_mcverry_subduction_2006), 14},
+  {"s04_aga16_tw_c01",            (DL_FUNC) &F77_NAME(s04_aga16_tw_c01),            12},
   {"s04_asb14_tw_c01",            (DL_FUNC) &F77_NAME(s04_asb14_tw_c01),            11},
   {"s04_chao2017",                (DL_FUNC) &F77_NAME(s04_chao2017),                17},
   {"s04_crustal_common001",       (DL_FUNC) &F77_NAME(s04_crustal_common001),       13},
