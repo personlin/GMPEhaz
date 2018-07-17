@@ -2,9 +2,9 @@
 % Please edit documentation in R/I14_tw_E04.R
 \name{I14.tw.E04}
 \alias{I14.tw.E04}
-\title{GMPE function for Idriss(2014)}
+\title{GMPE function for  for adjusted Idriss(2014) NGA-West2 model}
 \usage{
-I14.tw.E04(Mag, Rrup, Prd = 0, ftype = 0, Vs30 = 760)
+I14.tw.E04(Mag, Rrup, Prd = 0, ftype = 0, Vs30 = 760, Ztor)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}
@@ -16,6 +16,8 @@ I14.tw.E04(Mag, Rrup, Prd = 0, ftype = 0, Vs30 = 760)
 \item{ftype}{style of faulting.}
 
 \item{Vs30}{Vs30(m/s).}
+
+\item{Ztor}{Depth to the top of the finite rupture model (km).}
 }
 \value{
 A list will be return, including mag, Rrup, ftype, Vs30, specT, period, lnY, sigma, iflag.
@@ -39,7 +41,7 @@ Earthquake Spectra, 30(3), 1155-1177.
                 Reverse and Oblique (1)
 }
 \examples{
-I14.tw.E04(6, 20, 0, 0, 760)
-I14.tw.E04(7, 10, 0, 0, 760)
+I14.tw.E04(6, 20, 0, 0, 760, 0)
+I14.tw.E04(7, 10, 0, 0, 760, 0)
 
 }

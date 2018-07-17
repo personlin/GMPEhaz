@@ -1,4 +1,4 @@
-#' GMPE function for Idriss(2014)
+#' GMPE function for  for adjusted Idriss(2014) NGA-West2 model
 #'
 #' \code{I14.tw.E04} returns the ground-motion prediction with it sigma of Idriss, I. M. (2014) GMPE
 #' adjusted to Taiwan.
@@ -21,24 +21,25 @@
 #' @param Prd Period of spectral acceleration.
 #' @param ftype style of faulting.
 #' @param Vs30 Vs30(m/s).
+#' @param Ztor Depth to the top of the finite rupture model (km).
 #'
 #' @return A list will be return, including mag, Rrup, ftype, Vs30, specT, period, lnY, sigma, iflag.
 #'
 #' @examples
-#' I14.tw.E04(6, 20, 0, 0, 760)
-#' I14.tw.E04(7, 10, 0, 0, 760)
+#' I14.tw.E04(6, 20, 0, 0, 760, 0)
+#' I14.tw.E04(7, 10, 0, 0, 760, 0)
 #'
 #' @export
-I14.tw.E04 <- function(Mag, Rrup, Prd=0, ftype=0, Vs30=760){
-  #Subroutine I_NGAWest2_2013 ( m, Rrup, ftype, vs30, specT,
-  #                     period2, lnY, sigma, iflag )
+I14.tw.E04 <- function(Mag, Rrup, Prd=0, ftype=0, Vs30=760, Ztor){
+  # Subroutine S04_I14_TW_E04 ( m, Rrup, ftype, vs30, specT,
+  #                            period2, lnY, sigma, iflag, Ztor )
   if (Prd != 0 & (Prd < 0.01 | Prd > 10)) {
     stop("Period out of range! \n\n")
   }
   if (Vs30 >1200) Vs30 <- 1200
   retvals <- .Fortran("S04_I14_TW_E04", m=as.single(Mag), Rrup=as.single(Rrup), ftype=as.single(ftype),
                       vs30=as.single(Vs30), specT=as.single(Prd), period2=as.single(0),
-                      lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(0))
-  names(retvals) <- c("mag", "Rrup", "ftype", "Vs30","specT", "period", "lnY", "sigma", "iflag")
+                      lnY=as.single(0.1), sigma=as.single(0.1), iflag=as.integer(0), Ztor=as.single(Ztor))
+  names(retvals) <- c("mag", "Rrup", "ftype", "Vs30","specT", "period", "lnY", "sigma", "iflag", "Ztor")
   return(retvals)
 }

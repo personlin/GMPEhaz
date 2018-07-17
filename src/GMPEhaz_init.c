@@ -57,6 +57,7 @@ extern void F77_NAME(s04_bindi14_tw_e02)(void *, void *, void *, void *, void *,
 extern void F77_NAME(s04_bssa14_tw_e02)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_cb14_tw_e05)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_chao2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s04_chao2018)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common001)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common002)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common003)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -75,10 +76,12 @@ extern void F77_NAME(s04_crustal_common015)(void *, void *, void *, void *, void
 extern void F77_NAME(s04_crustal_common016)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_crustal_common017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_cy14_tw_e04)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
-extern void F77_NAME(s04_i14_tw_e04)(void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s04_i14_tw_e04)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_ll08_c02)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_phungcrust2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s04_phungcrust2018)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_phungsub2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s04_phungsub2018)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_subinter_common001)(void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_subinter_common002)(void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_subinter_common003)(void *, void *, void *, void *, void *, void *, void *);
@@ -172,6 +175,7 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"s04_bssa14_tw_e02",           (DL_FUNC) &F77_NAME(s04_bssa14_tw_e02),           15},
   {"s04_cb14_tw_e05",             (DL_FUNC) &F77_NAME(s04_cb14_tw_e05),             20},
   {"s04_chao2017",                (DL_FUNC) &F77_NAME(s04_chao2017),                17},
+  {"s04_chao2018",                (DL_FUNC) &F77_NAME(s04_chao2018),                17},
   {"s04_crustal_common001",       (DL_FUNC) &F77_NAME(s04_crustal_common001),       13},
   {"s04_crustal_common002",       (DL_FUNC) &F77_NAME(s04_crustal_common002),       13},
   {"s04_crustal_common003",       (DL_FUNC) &F77_NAME(s04_crustal_common003),       13},
@@ -190,10 +194,12 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"s04_crustal_common016",       (DL_FUNC) &F77_NAME(s04_crustal_common016),       13},
   {"s04_crustal_common017",       (DL_FUNC) &F77_NAME(s04_crustal_common017),       13},
   {"s04_cy14_tw_e04",             (DL_FUNC) &F77_NAME(s04_cy14_tw_e04),             19},
-  {"s04_i14_tw_e04",              (DL_FUNC) &F77_NAME(s04_i14_tw_e04),               9},
+  {"s04_i14_tw_e04",              (DL_FUNC) &F77_NAME(s04_i14_tw_e04),              10},
   {"s04_ll08_c02",                (DL_FUNC) &F77_NAME(s04_ll08_c02),                10},
   {"s04_phungcrust2017",          (DL_FUNC) &F77_NAME(s04_phungcrust2017),          17},
+  {"s04_phungcrust2018",          (DL_FUNC) &F77_NAME(s04_phungcrust2018),          19},
   {"s04_phungsub2017",            (DL_FUNC) &F77_NAME(s04_phungsub2017),            12},
+  {"s04_phungsub2018",            (DL_FUNC) &F77_NAME(s04_phungsub2018),            12},
   {"s04_subinter_common001",      (DL_FUNC) &F77_NAME(s04_subinter_common001),       7},
   {"s04_subinter_common002",      (DL_FUNC) &F77_NAME(s04_subinter_common002),       7},
   {"s04_subinter_common003",      (DL_FUNC) &F77_NAME(s04_subinter_common003),       7},
