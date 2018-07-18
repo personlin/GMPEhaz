@@ -22,6 +22,12 @@
 #'
 "cnames.AGA16.tw.C01"
 
+#' Variable name of AGA16.tw.F10 GMPEs.
+#'
+#' @format Vectors of AGA16.tw.F10 GMPE.
+#'
+"cnames.AGA16.tw.F10"
+
 #' Variable name of AM09 GMPEs.
 #'
 #' @format Vectors of AM09 GMPE.
@@ -52,6 +58,12 @@
 #'
 "cnames.ASB14.tw.C01"
 
+#' Variable name of ASB14.tw.E02 GMPEs.
+#'
+#' @format Vectors of ASB14.tw.E02 GMPE.
+#'
+"cnames.ASB14.tw.E02"
+
 #' Variable name of ASK14 GMPEs.
 #'
 #' @format Vectors of ASK14 GMPE.
@@ -69,6 +81,12 @@
 #' @format Vectors of ASK14.tw.C01 GMPE.
 #'
 "cnames.ASK14.tw.C01"
+
+#' Variable name of ASK14.tw.E03 GMPEs.
+#'
+#' @format Vectors of ASK14.tw.E03 GMPE.
+#'
+"cnames.ASK14.tw.E03"
 
 #' Variable name of BCHydroSubV3 GMPEs.
 #'
@@ -94,6 +112,12 @@
 #'
 "cnames.BI14.tw.C01"
 
+#' Variable name of BI14.tw.E02 GMPEs.
+#'
+#' @format Vectors of BI14.tw.E02 GMPE.
+#'
+"cnames.BI14.tw.E02"
+
 #' Variable name of BSSA14 GMPEs.
 #'
 #' @format Vectors of BSSA14 GMPE.
@@ -111,6 +135,12 @@
 #' @format Vectors of BSSA14.tw.C01 GMPE.
 #'
 "cnames.BSSA14.tw.C01"
+
+#' Variable name of BSSA14.tw.E02 GMPEs.
+#'
+#' @format Vectors of BSSA14.tw.E02 GMPE.
+#'
+"cnames.BSSA14.tw.E02"
 
 #' Variable name of Camp03H GMPEs.
 #'
@@ -130,11 +160,23 @@
 #'
 "cnames.CB14.tw.C01"
 
+#' Variable name of CB14.tw.E05 GMPEs.
+#'
+#' @format Vectors of CB14.tw.E05 GMPE.
+#'
+"cnames.CB14.tw.E05"
+
 #' Variable name of Chao2017 GMPEs.
 #'
 #' @format Vectors of Chao2017 GMPE.
 #'
 "cnames.Chao2017"
+
+#' Variable name of Chao2018 GMPEs.
+#'
+#' @format Vectors of Chao2018 GMPE.
+#'
+"cnames.Chao2018"
 
 #' Variable name of CY08 GMPEs.
 #'
@@ -159,6 +201,12 @@
 #' @format Vectors of CY14.tw.C01 GMPE.
 #'
 "cnames.CY14.tw.C01"
+
+#' Variable name of CY14.tw.E04 GMPEs.
+#'
+#' @format Vectors of CY14.tw.E04 GMPE.
+#'
+"cnames.CY14.tw.E04"
 
 #' Variable name of Garcia05 GMPEs.
 #'
@@ -195,6 +243,12 @@
 #' @format Vectors of I14.tw.C01 GMPE.
 #'
 "cnames.I14.tw.C01"
+
+#' Variable name of I14.tw.E04 GMPEs.
+#'
+#' @format Vectors of I14.tw.E04 GMPE.
+#'
+"cnames.I14.tw.E04"
 
 #' Variable name of KAAH15 GMPEs.
 #'
@@ -250,6 +304,18 @@
 #'
 "cnames.LL08.C02"
 
+#' Variable name of LL08.E04 GMPEs.
+#'
+#' @format Vectors of LL08.E04 GMPE.
+#'
+"cnames.LL08.E04"
+
+#' Variable name of Loh96 GMPEs.
+#'
+#' @format Vectors of Loh96 GMPE.
+#'
+"cnames.Loh96"
+
 #' Variable name of MBR17 GMPEs.
 #'
 #' @format Vectors of MBR17 GMPE.
@@ -269,12 +335,23 @@
 #'
 "cnames.PhungCru17"
 
+#' Variable name of PhungCru18 GMPEs.
+#'
+#' @format Vectors of PhungCru18 GMPE.
+#'
+"cnames.PhungCru18"
 
 #' Variable name of PhungSub17 GMPEs.
 #'
 #' @format Vectors of PhungSub17 GMPE.
 #'
 "cnames.PhungSub17"
+
+#' Variable name of PhungSub18 GMPEs.
+#'
+#' @format Vectors of PhungSub18 GMPE.
+#'
+"cnames.PhungSub18"
 
 
 #' Variable name of Sinotech12 GMPEs.

@@ -78,6 +78,7 @@ extern void F77_NAME(s04_crustal_common017)(void *, void *, void *, void *, void
 extern void F77_NAME(s04_cy14_tw_e04)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_i14_tw_e04)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_ll08_c02)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s04_ll08_e04)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_phungcrust2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_phungcrust2018)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_phungsub2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -196,6 +197,7 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"s04_cy14_tw_e04",             (DL_FUNC) &F77_NAME(s04_cy14_tw_e04),             19},
   {"s04_i14_tw_e04",              (DL_FUNC) &F77_NAME(s04_i14_tw_e04),              10},
   {"s04_ll08_c02",                (DL_FUNC) &F77_NAME(s04_ll08_c02),                10},
+  {"s04_ll08_e04",                (DL_FUNC) &F77_NAME(s04_ll08_e04),                10},
   {"s04_phungcrust2017",          (DL_FUNC) &F77_NAME(s04_phungcrust2017),          17},
   {"s04_phungcrust2018",          (DL_FUNC) &F77_NAME(s04_phungcrust2018),          19},
   {"s04_phungsub2017",            (DL_FUNC) &F77_NAME(s04_phungsub2017),            12},
