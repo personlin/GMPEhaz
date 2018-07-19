@@ -13,7 +13,8 @@ LazyData: TRUE
 RoxygenNote: 6.0.1
 Suggests: testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    pkgdown
 URL: http://github.com/personlin/GMPEhaz
 BugReports: http://github.com/personlin/GMPEhaz/issues
 VignetteBuilder: knitr

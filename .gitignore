@@ -30,3 +30,5 @@
 .Rproj.user
 inst/doc
 *.f.*
+# pkgdown
+docs/*
