@@ -50,6 +50,7 @@ extern void F77_NAME(meaninten)(void *, void *, void *, void *, void *, void *, 
 extern void F77_NAME(montalva2017)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s02_mcverry_subduction_2006)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_aga16_tw_c01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s04_aga16_tw_f10)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_asb14_tw_c01)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_asb14_tw_e02)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_ask14_tw_e03)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -169,6 +170,7 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"montalva2017",                (DL_FUNC) &F77_NAME(montalva2017),                12},
   {"s02_mcverry_subduction_2006", (DL_FUNC) &F77_NAME(s02_mcverry_subduction_2006), 14},
   {"s04_aga16_tw_c01",            (DL_FUNC) &F77_NAME(s04_aga16_tw_c01),            12},
+  {"s04_aga16_tw_f10",            (DL_FUNC) &F77_NAME(s04_aga16_tw_f10),            13},
   {"s04_asb14_tw_c01",            (DL_FUNC) &F77_NAME(s04_asb14_tw_c01),            11},
   {"s04_asb14_tw_e02",            (DL_FUNC) &F77_NAME(s04_asb14_tw_e02),            11},
   {"s04_ask14_tw_e03",            (DL_FUNC) &F77_NAME(s04_ask14_tw_e03),            22},
