@@ -25,9 +25,8 @@
 #' @export
 Chao2018 <- function(Mag, Rrup, Prd=0, ftype=0, Vs30=760, Vs30_class=0, Ztor = 0, Z1.0=0, sourcetype=0,
                      msasflag = 0){
-  # subroutine Chaoetal2017 ( mag, dist, ftype, lnY, sigma, specT, vs, Ztor, Z10,
-  #                           1            vs30_class, attenName, period1, iflag, sourcetype, phi, tau )
-  # c Set attenuation name
+  # subroutine S04_Chao2018 ( mag, dist, ftype, lnY, sigma, specT, vs, Ztor, Z10,
+  #               1            vs30_class, attenName, period2, iflag, sourcetype, phi, tau, msasflag )  # c Set attenuation name
   # c     Sourcetype = 0 Crustal
   # c     Sourcetype = 1 Subduction
   # c     Vs30_class = 0 for estimated

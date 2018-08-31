@@ -1,39 +1,39 @@
-c ------------------------------------------------------------------            
+c ------------------------------------------------------------------
 C *** Chao2018 (Crustal and Subduction - Model) Horizontal ***********
-c ------------------------------------------------------------------            
-      subroutine S04_Chao2018 ( mag, dist, ftype, lnY, sigma, specT, vs, Ztor, Z10,           
-     1            vs30_class, attenName, period2, iflag, sourcetype, phi, tau, msasflag )         
+c ------------------------------------------------------------------
+      subroutine S04_Chao2018 ( mag, dist, ftype, lnY, sigma, specT, vs, Ztor, Z10,
+     1            vs30_class, attenName, period2, iflag, sourcetype, phi, tau, msasflag )
 
       implicit none
-
-      real mag, dip, fType, dist, vs, SA1100,
+C    2018/08/31 revised
+      real mag, dip, fType, dist, vs, SA1180,
      1      Z10,  ZTOR, fltWidth, lnSa, sigma, lnY, vs30_rock, sourcetype
       real Fn, Frv, specT, period2, CRjb, phi, tau, z10_rock, SA_rock
       integer hwflag, iflag, vs30_class, regionflag, msasflag
-      character*80 attenName                                                    
+      character*80 attenName
 
-C     Set the reference spectrum.                
+C     Set the reference spectrum.
 c     sourcetype = 0 for crustal
-c                  1 for Subduction 
+c                  1 for Subduction
 c     Vs30_class = 0 for estimated
-c     Vs30_class = 1 for measured 
+c     Vs30_class = 1 for measured
 C     Mainshock and Aftershocks included based on MSASFlag
 C         0 = Mainshocks
 C         1 = Aftershocks
 
-c     Compute SA1100
-      vs30_rock = 1100.
+c     Compute SA1180
+      vs30_rock = 1180.
       z10_rock = 0.0058959
       SA_rock = 0.
-      
+
          call S04_Chaoetal2018 ( mag, dist, ftype, sigma, specT, vs30_rock, Ztor, z10_rock,
      1             SA_rock, vs30_class, attenName, iflag, sourcetype, phi, tau, lnSa, msasflag)
-      Sa1100 = exp(lnSa)
+      Sa1180 = exp(lnSa)
 
 c     Compute Sa at spectral period for given Vs30
 
          call S04_Chaoetal2018 ( mag, dist, ftype, sigma, specT, vs, Ztor, Z10,
-     1             sa1100, vs30_class, attenName, iflag, sourcetype, phi, tau, lnSa, msasflag )
+     1             sa1180, vs30_class, attenName, iflag, sourcetype, phi, tau, lnSa, msasflag )
 
 C     Convert ground motion to units of gals.
       lnY = lnSa + 6.89
@@ -42,17 +42,17 @@ C     Convert ground motion to units of gals.
 
       return
       end
-c -------------------------------------------------------------------           
+c -------------------------------------------------------------------
 C **** Chao et al. 2018 (SSHAC model) *************
-c -------------------------------------------------------------------           
+c -------------------------------------------------------------------
 
-      subroutine S04_Chaoetal2018 ( mag, dist, ftype, sigma, specT, vs, Ztor, Z10,           
-     1            sa1100, vs30_class, attenName, iflag, sourcetype, phi, tau, lnSa, msasflag )                                   
+      subroutine S04_Chaoetal2018 ( mag, dist, ftype, sigma, specT, vs, Ztor, Z10,
+     1            sa1180, vs30_class, attenName, iflag, sourcetype, phi, tau, lnSa, msasflag )
 
       implicit none
-      
-      integer MAXPER                                                                            
-      parameter (MAXPER=21)                                                     
+
+      integer MAXPER
+      parameter (MAXPER=21)
       real ftype, dist, mag, lnSa, sigma, specT, lnYref, vs, Ztor, Z10, period1
       real period(MAXPER), c1(MAXPER), c2(MAXPER), c3(MAXPER), c4(MAXPER), c5(MAXPER)
       real c6(MAXPER), c7(MAXPER), c8(MAXPER), c9(MAXPER), c10(MAXPER), c11(MAXPER)
@@ -61,144 +61,147 @@ c -------------------------------------------------------------------
       real c24(MAXPER), c25(MAXPER), c26(MAXPER), c27(MAXPER), taucr1(MAXPER), taucr2(MAXPER)
       real tausb1(MAXPER), tausb2(MAXPER), phisscr1(MAXPER), phisscr2(MAXPER), phisssb1(MAXPER)
       real phisssb2(MAXPER), arfacr(MAXPER), arfasb(MAXPER), phis2s(MAXPER)
-      character*80 attenName                                                    
-      integer nper, count1, count2, C11flag, C22flag, C28flag, iflag, C10flag, C13flag
+      character*80 attenName
+      integer nper, count1, count2, C11flag, C23flag, C29flag, iflag, C10flag, C13flag
       integer vs30_class, h, n, i, msasflag
-      integer Fcr, Fsb, Fcrss, Fcrno, Fcrro, Fsbintra, Fsbinter, Fas, Fkuo17, Fks17, Frf, Fmanila 
+      integer Fcr, Fsb, Fcrss, Fcrno, Fcrro, Fsbintra, Fsbinter, Fas, Fkuo17, Fks17, Frf, Fmanila
       real Mc, Mref, Mmax, Rrupref, Vs30ref, Zref, sourcetype
       real c1T, c2T, c3T, c4T, c5T, c6T, c7T, c8T, c9T, c10T, c11T, c12T, c13T, c14T, c15T
       real c16T, c17T, c18T, c19T, c20T, c21T, c22T, c23T, c24T, c25T, c26T, c27T
       real taucr1T, taucr2T, tausb1T, tausb2T, phisscr1T, phisscr2T, phisssb1T, phisssb2T
-      real arfacrT, arfasbT, phis2sT, phi, tau, fm, SA1100, Z10ref
+      real arfacrT, arfasbT, phis2sT, phi, tau, fm, SA1180, Z10ref
       real Ssource, Spath, Ssite, Ssitelin, Ssitenon, Sztor, Smag, Sgeom, Sanel
       real taucr, tausb, phisscr, phisssb, phiss, sigmass
-      real c28(MAXPER), c29(MAXPER), c28T, c29T
-                                                                                
-      data period / 0.0, -2.0, 0.01, 0.02, 0.03, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 
-     1              0.75, 1, 1.5, 2, 3, 4, 5 /
-      data c1 / -1.063873, 1.890057, -1.032027, -0.999539, -0.959721, -0.873503, -0.782028, -0.722824, 
-     1          -0.666711, -0.660257, -0.674395, -0.699592, -0.776127, -0.862269, -1.097515, -1.332641,  
-     1          -1.767176, -2.156244, -2.820278, -3.354932, -3.866800 /
-      data c2 / -1.159809, 1.729883, -1.127783, -1.091575, -1.046292, -0.942672, -0.828814, -0.754079,  
-     1          -0.698223, -0.709166, -0.745596, -0.793489, -0.903466, -1.012323, -1.275899, -1.513152,  
-     1          -1.923858, -2.278836, -2.875747, -3.355274, -3.810677 /
-      data c3 / -1.193819, 1.580703, -1.161918, -1.121271, -1.064361, -0.934868, -0.799221, -0.718831,  
-     1          -0.684161, -0.734780, -0.813494, -0.902814, -1.070906, -1.213231, -1.506057, -1.744582,  
-     1          -2.149667, -2.497003, -3.088823, -3.564064, -4.047829 /
-      data c4 / -1.091960, 2.097085, -1.166990, -1.133049, -1.085487, -0.972939, -0.849815, -0.768441,  
-     1          -0.667181, -0.588699, -0.544245, -0.518453, -0.494246, -0.510541, -0.675065, -0.889892,  
-     1          -1.355765, -1.816897, -2.604120, -3.266411, -3.797861 /
-      data c5 / -0.627987, 2.261213, -0.719435, -0.675669, -0.617019, -0.467185, -0.281451, -0.156542,  
-     1          -0.043814, -0.034999, -0.076869, -0.127249, -0.231856, -0.336747, -0.630666, -0.927191,  
-     1          -1.475255, -1.965935, -2.729734, -3.350495, -3.782579 /
-      data c6 / -0.131302, -0.152703, -0.128463, -0.130283, -0.132894, -0.131859, -0.129702, -0.126524,  
-     1          -0.121203, -0.112828, -0.103516, -0.096162, -0.089601, -0.091774, -0.112807, -0.133256,  
-     1          -0.144519, -0.130577, -0.088271, -0.049019, 0.011743 /
-      data c7 / 0.174642, -0.046534, 0.187114, 0.190876, 0.197276, 0.224294, 0.248453, 0.276130, 0.336596,  
-     1          0.362035, 0.356666, 0.337687, 0.258470, 0.169343, 0.024503, -0.056754, -0.118315, -0.143678,  
-     1          -0.196052, -0.257316, -0.326739 /
-      data c8 / 0.686768, 1.253935, 0.684379, 0.653454, 0.606918, 0.542852, 0.548717, 0.603117, 0.740410,  
-     1          0.876832, 0.987375, 1.080380, 1.235317, 1.356003, 1.566143, 1.701845, 1.863449, 1.953076,  
-     1          2.043388, 2.088723, 2.105348 /
-      data c9 / 0.660999, 0.789442, 0.636607, 0.602677, 0.571145, 0.550536, 0.593262, 0.672769, 0.816315,  
-     1          0.889989, 0.946047, 0.973011, 0.997954, 1.017956, 1.008750, 0.995039, 0.952070, 0.969585,  
-     1          1.046545, 1.158151, 1.146724 /
-      data c10 / -0.137353, -0.209260, -0.136876, -0.130691, -0.121383, -0.108569, -0.109737, -0.120617,  
-     1          -0.148076, -0.175365, -0.197475, -0.216076, -0.247063, -0.271200, -0.313228, -0.339214,  
-     1          -0.357208, -0.352247, -0.323769, -0.294601, -0.250758 /
-      data c11 / -0.000009, -0.000002, 0.000000, -0.004842, -0.006299, -0.004464, -0.001457, -0.009868,  
-     1          -0.079508, -0.163621, -0.238571, -0.296908, -0.344839, -0.333262, -0.228238, -0.131398,  
-     1          -0.032686, -0.006878, -0.000001, 0.000000, 0.000000 /
-      data c12 / -0.000009, -0.000013, 0.000000, -0.007260, -0.004838, -0.000099, -0.000004, -0.010127,  
-     1          -0.115386, -0.208607, -0.263688, -0.298481, -0.294126, -0.234514, -0.127711, -0.067084,  
-     1          -0.018875, -0.004683, -0.000001, 0.000000, 0.000000 /
-      data c13 / -0.000010, -0.301696, 0.000000, -0.000003, -0.000004, -0.000003, -0.000005, -0.000005,  
-     1          -0.011147, -0.069179, -0.136519, -0.212723, -0.352450, -0.468626, -0.667073, -0.779678,  
-     1          -0.870007, -0.813223, -0.648139, -0.461443, -0.466237 /
-      data c14 / 0.032480, 0.015465, 0.032456, 0.033064, 0.034309, 0.037356, 0.039956, 0.040651, 0.038518,  
-     1          0.034405, 0.030182, 0.026338, 0.020484, 0.016401, 0.010730, 0.008111, 0.005576, 0.003996,  
-     1          0.000606, -0.002967, -0.008951 /
-      data c15 / 0.006934, 0.003250, 0.006897, 0.007252, 0.007812, 0.008902, 0.009547, 0.009544, 0.008776,  
-     1          0.007727, 0.006654, 0.005645, 0.004067, 0.002889, 0.001476, 0.001154, 0.000921, 0.000776,  
-     1          0.000297, 0.000037, -0.000282 /
-      data c16 / -1.690150, -1.546134, -1.691824, -1.722377, -1.760016, -1.812219, -1.812053, -1.761789,  
-     1          -1.645065, -1.553064, -1.490134, -1.448246, -1.399898, -1.376401, -1.347609, -1.333705,  
-     1          -1.311748, -1.298672, -1.284841, -1.281901, -1.241532 /
-      data c17 / -1.593352, -1.565148, -1.515747, -1.532063, -1.566642, -1.636108, -1.676784, -1.670079,  
-     1          -1.629673, -1.593807, -1.560351, -1.534142, -1.506724, -1.486158, -1.435211, -1.400859,  
-     1          -1.332916, -1.279627, -1.210365, -1.152781, -1.113843 /
-      data c18 / 0.388457, 0.302260, 0.387937, 0.399220, 0.413884, 0.423066, 0.405953, 0.381673, 0.338492,  
-     1          0.299053, 0.268629, 0.244343, 0.210033, 0.191836, 0.179453, 0.184098, 0.197114, 0.210330,  
-     1          0.233083, 0.252812, 0.264010 /
-      data c19 / 0.185052, 0.211496, 0.190488, 0.205429, 0.212151, 0.195295, 0.157068, 0.119393, 0.076495,  
-     1          0.060016, 0.047774, 0.043782, 0.044662, 0.046744, 0.072253, 0.099591, 0.153969, 0.199942,  
-     1          0.253752, 0.282276, 0.298510 /
-      data c20 / -0.003433, -0.000844, -0.003329, -0.003282, -0.003364, -0.003870, -0.004701, -0.005480,  
-     1          -0.006059, -0.005720, -0.005083, -0.004372, -0.003173, -0.002338, -0.001303, -0.000879,  
-     1          -0.000565, -0.000476, -0.000459, -0.000460, -0.000879 /
-      data c21 / -0.003523, -0.000859, -0.003990, -0.004254, -0.004352, -0.004385, -0.004427, -0.004517,  
-     1          -0.004358, -0.003812, -0.003218, -0.002656, -0.001712, -0.001104, -0.000543, -0.000364,  
-     1          -0.000465, -0.000786, -0.001435, -0.002141, -0.002623 /
-      data c22 / -2.457502, -7.415494, -2.264552, -2.349315, -2.269892, -2.041187, -1.822813, 
-     1           -1.665704, -1.454891, -1.338241, -1.292520, -1.296819, -1.360247, -1.442348,  
-     1           -1.497648, -1.344100, -0.805913, -0.417734, -0.022573, 0.000000, 0.000000 /
-      data c23 / -0.481535, -0.673712, -0.476589, -0.471594, -0.453368, -0.417310, -0.403252,  
-     1           -0.411097, -0.447092, -0.481728, -0.514494, -0.543515, -0.597364, -0.649164,  
-     1           -0.742384, -0.798690, -0.842405, -0.849778, -0.839147, -0.822511, -0.797141 /
-      data c24 / 0.063388, 0.095822, 0.063517, 0.064665, 0.068599, 0.079429, 0.084655, 0.082030,  
-     1           0.070607, 0.062531, 0.061479, 0.064358, 0.074017, 0.083573, 0.103395, 0.118168,  
-     1           0.139923, 0.153222, 0.160180, 0.155343, 0.142666 /
-      data c25 / -0.573411, 0.391052, -0.607583, -0.564578, -0.494276, -0.342513, -0.229341, -0.198317,  
-     1           -0.248248, -0.347109, -0.452365, -0.552524, -0.726984, -0.874684, -1.154811, -1.353207,  
-     1           -1.618540, -1.771160, -1.893011, -1.912582, -1.838861 /
-      data c26 / -0.648986, 0.390264, -0.682472, -0.643040, -0.581023, -0.441588, -0.333935, -0.304181,  
-     1           -0.355435, -0.444836, -0.534696, -0.618165, -0.761245, -0.887009, -1.140628, -1.331402,  
-     1           -1.584333, -1.727701, -1.829261, -1.833069, -1.746378 /
-      data c27 / -0.620260, 0.312548, -0.653824, -0.612833, -0.542819, -0.381413, -0.259445, -0.228687,  
-     1           -0.295257, -0.416850, -0.535713, -0.641918, -0.818446, -0.960952, -1.232650, -1.435938,  
-     1           -1.715489, -1.875761, -1.998776, -2.017655, -1.941254  /
-      data c28 / -0.107999, 0.000000, -0.083607, -0.049677, -0.018145, 0.002464, -0.040262, -0.119769,  
-     1          -0.263315, -0.336989, -0.393047, -0.420011, -0.444954, -0.464956, -0.438417, -0.373039, 
-     1           -0.247070, -0.201585, -0.183545, -0.223151, -0.152724 /
-      data c29 / -0.234539, 0.000000, -0.215857, -0.202127, -0.206815, -0.250536, -0.258182, -0.302769,  
-     1          -0.366315, -0.380989, -0.391047, -0.380011, -0.345954, -0.322956, -0.241383, -0.183039,  
-     1          -0.091070, -0.085585, -0.146545, -0.258151, -0.246724 /
-      data taucr1 / 0.367396, 0.439820, 0.366108, 0.367096, 0.365282, 0.360221, 0.364017, 0.376975, 0.420147,  
-     1          0.470353, 0.513741, 0.545322, 0.580510, 0.594865, 0.586090, 0.567212, 0.539109, 0.521000,  
-     1          0.510986, 0.516262, 0.543005 /
-      data taucr2 / 0.316303, 0.374971, 0.315547, 0.320586, 0.327864, 0.345979, 0.360502, 0.362567, 0.339910,  
-     1          0.308615, 0.286310, 0.274373, 0.271879, 0.287436, 0.346082, 0.391733, 0.441799, 0.462508,  
-     1          0.475147, 0.480567, 0.470058 /
-      data tausb1 / 0.266511, 0.331406, 0.262302, 0.266322, 0.266483, 0.269800, 0.280166, 0.292396, 0.322855,  
-     1          0.360816, 0.395487, 0.425484, 0.466244, 0.484584, 0.481419, 0.455249, 0.410995, 0.370707,  
-     1          0.327665, 0.293814, 0.341356 /
-      data tausb2 / 0.567425, 0.576381, 0.559564, 0.582817, 0.602962, 0.628642, 0.630357, 0.613456, 0.561548,  
-     1          0.525565, 0.502178, 0.486796, 0.483329, 0.494099, 0.529962, 0.575901, 0.636351, 0.664233,  
-     1          0.647100, 0.597897, 0.507072 /
-      data phisscr1 / 0.528236, 0.558211, 0.531654, 0.524477, 0.515598, 0.502965, 0.503350, 0.517268, 0.553081,  
-     1          0.581613, 0.599279, 0.608878, 0.610790, 0.600235, 0.561826, 0.526083, 0.477124, 0.448855,  
-     1          0.421072, 0.408714, 0.406221 /
-      data phisscr2 / 0.439658, 0.435662, 0.432542, 0.443143, 0.454835, 0.470056, 0.466796, 0.451798, 0.427508,  
-     1          0.417303, 0.416462, 0.422003, 0.436131, 0.448634, 0.472005, 0.484941, 0.492702, 0.488210,  
-     1          0.469355, 0.447792, 0.429747 /
-      data phisssb1 / 0.435422, 0.478176, 0.433652, 0.425997, 0.422332, 0.410917, 0.408377, 0.420670, 0.455346,  
-     1          0.478162, 0.489836, 0.495227, 0.494609, 0.491417, 0.486800, 0.481847, 0.481326, 0.479433,  
-     1          0.475433, 0.466465, 0.454073 /
-      data phisssb2 / 0.496775, 0.485965, 0.494056, 0.497591, 0.505074, 0.519146, 0.524787, 0.520610, 0.511244,  
-     1          0.503692, 0.496706, 0.491103, 0.487451, 0.486700, 0.488908, 0.493516, 0.488113, 0.477714,  
-     1          0.446953, 0.414410, 0.368507 /
-      data phis2s / 0.343436, 0.274077, 0.342257, 0.349033, 0.364025, 0.407706, 0.443764, 0.455801, 0.439198,  
-     1          0.411793, 0.389327, 0.372079, 0.352731, 0.344512, 0.341565, 0.347036, 0.357102, 0.363359,  
-     1          0.369654, 0.372377, 0.375576 /
+      real c28(MAXPER), c29(MAXPER), c28T, c29T, c30(MAXPER), c30T
 
-c Set attenuation name                                                            
+      data Period / 0, -2, 0.01, 0.02, 0.03, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75,
+     1              1, 1.5, 2, 3, 4, 5 /
+      data c1 / -1.042666, 1.895411, -1.042360, -1.009040, -0.962601, -0.870563, -0.785856, -0.727776,
+     1          -0.674517, -0.668684, -0.682285, -0.707153, -0.782246, -0.867588, -1.100953, -1.335849,
+     1          -1.769889, -2.158271, -2.821190, -3.354776, -3.867019 /
+      data c2 / -1.137852, 1.735667, -1.137811, -1.101142, -1.049407, -0.939899, -0.832404, -0.758714,
+     1          -0.705514, -0.716938, -0.752775, -0.800309, -0.908875, -1.016989, -1.278817, -1.515900,
+     1          -1.926198, -2.280583, -2.876528, -3.355129, -3.810868 /
+      data c3 / -1.170990, 1.587449, -1.171510, -1.130461, -1.066827, -0.931421, -0.802566, -0.723218,
+     1          -0.690970, -0.741863, -0.819872, -0.908821, -1.075545, -1.217121, -1.508285, -1.746629,
+     1          -2.151367, -2.498264, -3.089388, -3.563977, -4.047973 /
+      data c4 / -1.314590, 1.882708, -1.298813, -1.262369, -1.214610, -1.092116, -0.964326, -0.894881,
+     1          -0.836942, -0.792193, -0.763280, -0.744597, -0.723252, -0.734591, -0.883649, -1.088087,
+     1          -1.526738, -1.947331, -2.666122, -3.258068, -3.809328 /
+      data c5 / -0.457036, 2.359015, -0.436214, -0.384335, -0.311696, -0.131992, 0.074716, 0.200368, 0.286613,
+     1          0.254600, 0.173035, 0.087029, -0.073676, -0.220276, -0.567236, -0.881354, -1.445217, -1.943705,
+     1          -2.722921, -3.349385, -3.792075 /
+      data c6 / -0.124087, -0.144577, -0.123275, -0.124986, -0.127909, -0.127668, -0.125831, -0.122221,
+     1          -0.115139, -0.105684, -0.095876, -0.088255, -0.081799, -0.084061, -0.105026, -0.125539,
+     1          -0.137664, -0.125372, -0.085938, -0.049451, 0.012311 /
+      data c7 / 0.198357, -0.038842, 0.191344, 0.195147, 0.198967, 0.227624, 0.260255, 0.289816, 0.348032,
+     1          0.370540, 0.361912, 0.339973, 0.258518, 0.169337, 0.025880, -0.053324, -0.113254, -0.138977,
+     1          -0.193895, -0.258713, -0.326743 /
+      data c8 / 0.676721, 1.251174, 0.684339, 0.657072, 0.610194, 0.544252, 0.548393, 0.602698, 0.739429,
+     1          0.875915, 0.986450, 1.078964, 1.233393, 1.354611, 1.564898, 1.701387, 1.863505, 1.953011,
+     1          2.043382, 2.088718, 2.105341 /
+      data c9 / 0.633834, 0.766604, 0.640018, 0.606922, 0.558754, 0.535818, 0.603777, 0.687135, 0.829456,
+     1          0.904226, 0.958892, 0.984563, 1.007287, 1.025986, 1.013332, 1.002811, 0.962813, 0.979659,
+     1          1.052087, 1.157880, 1.147008 /
+      data c10 / -0.135342, -0.210085, -0.136868, -0.131414, -0.122038, -0.108827, -0.109545, -0.120401,
+     1          -0.147755, -0.175139, -0.197287, -0.215793, -0.246679, -0.270922, -0.312979, -0.339111,
+     1          -0.357148, -0.352155, -0.323695, -0.294607, -0.250719 /
+      data c11 / -0.001320, -0.000002, -0.000002, -0.006396, -0.008323, -0.005923, -0.001799, -0.010118,
+     1          -0.080308, -0.163717, -0.238633, -0.297686, -0.346393, -0.334133, -0.229548, -0.131664,
+     1          -0.032403, -0.006790, -0.000014, -0.000002, -0.000001 /
+      data c12 / -0.000034, -0.000014, -0.000001, -0.000004, -0.000005, -0.000016, -0.000069, -0.009043,
+     1          -0.105380, -0.189907, -0.238782, -0.268913, -0.261917, -0.203064, -0.102740, -0.049805,
+     1          -0.011622, -0.002702, -0.000015, -0.000001, -0.000001 /
+      data c13 / -0.000038, -0.291529, -0.000001, -0.000004, -0.000005, -0.000018, -0.000080, -0.000082,
+     1          -0.011888, -0.070362, -0.139438, -0.217492, -0.359123, -0.475375, -0.670648, -0.775270,
+     1          -0.856757, -0.798850, -0.639826, -0.461969, -0.465749 /
+      data c14 / 0.032555, 0.015510, 0.032494, 0.033028, 0.034285, 0.037352, 0.039960, 0.040658, 0.038553,
+     1          0.034446, 0.030226, 0.026384, 0.020530, 0.016445, 0.010777, 0.008159, 0.005621, 0.004032,
+     1          0.000622, -0.002970, -0.008948 /
+      data c15 / 0.017948, 0.016982, 0.018059, 0.018141, 0.018067, 0.017682, 0.017907, 0.018645, 0.020842,
+     1          0.022069, 0.022125, 0.021736, 0.020462, 0.018980, 0.016322, 0.014953, 0.012425, 0.009349,
+     1          0.004309, -0.000454, 0.000502 /
+      data c16 / 0.006634, 0.003036, 0.006626, 0.007008, 0.007575, 0.008618, 0.009183, 0.009159, 0.008404,
+     1          0.007375, 0.006330, 0.005344, 0.003788, 0.002623, 0.001242, 0.000937, 0.000745, 0.000647,
+     1          0.000241, 0.000051, -0.000294 /
+      data c17 / -1.687472, -1.547786, -1.692461, -1.730349, -1.772040, -1.821470, -1.810850, -1.759544,
+     1          -1.643299, -1.551105, -1.488492, -1.446763, -1.398596, -1.375008, -1.347383, -1.333650,
+     1          -1.311795, -1.298714, -1.284844, -1.281901, -1.241532 /
+      data c18 / -1.525058, -1.549392, -1.539999, -1.565127, -1.589292, -1.642560, -1.682785, -1.676278,
+     1          -1.637058, -1.599726, -1.564986, -1.538416, -1.509663, -1.488699, -1.436447, -1.401868,
+     1          -1.333535, -1.279867, -1.210371, -1.152781, -1.113843 /
+      data c19 / 0.393879, 0.303285, 0.388200, 0.395410, 0.410623, 0.421673, 0.405707, 0.381442, 0.338659,
+     1          0.299124, 0.268677, 0.244569, 0.210459, 0.192077, 0.179792, 0.184209, 0.197091, 0.210361,
+     1          0.233088, 0.252812, 0.264010 /
+      data c20 / 0.192940, 0.223730, 0.188931, 0.201543, 0.217245, 0.203093, 0.152740, 0.113630, 0.072366,
+     1          0.055866, 0.044190, 0.040593, 0.041938, 0.044384, 0.071700, 0.099141, 0.153764, 0.199871,
+     1          0.253750, 0.282276, 0.298510 /
+      data c21 / -0.003430, -0.000817, -0.003338, -0.003155, -0.003190, -0.003740, -0.004703, -0.005494,
+     1          -0.006073, -0.005732, -0.005091, -0.004380, -0.003179, -0.002346, -0.001304, -0.000879,
+     1          -0.000564, -0.000475, -0.000459, -0.000460, -0.000879 /
+      data c22 / -0.003964, -0.000992, -0.003844, -0.003962, -0.004180, -0.004364, -0.004364, -0.004447,
+     1          -0.004295, -0.003755, -0.003171, -0.002613, -0.001680, -0.001075, -0.000534, -0.000357,
+     1          -0.000460, -0.000784, -0.001435, -0.002141, -0.002623 /
+      data c23 / -2.405229, -6.913488, -2.378641, -2.418630, -2.313209, -2.067232, -1.854300, -1.693198,
+     1          -1.479479, -1.358600, -1.314082, -1.320243, -1.391252, -1.483500, -1.558715, -1.404591,
+     1          -0.845899, -0.436331, -0.023390, 0.000000, 0.000000 /
+      data c24 / -0.478715, -0.672424, -0.477706, -0.470430, -0.451950, -0.416240, -0.402645, -0.410470,
+     1          -0.446615, -0.481032, -0.513790, -0.542807, -0.596688, -0.648563, -0.742180, -0.798604,
+     1          -0.842403, -0.849752, -0.839143, -0.822511, -0.797141 /
+      data c25 / 0.063345, 0.095748, 0.063485, 0.064655, 0.068531, 0.079314, 0.084622, 0.082002, 0.070590,
+     1          0.062519, 0.061465, 0.064345, 0.074007, 0.083563, 0.103379, 0.118159, 0.139920, 0.153222,
+     1           0.160180, 0.155343, 0.142666 /
+      data c26 / -0.604023, 0.384203, -0.598271, -0.547902, -0.480919, -0.338469, -0.228587, -0.197662,
+     1          -0.245076, -0.344219, -0.449905, -0.550299, -0.725882, -0.874283, -1.154718, -1.353035,
+     1          -1.618376, -1.771092, -1.893009, -1.912582, -1.838861 /
+      data c27 / -0.679356, 0.383524, -0.673352, -0.626423, -0.567634, -0.437480, -0.333207, -0.303548,
+     1           -0.352291, -0.441969, -0.532257, -0.615964, -0.760168, -0.886623, -1.140546, -1.331239,
+     1          -1.584174, -1.727634, -1.829259, -1.833069, -1.746378 /
+      data c28 / -0.650493, 0.305582, -0.644569, -0.596370, -0.529756, -0.377565, -0.258657, -0.227982,
+     1          -0.292081, -0.413965, -0.533268, -0.639714, -0.817367, -0.960564, -1.232582, -1.435782,
+     1          -1.715330, -1.875696, -1.998774, -2.017655, -1.941254 /
+      data c29 / -0.080834, 0.000000, -0.087018, -0.053922, -0.005754, 0.017182, -0.050777, -0.134135,
+     1          -0.276456, -0.351226, -0.405892, -0.431563, -0.454287, -0.472986, -0.442999, -0.380811,
+     1           -0.257813, -0.211659, -0.189087, -0.222880, -0.153008 /
+      data c30 / -0.207374, 0.000000, -0.219268, -0.206372, -0.194424, -0.235818, -0.268697, -0.317135,
+     1          -0.379456, -0.395226, -0.403892, -0.391563, -0.355287, -0.330986, -0.245965, -0.190811,
+     1          -0.101813, -0.095659, -0.152087, -0.257880, -0.247008 /
+      data taucr1 / 0.367027, 0.439871, 0.366713, 0.367381, 0.365814, 0.360738, 0.364067, 0.376999,
+     1          0.420380, 0.470706, 0.514142, 0.545754, 0.580926, 0.595221, 0.586341, 0.567362, 0.539173,
+     1          0.521031, 0.510998, 0.516268, 0.543015 /
+      data taucr2 / 0.315219, 0.374796, 0.315430, 0.319633, 0.327049, 0.345572, 0.360231, 0.362292, 0.339502,
+     1          0.307997, 0.285602, 0.273645, 0.271198, 0.286852, 0.345657, 0.391395, 0.441542, 0.462329,
+     1          0.475059, 0.480575, 0.470049 /
+      data tausb1 / 0.272750, 0.330733, 0.271058, 0.271673, 0.274006, 0.280698, 0.291948, 0.305046, 0.334109,
+     1          0.369176, 0.401260, 0.428927, 0.466550, 0.482919, 0.477346, 0.450142, 0.405823, 0.366654,
+     1          0.325573, 0.294383, 0.340797 /
+      data tausb2 / 0.532703, 0.566695, 0.536421, 0.557253, 0.577443, 0.601923, 0.599473, 0.579989, 0.528112,
+     1          0.495023, 0.475578, 0.464138, 0.466708, 0.482046, 0.524715, 0.574218, 0.638071, 0.666590,
+     1          0.648573, 0.596551, 0.507714 /
+      data phisscr1 / 0.530015, 0.558388, 0.530680, 0.521767, 0.513496, 0.502312, 0.503270, 0.517247, 0.553158,
+     1          0.581637, 0.599292, 0.608899, 0.610791, 0.600179, 0.561837, 0.526088, 0.477128, 0.448854,
+     1          0.421072, 0.408714, 0.406221 /
+      data phisscr2 / 0.433766, 0.435606, 0.435202, 0.444543, 0.455987, 0.470816, 0.466840, 0.451769,
+     1          0.427517, 0.417334, 0.416486, 0.422015, 0.436118, 0.448613, 0.471981, 0.484933, 0.492704,
+     1          0.488214, 0.469356, 0.447792, 0.429747 /
+      data phisssb1 / 0.430634, 0.478613, 0.431917, 0.426561, 0.421787, 0.407957, 0.406584, 0.419057,
+     1          0.454812, 0.477921, 0.489639, 0.495038, 0.494487, 0.491319, 0.486749, 0.481815, 0.481313,
+     1          0.479424, 0.475432, 0.466465, 0.454073 /
+      data phisssb2 / 0.495377, 0.485676, 0.494439, 0.498452, 0.505789, 0.519604, 0.525237, 0.521053,
+     1           0.511584, 0.503919, 0.496864, 0.491227, 0.487558, 0.486774, 0.488927, 0.493538, 0.488128,
+     1           0.477724, 0.446953, 0.414410, 0.368507 /
+      data phis2s / 0.342398, 0.273837, 0.342667, 0.348735, 0.363743, 0.407580, 0.443690, 0.455723,
+     1          0.439179, 0.411759, 0.389287, 0.372044, 0.352699, 0.344485, 0.341557, 0.347037, 0.357107,
+     1           0.363360, 0.369654, 0.372377, 0.375576 /
+
+c Set attenuation name
 c     Sourcetype = 0 Crustal
-c     Sourcetype = 1 Subduction 
-                                                                       
+c     Sourcetype = 1 Subduction
+
 C Find the requested spectral period and corresponding coefficients
       nper = 21
 
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
         c1T = c1(1)
         c2T = c2(1)
@@ -228,7 +231,8 @@ C First check for the PGA case (i.e., specT=0.0)
         c26T = c26(1)
         c27T = c27(1)
         c28T = c28(1)
-        c29T = c29(1)        
+        c29T = c29(1)
+        c30T = c30(1)
         taucr1T = taucr1(1)
         taucr2T = taucr2(1)
         tausb1T = tausb1(1)
@@ -239,7 +243,7 @@ C First check for the PGA case (i.e., specT=0.0)
         phisssb2T = phisssb2(1)
         phis2sT = phis2s(1)
        goto 1011
-C   Function Form for PGV Regression		   
+C   Function Form for PGV Regression
        elseif (specT .eq. -2.0) then
          period1 = period(2)
          c1T = c1(2)
@@ -270,7 +274,8 @@ C   Function Form for PGV Regression
          c26T = c26(2)
          c27T = c27(2)
          c28T = c28(2)
-         c29T = c29(2)        
+         c29T = c29(2)
+         c30T = c30(2)
          taucr1T = taucr1(2)
          taucr2T = taucr2(2)
          tausb1T = tausb1(2)
@@ -280,18 +285,18 @@ C   Function Form for PGV Regression
          phisssb1T = phisssb1(2)
          phisssb2T = phisssb2(2)
          phis2sT = phis2s(2)
-         goto 1011      
+         goto 1011
        endif
 C Now loop over the spectral period range of the attenuation relationship.
          do i=3,nper-1
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1010 
+               goto 1010
             endif
          enddo
-        
-      write (*,*) 
+
+      write (*,*)
       write (*,*) 'Chao et al. (2018) Horizontal atttenuation model'
       write (*,*) 'is not defined for a spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
@@ -299,88 +304,90 @@ C Now loop over the spectral period range of the attenuation relationship.
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
- 1010    call S24_interp (period(count1),period(count2),c1(count1),c1(count2), 
+ 1010    call S24_interp (period(count1),period(count2),c1(count1),c1(count2),
      +                specT,c1T,iflag)
-         call S24_interp (period(count1),period(count2),c2(count1),c2(count2), 
+         call S24_interp (period(count1),period(count2),c2(count1),c2(count2),
      +                specT,c2T,iflag)
-         call S24_interp (period(count1),period(count2),c3(count1),c3(count2), 
+         call S24_interp (period(count1),period(count2),c3(count1),c3(count2),
      +                specT,c3T,iflag)
-         call S24_interp (period(count1),period(count2),c4(count1),c4(count2), 
+         call S24_interp (period(count1),period(count2),c4(count1),c4(count2),
      +                specT,c4T,iflag)
-         call S24_interp (period(count1),period(count2),c5(count1),c5(count2), 
+         call S24_interp (period(count1),period(count2),c5(count1),c5(count2),
      +                specT,c5T,iflag)
-         call S24_interp (period(count1),period(count2),c6(count1),c6(count2), 
+         call S24_interp (period(count1),period(count2),c6(count1),c6(count2),
      +                specT,c6T,iflag)
-         call S24_interp (period(count1),period(count2),c7(count1),c7(count2), 
+         call S24_interp (period(count1),period(count2),c7(count1),c7(count2),
      +                 specT,c7T,iflag)
-         call S24_interp (period(count1),period(count2),c8(count1),c8(count2), 
+         call S24_interp (period(count1),period(count2),c8(count1),c8(count2),
      +                 specT,c8T,iflag)
-         call S24_interp (period(count1),period(count2),c9(count1),c9(count2), 
+         call S24_interp (period(count1),period(count2),c9(count1),c9(count2),
      +                 specT,c9T,iflag)
-         call S24_interp (period(count1),period(count2),c10(count1),c10(count2), 
+         call S24_interp (period(count1),period(count2),c10(count1),c10(count2),
      +                 specT,c10T,iflag)
-         call S24_interp (period(count1),period(count2),c11(count1),c11(count2), 
+         call S24_interp (period(count1),period(count2),c11(count1),c11(count2),
      +                 specT,c11T,iflag)
-         call S24_interp (period(count1),period(count2),c12(count1),c12(count2), 
+         call S24_interp (period(count1),period(count2),c12(count1),c12(count2),
      +                 specT,c12T,iflag)
-         call S24_interp (period(count1),period(count2),c13(count1),c13(count2), 
+         call S24_interp (period(count1),period(count2),c13(count1),c13(count2),
      +                 specT,c13T,iflag)
-         call S24_interp (period(count1),period(count2),c14(count1),c14(count2), 
+         call S24_interp (period(count1),period(count2),c14(count1),c14(count2),
      +                 specT,c14T,iflag)
-         call S24_interp (period(count1),period(count2),c15(count1),c15(count2), 
+         call S24_interp (period(count1),period(count2),c15(count1),c15(count2),
      +                 specT,c15T,iflag)
-         call S24_interp (period(count1),period(count2),c16(count1),c16(count2), 
+         call S24_interp (period(count1),period(count2),c16(count1),c16(count2),
      +                 specT,c16T,iflag)
-         call S24_interp (period(count1),period(count2),c17(count1),c17(count2), 
+         call S24_interp (period(count1),period(count2),c17(count1),c17(count2),
      +                 specT,c17T,iflag)
-         call S24_interp (period(count1),period(count2),c18(count1),c18(count2), 
+         call S24_interp (period(count1),period(count2),c18(count1),c18(count2),
      +                 specT,c18T,iflag)
-         call S24_interp (period(count1),period(count2),c19(count1),c19(count2), 
+         call S24_interp (period(count1),period(count2),c19(count1),c19(count2),
      +                 specT,c19T,iflag)
-         call S24_interp (period(count1),period(count2),c20(count1),c20(count2), 
+         call S24_interp (period(count1),period(count2),c20(count1),c20(count2),
      +                 specT,c20T,iflag)
-         call S24_interp (period(count1),period(count2),c21(count1),c21(count2), 
+         call S24_interp (period(count1),period(count2),c21(count1),c21(count2),
      +                 specT,c21T,iflag)
-         call S24_interp (period(count1),period(count2),c22(count1),c22(count2), 
+         call S24_interp (period(count1),period(count2),c22(count1),c22(count2),
      +                 specT,c22T,iflag)
-         call S24_interp (period(count1),period(count2),c23(count1),c23(count2), 
+         call S24_interp (period(count1),period(count2),c23(count1),c23(count2),
      +                 specT,c23T,iflag)
-         call S24_interp (period(count1),period(count2),c24(count1),c24(count2), 
+         call S24_interp (period(count1),period(count2),c24(count1),c24(count2),
      +                 specT,c24T,iflag)
-         call S24_interp (period(count1),period(count2),c25(count1),c25(count2), 
+         call S24_interp (period(count1),period(count2),c25(count1),c25(count2),
      +                 specT,c25T,iflag)
-         call S24_interp (period(count1),period(count2),c26(count1),c26(count2), 
+         call S24_interp (period(count1),period(count2),c26(count1),c26(count2),
      +                 specT,c26T,iflag)
-         call S24_interp (period(count1),period(count2),c27(count1),c27(count2), 
+         call S24_interp (period(count1),period(count2),c27(count1),c27(count2),
      +                 specT,c27T,iflag)
-         call S24_interp (period(count1),period(count2),taucr1(count1),taucr1(count2), 
+         call S24_interp (period(count1),period(count2),taucr1(count1),taucr1(count2),
      +                 specT,taucr1T,iflag)
-         call S24_interp (period(count1),period(count2),taucr2(count1),taucr2(count2), 
+         call S24_interp (period(count1),period(count2),taucr2(count1),taucr2(count2),
      +                 specT,taucr2T,iflag)
-         call S24_interp (period(count1),period(count2),tausb1(count1),tausb1(count2), 
+         call S24_interp (period(count1),period(count2),tausb1(count1),tausb1(count2),
      +                 specT,tausb1T,iflag)
-         call S24_interp (period(count1),period(count2),tausb2(count1),tausb2(count2), 
+         call S24_interp (period(count1),period(count2),tausb2(count1),tausb2(count2),
      +                 specT,tausb2T,iflag)
-         call S24_interp (period(count1),period(count2),phisscr1(count1),phisscr1(count2), 
+         call S24_interp (period(count1),period(count2),phisscr1(count1),phisscr1(count2),
      +                 specT,phisscr1T,iflag)
-         call S24_interp (period(count1),period(count2),phisscr2(count1),phisscr2(count2), 
+         call S24_interp (period(count1),period(count2),phisscr2(count1),phisscr2(count2),
      +                 specT,phisscr2T,iflag)
-         call S24_interp (period(count1),period(count2),phisssb1(count1),phisssb1(count2), 
+         call S24_interp (period(count1),period(count2),phisssb1(count1),phisssb1(count2),
      +                 specT,phisssb1T,iflag)
-         call S24_interp (period(count1),period(count2),phisssb2(count1),phisssb2(count2), 
+         call S24_interp (period(count1),period(count2),phisssb2(count1),phisssb2(count2),
      +                 specT,phisssb2T,iflag)
-         call S24_interp (period(count1),period(count2),phis2s(count1),phis2s(count2), 
+         call S24_interp (period(count1),period(count2),phis2s(count1),phis2s(count2),
      +                specT,phis2sT,iflag)
-         call S24_interp (period(count1),period(count2),c28(count1),c28(count2), 
+         call S24_interp (period(count1),period(count2),c28(count1),c28(count2),
      +                 specT,c28T,iflag)
-         call S24_interp (period(count1),period(count2),c29(count1),c29(count2), 
+         call S24_interp (period(count1),period(count2),c29(count1),c29(count2),
      +                 specT,c29T,iflag)
+         call S24_interp (period(count1),period(count2),c30(count1),c30(count2),
+     +                 specT,c30T,iflag)
 
-	 
+
  1011 period1 = specT
 
       h = 10.0
@@ -390,12 +397,12 @@ C Interpolate the coefficients for the requested spectral period.
       Mmax = 8
       Rrupref = 0.0
       Vs30ref = 760.0
- 	  
-C     Set the reference spectrum.                
+
+C     Set the reference spectrum.
 c     sourcetype = 0 for crustal
-c                  1 for Subduction 
+c                  1 for Subduction
 c     Vs30_class = 0 for estimated
-c     Vs30_class = 1 for measured 
+c     Vs30_class = 1 for measured
 
       Fcr=0
       Fsb=0
@@ -410,11 +417,11 @@ c     Vs30_class = 1 for measured
       Frf = 0
       Fmanila = 0
       C11flag = 0
-      C22flag = 0
-      C28flag = 0
-	  C13flag = 0 
+      C23flag = 0
+      C29flag = 0
+	  C13flag = 0
 	  C10flag = 0
-	  
+
       if (sourcetype .eq. 0.0 ) then
        Fcr = 1
        Zref = 0
@@ -427,18 +434,19 @@ c     Vs30_class = 1 for measured
          endif
       elseif (sourcetype .eq. 1.0 ) then
         Fsb = 1
-          Zref = 0
          if(ftype .eq. 0) then
               Fsbinter = 1
-           elseif(ftype .eq. 1) then
+              Zref = 0
+			  elseif(ftype .eq. 1) then
               Fsbintra = 1
+              Zref = 35
          endif
       endif
-	  
-C     Add aftershock factor 
+
+C     Add aftershock factor
       if (msasflag .eq. 1) then
            Fas = 1
-      endif 
+      endif
 
 C     choose Site ref by Vs30 class
         if (vs30_class .eq. 0 ) then
@@ -448,79 +456,84 @@ C     choose Site ref by Vs30 class
         endif
 
       lnYref = c1T*Fcrro + c2T*Fcrss + c3T*Fcrno + c4T*Fsbinter + c5T*Fsbintra +
-     &         c6T*Fas + c7T*Fmanila + c25T*Fkuo17 + c26T*Fks17 + c27T*Frf
+     &         c6T*Fas + c7T*Fmanila + c26T*Fkuo17 + c27T*Fks17 + c28T*Frf
 
-C     Set Source scaling term 
-     
-      if(mag .LE. 5 ) then  
+C     Set Source scaling term
+
+      if(mag .LE. 5 ) then
 	      C11flag=1
       endif
-      if(mag .GE. Mc ) then  
-	      C28flag=1
+      if(mag .GE. Mc ) then
+	      C29flag=1
       endif
-      if(mag .GE. 7.6 ) then  
+      if(mag .GE. 7.6 ) then
 	      C10flag=1
-      endif	  
-      if(mag .LE. 6 ) then  
+      endif
+      if(mag .LE. 6 ) then
 	      C13flag=1
-      endif	  
+      endif
       if (sourcetype .eq. 0.0 ) then
-        Smag = c8T*(mag - Mref) + c10T*(mag - Mref)**2 
-     1         - c10T*(mag-7.6)**2*C10flag + c11T*(5.0-mag)*C11flag  
+        Smag = c8T*(mag - Mref) + c10T*(mag - Mref)**2
+     1         - c10T*(mag-7.6)**2*C10flag + c11T*(5.0-mag)*C11flag
       elseif (sourcetype .eq. 1.0 ) then
-        Smag = c9T*(mag - Mref) + c28T*Fsbinter*(Mag-Mc)*c28flag + c29T*Fsbintra*(Mag-Mc)*c28flag 
+        Smag = c9T*(mag - Mref) + c29T*Fsbinter*(Mag-Mc)*c29flag + c30T*Fsbintra*(Mag-Mc)*c29flag
      1        + c12T*(5.0-mag)*C11flag + c13T*(6.0-mag)*C13flag
       endif
 
-      Sztor = c14T * Fcr *(Ztor-Zref) + c15T * Fsb * ((Ztor-Zref))	  
+      Sztor = c14T * Fcr *(Ztor-Zref) + c15T * Fsbinter * (Ztor-Zref) + c16T * Fsbintra * (Ztor-Zref)
       Ssource = Smag + Sztor
 
 C     Set Path scaling term
 
       if (sourcetype .eq. 0.0 ) then
-          Sgeom = (c16T + c18T*(min(mag,Mmax)- Mref )) * alog(SQRT(dist**2 + h**2)/SQRT(Rrupref**2 + h**2))
+          Sgeom = (c17T + c19T*(min(mag,Mmax)- Mref )) * alog(SQRT(dist**2 + h**2)/SQRT(Rrupref**2 + h**2))
       elseif (sourcetype .eq. 1.0 ) then
-          Sgeom = (c17T + c19T*(min(mag,Mc)- Mref )) * alog(SQRT(dist**2 + h**2)/SQRT(Rrupref**2 + h**2))
+          Sgeom = (c18T + c20T*(min(mag, Mc )- Mref )) * alog(SQRT(dist**2 + h**2)/SQRT(Rrupref**2 + h**2))
       endif
 
-      Sanel = c20T*Fcr*(dist-Rrupref) + c21T*Fsb*(dist-Rrupref)
-      Spath = Sgeom + Sanel 
-	   
-C     Set Site scaling term 
-	   
+      Sanel = c21T*Fcr*(dist-Rrupref) + c22T*Fsb*(dist-Rrupref)
+      Spath = Sgeom + Sanel
+
+C     Set Site scaling term
+
       Z10ref = exp((-4.08/2.0)*alog((vs**2.0+355.4**2.0)/(1750**2.0+355.4**2.0)))
-      Ssitelin = c23T * alog(vs/vs30ref) + c24T*alog(Z10*1000/Z10ref)
+      Ssitelin = c24T * alog(vs/vs30ref) + c25T*alog(Z10*1000/Z10ref)
 
-      if(vs .LT. vs30ref ) then  
-           C22flag=1
+      if(vs .LT. vs30ref ) then
+           C23flag=1
       endif
-	    
-      Ssitenon = c22T * C22flag * (-1.5*alog(vs/vs30ref)-alog(SA1100+2.4)+alog(SA1100+2.4*(vs/vs30ref)**1.5))  
+
+      Ssitenon = c23T * C23flag * (-1.5*alog(vs/vs30ref)-alog(SA1180+2.4)+alog(SA1180+2.4*(vs/vs30ref)**1.5))
       Ssite = Ssitenon + Ssitelin
 
-      lnSa =  lnYref + Ssource + Spath + Ssite                                        
-	  
-c 	  write(*,*) "lnYref = ", lnYref
-c 	  write(*,*) "Ssource = ", Ssource
-c 	  write(*,*) "Spath = ", Spath
-c 	  write(*,*) "Ssitelin = ", Ssitelin
-c 	  write(*,*) "Ssitenon = ", Ssitenon
-c 	  write(*,*) "lnSa = ", lnSa
+      lnSa =  lnYref + Ssource + Spath + Ssite
+
+c  	  write(*,*) "lnYref = ", lnYref
+c  	  write(*,*) "Ssource = ", Ssource
+c  	  write(*,*) "--Smag = ", Smag
+c  	  write(*,*) "--Sztor = ", Sztor
+c  	  write(*,*) "Spath = ", Spath
+c  	  write(*,*) "--Sgeom = ", Sgeom
+c  	  write(*,*) "--Sanel = ", Sanel
+c  	  write(*,*) "Ssite = ", Ssite
+c  	  write(*,*) "--Ssitelin = ", Ssitelin
+c  	  write(*,*) "--Ssitenon = ", Ssitenon
+c  	  write(*,*) "lnSa = ", lnSa
 c 	  write(*,*) "Sa = ", exp(lnSa)
 
-	  
+
 C     Set the event-specific residual term
- 
+
       fm = 0.5*(min(6.5, max(4.5, mag))-4.5)
-      
+
       taucr = taucr1T + (taucr2T - taucr1T)*fm
-      tausb = tausb1T + (tausb2T - tausb1T)*fm 
-      
-      tau = taucr*Fcr + tausb*Fsb   
-   
+      tausb = tausb1T + (tausb2T - tausb1T)*fm
+
+      tau = taucr*Fcr + tausb*Fsb
+
 C     Set Site-specific residual term
 
-      
+
 
 C     Set Recoed-specific residual term
 
@@ -528,7 +541,7 @@ C     Set Recoed-specific residual term
       phisssb = phisssb1T + (phisssb2T -phisssb1T)*fm
 
       phiss = phisscr*Fcr + phisssb*Fsb
-      
+
       phi=(phis2sT**2+phiss**2)**0.5
       sigma=(tau**2+phi**2)**0.5
       sigmass=(tau**2+phiss**2)**0.5
@@ -537,5 +550,5 @@ C     Set Recoed-specific residual term
 
 c       write(*,*) "Y(gal) = ", exp(lnSa)
 
-      return                                                                    
-      end       
+      return
+      end
