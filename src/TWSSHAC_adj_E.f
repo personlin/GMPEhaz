@@ -1,10 +1,10 @@
-c--------------------Adjust E Version --------------------------------------------------  
+c--------------------Adjust E Version --------------------------------------------------
 
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
 C     *** Akkar, Sandikkaya, and Bommer (2013) *** Adjusted in Taiwan SSHAC Project
-c ---------------------------------------------------------------------            
-      subroutine S04_ASB14_TW_E02 ( mag, Rbjf, specT, 
-     1                     period2, lnY, sigma, iflag, ftype, Vs, phiT, tauT ) 
+c ---------------------------------------------------------------------
+      subroutine S04_ASB14_TW_E02 ( mag, Rbjf, specT,
+     1                     period2, lnY, sigma, iflag, ftype, Vs, phiT, tauT )
       implicit none
       integer MAXPER
       parameter (MAXPER=22)
@@ -15,8 +15,8 @@ c ---------------------------------------------------------------------
       real a5, a6, a7, c1, c, n, sigma, period1, pgaref
       INTEGER iFlag, count1, count2, nPer, i
       real a2(MAXPER), a2T
- 
- 
+
+
       Data Period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3, 4/
       Data a1 / 2.03945675856391, 2.0105755214897, 2.09441962806437, 2.19342029563189, 2.31904682103906, 2.45390770646749,
      1      2.74068576984133, 3.02725901648496, 3.14444959319828, 3.27802577633879, 3.21237091996084, 3.11514512674121,
@@ -48,13 +48,13 @@ c ---------------------------------------------------------------------
      1      0.6645, 0.661968437319219, 0.6599, 0.6697, 0.6512, 0.6744, 0.6787, 0.7164, 0.7254, 0.6997, 0.6196/
       Data tau / 0.3501, 0.3526, 0.3555, 0.3565, 0.3484, 0.3551, 0.3759, 0.4067, 0.39887591100991, 0.3893, 0.387081119888267,
      1      0.3842, 0.382769116745646, 0.3816, 0.3962, 0.4021, 0.4043, 0.3943, 0.3799, 0.3717, 0.4046, 0.3566/
-      Data a2(1:22) / 0.156596, 0.179855, 0.176579, 0.171114, 0.173395, 0.163795, 0.154743, 0.154450, 0.172438, 0.217818, 
-     1      0.219640, 0.225918, 0.245985, 0.270563, 0.256632, 0.238360, 0.233643, 0.262352, 0.256889, 0.220679, 0.190910, 
+      Data a2(1:22) / 0.156596, 0.179855, 0.176579, 0.171114, 0.173395, 0.163795, 0.154743, 0.154450, 0.172438, 0.217818,
+     1      0.219640, 0.225918, 0.245985, 0.270563, 0.256632, 0.238360, 0.233643, 0.262352, 0.256889, 0.220679, 0.190910,
      1      0.080137  /
 
- 
- 
-C First check for the PGA case (i.e., specT=0.0) 
+
+
+C First check for the PGA case (i.e., specT=0.0)
       nPer = 22
       if (specT .eq. 0.0) then
          period1 = period(1)
@@ -75,21 +75,21 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Adjusted Akkar,Sandikkaya&Bommer (2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -112,7 +112,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,phiT,iflag)
             call S24_interp (period(count1),period(count2),tau(count1),tau(count2),
      +                   specT,tauT,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 C.....Set the mechanism terms based on ftype............
 C     Set mechanism term and corresponding Frv and Fnm values.
 C     fType     Mechanism                      Rake
@@ -125,14 +125,14 @@ C                                          -30 < Rake <   30
 C                                          150 < Rake <  180
 C      0.5      Reverse/Oblique             30 < Rake <   60
 C                                          120 < Rake <  150
-C       1       Reverse                     60 < Rake <  120   
+C       1       Reverse                     60 < Rake <  120
       if (ftype .eq. -1.0) then
          Fr = 0.0
          Fn = 1.0
-      elseif (ftype .eq. -0.5) then 
+      elseif (ftype .eq. -0.5) then
          Fr = 0.0
          Fn = 1.0
-      elseif (ftype .eq. 0.0) then 
+      elseif (ftype .eq. 0.0) then
          Fr = 0.0
          Fn = 0.0
       elseif (ftype .eq. 0.5) then
@@ -141,7 +141,7 @@ C       1       Reverse                     60 < Rake <  120
       elseif (ftype .eq. 1.0) then
          Fr = 1.0
          Fn = 0.0
-      endif 
+      endif
 C     Set frequency independent terms
 c      a2 = 0.0029
       a5 = 0.2529
@@ -152,28 +152,28 @@ c      a2 = 0.0029
       n = 3.2
 C     Compute the PGA for reference Vs=750m/s.
       if (mag .lt. c1 ) then
-         pgaref = a1(1) + a2(1)*(mag-c1) + a3(1)*(8.5-mag)**2.0 + 
-     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
+         pgaref = a1(1) + a2(1)*(mag-c1) + a3(1)*(8.5-mag)**2.0 +
+     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
      2                  a8(1)*Fn + a9(1)*Fr
       else
-         pgaref = a1(1) + a7*(mag-c1) + a3(1)*(8.5-mag)**2.0 + 
-     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
-     2                  a8(1)*Fn + a9(1)*Fr      
+         pgaref = a1(1) + a7*(mag-c1) + a3(1)*(8.5-mag)**2.0 +
+     1                 (a4(1)+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
+     2                  a8(1)*Fn + a9(1)*Fr
       endif
-      pgaref = exp(pgaref) 
+      pgaref = exp(pgaref)
 C.....Now compute the ground motion value........
       if (mag .lt. c1 ) then
-         lnY = a1T + a2T*(mag-c1) + a3T*(8.5-mag)**2.0 + 
-     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
+         lnY = a1T + a2T*(mag-c1) + a3T*(8.5-mag)**2.0 +
+     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
      2                  a8T*Fn + a9T*Fr
       else
-         lnY = a1T + a7*(mag-c1) + a3T*(8.5-mag)**2.0 + 
-     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) + 
-     2                  a8T*Fn + a9T*Fr      
+         lnY = a1T + a7*(mag-c1) + a3T*(8.5-mag)**2.0 +
+     1                 (a4T+a5*(mag-c1))*alog(sqrt(Rbjf*Rbjf+a6*a6)) +
+     2                  a8T*Fn + a9T*Fr
       endif
 C.....Now apply site amplification term......
       if (vs .le. 750.0) then
-         lnY = lnY + b1T*alog(Vs/750.0) + 
+         lnY = lnY + b1T*alog(Vs/750.0) +
      1         b2T*alog( (pgaref + c*(Vs/750.0)**n) / ((pgaref+c)*(Vs/750.0)**n) )
       else
          lnY = lnY + b1T*alog( min(Vs,1000.0)/750.0)
@@ -187,10 +187,10 @@ C     Convert ground motion to units of gals.
       END
 
 
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
 C     *** Bindi (2014) *** Adjusted in Taiwan SSHAC Project
-c ---------------------------------------------------------------------            
-              
+c ---------------------------------------------------------------------
+
       Subroutine S04_Bindi14_TW_E02 ( m, jbDist, ftype, specT,
      1                     period2, lnY, sigma, iflag, vs, phiT, tauT )
       implicit none
@@ -202,13 +202,13 @@ c ---------------------------------------------------------------------
       real e1T, c1T, c2T, hT, c3T, b1T, b2T, b3T, gammaT, sofNT, sofRT, sofST, sigs2sT
       real phiT, tauT, sigT, period1
       real Rref, Mref, Mh, R, Vref, vs
- 
+
       REAL M, jbDist, specT, sigma, termsof
       REAL period2, lnY, ftype
       integer iflag, count1, count2, nPer, i
       real f_D, f_M, f_S
-  
- 
+
+
       Data period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3/
       Data e1 / 0.602962884594764, 0.602962884594764, 0.621561504845865, 0.726381825288257, 0.830096762727687, 0.938766589905189,
      1      1.22302346770631, 1.39715735313782, 1.39063856362439, 1.33235570611944, 1.33153232812115, 1.31633816650828,
@@ -265,10 +265,10 @@ c ---------------------------------------------------------------------
       Data sig / 0.745772773, 0.745772773, 0.745772773, 0.753543188479092, 0.759056386, 0.767508805717544, 0.783602925138285,
      1      0.797567122, 0.792929650007148, 0.787253843, 0.780874405181787, 0.772590981, 0.777647499576309, 0.775374807,
      1      0.77430871, 0.78683247, 0.795506751916842, 0.819874566, 0.835458462, 0.84932463, 0.829789498/
- 
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 21
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1  = period(1)
          e1T      = e1(1)
@@ -294,21 +294,21 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Adjusted Bindi et al. (2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020 call S24_interp (period(count1),period(count2),e1(count1),e1(count2),
@@ -343,14 +343,14 @@ C Interpolate the coefficients for the requested spectral period.
      +             specT,tauT,iflag)
       call S24_interp (period(count1),period(count2),sig(count1),sig(count2),
      +             specT,sigT,iflag)
-   
- 1011 period1 = specT                                                                                                              
+
+ 1011 period1 = specT
 C     Set Constant Terms
       Mref = 5.5
       Rref = 1.0
       Mh = 6.75
       Vref = 800.0
-C     Set the mechanism term. 
+C     Set the mechanism term.
       if (ftype .eq. 0 ) then
          termsof = 0
       elseif (ftype .ge. 0.5) then
@@ -360,17 +360,17 @@ C     Set the mechanism term.
       endif
       R = sqrt (jbdist**2 + hT**2)
 	    f_D = (c1T+c2T*(M-Mref))*alog(R/Rref) + c3T*(R-Rref)
-C     Compute the ground motion for the given spectral period. 
+C     Compute the ground motion for the given spectral period.
       if (M .le. Mh) then
-         f_M = b1T*(M-Mh) + b2T*(M-Mh)**2.0 
+         f_M = b1T*(M-Mh) + b2T*(M-Mh)**2.0
       else
-         f_M = b3T*(M-Mh)  
+         f_M = b3T*(M-Mh)
       endif
-	  
+
 	    f_S = gammaT*alog(vs/vref)
-	  
+
 	    lnY = e1T + f_D + f_M + f_S + termsof
-	  
+
 C     Set the sigma value and convert from log10 to Ln units
 c      phiT = phiT*alog(10.0)
 c      tauT = tauT*alog(10.0)
@@ -382,16 +382,16 @@ c      lnY = lnY*alog(10.0)
       period2 = period1
       return
       end
- 
-      
-c ------------------------------------------------------------------            
+
+
+c ------------------------------------------------------------------
 C *** Abrahamson, Silva, and Kamai (NGA-West2 2013) Horizontal ****
 C     Earthquake Spectra Paper:
-C        Summary of the Abrahamson, Silva, and Kamai NGA-West2 
+C        Summary of the Abrahamson, Silva, and Kamai NGA-West2
 C            Ground-Motion Relations for Active Crustal REgions
 C         N. A. Abrahamson, S. J. Silva, and R. Kamai
 C     Notes:
-C        Applicable Range (see Abstract):  
+C        Applicable Range (see Abstract):
 C           3 <= M <= 8.5
 C           Rrup <= 300 km
 C        Regional attenuation included based on Regionflag
@@ -402,41 +402,41 @@ C             3 = Japan
 C         Mainshock and Aftershocks included based on MSASFlag
 C             0 = Mainshocks
 C             1 = Aftershocks
-C         Sigma dependent on estimated or measured Vs30m based on 
+C         Sigma dependent on estimated or measured Vs30m based on
 C             Vs30_Class
 C             0 = Estimated Vs30m
 C             1 = Measured Vs30m
-c ------------------------------------------------------------------            
-      subroutine S04_ASK14_TW_E03 ( mag, dip, fType, fltWidth, rRup, Rjb,  
+c ------------------------------------------------------------------
+      subroutine S04_ASK14_TW_E03 ( mag, dip, fType, fltWidth, rRup, Rjb,
      1                     vs30, hwflag, lnY, sigma, specT, period2, ztor,
      2                     iflag, vs30_class, z10, Rx, Ry0, regionflag, msasflag,
      1                     phi, tau )
 C     Last Updated: 8/1/13
       implicit none
- 
+
       real mag, dip, fType, rRup, rjb, Rx, Ry0, vs30, SA1180,
      1      Z10,  ZTOR, fltWidth, lnSa, sigma, lnY, vs30_rock
       real Fn, Frv, specT, period2, CRjb, phi, tau, z10_rock, SA_rock
       integer hwflag, iflag, vs30_class, regionflag, msasflag
- 
+
 c     Vs30 class is to distinguish between the sigma if the Vs30 is measured
 c     vs the VS30 being estimated from surface geology.
 c         Vs30_class = 0 for estimated
-c         Vs30_class = 1 for measured 
- 
-C     Current version is not programmed for Aftershock cases. 
+c         Vs30_class = 1 for measured
+
+C     Current version is not programmed for Aftershock cases.
 C       For implementation of Aftershock a new distance metric, CRjb
-C       will need to be computed and passed along to this subroutine. 
- 
-      CRjb = 999.9 
- 
-C     Set mechanism term and corresponding Frv and Fnm values.     
+C       will need to be computed and passed along to this subroutine.
+
+      CRjb = 999.9
+
+C     Set mechanism term and corresponding Frv and Fnm values.
 C     fType     Mechanism                      Rake
 C     ------------------------------------------------------
 C      -1       Normal                   -120 < Rake < -60.0
 C     1, 0.5    Reverse and Rev/Obl        30 < Rake < 150.0
 C     0,-0.5    Strike-Slip and NMl/Obl        Otherwise
-C 
+C
       if ( fType .eq. 1.0 ) then
         Frv = 1.0
         Fn = 0.0
@@ -453,41 +453,41 @@ C
         Frv = 0.0
         Fn = 0.0
       endif
- 
+
 c     Compute SA1180
       vs30_rock = 1180.
       z10_rock = 0.005
       SA_rock = 0.
-      
-      call S04_ASK14_TW_E03_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0, 
+
+      call S04_ASK14_TW_E03_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0,
      1                     vs30_rock, SA_rock, Z10_rock, hwflag, vs30_class,
      2                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb )
       Sa1180 = exp(lnSa)
- 
+
 c     Compute Sa at spectral period for given Vs30
- 
-      call S04_ASK14_TW_E03_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0, 
+
+      call S04_ASK14_TW_E03_model ( mag, dip, fltWidth, ZTOR, Frv, Fn, rRup, rjb, rx, Ry0,
      1                     vs30, SA1180, Z10, hwflag, vs30_class,
      2                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb )
- 
+
 c     compute Sa (given the PGA rock value)
       sigma = sqrt( phi**2 + tau**2 )
- 
+
       lnY = lnSa + 6.89
- 
+
       period2 = specT
- 
+
       return
       end
- 
+
 c ----------------------------------------------------------------------
-      subroutine S04_ASK14_TW_E03_model ( mag, dip, FltWidth, ZTOR, Frv, Fn, rRup, rjb, Rx, Ry0, 
+      subroutine S04_ASK14_TW_E03_model ( mag, dip, FltWidth, ZTOR, Frv, Fn, rRup, rjb, Rx, Ry0,
      1                     vs30, Sa1180, Z1, hwflag, vs30_class,
      3                     specT, lnSa, phi, tau, iflag, regionflag, msasflag, CRjb)
- 
+
       implicit none
-      
-      integer MAXPER     
+
+      integer MAXPER
       parameter (MAXPER=25)
       real Vlin(MAXPER), b(MAXPER), c4(MAXPER), M1(MAXPER), a1(MAXPER)
       real a2(MAXPER), a3(MAXPER), a6(MAXPER), a8(MAXPER), a10(MAXPER)
@@ -507,7 +507,7 @@ c ----------------------------------------------------------------------
       real s1estT, s2estT, s1msrT, s2msrT
       real s3T, s4T, s5T, s6T, c4_mag
       real phiA_est, phiA_msr, period1
-      
+
       real M2
       real lnSa, SA1180, rjb, rRup, Rx, Ry0, dip, mag, vs30
       real HW_taper1, HW_taper2, HW_taper3, HW_taper4, HW_taper5
@@ -520,8 +520,8 @@ c ----------------------------------------------------------------------
       real R, V1, Vs30Star, hw_a2, h1, h2, h3, R1, R2, CRjb
       integer count1, count2, i
       real y1, y2, x1, x2, y1z, y2z, x1z, x2z
- 
- 
+
+
       Data Period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3, 4,
      1      5, 7.5, 10/
       Data Vlin / 660, 660, 680, 770, 851.659765220817, 915, 960, 910, 833.557751246246, 740, 674.738820243143, 590, 495, 430, 360,
@@ -541,8 +541,8 @@ c ----------------------------------------------------------------------
      1      -0.79, -0.79, -0.79, -0.79, -0.79, -0.79, -0.765, -0.634, -0.529/
       Data a3 / 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275,
      1      0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275, 0.275/
-      Data a4(1:25) / 0.0495698, 0.0495698, 0.0390541, 0.0255496, -0.007645, -0.030922, -0.061750, -0.081645, -0.073836, 
-     1               -0.062996, -0.051664, -0.044848, 0.0133874, 0.0809235, 0.1084020, 0.1504476, 0.1442501,  
+      Data a4(1:25) / 0.0495698, 0.0495698, 0.0390541, 0.0255496, -0.007645, -0.030922, -0.061750, -0.081645, -0.073836,
+     1               -0.062996, -0.051664, -0.044848, 0.0133874, 0.0809235, 0.1084020, 0.1504476, 0.1442501,
      1               0.2095746, 0.3581460, 0.4368578, 0.3650917, 0.2733890, 0.2247384, 0.0816875, -0.104597/
       Data a6 / 1.23717748598244, 1.23717748598244, 1.21929244416125, 1.18776475236154, 1.1386198050469, 1.06637205570935,
      1      1.02389263942901, 1.07752774917395, 1.1812142280341, 1.27818420722981, 1.33346592714088, 1.41780002102162,
@@ -640,12 +640,12 @@ c ----------------------------------------------------------------------
      1      0.61, 0.63, 0.66, 0.69, 0.73, 0.77, 0.8, 0.8, 0.8, 0.76, 0.72, 0.67, 0.64/
       Data s6 / 0.63, 0.63, 0.63, 0.63, 0.641263415892527, 0.65, 0.69, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.69, 0.68,
      1      0.66, 0.62, 0.55, 0.52, 0.5, 0.5, 0.5/
- 
- 
+
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
- 
-C First check for the PGA, PGV, PGD cases 
+
+C First check for the PGA, PGV, PGD cases
       if (specT .eq. 0.0) then
          period1 = period(1)
          a1T = a1(1)
@@ -695,20 +695,20 @@ C   For other periods, loop over the spectral period range of the attenuation re
          if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
             count1 = i
             count2 = i+1
-            goto 1020 
+            goto 1020
          endif
       enddo
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Adjusted Abrahamson, Silva, and Kamai (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -791,7 +791,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,s5T,iflag)
             call S24_interp (period(count1),period(count2),s6(count1),s6(count2),
      +                   specT,s6T,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 C     Constant values
       n = 1.5
       M2 = 5.0
@@ -811,11 +811,11 @@ C     Magnitude dependent taper for C4 (eq. 4.4)
          c4_mag = c4T - (c4T-1.0) * (5.0-mag)
       else
          c4_mag = 1.0
-      endif 
-     
+      endif
+
 c     Set distance (eq 4.3)
       R = sqrt(rRup**2 + c4_mag**2)
-       	  
+
 C     Base Model (eq 4.2)
       if ( mag .lt. M2 ) then
         f1 = a1T + a6T*(Mag-M2) + a7*(Mag-M2)**2 + a4T*(M2-M1T) + a8T*(8.5-M2)**2 +
@@ -825,25 +825,25 @@ C     Base Model (eq 4.2)
       else
         f1 = a1T + a5*(Mag-M1T) + a8T*(8.5-Mag)**2 + (a2T + a3T*(Mag-M1T)) * alog(R) + a17T*Rrup
       endif
-	  
-c     style of faulting (eq 4.5 and 4.6) 
+
+c     style of faulting (eq 4.5 and 4.6)
       if ( mag .gt. 5. ) then
         f7 = Frv * a11T
         f8 = Fn * a12T
       elseif ( mag .ge. 4. ) then
         f7 = Frv * a11T * (mag-4.)
         f8 = Fn * a12T * (mag-4.)
-      else 
+      else
         f7 = 0
         f8 = 0
       endif
-c     ZTOR (eq 14) 
+c     ZTOR (eq 14)
 c     form modified"Extend the upper bound ZTOR to 50km:"
-      if (ZTOR .lt. 50.) then 
+      if (ZTOR .lt. 50.) then
         f6 = a15T * ZTOR/50.0
       else
         f6 = a15T
-      endif    
+      endif
 c     Set VS30_star (eq 4.8 and 4.9)
       if ( specT .gt. 3.0 ) then
         V1 = 800.
@@ -851,15 +851,15 @@ c     Set VS30_star (eq 4.8 and 4.9)
         V1 = exp( -0.35 * alog(specT/0.5)  + alog(1500.) )
       else
         V1=1500.
-      endif      
-      if ( vs30 .lt. v1 ) then 
+      endif
+      if ( vs30 .lt. v1 ) then
          vs30Star = vs30
       else
 	     vs30Star = v1
-      endif		
-c     Compute site amplification (Eq. 4.7)  
+      endif
+c     Compute site amplification (Eq. 4.7)
       if (vs30 .lt. vLinT) then
-        f5 = a10T*alog(vs30Star/vLinT) - bT*alog(c+Sa1180) 
+        f5 = a10T*alog(vs30Star/vLinT) - bT*alog(c+Sa1180)
      1              + bT*alog(Sa1180+c*((vs30Star/vLinT)**(n)) )
       else
      	f5 = (a10T + bT*n) * alog(vs30Star/vLinT)
@@ -867,41 +867,41 @@ c     Compute site amplification (Eq. 4.7)
       if (vs30 .eq. 1180.) then
      	f5 = (a10T + bT*n) * alog(1180/vLinT)
       endif
-	  
+
 c     Set Regional z1 reference (eq 4.18)
-      if (regionflag .eq. 1) then  
+      if (regionflag .eq. 1) then
          z1_ref =  exp(-2.629 / 4.0 * alog((vs30**4.0 + 253.299**4.0)/(2491.945**4.0 + 253.299**4.0)))/ 1000.
       elseif (regionflag .eq. 3) then
          z1_ref = exp ( -5.23/2. * alog( (Vs30**2.0 + 412.**2.0)/(1360.**2.0+412.**2.0) ) ) / 1000.
       else
          z1_ref = exp ( -7.67/4. * alog( (Vs30**4.0 + 610.**4.0)/(1360.**4.0+610.**4.0) ) ) / 1000.
-      endif 
-      
+      endif
+
 C     Soil Depth Model (eq 4.17)
 C     Updated 8/1/13
       if ( vs30 .lt. 150.0 ) then
          y1z = a43T
-         y2z = a43T 
+         y2z = a43T
          x1z = 50.0
          x2z = 150.0
       elseif ( vs30 .lt. 250.0 ) then
          y1z = a43T
-         y2z = a44T 
+         y2z = a44T
          x1z = 150.0
          x2z = 250.0
       elseif ( vs30 .lt. 400.0 ) then
          y1z = a44T
-         y2z = a45T 
+         y2z = a45T
          x1z = 250.0
          x2z = 400.0
       elseif ( vs30 .lt. 700.0 ) then
          y1z = a45T
-         y2z = a46T 
+         y2z = a46T
          x1z = 400.0
          x2z = 700.0
       else
          y1z = a46T
-         y2z = a46T 
+         y2z = a46T
          x1z = 700.0
          x2z = 1000.0
       endif
@@ -911,7 +911,7 @@ C     Calculation f10 term and set it equal to zero for Vs=1180m/s (i.e., refere
       else
          f10 = ( y1z + (Vs30-x1z)*(y2z-y1z)/(x2z-x1z))*alog( (z1 + 0.01) / (z1_ref+0.01) )
       endif
-c     Compute HW taper1 (eq 4.11) 
+c     Compute HW taper1 (eq 4.11)
       if ( dip .le. 30. ) then
         HW_taper1 = 60./ 45.
       else
@@ -920,7 +920,7 @@ c     Compute HW taper1 (eq 4.11)
 c     Compute HW taper2 (eq. 4.12)
       hw_a2 = 0.2
       if( mag .ge. 6.5 ) then
-        HW_taper2 = 1. + hw_a2 * (mag-6.5) 
+        HW_taper2 = 1. + hw_a2 * (mag-6.5)
       elseif ( mag .gt. 5.5 ) then
         HW_taper2 = 1. + HW_a2 * (mag-6.5) - (1.0 - HW_a2)*(mag-6.5)**2
       else
@@ -939,14 +939,14 @@ C	  April 11, correction by ronnie for HW_taper3 when Rx.gt.R2
         HW_taper3 = 1. - (Rx-R1)/(R2-R1)
       else
         HW_taper3 = 0.
-      endif 
+      endif
 c     Compute HW taper 4 (eq 4.14)
       if ( ZTOR .le. 10. ) then
         HW_taper4 = 1. - (ZTOR**2) / 100.
       else
         HW_taper4 = 0.
       endif
-      
+
 c     Compute HW taper 5 (eq. 13)  **** Ry0 version ***
       Ry1 = Rx * tan(20.*3.1415926/180.)
       if ( Ry0 .lt. Ry1 ) then
@@ -956,9 +956,9 @@ c     Compute HW taper 5 (eq. 13)  **** Ry0 version ***
       else
         HW_taper5 = 0.
       endif
-c     Compute HW taper 5 (eq. 4.15b)  **** No Ry0 version ***     
+c     Compute HW taper 5 (eq. 4.15b)  **** No Ry0 version ***
 c      if (Rjb .eq. 0. ) then
-c        HW_taper5 = 1. 
+c        HW_taper5 = 1.
 c      elseif ( Rjb .lt. 30. ) then
 c        HW_taper5 = 1 - Rjb/30.
 c      else
@@ -977,28 +977,28 @@ C     Add aftershock factor (eq 4.21)
          elseif (CRjb .le. 5.0) then
              f11 = a14T
          else
-             f11 = a14T * ( 1.0 - (CRjb - 5.0) /10.0) 
+             f11 = a14T * ( 1.0 - (CRjb - 5.0) /10.0)
          endif
       elseif (msasflag .eq. 0) then
          f11 = 0.0
-      endif 
+      endif
 C     Now apply the regional attenuation differences (eq 4.22)
 C     Global No Change
       if (regionflag .eq. 0) then
          freg = 0.0
 C     Taiwan
       elseif (regionflag .eq. 1) then
-         f12 = a31T * alog(vs30Star/VlinT) 
-         freg = f12 + a25T*Rrup 
+         f12 = a31T * alog(vs30Star/VlinT)
+         freg = f12 + a25T*Rrup
       elseif (regionflag .eq. 1 .and. vs30 .eq. 1180.0) then
-         f12 = a31T * alog(1180/VlinT) 
-         freg = f12 + a25T*Rrup 
+         f12 = a31T * alog(1180/VlinT)
+         freg = f12 + a25T*Rrup
 C     China
       elseif (regionflag .eq. 2) then
-         freg = a28T*Rrup 
+         freg = a28T*Rrup
 C     Japan
       elseif (regionflag .eq. 3) then
-         freg = a42T + a29T*Rrup 
+         freg = a42T + a29T*Rrup
       endif
 C     Set the Sigma Values
       if (regionflag .ne. 3)  then
@@ -1030,14 +1030,14 @@ C     Set Sigma values for Japan Region
       else
 C calculate phi_A for Japan (eq. 7.3)
         if (Rrup .lt. 30) then
-           phiA = s5T        
+           phiA = s5T
         elseif (Rrup .le. 80) then
            phiA = s5T + (s6T-s5T)/50*(Rrup-30)
         else
            phiA = s6T
         endif
       endif
-	  
+
 c     Compute between-event term, tau (eq. 7.2)
       if (mag .lt. 5.0) then
          tauA = s3T
@@ -1054,28 +1054,28 @@ c     with fix to model for small mag at long periods - limit sigAmp to be less 
         sigAmp = phiA*0.99
       endif
       phiB = sqrt( phiA**2 - sigAmp**2)
-      
+
 c     Compute partial derivative of alog(soil amp) w.r.t. alog(Sa1180) (eq. 7.10)
       if ( vs30 .ge. vLinT) then
         dAmp_dSa1180 = 0.
       else
-        dAmp_dSa1180 = bT*Sa1180 * ( -1. / (Sa1180+c) 
+        dAmp_dSa1180 = bT*Sa1180 * ( -1. / (Sa1180+c)
      1              + 1./ (Sa1180 + c*(vs30/vLinT)**(n)) )
       endif
 C     Compute phi, with non-linear effects (eq. 7.8)
       phi = sqrt( phiB**2 * (1. + dAmp_dSa1180)**2 + sigAmp**2 )
 C     Compute tau, with non-linear effects (eq. 7.9)
       tau = tauB * (1. + dAmp_dSa1180)
-      
+
 c     Compute median ground motion (eq. 1)
-      lnSa = f1 + f4 + f5 + f6 + f7 + f8 + f10 + f11 + freg 
+      lnSa = f1 + f4 + f5 + f6 + f7 + f8 + f10 + f11 + freg
       return
       end
- 
- 
 
- 
-c ---------------------------------------------------------------------------            
+
+
+
+c ---------------------------------------------------------------------------
 C     *** Boore, Stewart, Seyhan and Atkinson NGA West 2 (NGA West2-2013) ***
 C         Earthquake Spectra Report:
 C            NGA-West2 Equations for Predicting PGA, PGV, and 5%-Damped
@@ -1089,13 +1089,13 @@ C            Distance < 300km
 C            150 < Vs < 1500 m/s
 C            0.0 < Z1 < 3.0 km
 C            Region Flag:
-C               0 = Global 
+C               0 = Global
 C               1 = China-Turkey
 C               2 = Italy-Japan
-c ---------------------------------------------------------------------------            
-      subroutine S04_BSSA14_TW_E02 ( mag, Rbjf, specT, 
+c ---------------------------------------------------------------------------
+      subroutine S04_BSSA14_TW_E02 ( mag, Rbjf, specT,
      1        period2, lnY, sigma, iflag, vs, ftype, pga4nl, z10, regionflag, basinflag,
-     1        phi, tau ) 
+     1        phi, tau )
 C     Last Updated: 9/16/13
       parameter (MAXPER=24)
       REAL Period(MAXPER), c1(MAXPER), c2(MAXPER), c3(MAXPER)
@@ -1116,8 +1116,8 @@ C     Last Updated: 9/16/13
       real e5T, e6T, mhT, cT, VcT, phi2T, phi3T, f4T, l1T, l2T, t1T, t2T
       real deltaz1, f5T, rjbbarT, DfrT, DfvT, R1T, R2T, DC3GlobalT
       real DC3ChinaTrkT, DC3ItalyJapanT, f6T, f7T
- 
- 
+
+
       Data Period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3, 4,
      1      5, 7.5/
       Data e0 / 0.4473, 0.4534, 0.48598, 0.56916, 0.673459231164795, 0.75436, 0.96447, 1.1268, 1.20895293439595, 1.3095,
@@ -1206,7 +1206,7 @@ C     Last Updated: 9/16/13
       Data t2 / 0.348, 0.3446, 0.3464, 0.364, 0.39908554050522, 0.4263, 0.4658, 0.4583, 0.42664391581021, 0.3879,
      1      0.353355082182037, 0.3085, 0.2664, 0.229, 0.2097, 0.2235, 0.2664, 0.2984, 0.3151, 0.3291, 0.3438, 0.3492, 0.3354,
      1      0.2699/
-      
+
 C     Set constant parameters
       mref = 4.5
       rref = 1.0
@@ -1215,7 +1215,7 @@ C     Set constant parameters
       f3 = 0.1
       V1 = 225.0
       V2 = 300.0
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       nPer = 24
       if (specT .eq. 0.0) then
          period1 = period(1)
@@ -1229,7 +1229,7 @@ C First check for the PGA case (i.e., specT=0.0)
          mhT = mh(1)
          c1T = c1(1)
          c2T = c2(1)
-         c3T = c3(1)        
+         c3T = c3(1)
          hT = h(1)
          cT = c(1)
          VcT = vc(1)
@@ -1258,21 +1258,21 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Adjusted BSSA (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),e0(count1),e0(count2),
@@ -1339,7 +1339,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,DfrT,iflag)
             call S24_interp (period(count1),period(count2),Dfv(count1),Dfv(count2),
      +                   specT,DfvT,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 C.....Set the mechanism terms based on ftype............
 C     Set mechanism term and corresponding Frv and Fnm values.
 C     fType     Mechanism                      Rake
@@ -1352,17 +1352,17 @@ C                                          -30 < Rake <   30
 C                                          150 < Rake <  180
 C      0.5      Reverse/Oblique             30 < Rake <   60
 C                                          120 < Rake <  150
-C       1       Reverse                     60 < Rake <  120 
-C     Note: Unknown Mechanism is not currently coded.  
+C       1       Reverse                     60 < Rake <  120
+C     Note: Unknown Mechanism is not currently coded.
       if (ftype .eq. -1.0) then
          mechS = 0.0
          mechN = 1.0
          mechR = 0.0
-      elseif (ftype .eq. -0.5) then 
+      elseif (ftype .eq. -0.5) then
          mechS = 0.0
          mechN = 1.0
          mechR = 0.0
-      elseif (ftype .eq. 0.0) then 
+      elseif (ftype .eq. 0.0) then
          mechS = 1.0
          mechN = 0.0
          mechR = 0.0
@@ -1374,7 +1374,7 @@ C     Note: Unknown Mechanism is not currently coded.
          mechS = 0.0
          mechN = 0.0
          mechR = 1.0
-      endif 
+      endif
 C.....First compute the Reference Rock PGA value...........
 C.....This will include the regional dependence for PGA....
 C.....MAGNITUDE DEPENDENCE.................................
@@ -1388,9 +1388,9 @@ C.....MAGNITUDE DEPENDENCE.................................
 C.....Distance dependence......
       Rp = SQRT( Rbjf*Rbjf+h(1)*h(1) )
 C.....Apply Regional term.....
-         TERM2 = ( c1(1) + c2(1)*(mag-mref) ) * alog(Rp/rref) + 
+         TERM2 = ( c1(1) + c2(1)*(mag-mref) ) * alog(Rp/rref) +
      1           c3(1)  * (Rp-rref)
-     
+
       pga4nl = exp(term1+term2)
 C.....Now compute the requested ground motion value........
 C.....MAGNITUDE DEPENDENCE.................................
@@ -1405,8 +1405,8 @@ C.....Distance dependence......
       R = SQRT( Rbjf*Rbjf+hT*hT )
 C     Now apply the regional attenuation differnece.
 C     Global Case
-         TERM2 = ( c1T + c2T*(mag-mref) ) * alog(R/rref) + 
-     1        c3T * (R-rref) 
+         TERM2 = ( c1T + c2T*(mag-mref) ) * alog(R/rref) +
+     1        c3T * (R-rref)
 C.....Site Response Term.........
 C.....Now compute the site term........
 C.....First the linear term......
@@ -1416,22 +1416,22 @@ C.....First the linear term......
          flin = cT*alog(VcT/Vref)
       endif
 C.....Next the non-linear term......
-      f2 = f4T*(exp(f5T*(min(vs,760.0)-360.0))-exp(f5T*(760.0-360.0))) 
-      
+      f2 = f4T*(exp(f5T*(min(vs,760.0)-360.0))-exp(f5T*(760.0-360.0)))
+
 C.....Now compute the basin effect term......
 C Deviation from ln(Vs30) scaling: bedrock depth (Z1) effect for California.
-c      if (basinflag .eq. 1) then 
-c     Compute the DeltaZ1 term. Apply the California model for all regions except for Japan. 
+c      if (basinflag .eq. 1) then
+c     Compute the DeltaZ1 term. Apply the California model for all regions except for Japan.
           deltaz1 = z10 -
-     1           exp(-2.63/4.0 * alog((vs**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))/1000.0        
+     1           exp(-2.63/4.0 * alog((vs**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))/1000.0
           fbasin = min(f7T, f6T * deltaZ1)
 
 c      else
 c         fbasin = 0.0
 c      endif
       TERM3 = flin + f1 + f2*alog((pga4nl+f3)/f3) + fBasin
-      
-      lnY = term1 + term2 + term3 
+
+      lnY = term1 + term2 + term3
       period2 = period1
 c     Now compute the sigma value which is a function of magnitude and Vs
 C     Tau (Eq. 4.11)
@@ -1442,8 +1442,8 @@ C     Tau (Eq. 4.11)
       else
          tau = t2T
       endif
-      
-C     Phi - Magnitude (Eq. 4.12) 
+
+C     Phi - Magnitude (Eq. 4.12)
       if (mag .le. 4.5) then
          phi = l1T
       elseif (mag .gt. 4.5 .and. mag .lt. 5.5) then
@@ -1457,7 +1457,7 @@ C     Phi - Distance (Eq. 4.13)
       elseif (rbjf .gt. R1T .and. rbjf .le. R2T) then
           phi = phi + DfrT*( (alog(rbjf/R1T))/(alog(R2T/R1T)) )
       else
-          phi = phi + DfrT 
+          phi = phi + DfrT
       endif
 C     Phi - Vs30 (Eq. 4.14)
       if (vs .ge. V2) then
@@ -1472,7 +1472,7 @@ C     Convert ground motion to units of gals.
       lnY = lnY + 6.89
       return
       END
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
 C ** Chiou and Youngs (NGA West2-2013 Model) Horizontal **
 C     Earthquake Spectra Paper:
 C        Update of the Chiou and Youngs NGA Model for the
@@ -1480,7 +1480,7 @@ C            Average Horizontal Component of Peak
 C            Ground Motion and Response Spectra
 C         B. S.J. Chiou and R.R. Youngs
 C     Notes:
-C        Applicable Range (see Abstract):  
+C        Applicable Range (see Abstract):
 C           3.5 <= M <= 8.5 Strike-slip
 C           3.5 <= M <= 8.0 Reverse and Normal
 C           Rrup <= 300 km
@@ -1491,13 +1491,13 @@ C        Regional attenuation included based on Regionflag
 C             0 = Global
 C             1 = Japan/Italy
 C             2 = Wenchuan (note only applicable for M7.9 event)
-C         Sigma dependent on estimated or measured Vs30m based on 
+C         Sigma dependent on estimated or measured Vs30m based on
 C             Vs30_Class
 C             0 = Estimated Vs30m
 C             1 = Measured Vs30m
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
       Subroutine S04_CY14_TW_E04 ( m, Rrup, Rbjf, specT,
-     1                     period2, lnY, sigma, iflag, 
+     1                     period2, lnY, sigma, iflag,
      2                     vs, Delta, DTor, Ftype, depthvs10, vs30_class,
      3                     hwflag, Rx, regionflag, phi, tau )
 C     Last Updated: 8/1/13
@@ -1513,7 +1513,7 @@ C     Last Updated: 8/1/13
       Real CHM(MAXPER), C1c(MAXPER), C1d(MAXPER), C7b(MAXPER), C8b(MAXPER)
       real C11(MAXPER), C11B(MAXPER)
       real gscaleJapIt(MAXPER), gscaleWen(MAXPER), sigma2Jap(MAXPER)
- 
+
       REAL c1T, c1aT, c1bT, cnT, cmT, c5T, c6T, c7T, c9T, c9aT, c3T, c8T
       REAL gamma1T, gamma2T, phi1T, phi2T, phi3T, phi4T, sigma3T
       REAL phi5T, phi6T, tau1T, tau2T, sigma1T, sigma2T
@@ -1527,8 +1527,8 @@ C     Last Updated: 8/1/13
       real NL0, sigma_NL0, F_Measured, F_Inferred, mz_TOR, deltaZ_TOR, coshM
       real gscaleJapItT, gscaleWenT, sigma2JapT, phi
       real phi1jpT, phi5jpT, phi6jpT
- 
- 
+
+
       Data period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3, 4,
      1      5, 7.5, 10/
       Data c1 / -1.29685236824339, -1.29685236824339, -1.25271582686019, -1.11773250980953, -0.956465870903099, -0.799324896281897,
@@ -1664,13 +1664,13 @@ C     Last Updated: 8/1/13
      1      0.531176947346726, 0.53091866775, 0.53069348684478, 0.530953922960708, 0.531256171294916, 0.530904125925903,
      1      0.53016308922439, 0.527603492956116, 0.516719512970182, 0.491681001472351, 0.468235579988731, 0.451748161403632,
      1      0.416734686252964, 0.375505067353143/
-      Data c8(1:25) / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0991, 0.1982, 0.2154, 0.2154, 0.2154, 0.2154,  
+      Data c8(1:25) / 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0991, 0.1982, 0.2154, 0.2154, 0.2154, 0.2154,
      1                0.2154, 0.2154, 0.2154, 0.2154 /
-	 
- 
+
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1  = period(1)
          c1T      = c1(1)
@@ -1684,8 +1684,8 @@ C First check for the PGA case (i.e., specT=0.0)
          cmT      = cm(1)
          c5T      = c5(1)
          c6T      = c6(1)
-         c7T      = c7(1) 
-         c7bT      = c7b(1) 
+         c7T      = c7(1)
+         c7bT      = c7b(1)
          c8bT      = c8b(1)
          c9T      = c9(1)
          c9aT      = c9a(1)
@@ -1720,21 +1720,21 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Adjusted Chiou and Youngs (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -1817,7 +1817,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,gscaleWenT,iflag)
             call S24_interp (period(count1),period(count2),c8(count1),c8(count2),
      +                   specT,c8T,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 c     Set the fault mechanism term.
 C     fType     Mechanism                      Rake
 C     ------------------------------------------------------
@@ -1854,7 +1854,7 @@ c        if (regionflag .eq. 1 ) then
 c           gamma = gamma * gscaleJapItT
 c           sigma2T = sigma2JapT
 c        elseif (regionflag .eq. 2) then
-c           gamma = gamma * gscaleWenT        
+c           gamma = gamma * gscaleWenT
 c        endif
 c        cosDELTA = cos(abs(DELTA)*d2r)
 c Magnitude scaling
@@ -1884,7 +1884,7 @@ c Center Z_TOR on the Z_TOR-M relation in Chiou and Youngs (2013)
           endif
         endif
         deltaZ_TOR = Dtor - 2*mZ_TOR
-        
+
 c Scaling with other source variables (F_RV, F_NM, deltaZ_TOR, and Dip)
         coshM = cosh(2*max(M-4.5,0.0))
         cosDELTA = cos(DELTA*d2r)
@@ -1892,7 +1892,7 @@ c Scaling with other source variables (F_RV, F_NM, deltaZ_TOR, and Dip)
      1       (c1bT+c1dT/coshM) * F_NM +
      1       (c7T +c7bT/coshM) * deltaZ_TOR +
      1       (c11T+c11bT/coshM)* cosDELTA**2
-        
+
 c HW effect
         if (HWFlag .eq. 0) then
            hw = 0.0
@@ -1915,8 +1915,8 @@ c        if (regionflag .eq. 1) then
 c           phi1T = phi1jpT
 c           phi5T = phi5jpT
 c           phi6T = phi6jpT
-c        endif       
-        
+c        endif
+
 c Linear soil amplification
         a = phi1T * min(alog(Vs/1130.0), 0.0)
 c Nonlinear soil amplification
@@ -1926,7 +1926,7 @@ c Nonlinear soil amplification
 C Deviation from ln(Vs30) scaling: bedrock depth (Z1) effect.
 c        if (regionflag .eq. 1) then
 c           deltaZ1 = depthvs10*1000.0 -
-c     1     exp(-5.23/2.0 * alog((VS**2.0 + 412.0**2.0)/(1360.0**2.0 + 412.0**2.0)))      
+c     1     exp(-5.23/2.0 * alog((VS**2.0 + 412.0**2.0)/(1360.0**2.0 + 412.0**2.0)))
 c        else
            deltaZ1 = depthvs10*1000.0 -
      1     exp(-2.63 / 4.0 * alog((VS**4.0 + 253.0**4.0)/(2492.0**4.0 + 253.0**4.0)))
@@ -1944,7 +1944,7 @@ C     Current code set for Measured Vs30 values (i.e., Vs30class=1)
       if (vs30_class .eq. 0) then
          F_measured = 0.0
          F_Inferred = 1.0
-      elseif (vs30_class .eq. 1) then      
+      elseif (vs30_class .eq. 1) then
          F_measured = 1.0
          F_Inferred = 0.0
       endif
@@ -1953,30 +1953,30 @@ C     Current code set for Measured Vs30 values (i.e., Vs30class=1)
         sigma = sqrt((tau*(1.0+NL0))**2.0+sigma_NL0**2.0)
       phi = sigma_NL0
       tau = (tau*(1.0+NL0))
-      
+
 C     Convert ground motion to units of gals.
       lnY = psa + 6.89
       period2 = period1
       return
-      end 
-  
+      end
+
 C  ***** PEER NGA-West 2 MODELS (2013) **********
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
 C ** Idriss (NGA-2013) Horizontal **
 C     PEER Report 2013/08
-C        NGA-West2 Model for Estimating Average Horizontal Values of 
+C        NGA-West2 Model for Estimating Average Horizontal Values of
 C            Pseudo-Absolute Spectral Accelerations Generated by
 C            Crustal Earthquakes
 C         I. M. Idriss
 C     Notes:
-C        Applicable Range (see Abstract):  
+C        Applicable Range (see Abstract):
 C           5 <= M <= 8.5
 C           Vs>=450 m/sec
 C              for Vs>1200 use Vs=1200
 C           Rrup <= 150 km
 C        Mechanisms: Strike-slip and Norml (0)
 C                    Reverse and Oblique (1)
-c ---------------------------------------------------------------------            
+c ---------------------------------------------------------------------
       Subroutine S04_I14_TW_E04 ( m, Rrup, ftype, vs30, specT,
      1                     period2, lnY, sigma, iflag, Ztor )
       implicit none
@@ -1990,8 +1990,8 @@ c ---------------------------------------------------------------------
       REAL SOF, period2, lnY, PhiT, gamT, XsiT, ftype, Ztor, a5
       real a1T, a2T, a3T, b1T, b2T, a1mlt675T, a2mlt675T, a3mlt675T, b1mlt675T, b2mlt675T, a4T
       integer iflag, count1, count2, nPer, i
- 
- 
+
+
       Data Period / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3, 4,
      1      5, 7.5, 10/
       Data a1mlt675 / 1.71685064584986, 1.71685064584986, 1.77876166629157, 1.92536250277134, 2.40902758641293, 2.859631936143,
@@ -2043,14 +2043,14 @@ c ---------------------------------------------------------------------
       Data b2 / -0.2287, -0.2287, -0.2287, -0.2287, -0.230502146542804, -0.2319, -0.2326, -0.2211, -0.197043174656907, -0.1676,
      1      -0.167991567078541, -0.1685, -0.1531, -0.1595, -0.1594, -0.1584, -0.1577, -0.1532, -0.147, -0.1439, -0.1278, -0.1326,
      1      -0.1291, -0.122, -0.1145/
-      data a4 / 0.034345982, 0.034345982, 0.034178643, 0.034303764, 0.033911183, 0.033619895, 0.035247655,   
-     1           0.0379925, 0.038355387, 0.037966827, 0.037984881, 0.037240959, 0.035830469, 0.035193632,   
-     1           0.033500003, 0.031625775, 0.030589191, 0.030691086, 0.028359981, 0.027695125, 0.021529407,   
-     1           0.016492213, 0.014525774, 0.013942019, 0.009132389 / 
-       
+      data a4 / 0.034345982, 0.034345982, 0.034178643, 0.034303764, 0.033911183, 0.033619895, 0.035247655,
+     1           0.0379925, 0.038355387, 0.037966827, 0.037984881, 0.037240959, 0.035830469, 0.035193632,
+     1           0.033500003, 0.031625775, 0.030589191, 0.030691086, 0.028359981, 0.027695125, 0.021529407,
+     1           0.016492213, 0.014525774, 0.013942019, 0.009132389 /
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1 = period(1)
          a1T     = a1(1)
@@ -2074,21 +2074,21 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Adjusted Idriss (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -2119,7 +2119,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,gamT,iflag)
             call S24_interp (period(count1),period(count2),xsi(count1),xsi(count2),
      +                   specT,xsiT,iflag)
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 C.....Compute the Ground motion.......
 C.....Set the mechanism term.....................
 C     Strike-slip and normal events --> SOF = 0
@@ -2130,10 +2130,10 @@ C     Otherwise assume SOF = 0
       else
          SOF = 0.0
       endif
-      
+
       a1T = a1mlt675T + (a2mlt675T - a2T) * 6.75
 	  a5 = 10.0
-	  
+
       if (m .le. 6.75) then
          lnY = a1mlt675T + a2mlt675T*m + a3mlt675T*(8.5 - m)**2.0 - (b1mlt675T+b2mlt675T*m) * alog(Rrup+10.0) +
      1         xsiT*alog(Vs30) + gamT*rRup + SOF*phiT + a4T * min(max(Ztor, a5), 50.0)
@@ -2144,9 +2144,9 @@ C     Otherwise assume SOF = 0
 C     Convert ground motion to units of gals.
       lnY = lnY + 6.89
 C     Compute Sigma which is Period and magnitude dependent.
-C     Note report does not state a limit on sigma for M<5 but 
+C     Note report does not state a limit on sigma for M<5 but
 C     Since model is only applicable for M>=5 a limit is retained
-C     for sigma with M<5 equal to M=5 values. 
+C     for sigma with M<5 equal to M=5 values.
       if (specT .le. 0.05) then
          if (m .le. 5.0) then
             sigma = 1.18 + 0.035*alog(0.05) - 0.06*5.0
@@ -2174,16 +2174,16 @@ C     for sigma with M<5 equal to M=5 values.
       endif
       period2 = period1
       return
-      end 
+      end
 
-c ---------------------------------------------------------------------------            
+c ---------------------------------------------------------------------------
 
-      subroutine S04_CB14_TW_E05 ( mag, Rrup, Rbjf, Ftype, specT, 
+      subroutine S04_CB14_TW_E05 ( mag, Rrup, Rbjf, Ftype, specT,
      1                     period2, lnY, sigma, iflag, vs,
-     2                     depthtop, D25, Dip, depth, HWflag, Rx, rupwidth, regionflag, phi, tau ) 
+     2                     depthtop, D25, Dip, depth, HWflag, Rx, rupwidth, regionflag, phi, tau )
 
 C     Last Updated: 5/17/17
-C     Coefficients updated from PEER Report version to be consistent with EQ Spectra paper in press. 
+C     Coefficients updated from PEER Report version to be consistent with EQ Spectra paper in press.
 C     Minor change to T=5, 7.5, and 10 sec for coefficient C6
 
       parameter (MAXPER=25)
@@ -2329,13 +2329,13 @@ C.....MODEL COEFFICIENTS.....................
      1      0.186, 0.191, 0.198, 0.206, 0.208, 0.221, 0.225, 0.222, 0.226, 0.229, 0.237, 0.237, 0.271, 0.29/
       Data rho / 1, 1, 0.998, 0.986, 0.958967801857936, 0.938, 0.887, 0.87, 0.872697961720721, 0.876, 0.873389552809726, 0.87,
      1      0.85, 0.819, 0.743, 0.684, 0.562, 0.467, 0.364, 0.298, 0.234, 0.202, 0.184, 0.176, 0.154/
-   
+
 
       nPer = 25
       c = 1.88
       n = 1.18
 
-C First check for the PGA case (i.e., specT=0.0) 
+C First check for the PGA case (i.e., specT=0.0)
       if (specT .eq. 0.0) then
          period1 = period(1)
          c0T = c0(1)
@@ -2374,7 +2374,7 @@ C First check for the PGA case (i.e., specT=0.0)
          Dc20CAT = Dc20CA(1)
          Dc20JPT = Dc20JP(1)
          Dc20CHT = Dc20CH(1)
-         
+
          phi1T = phi1(1)
          phi2T = phi2(1)
          t1T = t1(1)
@@ -2391,22 +2391,22 @@ C Now loop over the spectral period range of the attenuation relationship.
             if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
                count1 = i
                count2 = i+1
-               goto 1020 
+               goto 1020
             endif
          enddo
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'Campbell&Bozorgnia (NGA West2-2013) Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -2480,7 +2480,7 @@ C Interpolate the coefficients for the requested spectral period.
      +                   specT,Dc20JPT,iflag)
             call S24_interp (period(count1),period(count2),Dc20CH(count1),Dc20CH(count2),
      +                   specT,Dc20CHT,iflag)
-     
+
             call S24_interp (period(count1),period(count2),phi1(count1),phi1(count2),
      +                   specT,phi1T,iflag)
             call S24_interp (period(count1),period(count2),phi2(count1),phi2(count2),
@@ -2496,7 +2496,7 @@ C Interpolate the coefficients for the requested spectral period.
             call S24_interp (period(count1),period(count2),rho(count1),rho(count2),
      +                   specT,rhoT,iflag)
 
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 
 C.....COMPUTE ROCK PGA VALUE FIRST.........................
 C.....MAGNITUDE DEPENDENCE (Eq 3.2)........................
@@ -2509,7 +2509,7 @@ C.....MAGNITUDE DEPENDENCE (Eq 3.2)........................
       ELSE
          TERM1 = C0(1) + c2(1) + C3(1) + c4(1)*(mag-6.5)
       ENDIF
-      
+
 C.....Distance dependence (Eq 3.3).....
       R = SQRT( RRUP*RRUP+C7(1)*C7(1) )
       TERM2 = (C5(1) + C6(1)*MAG)*ALOG(R)
@@ -2551,7 +2551,7 @@ C.....SET UP HANGING WALL TERMS (Eq 3.7)..............
          if (Rrup .eq. 0.0) then
             fhwrrup = 1.0
          else
-            fhwrrup = ((Rrup-Rbjf)/Rrup)         
+            fhwrrup = ((Rrup-Rbjf)/Rrup)
          endif
          if (Rx .lt. R1) Then
             fhwr = f1*fhwrrup
@@ -2559,22 +2559,22 @@ C.....SET UP HANGING WALL TERMS (Eq 3.7)..............
             fhwr = max(f2,0.0)*fhwrrup
          endif
          if (mag .le. 5.5) then
-            fhwm = 0.0         
+            fhwm = 0.0
          elseif (mag .le. 6.5) then
             fhwm = (mag-5.5)*(1.0+a2(1)*(mag-6.5))
          else
-            fhwm = 1.0 + a2(1)*(mag-6.5)        
+            fhwm = 1.0 + a2(1)*(mag-6.5)
          endif
          if (depthtop .le. 16.66) then
-            fhwz = 1.0 - 0.06*depthtop 
+            fhwz = 1.0 - 0.06*depthtop
          else
             fhwz = 0.0
          endif
-         fhwd = (90.0 - dip)/45.0        
+         fhwd = (90.0 - dip)/45.0
          TERM4 = c10(1)*fhwr*fhwm*fhwz*fhwd
-      else   
+      else
          term4 = 0.0
-      endif 
+      endif
 
 C.....NOW COMPUTE THE SITE CONDITION FACTORS...............
 C.....(FOR PGA ROCK, VS=1100, i.e., Vs>k1)
@@ -2583,14 +2583,14 @@ C.....(FOR PGA ROCK, VS=1100, i.e., Vs>k1)
 C.....NOW COMPUTE THE SEDIMENT DEPTH DEPENDENCE (Eq 3.17)............
 C     For Rock PGA the D25 value should be set at the recommended value of D25=0.398
       D25_RK = 0.398
-      
+
       TERM6_RK = C14(1)*(D25_RK-1.0)
- 
+
 C.....Now compute the hypocentral depth term (Eq 3.21).........
       if (depth .le. 7.0) then
          fhypH = 0.0
       elseif (depth .le. 20.0) then
-         fhypH = depth - 7.0      
+         fhypH = depth - 7.0
       else
          fhypH = 13.0
       endif
@@ -2599,26 +2599,26 @@ C.....Now compute the hypocentral depth term (Eq 3.21).........
       elseif (mag .le. 6.5) then
           term7 = (c17(1) + (c18(1)-c17(1))*(mag-5.5))*fhypH
       else
-          term7 = c18(1)*fhypH     
+          term7 = c18(1)*fhypH
       endif
 
 C.....Compute Rupture Dip term (Eq 3.24)............
       if (mag .le. 4.5) then
           term8 = c19(1)*dip
       elseif (mag .le. 5.5) then
-          term8 = c19(1)*(5.5-mag)*dip      
-      else 
+          term8 = c19(1)*(5.5-mag)*dip
+      else
           term8 =0
       endif
 
 C.....Compute anelastic attenuation term.....
       if (Rrup .le. 80.0) then
          term9 = 0.0
-      else      
+      else
          term9 = (c20(1)+Dc20CA(1) ) * (Rrup-80.0)
 
-      endif      
-      
+      endif
+
       PGAROCK = EXP(TERM1+TERM2+TERM3+TERM4+TERM5_RK+TERM6_RK+TERM7+TERM8+TERM9)
 C 	  write(*,*) "fmag  = ", TERM1
 C 	  write(*,*) "fdis  = ", TERM2
@@ -2629,11 +2629,11 @@ C 	  write(*,*) "fsed  = ", TERM6_RK
 C 	  write(*,*) "fhyp  = ", TERM7
 C 	  write(*,*) "fdip  = ", TERM8
 C 	  write(*,*) "fatn  = ", TERM9
-            
+
 C.....For PGA Specific Vs30m Value
       if (vs .le. k1(1) ) then
-         term5 = c11(1)*alog(vs/k1(1)) + 
-     1           k2(1)*(alog(pgarock+c*((vs/k1(1))**n)) - 
+         term5 = c11(1)*alog(vs/k1(1)) +
+     1           k2(1)*(alog(pgarock+c*((vs/k1(1))**n)) -
      2           alog(pgarock+c))
       else
          term5 = (c11(1) + k2(1)*n)*alog(vs/k1(1))
@@ -2710,7 +2710,7 @@ C.....SET UP HANGING WALL TERMS................
          if (Rrup .eq. 0.0) then
             fhwrrup = 1.0
          else
-            fhwrrup = ((Rrup-Rbjf)/Rrup)         
+            fhwrrup = ((Rrup-Rbjf)/Rrup)
          endif
          if (Rx .lt. R1) Then
             fhwr = f1*fhwrrup
@@ -2718,22 +2718,22 @@ C.....SET UP HANGING WALL TERMS................
             fhwr = max(f2,0.0)*fhwrrup
          endif
          if (mag .le. 5.5) then
-            fhwm = 0.0         
+            fhwm = 0.0
          elseif (mag .le. 6.5) then
             fhwm = (mag-5.5)*(1.0+a2T*(mag-6.5))
          else
-            fhwm = 1.0 + a2T*(mag-6.5)        
+            fhwm = 1.0 + a2T*(mag-6.5)
          endif
          if (depthtop .le. 16.66) then
-            fhwz = 1.0 - 0.06*depthtop 
+            fhwz = 1.0 - 0.06*depthtop
          else
             fhwz = 0.0
          endif
-         fhwd = (90.0 - dip)/45.0        
+         fhwd = (90.0 - dip)/45.0
          TERM4 = c10T*fhwr*fhwm*fhwz*fhwd
-      else   
+      else
          term4 = 0.0
-      endif 
+      endif
 
 C.....NOW COMPUTE THE SITE CONDITION FACTORS...............
       IF (VS .LE. K1T ) THEN
@@ -2752,12 +2752,12 @@ C.....NOW COMPUTE THE SEDIMENT DEPTH DEPENDENCE.............
       ELSEIF (D25 .GT. 3.0)  THEN
          TERM6 = c16T*k3T*exp(-0.75)*( 1.0 - exp(-0.25*(D25-3.0)))
       ENDIF
-      
+
 C.....Now compute the hypocentral depth term..........
       if (depth .le. 7.0) then
          fhypH = 0.0
       elseif (depth .le. 20.0) then
-         fhypH = depth - 7.0      
+         fhypH = depth - 7.0
       else
          fhypH = 13.0
       endif
@@ -2766,15 +2766,15 @@ C.....Now compute the hypocentral depth term..........
       elseif (mag .le. 6.5) then
           term7 = (c17T + (c18T-c17T)*(mag-5.5))*fhypH
       else
-          term7 = c18T*fhypH     
+          term7 = c18T*fhypH
       endif
 
 C.....Compute Rupture Dip term.............
       if (mag .le. 4.5) then
           term8 = c19T*dip
       elseif (mag .le. 5.5) then
-          term8 = c19T*(5.5-mag)*dip      
-      else 
+          term8 = c19T*(5.5-mag)*dip
+      else
           term8 = 0
       endif
 
@@ -2809,8 +2809,8 @@ c     endif
 
 C.....Now compute the sigma value..........
       IF (Vs .LT. k1T) THEN
-        alpha = k2T*pgarock*(1/(pgarock  
-     &    +c*(Vs/k1T)**n) 
+        alpha = k2T*pgarock*(1/(pgarock
+     &    +c*(Vs/k1T)**n)
      &    -1/(pgarock + c))
       ELSE
         alpha = 0.0
@@ -2820,16 +2820,16 @@ C.....Now compute the sigma value..........
   	   tau_lnyB = t1T
        tau_lnPGAB = t1(1)
         elseif (Mag.lt.5.5) then
-         tau_lnyB = t2T + 
+         tau_lnyB = t2T +
      &          (t1T - t2T)*(5.5-mag)
-         tau_lnPGAB = t2(1) + 
+         tau_lnPGAB = t2(1) +
      &          (t1(1) - t2(1))*(5.5-Mag)
         else
          tau_lnyB = t2T
          tau_lnPGAB = t2(1)
         endif
 
-      tau = SQRT(tau_lnyB**2 +  
+      tau = SQRT(tau_lnyB**2 +
      &           (alpha * tau_lnPGAB)**2 +
      &           2.0*alpha*rhoT*tau_lnyB*tau_lnPGAB)
 
@@ -2837,27 +2837,27 @@ C.....Now compute the sigma value..........
              phi_lny = phi1T
            phi_lnPGAB = phi1(1)
       elseif (Mag.lt.5.5) then
-      	   phi_lny = phi2T + 
+      	   phi_lny = phi2T +
      &          (phi1T - phi2T)*(5.5-mag)
-             phi_lnPGAB = phi2(1) + 
+             phi_lnPGAB = phi2(1) +
      &          (phi1(1) - phi2(1))*(5.5-mag)
       else
-             phi_lny = phi2T 
-      	   phi_lnPGAB = phi2(1) 
+             phi_lny = phi2T
+      	   phi_lnPGAB = phi2(1)
       endif
 
       phi_lnyB = SQRT(phi_lny**2 - flnAFT**2)
 
       phi_lnPGAB = SQRT(phi_lnPGAB**2 - flnAF(1)**2)
 
-      phi = SQRT(phi_lny**2 + 
+      phi = SQRT(phi_lny**2 +
      &           (alpha*phi_lnPGAB)**2 +
      &           2.0*alpha*rhoT*phi_lnyB*phi_lnPGAB)
-    
+
       Sigmatot = SQRT(phi**2 + Tau**2)
 
       period2 = period1
-      
+
 C     Convert ground motion to units of gals.
 
       lnY = lnY + 6.89
@@ -2866,20 +2866,20 @@ C     Convert ground motion to units of gals.
       return
       END
 
-c ------------------------------------------------------------------            
+c ------------------------------------------------------------------
 C *** BCHydro Subduction (06/2010 - adjustefd Model Version E ) Horizontal ***********
-c ------------------------------------------------------------------            
-      subroutine S04_AGA16_TW_F10 ( mag, fType, rRup, vs30, lnSa, sigma1, 
+c ------------------------------------------------------------------
+      subroutine S04_AGA16_TW_F10 ( mag, fType, rRup, vs30, lnSa, sigma1,
      2           specT, period1, iflag, forearc, Ztor, depth, disthypo )
 
       implicit none
-     
+
       real mag, fType, rRup, vs30, pgaRock, faba, vs30_rock, period0,
      1     lnSa, sigma, tau, period1, sigma1, disthypo, deltac1,
      2     depth, specT, Ztor
       integer iflag, forearc
 
-c     Ftype defines an interface event or intraslab events      
+c     Ftype defines an interface event or intraslab events
 C     fType    Event Type
 C     -------------------
 C      0       Interface  - use rupture distance
@@ -2887,39 +2887,39 @@ C      1       Intraslab  - use hypocentral distance
 C
 C     faba     Note
 C     -------------------------
-C      0       Forearc site  
-C      1       Backarc site  
+C      0       Forearc site
+C      1       Backarc site
 C
 c     compute pga on rock
       period0 = 0.0
       pgaRock = 0.0
       vs30_rock = 1000.
       faba = real(forearc)
-      
+
 C     Compute Rock PGA
       call S04_AGA16_TW_F10_model ( mag, rRup, vs30_rock, pgaRock, lnSa, sigma, tau,
      2                     period0, Ftype, iflag, faba, Ztor, depth, disthypo )
       pgaRock = exp(lnSa)
- 
-C     Compute regular ground motions. 
-      call S04_AGA16_TW_F10_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau, 
+
+C     Compute regular ground motions.
+      call S04_AGA16_TW_F10_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau,
      2                     specT, Ftype, iflag, faba, Ztor, depth, disthypo )
 
 c     compute Sa (given the PGA rock value)
       sigma1 = sqrt( sigma**2 + tau**2 )
       period1 = specT
 
-c     Convert units spectral acceleration in gal                                
-      lnSa = lnSa + 6.89                                                
+c     Convert units spectral acceleration in gal
+      lnSa = lnSa + 6.89
       return
       end
 c ----------------------------------------------------------------------
-      subroutine S04_AGA16_TW_F10_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau, 
+      subroutine S04_AGA16_TW_F10_model ( mag, rRup, vs30, pgaRock, lnSa, sigma, tau,
      2                     specT, Ftype, iflag, faba, Ztor, depth, disthypo )
 
       implicit none
-      
-      integer MAXPER, nPer, i1, i      
+
+      integer MAXPER, nPer, i1, i
       parameter (MAXPER=25)
       real a1(MAXPER), a2(MAXPER),dC1_itf(MAXPER) ,dC1_itb(MAXPER),
      1     a6(MAXPER), a10(MAXPER), a11(MAXPER), a11a(MAXPER),
@@ -2935,7 +2935,7 @@ c ----------------------------------------------------------------------
       real n, c, c4, c1, deltac1, faba, R, testmag, VsStar, depth, specT
       real base, fmag, fdepth, fsite, fbac
 
-      Data Period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 
+      Data Period(1:25) / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25,
      1            0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3, 4, 5, 7.5, 10/
       Data a1 / 4.24940290528492, 4.30633169704779, 4.32473305672645, 4.41427427394139, 4.51765266221994, 4.63039923868308,
      1      5.01253084467808, 5.19454866503843, 5.30445707274597, 5.44265351699585, 5.43590191966455, 5.43541185933664,
@@ -2992,9 +2992,9 @@ c ----------------------------------------------------------------------
      1      1.24390224232664, 1.223, 1.16, 1.05, 0.8, 0.662, 0.48, 0.33, 0.31, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3/
       Data a16 / -1, -1, -1, -1.07965126888296, -1.13616474352589, -1.18, -1.36, -1.36, -1.33302038279279, -1.3, -1.27824627341438,
      1      -1.25, -1.17, -1.06, -0.78, -0.62, -0.34, -0.14, 0, 0, 0, 0, 0, 0, 0/
-      data dC1_itf / 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.14, 0.1,  
+      data dC1_itf / 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.14, 0.1,
      1           0.04, 0, -0.06, -0.1, -0.2, -0.2, -0.2, -0.2, -0.2 /
-      data dC1_itb / -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3,  
+      data dC1_itb / -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3,
      1           -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3 /
       data sigs / 0.542501761866534, 0.542540910308792, 0.542470428435724, 0.54743357078777, 0.560177645077094, 0.580620973270876,
      1      0.612843122153575, 0.620992129840455, 0.614264074899902, 0.598009282996332, 0.597938396739046, 0.580250693487794,
@@ -3007,7 +3007,7 @@ c ----------------------------------------------------------------------
      1      0.313381866051055, 0.33245875554816, 0.3640745587897, 0.37531046943687, 0.380147961119054, 0.307726020206149,
      1      0.311840210476944/
 
-C Constant parameters            
+C Constant parameters
       n = 1.18
       c = 1.88
       a3 = 0.1
@@ -3020,11 +3020,11 @@ C      a7 = 0
 C      a8 = 0
 C      a15 = 0
 C      a16 = 0
-      
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 25
 
-C First check for the PGA case 
+C First check for the PGA case
       if (specT .eq. 0.0) then
          i1=1
          period1 = period(i1)
@@ -3045,7 +3045,7 @@ C First check for the PGA case
          sigsT = sigs(i1)
          a4aT = a4a(i1)
          a7T = a7(i1)
-         a8T = a8(i1)         
+         a8T = a8(i1)
          a15T = a15(i1)
          a16T = a16(i1)
          goto 1011
@@ -3056,21 +3056,21 @@ C   For other periods, loop over the spectral period range of the attenuation re
          if (specT .ge. period(i) .and. specT .le. period(i+1) ) then
             count1 = i
             count2 = i+1
-            goto 1020 
+            goto 1020
          endif
       enddo
- 
+
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
+      write (*,*)
       write (*,*) 'AGA16_TW_F10 Subduction Horizontal'
       write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
+      write (*,*) ' spectral period of: '
       write (*,'(a10,f10.5)') ' Period = ',specT
       write (*,*) 'This spectral period is outside the defined'
       write (*,*) 'period range in the code or beyond the range'
       write (*,*) 'of spectral periods for interpolation.'
       write (*,*) 'Please check the input file.'
-      write (*,*) 
+      write (*,*)
       stop 99
 
 C Interpolate the coefficients for the requested spectral period.
@@ -3115,42 +3115,42 @@ C Interpolate the coefficients for the requested spectral period.
             call S24_interp (period(count1),period(count2),a16(count1),a16(count2),
      +                   specT,a16T,iflag)
 
- 1011 period1 = specT                                                                                                              
+ 1011 period1 = specT
 
-C     Compute the R term and base model based on either Rupture Distance 
-c         (Interface events) of Hypocentral distance (Intraslab events). 
+C     Compute the R term and base model based on either Rupture Distance
+c         (Interface events) of Hypocentral distance (Intraslab events).
       if (ftype .eq. 0.0) then
          deltaC1 = dC1_itfT
-         R = rRup + c4*exp( (mag-6.0)*a9 ) 
+         R = rRup + c4*exp( (mag-6.0)*a9 )
          base = a1T + a4*deltaC1 + (a2T + a14T*ftype + a3*(mag - 7.8))*alog(R) + a6T*rRup + a10T*ftype
       elseif (ftype .eq. 1.0) then
          deltaC1 = dC1_itbT
-         R = disthypo + c4*exp( (mag-6.0)*a9 ) 
+         R = disthypo + c4*exp( (mag-6.0)*a9 )
          base = a1T + a4*deltaC1 + (a2T + a14T*ftype + a3*(mag - 7.8))*alog(R) + a6T*disthypo + a10T*ftype
       else
          write (*,*) 'AGA16_TW_F10 Model not defined for Ftype'
          write (*,*) 'other than 0 (interface) or 1 (intraslab)'
          stop 99
       endif
-      
-C     Base model for Magnitude scaling.      
+
+C     Base model for Magnitude scaling.
       testmag = (7.8 + deltaC1)
 C      if (mag .le. testmag ) then
 C         fmag = a4*(mag-testmag) + a13T*(10.0-mag)**2.0
 C      else
 C         fmag = a5*(mag-testmag) + a13T*(10.0-mag)**2.0
-C      endif      
+C      endif
 
 C     The fmag term has an additional branch for linear Mag scaling
-C     new  coefficient a4a      
+C     new  coefficient a4a
       if (mag .le. 5.5 ) then
          fmag = a4aT*(mag-5.5) + a4*(5.5-testmag) + a13T*(10.0-mag)**2.0
       elseif (mag .le. testmag) then
          fmag = a4*(mag-testmag)+ a13T*(10.0-mag)**2.0
       else
       	 fmag = a5*(mag-testmag)+ a13T*(10.0-mag)**2.0
-      endif           
-      
+      endif
+
 C     Depth Scaling
       if (ftype .eq. 0.0) then
         fdepth = a11aT*(Ztor - 20.0)
@@ -3163,25 +3163,25 @@ C        fdepth = a11T*(depth - 60.0 )
          stop 99
       endif
 
-C     Forearc/Backarc scaling      
+C     Forearc/Backarc scaling
       if (ftype .eq. 1) then
          fbac =  (a7T + a8T*alog(max(disthypo,85.0)/40.0))*faba
-      elseif (ftype .eq. 0) then   
+      elseif (ftype .eq. 0) then
          fbac =  (a15T + a16T*alog(max(rRup,100.0)/40.0))*faba
-      endif 
+      endif
 
-C     Site Response 
+C     Site Response
       if (vs30 .ge. 1000.0) then
           VsStar = 1000.0
       else
           VsStar = vs30
       endif
-       
+
       if (vs30 .ge. VlinT) then
          fsite = a12T*alog(VsStar/vLinT) + b_soilT*n*alog(VsStar/vLinT)
       else
          fsite = a12T*alog(VsStar/vLinT) - b_soilT*alog(pgarock + c) +
-     1          b_soilT*alog(pgarock + c*(VsStar/vlinT)**n)     
+     1          b_soilT*alog(pgarock + c*(VsStar/vlinT)**n)
       endif
 
       sumgm = base + fmag + fdepth + fsite
@@ -3192,8 +3192,8 @@ c      write(*,*) "fmag = ", fmag
 c      write(*,*) "fdepth = ", fdepth
 c      write(*,*) "fsite = ", fsite
 c      write(*,*) "lnYSa = ", sumgm
-c      write(*,*) "Sa = ", exp(sumgm) 
-	  
+c      write(*,*) "Sa = ", exp(sumgm)
+
 C     Set sigma values to return
       sigma = sigsT
       tau = sigtT
@@ -3208,7 +3208,7 @@ c ------------------------------------------------------------------
 C *** Adjusted Lin and Lee (2008) Horizontal for Subduction Zones, ****
 c ------------------------------------------------------------------
 
-      subroutine S04_LL08_E04 ( mag, rupdist, specT, period, lnY, sigma,
+      subroutine S04_LL08_F04 ( mag, rupdist, specT, period, lnY, sigma,
      1  iflag, Ztor, ftype, vs30)
 
       implicit none
@@ -3217,13 +3217,13 @@ c ------------------------------------------------------------------
       parameter (MAXPER=23)
       real mag, rupDist, lnY, sigma, period
       real ftype, vs30, Ztor, fmag, fztor
-      real c1(MAXPER), c2(MAXPER), c3(MAXPER), c6(MAXPER), c4(MAXPER), c7(MAXPER), 
+      real c1(MAXPER), c2(MAXPER), c3(MAXPER), c6(MAXPER), c4(MAXPER), c7(MAXPER),
      1     c8(MAXPER), c9(MAXPER), c11(MAXPER), c8a(MAXPER), c8b(MAXPER)
       real specT, c1T, c2T, c3T, c4T, c5, c6T, c7T, c8T, c9T, c10, c11T, sigT, c8aT, c8bT
       integer count1, count2, iflag
       real period1(MAXPER), sig(MAXPER)
 
-      Data period1 / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3, 
+      Data period1 / 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1, 0.12, 0.15, 0.17, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75, 1, 1.5, 2, 3,
      1      4, 5/
       Data c1 / 0.251917569769788, 0.251917569769788, 0.184928810489714, -0.00356699594929908, -0.116139847179393,
      1      -0.359205997670388, -0.618494316568272, 0.0248887792514275, 0.316179568518992, 0.355069600474626, 0.324182771381062,
@@ -3266,8 +3266,8 @@ c ------------------------------------------------------------------
       Data c7 /-0.023024774, -0.023024774, -0.009555338, 0.023863931, 0.078064967, 0.123007013, 0.191175881, 0.238934319,
      1         0.214408068, 0.183558925, 0.127185951, 0.038416195, -0.073966903, -0.136315954, -0.243353466, -0.341654652,
      1         -0.48202467, -0.510018746, -0.559795963, -0.57197707, -0.441301253, -0.380235394, -0.321436112/
-     
-     
+
+
 C Find the requested spectral period and corresponding coefficients
       nPer = 23
 
@@ -3345,9 +3345,9 @@ C      c4 = 0.51552
       c5 = 0.63255
 C      c7 = 0.275
       c10 = 0   !This effectively removes the fattn term.
-      
+
       if (mag .le. 5.0) then
-      	fmag = c8bT * mag 
+      	fmag = c8bT * mag
       elseif (mag .le. 5.5) then
         fmag = c8aT*(mag) + (c8bT-c8aT)*5.0
       elseif (mag .le. 7.5) then
@@ -3355,14 +3355,14 @@ C      c7 = 0.275
       else
         fmag = c2T*(mag) + (c8bT-c8aT)*5.0 + (c8aT-c8T)*5.5 + (c8T-c2T)*7.5
       endif
-      
+
       if (ftype .eq. 0) then
       	fztor = c9T*(min(Ztor, 30.0) - 20.0)
       else
         fztor = c6T*(min(Ztor, 80.0) - 20.0)
       endif
-      
-      lnY = c1T + fmag + c3T*alog(Rupdist+c4T*exp(c5*mag)) + 
+
+      lnY = c1T + fmag + c3T*alog(Rupdist+c4T*exp(c5*mag)) +
      1      c7T*ftype + fztor + c10*Rupdist + c11T*alog(Vs30/760.0)
 
 
@@ -3375,4 +3375,4 @@ C     Now convert to Ln Units in gals.
       end
 
 
-          
+

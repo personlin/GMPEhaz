@@ -5,7 +5,7 @@
 \title{GMPE function for Chao et al.(2017)}
 \usage{
 Chao2017(Mag, Rrup, Prd = 0, ftype = 0, Vs30 = 760, Vs30_class = 0,
-  Ztor = 0, Z1.0 = 0, sourcetype = 0, msasflag = 0)
+  Ztor = 0, Z1.0 = 0.0058959, sourcetype = 0, msasflag = 0)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}
