@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GMPE function for adjusted Lin and Lee(2008) — LL08.E04 • GMPEhaz</title>
+<title>GMPE function for adjusted Lin and Lee(2008) — LL08.F04 • GMPEhaz</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="GMPE function for adjusted Lin and Lee(2008) — LL08.E04" />
+<meta property="og:title" content="GMPE function for adjusted Lin and Lee(2008) — LL08.F04" />
 
-<meta property="og:description" content="LL08.E04 returns the ground-motion prediction with it sigma of adjusted Lin and Lee(2008) GMPE." />
+<meta property="og:description" content="LL08.F04 returns the ground-motion prediction with it sigma of adjusted Lin and Lee(2008) GMPE." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">GMPEhaz</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.13.46</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.13.47</span>
       </span>
     </div>
 
@@ -110,17 +110,17 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>GMPE function for adjusted Lin and Lee(2008)</h1>
-    <small class="dont-index">Source: <a href='http://github.com/personlin/GMPEhaz/blob/master/R/LL08_E04.R'><code>R/LL08_E04.R</code></a></small>
-    <div class="hidden name"><code>LL08.E04.Rd</code></div>
+    <small class="dont-index">Source: <a href='http://github.com/personlin/GMPEhaz/blob/master/R/LL08_F04.R'><code>R/LL08_F04.R</code></a></small>
+    <div class="hidden name"><code>LL08.F04.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>LL08.E04</code> returns the ground-motion prediction with it sigma of adjusted Lin and Lee(2008) GMPE.</p>
+    <p><code>LL08.F04</code> returns the ground-motion prediction with it sigma of adjusted Lin and Lee(2008) GMPE.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>LL08.E04</span>(<span class='no'>Mag</span>, <span class='no'>Rrup</span>, <span class='no'>Ztor</span>, <span class='kw'>ftype</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='no'>Prd</span>, <span class='kw'>Vs30</span> <span class='kw'>=</span> <span class='fl'>760</span>)</pre>
+    <pre class="usage"><span class='fu'>LL08.F04</span>(<span class='no'>Mag</span>, <span class='no'>Rrup</span>, <span class='no'>Ztor</span>, <span class='kw'>ftype</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='no'>Prd</span>, <span class='kw'>Vs30</span> <span class='kw'>=</span> <span class='fl'>760</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,7 +163,7 @@ northeastern taiwan, Bulletin of the Seismological Society of America, 98(1), 22
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>LL08.E04</span>(<span class='fl'>6</span>, <span class='fl'>20</span>, <span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>760</span>)</div><div class='output co'>#&gt; $mag
+    <pre class="examples"><div class='input'><span class='fu'>LL08.F04</span>(<span class='fl'>6</span>, <span class='fl'>20</span>, <span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>760</span>)</div><div class='output co'>#&gt; $mag
 #&gt; [1] 6
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
@@ -210,7 +210,7 @@ northeastern taiwan, Bulletin of the Seismological Society of America, 98(1), 22
 #&gt; [1] 760
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
-#&gt; </div><div class='input'><span class='fu'>LL08.E04</span>(<span class='fl'>7</span>, <span class='fl'>10</span>, <span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>760</span>)</div><div class='output co'>#&gt; $mag
+#&gt; </div><div class='input'><span class='fu'>LL08.F04</span>(<span class='fl'>7</span>, <span class='fl'>10</span>, <span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>760</span>)</div><div class='output co'>#&gt; $mag
 #&gt; [1] 7
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
