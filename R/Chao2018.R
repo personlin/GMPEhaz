@@ -23,7 +23,7 @@
 #' Chao2018(7, 10, 0, 0, 760, 0, 0, 0, 0)
 #'
 #' @export
-Chao2018 <- function(Mag, Rrup, Prd=0, ftype=0, Vs30=760, Vs30_class=0, Ztor = 0, Z1.0=0, sourcetype=0,
+Chao2018 <- function(Mag, Rrup, Prd=0, ftype=0, Vs30=760, Vs30_class=0, Ztor = 0, Z1.0=0.0058959, sourcetype=0,
                      msasflag = 0){
   # subroutine S04_Chao2018 ( mag, dist, ftype, lnY, sigma, specT, vs, Ztor, Z10,
   #               1            vs30_class, attenName, period2, iflag, sourcetype, phi, tau, msasflag )  # c Set attenuation name
