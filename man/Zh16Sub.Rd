@@ -4,7 +4,8 @@
 \alias{Zh16Sub}
 \title{GMPE function for Zhao et al.(2016) Subduction GMPE}
 \usage{
-Zh16Sub(Mag, Rrup, sclass = 1, Prd = 0, sourceclass = 1, depth = 10)
+Zh16Sub(Mag, Rrup, sclass = 1, Prd = 0, sourceclass = 1,
+  depth = 10)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

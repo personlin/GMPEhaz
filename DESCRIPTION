@@ -1,7 +1,7 @@
 Package: GMPEhaz
 Type: Package
 Title: GMPE funciton using Norman Abrahamson's HAZ fortran code
-Version: 0.1.13.47
+Version: 0.1.13.48
 Authors@R: person("Person", "Lin", ,"personlin@gmail.com", role = c("aut", "cre"))
 Maintainer: Person Lin <personlin@gmail.com>
 Depends: R (>= 3.1.0), lattice
@@ -10,7 +10,7 @@ Description: This package provide a set of R warp function to call GMPE function
     from Norman Abrahamson's HAZ fortran code.
 License: GPL-3 | file LICENSE
 LazyData: TRUE
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Suggests: testthat,
     knitr,
     rmarkdown,

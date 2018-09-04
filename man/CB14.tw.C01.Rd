@@ -4,8 +4,8 @@
 \alias{CB14.tw.C01}
 \title{GMPE function for adjusted Campbell and Bozorgnia(2014) NGA-West2 model}
 \usage{
-CB14.tw.C01(Mag, Rrup, Rjb, ftype = 0, Prd, Vs30 = 760, Ztor, Z2.5, Dip,
-  depth, hwflag = 0, Rx, rupwidth, regionflag = 0)
+CB14.tw.C01(Mag, Rrup, Rjb, ftype = 0, Prd, Vs30 = 760, Ztor, Z2.5,
+  Dip, depth, hwflag = 0, Rx, rupwidth, regionflag = 0)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}
