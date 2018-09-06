@@ -4,8 +4,8 @@
 \alias{atten2}
 \title{Wrap function for all GMPE}
 \usage{
-atten2(GMPEname, Periods, Mag, Rrup, Ztor = 0, RV = 0, depth, ftype = 0,
-  plot = F)
+atten2(GMPEname, Periods, Mag, Rrup, Ztor = 0, RV = 0, depth,
+  ftype = 0, plot = F)
 }
 \arguments{
 \item{GMPEname}{Name of GMPE.}
