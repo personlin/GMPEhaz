@@ -118,6 +118,8 @@ extern void F77_NAME(s04_subintra_common014)(void *, void *, void *, void *, voi
 extern void F77_NAME(s04_subintra_common015)(void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_subintra_common016)(void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s04_subintra_common017)(void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s05_bchydrosub_global)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(s05_bchydrosub_southam)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(s05_bchydrosub_taiwan)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(tg09221_2012)(void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(youngs97_rock)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -239,6 +241,8 @@ static const R_FortranMethodDef FortranEntries[] = {
   {"s04_subintra_common015",      (DL_FUNC) &F77_NAME(s04_subintra_common015),       7},
   {"s04_subintra_common016",      (DL_FUNC) &F77_NAME(s04_subintra_common016),       7},
   {"s04_subintra_common017",      (DL_FUNC) &F77_NAME(s04_subintra_common017),       7},
+  {"s05_bchydrosub_global",       (DL_FUNC) &F77_NAME(s05_bchydrosub_global),       13},
+  {"s05_bchydrosub_southam",      (DL_FUNC) &F77_NAME(s05_bchydrosub_southam),      13},
   {"s05_bchydrosub_taiwan",       (DL_FUNC) &F77_NAME(s05_bchydrosub_taiwan),       13},
   {"tg09221_2012",                (DL_FUNC) &F77_NAME(tg09221_2012),                 9},
   {"youngs97_rock",               (DL_FUNC) &F77_NAME(youngs97_rock),               10},
