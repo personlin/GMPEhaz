@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GMPE function for Subduction intraslab common form 010 (2017) — Sub.Intra.Com.010 • GMPEhaz</title>
+<title>GMPE function for Abrahamson et al.(2018) — BCHydroSub2018Global • GMPEhaz</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="GMPE function for Subduction intraslab common form 010 (2017) — Sub.Intra.Com.010" />
+<meta property="og:title" content="GMPE function for Abrahamson et al.(2018) — BCHydroSub2018Global" />
 
-<meta property="og:description" content="Sub.Intra.Com.010 returns the ground-motion prediction with it sigma of Subduction intraslab Common form 010 GMPE." />
+<meta property="og:description" content="BCHydroSub2018Global returns the ground-motion prediction with it sigma of Abrahamson et al.(2016) GMPE." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -109,18 +109,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>GMPE function for Subduction intraslab common form 010 (2017)</h1>
-    <small class="dont-index">Source: <a href='http://github.com/personlin/GMPEhaz/blob/master/R/Subduction_Common_Form.R'><code>R/Subduction_Common_Form.R</code></a></small>
-    <div class="hidden name"><code>Sub.Intra.Com.010.Rd</code></div>
+    <h1>GMPE function for Abrahamson et al.(2018)</h1>
+    <small class="dont-index">Source: <a href='http://github.com/personlin/GMPEhaz/blob/master/R/BCHydroSub2018Global.R'><code>R/BCHydroSub2018Global.R</code></a></small>
+    <div class="hidden name"><code>BCHydroSub2018Global.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>Sub.Intra.Com.010</code> returns the ground-motion prediction with it sigma of Subduction intraslab Common form 010 GMPE.</p>
+    <p><code>BCHydroSub2018Global</code> returns the ground-motion prediction with it sigma of Abrahamson et al.(2016) GMPE.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>Sub.Intra.Com.010</span>(<span class='no'>Mag</span>, <span class='no'>Rrup</span>, <span class='no'>Ztor</span>, <span class='no'>Prd</span>)</pre>
+    <pre class="usage"><span class='fu'>BCHydroSub2018Global</span>(<span class='no'>Mag</span>, <span class='no'>Rrup</span>, <span class='no'>Prd</span>, <span class='kw'>ftype</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='no'>Vs30</span>, <span class='kw'>forearc</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='no'>depth</span>, <span class='no'>Rhypo</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -134,37 +135,70 @@
       <td><p>Rupture distance(km), Numeric.</p></td>
     </tr>
     <tr>
-      <th>Ztor</th>
-      <td><p>Depth to the top of the finite rupture model (km).</p></td>
-    </tr>
-    <tr>
       <th>Prd</th>
       <td><p>Period of spectral acceleration.</p></td>
+    </tr>
+    <tr>
+      <th>ftype</th>
+      <td><p>fytpe=0 for interface (use rupture distance), ftype=1 for intraslab (use hypocentral distance)</p></td>
+    </tr>
+    <tr>
+      <th>Vs30</th>
+      <td><p>Vs30(m/s).</p></td>
+    </tr>
+    <tr>
+      <th>forearc</th>
+      <td><p>0 = Forearc site, 1 = Backarc site</p></td>
+    </tr>
+    <tr>
+      <th>depth</th>
+      <td><p>hypocentral depth(km).</p></td>
+    </tr>
+    <tr>
+      <th>Rhypo</th>
+      <td><p>hypocentral distance(km)</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list will be return, including mag, Rrup, Ztor, pecT, lnY, sigma, iflag.</p>
+    <p>A list will be return, including mag, ftype, Rrup, Vs30, lnY, sigma, specT, period, iflag, forearc, depth, Rhypo, deltac1.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Subduction intraslab common form 010</p>
+    <p>Norman Abrahamson, Nicholas Gregor, and Kofi Addo(2016) BC Hydro Ground Motion Prediction Equations
+for Subduction Earthquakes, Earthquake Spectra, Vol. 32, No. 1, pp. 23-44.
+<a href='http://dx.doi.org/10.1193/051712EQS188MR'>http://dx.doi.org/10.1193/051712EQS188MR</a></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>Sub.Intra.Com.010</span>(<span class='fl'>6</span>, <span class='fl'>20</span>, <span class='fl'>5</span>, <span class='fl'>0</span>)</div><div class='output co'>#&gt; $mag
+    <pre class="examples"><div class='input'><span class='fu'>BCHydroSub2018Global</span>(<span class='fl'>6</span>, <span class='fl'>20</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>760</span>, <span class='fl'>1</span>, <span class='fl'>10</span>, <span class='fl'>20</span>)</div><div class='output co'>#&gt; $mag
 #&gt; [1] 6
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
+#&gt; $ftype
+#&gt; [1] 0
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
+#&gt; 
 #&gt; $Rrup
 #&gt; [1] 20
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
-#&gt; $Ztor
-#&gt; [1] 5
+#&gt; $Vs30
+#&gt; [1] 760
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $lnY
+#&gt; [1] 4.585978
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $sigma
+#&gt; [1] 0.8489994
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
@@ -173,30 +207,58 @@
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
-#&gt; $lnY
-#&gt; [1] 4.232176
-#&gt; attr(,"Csingle")
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $sigma
-#&gt; [1] 0.65
+#&gt; $period
+#&gt; [1] 0
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $iflag
-#&gt; [1] 0
-#&gt; </div><div class='input'><span class='fu'>Sub.Intra.Com.010</span>(<span class='fl'>7</span>, <span class='fl'>20</span>, <span class='fl'>2</span>, <span class='fl'>0</span>)</div><div class='output co'>#&gt; $mag
+#&gt; [1] 1
+#&gt; 
+#&gt; $forearc
+#&gt; [1] 1
+#&gt; 
+#&gt; $depth
+#&gt; [1] 10
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $Rhypo
+#&gt; [1] 20
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $deltac1
+#&gt; [1] 0.4
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
+#&gt; </div><div class='input'><span class='fu'>BCHydroSub2018Global</span>(<span class='fl'>7</span>, <span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>760</span>, <span class='fl'>1</span>, <span class='fl'>10</span>, <span class='fl'>20</span>)</div><div class='output co'>#&gt; $mag
 #&gt; [1] 7
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
-#&gt; $Rrup
-#&gt; [1] 20
+#&gt; $ftype
+#&gt; [1] 0
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
-#&gt; $Ztor
-#&gt; [1] 2
+#&gt; $Rrup
+#&gt; [1] 10
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $Vs30
+#&gt; [1] 760
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $lnY
+#&gt; [1] 5.868183
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $sigma
+#&gt; [1] 0.8489994
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
@@ -205,18 +267,31 @@
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
-#&gt; $lnY
-#&gt; [1] 5.135082
-#&gt; attr(,"Csingle")
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $sigma
-#&gt; [1] 0.65
+#&gt; $period
+#&gt; [1] 0
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $iflag
-#&gt; [1] 0
+#&gt; [1] 1
+#&gt; 
+#&gt; $forearc
+#&gt; [1] 1
+#&gt; 
+#&gt; $depth
+#&gt; [1] 10
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $Rhypo
+#&gt; [1] 20
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $deltac1
+#&gt; [1] 0.4
+#&gt; attr(,"Csingle")
+#&gt; [1] TRUE
 #&gt; </div><div class='input'>
 </div></pre>
   </div>
