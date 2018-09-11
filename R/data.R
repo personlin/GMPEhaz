@@ -310,6 +310,12 @@
 #'
 "cnames.LL08.E04"
 
+#' Variable name of LL08.F04 GMPEs.
+#'
+#' @format Vectors of LL08.F04 GMPE.
+#'
+"cnames.LL08.F04"
+
 #' Variable name of Loh96 GMPEs.
 #'
 #' @format Vectors of Loh96 GMPE.

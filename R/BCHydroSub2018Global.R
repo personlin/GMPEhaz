@@ -19,7 +19,7 @@
 #'
 #' @examples
 #' BCHydroSub2018Global(6, 20, 0, 0, 760, 1, 10, 20)
-#' BCHydroSub2018Blobal(7, 10, 0, 0, 760, 1, 10, 20)
+#' BCHydroSub2018Global(7, 10, 0, 0, 760, 1, 10, 20)
 #'
 #' @export
 BCHydroSub2018Global <- function(Mag, Rrup, Prd, ftype=0, Vs30, forearc=1, depth, Rhypo) {

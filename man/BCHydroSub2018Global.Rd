@@ -37,6 +37,6 @@ for Subduction Earthquakes, Earthquake Spectra, Vol. 32, No. 1, pp. 23-44.
 }
 \examples{
 BCHydroSub2018Global(6, 20, 0, 0, 760, 1, 10, 20)
-BCHydroSub2018Blobal(7, 10, 0, 0, 760, 1, 10, 20)
+BCHydroSub2018Global(7, 10, 0, 0, 760, 1, 10, 20)
 
 }
