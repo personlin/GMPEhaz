@@ -4,6 +4,14 @@
 #'
 "periods.T"
 
+#' GMPE model list.
+#'
+#' To obtain useable period range for each GMPE model.
+#'
+#' @format dataframe of GMPE model list.
+#'
+"GMPEhaz.model"
+
 #' Variable name of AB03 GMPEs.
 #'
 #' @format Vectors of AB03 GMPE.
