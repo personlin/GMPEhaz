@@ -342,6 +342,11 @@
 #'
 "cnames.Mcverry2006Sub"
 
+#' Variable name of NCREE2011 GMPEs.
+#'
+#' @format Vectors of NCREE2011 GMPE.
+#'
+"cnames.NCREE2011"
 
 #' Variable name of PhungCru17 GMPEs.
 #'
