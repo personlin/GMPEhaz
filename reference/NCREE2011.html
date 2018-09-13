@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GMPE function for Akkar et al.(2013) — ASB14.tw.C01 • GMPEhaz</title>
+<title>GMPE function for NCREE(2011) — NCREE2011 • GMPEhaz</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,10 @@
 
 
 
-<meta property="og:title" content="GMPE function for Akkar et al.(2013) — ASB14.tw.C01" />
+<meta property="og:title" content="GMPE function for NCREE(2011) — NCREE2011" />
 
-<meta property="og:description" content="ASB14.tw.C01 returns the ground-motion prediction with it sigma of Akkar et al.(2014) GMPE
-adjusted to Taiwan." />
+<meta property="og:description" content="NCREE2011 returns the ground-motion prediction (rock site, Vs30&amp;gt;=360m/s)
+with it sigma of NCREE(2011) GMPE." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -110,19 +110,19 @@ adjusted to Taiwan." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>GMPE function for Akkar et al.(2013)</h1>
-    <small class="dont-index">Source: <a href='http://github.com/personlin/GMPEhaz/blob/master/R/ASB14_tw_C01.R'><code>R/ASB14_tw_C01.R</code></a></small>
-    <div class="hidden name"><code>ASB14.tw.C01.Rd</code></div>
+    <h1>GMPE function for NCREE(2011)</h1>
+    <small class="dont-index">Source: <a href='http://github.com/personlin/GMPEhaz/blob/master/R/NCREE2011.R'><code>R/NCREE2011.R</code></a></small>
+    <div class="hidden name"><code>NCREE2011.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>ASB14.tw.C01</code> returns the ground-motion prediction with it sigma of Akkar et al.(2014) GMPE
-adjusted to Taiwan.</p>
+    <p><code>NCREE2011</code> returns the ground-motion prediction (rock site, Vs30&gt;=360m/s)
+with it sigma of NCREE(2011) GMPE.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ASB14.tw.C01</span>(<span class='no'>Mag</span>, <span class='no'>Rjb</span>, <span class='kw'>Prd</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>ftype</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>Vs30</span> <span class='kw'>=</span> <span class='fl'>760</span>)</pre>
+    <pre class="usage"><span class='fu'>NCREE2011</span>(<span class='no'>Mag</span>, <span class='no'>Rrup</span>, <span class='no'>Prd</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -132,42 +132,31 @@ adjusted to Taiwan.</p>
       <td><p>Earthquake momnet magnitude, Numeric.</p></td>
     </tr>
     <tr>
-      <th>Rjb</th>
-      <td><p>Joyner and Boore distance(km), Numeric.</p></td>
+      <th>Rrup</th>
+      <td><p>Rupture distance(km), Numeric.</p></td>
     </tr>
     <tr>
       <th>Prd</th>
       <td><p>Period of spectral acceleration.</p></td>
     </tr>
-    <tr>
-      <th>ftype</th>
-      <td><p>style of faulting.</p></td>
-    </tr>
-    <tr>
-      <th>Vs30</th>
-      <td><p>Vs30(m/s).</p></td>
-    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list will be return, including mag, Rjb, specT, period, lnY, sigma, iflag, ftype, Vs30, phi, tau.</p>
+    <p>A list will be return, including mag, Rrup, specT, period, lnY, sigma.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Akkar, S., M. a. Sandikkaya, and J. J. Bommer(2014), Empirical ground-motion models for
-point- and extended-source crustal earthquake scenarios in europe and the middle east,
-Bulletin of Earthquake Engineering, Volume 12, Issue 1, pp 359-387.
-<a href='http://dx.doi.org/10.1007/s10518-013-9461-4'>http://dx.doi.org/10.1007/s10518-013-9461-4</a></p>
+    <p>國家地震工程研究中心(2011)，面震源與衰減律參數研究及核電廠地盤反應量測，行政院原子能委員會核能研究所委託研究報告。</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>ASB14.tw.C01</span>(<span class='fl'>6</span>, <span class='fl'>20</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>760</span>)</div><div class='output co'>#&gt; $mag
+    <pre class="examples"><div class='input'><span class='fu'>NCREE2011</span>(<span class='fl'>6</span>, <span class='fl'>20</span>, <span class='fl'>0</span>)</div><div class='output co'>#&gt; $mag
 #&gt; [1] 6
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
-#&gt; $Rjb
+#&gt; $Rrup
 #&gt; [1] 20
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
@@ -183,43 +172,20 @@ Bulletin of Earthquake Engineering, Volume 12, Issue 1, pp 359-387.
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $lnY
-#&gt; [1] 4.267376
+#&gt; [1] 4.700805
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $sigma
-#&gt; [1] 0.4829056
+#&gt; [1] 0.7477
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
-#&gt; 
-#&gt; $iflag
-#&gt; [1] 0
-#&gt; 
-#&gt; $ftype
-#&gt; [1] 0
-#&gt; attr(,"Csingle")
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $Vs30
-#&gt; [1] 760
-#&gt; attr(,"Csingle")
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $phi
-#&gt; [1] 0.3322718
-#&gt; attr(,"Csingle")
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $tau
-#&gt; [1] 0.3504187
-#&gt; attr(,"Csingle")
-#&gt; [1] TRUE
-#&gt; </div><div class='input'><span class='fu'>ASB14.tw.C01</span>(<span class='fl'>7</span>, <span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>760</span>)</div><div class='output co'>#&gt; $mag
+#&gt; </div><div class='input'><span class='fu'>NCREE2011</span>(<span class='fl'>7</span>, <span class='fl'>10</span>, <span class='fl'>0</span>)</div><div class='output co'>#&gt; $mag
 #&gt; [1] 7
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
-#&gt; $Rjb
+#&gt; $Rrup
 #&gt; [1] 10
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
@@ -235,35 +201,12 @@ Bulletin of Earthquake Engineering, Volume 12, Issue 1, pp 359-387.
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $lnY
-#&gt; [1] 5.691836
+#&gt; [1] 6.021311
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $sigma
-#&gt; [1] 0.4829056
-#&gt; attr(,"Csingle")
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $iflag
-#&gt; [1] 0
-#&gt; 
-#&gt; $ftype
-#&gt; [1] 0
-#&gt; attr(,"Csingle")
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $Vs30
-#&gt; [1] 760
-#&gt; attr(,"Csingle")
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $phi
-#&gt; [1] 0.3322718
-#&gt; attr(,"Csingle")
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $tau
-#&gt; [1] 0.3504187
+#&gt; [1] 0.7477
 #&gt; attr(,"Csingle")
 #&gt; [1] TRUE
 #&gt; </div><div class='input'>
