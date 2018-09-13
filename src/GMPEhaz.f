@@ -15310,7 +15310,7 @@ C First check for the PGA case (i.e., specT=0.0)
          goto 1011
       elseif (specT .ne. 0.0) then
 C Now loop over the spectral period range of the attenuation relationship.
-         do i=2,nper-1
+         do i=1,nper-1
             if (specT .ge. period(i) .and. specT .le. period(i+1) )
      +         then
                count1 = i
