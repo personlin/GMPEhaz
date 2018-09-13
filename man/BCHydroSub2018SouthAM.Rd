@@ -4,8 +4,8 @@
 \alias{BCHydroSub2018SouthAM}
 \title{GMPE function for Abrahamson et al.(2018)}
 \usage{
-BCHydroSub2018SouthAM(Mag, Rrup, Prd, ftype = 0, Vs30, forearc = 1,
-  depth, Rhypo)
+BCHydroSub2018SouthAM(Mag, Rrup, Prd, ftype = 0, Vs30, forearc = 1, depth,
+  Rhypo)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

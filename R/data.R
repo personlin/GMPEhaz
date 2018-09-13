@@ -96,6 +96,24 @@
 #'
 "cnames.ASK14.tw.E03"
 
+#' Variable name of BCHydroSub2018Global GMPEs.
+#'
+#' @format Vectors of BCHydroSub2018Global GMPE.
+#'
+"cnames.BCHydroSub2018Global"
+
+#' Variable name of BCHydroSub2018SouthAM GMPEs.
+#'
+#' @format Vectors of BCHydroSub2018SouthAM GMPE.
+#'
+"cnames.BCHydroSub2018SouthAM"
+
+#' Variable name of BCHydroSub2018TW GMPEs.
+#'
+#' @format Vectors of BCHydroSub2018TW GMPE.
+#'
+"cnames.BCHydroSub2018TW"
+
 #' Variable name of BCHydroSubV3 GMPEs.
 #'
 #' @format Vectors of BCHydroSubV3 GMPE.
