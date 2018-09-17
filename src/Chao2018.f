@@ -23,7 +23,7 @@ C         1 = Aftershocks
 
 c     Compute SA1180
       vs30_rock = 1180.
-      z10_rock = 0.0058959
+      z10_rock = 0.004541444
       SA_rock = 0.
       
          call S04_Chaoetal2018 ( mag, dist, ftype, sigma, specT, vs30_rock, Ztor, z10_rock,
