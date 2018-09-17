@@ -63,7 +63,7 @@ c -------------------------------------------------------------------
       real phisssb2(MAXPER), arfacr(MAXPER), arfasb(MAXPER), phis2s(MAXPER)
       character*80 attenName                                                    
       integer nper, count1, count2, C11flag, C23flag, C29flag, iflag, C10flag, C13flag
-      integer vs30_class, h, n, i, msasflag
+      integer vs30_class, n, i, msasflag
       integer Fcr, Fsb, Fcrss, Fcrno, Fcrro, Fsbintra, Fsbinter, Fas, Fkuo17, Fks17, Frf, Fmanila 
       real Mc, Mref, Mmax, Rrupref, Vs30ref, Zref, sourcetype
       real c1T, c2T, c3T, c4T, c5T, c6T, c7T, c8T, c9T, c10T, c11T, c12T, c13T, c14T, c15T
@@ -72,7 +72,7 @@ c -------------------------------------------------------------------
       real arfacrT, arfasbT, phis2sT, phi, tau, fm, SA1180, Z10ref
       real Ssource, Spath, Ssite, Ssitelin, Ssitenon, Sztor, Smag, Sgeom, Sanel
       real taucr, tausb, phisscr, phisssb, phiss, sigmass
-      real c28(MAXPER), c29(MAXPER), c28T, c29T, c30(MAXPER), c30T
+      real c28(MAXPER), c29(MAXPER), c28T, c29T, c30(MAXPER), c30T, h
                                                                                 
       data Period / 0, -2, 0.01, 0.02, 0.03, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.75,
      1              1, 1.5, 2, 3, 4, 5 / 
@@ -243,7 +243,7 @@ C First check for the PGA case (i.e., specT=0.0)
         phisssb2T = phisssb2(1)
         phis2sT = phis2s(1)
        goto 1011
-C   Function Form for PGV Regression		   
+C   Function Form for PGV Regression     
        elseif (specT .eq. -2.0) then
          period1 = period(2)
          c1T = c1(2)
@@ -387,7 +387,7 @@ C Interpolate the coefficients for the requested spectral period.
          call S24_interp (period(count1),period(count2),c30(count1),c30(count2), 
      +                 specT,c30T,iflag)
 
-	 
+  
  1011 period1 = specT
 
 C      h = 10.0
@@ -397,7 +397,7 @@ C      h = 10.0
       Mmax = 8
       Rrupref = 0.0
       Vs30ref = 760.0
- 	  
+    
 C     Set the reference spectrum.                
 c     sourcetype = 0 for crustal
 c                  1 for Subduction 
@@ -419,9 +419,9 @@ c     Vs30_class = 1 for measured
       C11flag = 0
       C23flag = 0
       C29flag = 0
-	  C13flag = 0 
-	  C10flag = 0
-	  
+      C13flag = 0 
+      C10flag = 0
+   
       if (sourcetype .eq. 0.0 ) then
        Fcr = 1
        Zref = 0
@@ -437,12 +437,12 @@ c     Vs30_class = 1 for measured
          if(ftype .eq. 0) then
               Fsbinter = 1
               Zref = 0
-			  elseif(ftype .eq. 1) then
+         elseif(ftype .eq. 1) then
               Fsbintra = 1
               Zref = 35
          endif
       endif
-	  
+   
 C     Add aftershock factor 
       if (msasflag .eq. 1) then
            Fas = 1
@@ -461,17 +461,17 @@ C     choose Site ref by Vs30 class
 C     Set Source scaling term 
      
       if(mag .LE. 5 ) then  
-	      C11flag=1
+       C11flag=1
       endif
       if(mag .GE. Mc ) then  
-	      C29flag=1
+       C29flag=1
       endif
       if(mag .GE. 7.6 ) then  
-	      C10flag=1
-      endif	  
+       C10flag=1
+      endif   
       if(mag .LE. 6 ) then  
-	      C13flag=1
-      endif	  
+       C13flag=1
+      endif   
       if (sourcetype .eq. 0.0 ) then
         Smag = c8T*(mag - Mref) + c10T*(mag - Mref)**2 
      1         - c10T*(mag-7.6)**2*C10flag + c11T*(5.0-mag)*C11flag  
@@ -480,13 +480,13 @@ C     Set Source scaling term
      1        + c12T*(5.0-mag)*C11flag + c13T*(6.0-mag)*C13flag
       endif
 
-      Sztor = c14T * Fcr *(Ztor-Zref) + c15T * Fsbinter * (Ztor-Zref) + c16T * Fsbintra * (Ztor-Zref)		  
+      Sztor = c14T * Fcr *(Ztor-Zref) + c15T * Fsbinter * (Ztor-Zref) + c16T * Fsbintra * (Ztor-Zref)    
       Ssource = Smag + Sztor
 
 C     Set Path scaling term
 
-      h = 10*Fcr +10*Fsbinter*exp(0.3*(mag-7.1)*C29flag) + 10*Fsbintra*exp(0.2*(mag-7.1)*C29flag)
-	  
+      h = 10.0*Fcr +10.0*Fsbinter*exp(0.3*(mag-7.1)*C29flag) + 10.0*Fsbintra*exp(0.2*(mag-7.1)*C29flag)
+   
       if (sourcetype .eq. 0.0 ) then
           Sgeom = (c17T + c19T*(min(mag,Mmax)- Mref )) * alog(SQRT(dist**2 + h**2)/SQRT(Rrupref**2 + h**2))
       elseif (sourcetype .eq. 1.0 ) then
@@ -495,35 +495,35 @@ C     Set Path scaling term
 
       Sanel = c21T*Fcr*(dist-Rrupref) + c22T*Fsb*(dist-Rrupref)
       Spath = Sgeom + Sanel 
-	   
+    
 C     Set Site scaling term 
-	   
+    
       Z10ref = exp((-4.08/2.0)*alog((vs**2.0+355.4**2.0)/(1750**2.0+355.4**2.0)))
       Ssitelin = c24T * alog(vs/vs30ref) + c25T*alog(Z10*1000/Z10ref)
 
       if(vs .LT. vs30ref ) then  
            C23flag=1
       endif
-	    
+     
       Ssitenon = c23T * C23flag * (-1.5*alog(vs/vs30ref)-alog(SA1180+2.4)+alog(SA1180+2.4*(vs/vs30ref)**1.5))  
       Ssite = Ssitenon + Ssitelin
 
       lnSa =  lnYref + Ssource + Spath + Ssite                                        
-	  
-c  	  write(*,*) "lnYref = ", lnYref
-c  	  write(*,*) "Ssource = ", Ssource
-c  	  write(*,*) "--Smag = ", Smag
-c  	  write(*,*) "--Sztor = ", Sztor
-c  	  write(*,*) "Spath = ", Spath
-c  	  write(*,*) "--Sgeom = ", Sgeom
-c  	  write(*,*) "--Sanel = ", Sanel
-c  	  write(*,*) "Ssite = ", Ssite
-c  	  write(*,*) "--Ssitelin = ", Ssitelin
-c  	  write(*,*) "--Ssitenon = ", Ssitenon
-c  	  write(*,*) "lnSa = ", lnSa
-c 	  write(*,*) "Sa = ", exp(lnSa)
+   
+c     write(*,*) "lnYref = ", lnYref
+c     write(*,*) "Ssource = ", Ssource
+c     write(*,*) "--Smag = ", Smag
+c     write(*,*) "--Sztor = ", Sztor
+c     write(*,*) "Spath = ", Spath
+c     write(*,*) "--Sgeom = ", Sgeom
+c     write(*,*) "--Sanel = ", Sanel
+c     write(*,*) "Ssite = ", Ssite
+c     write(*,*) "--Ssitelin = ", Ssitelin
+c     write(*,*) "--Ssitenon = ", Ssitenon
+c     write(*,*) "lnSa = ", lnSa
+c    write(*,*) "Sa = ", exp(lnSa)
 
-	  
+   
 C     Set the event-specific residual term
  
       fm = 0.5*(min(6.5, max(4.5, mag))-4.5)
@@ -553,4 +553,4 @@ C     Set Recoed-specific residual term
 c       write(*,*) "Y(gal) = ", exp(lnSa)
 
       return                                                                    
-      end       
+      end
