@@ -294,6 +294,12 @@
 #'
 "cnames.Lin09"
 
+#' Variable name of Lin11 GMPEs.
+#'
+#' @format Vectors of Lin11 GMPE.
+#'
+"cnames.Lin11"
+
 #' Variable name of Lin11Rock GMPEs.
 #'
 #' @format Vectors of Lin11Rock GMPE.
