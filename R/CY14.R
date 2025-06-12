@@ -22,7 +22,7 @@
 #' @param regionflag 0 Global, 1 Japan and Italy, 2 Wenchuan (note only for M7.9)
 #'
 #' @return A list will be return, including mag, Rrup, Rjb, specT, period, lnY, sigma, iflag, Vs30,
-#' dip, Ztor, ftype, Z10, vs3-_class, hwflag, Rx, regionflag, phi, tau.
+#' dip, Ztor, ftype, Z10, vs30_class, hwflag, Rx, regionflag, phi, tau.
 #'
 #' @examples
 #' CY14(6, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
