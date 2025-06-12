@@ -38,7 +38,7 @@ atten2 <- function(GMPEname, Periods, Mag, Rrup, Ztor=0, RV=0, depth, ftype=0, p
   if (plot) {
     if (length(Mag) > 1)     p <- xyplot(lnY ~ mag, data=vals, xlab='M', ylab='PSA (g)', type=c("l","g"), scales=list(y=list(log=T)))
     if (length(Periods) > 1) p <- xyplot(lnY ~ period, data=vals, xlab='Period (s)', ylab='PSA (g)', type=c("l","g"), scales=list(log=T))
-    if (length(Rrup) > 1)   p <- xyplot(lnY ~ rupdist, data=vals, xlab='Distance (km)', ylab='PSA (g)', type=c("l","g"), scales=list(log=T))
+    if (length(Rrup) > 1)   p <- xyplot(lnY ~ Rrup, data=vals, xlab='Distance (km)', ylab='PSA (g)', type=c("l","g"), scales=list(log=T))
     print(p)
   }
   return(vals)
