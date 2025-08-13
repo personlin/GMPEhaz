@@ -1,0 +1,54 @@
+url: https://personlin.github.io/GMPEhaz/
+
+template:
+  bootstrap: 5
+
+development:
+  mode: auto
+
+reference:
+- title: "GMPE Functions"
+  desc: "Ground Motion Prediction Equation functions"
+- contents:
+  - starts_with("AB03")
+  - starts_with("AC10") 
+  - starts_with("AGA16")
+  - starts_with("AM09")
+  - starts_with("ASB14")
+  - starts_with("ASK14")
+  - starts_with("BSSA14")
+  - starts_with("CB14")
+  - starts_with("CY14")
+  - starts_with("BI14")
+  - starts_with("BCHydro")
+  - starts_with("Chao")
+  - starts_with("LL08")
+  - starts_with("Lin")
+  - starts_with("Zh")
+  - starts_with("Youngs")
+
+- title: "Utility Functions"
+  desc: "Helper and utility functions"
+- contents:
+  - atten2
+  - get_GMPE_prd
+
+- title: "Data"
+  desc: "Datasets included in the package"
+- contents:
+  - data
+  - cnames
+  - GMPEhaz.model
+
+navbar:
+  structure:
+    left:  [intro, reference, articles, tutorials, news]
+    right: [search, github]
+  components:
+    github:
+      icon: fab-github fa-lg
+      href: https://github.com/personlin/GMPEhaz/
+
+authors:
+  Person Lin:
+    href: https://github.com/personlin
