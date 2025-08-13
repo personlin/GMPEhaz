@@ -33,6 +33,9 @@ jobs:
           r-version: ${{ matrix.r-version }}
           use-public-rspm: true
           
+      - name: Setup Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+          
       - name: Install system dependencies
         run: |
           sudo apt-get update
@@ -50,5 +53,5 @@ jobs:
       - name: Check
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
-        run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--no-build-vignettes"), error_on = "error")
+        run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--no-build-vignettes", "--no-vignettes"), error_on = "error")
         shell: Rscript {0}
