@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/personlin/GMPEhaz.svg?branch=master)](https://travis-ci.org/personlin/GMPEhaz) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/personlin/GMPEhaz?branch=master&svg=true)](https://ci.appveyor.com/project/personlin/GMPEhaz) [![codecov](https://codecov.io/gh/personlin/GMPEhaz/branch/master/graph/badge.svg)](https://codecov.io/gh/personlin/GMPEhaz)[![Join the chat at https://gitter.im/GMPEhaz/Lobby](https://badges.gitter.im/GMPEhaz/Lobby.svg)](https://gitter.im/GMPEhaz/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![R-CMD-check](https://github.com/personlin/GMPEhaz/workflows/R-CMD-check/badge.svg)](https://github.com/personlin/GMPEhaz/actions/workflows/R-CMD-check.yml) [![Codecov test coverage](https://codecov.io/gh/personlin/GMPEhaz/branch/master/graph/badge.svg)](https://app.codecov.io/gh/personlin/GMPEhaz?branch=master) [![Join the chat at https://gitter.im/GMPEhaz/Lobby](https://badges.gitter.im/GMPEhaz/Lobby.svg)](https://gitter.im/GMPEhaz/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 # GMPEhaz

@@ -32,3 +32,5 @@ inst/doc
 *.f.*
 # pkgdown
 docs/*
+# GitHub Actions artifacts
+.github/workflows/logs/
