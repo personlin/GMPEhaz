@@ -4,7 +4,9 @@
 \name{cnames.GK16}
 \alias{cnames.GK16}
 \title{Variable name of GK16 GMPEs.}
-\format{Vectors of GK16 GMPE.}
+\format{
+Vectors of GK16 GMPE.
+}
 \usage{
 cnames.GK16
 }

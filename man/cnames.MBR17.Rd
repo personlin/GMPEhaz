@@ -4,7 +4,9 @@
 \name{cnames.MBR17}
 \alias{cnames.MBR17}
 \title{Variable name of MBR17 GMPEs.}
-\format{Vectors of MBR17 GMPE.}
+\format{
+Vectors of MBR17 GMPE.
+}
 \usage{
 cnames.MBR17
 }

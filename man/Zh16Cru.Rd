@@ -4,8 +4,7 @@
 \alias{Zh16Cru}
 \title{GMPE function for Zhao et al.(2016)}
 \usage{
-Zh16Cru(Mag, Rrup, ftype = 0, sclass = 1, Prd = 0, sourceclass = 0,
-  depth = 10)
+Zh16Cru(Mag, Rrup, ftype = 0, sclass = 1, Prd = 0, sourceclass = 0, depth = 10)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

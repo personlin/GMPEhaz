@@ -4,7 +4,9 @@
 \name{cnames.BCHydroSubV3}
 \alias{cnames.BCHydroSubV3}
 \title{Variable name of BCHydroSubV3 GMPEs.}
-\format{Vectors of BCHydroSubV3 GMPE.}
+\format{
+Vectors of BCHydroSubV3 GMPE.
+}
 \usage{
 cnames.BCHydroSubV3
 }

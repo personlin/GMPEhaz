@@ -4,9 +4,24 @@
 \alias{ASK14}
 \title{GMPE function for Abrahamson et al.(2014) NGA-West2 model}
 \usage{
-ASK14(Mag, Rrup, Rjb, Prd, Dip, ftype = 0, rupwidth, Vs30 = 760,
-  hwflag = 0, Ztor, Vs30_class = 1, Z1.0, Rx, Ry0, regionflag = 0,
-  msasflag = 0)
+ASK14(
+  Mag,
+  Rrup,
+  Rjb,
+  Prd,
+  Dip,
+  ftype = 0,
+  rupwidth,
+  Vs30 = 760,
+  hwflag = 0,
+  Ztor,
+  Vs30_class = 1,
+  Z1.0,
+  Rx,
+  Ry0,
+  regionflag = 0,
+  msasflag = 0
+)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

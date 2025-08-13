@@ -4,7 +4,9 @@
 \name{cnames.Chao2018}
 \alias{cnames.Chao2018}
 \title{Variable name of Chao2018 GMPEs.}
-\format{Vectors of Chao2018 GMPE.}
+\format{
+Vectors of Chao2018 GMPE.
+}
 \usage{
 cnames.Chao2018
 }

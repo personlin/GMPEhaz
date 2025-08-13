@@ -4,7 +4,9 @@
 \name{cnames.ASB14}
 \alias{cnames.ASB14}
 \title{Variable name of ASB14 GMPEs.}
-\format{Vectors of ASB14 GMPE.}
+\format{
+Vectors of ASB14 GMPE.
+}
 \usage{
 cnames.ASB14
 }

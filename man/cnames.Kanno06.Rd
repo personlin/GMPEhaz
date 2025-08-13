@@ -4,7 +4,9 @@
 \name{cnames.Kanno06}
 \alias{cnames.Kanno06}
 \title{Variable name of Kanno06 GMPEs.}
-\format{Vectors of Kanno06 GMPE.}
+\format{
+Vectors of Kanno06 GMPE.
+}
 \usage{
 cnames.Kanno06
 }

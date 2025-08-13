@@ -4,7 +4,9 @@
 \name{cnames.NCREE2011}
 \alias{cnames.NCREE2011}
 \title{Variable name of NCREE2011 GMPEs.}
-\format{Vectors of NCREE2011 GMPE.}
+\format{
+Vectors of NCREE2011 GMPE.
+}
 \usage{
 cnames.NCREE2011
 }

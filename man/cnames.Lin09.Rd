@@ -4,7 +4,9 @@
 \name{cnames.Lin09}
 \alias{cnames.Lin09}
 \title{Variable name of Lin09 GMPEs.}
-\format{Vectors of Lin09 GMPE.}
+\format{
+Vectors of Lin09 GMPE.
+}
 \usage{
 cnames.Lin09
 }

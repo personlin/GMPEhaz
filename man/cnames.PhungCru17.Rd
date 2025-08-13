@@ -4,7 +4,9 @@
 \name{cnames.PhungCru17}
 \alias{cnames.PhungCru17}
 \title{Variable name of PhungCru17 GMPEs.}
-\format{Vectors of PhungCru17 GMPE.}
+\format{
+Vectors of PhungCru17 GMPE.
+}
 \usage{
 cnames.PhungCru17
 }

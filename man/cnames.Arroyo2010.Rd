@@ -4,7 +4,9 @@
 \name{cnames.Arroyo2010}
 \alias{cnames.Arroyo2010}
 \title{Variable name of Arroyo2010 GMPEs.}
-\format{Vectors of Arroyo2010 GMPE.}
+\format{
+Vectors of Arroyo2010 GMPE.
+}
 \usage{
 cnames.Arroyo2010
 }

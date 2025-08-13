@@ -4,7 +4,9 @@
 \name{cnames.Sub.Intra.Com.016}
 \alias{cnames.Sub.Intra.Com.016}
 \title{Variable name of Sub.Intra.Com.016 GMPEs.}
-\format{Vectors of Sub.Intra.Com.016 GMPE.}
+\format{
+Vectors of Sub.Intra.Com.016 GMPE.
+}
 \usage{
 cnames.Sub.Intra.Com.016
 }

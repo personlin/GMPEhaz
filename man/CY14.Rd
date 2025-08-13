@@ -4,8 +4,21 @@
 \alias{CY14}
 \title{GMPE function for Chiou and Youngs(2014) NGA-West2 model}
 \usage{
-CY14(Mag, Rrup, Rjb, Prd, Vs30, Dip, Ztor, ftype = 0, Z1.0,
-  Vs30_class = 1, hwflag = 0, Rx, regionflag = 0)
+CY14(
+  Mag,
+  Rrup,
+  Rjb,
+  Prd,
+  Vs30,
+  Dip,
+  Ztor,
+  ftype = 0,
+  Z1.0,
+  Vs30_class = 1,
+  hwflag = 0,
+  Rx,
+  regionflag = 0
+)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

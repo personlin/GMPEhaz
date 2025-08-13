@@ -4,8 +4,18 @@
 \alias{Cru.Com.017}
 \title{GMPE function for Crustal Common form 017 (2017)}
 \usage{
-Cru.Com.017(Mag, Rrup, Rjb, Ztor, ftype = 0, Dip, rupwidth, Rx,
-  hwflag = 0, Prd)
+Cru.Com.017(
+  Mag,
+  Rrup,
+  Rjb,
+  Ztor,
+  ftype = 0,
+  Dip,
+  rupwidth,
+  Rx,
+  hwflag = 0,
+  Prd
+)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

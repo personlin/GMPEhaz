@@ -4,7 +4,9 @@
 \name{cnames.Youngs97Rock}
 \alias{cnames.Youngs97Rock}
 \title{Variable name of Youngs97Rock GMPEs.}
-\format{Vectors of Youngs97Rock GMPE.}
+\format{
+Vectors of Youngs97Rock GMPE.
+}
 \usage{
 cnames.Youngs97Rock
 }

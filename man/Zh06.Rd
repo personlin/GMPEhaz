@@ -4,8 +4,7 @@
 \alias{Zh06}
 \title{GMPE function for Zhao et al.(2006)}
 \usage{
-Zh06(Mag, Rrup, ftype = 0, sclass = 1, Prd = 0, sourceclass = 0,
-  depth = 10)
+Zh06(Mag, Rrup, ftype = 0, sclass = 1, Prd = 0, sourceclass = 0, depth = 10)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

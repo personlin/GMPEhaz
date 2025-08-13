@@ -4,8 +4,7 @@
 \alias{BCHydroSubV3}
 \title{GMPE function for Abrahamson et al.(2016)}
 \usage{
-BCHydroSubV3(Mag, Rrup, Prd, ftype = 0, Vs30, forearc = 1, depth,
-  Rhypo)
+BCHydroSubV3(Mag, Rrup, Prd, ftype = 0, Vs30, forearc = 1, depth, Rhypo)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

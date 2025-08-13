@@ -4,7 +4,6 @@
 \name{GMPEhaz}
 \alias{GMPEhaz}
 \alias{.onUnload}
-\alias{GMPEhaz-package}
 \title{GMPEhaz: A package for wrapping GMPE functions from Norman Abrahamson's fortran HAZ code.}
 \usage{
 .onUnload(libpath)

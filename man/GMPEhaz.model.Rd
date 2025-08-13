@@ -4,7 +4,9 @@
 \name{GMPEhaz.model}
 \alias{GMPEhaz.model}
 \title{GMPE model list.}
-\format{dataframe of GMPE model list.}
+\format{
+dataframe of GMPE model list.
+}
 \usage{
 GMPEhaz.model
 }

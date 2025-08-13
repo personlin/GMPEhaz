@@ -4,7 +4,9 @@
 \name{periods.T}
 \alias{periods.T}
 \title{Periods of NGA-West GMPE}
-\format{A vector with 105 values.}
+\format{
+A vector with 105 values.
+}
 \usage{
 periods.T
 }

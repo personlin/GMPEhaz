@@ -4,7 +4,9 @@
 \name{cnames.Camp03H}
 \alias{cnames.Camp03H}
 \title{Variable name of Camp03H GMPEs.}
-\format{Vectors of Camp03H GMPE.}
+\format{
+Vectors of Camp03H GMPE.
+}
 \usage{
 cnames.Camp03H
 }

@@ -4,8 +4,18 @@
 \alias{Mcverry2006Sub}
 \title{GMPE function for Mcverry et al.(2006) Subduction GMPE.}
 \usage{
-Mcverry2006Sub(Mag, Rrup, Prd, ftype = 0, Ztor, Dip, rupwidth, depth,
-  Sc = 0, Sd = 0)
+Mcverry2006Sub(
+  Mag,
+  Rrup,
+  Prd,
+  ftype = 0,
+  Ztor,
+  Dip,
+  rupwidth,
+  depth,
+  Sc = 0,
+  Sd = 0
+)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

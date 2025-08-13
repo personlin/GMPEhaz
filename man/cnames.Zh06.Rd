@@ -4,7 +4,9 @@
 \name{cnames.Zh06}
 \alias{cnames.Zh06}
 \title{Variable name of Zh06 GMPEs.}
-\format{Vectors of Zh06 GMPE.}
+\format{
+Vectors of Zh06 GMPE.
+}
 \usage{
 cnames.Zh06
 }

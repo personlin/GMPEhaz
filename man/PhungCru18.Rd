@@ -4,8 +4,21 @@
 \alias{PhungCru18}
 \title{GMPE function for Phung et al.(2018)}
 \usage{
-PhungCru18(Mag, Rrup, Rjb, Rx, Prd, Vs30, Dip, Ztor, ftype = 0, Z1.0,
-  Vs30_class = 1, regionflag = 1, hwflag = 0)
+PhungCru18(
+  Mag,
+  Rrup,
+  Rjb,
+  Rx,
+  Prd,
+  Vs30,
+  Dip,
+  Ztor,
+  ftype = 0,
+  Z1.0,
+  Vs30_class = 1,
+  regionflag = 1,
+  hwflag = 0
+)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

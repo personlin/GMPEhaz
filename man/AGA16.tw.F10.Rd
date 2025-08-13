@@ -4,8 +4,7 @@
 \alias{AGA16.tw.F10}
 \title{GMPE function for adjusted Abrahamson et al.(2016)}
 \usage{
-AGA16.tw.F10(Mag, Rrup, Prd, ftype = 0, Vs30, forearc = 0, Ztor, depth,
-  Rhypo)
+AGA16.tw.F10(Mag, Rrup, Prd, ftype = 0, Vs30, forearc = 0, Ztor, depth, Rhypo)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

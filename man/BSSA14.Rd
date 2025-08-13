@@ -4,8 +4,7 @@
 \alias{BSSA14}
 \title{GMPE function for Boore et al.(2014) NGA-West2 model}
 \usage{
-BSSA14(Mag, Rjb, Prd, Vs30, ftype = 0, Z1.0, regionflag = 0,
-  basinflag = 0)
+BSSA14(Mag, Rjb, Prd, Vs30, ftype = 0, Z1.0, regionflag = 0, basinflag = 0)
 }
 \arguments{
 \item{Mag}{Earthquake momnet magnitude, Numeric.}

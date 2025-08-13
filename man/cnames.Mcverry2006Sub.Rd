@@ -4,7 +4,9 @@
 \name{cnames.Mcverry2006Sub}
 \alias{cnames.Mcverry2006Sub}
 \title{Variable name of Mcverry2006Sub GMPEs.}
-\format{Vectors of Mcverry2006Sub GMPE.}
+\format{
+Vectors of Mcverry2006Sub GMPE.
+}
 \usage{
 cnames.Mcverry2006Sub
 }
