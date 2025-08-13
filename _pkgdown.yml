@@ -26,19 +26,43 @@ reference:
   - starts_with("Lin")
   - starts_with("Zh")
   - starts_with("Youngs")
+  - Arroyo2010
+  - Camp03H
+  - CY08
+  - Garcia05
+  - GK16
+  - Gregor06
+  - starts_with("I14")
+  - KAAH15
+  - Kanno06
+  - Loh96
+  - MBR17
+  - Mcverry2006Sub
+  - NCREE2011
+  - starts_with("PhungCru")
+  - starts_with("PhungSub")
+  - Sinotech12
+
+- title: "Common Form Functions"
+  desc: "Common form GMPE functions"
+- contents:
+  - starts_with("Cru.Com")
+  - starts_with("Sub.Inter.Com")
+  - starts_with("Sub.Intra.Com")
 
 - title: "Utility Functions"
   desc: "Helper and utility functions"
 - contents:
   - atten2
-  - get_GMPE_prd
+  - get.GMPE.prd
+  - GMPEhaz
 
 - title: "Data"
   desc: "Datasets included in the package"
 - contents:
-  - data
-  - cnames
+  - periods.T
   - GMPEhaz.model
+  - starts_with("cnames")
 
 navbar:
   structure:
