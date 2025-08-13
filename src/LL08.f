@@ -96,7 +96,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call S24_interp (period1(count1),period1(count2),c1(count1),c1(count2),

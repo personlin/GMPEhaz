@@ -119,7 +119,7 @@ C         write (*,*) 'period range in the code or beyond the range'
 C         write (*,*) 'of spectral periods for interpolation.'
 C         write (*,*) 'Please check the input file.'
 C         write (*,*)
-         stop 99
+         return
 
 C Interpolate the coefficients for the requested spectral period.
  1001       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -319,7 +319,7 @@ C         write (*,*) 'period range in the code or beyond the range'
 C         write (*,*) 'of spectral periods for interpolation.'
 C         write (*,*) 'Please check the input file.'
 C         write (*,*)
-         stop 99
+         return
 
 C Interpolate the coefficients for the requested spectral period.
  1003       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -524,7 +524,7 @@ C         write (*,*) 'period range in the code or beyond the range'
 C         write (*,*) 'of spectral periods for interpolation.'
 C         write (*,*) 'Please check the input file.'
 C         write (*,*)
-         stop 99
+         return
 
 C Interpolate the coefficients for the requested spectral period.
  1006       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -719,7 +719,7 @@ C         write (*,*) 'period range in the code or beyond the range'
 C         write (*,*) 'of spectral periods for interpolation.'
 C         write (*,*) 'Please check the input file.'
 C         write (*,*)
-         stop 99
+         return
 
 C Interpolate the coefficients for the requested spectral period.
  1003       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -969,7 +969,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1010       call interp (period(count1),period(count2),b1ss(count1),b1ss(count2),
@@ -1090,7 +1090,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),b1ss(count1),b1ss(count2),
@@ -1210,7 +1210,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a(count1),a(count2),
@@ -1337,7 +1337,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a(count1),a(count2),
@@ -1465,7 +1465,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a(count1),a(count2),
@@ -1619,7 +1619,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),b0(count1),b0(count2),
@@ -1648,7 +1648,7 @@ c     Set name
         attenName = 'Campbell (1993;1994), hard-rock'
       else
 C        write (*,*)')
-        stop 99
+        return
       endif
 
 c     Convert oblique to reverse for Campbell
@@ -1776,7 +1776,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -1914,7 +1914,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -2072,7 +2072,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -2170,7 +2170,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -2389,7 +2389,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -2502,7 +2502,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -2640,7 +2640,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -2740,7 +2740,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -2870,7 +2870,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -2975,7 +2975,7 @@ C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
 
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -3078,7 +3078,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c6ss(count1),c6ss(count2),
@@ -3205,7 +3205,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),b1(count1),b1(count2),
@@ -3233,7 +3233,7 @@ c     Set atten name
       else
 C        write (*,*)')
 C        write (*,*)') iSite
-        stop 99
+        return
       endif
 
       r = sqrt( dist**2 + hT**2 )
@@ -3309,7 +3309,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c3(count1),c3(count2),
@@ -3329,7 +3329,7 @@ c            (flag=1 for intraslab at 55 km)
         c1 = 0.9908
       else
 C        write (*,*)') flag
-        stop 99
+        return
       endif
       c2 = 1.4142
       c4 = 1.7818
@@ -3412,7 +3412,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -3503,7 +3503,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -3633,7 +3633,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -3772,7 +3772,7 @@ c     Now set Sl function based on PGArx and period
       else
 C         write (*,*) 'Wrong Ftype for Atkinson and Boore (2003)'
 C         write (*,*) 'attenuation relationship. Check fault file.'
-         stop 99
+         return
       endif
 
 C     Now convert to Ln Units in gals.
@@ -3881,7 +3881,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -4020,7 +4020,7 @@ c     Now set Sl function based on PGArx and period
       else
 C         write (*,*) 'Wrong Ftype for Atkinson and Boore (2003)'
 C         write (*,*) 'attenuation relationship. Check fault file.'
-         stop 99
+         return
       endif
 
 C     Now convert to Ln Units in gals.
@@ -4130,7 +4130,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -4269,7 +4269,7 @@ c     Now set Sl function based on PGArx and period
       else
 C         write (*,*) 'Wrong Ftype for Atkinson and Boore (2003)'
 C         write (*,*) 'attenuation relationship. Check fault file.'
-         stop 99
+         return
       endif
 
 C     Now convert to Ln Units in gals.
@@ -4372,7 +4372,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -4501,7 +4501,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -4657,7 +4657,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -4824,7 +4824,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -5101,7 +5101,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1010       call interp (period(count1),period(count2),a(count1),a(count2),
@@ -5281,7 +5281,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -5373,7 +5373,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -5483,7 +5483,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -5635,7 +5635,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -5789,7 +5789,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -5941,7 +5941,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -6243,7 +6243,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -6459,7 +6459,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -6623,7 +6623,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -6722,7 +6722,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -6824,7 +6824,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -6925,7 +6925,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -7025,7 +7025,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c0(count1),c0(count2),
@@ -7082,7 +7082,7 @@ C        write (*,*)')
         endif
       enddo
       return
- 100  stop 99
+ 100  return
       end
 
 c ---------------------------------------------------------------------
@@ -7217,7 +7217,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -7514,7 +7514,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),b1(count1),b1(count2),
@@ -7774,7 +7774,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -8060,7 +8060,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -8307,17 +8307,17 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'McVerry et al. (2006) Subduction'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call S24_interp (period(count1),period(count2),c11(count1),c11(count2),
@@ -8368,9 +8368,9 @@ c     1         Intraslab
       elseif (ftype .eq. 1.0) then
        SI = 0.0
       else
-       write(*,*) 'McVerry Subduction only defined for ftype 0 and 1.'
-       write(*,*)
-       stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+       return
       endif
 
 c     Set the Centroid Depth
@@ -8545,7 +8545,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a(count1),a(count2),
@@ -8727,7 +8727,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),e1(count1),e1(count2),
@@ -8962,7 +8962,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),e1(count1),e1(count2),
@@ -9106,7 +9106,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),sig(count1),sig(count2),
@@ -9303,7 +9303,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -9420,7 +9420,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -9538,7 +9538,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -9655,7 +9655,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -9772,7 +9772,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -9889,7 +9889,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -10006,7 +10006,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -10123,7 +10123,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -10240,7 +10240,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -10357,7 +10357,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -10474,7 +10474,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -10597,7 +10597,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -10714,7 +10714,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -10831,7 +10831,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -10948,7 +10948,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -11065,7 +11065,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -11182,7 +11182,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -11299,7 +11299,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -11416,7 +11416,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -11533,7 +11533,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -11650,7 +11650,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -11766,7 +11766,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),a0(count1),a0(count2),
@@ -12014,7 +12014,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c11(count1),c11(count2),
@@ -14460,7 +14460,7 @@ C     Model Number = 9011, Hor
 c     Check for valid jcalc
       if ( anper .lt. 0 ) then
 C         write (*,*)') jcalc
-         stop 99
+         return
       endif
 
       return
@@ -14535,7 +14535,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2)
@@ -14630,7 +14630,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2)
@@ -14725,7 +14725,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2)
@@ -14820,7 +14820,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2)
@@ -14948,7 +14948,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2)
@@ -15185,7 +15185,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2)
@@ -15330,7 +15330,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2)
@@ -15552,7 +15552,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -15800,7 +15800,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -15865,7 +15865,7 @@ C  Intraslab events
 C         write (*,*) 'Undefined Mechanism for BC Hydro Subduction Attenuation Model.'
 C         write (*,*) 'Ftype = ', ftype
 C         write (*,*) 'Check input fault file.'
-         stop 99
+         return
       endif
 
 C     Set sigma values to return
@@ -16003,7 +16003,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -16095,7 +16095,7 @@ C  Intraslab events
 C         write (*,*) 'Undefined Mechanism for BC Hydro Subduction Attenuation Model.'
 C         write (*,*) 'Ftype = ', ftype
 C         write (*,*) 'Check input fault file.'
-         stop 99
+         return
       endif
 
 C     Set sigma values to return
@@ -16275,7 +16275,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -16324,7 +16324,7 @@ c         (Interface events) of Hypocentral distance (Intraslab events).
       else
 C         write (*,*) 'BC Hydro V3 Model not defined for Ftype'
 C         write (*,*) 'other than 0 (interface) or 1 (intraslab)'
-         stop 99
+         return
       endif
 
 C     Base model for Magnitude scaling.
@@ -16425,7 +16425,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),b1(count1),b1(count2),
@@ -16539,7 +16539,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -16649,7 +16649,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -16756,7 +16756,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -16863,7 +16863,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -16970,7 +16970,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -17077,7 +17077,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -17183,7 +17183,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -17289,7 +17289,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -17395,7 +17395,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -17501,7 +17501,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -17607,7 +17607,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -17713,7 +17713,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -17819,7 +17819,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -17925,7 +17925,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -18031,7 +18031,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -18137,7 +18137,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -18243,7 +18243,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -18349,7 +18349,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -18455,7 +18455,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -18561,7 +18561,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -18668,7 +18668,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -18775,7 +18775,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -18902,7 +18902,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -19053,7 +19053,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),EU1(count1),EU1(count2),
@@ -19175,7 +19175,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -19279,7 +19279,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),Ml(count1),Ml(count2),
@@ -19391,7 +19391,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -19486,7 +19486,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (per1(count1),per1(count2),c1(count1),c1(count2),
@@ -19560,7 +19560,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),c1(count1),c1(count2),
@@ -19631,7 +19631,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (period1(count1),period1(count2),sig(count1),sig(count2),
@@ -19695,7 +19695,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call interp (per1(count1),per1(count2),c(count1),c(count2),
@@ -20617,7 +20617,7 @@ C     Model Number = 2910
          else
 C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
 C            write (*,*) 'for Vs<450m/s.'
-            stop 99
+            return
          endif
          lnY = lnY + efac
        endif
@@ -21596,7 +21596,7 @@ c     soft-soil
 C        write (*,*) 'Idriss (1991), Horizontal, Soft Soil'
 C        write (*,*) 'not defined for spectral acclereation!!!'
 C        write (*,*) 'Check input file.'
-        stop 99
+        return
       endif
 
 c     Idriss 1997 Horizontal, soft-soil, PGA
@@ -21610,7 +21610,7 @@ C     Model Number = 042
 C         write (*,*) 'Idriss (1997), Horizontal, Soft Soil'
 C         write (*,*) 'not defined for spectral acclereation!!!'
 C         write (*,*) 'Check input file.'
-         stop 99
+         return
       endif
 
 c     Idriss (1991:1995), Horizontal, Rock
@@ -22398,7 +22398,7 @@ c   C         write (*,*) 'however, the magnitude of = ', mag
 c   C         write (*,*) 'falls outside of the applicable magnitude'
 c   C         write (*,*) 'range for this attenuation relationship.'
 c   C         write (*,*) 'Check your input fault parameter file.'
-c            stop 99
+c            return
 c         endif
          call Gregor02CasR ( mag, rupdist, lnY, sigma, specT,
      1            attenName1, period2,iflag)
@@ -22421,7 +22421,7 @@ c   C         write (*,*) 'however, the magnitude of = ', mag
 c   C         write (*,*) 'falls outside of the applicable magnitude'
 c   C         write (*,*) 'range for this attenuation relationship.'
 c   C         write (*,*) 'Check your input fault parameter file.'
-c            stop 99
+c            return
 c         endif
          call Gregor02CasS ( mag, rupdist, lnY, sigma, specT,
      1            attenName1, period2,iflag)
@@ -23410,7 +23410,7 @@ C     Model Number = 300
 C          write (*,*) 'McVerry (1993), Horizontal, Rock'
 C          write (*,*) 'not defined for spectral acclereation!!!'
 C          write (*,*) 'Check input file.'
-          stop 99
+          return
       endif
 
 c     fukushima (1990) rock
@@ -23424,7 +23424,7 @@ C     Model Number = 301
 C          write (*,*) 'Fukushima (1990), Horizontal, Rock'
 C          write (*,*) 'not defined for spectral acclereation!!!'
 C          write (*,*) 'Check input file.'
-          stop 99
+          return
       endif
 
 c     Loh high speed rail (New Joyner-Boore form)
@@ -23438,7 +23438,7 @@ C     Model Number = 302
 C         write (*,*) 'Loh High Speed Rail, Horizontal, Rock'
 C         write (*,*) 'not defined for spectral acclereation!!!'
 C         write (*,*) 'Check input file.'
-         stop 99
+         return
       endif
 
 c     New Loh (1996) model (unpublished)
@@ -23451,7 +23451,7 @@ C     Model Number = 303
 C         write (*,*) 'Loh (1996), Horizontal, Rock'
 C         write (*,*) 'not defined for spectral acclereation!!!'
 C         write (*,*) 'Check input file.'
-         stop 99
+         return
       endif
 
 c ******* Ambraseys et al 2005 Model *********
@@ -24036,7 +24036,7 @@ C         10,000 < jcalc < 11,000
          if (coefcountrrup .lt. 0) then
 C            write (*,*) 'Incorrect jcalc for SWUS Common Functional Model Rrup!!!'
 C            write (*,*) 'Check input file.'
-            Stop 99
+            return
          endif
          call SWUS_CFRrup ( mag, RupDist, jbDist, depthtop, ftype, dip1(1), RupWidth, Rx, HWFlag,
      1           specT, lnY, sigma, iflag, cfcoefrrup, coefcountrrup, phi, tau )
@@ -24052,7 +24052,7 @@ C         11,000 < jcalc < 12,000
          if (coefcountrjb .lt. 0) then
 C            write (*,*) 'Incorrect jcalc for SWUS Common Functional Model Rjb!!!'
 C            write (*,*) 'Check input file.'
-            Stop 99
+            return
          endif
          call SWUS_CFRjb ( mag, RupDist, jbDist, depthtop, ftype, dip1(1), RupWidth, Rx, HWFlag,
      1           specT, lnY, sigma, iflag, cfcoefrjb, coefcountrjb, phi, tau )
@@ -24443,7 +24443,7 @@ C     Model Number = 8910
          else
 C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
 C            write (*,*) 'for Vs<450m/s.'
-            stop 99
+            return
          endif
 
 C     Apply Mag Uncertainty
@@ -24477,7 +24477,7 @@ C     Model Number = 8911
          else
 C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
 C            write (*,*) 'for Vs<450m/s.'
-            stop 99
+            return
          endif
 
 C     Apply Mag Uncertainty
@@ -24511,7 +24511,7 @@ C     Model Number = 8912
          else
 C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
 C            write (*,*) 'for Vs<450m/s.'
-            stop 99
+            return
          endif
 
 C     Apply Mag Uncertainty
@@ -24839,7 +24839,7 @@ C     Model Number = 9910
          else
 C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
 C            write (*,*) 'for Vs<450m/s.'
-            stop 99
+            return
          endif
 
 C     Apply Mag Uncertainty
@@ -24867,7 +24867,7 @@ C     Model Number = 9911
          else
 C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
 C            write (*,*) 'for Vs<450m/s.'
-            stop 99
+            return
          endif
 
 C     Apply Mag Uncertainty
@@ -24895,7 +24895,7 @@ C     Model Number = 9912
          else
 C            write (*,*) 'Idriss NGA West 2 GMPE not defined'
 C            write (*,*) 'for Vs<450m/s.'
-            stop 99
+            return
          endif
 
 C     Apply Mag Uncertainty
@@ -24944,7 +24944,7 @@ c     Check for valid jcalc
       if ( lnY .gt. 1.0e10 ) then
 C         write (*,*)') jcalc, mag,
 C     1      rupDist, ftype, lnY, sigma
-         stop 99
+         return
       endif
 
       attenName(jType,iAtten) = attenname1
@@ -25514,7 +25514,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -26337,7 +26337,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -27035,7 +27035,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -27125,7 +27125,7 @@ C         write (*,*) 'attenuation model is not defined for a '
 C         write (*,*) ' spectral period of: '
 C         write (*,*)') ' Period = ',specT
 C         write (*,*)
-         stop 99
+         return
       endif
 
 c     Set the fault mechanism term.
@@ -27767,7 +27767,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -27856,7 +27856,7 @@ C         write (*,*) 'attenuation model is not defined for a '
 C         write (*,*) ' spectral period of: '
 C         write (*,*)') ' Period = ',specT
 C         write (*,*)
-         stop 99
+         return
       endif
 
 c     Set the fault mechanism term.
@@ -28088,7 +28088,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -28282,7 +28282,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -28554,7 +28554,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c0(count1),c0(count2),
@@ -29035,7 +29035,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),e01(count1),e01(count2),
@@ -29773,7 +29773,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -30687,7 +30687,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -31009,7 +31009,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -31290,7 +31290,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c0(count1),c0(count2),
@@ -31769,7 +31769,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),e01(count1),e01(count2),
@@ -32058,7 +32058,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -32637,7 +32637,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),e0(count1),e0(count2),
@@ -33180,7 +33180,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c0(count1),c0(count2),
@@ -34034,7 +34034,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -34659,7 +34659,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -35024,7 +35024,7 @@ C     choose phiA by Vs30 class
         elseif (vs30_class .eq. 1) then
 	     phiA = phiA_msr
         else
-	     stop 99
+	     return
         endif
 
 C     Set Sigma values for Japan Region
@@ -35456,7 +35456,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),e0(count1),e0(count2),
@@ -35914,7 +35914,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c0(count1),c0(count2),
@@ -36802,7 +36802,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),c1(count1),c1(count2),
@@ -37417,7 +37417,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -37787,7 +37787,7 @@ C     choose phiA by Vs30 class
         elseif (vs30_class .eq. 1) then
 	     phiA = phiA_msr
         else
-	     stop 99
+	     return
         endif
 
 C     Set Sigma values for Japan Region
@@ -38071,7 +38071,7 @@ C     PhiSS, European, Outside Zone1,2,3: High
 C         write (*,*) 'Invalid Single Station Sigma Model.'
 C         write (*,*) 'SSSCalc1 = ', ssscalc1
 C         write (*,*) 'Check input file.'
-         stop 99
+         return
       endif
 
       return
@@ -38129,7 +38129,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSS1(count1), PhiSS1(count2),
@@ -38191,7 +38191,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSS1(count1), PhiSS1(count2),
@@ -38256,7 +38256,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSS1(count1), PhiSS1(count2),
@@ -38325,7 +38325,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSS1(count1), PhiSS1(count2),
@@ -38411,7 +38411,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSS11(count1), PhiSS11(count2),
@@ -38496,7 +38496,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSS1(count1), PhiSS1(count2),
@@ -38554,7 +38554,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSS1(count1), PhiSS1(count2),
@@ -38616,7 +38616,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), a(count1), a(count2),
@@ -38685,7 +38685,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSS1(count1), PhiSS1(count2),
@@ -38744,7 +38744,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSS1(count1), PhiSS1(count2),
@@ -38803,7 +38803,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSS1(count1), PhiSS1(count2),
@@ -38861,7 +38861,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSS1(count1), PhiSS1(count2),
@@ -38934,7 +38934,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSSC(count1), PhiSSC(count2),
@@ -39013,7 +39013,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSSC(count1), PhiSSC(count2),
@@ -39100,7 +39100,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), aC(count1), aC(count2),
@@ -39196,7 +39196,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSSC(count1), PhiSSC(count2),
@@ -39273,7 +39273,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSSC(count1), PhiSSC(count2),
@@ -39358,7 +39358,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSSC(count1), PhiSSC(count2),
@@ -39435,7 +39435,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), PhiSSC(count1), PhiSSC(count2),
@@ -39509,7 +39509,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -39580,7 +39580,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -39652,7 +39652,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -39723,7 +39723,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -39794,7 +39794,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -39865,7 +39865,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -39933,7 +39933,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -39993,7 +39993,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -40054,7 +40054,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -40114,7 +40114,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -40174,7 +40174,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -40234,7 +40234,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C     Interpolate the coefficients for the requested spectral period.
 1020  call interp ( period(count1), period(count2), sig1(count1), sig1(count2),
@@ -40482,7 +40482,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
 
@@ -41018,7 +41018,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1010    call interp (period(count1),period(count2),Amax1(count1),Amax1(count2),
@@ -41627,7 +41627,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1010    call interp (period(count1),period(count2),Amax1(count1),Amax1(count2),
@@ -42252,7 +42252,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1010    call interp (period(count1),period(count2),Amax1(count1),Amax1(count2),
@@ -42653,17 +42653,17 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Arroyo Sub-Interface (2010 Model) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -42727,15 +42727,15 @@ c      'PARAMETER (MAXIT=100,EPS=1.e-7,FPMIN=1.e-30,EULER=.5772156649)
 
       If (n .le. 0 .or. x .le. 0 ) Then
 
-          write(*,*) "fEnx Input Error"
+c     write statement removed for R package compliance
 		  goto 99
 
 		  elseif ( x .eq. 0 .And. n .eq.0 ) then
-          write(*,*) "fEnx Input Error"
+c     write statement removed for R package compliance
 		  goto 99
 
 		    elseif ( x .eq. 0 .And.  n .eq. 1) then
-            write(*,*) "fEnx Input Error"
+c     write statement removed for R package compliance
 		    goto 99
 
       End If
@@ -42769,7 +42769,7 @@ c      'PARAMETER (MAXIT=100,EPS=1.e-7,FPMIN=1.e-30,EULER=.5772156649)
                       End If
                    enddo
 
-                  write(*,*) "fEnx Input Error"
+c     write statement removed for R package compliance
                   goto 99
 
               Else
@@ -42805,7 +42805,7 @@ c      'PARAMETER (MAXIT=100,EPS=1.e-7,FPMIN=1.e-30,EULER=.5772156649)
                       End If
                   enddo
 
-                  write(*,*)  "fEnx Input Error"
+c     write statement removed for R package compliance
                   goto 99
 
               End If

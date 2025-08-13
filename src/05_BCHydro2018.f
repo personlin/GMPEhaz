@@ -469,20 +469,20 @@ C   For other periods, loop over the spectral period range of the attenuation re
             goto 1020 
          endif
       enddo
-      write (*,'( i5,2f12.6)') nper, specT, period(nper)
+c     write statement removed for R package compliance
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
-      write (*,*) 'BCHydro Sub (6/2018 Model) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*) 
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -541,9 +541,9 @@ c         (Interface events) of Hypocentral distance (Intraslab events).
         gm1 = a1T + (a2T + a14T*ftype + a3*(mag -7.8 ))*alog(R)
      1          + a6T*rRup + a10T*ftype + ftype * (slabDC1T*a4T)
       else
-         write (*,*) 'BC Hydro V3 Model not defined for Ftype'
-         write (*,*) 'other than 0 (interface) or 1 (intraslab)'
-         stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+         return
       endif
 c      write (*,'( 10f8.4)') a1T, a2T, a14T, a3, A6T, a10T, a4T
 c      write (*,'( 10f10.4)') (a2T + a14T*ftype + a3*(mag -7.8 ))*alog(R),
@@ -762,20 +762,20 @@ C   For other periods, loop over the spectral period range of the attenuation re
             goto 1020 
          endif
       enddo
-      write (*,'( i5,2f12.6)') nper, specT, period(nper)
+c     write statement removed for R package compliance
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
-      write (*,*) 'BCHydro Sub (6/2018 Model) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*) 
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -837,9 +837,9 @@ c         (Interface events) of Hypocentral distance (Intraslab events).
         gm1 = a1T + (a2T + a14T*ftype + a3*(mag -7.8 ))*alog(R)
      1          + a6T*rRup + a10T*ftype + ftype * (slabDC1T*a4T)
       else
-         write (*,*) 'BC Hydro V3 Model not defined for Ftype'
-         write (*,*) 'other than 0 (interface) or 1 (intraslab)'
-         stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+         return
       endif
 c      write (*,'( 10f8.4)') a1T, a2T, a14T, a3, A6T, a10T, a4T
 c      write (*,'( 10f10.4)') (a2T + a14T*ftype + a3*(mag -7.8 ))*alog(R),
@@ -1046,20 +1046,20 @@ C   For other periods, loop over the spectral period range of the attenuation re
             goto 1020 
          endif
       enddo
-      write (*,'( i5,2f12.6)') nper, specT, period(nper)
+c     write statement removed for R package compliance
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
-      write (*,*) 'BCHydro Sub (6/2018 Model) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*) 
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -1122,9 +1122,9 @@ c         (Interface events) of Hypocentral distance (Intraslab events).
         gm1 = a1T + (a2T + a14T*ftype + a3*(mag -7.8 ))*alog(R)
      1          + a6T*rRup + a10T*ftype + ftype * (slabDC1T*a4T)
       else
-         write (*,*) 'BC Hydro V3 Model not defined for Ftype'
-         write (*,*) 'other than 0 (interface) or 1 (intraslab)'
-         stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+         return
       endif
 c      write (*,'( 10f8.4)') a1T, a2T, a14T, a3, A6T, a10T, a4T
 c      write (*,'( 10f10.4)') (a2T + a14T*ftype + a3*(mag -7.8 ))*alog(R),
@@ -1336,17 +1336,17 @@ C   For other periods, loop over the spectral period range of the attenuation re
 c     write (*,'( i5,2f12.6)') nper, specT, period(nper)
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
-      write (*,*) 'BCHydro Sub (6/2018 Model) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*) 
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -1405,9 +1405,9 @@ c         (Interface events) of Hypocentral distance (Intraslab events).
         gm1 = a1T + (a2T + a14T*ftype + a3*(mag -7.8 ))*alog(R)
      1          + a6T*rRup + a10T*ftype + ftype * (slabDC1T*a4T)
       else
-         write (*,*) 'BC Hydro V3 Model not defined for Ftype'
-         write (*,*) 'other than 0 (interface) or 1 (intraslab)'
-         stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+         return
       endif
 c      write (*,'( 10f8.4)') a1T, a2T, a14T, a3, A6T, a10T, a4T
 c      write (*,'( 10f10.4)') (a2T + a14T*ftype + a3*(mag -7.8 ))*alog(R),

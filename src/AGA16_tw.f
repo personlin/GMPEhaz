@@ -158,17 +158,17 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
  
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
-      write (*,*) 'AGA16_TW_C01 Subduction Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*) 
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -215,9 +215,9 @@ c         (Interface events) of Hypocentral distance (Intraslab events).
          R = disthypo + c4*exp( (mag-6.0)*a9 ) 
          base = a1T + a4*deltaC1 + (a2T + a14T*ftype + a3*(mag - 7.8))*alog(R) + a6T*disthypo + a10T*ftype
       else
-         write (*,*) 'AGA16_TW_C01 Model not defined for Ftype'
-         write (*,*) 'other than 0 (interface) or 1 (intraslab)'
-         stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+         return
       endif
       
 C     Base model for Magnitude scaling.      
@@ -235,9 +235,9 @@ C     Depth Scaling
 C        fdepth = a11T*(depth - 60.0 )
         fdepth =  a11T*(min(depth, 80.0) -60.0 )
       else
-         write (*,*) 'AGA16_TW_C01 Model not defined for Ftype'
-         write (*,*) 'other than 0 (interface) or 1 (intraslab)'
-         stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+         return
       endif
 
 C     Site Response 

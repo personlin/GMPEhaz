@@ -354,17 +354,17 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Abrahamson, Silva, and Kamai (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -732,7 +732,7 @@ C     choose phiA by Vs30 class
         elseif (vs30_class .eq. 1) then
 	     phiA = phiA_msr
         else
-	     stop 99
+	     return
         endif
 
 C     Set Sigma values for Japan Region
@@ -1111,17 +1111,17 @@ C   For other periods, loop over the spectral period range of the attenuation re
          endif
       enddo
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Abrahamson, Silva, and Kamai (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 C Interpolate the coefficients for the requested spectral period.
  1020       call interp (period(count1),period(count2),a1(count1),a1(count2),
      +                   specT,a1T,iflag)
@@ -1436,7 +1436,7 @@ C     choose phiA by Vs30 class
         elseif (vs30_class .eq. 1) then
 	     phiA = phiA_msr
         else
-	     stop 99
+	     return
         endif
 C     Set Sigma values for Japan Region
       else

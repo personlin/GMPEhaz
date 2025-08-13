@@ -80,17 +80,17 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Adjusted Akkar,Sandikkaya&Bommer (2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
      +                   specT,a1T,iflag)
@@ -299,17 +299,17 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Adjusted Bindi et al. (2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 C Interpolate the coefficients for the requested spectral period.
  1020 call S24_interp (period(count1),period(count2),e1(count1),e1(count2),
      +             specT,e1T,iflag)
@@ -699,17 +699,17 @@ C   For other periods, loop over the spectral period range of the attenuation re
          endif
       enddo
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Adjusted Abrahamson, Silva, and Kamai (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
      +                   specT,a1T,iflag)
@@ -1024,7 +1024,7 @@ C     choose phiA by Vs30 class
         elseif (vs30_class .eq. 1) then
 	     phiA = phiA_msr
         else
-	     stop 99
+	     return
         endif
 C     Set Sigma values for Japan Region
       else
@@ -1263,17 +1263,17 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Adjusted BSSA (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),e0(count1),e0(count2),
      +                   specT,e0T,iflag)
@@ -1725,17 +1725,17 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Adjusted Chiou and Youngs (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),c1(count1),c1(count2),
      +                   specT,c1T,iflag)
@@ -2079,17 +2079,17 @@ C Now loop over the spectral period range of the attenuation relationship.
          enddo
       endif
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Adjusted Idriss (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
      +                   specT,a1T,iflag)
@@ -2397,17 +2397,17 @@ C Now loop over the spectral period range of the attenuation relationship.
       endif
 
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*)
-      write (*,*) 'Campbell&Bozorgnia (NGA West2-2013) Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: '
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*)
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),c0(count1),c0(count2),
@@ -3061,17 +3061,17 @@ C   For other periods, loop over the spectral period range of the attenuation re
       enddo
  
 C Selected spectral period is outside range defined by attenuaton model.
-      write (*,*) 
-      write (*,*) 'AGA16_TW_F10 Subduction Horizontal'
-      write (*,*) 'attenuation model is not defined for a '
-      write (*,*) ' spectral period of: ' 
-      write (*,'(a10,f10.5)') ' Period = ',specT
-      write (*,*) 'This spectral period is outside the defined'
-      write (*,*) 'period range in the code or beyond the range'
-      write (*,*) 'of spectral periods for interpolation.'
-      write (*,*) 'Please check the input file.'
-      write (*,*) 
-      stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020       call S24_interp (period(count1),period(count2),a1(count1),a1(count2),
@@ -3133,9 +3133,9 @@ c         (Interface events) of Hypocentral distance (Intraslab events).
          R = disthypo + c4*exp( (mag-6.0)*a9 ) 
          base = a1T + a4*deltaC1 + (a2T + a14T*ftype + a3*(mag - 7.8))*alog(R) + a6T*disthypo + a10T*ftype
       else
-         write (*,*) 'AGA16_TW_F10 Model not defined for Ftype'
-         write (*,*) 'other than 0 (interface) or 1 (intraslab)'
-         stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+         return
       endif
       
 C     Base model for Magnitude scaling.      
@@ -3163,9 +3163,9 @@ C     Depth Scaling
 C        fdepth = a11T*(depth - 60.0 )
         fdepth =  a11T*(min(depth, 80.0) -60.0 )
       else
-         write (*,*) 'AGA16_TW_F10 Model not defined for Ftype'
-         write (*,*) 'other than 0 (interface) or 1 (intraslab)'
-         stop 99
+c     write statement removed for R package compliance
+c     write statement removed for R package compliance
+         return
       endif
 
 C     Forearc/Backarc scaling      
@@ -3312,7 +3312,7 @@ C      write (*,*) 'period range in the code or beyond the range'
 C      write (*,*) 'of spectral periods for interpolation.'
 C      write (*,*) 'Please check the input file.'
 C      write (*,*)
-      stop 99
+      return
 
 C Interpolate the coefficients for the requested spectral period.
  1020 call S24_interp (period1(count1),period1(count2),c1(count1),c1(count2),
