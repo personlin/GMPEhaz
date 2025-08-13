@@ -49,7 +49,7 @@ CY14(
 }
 \value{
 A list will be return, including mag, Rrup, Rjb, specT, period, lnY, sigma, iflag, Vs30,
-dip, Ztor, ftype, Z10, vs3-_class, hwflag, Rx, regionflag, phi, tau.
+dip, Ztor, ftype, Z10, vs30_class, hwflag, Rx, regionflag, phi, tau.
 }
 \description{
 \code{CY14} returns the ground-motion prediction with it sigma of Chiou and Youngs(2014) GMPE.
