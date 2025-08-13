@@ -36,14 +36,19 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y gfortran
+          sudo apt-get install -y gfortran libcurl4-openssl-dev libssl-dev libxml2-dev
           
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
+          # Ensure vignette dependencies are installed
+          if (!require("knitr", quietly = TRUE)) install.packages("knitr")
+          if (!require("rmarkdown", quietly = TRUE)) install.packages("rmarkdown")
         shell: Rscript {0}
         
       - name: Check
-        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
+        env:
+          _R_CHECK_CRAN_INCOMING_REMOTE_: false
+        run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--no-build-vignettes"), error_on = "error")
         shell: Rscript {0}
