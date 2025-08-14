@@ -15,7 +15,7 @@ Suggests: testthat,
     knitr,
     rmarkdown,
     pkgdown
-URL: http://github.com/personlin/GMPEhaz
-BugReports: http://github.com/personlin/GMPEhaz/issues
+URL: https://personlin.github.io/GMPEhaz/, https://github.com/personlin/GMPEhaz
+BugReports: https://github.com/personlin/GMPEhaz/issues
 VignetteBuilder: knitr
 Encoding: UTF-8
