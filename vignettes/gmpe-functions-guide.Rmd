@@ -1,0 +1,309 @@
+---
+title: "Main GMPE Functions Guide"
+author: "Person Lin"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Main GMPE Functions Guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+```{r setup}
+library(GMPEhaz)
+```
+
+# Introduction
+
+The GMPEhaz package provides multiple Ground Motion Prediction Equations (GMPEs) covering prediction models for both crustal and subduction zone earthquakes. This document introduces the most important GMPE functions in the package, including internationally recognized NGA-West2 models and Taiwan-specific models.
+
+## Crustal Earthquake GMPE Models
+
+### 1. BSSA14 - Boore et al. (2014) NGA-West2
+
+BSSA14 is one of the important models in the NGA-West2 project, suitable for ground motion prediction of shallow crustal earthquakes.
+
+```{r}
+# BSSA14 function parameter description
+# Mag: Earthquake magnitude
+# Rjb: Joyner-Boore distance (km)
+# Prd: Period (0 for PGA, -1 for PGV)
+# Vs30: 30-meter average shear wave velocity (m/s)
+# ftype: Fault type (0=strike-slip, 1=reverse, -1=normal)
+# Z1.0: Depth to 1.0 km/s shear wave velocity (km)
+# regionflag: Region flag (0=global, 1=China-Turkey, 2=Italy-Japan)
+# basinflag: Basin adjustment
+
+# Example: Magnitude 6 earthquake, 20km distance, rock site
+result_bssa14 <- BSSA14(Mag=6, Rjb=20, Prd=0, Vs30=760, ftype=0, Z1.0=0.5, regionflag=0, basinflag=0)
+cat("BSSA14 PGA prediction results:\n")
+cat("Log value:", round(result_bssa14$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_bssa14$lnY)/exp(6.89), 3), "\n")
+cat("Standard deviation:", round(result_bssa14$sigma, 3), "\n")
+```
+
+### 2. CY14 - Chiou and Youngs (2014) NGA-West2
+
+CY14 model considers more parameters, including complex factors such as hanging wall effects.
+
+```{r}
+# CY14 requires more parameters
+# Rrup: Rupture distance (km)
+# Dip: Fault dip angle (degrees)
+# Ztor: Depth to top of rupture (km)
+# Vs30_class: Vs30 classification (1=measured, 0=estimated)
+# hwflag: Hanging wall flag (1=hanging wall, 0=not hanging wall)
+# Rx: Horizontal distance perpendicular to fault strike (km)
+
+result_cy14 <- CY14(Mag=6, Rrup=20, Rjb=20, Prd=0, ftype=0, Vs30=760, 
+                    Dip=90, Ztor=0, Z1.0=0.5, Vs30_class=1, hwflag=0, Rx=20, regionflag=0)
+cat("CY14 PGA prediction results:\n")
+cat("Log value:", round(result_cy14$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_cy14$lnY)/exp(6.89), 3), "\n")
+```
+
+### 3. ASB14 - Akkar et al. (2014)
+
+ASB14 is a crustal earthquake model developed for European and Middle Eastern regions.
+
+```{r}
+# ASB14 is relatively simple, main parameters include magnitude, distance, fault type and site conditions
+result_asb14 <- ASB14(Mag=6, Rjb=20, Prd=0, ftype=0, Vs30=760)
+cat("ASB14 PGA prediction results:\n")
+cat("Log value:", round(result_asb14$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_asb14$lnY)/exp(6.89), 3), "\n")
+```
+
+### 4. BI14 - Bindi et al. (2014)
+
+BI14 is a pan-European ground motion prediction equation developed based on the RESORCE database.
+
+```{r}
+result_bi14 <- BI14(Mag=6, Rjb=20, Prd=0, ftype=0, Vs30=760)
+cat("BI14 PGA prediction results:\n")
+cat("Log value:", round(result_bi14$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_bi14$lnY)/exp(6.89), 3), "\n")
+```
+
+## Taiwan-Specific Models
+
+### 5. Lin11 - Lin et al. (2011)
+
+Lin11 is a model specifically developed for Taiwan shallow crustal earthquakes, considering Taiwan's special geological conditions.
+
+```{r}
+# Lin11 model distinguishes between rock and soil sites (based on Vs30)
+# hwflag: Hanging wall effect flag
+
+result_lin11 <- Lin11(Mag=6, Rrup=20, Prd=0, hwflag=0, Vs30=760)
+cat("Lin11 PGA prediction results:\n")
+cat("Log value:", round(result_lin11$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_lin11$lnY/exp(6.89)), 3), "\n")
+```
+
+## Subduction Zone Earthquake Models
+
+### 6. LL08 - Lin and Lee (2008)
+
+LL08 is a model specifically developed for subduction zone earthquakes in northeastern Taiwan.
+
+```{r}
+# LL08 is applicable to subduction zone earthquakes
+# ftype: 0=interface earthquake, 1=intraslab earthquake
+# depth: Source depth (km)
+
+result_ll08 <- LL08(Mag=6, Rrup=20, depth=10, ftype=0, Prd=0, Vs30=760)
+cat("LL08 PGA prediction results:\n")
+cat("Log value:", round(result_ll08$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_ll08$lnY)/exp(6.89), 3), "\n")
+```
+
+### 7. BCHydroSub2018Global - Abrahamson et al. (2018)
+
+BCHydroSub2018Global is a modern model developed for global subduction zone earthquakes.
+
+```{r}
+# BCHydroSub2018Global considers forearc/backarc effects
+# forearc: 0=forearc, 1=backarc
+# Rhypo: Hypocentral distance (km)
+
+result_bch <- BCHydroSub2018Global(Mag=6, Rrup=20, Prd=0, ftype=0, Vs30=760, 
+                                   forearc=1, depth=10, Rhypo=25)
+cat("BCHydroSub2018Global PGA prediction results:\n")
+cat("Log value:", round(result_bch$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_bch$lnY), 3)/exp(6.89), "\n")
+```
+
+## Multi-Period Analysis Example
+
+All GMPE functions support response spectrum calculations for different periods:
+
+```{r}
+# Calculate response spectrum for different periods
+periods <- c(0, 0.1, 0.2, 0.5, 1.0, 2.0)  # Including PGA(0) and different periods
+mag <- 7
+distance <- 30
+vs30 <- 760
+
+# 使用BSSA14計算反應譜
+results <- data.frame(
+  Period = periods,
+  BSSA14_lnSa = numeric(length(periods)),
+  CY14_lnSa = numeric(length(periods))
+)
+
+for(i in 1:length(periods)) {
+  # BSSA14
+  bssa_result <- BSSA14(Mag=mag, Rjb=distance, Prd=periods[i], Vs30=vs30, 
+                        ftype=0, Z1.0=0.5, regionflag=0, basinflag=0)
+  results$BSSA14_lnSa[i] <- bssa_result$lnY
+  
+  # CY14
+  cy_result <- CY14(Mag=mag, Rrup=distance, Rjb=distance, Prd=periods[i], 
+                    ftype=0, Vs30=vs30, Dip=90, Ztor=0, Z1.0=0.5, 
+                    Vs30_class=1, hwflag=0, Rx=distance, regionflag=0)
+  results$CY14_lnSa[i] <- cy_result$lnY
+}
+
+print(results)
+```
+
+```{r, fig.width=7, fig.height=5}
+# Plot response spectrum comparison chart
+plot(results$Period, exp(results$BSSA14_lnSa), type="l", col="blue", lwd=2,
+     xlab="Period (sec)", ylab="Spectral Acceleration (g)", 
+    main="GMPE Response Spectrum Comparison (M7.0, R=30km, Vs30=760m/s)",
+     ylim=c(0, max(exp(results$BSSA14_lnSa)/exp(6.89), exp(results$CY14_lnSa)/exp(6.89))))
+lines(results$Period, exp(results$CY14_lnSa)/exp(6.89), col="red", lwd=2)
+legend("topright", legend=c("BSSA14", "CY14"), col=c("blue", "red"), lwd=2)
+grid()
+```
+
+## Taiwan-Specific Recent Models
+
+### 8. Chao2018 - Chao et al. (2018)
+
+Chao2018 is a comprehensive GMPE model developed for both crustal and subduction earthquakes in Taiwan region.
+
+```{r}
+# Chao2018 function parameter description
+# Mag: Earthquake magnitude
+# Rrup: Rupture distance (km)
+# Prd: Period (0 for PGA)
+# ftype: Fault mechanism (-1=normal, 0=strike-slip, 1=reverse for crustal; 0=interface, 1=intraslab for subduction)
+# Vs30: 30-meter average shear wave velocity (m/s)
+# Vs30_class: Vs30 data quality (0=estimated, 1=measured)
+# Ztor: Depth to top of rupture (km)
+# Z1.0: Depth to 1.0 km/s shear wave velocity (km)
+# sourcetype: Source type (0=crustal, 1=subduction)
+# msasflag: Mainshock/aftershock flag (0=mainshock, 1=aftershock)
+
+# Example: Crustal earthquake
+result_chao2018_crustal <- Chao2018(Mag=6.5, Rrup=30, Prd=0, ftype=0, Vs30=760, 
+                                   Vs30_class=1, Ztor=5, Z1.0=0.5, sourcetype=0, msasflag=0)
+cat("Chao2018 Crustal PGA prediction:\n")
+cat("Log value:", round(result_chao2018_crustal$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_chao2018_crustal$lnY)/exp(6.89), 3), "\n")
+
+# Example: Subduction interface earthquake
+result_chao2018_sub <- Chao2018(Mag=7.5, Rrup=50, Prd=0, ftype=0, Vs30=760, 
+                               Vs30_class=1, Ztor=0, Z1.0=0.5, sourcetype=1, msasflag=0)
+cat("Chao2018 Subduction Interface PGA prediction:\n")
+cat("Log value:", round(result_chao2018_sub$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_chao2018_sub$lnY)/exp(6.89), 3), "\n")
+```
+
+### 9. PhungCru18 - Phung et al. (2018) Crustal
+
+PhungCru18 is a crustal GMPE model developed specifically for Taiwan with regional adjustments.
+
+```{r}
+# PhungCru18 function parameter description
+# Mag: Earthquake magnitude
+# Rrup: Rupture distance (km)
+# Rjb: Joyner-Boore distance (km)
+# Rx: Horizontal distance from top edge of rupture (km)
+# Prd: Period (0 for PGA)
+# Vs30: 30-meter average shear wave velocity (m/s)
+# Dip: Dip angle of the fault plane (degrees)
+# Ztor: Depth to top of rupture (km)
+# ftype: Fault mechanism (-1=normal, 0=strike-slip, 1=reverse)
+# Z1.0: Depth to 1.0 km/s shear wave velocity (km)
+# Vs30_class: Vs30 data quality (0=estimated, 1=measured)
+# regionflag: Regional flag (0=global, 1=Taiwan)
+# hwflag: Hanging wall flag (0=footwall, 1=hanging wall)
+
+# Example: Taiwan crustal earthquake
+result_phungcru18 <- PhungCru18(Mag=6.5, Rrup=25, Rjb=20, Rx=15, Prd=0, Vs30=760, 
+                               Dip=90, Ztor=5, ftype=0, Z1.0=0.5, Vs30_class=1, 
+                               regionflag=1, hwflag=0)
+cat("PhungCru18 Taiwan PGA prediction:\n")
+cat("Log value:", round(result_phungcru18$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_phungcru18$lnY)/exp(6.89), 3), "\n")
+```
+
+### 10. PhungSub18 - Phung et al. (2018) Subduction
+
+PhungSub18 is a subduction zone GMPE model developed for Taiwan and Japan regions.
+
+```{r}
+# PhungSub18 function parameter description
+# Mag: Earthquake magnitude
+# Rrup: Rupture distance (km)
+# Prd: Period (0 for PGA)
+# ftype: Fault type (0=interface, 1=intraslab)
+# Vs30: 30-meter average shear wave velocity (m/s)
+# Z1.0: Depth to 1.0 km/s shear wave velocity (km)
+# Ztor: Depth to top of rupture (km)
+# regionflag: Regional flag (0=Japan, 1=Taiwan)
+
+# Example: Taiwan interface earthquake
+result_phungsub18_int <- PhungSub18(Mag=7.5, Rrup=50, Prd=0, ftype=0, Vs30=760, 
+                                   Z1.0=0.5, Ztor=0, regionflag=1)
+cat("PhungSub18 Taiwan Interface PGA prediction:\n")
+cat("Log value:", round(result_phungsub18_int$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_phungsub18_int$lnY)/exp(6.89), 3), "\n")
+
+# Example: Taiwan intraslab earthquake
+result_phungsub18_slab <- PhungSub18(Mag=7.0, Rrup=60, Prd=0, ftype=1, Vs30=760, 
+                                    Z1.0=0.5, Ztor=30, regionflag=1)
+cat("PhungSub18 Taiwan Intraslab PGA prediction:\n")
+cat("Log value:", round(result_phungsub18_slab$lnY, 3), "\n")
+cat("PGA(g):", round(exp(result_phungsub18_slab$lnY)/exp(6.89), 3), "\n")
+```
+
+## Model Selection Guide
+
+### Crustal Earthquakes
+
+- **BSSA14, CY14**: Suitable for global shallow crustal earthquakes, NGA-West2 series with rich datasets
+- **ASB14, BI14**: Suitable for European regions, considering European geological characteristics
+- **Lin11**: Specifically for Taiwan crustal earthquakes, considering Taiwan's special geological conditions
+- **Chao2018, PhungCru18**: Latest Taiwan-specific models with local calibration
+
+### Subduction Zone Earthquakes
+
+- **BCHydroSub2018Global**: Modern global subduction model with wide applicability
+- **LL08**: Specifically for Taiwan's northeastern subduction zone, considering Taiwan's special subduction characteristics
+- **Chao2018, PhungSub18**: Recent Taiwan-specific subduction models
+
+### Parameter Importance
+
+1. **Magnitude (Mag)**: Most important parameter with the greatest impact on ground motion intensity
+2. **Distance**: Rrup (rupture distance) is usually more accurate than Rjb (Joyner-Boore distance)
+3. **Site conditions (Vs30)**: Important impact on ground motion amplification effects
+4. **Fault type (ftype)**: Affects ground motion characteristics
+5. **Regional parameters**: Consider geological differences in different regions
+
+## Conclusion
+
+The GMPEhaz package provides a rich selection of GMPE models. Users can choose appropriate models based on study region, earthquake type, and available parameters. It is recommended to use multiple models for comparison and validation when conducting seismic hazard analysis to obtain more reliable results.

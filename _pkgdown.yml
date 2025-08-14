@@ -72,6 +72,23 @@ navbar:
     github:
       icon: fab-github fa-lg
       href: https://github.com/personlin/GMPEhaz/
+    articles:
+      text: "Articles"
+      menu:
+      - text: "Introduction to GMPEhaz Package"
+        href: articles/GMPEhaz-introduction.html
+      - text: "Main GMPE Functions Guide" 
+        href: articles/gmpe-functions-guide.html
+
+articles:
+- title: "Getting Started"
+  navbar: "Getting Started"
+  contents:
+  - GMPEhaz-introduction
+- title: "Function Guide"
+  navbar: "Function Guide"
+  contents:
+  - gmpe-functions-guide
 
 authors:
   Person Lin:

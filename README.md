@@ -7,9 +7,7 @@
 ## Features
 
 - Implements more than twenty published GMPE models including LL08, ASK14, CY14 and many others.
-- Generic wrapper function `atten2()` to evaluate models over multiple periods or scenarios.
 - Data sets `periods.T` and `GMPEhaz.model` describing available periods for each model.
-- Unit tests using `testthat` to verify key functionality.
 
 ## Installation
 
@@ -27,12 +25,6 @@ library(GMPEhaz)
 res <- LL08Rock(6, 20, 10, 0, 0)
 pga <- exp(res$lnY) / exp(6.89)
 print(pga)
-```
-
-```r
-# Evaluate multiple magnitudes using the generic wrapper
-vals <- atten2("LL08Rock", 0, Mag = c(6, 7), Rrup = c(20, 20), depth = 10, ftype = 0, plot = FALSE)
-head(vals)
 ```
 
 ## Documentation
