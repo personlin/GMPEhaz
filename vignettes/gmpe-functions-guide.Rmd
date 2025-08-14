@@ -154,7 +154,7 @@ mag <- 7
 distance <- 30
 vs30 <- 760
 
-# 使用BSSA14計算反應譜
+# Calculate response spectrum using BSSA14
 results <- data.frame(
   Period = periods,
   BSSA14_lnSa = numeric(length(periods)),
@@ -179,9 +179,9 @@ print(results)
 
 ```{r, fig.width=7, fig.height=5}
 # Plot response spectrum comparison chart
-plot(results$Period, exp(results$BSSA14_lnSa), type="l", col="blue", lwd=2,
+plot(results$Period, exp(results$BSSA14_lnSa)/exp(6.89), type="l", col="blue", lwd=2,
      xlab="Period (sec)", ylab="Spectral Acceleration (g)", 
-    main="GMPE Response Spectrum Comparison (M7.0, R=30km, Vs30=760m/s)",
+     main="Response Spectrum Comparison (M7.0, R=30km)",
      ylim=c(0, max(exp(results$BSSA14_lnSa)/exp(6.89), exp(results$CY14_lnSa)/exp(6.89))))
 lines(results$Period, exp(results$CY14_lnSa)/exp(6.89), col="red", lwd=2)
 legend("topright", legend=c("BSSA14", "CY14"), col=c("blue", "red"), lwd=2)
