@@ -5,9 +5,9 @@
 #'Chiou, B. S.-J., and R. R. Youngs (2014), Update of the chiou and youngs NGA model for
 #'the average horizontal component of peak ground motion and response spectra,
 #'Earthquake Spectra, 30(3), 1117-1153.
-#'\url{http://dx.doi.org/10.1193/072813EQS219M}
+#'\doi{10.1193/072813EQS219M}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.

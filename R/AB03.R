@@ -5,9 +5,9 @@
 #'Atkinson, G., and D. Boore (2003), Empirical ground-motion relations for subduction-zone earthquakes
 #'and their application to cascadia and other regions, Bulletin of the Seismological Society of America,
 #'93(4), 1703-1729.
-#'\url{http://dx.doi.org/10.1785/0120020156}
+#'\doi{10.1785/0120020156}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param ftype style of faulting.

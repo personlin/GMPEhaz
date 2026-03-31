@@ -5,7 +5,7 @@
 #'Lin, P.-S. (2009). Ground-motion attenuation relationship and path-effect
 #'study using Taiwan data set, Ph.D. Thesis, Nation Central University, Taiwan (in Chinese).
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param Vs30 Vs30(m/s)

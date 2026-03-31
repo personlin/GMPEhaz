@@ -5,9 +5,9 @@
 #'
 #'Atkinson, G. M., and Macias, M. (2009). Predicted Ground Motions for Great Interface Earthquakes
 #'in the Cascadia Subduction Zone. Bulletin of the Seismological Society of America, 99(3), 1552-1578.
-#'\url{http://doi.org/10.1785/0120080147}
+#'\doi{10.1785/0120080147}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #'

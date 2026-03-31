@@ -5,9 +5,9 @@
 #'
 #'Lin, P.-S., C.-T. Lee, C.-T. Cheng, and C.-H. Sung (2011), Response spectral attenuation relations
 #'for shallow crustal earthquakes in taiwan, Engineering Geology, 121(3-4), 150-164.
-#'\url{http://dx.doi.org/10.1016/j.enggeo.2011.04.019}
+#'\doi{10.1016/j.enggeo.2011.04.019}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param hwflag hanging-wall flag, 1 for hanging-wall.
@@ -51,9 +51,9 @@ Lin11 <- function(Mag, Rrup, Prd, hwflag=0, Vs30=760){
 #'
 #'Lin, P.-S., C.-T. Lee, C.-T. Cheng, and C.-H. Sung (2011), Response spectral attenuation relations
 #'for shallow crustal earthquakes in taiwan, Engineering Geology, 121(3-4), 150-164.
-#'\url{http://dx.doi.org/10.1016/j.enggeo.2011.04.019}
+#'\doi{10.1016/j.enggeo.2011.04.019}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param hwflag hanging-wall flag, 1 for hanging-wall.
@@ -86,9 +86,9 @@ Lin11Rock <- function(Mag, Rrup, Prd, hwflag=0){
 #'
 #'Lin, P.-S., C.-T. Lee, C.-T. Cheng, and C.-H. Sung (2011), Response spectral attenuation relations
 #'for shallow crustal earthquakes in taiwan, Engineering Geology, 121(3-4), 150-164.
-#'\url{http://dx.doi.org/10.1016/j.enggeo.2011.04.019}
+#'\doi{10.1016/j.enggeo.2011.04.019}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param hwflag hanging-wall flag, 1 for hanging-wall.

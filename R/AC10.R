@@ -5,9 +5,9 @@
 #'Akkar, S., and Z. Cagnan (2010), A local ground-motion predictive model for turkey,
 #'and its comparison with other regional and global ground-motion models,
 #'Bulletin of the Seismological Society of America, 100(6), 2978-2995.
-#'\url{http://dx.doi.org/10.1785/0120090367}
+#'\doi{10.1785/0120090367}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param ftype style of faulting.

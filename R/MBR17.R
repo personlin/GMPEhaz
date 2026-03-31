@@ -4,12 +4,12 @@
 #'
 #' Montalva, G. A., Bastias, N., and Rodriguez-Marek, A. (2017). Ground-Motion Prediction Equation for the
 #' Chilean Subduction Zone. Bulletin of the Seismological Society of America, 107(2), 901-911.
-#' \url{http://doi.org/10.1785/0120160221}
+#' \doi{10.1785/0120160221}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
-#' @param ftype fytpe=0 for interface (use rupture distance), ftype=1 for intraslab (use hypocentral distance).
+#' @param ftype ftype=0 for interface (use rupture distance), ftype=1 for intraslab (use hypocentral distance).
 #' @param Vs30 Vs30(m/s).
 #' @param forearc 0 = Forearc site, 1 = Backarc site.
 #' @param depth hypocentral depth(km).

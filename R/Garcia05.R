@@ -6,7 +6,7 @@
 #'Mexico: Peak Ground-Motion Parameters and Response Spectra. Bulletin of the Seismological Society of America,
 #'95(6), 2272 LP-2282. Retrieved from \url{http://www.bssaonline.org/content/95/6/2272.abstract}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param depth hypocentral depth(km).

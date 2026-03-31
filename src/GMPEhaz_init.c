@@ -2,10 +2,6 @@
 #include <stdlib.h> // for NULL
 #include <R_ext/Rdynload.h>
 
-/* FIXME:
-Check these declarations against the C/Fortran source code.
-*/
-
 /* .Fortran calls */
 extern void F77_NAME(ab03)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(ac_2010)(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);

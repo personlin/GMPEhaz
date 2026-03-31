@@ -5,12 +5,12 @@
 #'
 #'Lin, P., and C. Lee (2008), Ground-motion attenuation relationships for subduction-zone earthquakes in
 #'northeastern taiwan, Bulletin of the Seismological Society of America, 98(1), 220-240.
-#'\url{http://dx.doi.org/10.1785/0120060002}
+#'\doi{10.1785/0120060002}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param depth hypocentral depth(km).
-#' @param ftype fytpe=0 for interface, ftype=1 for intraslab
+#' @param ftype ftype=0 for interface, ftype=1 for intraslab
 #' @param Prd Period of spectral acceleration.
 #' @param Vs30 Vs30(m/s)
 #'
@@ -46,12 +46,12 @@ LL08 <- function(Mag, Rrup, depth, ftype, Prd, Vs30=760) {
 #'
 #'Lin, P., and C. Lee (2008), Ground-motion attenuation relationships for subduction-zone earthquakes in
 #'northeastern taiwan, Bulletin of the Seismological Society of America, 98(1), 220-240.
-#'\url{http://dx.doi.org/10.1785/0120060002}
+#'\doi{10.1785/0120060002}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param depth hypocentral depth(km).
-#' @param ftype fytpe=0 for interface, ftype=1 for intraslab
+#' @param ftype ftype=0 for interface, ftype=1 for intraslab
 #' @param Prd Period of spectral acceleration.
 #'
 #' @return A list will be return, including mag, Rrup, specT, period, lnY, sigma, iflag, depth, ftype.
@@ -80,12 +80,12 @@ LL08Rock <- function(Mag, Rrup, depth, ftype, Prd) {
 #'
 #'Lin, P., and C. Lee (2008), Ground-motion attenuation relationships for subduction-zone earthquakes in
 #'northeastern taiwan, Bulletin of the Seismological Society of America, 98(1), 220-240.
-#'\url{http://dx.doi.org/10.1785/0120060002}
+#'\doi{10.1785/0120060002}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param depth hypocentral depth(km).
-#' @param ftype fytpe=0 for interface, ftype=1 for intraslab
+#' @param ftype ftype=0 for interface, ftype=1 for intraslab
 #' @param Prd Period of spectral acceleration.
 #'
 #' @return A list will be return, including mag, Rrup, specT, period, lnY, sigma, iflag, depth, ftype.

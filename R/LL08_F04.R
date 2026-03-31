@@ -4,12 +4,12 @@
 #'
 #'Lin, P., and C. Lee (2008), Ground-motion attenuation relationships for subduction-zone earthquakes in
 #'northeastern taiwan, Bulletin of the Seismological Society of America, 98(1), 220-240.
-#'\url{http://dx.doi.org/10.1785/0120060002}
+#'\doi{10.1785/0120060002}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
-#' @param ftype fytpe=0 for interface, ftype=1 for intraslab
+#' @param ftype ftype=0 for interface, ftype=1 for intraslab
 #' @param Prd Period of spectral acceleration.
 #' @param Vs30 Vs30(m/s)
 #'

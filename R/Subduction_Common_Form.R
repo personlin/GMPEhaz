@@ -4,7 +4,7 @@
 #'
 #'Subduction intraslab common form 001
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -36,7 +36,7 @@ Sub.Intra.Com.001 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 002
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -68,7 +68,7 @@ Sub.Intra.Com.002 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 003
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -100,7 +100,7 @@ Sub.Intra.Com.003 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 004
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -133,7 +133,7 @@ Sub.Intra.Com.004 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 005
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -165,7 +165,7 @@ Sub.Intra.Com.005 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 006
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -197,7 +197,7 @@ Sub.Intra.Com.006 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 007
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -229,7 +229,7 @@ Sub.Intra.Com.007 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 008
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -261,7 +261,7 @@ Sub.Intra.Com.008 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 009
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -293,7 +293,7 @@ Sub.Intra.Com.009 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 010
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -325,7 +325,7 @@ Sub.Intra.Com.010 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 011
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -357,7 +357,7 @@ Sub.Intra.Com.011 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 012
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -389,7 +389,7 @@ Sub.Intra.Com.012 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 013
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -421,7 +421,7 @@ Sub.Intra.Com.013 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 014
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -453,7 +453,7 @@ Sub.Intra.Com.014 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 015
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -485,7 +485,7 @@ Sub.Intra.Com.015 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 016
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -517,7 +517,7 @@ Sub.Intra.Com.016 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction intraslab common form 017
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -550,7 +550,7 @@ Sub.Intra.Com.017 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 001
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -582,7 +582,7 @@ Sub.Inter.Com.001 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 002
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -614,7 +614,7 @@ Sub.Inter.Com.002 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 003
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -646,7 +646,7 @@ Sub.Inter.Com.003 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 004
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -679,7 +679,7 @@ Sub.Inter.Com.004 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 005
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -711,7 +711,7 @@ Sub.Inter.Com.005 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 006
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -743,7 +743,7 @@ Sub.Inter.Com.006 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 007
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -775,7 +775,7 @@ Sub.Inter.Com.007 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 008
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -807,7 +807,7 @@ Sub.Inter.Com.008 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 009
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -839,7 +839,7 @@ Sub.Inter.Com.009 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 010
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -871,7 +871,7 @@ Sub.Inter.Com.010 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 011
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -903,7 +903,7 @@ Sub.Inter.Com.011 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 012
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -935,7 +935,7 @@ Sub.Inter.Com.012 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 013
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -967,7 +967,7 @@ Sub.Inter.Com.013 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 014
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -999,7 +999,7 @@ Sub.Inter.Com.014 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 015
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -1031,7 +1031,7 @@ Sub.Inter.Com.015 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 016
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.
@@ -1063,7 +1063,7 @@ Sub.Inter.Com.016 <- function(Mag, Rrup, Ztor, Prd){
 #'
 #'Subduction interface common form 017
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Prd Period of spectral acceleration.

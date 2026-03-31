@@ -4,7 +4,7 @@
 #'
 #'Phung et al.(2017) Crustal GMPE
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param ftype style of faulting.

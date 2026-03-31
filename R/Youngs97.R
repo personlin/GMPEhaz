@@ -4,12 +4,12 @@
 #'
 #'Youngs, R. R., S.-J. Chiou, W. J. Silva, and J. R. Humphrey (1997), Strong ground motion attenuation
 #'relationships for subduction zone earthquakes, Seismological Research Letters, 68(1), 58-73.
-#'\url{http://dx.doi.org/10.1785/gssrl.68.1.58}
+#'\doi{10.1785/gssrl.68.1.58}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
-#' @param ftype fytpe=0 for interface, ftype=1 for intraslab
+#' @param ftype ftype=0 for interface, ftype=1 for intraslab
 #' @param depth hypocentral depth(km).
 #'
 #' @return A list will be return, including mag, Rrup, lnY, sigma, period, specT, ftype, depth, iflag.
@@ -38,12 +38,12 @@ Youngs97Rock <- function(Mag, Rrup, Prd, ftype=0, depth) {
 #'
 #'Youngs, R. R., S.-J. Chiou, W. J. Silva, and J. R. Humphrey (1997), Strong ground motion attenuation
 #'relationships for subduction zone earthquakes, Seismological Research Letters, 68(1), 58-73.
-#'\url{http://dx.doi.org/10.1785/gssrl.68.1.58}
+#'\doi{10.1785/gssrl.68.1.58}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
-#' @param ftype fytpe=0 for interface, ftype=1 for intraslab
+#' @param ftype ftype=0 for interface, ftype=1 for intraslab
 #' @param depth hypocentral depth(km).
 #'
 #' @return A list will be return, including mag, Rrup, lnY, sigma, period, specT, ftype, depth, iflag.

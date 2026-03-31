@@ -4,9 +4,9 @@
 #'
 #'BrianS-J. Chiou and Robert R. Youngs (2008) An NGA Model for the Average Horizontal Component
 #'of Peak Ground Motion and Response Spectra. Earthquake Spectra, Vol. 24, No. 1, pp. 173-215.
-#'\url{http://dx.doi.org/10.1193/1.2894832}
+#'\doi{10.1193/1.2894832}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.

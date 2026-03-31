@@ -4,9 +4,9 @@
 #'
 #'Abrahamson, N. A., W. J. Silva, and R. Kamai (2014), Summary of the ASK14 ground motion relation
 #'for active crustal regions, Earthquake Spectra, 30(3), 1025-1055.
-#'\url{http://dx.doi.org/10.1193/070913EQS198M}
+#'\doi{10.1193/070913EQS198M}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.

@@ -5,7 +5,7 @@
 #'
 #' 國家地震工程研究中心(2011)，面震源與衰減律參數研究及核電廠地盤反應量測，行政院原子能委員會核能研究所委託研究報告。
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #'

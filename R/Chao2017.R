@@ -4,7 +4,7 @@
 #'
 #'Chao et al.(2017)
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param Vs30 Vs30(m/s).

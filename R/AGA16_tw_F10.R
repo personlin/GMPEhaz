@@ -5,12 +5,12 @@
 #'
 #'Norman Abrahamson, Nicholas Gregor, and Kofi Addo(2016) BC Hydro Ground Motion Prediction Equations
 #'for Subduction Earthquakes, Earthquake Spectra, Vol. 32, No. 1, pp. 23-44.
-#'\url{http://dx.doi.org/10.1193/051712EQS188MR}
+#'\doi{10.1193/051712EQS188MR}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
-#' @param ftype fytpe=0 for interface (use rupture distance), ftype=1 for intraslab (use hypocentral distance)
+#' @param ftype ftype=0 for interface (use rupture distance), ftype=1 for intraslab (use hypocentral distance)
 #' @param Vs30 Vs30(m/s).
 #' @param forearc 0 = Forearc site, 1 = Backarc site
 #' @param Ztor Depth to the top of the finite rupture model (km).

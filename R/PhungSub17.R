@@ -4,10 +4,10 @@
 #'
 #'Phung et al.(2017) Subduction GMPE
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
-#' @param ftype fytpe=0 for interface, ftype=1 for intraslab.
+#' @param ftype ftype=0 for interface, ftype=1 for intraslab.
 #' @param Vs30 Vs30(m/s).
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Z1.0 the depth to the shear-wave velocity horizon of 1.0(km/s).

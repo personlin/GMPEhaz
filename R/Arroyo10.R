@@ -6,7 +6,7 @@
 #'interplate earthquakes. Journal of Seismology, 14(4):769-785, Oct 2010.
 #'\url{https://link.springer.com/article/10.1007/s10950-010-9200-0}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #'

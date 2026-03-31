@@ -6,9 +6,9 @@
 #'Akkar, S., M. a. Sandikkaya, and J. J. Bommer(2014), Empirical ground-motion models for
 #'point- and extended-source crustal earthquake scenarios in europe and the middle east,
 #'Bulletin of Earthquake Engineering, Volume 12, Issue 1, pp 359-387.
-#'\url{http://dx.doi.org/10.1007/s10518-013-9461-4}
+#'\doi{10.1007/s10518-013-9461-4}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param ftype style of faulting.

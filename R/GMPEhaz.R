@@ -7,7 +7,6 @@
 #' @docType package
 #' @name GMPEhaz
 #' @useDynLib GMPEhaz, .registration = TRUE
-#' @param libpath library path
 
 .onUnload <- function(libpath){
   library.dynam.unload("GMPEhaz", libpath)
@@ -58,7 +57,7 @@
 # sourcetype, iflag, hwflag, forearc, regionflag, basinflag, msasflag, sigma, phi, tau
 
 # ftype
-# for subduction GMPE, fytpe=0 for interface, ftype=1 for intraslab
+# for subduction GMPE, ftype=0 for interface, ftype=1 for intraslab
 # for crustal GMPE, ftype=0 for SS, ftype=0.5 for RO, ftype=1 for RV,
 #                   ftype=-0.5 for NO, ftype=-1 for NM
 

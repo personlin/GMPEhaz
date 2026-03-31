@@ -6,9 +6,9 @@
 #'Pan-european ground-motion prediction equations for the average horizontal component
 #'of pGA, pGV, and 5 %-damped pSA at spectral periods up to 3.0 s using the RESORCE
 #'dataset, Bulletin of Earthquake Engineering, 12(1), 391-430.
-#'\url{http://dx.doi.org/10.1007/s10518-013-9525-5}
+#'\doi{10.1007/s10518-013-9525-5}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param ftype style of faulting.

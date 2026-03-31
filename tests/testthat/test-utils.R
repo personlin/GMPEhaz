@@ -1,5 +1,3 @@
-context('utility functions')
-
 test_that("get.GMPE.prd returns period range", {
   prd <- get.GMPE.prd("ASK14")
   expect_true(is.data.frame(prd))

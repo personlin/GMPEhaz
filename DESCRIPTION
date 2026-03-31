@@ -1,20 +1,21 @@
 Package: GMPEhaz
 Type: Package
-Title: GMPE funciton using Norman Abrahamson's HAZ fortran code
+Title: GMPE Functions using Norman Abrahamson's HAZ Fortran Code
 Version: 0.1.13.59
 Authors@R: person("Person", "Lin", ,"personlin@gmail.com", role = c("aut", "cre"))
-Maintainer: Person Lin <personlin@gmail.com>
-Depends: R (>= 3.1.0), lattice
+Depends: R (>= 4.1.0)
+Imports: lattice
 SystemRequirements: GNU make
-Description: This package provide a set of R warp function to call GMPE function
-    from Norman Abrahamson's HAZ fortran code.
-License: GPL-3 | file LICENSE
+Description: Provides a set of R wrapper functions to call GMPE (Ground Motion
+    Prediction Equation) functions from Norman Abrahamson's HAZ Fortran code.
+License: GPL-3
 LazyData: TRUE
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Suggests: testthat,
     knitr,
     rmarkdown,
     pkgdown
+Config/testthat/edition: 3
 URL: https://personlin.github.io/GMPEhaz/, https://github.com/personlin/GMPEhaz
 BugReports: https://github.com/personlin/GMPEhaz/issues
 VignetteBuilder: knitr

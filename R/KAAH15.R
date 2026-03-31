@@ -5,9 +5,9 @@
 #'Kale, O., S. Akkar, A. Ansari, and H. Hamzehloo (2015), A ground-Motion predictive model for
 #'Iran and Turkey for horizontal PGA, PGV, and 5% Damped Response Spectrum: Investigation of
 #'Possible Regional Effects, Bulletin of the Seismological Society of America, 105(2A), 963-980.
-#'\url{http://dx.doi.org/10.1785/0120140134}
+#'\doi{10.1785/0120140134}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param ftype style of faulting.

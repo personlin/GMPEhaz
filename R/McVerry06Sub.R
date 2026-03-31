@@ -7,9 +7,9 @@
 #' Bulletin of the New Zealand Society for Earthquake Engineering, 39(1), 1-58.
 #' \url{http://bulletin.nzsee.org.nz/39/1/0001}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
-#' @param ftype fytpe=0 for interface, ftype=1 for intraslab.
+#' @param ftype ftype=0 for interface, ftype=1 for intraslab.
 #' @param Prd Period of spectral acceleration.
 #' @param Ztor Depth to the top of the finite rupture model (km).
 #' @param Dip Dip angle of the fault plane.

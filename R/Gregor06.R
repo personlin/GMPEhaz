@@ -5,7 +5,7 @@
 #'Gregor, N., W. Silva, I. Wong, and R. Youngs (2006), Updated response spectral attenuation relationship
 #'for cascadia subduction zone megathrust earthquake, Seismological Research Letters, 77(2), 325-326.
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param Vs30 Vs30(m/s).

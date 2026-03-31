@@ -5,9 +5,9 @@
 #'Zhao, J. et al. (2006), Attenuation relations of strong ground motion in japan using
 #'site classification based on predominant period,
 #'Bulletin of the Seismological Society of America, 96(3), 898-913.
-#'\url{http://dx.doi.org/10.1785/0120050122}
+#'\doi{10.1785/0120050122}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param sclass site condition.

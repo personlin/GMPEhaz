@@ -4,9 +4,9 @@
 #'
 #'Boore, D. M., J. P. Stewart, E. Seyhan, and G. M. Atkinson (2014), NGA-west2 equations for predicting
 #'PGA, PGV, and 5% damped PSA for shallow crustal earthquakes, Earthquake Spectra, 30(3), 1057-1085.
-#'\url{http://dx.doi.org/10.1193/070113EQS184M}
+#'\doi{10.1193/070113EQS184M}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param Vs30 Vs30(m/s).

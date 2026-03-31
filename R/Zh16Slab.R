@@ -5,9 +5,9 @@
 #'Zhao, J. et al. (2016),Ground-Motion Prediction Equations for Subduction Slab Earthquakes in
 #' Japan Using Site Class and Simple Geometric Attenuation Functions,
 #'Bulletin of the Seismological Society of America, 106(4), 1535-1551.
-#'\url{http://dx.doi.org/10.1785/0120150056}
+#'\doi{10.1785/0120150056}
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Prd Period of spectral acceleration.
 #' @param sclass site condition, 0 for Hard Rock, 1 for SC I, 2 for SC II, 3 for SC III, 4 for SC IV.

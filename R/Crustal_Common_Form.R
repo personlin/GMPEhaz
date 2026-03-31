@@ -4,7 +4,7 @@
 #'
 #'Crustal Common form 001
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -48,7 +48,7 @@ Cru.Com.001 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 002
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -90,7 +90,7 @@ Cru.Com.002 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 003
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -133,7 +133,7 @@ Cru.Com.003 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 004
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -176,7 +176,7 @@ Cru.Com.004 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 005
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -219,7 +219,7 @@ Cru.Com.005 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 006
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -261,7 +261,7 @@ Cru.Com.006 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 007
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -304,7 +304,7 @@ Cru.Com.007 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 008
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -347,7 +347,7 @@ Cru.Com.008 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 009
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -390,7 +390,7 @@ Cru.Com.009 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 010
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -433,7 +433,7 @@ Cru.Com.010 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 011
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -476,7 +476,7 @@ Cru.Com.011 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 012
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -519,7 +519,7 @@ Cru.Com.012 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 013
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -562,7 +562,7 @@ Cru.Com.013 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 014
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -605,7 +605,7 @@ Cru.Com.014 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 015
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -648,7 +648,7 @@ Cru.Com.015 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 016
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
@@ -690,7 +690,7 @@ Cru.Com.016 <- function(Mag, Rrup, Rjb, Ztor, ftype=0, Dip, rupwidth, Rx, hwflag
 #'
 #'Crustal Common form 017
 #'
-#' @param Mag Earthquake momnet magnitude, Numeric.
+#' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.
 #' @param Rjb Joyner and Boore distance(km), Numeric.
 #' @param Ztor Depth to the top of the finite rupture model (km).
