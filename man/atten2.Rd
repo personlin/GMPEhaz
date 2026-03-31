@@ -13,7 +13,7 @@ atten2(
   RV = 0,
   depth,
   ftype = 0,
-  plot = F
+  plot = FALSE
 )
 }
 \arguments{

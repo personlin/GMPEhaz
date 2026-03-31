@@ -27,7 +27,7 @@ A list will be return, including mag, Rrup, ftype, lnY, sigma, sclass, specT, at
 Zhao, J. et al. (2016),Ground-Motion Prediction Equations for Subduction Interface Earthquakes
 in Japan Using Site Class and Simple Geometric Attenuation Functions,
 Bulletin of the Seismological Society of America, 106(4), 1518-1534.
-\url{http://dx.doi.org/10.1785/0120150034}
+\doi{10.1785/0120150034}
 }
 \examples{
 Zh16Inter(6, 20, 1.0, 0, 10)

@@ -31,7 +31,7 @@ A list will be return, including mag, Rrup, ftype, lnY, sigma, sclass, specT, at
 Zhao, J. et al. (2016), Ground-Motion Prediction Equations for Shallow Crustal and Upper-Mantle
 Earthquakes in Japan Using Site Class and Simple Geometric Attenuation Functions,
 Bulletin of the Seismological Society of America, 106(4), 1552-1569.
-\url{http://dx.doi.org/10.1785/0120150063}
+\doi{10.1785/0120150063}
 }
 \examples{
 Zh16Cru(6, 20, 0, 1.0, 0, 0.0, 10)

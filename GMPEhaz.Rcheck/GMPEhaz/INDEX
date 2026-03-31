@@ -1,0 +1,359 @@
+AB03                    GMPE function for Atkinson and Boore(2003)
+AC10                    GMPE function for Akkar and Cagnan(2010)
+AGA16.tw.C01            GMPE function for adjusted Abrahamson et
+                        al.(2016)
+AGA16.tw.F10            GMPE function for adjusted Abrahamson et
+                        al.(2016)
+AM09                    GMPE function for Atkinson and Macias (2009)
+ASB14                   GMPE function for Akkar et al.(2013)
+ASB14.tw.B01            GMPE function for Akkar et al.(2013)
+ASB14.tw.C01            GMPE function for Akkar et al.(2013)
+ASB14.tw.E02            GMPE function for Akkar et al.(2013)
+ASK14                   GMPE function for Abrahamson et al.(2014)
+                        NGA-West2 model
+ASK14.tw.B01            GMPE function for Abrahamson et al.(2014)
+                        NGA-West2 model
+ASK14.tw.C01            GMPE function for Abrahamson et al.(2014)
+                        NGA-West2 model
+ASK14.tw.E03            GMPE function for Abrahamson et al.(2014)
+                        NGA-West2 model
+Arroyo2010              GMPE function for Arroyo et al. (2010)
+BCHydroSub2018Global    GMPE function for Abrahamson et al.(2018)
+BCHydroSub2018SouthAM   GMPE function for Abrahamson et al.(2018)
+BCHydroSub2018TW        GMPE function for Abrahamson et al.(2018)
+BCHydroSubV3            GMPE function for Abrahamson et al.(2016)
+BI14                    GMPE function for Bindi et al(2014)
+BI14.tw.B01             GMPE function for Bindi et al(2014)
+BI14.tw.C01             GMPE function for Bindi et al(2014)
+BI14.tw.E02             GMPE function for Bindi et al(2014)
+BSSA14                  GMPE function for Boore et al.(2014) NGA-West2
+                        model
+BSSA14.tw.B01           GMPE function for Boore et al.(2014) NGA-West2
+                        model
+BSSA14.tw.C01           GMPE function for Boore et al.(2014) NGA-West2
+                        model
+BSSA14.tw.E02           GMPE function for Boore et al.(2014) NGA-West2
+                        model
+CB14                    GMPE function for Campbell and Bozorgnia(2014)
+                        NGA-West2 model
+CB14.tw.C01             GMPE function for adjusted Campbell and
+                        Bozorgnia(2014) NGA-West2 model
+CB14.tw.E05             GMPE function for adjusted Campbell and
+                        Bozorgnia(2014) NGA-West2 model
+CY08                    GMPE function for Chiou and Youngs(2008) NGA
+                        model
+CY14                    GMPE function for Chiou and Youngs(2014)
+                        NGA-West2 model
+CY14.tw.B01             GMPE function for Chiou and Youngs(2014)
+                        NGA-West2 model
+CY14.tw.C01             GMPE function for Chiou and Youngs(2014)
+                        NGA-West2 model
+CY14.tw.E04             GMPE function for Chiou and Youngs(2014)
+                        NGA-West2 model
+Camp03H                 GMPE function for Campbell and Bozorgnia(2003)
+Chao2017                GMPE function for Chao et al.(2017)
+Chao2018                GMPE function for Chao et al.(2018)
+Cru.Com.001             GMPE function for Crustal Common form 001
+                        (2017)
+Cru.Com.002             GMPE function for Crustal Common form 002
+                        (2017)
+Cru.Com.003             GMPE function for Crustal Common form 003
+                        (2017)
+Cru.Com.004             GMPE function for Crustal Common form 004
+                        (2017)
+Cru.Com.005             GMPE function for Crustal Common form 005
+                        (2017)
+Cru.Com.006             GMPE function for Crustal Common form 006
+                        (2017)
+Cru.Com.007             GMPE function for Crustal Common form 007
+                        (2017)
+Cru.Com.008             GMPE function for Crustal Common form 008
+                        (2017)
+Cru.Com.009             GMPE function for Crustal Common form 009
+                        (2017)
+Cru.Com.010             GMPE function for Crustal Common form 010
+                        (2017)
+Cru.Com.011             GMPE function for Crustal Common form 011
+                        (2017)
+Cru.Com.012             GMPE function for Crustal Common form 012
+                        (2017)
+Cru.Com.013             GMPE function for Crustal Common form 013
+                        (2017)
+Cru.Com.014             GMPE function for Crustal Common form 014
+                        (2017)
+Cru.Com.015             GMPE function for Crustal Common form 015
+                        (2017)
+Cru.Com.016             GMPE function for Crustal Common form 016
+                        (2017)
+Cru.Com.017             GMPE function for Crustal Common form 017
+                        (2017)
+GK16                    GMPE function for Graizer and Kalkan(2016)
+GMPEhaz                 GMPEhaz: A package for wrapping GMPE functions
+                        from Norman Abrahamson's fortran HAZ code.
+GMPEhaz.model           GMPE model list.
+Garcia05                GMPE function for Garcia et al.(2005)
+Gregor06                GMPE function for Gregor et al.(2006)
+I14                     GMPE function for Idriss(2014)
+I14.tw.B01              GMPE function for Idriss(2014)
+I14.tw.C01              GMPE function for Idriss(2014)
+I14.tw.E04              GMPE function for for adjusted Idriss(2014)
+                        NGA-West2 model
+KAAH15                  GMPE function for Kale et al.(2015)
+Kanno06                 GMPE function for Kanno et al.(2006)
+LL08                    GMPE function for Lin and Lee(2008)
+LL08.C02                GMPE function for adjusted Lin and Lee(2008)
+LL08.F04                GMPE function for adjusted Lin and Lee(2008)
+LL08Rock                GMPE function for Lin and Lee(2008)
+LL08Soil                GMPE function for Lin and Lee(2008)
+Lin09                   GMPE function for Lin (2009)
+Lin11                   GMPE function for Lin et al.(2011)
+Lin11Rock               GMPE function for Lin et al.(2011)
+Lin11Soil               GMPE function for Lin et al.(2011)
+Loh96                   GMPE function for Loh et al.(1996) PGA only
+MBR17                   GMPE function for Montalva et al.(2017)
+Mcverry2006Sub          GMPE function for Mcverry et al.(2006)
+                        Subduction GMPE.
+NCREE2011               GMPE function for NCREE(2011)
+PhungCru17              GMPE function for Phung et al.(2017)
+PhungCru18              GMPE function for Phung et al.(2018)
+PhungSub17              GMPE function for Phung et al.(2017)
+PhungSub18              GMPE function for Phung et al.(2018)
+Sinotech12              GMPE function for Sinotech(2012)
+Sub.Inter.Com.001       GMPE function for Subduction interface common
+                        form 001 (2017)
+Sub.Inter.Com.002       GMPE function for Subduction interface common
+                        form 002 (2017)
+Sub.Inter.Com.003       GMPE function for Subduction interface common
+                        form 003 (2017)
+Sub.Inter.Com.004       GMPE function for Subduction interface common
+                        form 004 (2017)
+Sub.Inter.Com.005       GMPE function for Subduction interface common
+                        form 005 (2017)
+Sub.Inter.Com.006       GMPE function for Subduction interface common
+                        form 006 (2017)
+Sub.Inter.Com.007       GMPE function for Subduction interface common
+                        form 007 (2017)
+Sub.Inter.Com.008       GMPE function for Subduction interface common
+                        form 008 (2017)
+Sub.Inter.Com.009       GMPE function for Subduction interface common
+                        form 009 (2017)
+Sub.Inter.Com.010       GMPE function for Subduction interface common
+                        form 010 (2017)
+Sub.Inter.Com.011       GMPE function for Subduction interface common
+                        form 011 (2017)
+Sub.Inter.Com.012       GMPE function for Subduction interface common
+                        form 012 (2017)
+Sub.Inter.Com.013       GMPE function for Subduction interface common
+                        form 013 (2017)
+Sub.Inter.Com.014       GMPE function for Subduction interface common
+                        form 014 (2017)
+Sub.Inter.Com.015       GMPE function for Subduction interface common
+                        form 015 (2017)
+Sub.Inter.Com.016       GMPE function for Subduction interface common
+                        form 016 (2017)
+Sub.Inter.Com.017       GMPE function for Subduction interface common
+                        form 017 (2017)
+Sub.Intra.Com.001       GMPE function for Subduction intraslab common
+                        form 001 (2017)
+Sub.Intra.Com.002       GMPE function for Subduction intraslab common
+                        form 002 (2017)
+Sub.Intra.Com.003       GMPE function for Subduction intraslab common
+                        form 003 (2017)
+Sub.Intra.Com.004       GMPE function for Subduction intraslab common
+                        form 004 (2017)
+Sub.Intra.Com.005       GMPE function for Subduction intraslab common
+                        form 005 (2017)
+Sub.Intra.Com.006       GMPE function for Subduction intraslab common
+                        form 006 (2017)
+Sub.Intra.Com.007       GMPE function for Subduction intraslab common
+                        form 007 (2017)
+Sub.Intra.Com.008       GMPE function for Subduction intraslab common
+                        form 008 (2017)
+Sub.Intra.Com.009       GMPE function for Subduction intraslab common
+                        form 009 (2017)
+Sub.Intra.Com.010       GMPE function for Subduction intraslab common
+                        form 010 (2017)
+Sub.Intra.Com.011       GMPE function for Subduction intraslab common
+                        form 011 (2017)
+Sub.Intra.Com.012       GMPE function for Subduction intraslab common
+                        form 012 (2017)
+Sub.Intra.Com.013       GMPE function for Subduction intraslab common
+                        form 013 (2017)
+Sub.Intra.Com.014       GMPE function for Subduction intraslab common
+                        form 014 (2017)
+Sub.Intra.Com.015       GMPE function for Subduction intraslab common
+                        form 015 (2017)
+Sub.Intra.Com.016       GMPE function for Subduction intraslab common
+                        form 016 (2017)
+Sub.Intra.Com.017       GMPE function for Subduction intraslab common
+                        form 017 (2017)
+Youngs97Rock            GMPE function for Youngs et al.(1997)
+Youngs97Soil            GMPE function for Youngs et al.(1997)
+Zh06                    GMPE function for Zhao et al.(2006)
+Zh16Cru                 GMPE function for Zhao et al.(2016)
+Zh16Inter               GMPE function for Zhao et al.(2016)
+Zh16Slab                GMPE function for Zhao et al.(2016)
+Zh16Sub                 GMPE function for Zhao et al.(2016) Subduction
+                        GMPE
+atten2                  Wrap function for all GMPE
+cnames.AB03             Variable name of AB03 GMPEs.
+cnames.AC10             Variable name of AC10 GMPEs.
+cnames.AGA16.tw.C01     Variable name of AGA16.tw.C01 GMPEs.
+cnames.AGA16.tw.F10     Variable name of AGA16.tw.F10 GMPEs.
+cnames.AM09             Variable name of AM09 GMPEs.
+cnames.ASB14            Variable name of ASB14 GMPEs.
+cnames.ASB14.tw.B01     Variable name of ASB14.tw.B01 GMPEs.
+cnames.ASB14.tw.C01     Variable name of ASB14.tw.C01 GMPEs.
+cnames.ASB14.tw.E02     Variable name of ASB14.tw.E02 GMPEs.
+cnames.ASK14            Variable name of ASK14 GMPEs.
+cnames.ASK14.tw.B01     Variable name of ASK14.tw.B01 GMPEs.
+cnames.ASK14.tw.C01     Variable name of ASK14.tw.C01 GMPEs.
+cnames.ASK14.tw.E03     Variable name of ASK14.tw.E03 GMPEs.
+cnames.Arroyo2010       Variable name of Arroyo2010 GMPEs.
+cnames.BCHydroSub2018Global
+                        Variable name of BCHydroSub2018Global GMPEs.
+cnames.BCHydroSub2018SouthAM
+                        Variable name of BCHydroSub2018SouthAM GMPEs.
+cnames.BCHydroSub2018TW
+                        Variable name of BCHydroSub2018TW GMPEs.
+cnames.BCHydroSubV3     Variable name of BCHydroSubV3 GMPEs.
+cnames.BI14             Variable name of BI14 GMPEs.
+cnames.BI14.tw.B01      Variable name of BI14.tw.B01 GMPEs.
+cnames.BI14.tw.C01      Variable name of BI14.tw.C01 GMPEs.
+cnames.BI14.tw.E02      Variable name of BI14.tw.E02 GMPEs.
+cnames.BSSA14           Variable name of BSSA14 GMPEs.
+cnames.BSSA14.tw.B01    Variable name of BSSA14.tw.B01 GMPEs.
+cnames.BSSA14.tw.C01    Variable name of BSSA14.tw.C01 GMPEs.
+cnames.BSSA14.tw.E02    Variable name of BSSA14.tw.E02 GMPEs.
+cnames.CB14             Variable name of CB14 GMPEs.
+cnames.CB14.tw.C01      Variable name of CB14.tw.C01 GMPEs.
+cnames.CB14.tw.E05      Variable name of CB14.tw.E05 GMPEs.
+cnames.CY08             Variable name of CY08 GMPEs.
+cnames.CY14             Variable name of CY14 GMPEs.
+cnames.CY14.tw.B01      Variable name of CY14.tw.B0 GMPEs.
+cnames.CY14.tw.C01      Variable name of CY14.tw.C01 GMPEs.
+cnames.CY14.tw.E04      Variable name of CY14.tw.E04 GMPEs.
+cnames.Camp03H          Variable name of Camp03H GMPEs.
+cnames.Chao2017         Variable name of Chao2017 GMPEs.
+cnames.Chao2018         Variable name of Chao2018 GMPEs.
+cnames.Cru.Com.001      Variable name of Cru.Com.001 GMPEs.
+cnames.Cru.Com.002      Variable name of Cru.Com.002 GMPEs.
+cnames.Cru.Com.003      Variable name of Cru.Com.003 GMPEs.
+cnames.Cru.Com.004      Variable name of Cru.Com.004 GMPEs.
+cnames.Cru.Com.005      Variable name of Cru.Com.005 GMPEs.
+cnames.Cru.Com.006      Variable name of Cru.Com.006 GMPEs.
+cnames.Cru.Com.007      Variable name of Cru.Com.007 GMPEs.
+cnames.Cru.Com.008      Variable name of Cru.Com.008 GMPEs.
+cnames.Cru.Com.009      Variable name of Cru.Com.009 GMPEs.
+cnames.Cru.Com.010      Variable name of Cru.Com.010 GMPEs.
+cnames.Cru.Com.011      Variable name of Cru.Com.011 GMPEs.
+cnames.Cru.Com.012      Variable name of Cru.Com.012 GMPEs.
+cnames.Cru.Com.013      Variable name of Cru.Com.013 GMPEs.
+cnames.Cru.Com.014      Variable name of Cru.Com.014 GMPEs.
+cnames.Cru.Com.015      Variable name of Cru.Com.015 GMPEs.
+cnames.Cru.Com.016      Variable name of Cru.Com.016 GMPEs.
+cnames.Cru.Com.017      Variable name of Cru.Com.017 GMPEs.
+cnames.GK16             Variable name of GK16 GMPEs.
+cnames.Garcia05         Variable name of Garcia05 GMPEs.
+cnames.Gregor06         Variable name of Gregor06 GMPEs.
+cnames.I14              Variable name of I14 GMPEs.
+cnames.I14.tw.B01       Variable name of I14.tw.B01 GMPEs.
+cnames.I14.tw.C01       Variable name of I14.tw.C01 GMPEs.
+cnames.I14.tw.E04       Variable name of I14.tw.E04 GMPEs.
+cnames.KAAH15           Variable name of KAAH15 GMPEs.
+cnames.Kanno06          Variable name of Kanno06 GMPEs.
+cnames.LL08             Variable name of LL08 GMPEs.
+cnames.LL08.C02         Variable name of LL08.C02 GMPEs.
+cnames.LL08.E04         Variable name of LL08.E04 GMPEs.
+cnames.LL08.F04         Variable name of LL08.F04 GMPEs.
+cnames.LL08Rock         Variable name of LL08Rock GMPEs.
+cnames.LL08Soil         Variable name of LL08Soil GMPEs.
+cnames.Lin09            Variable name of Lin09 GMPEs.
+cnames.Lin11            Variable name of Lin11 GMPEs.
+cnames.Lin11Rock        Variable name of Lin11Rock GMPEs.
+cnames.Lin11Soil        Variable name of Lin11Soil GMPEs.
+cnames.Loh96            Variable name of Loh96 GMPEs.
+cnames.MBR17            Variable name of MBR17 GMPEs.
+cnames.Mcverry2006Sub   Variable name of Mcverry2006Sub GMPEs.
+cnames.NCREE2011        Variable name of NCREE2011 GMPEs.
+cnames.PhungCru17       Variable name of PhungCru17 GMPEs.
+cnames.PhungCru18       Variable name of PhungCru18 GMPEs.
+cnames.PhungSub17       Variable name of PhungSub17 GMPEs.
+cnames.PhungSub18       Variable name of PhungSub18 GMPEs.
+cnames.Sinotech12       Variable name of Sinotech12 GMPEs.
+cnames.Sub.Inter.Com.001
+                        Variable name of Sub.Inter.Com.001 GMPEs.
+cnames.Sub.Inter.Com.002
+                        Variable name of Sub.Inter.Com.002 GMPEs.
+cnames.Sub.Inter.Com.003
+                        Variable name of Sub.Inter.Com.003 GMPEs.
+cnames.Sub.Inter.Com.004
+                        Variable name of Sub.Inter.Com.004 GMPEs.
+cnames.Sub.Inter.Com.005
+                        Variable name of Sub.Inter.Com.005 GMPEs.
+cnames.Sub.Inter.Com.006
+                        Variable name of Sub.Inter.Com.006 GMPEs.
+cnames.Sub.Inter.Com.007
+                        Variable name of Sub.Inter.Com.007 GMPEs.
+cnames.Sub.Inter.Com.008
+                        Variable name of Sub.Inter.Com.008 GMPEs.
+cnames.Sub.Inter.Com.009
+                        Variable name of Sub.Inter.Com.009 GMPEs.
+cnames.Sub.Inter.Com.010
+                        Variable name of Sub.Inter.Com.010 GMPEs.
+cnames.Sub.Inter.Com.011
+                        Variable name of Sub.Inter.Com.011 GMPEs.
+cnames.Sub.Inter.Com.012
+                        Variable name of Sub.Inter.Com.012 GMPEs.
+cnames.Sub.Inter.Com.013
+                        Variable name of Sub.Inter.Com.013 GMPEs.
+cnames.Sub.Inter.Com.014
+                        Variable name of Sub.Inter.Com.014 GMPEs.
+cnames.Sub.Inter.Com.015
+                        Variable name of Sub.Inter.Com.015 GMPEs.
+cnames.Sub.Inter.Com.016
+                        Variable name of Sub.Inter.Com.016 GMPEs.
+cnames.Sub.Inter.Com.017
+                        Variable name of Sub.Inter.Com.017 GMPEs.
+cnames.Sub.Intra.Com.001
+                        Variable name of Sub.Intra.Com.001 GMPEs.
+cnames.Sub.Intra.Com.002
+                        Variable name of Sub.Intra.Com.002 GMPEs.
+cnames.Sub.Intra.Com.003
+                        Variable name of Sub.Intra.Com.003 GMPEs.
+cnames.Sub.Intra.Com.004
+                        Variable name of Sub.Intra.Com.004 GMPEs.
+cnames.Sub.Intra.Com.005
+                        Variable name of Sub.Intra.Com.005 GMPEs.
+cnames.Sub.Intra.Com.006
+                        Variable name of Sub.Intra.Com.006 GMPEs.
+cnames.Sub.Intra.Com.007
+                        Variable name of Sub.Intra.Com.007 GMPEs.
+cnames.Sub.Intra.Com.008
+                        Variable name of Sub.Intra.Com.008 GMPEs.
+cnames.Sub.Intra.Com.009
+                        Variable name of Sub.Intra.Com.009 GMPEs.
+cnames.Sub.Intra.Com.010
+                        Variable name of Sub.Intra.Com.010 GMPEs.
+cnames.Sub.Intra.Com.011
+                        Variable name of Sub.Intra.Com.011 GMPEs.
+cnames.Sub.Intra.Com.012
+                        Variable name of Sub.Intra.Com.012 GMPEs.
+cnames.Sub.Intra.Com.013
+                        Variable name of Sub.Intra.Com.013 GMPEs.
+cnames.Sub.Intra.Com.014
+                        Variable name of Sub.Intra.Com.014 GMPEs.
+cnames.Sub.Intra.Com.015
+                        Variable name of Sub.Intra.Com.015 GMPEs.
+cnames.Sub.Intra.Com.016
+                        Variable name of Sub.Intra.Com.016 GMPEs.
+cnames.Sub.Intra.Com.017
+                        Variable name of Sub.Intra.Com.017 GMPEs.
+cnames.Youngs97Rock     Variable name of Youngs97Rock GMPEs.
+cnames.Zh06             Variable name of Zh06 GMPEs.
+cnames.Zh16Cru          Variable name of Zh16Cru GMPEs.
+cnames.Zh16Inter        Variable name of Zh16Inter GMPEs.
+cnames.Zh16Slab         Variable name of Zh16Slab GMPEs.
+cnames.Zh16Sub          Variable name of Zh16Sub GMPEs.
+get.GMPE.prd            To obtain usable period range of GMPE
+periods.T               Periods of NGA-West GMPE

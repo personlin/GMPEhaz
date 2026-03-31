@@ -27,7 +27,7 @@ with it sigma of Lin et al.(2011) GMPE.
 \details{
 Lin, P.-S., C.-T. Lee, C.-T. Cheng, and C.-H. Sung (2011), Response spectral attenuation relations
 for shallow crustal earthquakes in taiwan, Engineering Geology, 121(3-4), 150-164.
-\url{http://dx.doi.org/10.1016/j.enggeo.2011.04.019}
+\doi{10.1016/j.enggeo.2011.04.019}
 }
 \examples{
 Lin11(6, 20, 0, 0, 760)

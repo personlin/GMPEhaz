@@ -66,7 +66,7 @@ lnY, sigma, specT, period, Ztor, iflag, vs30_class, z10, Rx, Ry0, regionflag, ms
 \details{
 Abrahamson, N. A., W. J. Silva, and R. Kamai (2014), Summary of the ASK14 ground motion relation
 for active crustal regions, Earthquake Spectra, 30(3), 1025-1055.
-\url{http://dx.doi.org/10.1193/070913EQS198M}
+\doi{10.1193/070913EQS198M}
 }
 \examples{
 ASK14(6, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)

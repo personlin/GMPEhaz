@@ -33,7 +33,7 @@ Z10, regionflag, basinflag, phi, tau.
 \details{
 Boore, D. M., J. P. Stewart, E. Seyhan, and G. M. Atkinson (2014), NGA-west2 equations for predicting
 PGA, PGV, and 5% damped PSA for shallow crustal earthquakes, Earthquake Spectra, 30(3), 1057-1085.
-\url{http://dx.doi.org/10.1193/070113EQS184M}
+\doi{10.1193/070113EQS184M}
 }
 \examples{
 BSSA14(6, 20, 0, 760, 0, 0.5, 0, 0)

@@ -28,7 +28,7 @@ A list will be return, including mag, Rrup, specT, period, lnY, sigma, iflag, Zt
 \details{
 Lin, P., and C. Lee (2008), Ground-motion attenuation relationships for subduction-zone earthquakes in
 northeastern taiwan, Bulletin of the Seismological Society of America, 98(1), 220-240.
-\url{http://dx.doi.org/10.1785/0120060002}
+\doi{10.1785/0120060002}
 }
 \examples{
 LL08.C02(6, 20, 10, 0, 0, 760)

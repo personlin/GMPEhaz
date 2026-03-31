@@ -28,7 +28,7 @@ adjusted to Taiwan.
 Akkar, S., M. a. Sandikkaya, and J. J. Bommer(2014), Empirical ground-motion models for
 point- and extended-source crustal earthquake scenarios in europe and the middle east,
 Bulletin of Earthquake Engineering, Volume 12, Issue 1, pp 359-387.
-\url{http://dx.doi.org/10.1007/s10518-013-9461-4}
+\doi{10.1007/s10518-013-9461-4}
 }
 \examples{
 ASB14.tw.B01(6, 20, 0, 0, 760)

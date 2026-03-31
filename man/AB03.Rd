@@ -33,7 +33,7 @@ A list will be return, including mag, Rrup, lnY, sigma, specT, period, iflag, ft
 Atkinson, G., and D. Boore (2003), Empirical ground-motion relations for subduction-zone earthquakes
 and their application to cascadia and other regions, Bulletin of the Seismological Society of America,
 93(4), 1703-1729.
-\url{http://dx.doi.org/10.1785/0120020156}
+\doi{10.1785/0120020156}
 }
 \examples{
 AB03(6, 20, 0, 0, 10, 0, 0, 0)

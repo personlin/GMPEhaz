@@ -26,7 +26,7 @@ A list will be return, including mag, Rrup, lnY, sigma, period, specT, ftype, de
 \details{
 Youngs, R. R., S.-J. Chiou, W. J. Silva, and J. R. Humphrey (1997), Strong ground motion attenuation
 relationships for subduction zone earthquakes, Seismological Research Letters, 68(1), 58-73.
-\url{http://dx.doi.org/10.1785/gssrl.68.1.58}
+\doi{10.1785/gssrl.68.1.58}
 }
 \examples{
 Youngs97Soil(6, 20, 0, 0, 10)

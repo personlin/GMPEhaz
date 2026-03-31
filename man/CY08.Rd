@@ -57,7 +57,7 @@ dip, Ztor, ftype, Z10, vs3-_class, hwflag, Rx, regionflag, phi, tau.
 \details{
 BrianS-J. Chiou and Robert R. Youngs (2008) An NGA Model for the Average Horizontal Component
 of Peak Ground Motion and Response Spectra. Earthquake Spectra, Vol. 24, No. 1, pp. 173-215.
-\url{http://dx.doi.org/10.1193/1.2894832}
+\doi{10.1193/1.2894832}
 }
 \examples{
 CY08(6, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)

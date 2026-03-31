@@ -15,6 +15,6 @@ get.GMPE.prd <- function(GMPE){
   if (!GMPE %in% GMPEhaz::GMPEhaz.model$name) {
     stop("GMPE not in the list! \n\n")
   }
-  out <- subset(GMPEhaz::GMPEhaz.model, name == GMPE)[,c("period.min", "period.max")]
+  out <- GMPEhaz::GMPEhaz.model[GMPEhaz::GMPEhaz.model$name == GMPE, c("period.min", "period.max")]
   return(out)
 }

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Person Lin" />
+
+<meta name="date" content="2026-03-31" />
+
+<title>Main GMPE Functions Guide</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Main GMPE Functions Guide</h1>
+<h4 class="author">Person Lin</h4>
+<h4 class="date">2026-03-31</h4>
+
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(GMPEhaz)</span></code></pre></div>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>The GMPEhaz package provides multiple Ground Motion Prediction
+Equations (GMPEs) covering prediction models for both crustal and
+subduction zone earthquakes. This document introduces the most important
+GMPE functions in the package, including internationally recognized
+NGA-West2 models and Taiwan-specific models.</p>
+<div id="crustal-earthquake-gmpe-models" class="section level2">
+<h2>Crustal Earthquake GMPE Models</h2>
+<div id="bssa14---boore-et-al.-2014-nga-west2" class="section level3">
+<h3>1. BSSA14 - Boore et al. (2014) NGA-West2</h3>
+<p>BSSA14 is one of the important models in the NGA-West2 project,
+suitable for ground motion prediction of shallow crustal
+earthquakes.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># BSSA14 function parameter description</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co"># Mag: Earthquake magnitude</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Rjb: Joyner-Boore distance (km)</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Prd: Period (0 for PGA, -1 for PGV)</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co"># Vs30: 30-meter average shear wave velocity (m/s)</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co"># ftype: Fault type (0=strike-slip, 1=reverse, -1=normal)</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># Z1.0: Depth to 1.0 km/s shear wave velocity (km)</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co"># regionflag: Region flag (0=global, 1=China-Turkey, 2=Italy-Japan)</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co"># basinflag: Basin adjustment</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co"># Example: Magnitude 6 earthquake, 20km distance, rock site</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>result_bssa14 <span class="ot">&lt;-</span> <span class="fu">BSSA14</span>(<span class="at">Mag=</span><span class="dv">6</span>, <span class="at">Rjb=</span><span class="dv">20</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">Vs30=</span><span class="dv">760</span>, <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Z1.0=</span><span class="fl">0.5</span>, <span class="at">regionflag=</span><span class="dv">0</span>, <span class="at">basinflag=</span><span class="dv">0</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;BSSA14 PGA prediction results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; BSSA14 PGA prediction results:</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_bssa14<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; Log value: 4.578</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_bssa14<span class="sc">$</span>lnY)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">#&gt; PGA(g): 0.099</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Standard deviation:&quot;</span>, <span class="fu">round</span>(result_bssa14<span class="sc">$</span>sigma, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="co">#&gt; Standard deviation: 0.605</span></span></code></pre></div>
+</div>
+<div id="cy14---chiou-and-youngs-2014-nga-west2" class="section level3">
+<h3>2. CY14 - Chiou and Youngs (2014) NGA-West2</h3>
+<p>CY14 model considers more parameters, including complex factors such
+as hanging wall effects.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># CY14 requires more parameters</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># Rrup: Rupture distance (km)</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co"># Dip: Fault dip angle (degrees)</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># Ztor: Depth to top of rupture (km)</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co"># Vs30_class: Vs30 classification (1=measured, 0=estimated)</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co"># hwflag: Hanging wall flag (1=hanging wall, 0=not hanging wall)</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co"># Rx: Horizontal distance perpendicular to fault strike (km)</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>result_cy14 <span class="ot">&lt;-</span> <span class="fu">CY14</span>(<span class="at">Mag=</span><span class="dv">6</span>, <span class="at">Rrup=</span><span class="dv">20</span>, <span class="at">Rjb=</span><span class="dv">20</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Vs30=</span><span class="dv">760</span>, </span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>                    <span class="at">Dip=</span><span class="dv">90</span>, <span class="at">Ztor=</span><span class="dv">0</span>, <span class="at">Z1.0=</span><span class="fl">0.5</span>, <span class="at">Vs30_class=</span><span class="dv">1</span>, <span class="at">hwflag=</span><span class="dv">0</span>, <span class="at">Rx=</span><span class="dv">20</span>, <span class="at">regionflag=</span><span class="dv">0</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;CY14 PGA prediction results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; CY14 PGA prediction results:</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_cy14<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; Log value: 4.268</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_cy14<span class="sc">$</span>lnY)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; PGA(g): 0.073</span></span></code></pre></div>
+</div>
+<div id="asb14---akkar-et-al.-2014" class="section level3">
+<h3>3. ASB14 - Akkar et al. (2014)</h3>
+<p>ASB14 is a crustal earthquake model developed for European and Middle
+Eastern regions.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># ASB14 is relatively simple, main parameters include magnitude, distance, fault type and site conditions</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>result_asb14 <span class="ot">&lt;-</span> <span class="fu">ASB14</span>(<span class="at">Mag=</span><span class="dv">6</span>, <span class="at">Rjb=</span><span class="dv">20</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Vs30=</span><span class="dv">760</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;ASB14 PGA prediction results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; ASB14 PGA prediction results:</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_asb14<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; Log value: 4.2</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_asb14<span class="sc">$</span>lnY)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; PGA(g): 0.068</span></span></code></pre></div>
+</div>
+<div id="bi14---bindi-et-al.-2014" class="section level3">
+<h3>4. BI14 - Bindi et al. (2014)</h3>
+<p>BI14 is a pan-European ground motion prediction equation developed
+based on the RESORCE database.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>result_bi14 <span class="ot">&lt;-</span> <span class="fu">BI14</span>(<span class="at">Mag=</span><span class="dv">6</span>, <span class="at">Rjb=</span><span class="dv">20</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Vs30=</span><span class="dv">760</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;BI14 PGA prediction results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; BI14 PGA prediction results:</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_bi14<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt; Log value: 4.14</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_bi14<span class="sc">$</span>lnY)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; PGA(g): 0.064</span></span></code></pre></div>
+</div>
+</div>
+<div id="taiwan-specific-models" class="section level2">
+<h2>Taiwan-Specific Models</h2>
+<div id="lin11---lin-et-al.-2011" class="section level3">
+<h3>5. Lin11 - Lin et al. (2011)</h3>
+<p>Lin11 is a model specifically developed for Taiwan shallow crustal
+earthquakes, considering Taiwan’s special geological conditions.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Lin11 model distinguishes between rock and soil sites (based on Vs30)</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># hwflag: Hanging wall effect flag</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>result_lin11 <span class="ot">&lt;-</span> <span class="fu">Lin11</span>(<span class="at">Mag=</span><span class="dv">6</span>, <span class="at">Rrup=</span><span class="dv">20</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">hwflag=</span><span class="dv">0</span>, <span class="at">Vs30=</span><span class="dv">760</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Lin11 PGA prediction results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt; Lin11 PGA prediction results:</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_lin11<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt; Log value: 4.37</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_lin11<span class="sc">$</span>lnY<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>)), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt; PGA(g): 1.004</span></span></code></pre></div>
+</div>
+</div>
+<div id="subduction-zone-earthquake-models" class="section level2">
+<h2>Subduction Zone Earthquake Models</h2>
+<div id="ll08---lin-and-lee-2008" class="section level3">
+<h3>6. LL08 - Lin and Lee (2008)</h3>
+<p>LL08 is a model specifically developed for subduction zone
+earthquakes in northeastern Taiwan.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># LL08 is applicable to subduction zone earthquakes</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co"># ftype: 0=interface earthquake, 1=intraslab earthquake</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co"># depth: Source depth (km)</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>result_ll08 <span class="ot">&lt;-</span> <span class="fu">LL08</span>(<span class="at">Mag=</span><span class="dv">6</span>, <span class="at">Rrup=</span><span class="dv">20</span>, <span class="at">depth=</span><span class="dv">10</span>, <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">Vs30=</span><span class="dv">760</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;LL08 PGA prediction results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt; LL08 PGA prediction results:</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_ll08<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt; Log value: 4.533</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_ll08<span class="sc">$</span>lnY)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt; PGA(g): 0.095</span></span></code></pre></div>
+</div>
+<div id="bchydrosub2018global---abrahamson-et-al.-2018" class="section level3">
+<h3>7. BCHydroSub2018Global - Abrahamson et al. (2018)</h3>
+<p>BCHydroSub2018Global is a modern model developed for global
+subduction zone earthquakes.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># BCHydroSub2018Global considers forearc/backarc effects</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co"># forearc: 0=forearc, 1=backarc</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co"># Rhypo: Hypocentral distance (km)</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>result_bch <span class="ot">&lt;-</span> <span class="fu">BCHydroSub2018Global</span>(<span class="at">Mag=</span><span class="dv">6</span>, <span class="at">Rrup=</span><span class="dv">20</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Vs30=</span><span class="dv">760</span>, </span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>                                   <span class="at">forearc=</span><span class="dv">1</span>, <span class="at">depth=</span><span class="dv">10</span>, <span class="at">Rhypo=</span><span class="dv">25</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;BCHydroSub2018Global PGA prediction results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; BCHydroSub2018Global PGA prediction results:</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_bch<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt; Log value: 4.586</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_bch<span class="sc">$</span>lnY), <span class="dv">3</span>)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; PGA(g): 0.09985633</span></span></code></pre></div>
+</div>
+</div>
+<div id="multi-period-analysis-example" class="section level2">
+<h2>Multi-Period Analysis Example</h2>
+<p>All GMPE functions support response spectrum calculations for
+different periods:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Calculate response spectrum for different periods</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>periods <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.5</span>, <span class="fl">1.0</span>, <span class="fl">2.0</span>)  <span class="co"># Including PGA(0) and different periods</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>mag <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>distance <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>vs30 <span class="ot">&lt;-</span> <span class="dv">760</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="co"># Calculate response spectrum using BSSA14</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>  <span class="at">Period =</span> periods,</span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>  <span class="at">BSSA14_lnSa =</span> <span class="fu">numeric</span>(<span class="fu">length</span>(periods)),</span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a>  <span class="at">CY14_lnSa =</span> <span class="fu">numeric</span>(<span class="fu">length</span>(periods))</span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a>)</span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(periods)) {</span>
+<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a>  <span class="co"># BSSA14</span></span>
+<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a>  bssa_result <span class="ot">&lt;-</span> <span class="fu">BSSA14</span>(<span class="at">Mag=</span>mag, <span class="at">Rjb=</span>distance, <span class="at">Prd=</span>periods[i], <span class="at">Vs30=</span>vs30, </span>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a>                        <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Z1.0=</span><span class="fl">0.5</span>, <span class="at">regionflag=</span><span class="dv">0</span>, <span class="at">basinflag=</span><span class="dv">0</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a>  results<span class="sc">$</span>BSSA14_lnSa[i] <span class="ot">&lt;-</span> bssa_result<span class="sc">$</span>lnY</span>
+<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a>  </span>
+<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a>  <span class="co"># CY14</span></span>
+<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a>  cy_result <span class="ot">&lt;-</span> <span class="fu">CY14</span>(<span class="at">Mag=</span>mag, <span class="at">Rrup=</span>distance, <span class="at">Rjb=</span>distance, <span class="at">Prd=</span>periods[i], </span>
+<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a>                    <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Vs30=</span>vs30, <span class="at">Dip=</span><span class="dv">90</span>, <span class="at">Ztor=</span><span class="dv">0</span>, <span class="at">Z1.0=</span><span class="fl">0.5</span>, </span>
+<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a>                    <span class="at">Vs30_class=</span><span class="dv">1</span>, <span class="at">hwflag=</span><span class="dv">0</span>, <span class="at">Rx=</span>distance, <span class="at">regionflag=</span><span class="dv">0</span>)</span>
+<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a>  results<span class="sc">$</span>CY14_lnSa[i] <span class="ot">&lt;-</span> cy_result<span class="sc">$</span>lnY</span>
+<span id="cb9-25"><a href="#cb9-25" tabindex="-1"></a>}</span>
+<span id="cb9-26"><a href="#cb9-26" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" tabindex="-1"></a><span class="fu">print</span>(results)</span>
+<span id="cb9-28"><a href="#cb9-28" tabindex="-1"></a><span class="co">#&gt;   Period BSSA14_lnSa CY14_lnSa</span></span>
+<span id="cb9-29"><a href="#cb9-29" tabindex="-1"></a><span class="co">#&gt; 1    0.0    4.654815  4.591543</span></span>
+<span id="cb9-30"><a href="#cb9-30" tabindex="-1"></a><span class="co">#&gt; 2    0.1    5.302431  5.370060</span></span>
+<span id="cb9-31"><a href="#cb9-31" tabindex="-1"></a><span class="co">#&gt; 3    0.2    5.467485  5.408326</span></span>
+<span id="cb9-32"><a href="#cb9-32" tabindex="-1"></a><span class="co">#&gt; 4    0.5    4.920472  4.853676</span></span>
+<span id="cb9-33"><a href="#cb9-33" tabindex="-1"></a><span class="co">#&gt; 5    1.0    4.216129  4.182009</span></span>
+<span id="cb9-34"><a href="#cb9-34" tabindex="-1"></a><span class="co">#&gt; 6    2.0    3.359481  3.456293</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Plot response spectrum comparison chart</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="fu">plot</span>(results<span class="sc">$</span>Period, <span class="fu">exp</span>(results<span class="sc">$</span>BSSA14_lnSa)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Period (sec)&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Spectral Acceleration (g)&quot;</span>, </span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Response Spectrum Comparison (M7.0, R=30km)&quot;</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>     <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(<span class="fu">exp</span>(results<span class="sc">$</span>BSSA14_lnSa)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="fu">exp</span>(results<span class="sc">$</span>CY14_lnSa)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>))))</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="fu">lines</span>(results<span class="sc">$</span>Period, <span class="fu">exp</span>(results<span class="sc">$</span>CY14_lnSa)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;BSSA14&quot;</span>, <span class="st">&quot;CY14&quot;</span>), <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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UARUAdV7QBFQBBQBRUARUAQUAUUgpwioAppTuPViioAioAgoAoqAIqAIKAKqgOo9oAgoAoqAIqAIKAKKgCKQUwRUAc0p3HoxRUARUAQUAUVAEVAEFAFVQPUeUAQUAUVAEVAEFAFFQBHIKQKqgOYUbr2YIqAIKAKKgCKgCCgCioAqoHoPKAKKgCKgCCgCioAioAjkFIFKOb2aXszTCPz+++84/fTTS/AYCARQpUoVbLvttmjSpAkuueQS1KhRo0Q73ZE5BL7++ms88MADmD9/PhYuXIhtttkGe+65J8444wxcfPHFqFy5cuYulsGeQqEQFixYYO6TDHab065++eUX3Hvvvfj8888xb948VKtWDfvttx/OPPNMXHDBBTnlxUsXu/vuuzFx4kTD0rvvvotg0D/2i3feeQcnnXQSLrvsMtx333346aef0Llz5yh4X3jhBeywww6RfT///DPOPffcyDZXnnnmGeyyyy4YNWqU+W1GHYzZ6Nq1a9LfwbJly/DII49gzpw55trt27dH9+7dwWduupTL5/dff/2Fxx9/HDNnzsSvv/6K/fffH1dccQX22muvEmynMsbrr7/e9LXddtvh1VdfLdFHJnfwedqsWTPzrnvuuecy2bX2lS4CjpIisBkBeeA6cv8k/dt3332dr776SnHLEgJvvfWWI8p+QjnIw9P5559/snT1snc7Y8YM54ADDnDOO++8sndSwWe+8cYbzo477pgQ+zZt2jh///13BXNZMZcXhSqCy6ZNmyqGiTJcVT6KnBYtWhjev/jiC9PDN998ExmLfeY9//zzUb2LslmizZIlS0ybjh07ljhm+7HLl19+Oaq/2I2PP/7YqVmzZol+xAjgkOd0KVfP7x9++MFp3LhxCb633npr5+23345iO9UxHnfccaa/7bffPur8bG0cdthhjij5jij+2bqE9psCAv75hJVftVLuEOCXLK0F/OvZs6f5Kt9pp50MA4sXL0afPn1yx0wBXUl+s7jooovwxx9/oHr16sbi9sQTT+C6665D3bp1DRK0lgwYMMBzqLRu3RqzZs3yHF+pMkTLrSgWWLVqlbFAnXXWWaDVj0t5uZpu/ve//2Ho0KGpdplX7Zo3b44OHTqYv7JY6CoKDFEEjTX78MMPR8OGDROyQauum2K33cdEUcJuu+1W4m/LLbc0zbisV6+e+5QS67T6/fbb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PlSuXNkV7WUjI0uA+keWp9vuRv3dplhk20v9I8vTbXfzqv6um4KfO3cubr755iyNT33jFS5cGL1798bYsWNd8z5MTU3FkSNHXNNeNjSyBKh/ZHm67W7U322KRba91D+yPN12N6/q7zoDtEOHDpg6dWrY99evv/6K6tWrhz3PKSeUKlUKNWvWdEpz2I4oE6D+UQbusOqov8MEiXJzqH+UgTusOq/q77op+J49e0KN0C1btuCGG24wazw1fJGmstI1oKtXr8aIESMwZswY6DQ9CwmQAAmQAAmQAAmQgLMIuM4AbdmyJebPn4++ffuiV69e0KHrjKVz584YP348OnXqlPElPicBEiABEiABEiABEogxAdcZoMqrQYMGxsNd10yuXbvWjHoePXoU1apVQ40aNVwZ0F3br1uJEiVi/JZg9bEgQP1jQd05dVJ/52gRi5ZQ/1hQd06dXtXfdWtAQ98yGgNUwyxp7M+2bduaR7dmE9K4pevWrQvtHvc9RID6e0jsTLpK/TOB4qFD1N9DYmfSVa/q78oRUA1EP3ToUHzxxRfQ/WPHjhlJy5QpY0I06RS8hl/Shb1uKRpEX9vP4k0C1N+butu9pv42CW8+Un9v6m732qv6u84AjddA9OpExeJdAtTfu9prz6k/9fc2AW/33quff9cZoPEaiN7bHz/2ngRIgARIgARIwEsEXDfsFq+B6L30pmNfSYAESIAESIAEvE3AdQZoQQei/+2339CjR4+wm+ae17SZGcNArVy5Env37k33rtq6dSs2btyY7pim3lqxYkXa9Xv27EFycjLyer19c16fN/6x5kf9gwp49f1L/ak/v//h2f9/Bfn5t/+3OfHRdVPwBR2IvlatWrj88svDavXHH38gEAhADdHQUrZsWah3fmjR0EoZDdVChQqhXLlyadcXK1bMhI/S8/JyvV1fXuvn9UECseJH/WPLP9bvf+pP/TWCC7//8/b/M9af3/zWX5Cff7ttTnz0WVKc2LDs2qQjhxqIftKkSScZdnqdesE/9thjOO+887K7Tb5ea9++PQYPHgx9ZCEBEiABEiABEiABpxDQ8JTDhw834Smd0qaM7XDdCKh2IB4D0WcUhs9JgARIgARIgARIIF4JuNIAtcXQqWo1RnXLWPbt2wed5i5evHjGl/icBEiABEiABEiABEgghgRc54SUU1a6llNzxbulqFPSli1b3NJctjPCBKh/hIG67HbU32WCRbi51D/CQF12O6/q7+oR0OzeY/fccw8aNmyY3SmOek0Xn2tuexZvEqD+3tTd7jX1t0l485H6e1N3u9de1T9uDdBnn33W1tYVj5o21E2pQ10B1UWNpP4uEqsAmkr9CwCqi25J/V0kVgE01av6u34KXp34t23bhp07dxbA24K3JAESIAESIAESIAESiDQBVxqgGzZswMMPP4w6deqYmJmVKlUyMTQTEhJMyIF+/fph//79kWbF+5EACZAACZAACZAACUSAgOum4NesWYOOHTuaAO7du3dHvXr1UL58efNcR0FXrVqFUaNG4auvvsKECRNQv379CGAq+FscPXoUumnQehbvEaD+3tM8tMfUP5SG9/apv/c0D+2xV/V3nQE6aNAgM/L5yy+/oGjRoqEapu0PHDgQF198sQnCOmDAgLTjkdw5fPgwJk6ciFmzZkXktgcPHsQpp5yCMWPGROR+vIm7CFSrVg0tW7ak/u6SLWKtpf4RQ+nKG1F/V8oWsUar/m3atMHu3bsjdk83LEt0XSYkHf3U8Ep9+vTJVqhPPvkEr7/+OmbMmJHteXl9cfr06Rg2bJiJNZrXe4Ret2DBAsyZMwe1a9cOPcx9jxDQuLX6hUH9PSJ4hm5S/wxAPPaU+ntM8AzdVf1169GjR4ZX8v5Ulyjef//9JmV43u9SsFe6zgB96KGHsHXrVmP8ZYfm1ltvNb8mvv766+xOc8xrP/zwA9555x2MHj3aMW1iQ6JHgPpHj7UTa6L+TlQlem2i/tFj7cSavKq/66bge/bsiQ4dOpig7TfccINZ41mhQgX4/X4zgrR69WqMGDHCTGXqND0LCZAACZAACZAACZCAswi4zgDVdXLz589H3759zVS8BnDNWDp37ozx48ejU6dOGV/icxIgARIgARIgARIggRgTcJ0Bqrw097t6uGvmoLVr10JHPdWLTBfy1qhRw4RkijFXVk8CJEACJEACJEACJJAFAVcaoHZfihQpYoxRNUhZSIAESIAESIAESIAE3EHAlYHo3YGWrSQBEiABEiABEiABEsiMAA3QzKjwGAmQAAmQAAmQAAmQQIERoAFaYGh5YxIgARIgARIgARIggcwI0ADNjAqPkQAJkAAJkAAJkAAJFBgB1wWiLzASMb6xZkHYsWOHSTMa46aw+hgQoP4xgO6gKqm/g8SIQVOofwygO6hKr+pPA9RBb0I2hQRIgARIgARIgAS8QIBT8F5QmX0kARIgARIgARIgAQcRoAHqIDHYFBIgARIgARIgARLwAgEaoF5QmX0kARIgARIgARIgAQcRoAHqIDHYFBIgARIgARIgARLwAgEaoF5QmX0kARIgARIgARIgAQcRoAHqIDHYFBIgARIgARIgARLwAgEaoF5QmX0kARIgARIgARIgAQcRoAHqIDHYFBIgARIgARIgARLwAgEaoF5QmX0kARIgARIgARIgAQcRoAHqIDHYFBIgARIgARIgARLwAgEaoFFW2bKsXNeYl2tyXQkviAoBahkVzI6u5ODBg7lqH98zucLl+JNzq7/jO8QG5phAampqjs+1T4znzz8NUFvlAn786KOPcO6556JEiRI488wzMXHixLA1zpkzBzfccAPKlSuHevXq4bnnngt7DU9wJoG86N+nTx80btz4pO3vv/92ZifZqrAE3n//fVSsWDHseXoCP/85wuSqk3KjPz//rpI2y8bq93W/fv1QrVo1FCpUCLVr18Z//vMfHDt2LMtr9AUvfP4LZUuAL0aEwOTJk3H77bfj1VdfxZAhQ/Duu++iW7dumD59Olq0aJFpHQcOHMA111yDdu3aYdKkSZg3bx7uvPNOc+6TTz6Z6TU86EwCedFfezJu3Dg0bdoUbdu2TdexwoULp3vOJ+4g8PXXX5vPcCAQCNtgfv7DInLdCbnRXzvHz7/rJM60wf/3f/+HH374AQ899BDOP/98jB49Gs888wwOHTqU5aCSZz7/MrzLUsAEmjRpYslIZrpamjVrZt16663pjoU+eeqpp6wyZcpYMl2TdvjZZ5+1ZPTEkjdu2jHuOJ9AXvTfuXOnrtWwfvzxR+d3kC3MlsDu3butnj17Gj0TExOt4sWLZ3u+vsjPf1hErjkhL/rz8+8aebNtqGrv9/ut/v37pzvv6quvtipVqpTuWOgTr3z+OQWf6W+WyB1cv349lixZgiuvvDLdTS+//HKMGTMm3bHQJ+PHj8dFF12EYsWKpR2+7LLLsH37dvz5559px7jjbAJ51X/+/PmmY61atTKP8uXk7I6ydVkSmD17NqZMmYJvvvkGffv2hc/ny/Jc+wV+/m0S7n/Mi/78/Ltfd+1BSkoK/vvf/0JHQUNL3bp1sW/fPmS1JtQrn38aoKHvigLYX7Fihblr9erV091d14Ns27YtyzegXlejRo1019j32Lx5c7rjfOJcAnnVX/8BlSxZ0izXaNSoEcqWLYsePXpgx44dzu0sW5YpgdatW2PZsmW44oorMn09s4P8/GdGxZ3H8qI/P//u1Dpjq8uXL2+W36nBaRc1Oj///HPjCyKjo/bhdI9e+fxn3vt0KPgkPwT27t1rLq9QoUK626hjkf46ysqg0Ov0zRta1AjRsnXr1tDD3Hcwgbzqr/+AdPH6okWL8Pjjj+PSSy+FriG78MILzfvGwV1m0zIQSEhIQNGiRTMczf4pP//Z83HTq3nRn59/Nymcu7aqD8eGDRvwwgsvZHmhVz7/dELK8i0QmRfU601Lxl869vMjR45kWpFel9FZQafudDt8+HCm1/Cg8wjkVX9ZM4hzzjkHN910k+lUr1690L59e9xzzz1mKlcd1FjilwA///GrbU56xs9/Tii575xBgwZh4MCBxgteHYyzKl75/HMENKt3QISOV6lSxdxp165d6e5oPy9dunS64/YTvc4+xz4mC5qhawHFOck+xEeHE8ir/uedd16a8Wl3URaumx8yc+fOtQ/xMU4J8PMfp8LmsFv8/OcQlItO05FP9YQfMGAAHnvssWxb7pXPPw3QbN8G+X/RNkC2bNmS7mb6XKfYszImq1atisyu0ZuEridJd1M+cRyBvOqflJSEtWvXpuuPxpDVUXF79Dzdi3wSVwT4+Y8rOXPdGX7+c43M0Reo8amxP1977TWIh3vYtnrl808DNOxbIX8n6BtJg4n/9NNP6W6kHvCdOnVKdyz0if4C1jhwoV5yeg91TDn99NNDT+W+gwnkVX+NknDVVVel65nGjzt69CjUqYElvgnw8x/f+obrHT//4Qi55/WhQ4ca41OTENx33305arhnPv+hsae4XzAE3njjDUsMR0uC0VoSYNaSgPSWhFeyxDM2rUIZmjfH7QMSvseSdSDWgw8+aEm4BmvatGlW5cqVrZdfftk+hY8uIZAX/V988UUTN/Kll16yJPSW9cUXX1gNGza0mjdvbonzmkt6zmZmJDB48GBLRrIzHrb4+T8JSVweyKn+/PzHh/wbN260SpUqZZ1xxhnWiBEjTtpkQMF01Kuff11TyFLABPRNJr98jEEpTkSWBiYfNmxYulpr1aplde3aNd2x7777zhLveUuvkel6S7IpWZK+K905fOJ8AnnRX43MRx55xCpSpIgxRGXq3ZLsWcYYdX6P2cKsCGRlgPDznxWx+DqeU/35+Y8P3SXzofn+lmHPTB/37NljOurVz79Pe5+jMWGelG8CmnpLQyjJmy3H91J5Vq9ejZo1a5o8sjm+kCc6jkBe9NcoCaq/xoTVNaAs3iLAz7+39M7YW37+MxLx1vN4//zTAPXW+5m9JQESIAESIAESIIGYE6ATUswlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIgARIgARIwFsEaIB6S2/2lgRIgARIgARIgARiToAGaMwlYANIgARIIHcE1q9fj927d+fuojyevW/fPqxduzaPV/MyEiABEsicAA3QzLnwKAmQQJwQOPvss+Hz+dI2v9+PsmXLok2bNnj33Xfz3cuff/7Z3HvlypX5utfXX39t7rNjx45s77N//36cf/75OHLkSLbnRerFlJQUXHDBBdi5c2ekbsn7kAAJkAAKkQEJkAAJxDuBJk2a4MknnzTdtCwLe/bswahRo9C3b19z7Pbbb88zgurVq+OWW25B6dKl83yP3Fz4yiuv4Oabb0alSpVyc1mez1Vj/e6778bAgQPx8ssv5/k+vJAESIAEQgn45MvYCj3AfRIgARKIJwI6AlqoUCFM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dE1raJ267vPQoUNmdDT0HHWaqlWrlokVGjoqGnot90mABEggNwRogOaGFs8lARIggRgT0Kly9ZgfPHhw1Fry9NNPQ0aHoYHwWUiABEggEgRogEaCIu9BAiRAAlEioKOqGtdTnZFsL/eCrFrXsapj1cSJE7OMf1qQ9fPeJEAC8UmABmh86spekQAJxDEBNQY1pFPt2rULvJcbN240YZ5kHWuB18UKSIAEvEOABqh3tGZPSYAESIAESIAESMARBMKvendEM9kIEiABEiABEiABEiCBeCFAAzRelGQ/SIAESIAESIAESMAlBGiAukQoNpMESIAESIAESIAE4oUADdB4UZL9IAESIAESIAESIAGXEKAB6hKh2EwSIAESIAESIAESiBcCNEDjRUn2gwRIgARIgARIgARcQoAGqEuEYjNJgARIgARIgARIIF4I0ACNFyXZDxIgARIgARIgARJwCQEaoC4Ris0kARIgARIgARIggXghQAM0XpRkP0iABEiABEiABEjAJQRogLpEKDaTBEiABEiABEiABOKFAA3QeFGS/SABEiABEiABEiABlxCgAeoSodhMEiABEiABEiABEogXAjRA40VJ9oMESIAESIAESIAEXEKABqhLhGIzSYAESIAESIAESCBeCNAAjRcl2Q8SIAESIAESIAEScAkBGqAuEYrNJAESIAESIAESIIF4IUADNF6UZD9IgARIgARIgARIwCUEaIC6RCg2kwRIgARIgARIgATihcD/A4avHJOIt+aUAAAAAElFTkSuQmCC" /><!-- --></p>
+</div>
+<div id="taiwan-specific-recent-models" class="section level2">
+<h2>Taiwan-Specific Recent Models</h2>
+<div id="chao2018---chao-et-al.-2018" class="section level3">
+<h3>8. Chao2018 - Chao et al. (2018)</h3>
+<p>Chao2018 is a comprehensive GMPE model developed for both crustal and
+subduction earthquakes in Taiwan region.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Chao2018 function parameter description</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co"># Mag: Earthquake magnitude</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="co"># Rrup: Rupture distance (km)</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co"># Prd: Period (0 for PGA)</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="co"># ftype: Fault mechanism (-1=normal, 0=strike-slip, 1=reverse for crustal; 0=interface, 1=intraslab for subduction)</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="co"># Vs30: 30-meter average shear wave velocity (m/s)</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="co"># Vs30_class: Vs30 data quality (0=estimated, 1=measured)</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co"># Ztor: Depth to top of rupture (km)</span></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="co"># Z1.0: Depth to 1.0 km/s shear wave velocity (km)</span></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="co"># sourcetype: Source type (0=crustal, 1=subduction)</span></span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a><span class="co"># msasflag: Mainshock/aftershock flag (0=mainshock, 1=aftershock)</span></span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a><span class="co"># Example: Crustal earthquake</span></span>
+<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a>result_chao2018_crustal <span class="ot">&lt;-</span> <span class="fu">Chao2018</span>(<span class="at">Mag=</span><span class="fl">6.5</span>, <span class="at">Rrup=</span><span class="dv">30</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Vs30=</span><span class="dv">760</span>, </span>
+<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a>                                   <span class="at">Vs30_class=</span><span class="dv">1</span>, <span class="at">Ztor=</span><span class="dv">5</span>, <span class="at">Z1.0=</span><span class="fl">0.5</span>, <span class="at">sourcetype=</span><span class="dv">0</span>, <span class="at">msasflag=</span><span class="dv">0</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Chao2018 Crustal PGA prediction:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a><span class="co">#&gt; Chao2018 Crustal PGA prediction:</span></span>
+<span id="cb11-18"><a href="#cb11-18" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_chao2018_crustal<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" tabindex="-1"></a><span class="co">#&gt; Log value: 4.459</span></span>
+<span id="cb11-20"><a href="#cb11-20" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_chao2018_crustal<span class="sc">$</span>lnY)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" tabindex="-1"></a><span class="co">#&gt; PGA(g): 0.088</span></span>
+<span id="cb11-22"><a href="#cb11-22" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" tabindex="-1"></a><span class="co"># Example: Subduction interface earthquake</span></span>
+<span id="cb11-24"><a href="#cb11-24" tabindex="-1"></a>result_chao2018_sub <span class="ot">&lt;-</span> <span class="fu">Chao2018</span>(<span class="at">Mag=</span><span class="fl">7.5</span>, <span class="at">Rrup=</span><span class="dv">50</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Vs30=</span><span class="dv">760</span>, </span>
+<span id="cb11-25"><a href="#cb11-25" tabindex="-1"></a>                               <span class="at">Vs30_class=</span><span class="dv">1</span>, <span class="at">Ztor=</span><span class="dv">0</span>, <span class="at">Z1.0=</span><span class="fl">0.5</span>, <span class="at">sourcetype=</span><span class="dv">1</span>, <span class="at">msasflag=</span><span class="dv">0</span>)</span>
+<span id="cb11-26"><a href="#cb11-26" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Chao2018 Subduction Interface PGA prediction:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb11-27"><a href="#cb11-27" tabindex="-1"></a><span class="co">#&gt; Chao2018 Subduction Interface PGA prediction:</span></span>
+<span id="cb11-28"><a href="#cb11-28" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_chao2018_sub<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" tabindex="-1"></a><span class="co">#&gt; Log value: 4.224</span></span>
+<span id="cb11-30"><a href="#cb11-30" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_chao2018_sub<span class="sc">$</span>lnY)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" tabindex="-1"></a><span class="co">#&gt; PGA(g): 0.069</span></span></code></pre></div>
+</div>
+<div id="phungcru18---phung-et-al.-2018-crustal" class="section level3">
+<h3>9. PhungCru18 - Phung et al. (2018) Crustal</h3>
+<p>PhungCru18 is a crustal GMPE model developed specifically for Taiwan
+with regional adjustments.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># PhungCru18 function parameter description</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co"># Mag: Earthquake magnitude</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co"># Rrup: Rupture distance (km)</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># Rjb: Joyner-Boore distance (km)</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co"># Rx: Horizontal distance from top edge of rupture (km)</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co"># Prd: Period (0 for PGA)</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co"># Vs30: 30-meter average shear wave velocity (m/s)</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co"># Dip: Dip angle of the fault plane (degrees)</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co"># Ztor: Depth to top of rupture (km)</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co"># ftype: Fault mechanism (-1=normal, 0=strike-slip, 1=reverse)</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co"># Z1.0: Depth to 1.0 km/s shear wave velocity (km)</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co"># Vs30_class: Vs30 data quality (0=estimated, 1=measured)</span></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="co"># regionflag: Regional flag (0=global, 1=Taiwan)</span></span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a><span class="co"># hwflag: Hanging wall flag (0=footwall, 1=hanging wall)</span></span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a><span class="co"># Example: Taiwan crustal earthquake</span></span>
+<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a>result_phungcru18 <span class="ot">&lt;-</span> <span class="fu">PhungCru18</span>(<span class="at">Mag=</span><span class="fl">6.5</span>, <span class="at">Rrup=</span><span class="dv">25</span>, <span class="at">Rjb=</span><span class="dv">20</span>, <span class="at">Rx=</span><span class="dv">15</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">Vs30=</span><span class="dv">760</span>, </span>
+<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a>                               <span class="at">Dip=</span><span class="dv">90</span>, <span class="at">Ztor=</span><span class="dv">5</span>, <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Z1.0=</span><span class="fl">0.5</span>, <span class="at">Vs30_class=</span><span class="dv">1</span>, </span>
+<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a>                               <span class="at">regionflag=</span><span class="dv">1</span>, <span class="at">hwflag=</span><span class="dv">0</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PhungCru18 Taiwan PGA prediction:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb12-21"><a href="#cb12-21" tabindex="-1"></a><span class="co">#&gt; PhungCru18 Taiwan PGA prediction:</span></span>
+<span id="cb12-22"><a href="#cb12-22" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_phungcru18<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a><span class="co">#&gt; Log value: 4.441</span></span>
+<span id="cb12-24"><a href="#cb12-24" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_phungcru18<span class="sc">$</span>lnY)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb12-25"><a href="#cb12-25" tabindex="-1"></a><span class="co">#&gt; PGA(g): 0.086</span></span></code></pre></div>
+</div>
+<div id="phungsub18---phung-et-al.-2018-subduction" class="section level3">
+<h3>10. PhungSub18 - Phung et al. (2018) Subduction</h3>
+<p>PhungSub18 is a subduction zone GMPE model developed for Taiwan and
+Japan regions.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># PhungSub18 function parameter description</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co"># Mag: Earthquake magnitude</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co"># Rrup: Rupture distance (km)</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co"># Prd: Period (0 for PGA)</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co"># ftype: Fault type (0=interface, 1=intraslab)</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co"># Vs30: 30-meter average shear wave velocity (m/s)</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co"># Z1.0: Depth to 1.0 km/s shear wave velocity (km)</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co"># Ztor: Depth to top of rupture (km)</span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co"># regionflag: Regional flag (0=Japan, 1=Taiwan)</span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co"># Example: Taiwan interface earthquake</span></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a>result_phungsub18_int <span class="ot">&lt;-</span> <span class="fu">PhungSub18</span>(<span class="at">Mag=</span><span class="fl">7.5</span>, <span class="at">Rrup=</span><span class="dv">50</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">ftype=</span><span class="dv">0</span>, <span class="at">Vs30=</span><span class="dv">760</span>, </span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a>                                   <span class="at">Z1.0=</span><span class="fl">0.5</span>, <span class="at">Ztor=</span><span class="dv">0</span>, <span class="at">regionflag=</span><span class="dv">1</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PhungSub18 Taiwan Interface PGA prediction:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a><span class="co">#&gt; PhungSub18 Taiwan Interface PGA prediction:</span></span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_phungsub18_int<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="co">#&gt; Log value: 4.183</span></span>
+<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_phungsub18_int<span class="sc">$</span>lnY)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a><span class="co">#&gt; PGA(g): 0.067</span></span>
+<span id="cb13-20"><a href="#cb13-20" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" tabindex="-1"></a><span class="co"># Example: Taiwan intraslab earthquake</span></span>
+<span id="cb13-22"><a href="#cb13-22" tabindex="-1"></a>result_phungsub18_slab <span class="ot">&lt;-</span> <span class="fu">PhungSub18</span>(<span class="at">Mag=</span><span class="fl">7.0</span>, <span class="at">Rrup=</span><span class="dv">60</span>, <span class="at">Prd=</span><span class="dv">0</span>, <span class="at">ftype=</span><span class="dv">1</span>, <span class="at">Vs30=</span><span class="dv">760</span>, </span>
+<span id="cb13-23"><a href="#cb13-23" tabindex="-1"></a>                                    <span class="at">Z1.0=</span><span class="fl">0.5</span>, <span class="at">Ztor=</span><span class="dv">30</span>, <span class="at">regionflag=</span><span class="dv">1</span>)</span>
+<span id="cb13-24"><a href="#cb13-24" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PhungSub18 Taiwan Intraslab PGA prediction:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb13-25"><a href="#cb13-25" tabindex="-1"></a><span class="co">#&gt; PhungSub18 Taiwan Intraslab PGA prediction:</span></span>
+<span id="cb13-26"><a href="#cb13-26" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Log value:&quot;</span>, <span class="fu">round</span>(result_phungsub18_slab<span class="sc">$</span>lnY, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb13-27"><a href="#cb13-27" tabindex="-1"></a><span class="co">#&gt; Log value: 4.281</span></span>
+<span id="cb13-28"><a href="#cb13-28" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;PGA(g):&quot;</span>, <span class="fu">round</span>(<span class="fu">exp</span>(result_phungsub18_slab<span class="sc">$</span>lnY)<span class="sc">/</span><span class="fu">exp</span>(<span class="fl">6.89</span>), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb13-29"><a href="#cb13-29" tabindex="-1"></a><span class="co">#&gt; PGA(g): 0.074</span></span></code></pre></div>
+</div>
+</div>
+<div id="model-selection-guide" class="section level2">
+<h2>Model Selection Guide</h2>
+<div id="crustal-earthquakes" class="section level3">
+<h3>Crustal Earthquakes</h3>
+<ul>
+<li><strong>BSSA14, CY14</strong>: Suitable for global shallow crustal
+earthquakes, NGA-West2 series with rich datasets</li>
+<li><strong>ASB14, BI14</strong>: Suitable for European regions,
+considering European geological characteristics</li>
+<li><strong>Lin11</strong>: Specifically for Taiwan crustal earthquakes,
+considering Taiwan’s special geological conditions</li>
+<li><strong>Chao2018, PhungCru18</strong>: Latest Taiwan-specific models
+with local calibration</li>
+</ul>
+</div>
+<div id="subduction-zone-earthquakes" class="section level3">
+<h3>Subduction Zone Earthquakes</h3>
+<ul>
+<li><strong>BCHydroSub2018Global</strong>: Modern global subduction
+model with wide applicability</li>
+<li><strong>LL08</strong>: Specifically for Taiwan’s northeastern
+subduction zone, considering Taiwan’s special subduction
+characteristics</li>
+<li><strong>Chao2018, PhungSub18</strong>: Recent Taiwan-specific
+subduction models</li>
+</ul>
+</div>
+<div id="parameter-importance" class="section level3">
+<h3>Parameter Importance</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Magnitude (Mag)</strong>: Most important parameter with the
+greatest impact on ground motion intensity</li>
+<li><strong>Distance</strong>: Rrup (rupture distance) is usually more
+accurate than Rjb (Joyner-Boore distance)</li>
+<li><strong>Site conditions (Vs30)</strong>: Important impact on ground
+motion amplification effects</li>
+<li><strong>Fault type (ftype)</strong>: Affects ground motion
+characteristics</li>
+<li><strong>Regional parameters</strong>: Consider geological
+differences in different regions</li>
+</ol>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>The GMPEhaz package provides a rich selection of GMPE models. Users
+can choose appropriate models based on study region, earthquake type,
+and available parameters. It is recommended to use multiple models for
+comparison and validation when conducting seismic hazard analysis to
+obtain more reliable results.</p>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

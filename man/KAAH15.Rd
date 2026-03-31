@@ -29,7 +29,7 @@ A list will be return, including mag, Rjb, specT, period, lnY, sigma, iflag, fty
 Kale, O., S. Akkar, A. Ansari, and H. Hamzehloo (2015), A ground-Motion predictive model for
 Iran and Turkey for horizontal PGA, PGV, and 5% Damped Response Spectrum: Investigation of
 Possible Regional Effects, Bulletin of the Seismological Society of America, 105(2A), 963-980.
-\url{http://dx.doi.org/10.1785/0120140134}
+\doi{10.1785/0120140134}
 }
 \examples{
 KAAH15(6, 20, 0, 0, 760, 0)

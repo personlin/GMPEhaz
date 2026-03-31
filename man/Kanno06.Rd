@@ -27,7 +27,7 @@ A list will be return, including mag, Rrup, specT, period, lnY, sigma, iflag, Vs
 Kanno, T., A. Narita, N. Morikawa, H. Fujiwara, and Y. Fukushima (2006), A new attenuation relation
 for strong ground motion in japan based on recorded data, Bulletin of the Seismological Society of America,
 96(3), 879-897.
-\url{http://dx.doi.org/10.1785/0120050138}
+\doi{10.1785/0120050138}
 }
 \examples{
 Kanno06(6, 20, 0, 760, 10)

@@ -1,0 +1,99 @@
+Hmm ... looks like a package
+Converting parsed Rd's to LaTeX ........................
+Creating pdf output from LaTeX ...
+Error in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  : 
+  Running 'texi2dvi' on 'Rd2.tex' failed.
+Messages:
+/opt/R/arm64/bin/texi2dvi: makeindex failed
+Output:
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(./Rd2.tex
+(/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo)) (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Rd.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/eucal.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/inconsolata/zi4.sty `inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))))) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/graphics/color.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file Rd2.idx
+(/Users/person/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def) (/private/var/folders/qq/d0nsfskj0t38080k88dr375r0000gn/T/RtmpYyHs9w/Rd2pdf7fc02758ed58/Rd2.aux) (/private/var/folders/qq/d0nsfskj0t38080k88dr375r0000gn/T/RtmpYyHs9w/Rd2pdf7fc02758ed58/Rd2.out) (/private/var/folders/qq/d0nsfskj0t38080k88dr375r0000gn/T/RtmpYyHs9w/Rd2pdf7fc02758ed58/Rd2.out) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/inconsolata/t1zi4.fd) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/private/var/folders/qq/d0nsfskj0t38080k88dr375r0000gn/T/RtmpYyHs9w/Rd2pdf7fc02758ed58/Rd2.toc [1{/Users/person/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/person/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/Users/person/Library/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}] [2] [3] [4] [5])
+Overfull \hbox (23.73596pt too wide) in paragraph at lines 65--66
+[]\T1/ptm/m/n/10 NEHRP B Sc=0, Sd=0, Se=0, Vs>760m/s, NEHRP C Sc=1, Sd=0, Se=0, 360<Vs<760 
+[6] [7] [8] [9] [10] [11] [12] [13] [14]
+Overfull \hbox (3.92836pt too wide) in paragraph at lines 561--564
+\T1/ptm/m/n/10 tion for ac-tive crustal re-gions, Earth-quake Spec-tra, 30(3), 1025-1055. [][]doi:10.1193/070913EQS198M[][] 
+[15]
+Overfull \hbox (3.92836pt too wide) in paragraph at lines 645--648
+\T1/ptm/m/n/10 tion for ac-tive crustal re-gions, Earth-quake Spec-tra, 30(3), 1025-1055. [][]doi:10.1193/070913EQS198M[][] 
+[16]
+Overfull \hbox (3.92836pt too wide) in paragraph at lines 729--732
+\T1/ptm/m/n/10 tion for ac-tive crustal re-gions, Earth-quake Spec-tra, 30(3), 1025-1055. [][]doi:10.1193/070913EQS198M[][] 
+[17] [18]
+Overfull \hbox (3.92836pt too wide) in paragraph at lines 813--816
+\T1/ptm/m/n/10 tion for ac-tive crustal re-gions, Earth-quake Spec-tra, 30(3), 1025-1055. [][]doi:10.1193/070913EQS198M[][] 
+[19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97]
+Overfull \hbox (2.01819pt too wide) in paragraph at lines 5103--5105
+[]\T1/zi4/m/n/10 CY14.tw.B01 []\T1/ptm/m/n/10 re-turns the ground-motion pre-dic-tion with it sigma of Chiou and Youngs(2014) GMPE
+[98]
+Overfull \hbox (2.01819pt too wide) in paragraph at lines 5179--5181
+[]\T1/zi4/m/n/10 CY14.tw.C01 []\T1/ptm/m/n/10 re-turns the ground-motion pre-dic-tion with it sigma of Chiou and Youngs(2014) GMPE
+[99] [100]
+Overfull \hbox (2.01819pt too wide) in paragraph at lines 5255--5257
+[]\T1/zi4/m/n/10 CY14.tw.E04 []\T1/ptm/m/n/10 re-turns the ground-motion pre-dic-tion with it sigma of Chiou and Youngs(2014) GMPE
+[101] [102] [103] [104] [105] [106] [107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118]
+Overfull \hbox (30.89731pt too wide) in paragraph at lines 6362--6364
+[]\T1/zi4/m/n/10 NCREE2011 []\T1/ptm/m/n/10 re-turns the ground-motion pre-dic-tion (rock site, Vs30>=360m/s) with it sigma of NCREE(2011)
+[119] [120] [121] [122] [123] [124] [125] [126] [127] [128] [129] [130] [131] [132] [133] [134] [135] [136] [137] [138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150] [151] [152]
+No file Rd2.ind.
+[153] (/private/var/folders/qq/d0nsfskj0t38080k88dr375r0000gn/T/RtmpYyHs9w/Rd2pdf7fc02758ed58/Rd2.
+
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(./Rd2.tex
+(/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo)) (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Rd.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/eucal.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/inconsolata/zi4.sty `inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))))) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/graphics/color.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/Users/person/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file Rd2.idx
+(/Users/person/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def) (/private/var/folders/qq/d0nsfskj0t38080k88dr375r0000gn/T/RtmpYyHs9w/Rd2pdf7fc02758ed58/Rd2.aux) (/private/var/folders/qq/d0nsfskj0t38080k88dr375r0000gn/T/RtmpYyHs9w/Rd2pdf7fc02758ed58/Rd2.out) (/private/var/folders/qq/d0nsfskj0t38080k88dr375r0000gn/T/RtmpYyHs9w/Rd2pdf7fc02758ed58/Rd2.out) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/inconsolata/t1zi4.fd) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/Users/person/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/private/var/folders/qq/d0nsfskj0t38080k88dr375r0000gn/T/RtmpYyHs9w/Rd2pdf7fc02758ed58/Rd2.toc [1{/Users/person/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/person/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/Users/person/Library/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}] [2] [3] [4] [5])
+Overfull \hbox (23.73596pt too wide) in paragraph at lines 65--66
+[]\T1/ptm/m/n/10 NEHRP B Sc=0, Sd=0, Se=0, Vs>760m/s, NEHRP C Sc=1, Sd=0, Se=0, 360<Vs<760 
+[6] [7] [8] [9] [10] [11] [12] [13] [14]
+Overfull \hbox (3.92836pt too wide) in paragraph at lines 561--564
+\T1/ptm/m/n/10 tion for ac-tive crustal re-gions, Earth-quake Spec-tra, 30(3), 1025-1055. [][]doi:10.1193/070913EQS198M[][] 
+[15]
+Overfull \hbox (3.92836pt too wide) in paragraph at lines 645--648
+\T1/ptm/m/n/10 tion for ac-tive crustal re-gions, Earth-quake Spec-tra, 30(3), 1025-1055. [][]doi:10.1193/070913EQS198M[][] 
+[16]
+Overfull \hbox (3.92836pt too wide) in paragraph at lines 729--732
+\T1/ptm/m/n/10 tion for ac-tive crustal re-gions, Earth-quake Spec-tra, 30(3), 1025-1055. [][]doi:10.1193/070913EQS198M[][] 
+[17] [18]
+Overfull \hbox (3.92836pt too wide) in paragraph at lines 813--816
+\T1/ptm/m/n/10 tion for ac-tive crustal re-gions, Earth-quake Spec-tra, 30(3), 1025-1055. [][]doi:10.1193/070913EQS198M[][] 
+[19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97]
+Overfull \hbox (2.01819pt too wide) in paragraph at lines 5103--5105
+[]\T1/zi4/m/n/10 CY14.tw.B01 []\T1/ptm/m/n/10 re-turns the ground-motion pre-dic-tion with it sigma of Chiou and Youngs(2014) GMPE
+[98]
+Overfull \hbox (2.01819pt too wide) in paragraph at lines 5179--5181
+[]\T1/zi4/m/n/10 CY14.tw.C01 []\T1/ptm/m/n/10 re-turns the ground-motion pre-dic-tion with it sigma of Chiou and Youngs(2014) GMPE
+[99] [100]
+Overfull \hbox (2.01819pt too wide) in paragraph at lines 5255--5257
+[]\T1/zi4/m/n/10 CY14.tw.E04 []\T1/ptm/m/n/10 re-turns the ground-motion pre-dic-tion with it sigma of Chiou and Youngs(2014) GMPE
+[101] [102] [103] [104] [105] [106] [107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118]
+Overfull \hbox (30.89731pt too wide) in paragraph at lines 6362--6364
+[]\T1/zi4/m/n/10 NCREE2011 []\T1/ptm/m/n/10 re-turns the ground-motion pre-dic-tion (rock site, Vs30>=360m/s) with it sigma of NCREE(2011)
+[119] [120] [121] [122] [123] [124] [125] [126] [127] [128] [129] [130] [131] [132] [133] [134] [135] [136] [137] [138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150] [151] [152]
+No file Rd2.ind.
+[153] (/private/var/folders/qq/d0nsfskj0t38080k88dr375r0000gn/T/RtmpYyHs9w/Rd2pdf7fc02758ed58/Rd2.aux) )
+(see the transcript file for additional information)</Users/person/Library/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></Users/person/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/person/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/person/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/person/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (153 pages, 305991 bytes).
+Transcript written on Rd2.log.
+Saving output to ‘GMPEhaz-manual.pdf’ ...
+Done
+You may want to clean up by 'rm -Rf /var/folders/qq/d0nsfskj0t38080k88dr375r0000gn/T//RtmpYyHs9w/Rd2pdf7fc02758ed58'

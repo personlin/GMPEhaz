@@ -5,7 +5,6 @@
 #' Mcverry, G. H., Zhao, J. X., Abrahamson, N. A., and Somerville, P. G. (2006). New Zealand acceleration response spectrum
 #' attenuation relations for crustal and subduction zone earthquakes,
 #' Bulletin of the New Zealand Society for Earthquake Engineering, 39(1), 1-58.
-#' \url{http://bulletin.nzsee.org.nz/39/1/0001}
 #'
 #' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.

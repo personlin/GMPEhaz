@@ -1,0 +1,25 @@
+Package: GMPEhaz
+Type: Package
+Title: GMPE Functions using Norman Abrahamson's HAZ Fortran Code
+Version: 0.1.13.59
+Authors@R: person("Person", "Lin", ,"personlin@gmail.com", role = c("aut", "cre"))
+Depends: R (>= 4.1.0)
+Imports: lattice
+SystemRequirements: GNU make
+Description: Provides a set of R wrapper functions to call GMPE (Ground Motion
+    Prediction Equation) functions from Norman Abrahamson's HAZ Fortran code.
+License: GPL-3
+LazyData: TRUE
+RoxygenNote: 7.3.2
+Suggests: testthat, knitr, rmarkdown, pkgdown
+Config/testthat/edition: 3
+URL: https://personlin.github.io/GMPEhaz/,
+        https://github.com/personlin/GMPEhaz
+BugReports: https://github.com/personlin/GMPEhaz/issues
+VignetteBuilder: knitr
+Encoding: UTF-8
+NeedsCompilation: yes
+Packaged: 2026-03-31 14:25:59 UTC; person
+Author: Person Lin [aut, cre]
+Maintainer: Person Lin <personlin@gmail.com>
+Built: R 4.5.3; aarch64-apple-darwin20; 2026-03-31 14:26:30 UTC; unix

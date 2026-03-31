@@ -62,7 +62,7 @@ adjusted to Taiwan..
 Campbell, K. W., and Y. Bozorgnia (2014), NGA-west2 ground motion model for the average
 horizontal components of PGA, PGV, and 5% damped linear acceleration response spectra,
 Earthquake Spectra, 30(3), 1087-1115.
-\url{http://dx.doi.org/10.1193/062913EQS175M}
+\doi{10.1193/062913EQS175M}
 }
 \examples{
 CB14.tw.C01(6, 20, 20, 0, 0, 760, 0, 1.5, 90, 10, 0, 20, 10, 0)

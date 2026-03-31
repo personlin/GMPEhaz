@@ -1,0 +1,15099 @@
+
+R version 4.5.3 (2026-03-11) -- "Reassured Reassurer"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "GMPEhaz"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('GMPEhaz')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("AB03")
+> ### * AB03
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: AB03
+> ### Title: GMPE function for Atkinson and Boore(2003)
+> ### Aliases: AB03
+> 
+> ### ** Examples
+> 
+> AB03(6, 20, 0, 0, 10, 0, 0, 0)
+Warning in AB03(6, 20, 0, 0, 10, 0, 0, 0) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.400256
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5295946
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Sc
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Sd
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Se
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> AB03(7, 10, 0, 0, 10, 0, 0, 0)
+Warning in AB03(7, 10, 0, 0, 10, 0, 0, 0) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.612576
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5295946
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Sc
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Sd
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Se
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("AC10")
+> ### * AC10
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: AC10
+> ### Title: GMPE function for Akkar and Cagnan(2010)
+> ### Aliases: AC10
+> 
+> ### ** Examples
+> 
+> AC10(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.902359
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8322
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pga4nl
+[1] 49.5191
+attr(,"Csingle")
+[1] TRUE
+
+> AC10(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.224807
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8322
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pga4nl
+[1] 185.8253
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("AGA16.tw.C01")
+> ### * AGA16.tw.C01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: AGA16.tw.C01
+> ### Title: GMPE function for adjusted Abrahamson et al.(2016)
+> ### Aliases: AGA16.tw.C01
+> 
+> ### ** Examples
+> 
+> AGA16.tw.C01(6, 20, 0, 0, 760, 3, 10, 20)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.652036
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7381734
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$Ztor
+[1] 3
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+> AGA16.tw.C01(7, 10, 0, 0, 760, 0, 10, 20)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.121412
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7381734
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("AGA16.tw.F10")
+> ### * AGA16.tw.F10
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: AGA16.tw.F10
+> ### Title: GMPE function for adjusted Abrahamson et al.(2016)
+> ### Aliases: AGA16.tw.F10
+> 
+> ### ** Examples
+> 
+> AGA16.tw.F10(6, 20, 0, 0, 760, 0, 3, 10, 20)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.503105
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6112003
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 0
+
+$Ztor
+[1] 3
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+> AGA16.tw.F10(7, 10, 0, 0, 760, 0, 0, 10, 20)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.959251
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6112003
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 0
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("AM09")
+> ### * AM09
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: AM09
+> ### Title: GMPE function for Atkinson and Macias (2009)
+> ### Aliases: AM09
+> 
+> ### ** Examples
+> 
+> AM09(6, 20, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 6.774757
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5526
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> AM09(7, 10, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 6.958539
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5526
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ASB14")
+> ### * ASB14
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ASB14
+> ### Title: GMPE function for Akkar et al.(2013)
+> ### Aliases: ASB14
+> 
+> ### ** Examples
+> 
+> ASB14(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.199913
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7121053
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6201
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3501
+attr(,"Csingle")
+[1] TRUE
+
+> ASB14(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.588797
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7121053
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6201
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3501
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ASB14.tw.B01")
+> ### * ASB14.tw.B01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ASB14.tw.B01
+> ### Title: GMPE function for Akkar et al.(2013)
+> ### Aliases: ASB14.tw.B01
+> 
+> ### ** Examples
+> 
+> ASB14.tw.B01(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.289846
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7134583
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6201
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3528438
+attr(,"Csingle")
+[1] TRUE
+
+> ASB14.tw.B01(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.67873
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7134583
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6201
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3528438
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ASB14.tw.C01")
+> ### * ASB14.tw.C01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ASB14.tw.C01
+> ### Title: GMPE function for Akkar et al.(2013)
+> ### Aliases: ASB14.tw.C01
+> 
+> ### ** Examples
+> 
+> ASB14.tw.C01(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.267376
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.4829056
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.3322718
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3504187
+attr(,"Csingle")
+[1] TRUE
+
+> ASB14.tw.C01(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.691836
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.4829056
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.3322718
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3504187
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ASB14.tw.E02")
+> ### * ASB14.tw.E02
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ASB14.tw.E02
+> ### Title: GMPE function for Akkar et al.(2013)
+> ### Aliases: ASB14.tw.E02
+> 
+> ### ** Examples
+> 
+> ASB14.tw.E02(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.269635
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7121053
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6201
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3501
+attr(,"Csingle")
+[1] TRUE
+
+> ASB14.tw.E02(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.773791
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7121053
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6201
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3501
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ASK14")
+> ### * ASK14
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ASK14
+> ### Title: GMPE function for Abrahamson et al.(2014) NGA-West2 model
+> ### Aliases: ASK14
+> 
+> ### ** Examples
+> 
+> ASK14(6, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$lnY
+[1] 4.130253
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6505582
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$vs30_class
+[1] 1
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ry0
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$msasflag
+[1] 0
+
+$phi
+[1] 0.501
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.415
+attr(,"Csingle")
+[1] TRUE
+
+> ASK14(7, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$lnY
+[1] 4.843369
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6169287
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$vs30_class
+[1] 1
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ry0
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$msasflag
+[1] 0
+
+$phi
+[1] 0.501
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.36
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ASK14.tw.B01")
+> ### * ASK14.tw.B01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ASK14.tw.B01
+> ### Title: GMPE function for Abrahamson et al.(2014) NGA-West2 model
+> ### Aliases: ASK14.tw.B01
+> 
+> ### ** Examples
+> 
+> ASK14.tw.B01(6, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$lnY
+[1] 4.251903
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6505582
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$vs30_class
+[1] 1
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ry0
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$msasflag
+[1] 0
+
+$phi
+[1] 0.501
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.415
+attr(,"Csingle")
+[1] TRUE
+
+> ASK14.tw.B01(7, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$lnY
+[1] 4.96502
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6169287
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$vs30_class
+[1] 1
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ry0
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$msasflag
+[1] 0
+
+$phi
+[1] 0.501
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.36
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ASK14.tw.C01")
+> ### * ASK14.tw.C01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ASK14.tw.C01
+> ### Title: GMPE function for Abrahamson et al.(2014) NGA-West2 model
+> ### Aliases: ASK14.tw.C01
+> 
+> ### ** Examples
+> 
+> ASK14.tw.C01(6, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$lnY
+[1] 4.294102
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6505582
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$vs30_class
+[1] 1
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ry0
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$msasflag
+[1] 0
+
+$phi
+[1] 0.501
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.415
+attr(,"Csingle")
+[1] TRUE
+
+> ASK14.tw.C01(7, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$lnY
+[1] 5.103639
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6169287
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$vs30_class
+[1] 1
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ry0
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$msasflag
+[1] 0
+
+$phi
+[1] 0.501
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.36
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ASK14.tw.E03")
+> ### * ASK14.tw.E03
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ASK14.tw.E03
+> ### Title: GMPE function for Abrahamson et al.(2014) NGA-West2 model
+> ### Aliases: ASK14.tw.E03
+> 
+> ### ** Examples
+> 
+> ASK14.tw.E03(6, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$lnY
+[1] 4.053221
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6505582
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$vs30_class
+[1] 1
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ry0
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$msasflag
+[1] 0
+
+$phi
+[1] 0.501
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.415
+attr(,"Csingle")
+[1] TRUE
+
+> ASK14.tw.E03(7, 20, 20, 0, 90, 0, 10, 760, 0, 0, 1, 0.5, 20, 10, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$lnY
+[1] 4.878515
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6169287
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$vs30_class
+[1] 1
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ry0
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$msasflag
+[1] 0
+
+$phi
+[1] 0.501
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.36
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Arroyo2010")
+> ### * Arroyo2010
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Arroyo2010
+> ### Title: GMPE function for Arroyo et al. (2010)
+> ### Aliases: Arroyo2010
+> 
+> ### ** Examples
+> 
+> Arroyo2010(6, 20, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.576125
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.5882
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.4654
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.75
+attr(,"Csingle")
+[1] TRUE
+
+> Arroyo2010(7, 10, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 6.040587
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.5882
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.4654
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.75
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BCHydroSub2018Global")
+> ### * BCHydroSub2018Global
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BCHydroSub2018Global
+> ### Title: GMPE function for Abrahamson et al.(2018)
+> ### Aliases: BCHydroSub2018Global
+> 
+> ### ** Examples
+> 
+> BCHydroSub2018Global(6, 20, 0, 0, 760, 1, 10, 20)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.585978
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8489994
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$deltac1
+[1] 0.4
+attr(,"Csingle")
+[1] TRUE
+
+> BCHydroSub2018Global(7, 10, 0, 0, 760, 1, 10, 20)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.868184
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8489994
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$deltac1
+[1] 0.4
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BCHydroSub2018SouthAM")
+> ### * BCHydroSub2018SouthAM
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BCHydroSub2018SouthAM
+> ### Title: GMPE function for Abrahamson et al.(2018)
+> ### Aliases: BCHydroSub2018SouthAM
+> 
+> ### ** Examples
+> 
+> BCHydroSub2018SouthAM(6, 20, 0, 0, 760, 1, 10, 20)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.545904
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8489994
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$deltac1
+[1] 0.4
+attr(,"Csingle")
+[1] TRUE
+
+> BCHydroSub2018SouthAM(7, 10, 0, 0, 760, 1, 10, 20)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.821543
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8489994
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$deltac1
+[1] 0.4
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BCHydroSub2018TW")
+> ### * BCHydroSub2018TW
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BCHydroSub2018TW
+> ### Title: GMPE function for Abrahamson et al.(2018)
+> ### Aliases: BCHydroSub2018TW
+> 
+> ### ** Examples
+> 
+> BCHydroSub2018TW(6, 20, 0, 0, 760, 1, 10, 20)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.721447
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8489994
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$deltac1
+[1] 0.4
+attr(,"Csingle")
+[1] TRUE
+
+> BCHydroSub2018TW(7, 10, 0, 0, 760, 1, 10, 20)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.94657
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8489994
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$deltac1
+[1] 0.4
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BCHydroSubV3")
+> ### * BCHydroSubV3
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BCHydroSubV3
+> ### Title: GMPE function for Abrahamson et al.(2016)
+> ### Aliases: BCHydroSubV3
+> 
+> ### ** Examples
+> 
+> BCHydroSubV3(6, 20, 0, 0, 760, 1, 10, 20)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.175428
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7381734
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$deltac1
+[1] 0.2
+attr(,"Csingle")
+[1] TRUE
+
+> BCHydroSubV3(7, 10, 0, 0, 760, 1, 10, 20)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.766958
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7381734
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$deltac1
+[1] 0.2
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BI14")
+> ### * BI14
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BI14
+> ### Title: GMPE function for Bindi et al(2014)
+> ### Aliases: BI14
+> 
+> ### ** Examples
+> 
+> BI14(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.139518
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7362585
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6502454
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3453348
+attr(,"Csingle")
+[1] TRUE
+
+> BI14(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.347918
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7362585
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6502454
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3453348
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BI14.tw.B01")
+> ### * BI14.tw.B01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BI14.tw.B01
+> ### Title: GMPE function for Bindi et al(2014)
+> ### Aliases: BI14.tw.B01
+> 
+> ### ** Examples
+> 
+> BI14.tw.B01(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.045848
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.1
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6501487
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3153394
+attr(,"Csingle")
+[1] TRUE
+
+> BI14.tw.B01(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.167866
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.1
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6501487
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3153394
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BI14.tw.C01")
+> ### * BI14.tw.C01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BI14.tw.C01
+> ### Title: GMPE function for Bindi et al(2014)
+> ### Aliases: BI14.tw.C01
+> 
+> ### ** Examples
+> 
+> BI14.tw.C01(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.131038
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.1
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.3257133
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3178988
+attr(,"Csingle")
+[1] TRUE
+
+> BI14.tw.C01(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.295043
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.1
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.3257133
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3178988
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BI14.tw.E02")
+> ### * BI14.tw.E02
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BI14.tw.E02
+> ### Title: GMPE function for Bindi et al(2014)
+> ### Aliases: BI14.tw.E02
+> 
+> ### ** Examples
+> 
+> BI14.tw.E02(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.07649
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7457728
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6501487
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3653512
+attr(,"Csingle")
+[1] TRUE
+
+> BI14.tw.E02(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.242167
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7457728
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.6501487
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3653512
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BSSA14")
+> ### * BSSA14
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BSSA14
+> ### Title: GMPE function for Boore et al.(2014) NGA-West2 model
+> ### Aliases: BSSA14
+> 
+> ### ** Examples
+> 
+> BSSA14(6, 20, 0, 760, 0, 0.5, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.578145
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.605122
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pga4nl
+[1] 0.09907733
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$basinflag
+[1] 0
+
+$phi
+[1] 0.4950712
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3479613
+attr(,"Csingle")
+[1] TRUE
+
+> BSSA14(7, 20, 0, 760, 0, 0.5, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.990961
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.605122
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pga4nl
+[1] 0.1497124
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$basinflag
+[1] 0
+
+$phi
+[1] 0.4950712
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3479613
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BSSA14.tw.B01")
+> ### * BSSA14.tw.B01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BSSA14.tw.B01
+> ### Title: GMPE function for Boore et al.(2014) NGA-West2 model
+> ### Aliases: BSSA14.tw.B01
+> 
+> ### ** Examples
+> 
+> BSSA14.tw.B01(6, 20, 0, 760, 0, 0.5, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.1003
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6051677
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pga4nl
+[1] 0.06143963
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$basinflag
+[1] 0
+
+$phi
+[1] 0.4951
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.348
+attr(,"Csingle")
+[1] TRUE
+
+> BSSA14.tw.B01(7, 20, 0, 760, 0, 0.5, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.513115
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6051677
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pga4nl
+[1] 0.09283935
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$basinflag
+[1] 0
+
+$phi
+[1] 0.4951
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.348
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BSSA14.tw.C01")
+> ### * BSSA14.tw.C01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BSSA14.tw.C01
+> ### Title: GMPE function for Boore et al.(2014) NGA-West2 model
+> ### Aliases: BSSA14.tw.C01
+> 
+> ### ** Examples
+> 
+> BSSA14.tw.C01(6, 20, 0, 760, 0, 0.5, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.120306
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6065887
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pga4nl
+[1] 0.06268121
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$basinflag
+[1] 0
+
+$phi
+[1] 0.4992
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3446
+attr(,"Csingle")
+[1] TRUE
+
+> BSSA14.tw.C01(7, 20, 0, 760, 0, 0.5, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.533122
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6065887
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pga4nl
+[1] 0.09471546
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$basinflag
+[1] 0
+
+$phi
+[1] 0.4992
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3446
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BSSA14.tw.E02")
+> ### * BSSA14.tw.E02
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BSSA14.tw.E02
+> ### Title: GMPE function for Boore et al.(2014) NGA-West2 model
+> ### Aliases: BSSA14.tw.E02
+> 
+> ### ** Examples
+> 
+> BSSA14.tw.E02(6, 20, 0, 760, 0, 0.5, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.057928
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6051677
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pga4nl
+[1] 0.05889069
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$basinflag
+[1] 0
+
+$phi
+[1] 0.4951
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.348
+attr(,"Csingle")
+[1] TRUE
+
+> BSSA14.tw.E02(7, 20, 0, 760, 0, 0.5, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.470743
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6051677
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pga4nl
+[1] 0.08898774
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$basinflag
+[1] 0
+
+$phi
+[1] 0.4951
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.348
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("CB14")
+> ### * CB14
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: CB14
+> ### Title: GMPE function for Campbell and Bozorgnia(2014) NGA-West2 model
+> ### Aliases: CB14
+> 
+> ### ** Examples
+> 
+> CB14(6, 20, 20, 0, 0, 760, 0, 1.5, 90, 10, 0, 20, 10, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.741025
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5837649
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z2.5
+[1] 1.5
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.4889897
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3188581
+attr(,"Csingle")
+[1] TRUE
+
+> CB14(7, 20, 20, 0, 0, 760, 0, 1.5, 90, 10, 0, 20, 10, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.169671
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.581855
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z2.5
+[1] 1.5
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.4876344
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3174396
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("CB14.tw.C01")
+> ### * CB14.tw.C01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: CB14.tw.C01
+> ### Title: GMPE function for adjusted Campbell and Bozorgnia(2014)
+> ###   NGA-West2 model
+> ### Aliases: CB14.tw.C01
+> 
+> ### ** Examples
+> 
+> CB14.tw.C01(6, 20, 20, 0, 0, 760, 0, 1.5, 90, 10, 0, 20, 10, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.985774
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5876462
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z2.5
+[1] 1.5
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.4905821
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3235077
+attr(,"Csingle")
+[1] TRUE
+
+> CB14.tw.C01(7, 20, 20, 0, 0, 760, 0, 1.5, 90, 10, 0, 20, 10, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.379045
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5867481
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z2.5
+[1] 1.5
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.4899474
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3228389
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("CB14.tw.E05")
+> ### * CB14.tw.E05
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: CB14.tw.E05
+> ### Title: GMPE function for adjusted Campbell and Bozorgnia(2014)
+> ###   NGA-West2 model
+> ### Aliases: CB14.tw.E05
+> 
+> ### ** Examples
+> 
+> CB14.tw.E05(6, 20, 20, 0, 0, 760, 0, 1.5, 90, 10, 0, 20, 10, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.041047
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5858957
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z2.5
+[1] 1.5
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.4905027
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3204386
+attr(,"Csingle")
+[1] TRUE
+
+> CB14.tw.E05(7, 20, 20, 0, 0, 760, 0, 1.5, 90, 10, 0, 20, 10, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.46242
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5848758
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z2.5
+[1] 1.5
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.4897784
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3196823
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("CY08")
+> ### * CY08
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: CY08
+> ### Title: GMPE function for Chiou and Youngs(2008) NGA model
+> ### Aliases: CY08
+> 
+> ### ** Examples
+> 
+> CY08(6, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.349595
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5975479
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 1057219217
+
+$phi
+[1] 0.3027497
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> CY08(7, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.985669
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5208482
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 1055281414
+
+$phi
+[1] 0.2625444
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("CY14")
+> ### * CY14
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: CY14
+> ### Title: GMPE function for Chiou and Youngs(2014) NGA-West2 model
+> ### Aliases: CY14
+> 
+> ### ** Examples
+> 
+> CY14(6, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.268124
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6201773
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.5395584
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3057721
+attr(,"Csingle")
+[1] TRUE
+
+> CY14(7, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.987444
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5535255
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.4892584
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.2588759
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("CY14.tw.B01")
+> ### * CY14.tw.B01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: CY14.tw.B01
+> ### Title: GMPE function for Chiou and Youngs(2014) NGA-West2 model
+> ### Aliases: CY14.tw.B01
+> 
+> ### ** Examples
+> 
+> CY14.tw.B01(6, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.309154
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6201293
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.5395289
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3057268
+attr(,"Csingle")
+[1] TRUE
+
+> CY14.tw.B01(7, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.016343
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5535139
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.4892633
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.2588416
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("CY14.tw.C01")
+> ### * CY14.tw.C01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: CY14.tw.C01
+> ### Title: GMPE function for Chiou and Youngs(2014) NGA-West2 model
+> ### Aliases: CY14.tw.C01
+> 
+> ### ** Examples
+> 
+> CY14.tw.C01(6, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.371853
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6201046
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.5395105
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3057091
+attr(,"Csingle")
+[1] TRUE
+
+> CY14.tw.C01(7, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.138314
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5534479
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.4892128
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.258796
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("CY14.tw.E04")
+> ### * CY14.tw.E04
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: CY14.tw.E04
+> ### Title: GMPE function for Chiou and Youngs(2014) NGA-West2 model
+> ### Aliases: CY14.tw.E04
+> 
+> ### ** Examples
+> 
+> CY14.tw.E04(6, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.49248
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.620083
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.5394945
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3056936
+attr(,"Csingle")
+[1] TRUE
+
+> CY14.tw.E04(7, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.265701
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5534237
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+$phi
+[1] 0.4891943
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.2587793
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Camp03H")
+> ### * Camp03H
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Camp03H
+> ### Title: GMPE function for Campbell and Bozorgnia(2003)
+> ### Aliases: Camp03H
+> 
+> ### ** Examples
+> 
+> Camp03H(6, 20, 20, 0, 0, 0, 0, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rseis
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.74306
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Svfs
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ssr
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Sfr
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Frv
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Fth
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> Camp03H(7, 10, 20, 0, 0, 0, 0, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rseis
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.336952
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.43
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Svfs
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ssr
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Sfr
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Frv
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Fth
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Chao2017")
+> ### * Chao2017
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Chao2017
+> ### Title: GMPE function for Chao et al.(2017)
+> ### Aliases: Chao2017
+> 
+> ### ** Examples
+> 
+> Chao2017(6, 20, 0, 0, 760, 0, 0, 0, 0)
+Warning in Chao2017(6, 20, 0, 0, 760, 0, 0, 0, 0) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] -Inf
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6389589
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z10
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30_class
+[1] 0
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$sourcetype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.5500491
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3251375
+attr(,"Csingle")
+[1] TRUE
+
+$msasflag
+[1] 0
+
+> Chao2017(7, 10, 0, 0, 760, 0, 0, 0, 0)
+Warning in Chao2017(7, 10, 0, 0, 760, 0, 0, 0, 0) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] -Inf
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6203566
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z10
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30_class
+[1] 0
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$sourcetype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.5278247
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.32595
+attr(,"Csingle")
+[1] TRUE
+
+$msasflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Chao2018")
+> ### * Chao2018
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Chao2018
+> ### Title: GMPE function for Chao et al.(2018)
+> ### Aliases: Chao2018
+> 
+> ### ** Examples
+> 
+> Chao2018(6, 20, 0, 0, 760, 0, 0, 0, 0)
+Warning in Chao2018(6, 20, 0, 0, 760, 0, 0, 0, 0) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] -Inf
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.659196
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z10
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30_class
+[1] 0
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$sourcetype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.5717019
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.328171
+attr(,"Csingle")
+[1] TRUE
+
+$msasflag
+[1] 0
+
+> Chao2018(7, 10, 0, 0, 760, 0, 0, 0, 0)
+Warning in Chao2018(7, 10, 0, 0, 760, 0, 0, 0, 0) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] -Inf
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6362015
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z10
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30_class
+[1] 0
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$sourcetype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.5526204
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.315219
+attr(,"Csingle")
+[1] TRUE
+
+$msasflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.001")
+> ### * Cru.Com.001
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.001
+> ### Title: GMPE function for Crustal Common form 001 (2017)
+> ### Aliases: Cru.Com.001
+> 
+> ### ** Examples
+> 
+> Cru.Com.001(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.219505
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.001(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.864609
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.002")
+> ### * Cru.Com.002
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.002
+> ### Title: GMPE function for Crustal Common form 002 (2017)
+> ### Aliases: Cru.Com.002
+> 
+> ### ** Examples
+> 
+> Cru.Com.002(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.133773
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.002(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.568581
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.003")
+> ### * Cru.Com.003
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.003
+> ### Title: GMPE function for Crustal Common form 003 (2017)
+> ### Aliases: Cru.Com.003
+> 
+> ### ** Examples
+> 
+> Cru.Com.003(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.033009
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.003(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.591617
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.004")
+> ### * Cru.Com.004
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.004
+> ### Title: GMPE function for Crustal Common form 004 (2017)
+> ### Aliases: Cru.Com.004
+> 
+> ### ** Examples
+> 
+> Cru.Com.004(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.354016
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.004(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.836308
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.005")
+> ### * Cru.Com.005
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.005
+> ### Title: GMPE function for Crustal Common form 005 (2017)
+> ### Aliases: Cru.Com.005
+> 
+> ### ** Examples
+> 
+> Cru.Com.005(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.362085
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.005(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.981556
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.006")
+> ### * Cru.Com.006
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.006
+> ### Title: GMPE function for Crustal Common form 006 (2017)
+> ### Aliases: Cru.Com.006
+> 
+> ### ** Examples
+> 
+> Cru.Com.006(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.475879
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.006(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.25282
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.007")
+> ### * Cru.Com.007
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.007
+> ### Title: GMPE function for Crustal Common form 007 (2017)
+> ### Aliases: Cru.Com.007
+> 
+> ### ** Examples
+> 
+> Cru.Com.007(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.460095
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.007(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.247441
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.008")
+> ### * Cru.Com.008
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.008
+> ### Title: GMPE function for Crustal Common form 008 (2017)
+> ### Aliases: Cru.Com.008
+> 
+> ### ** Examples
+> 
+> Cru.Com.008(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.326975
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.008(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.993654
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.009")
+> ### * Cru.Com.009
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.009
+> ### Title: GMPE function for Crustal Common form 009 (2017)
+> ### Aliases: Cru.Com.009
+> 
+> ### ** Examples
+> 
+> Cru.Com.009(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.147356
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.009(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.663567
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.010")
+> ### * Cru.Com.010
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.010
+> ### Title: GMPE function for Crustal Common form 010 (2017)
+> ### Aliases: Cru.Com.010
+> 
+> ### ** Examples
+> 
+> Cru.Com.010(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.007257
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.010(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.492548
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.011")
+> ### * Cru.Com.011
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.011
+> ### Title: GMPE function for Crustal Common form 011 (2017)
+> ### Aliases: Cru.Com.011
+> 
+> ### ** Examples
+> 
+> Cru.Com.011(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.043258
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.011(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.543996
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.012")
+> ### * Cru.Com.012
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.012
+> ### Title: GMPE function for Crustal Common form 012 (2017)
+> ### Aliases: Cru.Com.012
+> 
+> ### ** Examples
+> 
+> Cru.Com.012(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.941933
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.012(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.741413
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.013")
+> ### * Cru.Com.013
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.013
+> ### Title: GMPE function for Crustal Common form 013 (2017)
+> ### Aliases: Cru.Com.013
+> 
+> ### ** Examples
+> 
+> Cru.Com.013(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.213753
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.013(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.112495
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.014")
+> ### * Cru.Com.014
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.014
+> ### Title: GMPE function for Crustal Common form 014 (2017)
+> ### Aliases: Cru.Com.014
+> 
+> ### ** Examples
+> 
+> Cru.Com.014(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.401921
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.014(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.309821
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.015")
+> ### * Cru.Com.015
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.015
+> ### Title: GMPE function for Crustal Common form 015 (2017)
+> ### Aliases: Cru.Com.015
+> 
+> ### ** Examples
+> 
+> Cru.Com.015(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.515324
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.015(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.357807
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.016")
+> ### * Cru.Com.016
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.016
+> ### Title: GMPE function for Crustal Common form 016 (2017)
+> ### Aliases: Cru.Com.016
+> 
+> ### ** Examples
+> 
+> Cru.Com.016(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.339111
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.016(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.920414
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Cru.Com.017")
+> ### * Cru.Com.017
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Cru.Com.017
+> ### Title: GMPE function for Crustal Common form 017 (2017)
+> ### Aliases: Cru.Com.017
+> 
+> ### ** Examples
+> 
+> Cru.Com.017(6, 20, 20, 5, 0, 90, 20, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.325501
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Cru.Com.017(7, 20, 20, 2, 0, 90, 20, 20, 0, 0 )
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.94945
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("GK16")
+> ### * GK16
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: GK16
+> ### Title: GMPE function for Graizer and Kalkan(2016)
+> ### Aliases: GK16
+> 
+> ### ** Examples
+> 
+> GK16(6, 20, 0, 0, 760, 150, 1)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.559353
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5305557
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$q0
+[1] 150
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.5
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+> GK16(7, 10, 0, 0, 760, 150, 1)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.713228
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5305557
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$q0
+[1] 150
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.5
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Garcia05")
+> ### * Garcia05
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Garcia05
+> ### Title: GMPE function for Garcia et al.(2005)
+> ### Aliases: Garcia05
+> 
+> ### ** Examples
+> 
+> Garcia05(6, 20, 0, 35)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.066532
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6447238
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$depth
+[1] 35
+attr(,"Csingle")
+[1] TRUE
+
+> Garcia05(7, 10, 0, 60)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 6.554275
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6447238
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$depth
+[1] 60
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Gregor06")
+> ### * Gregor06
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Gregor06
+> ### Title: GMPE function for Gregor et al.(2006)
+> ### Aliases: Gregor06
+> 
+> ### ** Examples
+> 
+> Gregor06(6, 20, 0, 760)
+Warning in Gregor06(6, 20, 0, 760) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.609112
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7028
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> Gregor06(7, 10, 0, 760)
+Warning in Gregor06(7, 10, 0, 760) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.570811
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7028
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("I14")
+> ### * I14
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: I14
+> ### Title: GMPE function for Idriss(2014)
+> ### Aliases: I14
+> 
+> ### ** Examples
+> 
+> I14(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.34841
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7151493
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> I14(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.616814
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6551493
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("I14.tw.B01")
+> ### * I14.tw.B01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: I14.tw.B01
+> ### Title: GMPE function for Idriss(2014)
+> ### Aliases: I14.tw.B01
+> 
+> ### ** Examples
+> 
+> I14.tw.B01(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.31842
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7151493
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> I14.tw.B01(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.768979
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6551493
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("I14.tw.C01")
+> ### * I14.tw.C01
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: I14.tw.C01
+> ### Title: GMPE function for Idriss(2014)
+> ### Aliases: I14.tw.C01
+> 
+> ### ** Examples
+> 
+> I14.tw.C01(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.41855
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7151493
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> I14.tw.C01(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.909971
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6551493
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("I14.tw.E04")
+> ### * I14.tw.E04
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: I14.tw.E04
+> ### Title: GMPE function for for adjusted Idriss(2014) NGA-West2 model
+> ### Aliases: I14.tw.E04
+> 
+> ### ** Examples
+> 
+> I14.tw.E04(6, 20, 0, 0, 760, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.201297
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7151493
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> I14.tw.E04(7, 10, 0, 0, 760, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.713108
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6551493
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("KAAH15")
+> ### * KAAH15
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: KAAH15
+> ### Title: GMPE function for Kale et al.(2015)
+> ### Aliases: KAAH15
+> 
+> ### ** Examples
+> 
+> KAAH15(6, 20, 0, 0, 760, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.02235
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7267771
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pgaref
+[1] 0.05714938
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+> KAAH15(7, 10, 0, 0, 760, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.474814
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5737714
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$pgaref
+[1] 0.2442352
+attr(,"Csingle")
+[1] TRUE
+
+$regionflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Kanno06")
+> ### * Kanno06
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Kanno06
+> ### Title: GMPE function for Kanno et al.(2006)
+> ### Aliases: Kanno06
+> 
+> ### ** Examples
+> 
+> Kanno06(6, 20, 0, 760, 10)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.414084
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8519565
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+> Kanno06(7, 10, 0, 760, 10)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.70332
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8519565
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("LL08.C02")
+> ### * LL08.C02
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: LL08.C02
+> ### Title: GMPE function for adjusted Lin and Lee(2008)
+> ### Aliases: LL08.C02
+> 
+> ### ** Examples
+> 
+> LL08.C02(6, 20, 10, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.955744
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.4889251
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$Ztor
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+> LL08.C02(7, 10, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.80583
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.4889251
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$Ztor
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("LL08.F04")
+> ### * LL08.F04
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: LL08.F04
+> ### Title: GMPE function for adjusted Lin and Lee(2008)
+> ### Aliases: LL08.F04
+> 
+> ### ** Examples
+> 
+> LL08.F04(6, 20, 10, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.043964
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5218
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$Ztor
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+> LL08.F04(7, 10, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.243983
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5218
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$Ztor
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("LL08")
+> ### * LL08
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: LL08
+> ### Title: GMPE function for Lin and Lee(2008)
+> ### Aliases: LL08
+> 
+> ### ** Examples
+> 
+> LL08(6, 20, 10, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.532738
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5268
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> LL08(7, 10, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.330301
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5268
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("LL08Rock")
+> ### * LL08Rock
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: LL08Rock
+> ### Title: GMPE function for Lin and Lee(2008)
+> ### Aliases: LL08Rock
+> 
+> ### ** Examples
+> 
+> LL08Rock(6, 20, 10, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.532738
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5268
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> LL08Rock(7, 10, 10, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.330301
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5268
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("LL08Soil")
+> ### * LL08Soil
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: LL08Soil
+> ### Title: GMPE function for Lin and Lee(2008)
+> ### Aliases: LL08Soil
+> 
+> ### ** Examples
+> 
+> LL08Soil(6, 20, 10, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.86927
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6277
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> LL08Soil(7, 10, 10, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.616729
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6277
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Lin09")
+> ### * Lin09
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Lin09
+> ### Title: GMPE function for Lin (2009)
+> ### Aliases: Lin09
+> 
+> ### ** Examples
+> 
+> Lin09(6, 20, 0, 760, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.303446
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5363
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> Lin09(7, 10, 0, 760, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.405953
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5363
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Lin11")
+> ### * Lin11
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Lin11
+> ### Title: GMPE function for Lin et al.(2011)
+> ### Aliases: Lin11
+> 
+> ### ** Examples
+> 
+> Lin11(6, 20, 0, 0, 760)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.369888
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.654
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> Lin11(7, 10, 0, 0, 760)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.569326
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.654
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Lin11Rock")
+> ### * Lin11Rock
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Lin11Rock
+> ### Title: GMPE function for Lin et al.(2011)
+> ### Aliases: Lin11Rock
+> 
+> ### ** Examples
+> 
+> Lin11Rock(6, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.369888
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.654
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> Lin11Rock(7, 10, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.569326
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.654
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Lin11Soil")
+> ### * Lin11Soil
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Lin11Soil
+> ### Title: GMPE function for Lin et al.(2011)
+> ### Aliases: Lin11Soil
+> 
+> ### ** Examples
+> 
+> Lin11Soil(6, 20, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.502309
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.63
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> Lin11Soil(7, 10, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.703135
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.63
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Loh96")
+> ### * Loh96
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Loh96
+> ### Title: GMPE function for Loh et al.(1996) PGA only
+> ### Aliases: Loh96
+> 
+> ### ** Examples
+> 
+> Loh96(6, 20)
+Warning in Loh96(6, 20) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.541795
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.617
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> Loh96(7, 10)
+Warning in Loh96(7, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.870835
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.617
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("MBR17")
+> ### * MBR17
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: MBR17
+> ### Title: GMPE function for Montalva et al.(2017)
+> ### Aliases: MBR17
+> 
+> ### ** Examples
+> 
+> MBR17(6, 20, 0, 0, 760, 1, 10, 20)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.404955
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8384492
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+> MBR17(7, 10, 0, 0, 760, 1, 10, 20)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 6.941077
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8384492
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$forearc
+[1] 1
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Rhypo
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Mcverry2006Sub")
+> ### * Mcverry2006Sub
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Mcverry2006Sub
+> ### Title: GMPE function for Mcverry et al.(2006) Subduction GMPE.
+> ### Aliases: Mcverry2006Sub
+> 
+> ### ** Examples
+> 
+> Mcverry2006Sub(6, 20, 0, 0, 0, 90, 10, 10, 0, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.236031
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.5461007
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Sc
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Sd
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> Mcverry2006Sub(7, 20, 0, 0, 0, 90, 10, 10, 0, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.571341
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.4582091
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$rupwidth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Sc
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Sd
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("NCREE2011")
+> ### * NCREE2011
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: NCREE2011
+> ### Title: GMPE function for NCREE(2011)
+> ### Aliases: NCREE2011
+> 
+> ### ** Examples
+> 
+> NCREE2011(6, 20, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.700805
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7477
+attr(,"Csingle")
+[1] TRUE
+
+> NCREE2011(7, 10, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 6.02131
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7477
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("PhungCru17")
+> ### * PhungCru17
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: PhungCru17
+> ### Title: GMPE function for Phung et al.(2017)
+> ### Aliases: PhungCru17
+> 
+> ### ** Examples
+> 
+> PhungCru17(6, 20, 0, 760, 90, 0, 0, 0.5, 1, 0,  1)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.308054
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6337379
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$regionflag
+[1] 1
+
+$msasflag
+[1] 0
+
+$phi
+[1] 0.5239936
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3577662
+attr(,"Csingle")
+[1] TRUE
+
+> PhungCru17(7, 20, 0, 760, 90, 0, 0, 0.5, 1, 0,  1)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.018942
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.621331
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$regionflag
+[1] 1
+
+$msasflag
+[1] 0
+
+$phi
+[1] 0.4989508
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3722963
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("PhungCru18")
+> ### * PhungCru18
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: PhungCru18
+> ### Title: GMPE function for Phung et al.(2018)
+> ### Aliases: PhungCru18
+> 
+> ### ** Examples
+> 
+> PhungCru18(6, 20, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 1, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.271354
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6751122
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$regionflag
+[1] 1
+
+$phi
+[1] 0.563111
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.3066667
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+> PhungCru18(7, 20, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 1, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Rjb
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.944185
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6751122
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$dip
+[1] 90
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$vs30_class
+[1] 1
+
+$regionflag
+[1] 1
+
+$phi
+[1] 0.563111
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.26
+attr(,"Csingle")
+[1] TRUE
+
+$hwflag
+[1] 0
+
+$Rx
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("PhungSub17")
+> ### * PhungSub17
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: PhungSub17
+> ### Title: GMPE function for Phung et al.(2017)
+> ### Aliases: PhungSub17
+> 
+> ### ** Examples
+> 
+> PhungSub17(6, 20, 0, 0, 760, 0.5, 0, 1)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.532889
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6937019
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$regionflag
+[1] 1
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> PhungSub17(7, 10, 0, 1, 760, 0.5, 0, 1)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.91019
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6937019
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$regionflag
+[1] 1
+
+$ftype
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("PhungSub18")
+> ### * PhungSub18
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: PhungSub18
+> ### Title: GMPE function for Phung et al.(2018)
+> ### Aliases: PhungSub18
+> 
+> ### ** Examples
+> 
+> PhungSub18(6, 20, 0, 0, 760, 0.5, 0, 1)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.99133
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6376177
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$regionflag
+[1] 1
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> PhungSub18(7, 10, 0, 1, 760, 0.5, 0, 1)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$Z1.0
+[1] 0.5
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.771813
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6376177
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$regionflag
+[1] 1
+
+$ftype
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sinotech12")
+> ### * Sinotech12
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sinotech12
+> ### Title: GMPE function for Sinotech(2012)
+> ### Aliases: Sinotech12
+> 
+> ### ** Examples
+> 
+> Sinotech12(6, 20, 0, 760, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.454818
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.674
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> Sinotech12(7, 10, 0, 760, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.657074
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.674
+attr(,"Csingle")
+[1] TRUE
+
+$Vs30
+[1] 760
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.001")
+> ### * Sub.Inter.Com.001
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.001
+> ### Title: GMPE function for Subduction interface common form 001 (2017)
+> ### Aliases: Sub.Inter.Com.001
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.001(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.035549
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.001(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.690399
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.002")
+> ### * Sub.Inter.Com.002
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.002
+> ### Title: GMPE function for Subduction interface common form 002 (2017)
+> ### Aliases: Sub.Inter.Com.002
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.002(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.799541
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.002(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.424504
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.003")
+> ### * Sub.Inter.Com.003
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.003
+> ### Title: GMPE function for Subduction interface common form 003 (2017)
+> ### Aliases: Sub.Inter.Com.003
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.003(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.865849
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.003(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.612695
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.004")
+> ### * Sub.Inter.Com.004
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.004
+> ### Title: GMPE function for Subduction interface common form 004 (2017)
+> ### Aliases: Sub.Inter.Com.004
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.004(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.907039
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.004(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.685395
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.005")
+> ### * Sub.Inter.Com.005
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.005
+> ### Title: GMPE function for Subduction interface common form 005 (2017)
+> ### Aliases: Sub.Inter.Com.005
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.005(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.029819
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.005(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.776376
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.006")
+> ### * Sub.Inter.Com.006
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.006
+> ### Title: GMPE function for Subduction interface common form 006 (2017)
+> ### Aliases: Sub.Inter.Com.006
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.006(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.074708
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.006(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.99399
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.007")
+> ### * Sub.Inter.Com.007
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.007
+> ### Title: GMPE function for Subduction interface common form 007 (2017)
+> ### Aliases: Sub.Inter.Com.007
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.007(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.226139
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.007(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.035832
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.008")
+> ### * Sub.Inter.Com.008
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.008
+> ### Title: GMPE function for Subduction interface common form 008 (2017)
+> ### Aliases: Sub.Inter.Com.008
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.008(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.152012
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.008(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.906832
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.009")
+> ### * Sub.Inter.Com.009
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.009
+> ### Title: GMPE function for Subduction interface common form 009 (2017)
+> ### Aliases: Sub.Inter.Com.009
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.009(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.918138
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.009(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.594345
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.010")
+> ### * Sub.Inter.Com.010
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.010
+> ### Title: GMPE function for Subduction interface common form 010 (2017)
+> ### Aliases: Sub.Inter.Com.010
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.010(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.733156
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.010(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.277932
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.011")
+> ### * Sub.Inter.Com.011
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.011
+> ### Title: GMPE function for Subduction interface common form 011 (2017)
+> ### Aliases: Sub.Inter.Com.011
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.011(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.861442
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.011(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.463727
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.012")
+> ### * Sub.Inter.Com.012
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.012
+> ### Title: GMPE function for Subduction interface common form 012 (2017)
+> ### Aliases: Sub.Inter.Com.012
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.012(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.696549
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.012(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.522585
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.013")
+> ### * Sub.Inter.Com.013
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.013
+> ### Title: GMPE function for Subduction interface common form 013 (2017)
+> ### Aliases: Sub.Inter.Com.013
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.013(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.957003
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.013(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.861411
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.014")
+> ### * Sub.Inter.Com.014
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.014
+> ### Title: GMPE function for Subduction interface common form 014 (2017)
+> ### Aliases: Sub.Inter.Com.014
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.014(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.056221
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.014(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.089574
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.015")
+> ### * Sub.Inter.Com.015
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.015
+> ### Title: GMPE function for Subduction interface common form 015 (2017)
+> ### Aliases: Sub.Inter.Com.015
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.015(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.302304
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.015(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.225887
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.016")
+> ### * Sub.Inter.Com.016
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.016
+> ### Title: GMPE function for Subduction interface common form 016 (2017)
+> ### Aliases: Sub.Inter.Com.016
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.016(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.209705
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.016(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.945991
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Inter.Com.017")
+> ### * Sub.Inter.Com.017
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Inter.Com.017
+> ### Title: GMPE function for Subduction interface common form 017 (2017)
+> ### Aliases: Sub.Inter.Com.017
+> 
+> ### ** Examples
+> 
+> Sub.Inter.Com.017(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.905479
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Inter.Com.017(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.752308
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.001")
+> ### * Sub.Intra.Com.001
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.001
+> ### Title: GMPE function for Subduction intraslab common form 001 (2017)
+> ### Aliases: Sub.Intra.Com.001
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.001(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.205821
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.001(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.927332
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.002")
+> ### * Sub.Intra.Com.002
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.002
+> ### Title: GMPE function for Subduction intraslab common form 002 (2017)
+> ### Aliases: Sub.Intra.Com.002
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.002(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.205135
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.002(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.031748
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.003")
+> ### * Sub.Intra.Com.003
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.003
+> ### Title: GMPE function for Subduction intraslab common form 003 (2017)
+> ### Aliases: Sub.Intra.Com.003
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.003(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.433518
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.003(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.351748
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.004")
+> ### * Sub.Intra.Com.004
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.004
+> ### Title: GMPE function for Subduction intraslab common form 004 (2017)
+> ### Aliases: Sub.Intra.Com.004
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.004(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.952809
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.004(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.769624
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.005")
+> ### * Sub.Intra.Com.005
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.005
+> ### Title: GMPE function for Subduction intraslab common form 005 (2017)
+> ### Aliases: Sub.Intra.Com.005
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.005(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.732311
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.005(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.639962
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.006")
+> ### * Sub.Intra.Com.006
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.006
+> ### Title: GMPE function for Subduction intraslab common form 006 (2017)
+> ### Aliases: Sub.Intra.Com.006
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.006(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.763391
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.006(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.578551
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.007")
+> ### * Sub.Intra.Com.007
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.007
+> ### Title: GMPE function for Subduction intraslab common form 007 (2017)
+> ### Aliases: Sub.Intra.Com.007
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.007(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.744943
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.007(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.279167
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.008")
+> ### * Sub.Intra.Com.008
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.008
+> ### Title: GMPE function for Subduction intraslab common form 008 (2017)
+> ### Aliases: Sub.Intra.Com.008
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.008(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.238071
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.008(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.871213
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.009")
+> ### * Sub.Intra.Com.009
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.009
+> ### Title: GMPE function for Subduction intraslab common form 009 (2017)
+> ### Aliases: Sub.Intra.Com.009
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.009(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 3.903608
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.009(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.636235
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.010")
+> ### * Sub.Intra.Com.010
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.010
+> ### Title: GMPE function for Subduction intraslab common form 010 (2017)
+> ### Aliases: Sub.Intra.Com.010
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.010(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.232176
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.010(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.135082
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.011")
+> ### * Sub.Intra.Com.011
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.011
+> ### Title: GMPE function for Subduction intraslab common form 011 (2017)
+> ### Aliases: Sub.Intra.Com.011
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.011(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.307047
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.011(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.370939
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.012")
+> ### * Sub.Intra.Com.012
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.012
+> ### Title: GMPE function for Subduction intraslab common form 012 (2017)
+> ### Aliases: Sub.Intra.Com.012
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.012(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.768434
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.012(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.86339
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.013")
+> ### * Sub.Intra.Com.013
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.013
+> ### Title: GMPE function for Subduction intraslab common form 013 (2017)
+> ### Aliases: Sub.Intra.Com.013
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.013(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.909006
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.013(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.894905
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.014")
+> ### * Sub.Intra.Com.014
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.014
+> ### Title: GMPE function for Subduction intraslab common form 014 (2017)
+> ### Aliases: Sub.Intra.Com.014
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.014(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.927612
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.014(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.68172
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.015")
+> ### * Sub.Intra.Com.015
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.015
+> ### Title: GMPE function for Subduction intraslab common form 015 (2017)
+> ### Aliases: Sub.Intra.Com.015
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.015(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.418514
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.015(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.029891
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.016")
+> ### * Sub.Intra.Com.016
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.016
+> ### Title: GMPE function for Subduction intraslab common form 016 (2017)
+> ### Aliases: Sub.Intra.Com.016
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.016(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.241833
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.016(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.66571
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Sub.Intra.Com.017")
+> ### * Sub.Intra.Com.017
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Sub.Intra.Com.017
+> ### Title: GMPE function for Subduction intraslab common form 017 (2017)
+> ### Aliases: Sub.Intra.Com.017
+> 
+> ### ** Examples
+> 
+> Sub.Intra.Com.017(6, 20, 5, 0)
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 5
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.639907
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> Sub.Intra.Com.017(7, 20, 2, 0)
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$Ztor
+[1] 2
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.304283
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.65
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Youngs97Rock")
+> ### * Youngs97Rock
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Youngs97Rock
+> ### Title: GMPE function for Youngs et al.(1997)
+> ### Aliases: Youngs97Rock
+> 
+> ### ** Examples
+> 
+> Youngs97Rock(6, 20, 0, 0, 10)
+Warning in Youngs97Rock(6, 20, 0, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.853267
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.85
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> Youngs97Rock(7, 10, 0, 0, 10)
+Warning in Youngs97Rock(7, 10, 0, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.439364
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7500001
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Youngs97Soil")
+> ### * Youngs97Soil
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Youngs97Soil
+> ### Title: GMPE function for Youngs et al.(1997)
+> ### Aliases: Youngs97Soil
+> 
+> ### ** Examples
+> 
+> Youngs97Soil(6, 20, 0, 0, 10)
+Warning in Youngs97Soil(6, 20, 0, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.211399
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.85
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> Youngs97Soil(7, 10, 0, 0, 10)
+Warning in Youngs97Soil(7, 10, 0, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.810763
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7500001
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 1
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Zh06")
+> ### * Zh06
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Zh06
+> ### Title: GMPE function for Zhao et al.(2006)
+> ### Aliases: Zh06
+> 
+> ### ** Examples
+> 
+> Zh06(6, 20, 0, 1.0, 0, 0.0, 10)
+Warning in Zh06(6, 20, 0, 1, 0, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.443553
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6757403
+attr(,"Csingle")
+[1] TRUE
+
+$sclass
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$sourcetype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.604
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.303
+attr(,"Csingle")
+[1] TRUE
+
+> Zh06(7, 10, 0, 1.0, 0, 0.0, 10)
+Warning in Zh06(7, 10, 0, 1, 0, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.738293
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6757403
+attr(,"Csingle")
+[1] TRUE
+
+$sclass
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$sourcetype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.604
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.303
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Zh16Cru")
+> ### * Zh16Cru
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Zh16Cru
+> ### Title: GMPE function for Zhao et al.(2016)
+> ### Aliases: Zh16Cru
+> 
+> ### ** Examples
+> 
+> Zh16Cru(6, 20, 0, 1.0, 0, 0.0, 10)
+Warning in Zh16Cru(6, 20, 0, 1, 0, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 4.892986
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6797183
+attr(,"Csingle")
+[1] TRUE
+
+$sclass
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$sourcetype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.556
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.391
+attr(,"Csingle")
+[1] TRUE
+
+> Zh16Cru(7, 10, 0, 1.0, 0, 0.0, 10)
+Warning in Zh16Cru(7, 10, 0, 1, 0, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$ftype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 6.036662
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.6797183
+attr(,"Csingle")
+[1] TRUE
+
+$sclass
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$sourcetype
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.556
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.391
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Zh16Inter")
+> ### * Zh16Inter
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Zh16Inter
+> ### Title: GMPE function for Zhao et al.(2016)
+> ### Aliases: Zh16Inter
+> 
+> ### ** Examples
+> 
+> Zh16Inter(6, 20, 1.0, 0, 10)
+Warning in Zh16Inter(6, 20, 1, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.265313
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8679689
+attr(,"Csingle")
+[1] TRUE
+
+$sclass
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.553
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.669
+attr(,"Csingle")
+[1] TRUE
+
+> Zh16Inter(7, 10, 1.0, 0, 10)
+Warning in Zh16Inter(7, 10, 1, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 6.542356
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8679689
+attr(,"Csingle")
+[1] TRUE
+
+$sclass
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.553
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.669
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Zh16Slab")
+> ### * Zh16Slab
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Zh16Slab
+> ### Title: GMPE function for Zhao et al.(2016)
+> ### Aliases: Zh16Slab
+> 
+> ### ** Examples
+> 
+> Zh16Slab(6, 20, 1.0, 0, 10)
+Warning in Zh16Slab(6, 20, 1, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.501801
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7439207
+attr(,"Csingle")
+[1] TRUE
+
+$sclass
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.587
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.457
+attr(,"Csingle")
+[1] TRUE
+
+> Zh16Slab(7, 10, 1.0, 0, 10)
+Warning in Zh16Slab(7, 10, 1, 0, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 7.011569
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.7439207
+attr(,"Csingle")
+[1] TRUE
+
+$sclass
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.587
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.457
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Zh16Sub")
+> ### * Zh16Sub
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Zh16Sub
+> ### Title: GMPE function for Zhao et al.(2016) Subduction GMPE
+> ### Aliases: Zh16Sub
+> 
+> ### ** Examples
+> 
+> Zh16Sub(6, 20, 1.0, 0, 1.0, 10)
+Warning in Zh16Sub(6, 20, 1, 0, 1, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 6
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 20
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 5.265313
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8679689
+attr(,"Csingle")
+[1] TRUE
+
+$sclass
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$sourcetype
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.553
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.669
+attr(,"Csingle")
+[1] TRUE
+
+> Zh16Sub(7, 10, 1.0, 0, 1.0, 10)
+Warning in Zh16Sub(7, 10, 1, 0, 1, 10) :
+  passing a char vector to .Fortran is not portable
+$mag
+[1] 7
+attr(,"Csingle")
+[1] TRUE
+
+$Rrup
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$lnY
+[1] 6.542356
+attr(,"Csingle")
+[1] TRUE
+
+$sigma
+[1] 0.8679689
+attr(,"Csingle")
+[1] TRUE
+
+$sclass
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$specT
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$period
+[1] 0
+attr(,"Csingle")
+[1] TRUE
+
+$iflag
+[1] 0
+
+$sourcetype
+[1] 1
+attr(,"Csingle")
+[1] TRUE
+
+$depth
+[1] 10
+attr(,"Csingle")
+[1] TRUE
+
+$phi
+[1] 0.553
+attr(,"Csingle")
+[1] TRUE
+
+$tau
+[1] 0.669
+attr(,"Csingle")
+[1] TRUE
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("atten2")
+> ### * atten2
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: atten2
+> ### Title: Wrap function for all GMPE
+> ### Aliases: atten2
+> 
+> ### ** Examples
+> 
+> atten2("LL08Rock", 0, Mag=c(6,7,8), 20, 0, 0, 10, 0, FALSE)
+  mag Rrup specT period        lnY  sigma iflag depth ftype
+1   6   20     0      0 0.09467912 0.5268     1    10     0
+2   7   20     0      0 0.15137929 0.5268     1    10     0
+3   8   20     0      0 0.20557230 0.5268     1    10     0
+> atten2("LL08Rock", Periods=c(0.01, 0.1, 0.2, 0.5, 1, 2, 5), 6, 10, 0, 0, 10, 0, FALSE)
+  mag Rrup      specT     period        lnY  sigma iflag depth ftype
+1   6   10 0.01000000 0.01000000 0.16247691 0.5218     0    10     0
+2   6   10 0.09999999 0.09999999 0.24225536 0.5806     0    10     0
+3   6   10 0.19999999 0.19999999 0.23730400 0.6059     0    10     0
+4   6   10 0.50000000 0.50000000 0.09782720 0.7145     0    10     0
+5   6   10 1.00000000 1.00000000 0.03792539 0.7983     0    10     0
+6   6   10 2.00000000 2.00000000 0.01108411 0.8766     0    10     0
+7   6   10 5.00000000 5.00000000 0.00157840 0.7654     0    10     0
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get.GMPE.prd")
+> ### * get.GMPE.prd
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get.GMPE.prd
+> ### Title: To obtain usable period range of GMPE
+> ### Aliases: get.GMPE.prd
+> 
+> ### ** Examples
+> 
+> get.GMPE.prd("ASK14")
+   period.min period.max
+11       0.01         10
+> get.GMPE.prd("CY14")
+   period.min period.max
+34       0.01         10
+> 
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.056 0.035 0.094 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

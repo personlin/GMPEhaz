@@ -31,7 +31,7 @@ A list will be return, including mag, Rrup, specT, ftype, period, lnY, sigma, if
 Graizer and E. Kalkan.(2016) Summary of the GK15 ground-motion prediction equation for
 horizontal PGA and 5% damped PSA from shallow crustal continental earthquakes.
 Bulletin of the Seismological Society of America, 106(2), 687-707.
-\url{http://dx.doi.org/10.1785/0120150194}
+\doi{10.1785/0120150194}
 }
 \examples{
 GK16(6, 20, 0, 0, 760, 150, 1)

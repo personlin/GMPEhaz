@@ -1,0 +1,95 @@
+url: https://personlin.github.io/GMPEhaz/
+
+template:
+  bootstrap: 5
+
+development:
+  mode: release
+
+reference:
+- title: "GMPE Functions"
+  desc: "Ground Motion Prediction Equation functions"
+- contents:
+  - starts_with("AB03")
+  - starts_with("AC10") 
+  - starts_with("AGA16")
+  - starts_with("AM09")
+  - starts_with("ASB14")
+  - starts_with("ASK14")
+  - starts_with("BSSA14")
+  - starts_with("CB14")
+  - starts_with("CY14")
+  - starts_with("BI14")
+  - starts_with("BCHydro")
+  - starts_with("Chao")
+  - starts_with("LL08")
+  - starts_with("Lin")
+  - starts_with("Zh")
+  - starts_with("Youngs")
+  - Arroyo2010
+  - Camp03H
+  - CY08
+  - Garcia05
+  - GK16
+  - Gregor06
+  - starts_with("I14")
+  - KAAH15
+  - Kanno06
+  - Loh96
+  - MBR17
+  - Mcverry2006Sub
+  - NCREE2011
+  - starts_with("PhungCru")
+  - starts_with("PhungSub")
+  - Sinotech12
+
+- title: "Common Form Functions"
+  desc: "Common form GMPE functions"
+- contents:
+  - starts_with("Cru.Com")
+  - starts_with("Sub.Inter.Com")
+  - starts_with("Sub.Intra.Com")
+
+- title: "Utility Functions"
+  desc: "Helper and utility functions"
+- contents:
+  - atten2
+  - get.GMPE.prd
+  - GMPEhaz
+
+- title: "Data"
+  desc: "Datasets included in the package"
+- contents:
+  - periods.T
+  - GMPEhaz.model
+  - starts_with("cnames")
+
+navbar:
+  structure:
+    left:  [intro, reference, articles, tutorials, news]
+    right: [search, github]
+  components:
+    github:
+      icon: fab-github fa-lg
+      href: https://github.com/personlin/GMPEhaz/
+    articles:
+      text: "Articles"
+      menu:
+      - text: "Introduction to GMPEhaz Package"
+        href: articles/GMPEhaz-introduction.html
+      - text: "Main GMPE Functions Guide" 
+        href: articles/gmpe-functions-guide.html
+
+articles:
+- title: "Getting Started"
+  navbar: "Getting Started"
+  contents:
+  - GMPEhaz-introduction
+- title: "Function Guide"
+  navbar: "Function Guide"
+  contents:
+  - gmpe-functions-guide
+
+authors:
+  Person Lin:
+    href: https://github.com/personlin

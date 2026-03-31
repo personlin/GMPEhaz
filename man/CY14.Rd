@@ -58,7 +58,7 @@ dip, Ztor, ftype, Z10, vs30_class, hwflag, Rx, regionflag, phi, tau.
 Chiou, B. S.-J., and R. R. Youngs (2014), Update of the chiou and youngs NGA model for
 the average horizontal component of peak ground motion and response spectra,
 Earthquake Spectra, 30(3), 1117-1153.
-\url{http://dx.doi.org/10.1193/072813EQS219M}
+\doi{10.1193/072813EQS219M}
 }
 \examples{
 CY14(6, 20, 20, 0, 760, 90, 0, 0, 0.5, 1, 0, 20, 0)

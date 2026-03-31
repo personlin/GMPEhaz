@@ -3,7 +3,9 @@
 #' \code{NCREE2011} returns the ground-motion prediction (rock site, Vs30>=360m/s)
 #' with it sigma of NCREE(2011) GMPE.
 #'
-#' 國家地震工程研究中心(2011)，面震源與衰減律參數研究及核電廠地盤反應量測，行政院原子能委員會核能研究所委託研究報告。
+#' National Center for Research on Earthquake Engineering (NCREE) (2011). Research on area source and
+#' attenuation law parameters and nuclear power plant site response measurement.
+#' Commissioned research report by the Atomic Energy Council, Institute of Nuclear Energy Research, Taiwan.
 #'
 #' @param Mag Earthquake moment magnitude, Numeric.
 #' @param Rrup Rupture distance(km), Numeric.

@@ -4,3 +4,6 @@
 appveyor.yml
 data-raw/
 docs/
+^\.github$
+^\.vscode$
+^LICENSE$

@@ -29,7 +29,7 @@ Bindi, D., M. Massa, L. Luzi, G. Ameri, F. Pacor, R. Puglia, and P. Augliera (20
 Pan-european ground-motion prediction equations for the average horizontal component
 of pGA, pGV, and 5 %-damped pSA at spectral periods up to 3.0 s using the RESORCE
 dataset, Bulletin of Earthquake Engineering, 12(1), 391-430.
-\url{http://dx.doi.org/10.1007/s10518-013-9525-5}
+\doi{10.1007/s10518-013-9525-5}
 }
 \examples{
 BI14.tw.B01(6, 20, 0, 0, 760)

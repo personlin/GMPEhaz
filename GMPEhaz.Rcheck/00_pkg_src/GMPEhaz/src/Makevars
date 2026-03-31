@@ -1,0 +1,1 @@
+PKG_FFLAGS = '-ffixed-line-length-132'

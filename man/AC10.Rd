@@ -27,7 +27,7 @@ A list will be return, including mag, Rjb, specT, period, lnY, sigma, iflag, Vs3
 Akkar, S., and Z. Cagnan (2010), A local ground-motion predictive model for turkey,
 and its comparison with other regional and global ground-motion models,
 Bulletin of the Seismological Society of America, 100(6), 2978-2995.
-\url{http://dx.doi.org/10.1785/0120090367}
+\doi{10.1785/0120090367}
 }
 \examples{
 AC10(6, 20, 0, 0, 760)

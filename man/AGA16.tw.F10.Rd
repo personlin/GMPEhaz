@@ -35,7 +35,7 @@ adjusted to Taiwan.
 \details{
 Norman Abrahamson, Nicholas Gregor, and Kofi Addo(2016) BC Hydro Ground Motion Prediction Equations
 for Subduction Earthquakes, Earthquake Spectra, Vol. 32, No. 1, pp. 23-44.
-\url{http://dx.doi.org/10.1193/051712EQS188MR}
+\doi{10.1193/051712EQS188MR}
 }
 \examples{
 AGA16.tw.F10(6, 20, 0, 0, 760, 0, 3, 10, 20)

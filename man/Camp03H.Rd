@@ -37,7 +37,7 @@ A list will be return, including mag, Rseis, Rjb, lnY, sigma, specT, period, Svf
 Campbell, Kenneth W. and Bozorgnia, Yousef (2003), Updated Near-Source Ground-Motion (Attenuation)
 Relations for the Horizontal and Vertical Components of Peak Ground Acceleration and
 Acceleration Response Spectra, Bulletin of the Seismological Society of America, 93(1), 314-331.
-\url{http://dx.doi.org/10.1785/0120020029}
+\doi{10.1785/0120020029}
 }
 \examples{
 Camp03H(6, 20, 20, 0, 0, 0, 0, 0, 0)
